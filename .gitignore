@@ -1,1 +1,5 @@
 .claude/
+
+# Obsidian - ワークスペース状態（頻繁に変わるのでGit管理しない）
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
