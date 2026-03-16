@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="FCFとは何か｜長期投資と思考のライブラリ"/>
+<meta property="og:description" content="フリーキャッシュフロー（FCF）の意味・計算方法・投資での使い方を解説。会計利益ではわからない企業の実力を読む。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>FCFとは何か｜長期投資と思考のライブラリ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --blue:#1a2a4a;--blue2:#2a3d6a;--blue3:#3a5a8a;--blue4:#6a9aaa;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:var(--gold)44;font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--blue) 60%,#1a2a3a 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--blue3);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(58,90,138,.2) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue4),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:1rem;color:var(--blue4);letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.18;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(106,154,170,.25);position:relative;}
+.hero-title em{font-style:italic;color:var(--blue4);display:block;font-size:.62em;letter-spacing:.04em;margin-top:4px;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.56rem;color:var(--blue4);border:1px solid var(--blue3)66;padding:3px 10px;letter-spacing:.1em;}
+
+.article{max-width:800px;margin:0 auto;padding:36px 20px 20px;}
+
+.intro-block{background:linear-gradient(135deg,var(--ink) 0%,var(--blue) 100%);color:var(--parch);border-radius:2px;padding:26px 26px;margin-bottom:32px;border-left:4px solid var(--blue3);}
+.intro-label{font-family:var(--mono);font-size:.54rem;color:var(--blue4);letter-spacing:.18em;margin-bottom:10px;}
+.intro-text{font-family:var(--serif);font-size:clamp(.92rem,2.5vw,1.05rem);font-style:italic;line-height:1.9;color:var(--parch2);}
+.intro-text strong{color:var(--blue4);font-style:normal;}
+
+.section-header{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--parch4);}
+.section-num{font-family:var(--mono);font-size:.56rem;color:var(--blue3);letter-spacing:.15em;}
+.section-title{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);}
+
+.formula-block{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:24px 24px;margin-bottom:24px;border-top:3px solid var(--blue3);}
+.formula-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:16px;}
+.formula{background:var(--ink);color:var(--parch);border-radius:2px;padding:16px 20px;font-family:var(--mono);font-size:.82rem;line-height:1.8;margin-bottom:14px;}
+.formula .eq{color:var(--blue4)}
+.formula .minus{color:#e07070}
+.formula .result{color:var(--gold3);font-weight:600;}
+.formula-note{font-size:.76rem;color:var(--ink2);line-height:1.8;}
+
+.concept-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:24px;}
+@media(min-width:560px){.concept-grid{grid-template-columns:repeat(2,1fr)}}
+.concept-card{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:18px 18px;border-left:3px solid var(--blue3);animation:fadeIn .4s ease both;}
+.concept-card:nth-child(1){animation-delay:.05s}.concept-card:nth-child(2){animation-delay:.1s}
+.concept-card:nth-child(3){animation-delay:.15s}.concept-card:nth-child(4){animation-delay:.2s}
+.concept-label{font-family:var(--mono);font-size:.54rem;color:var(--blue3);letter-spacing:.12em;margin-bottom:6px;}
+.concept-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.concept-body{font-size:.78rem;line-height:1.8;color:var(--ink2);}
+
+.check-block{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:22px 22px;margin-bottom:24px;}
+.check-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:14px;}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.checklist li{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;line-height:1.75;color:var(--ink2);}
+.checklist li::before{content:'✦';font-family:var(--mono);color:var(--blue3);flex-shrink:0;font-size:.65rem;margin-top:2px;}
+
+.warning-block{background:linear-gradient(135deg,rgba(139,58,26,.08),transparent);border:1px solid rgba(139,58,26,.25);border-radius:2px;padding:20px 22px;margin-bottom:24px;}
+.warning-title{font-family:var(--serif);font-size:.98rem;font-weight:600;color:#8b3a1a;margin-bottom:12px;}
+.warning-body{font-size:.8rem;line-height:1.85;color:var(--ink2);}
+.warning-body ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:7px;}
+.warning-body ul li{display:flex;gap:10px;align-items:flex-start;}
+.warning-body ul li::before{content:'⚠';flex-shrink:0;font-size:.65rem;color:#8b3a1a;margin-top:2px;}
+
+.summary{background:linear-gradient(135deg,var(--ink) 0%,var(--blue) 100%);color:var(--parch);border-radius:2px;padding:30px 26px;margin-bottom:32px;border:1px solid var(--blue3)33;position:relative;overflow:hidden;}
+.summary::before{content:'\2605';position:absolute;top:-10px;right:20px;font-size:8rem;color:var(--blue4);opacity:.06;line-height:1;}
+.summary-label{font-family:var(--mono);font-size:.54rem;color:var(--blue4);letter-spacing:.18em;margin-bottom:14px;}
+.summary-text{font-family:var(--serif);font-size:clamp(.95rem,2.5vw,1.1rem);font-style:italic;line-height:1.9;color:var(--parch);}
+.summary-text strong{color:var(--blue4);font-style:normal;}
+
+.related-section{margin-bottom:40px;}
+.related-header{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--parch4);}
+.related-list{display:flex;flex-direction:column;gap:10px;}
+.related-item{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:14px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;transition:all .2s;}
+.related-item:hover{background:var(--parch3);transform:translateX(4px);}
+.related-tag{font-family:var(--mono);font-size:.52rem;color:var(--gold2);background:var(--gold)12;border:1px solid var(--gold)28;padding:2px 8px;flex-shrink:0;}
+.related-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);flex:1;}
+.related-arrow{color:var(--gold3);flex-shrink:0;opacity:.6;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid var(--gold)44;}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../">← 賢者の本棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../principles/">私の投資原則</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">FCFとは何か</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">― FREE CASH FLOW ―</div>
+  <h1 class="hero-title">
+    FCFとは何か
+    <em>財務分析 · フリーキャッシュフローの読み方</em>
+  </h1>
+  <p class="hero-sub">
+    会計上の利益ではわからない企業の実力を、キャッシュで見る。<br>
+    バフェットが最重視する指標の意味と使い方。
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">#FCF</span>
+    <span class="hero-tag">#フリーキャッシュフロー</span>
+    <span class="hero-tag">#財務分析</span>
+    <span class="hero-tag">#営業CF</span>
+    <span class="hero-tag">#長期投資</span>
+  </div>
+</div>
+
+<div class="article">
+
+  <div class="intro-block">
+    <div class="intro-label">WHY FCF MATTERS</div>
+    <div class="intro-text">
+      利益は「操作できる」が、キャッシュは「嘘をつけない」。<strong>FCF（フリーキャッシュフロー）</strong>とは、企業が事業活動によって実際に手元に残したお金のことです。バフェットが「企業のオーナーズアーニング（真の稼ぎ）」と呼ぶ概念の核心です。
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-num">PART 01</span>
+    <h2 class="section-title">FCFの計算方法</h2>
+  </div>
+
+  <div class="formula-block">
+    <div class="formula-title">基本的な計算式</div>
+    <div class="formula">
+      <span class="eq">FCF</span>　＝　営業キャッシュフロー　<span class="minus">－</span>　設備投資（CapEx）<br>
+      <br>
+      <span class="result">= 事業で稼いだキャッシュ　－　事業継続に必要な投資</span>
+    </div>
+    <div class="formula-note">
+      ※ キャッシュフロー計算書の「営業活動によるキャッシュフロー」から「有形固定資産の取得」を引いた値が目安。企業によって定義が異なる場合があるため、IR資料の記載を確認することが重要。
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-num">PART 02</span>
+    <h2 class="section-title">3つのキャッシュフローを理解する</h2>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-label">OPERATING CF</div>
+      <div class="concept-title">営業キャッシュフロー</div>
+      <div class="concept-body">本業で稼いだキャッシュ。プラスで大きいほど良い。利益と乖離している場合は要確認。売上債権・在庫・前受金の変動が影響する。</div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-label">INVESTING CF</div>
+      <div class="concept-title">投資キャッシュフロー</div>
+      <div class="concept-body">設備投資・M&amp;A・有価証券投資などに使ったキャッシュ。成長期は大きなマイナスになることが多い。無駄な投資がないかを確認する。</div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-label">FINANCING CF</div>
+      <div class="concept-title">財務キャッシュフロー</div>
+      <div class="concept-body">借入・返済・配当・自社株買いなど。自社株買いや借入返済はマイナスになる。資本配分の判断材料として読む。</div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-label">FREE CASH FLOW</div>
+      <div class="concept-title">フリーキャッシュフロー</div>
+      <div class="concept-body">営業CF－設備投資。事業を維持・成長させながら自由に使えるキャッシュ。これが配当・自社株買い・M&amp;Aの原資となる。</div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-num">PART 03</span>
+    <h2 class="section-title">投資でFCFをどう使うか</h2>
+  </div>
+
+  <div class="check-block">
+    <div class="check-title">FCFを見るときのチェックポイント</div>
+    <ul class="checklist">
+      <li>FCFが継続的にプラスか（単年ではなく複数年の傾向で見る）</li>
+      <li>営業利益と営業CFの乖離が大きくないか（利益だけが大きくCFが小さい場合は要注意）</li>
+      <li>設備投資（CapEx）が必要最小限か、または成長への合理的な投資か</li>
+      <li>FCFマージン（FCF ÷ 売上）が高いか、または改善傾向にあるか</li>
+      <li>FCFがどう使われているか（配当・自社株買い・M&amp;A・内部留保）</li>
+      <li>前受収益（契約負債）が大きい場合、将来のFCFへの転換を確認する</li>
+    </ul>
+  </div>
+
+  <div class="warning-block">
+    <div class="warning-title">FCFを見るときの注意点</div>
+    <div class="warning-body">
+      FCFだけで企業を判断するのは危険な場合があります。
+      <ul>
+        <li>成長投資期の企業はFCFが一時的にマイナスになることがある（投資の質を見る）</li>
+        <li>減価償却の方針によって営業CFの水準が変わる場合がある</li>
+        <li>会計基準（日本基準・IFRS・US-GAAP）によって分類が異なる場合がある</li>
+        <li>CapExを意図的に抑えることで短期的にFCFを良く見せることもできる</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-label">SUMMARY — まとめ</div>
+    <div class="summary-text">
+      FCFは、企業が<strong>本当に稼いでいるかどうか</strong>を確認する最も信頼性の高い指標のひとつです。利益は操作できても、キャッシュは嘘をつきません。継続的に高いFCFを生み出せる企業こそが、長期で株主価値を積み上げていきます。
+    </div>
+  </div>
+
+  <div class="related-section">
+    <div class="related-header">関連記事</div>
+    <div class="related-list">
+      <a class="related-item" href="../principles/">
+        <span class="related-tag">投資哲学</span>
+        <span class="related-title">私の投資原則</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../analysis-template/">
+        <span class="related-tag">企業分析</span>
+        <span class="related-title">企業分析テンプレート</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../moat/">
+        <span class="related-tag">投資哲学</span>
+        <span class="related-title">永続的競争優位性（moat）をどう見るか</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-title">長期投資と思考のライブラリ</div>
+  <div><a href="../">← 賢者の本棚（書籍・名言集）に戻る</a></div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);});</script>
+</body>
+</html>

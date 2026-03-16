@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="永続的競争優位性（moat）をどう見るか｜長期投資と思考のライブラリ"/>
+<meta property="og:description" content="長期投資で最も重要な概念「moat（堀）」を6つの種類と実務的な視点で解説。なぜその強さが続くのかを見極める。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>永続的競争優位性（moat）をどう見るか｜長期投資と思考のライブラリ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --rust:#8b3a1a;--rust2:#c05020;
+  --green:#2a4a1a;--green2:#3d6828;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:var(--gold)44;font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 40%,#3a2510 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.12) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:1rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.18;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(212,170,34,.25);position:relative;}
+.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.62em;letter-spacing:.04em;margin-top:4px;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.56rem;color:var(--gold3);border:1px solid var(--gold)44;padding:3px 10px;letter-spacing:.1em;}
+
+.conclusion{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--parch);max-width:800px;margin:0 auto;padding:24px 28px;border-bottom:1px solid var(--gold)22;}
+.conclusion-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.18em;margin-bottom:10px;}
+.conclusion-text{font-family:var(--serif);font-size:clamp(.92rem,2.5vw,1.08rem);font-style:italic;line-height:1.85;color:var(--parch2);}
+.conclusion-text strong{color:var(--gold4);font-style:normal;}
+
+.toc{background:var(--parch2);border-bottom:1px solid var(--parch4);max-width:800px;margin:0 auto;padding:20px 28px;}
+.toc-label{font-family:var(--mono);font-size:.54rem;color:var(--gold2);letter-spacing:.18em;margin-bottom:12px;}
+.toc-list{display:flex;flex-wrap:wrap;gap:5px 16px;list-style:none;}
+.toc-list a{font-family:var(--serif);font-size:.82rem;color:var(--ink2);text-decoration:none;transition:color .2s;}
+.toc-list a:hover{color:var(--gold2)}
+.toc-num{font-family:var(--mono);font-size:.56rem;color:var(--gold)88;margin-right:5px;}
+
+.article{max-width:800px;margin:0 auto;padding:36px 20px 20px;}
+
+.intro-block{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:24px 26px;margin-bottom:32px;border-left:4px solid var(--gold2);}
+.intro-text{font-size:.84rem;line-height:1.95;color:var(--ink2);}
+.intro-text p{margin-bottom:10px;}
+.intro-text p:last-child{margin-bottom:0}
+
+.section-header{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--parch4);}
+.section-num{font-family:var(--mono);font-size:.56rem;color:var(--gold2);letter-spacing:.15em;}
+.section-title{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);}
+
+.moat-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:32px;}
+@media(min-width:560px){.moat-grid{grid-template-columns:repeat(2,1fr)}}
+.moat-card{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:20px 18px;border-top:3px solid var(--gold2);box-shadow:0 2px 12px rgba(26,18,8,.08);scroll-margin-top:20px;animation:fadeIn .4s ease both;}
+.moat-card:nth-child(1){animation-delay:.05s}.moat-card:nth-child(2){animation-delay:.1s}
+.moat-card:nth-child(3){animation-delay:.15s}.moat-card:nth-child(4){animation-delay:.2s}
+.moat-card:nth-child(5){animation-delay:.25s}.moat-card:nth-child(6){animation-delay:.3s}
+.moat-num{font-family:var(--mono);font-size:.54rem;color:var(--gold2);letter-spacing:.12em;margin-bottom:8px;}
+.moat-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.moat-body{font-size:.78rem;line-height:1.85;color:var(--ink2);}
+
+.questions-block{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:24px 24px;margin-bottom:24px;}
+.questions-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:14px;}
+.questions-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.questions-list li{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;line-height:1.75;color:var(--ink2);}
+.questions-list li::before{content:'?';font-family:var(--mono);color:var(--gold2);flex-shrink:0;font-size:.7rem;margin-top:1px;}
+
+.caution-block{background:linear-gradient(135deg,var(--rust)10,transparent);border:1px solid var(--rust)33;border-radius:2px;padding:22px 22px;margin-bottom:24px;}
+.caution-title{font-family:var(--serif);font-size:.98rem;font-weight:600;color:var(--rust2);margin-bottom:12px;}
+.caution-body{font-size:.8rem;line-height:1.85;color:var(--ink2);}
+.caution-body p{margin-bottom:10px;}
+.caution-body ul{list-style:none;margin:8px 0;display:flex;flex-direction:column;gap:7px;}
+.caution-body ul li{display:flex;gap:10px;align-items:flex-start;}
+.caution-body ul li::before{content:'⚠';flex-shrink:0;font-size:.65rem;color:var(--rust2);margin-top:2px;}
+
+.summary{background:linear-gradient(135deg,var(--ink) 0%,#2a1c08 100%);color:var(--parch);border-radius:2px;padding:30px 26px;margin-bottom:32px;border:1px solid var(--gold)33;position:relative;overflow:hidden;}
+.summary::before{content:'\2605';position:absolute;top:-10px;right:20px;font-size:8rem;color:var(--gold3);opacity:.06;line-height:1;}
+.summary-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.18em;margin-bottom:14px;}
+.summary-text{font-family:var(--serif);font-size:clamp(.95rem,2.5vw,1.1rem);font-style:italic;line-height:1.9;color:var(--parch);}
+.summary-text strong{color:var(--gold4);font-style:normal;}
+.summary-sub{font-size:.78rem;color:var(--parch4);margin-top:14px;line-height:1.8;}
+
+.related-section{margin-bottom:40px;}
+.related-header{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--parch4);}
+.related-list{display:flex;flex-direction:column;gap:10px;}
+.related-item{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:14px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;transition:all .2s;}
+.related-item:hover{background:var(--parch3);transform:translateX(4px);}
+.related-tag{font-family:var(--mono);font-size:.52rem;color:var(--gold2);background:var(--gold)12;border:1px solid var(--gold)28;padding:2px 8px;flex-shrink:0;}
+.related-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);flex:1;}
+.related-soon{font-family:var(--mono);font-size:.5rem;color:var(--ink3);border:1px solid var(--parch4);padding:2px 6px;margin-left:8px;}
+.related-arrow{color:var(--gold3);flex-shrink:0;opacity:.6;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid var(--gold)44;}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../">← 賢者の本棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../principles/">私の投資原則</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">moat をどう見るか</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">― COMPETITIVE ADVANTAGE ―</div>
+  <h1 class="hero-title">
+    永続的競争優位性（moat）をどう見るか
+    <em>投資哲学 · 企業分析の中心概念</em>
+  </h1>
+  <p class="hero-sub">
+    長期投資で最も重要なのは、企業が一時的に伸びているかではなく、<br>
+    なぜその強さが長く続くのかを見極めること。
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">#moat</span>
+    <span class="hero-tag">#永続的競争優位性</span>
+    <span class="hero-tag">#長期投資</span>
+    <span class="hero-tag">#投資哲学</span>
+    <span class="hero-tag">#企業分析</span>
+  </div>
+</div>
+
+<div class="conclusion">
+  <div class="conclusion-label">CONCLUSION FIRST — 結論から</div>
+  <div class="conclusion-text">
+    長期投資で良い企業を見極めるためには、<strong>「何がこの企業を守っているのか」</strong>を考えることが最重要だ。<br>
+    売上成長や話題性だけではなく、競争にさらされても利益率や顧客基盤を維持できる理由があるかどうかを見るべきである。
+  </div>
+</div>
+
+<div class="article">
+
+  <div class="intro-block">
+    <div class="intro-text">
+      <p>長期投資をするうえで、私が最も重視している概念の一つが<strong>永続的競争優位性（moat）</strong>です。企業の業績が良いこと自体は重要ですが、それ以上に大事なのは、その良さが一時的なものなのか、長く続く構造を持っているのかという点です。</p>
+      <p>moat とは、もともと城の周りにある「堀」を意味します。投資の世界では、競合他社が簡単に入り込めない、企業を守る強みのことを指します。</p>
+      <p>企業の競争優位が弱ければ、たとえ一時的に高成長でも、やがて価格競争や模倣によって収益性が崩れやすくなります。一方で moat のある企業は、時間が経つほど強さが積み上がることがあります。長期投資家にとって大切なのは、短期の人気ではなく、<strong>長期で企業価値を積み上げられる構造があるか</strong>です。</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-num">PART 01</span>
+    <h2 class="section-title">代表的な moat の6種類</h2>
+  </div>
+
+  <div class="moat-grid">
+    <div class="moat-card" id="m1">
+      <div class="moat-num">TYPE 01</div>
+      <div class="moat-title">スイッチングコスト</div>
+      <div class="moat-body">顧客が他社に乗り換える際に、手間・時間・教育コスト・業務混乱が大きい状態。BtoBソフトウェアや基幹システムでよく見られる。一度深く組み込まれると、簡単には離れられない。</div>
+    </div>
+    <div class="moat-card" id="m2">
+      <div class="moat-num">TYPE 02</div>
+      <div class="moat-title">ネットワーク効果</div>
+      <div class="moat-body">利用者が増えるほどサービスの価値が高まる構造。マーケットプレイス・決済ネットワーク・SNSなどに多い。参加者が多いほど他者も参加したくなる好循環が moat となる。</div>
+    </div>
+    <div class="moat-card" id="m3">
+      <div class="moat-num">TYPE 03</div>
+      <div class="moat-title">ブランド</div>
+      <div class="moat-body">顧客が機能差だけでなく、安心感や信頼で選ぶ状態。消費財だけでなく、企業向けサービスでも「信頼」が moat になることがある。価格プレミアムを維持できるかどうかがひとつの指標。</div>
+    </div>
+    <div class="moat-card" id="m4">
+      <div class="moat-num">TYPE 04</div>
+      <div class="moat-title">エコシステム</div>
+      <div class="moat-body">単体の商品ではなく、周辺サービスや既存利用環境との一体性によって離れにくくなる状態。複数製品の連携や、社内業務への深い組み込みがあると強くなる。</div>
+    </div>
+    <div class="moat-card" id="m5">
+      <div class="moat-num">TYPE 05</div>
+      <div class="moat-title">参入障壁</div>
+      <div class="moat-body">新規参入に大きな資本・規制対応・技術蓄積・顧客認証などが必要な状態。半導体製造装置や一部の医療・金融・インフラ系で見られる。規制や許認可も強い参入障壁になる。</div>
+    </div>
+    <div class="moat-card" id="m6">
+      <div class="moat-num">TYPE 06</div>
+      <div class="moat-title">規模の経済</div>
+      <div class="moat-body">規模が大きいことで調達・物流・広告・開発・顧客獲得コストが有利になる状態。単なる大企業というだけではなく、規模が実際に優位性に転化しているかを見る必要がある。</div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-num">PART 02</span>
+    <h2 class="section-title">moat を見るときの実務的な視点</h2>
+  </div>
+
+  <div class="questions-block">
+    <div class="questions-title">私が moat を考えるときに使う問い</div>
+    <ul class="questions-list">
+      <li>なぜ顧客はこの企業を使い続けるのか</li>
+      <li>競合が同じものを作っても奪えない理由は何か</li>
+      <li>価格を少し上げても離れにくいか</li>
+      <li>シェアが高い理由は偶然ではなく構造か</li>
+      <li>その強みは5年後、10年後も残るか</li>
+      <li>AIや技術変化で崩れる可能性はないか</li>
+    </ul>
+  </div>
+
+  <div class="section-header">
+    <span class="section-num">PART 03</span>
+    <h2 class="section-title">moat の注意点</h2>
+  </div>
+
+  <div class="caution-block">
+    <div class="caution-title">moat は「ある・ない」ではなく、強さ・広さ・持続性で見る</div>
+    <div class="caution-body">
+      <p>moat を単純に「ある・ない」で分けるのは危険です。今は強く見えても、技術変化や顧客行動の変化で崩れることがあります。</p>
+      <p>そのため、良い企業を見つけるだけでなく、以下まで考えることが大切です。</p>
+      <ul>
+        <li>何が moat なのか</li>
+        <li>それがなぜ続くのか</li>
+        <li>何が起きると崩れるのか</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-label">SUMMARY — まとめ</div>
+    <div class="summary-text">
+      長期投資において moat は、単なる便利な言葉ではなく、企業の将来を考える中心概念だ。<br>
+      私は、<strong>「なぜこの企業は勝ち続けられるのか」</strong>を説明できる企業を重視したいと考えている。
+    </div>
+    <div class="summary-sub">
+      成長率や話題性の前に、まず moat を見る——これが、長期で強い企業を見極めるための出発点です。
+    </div>
+  </div>
+
+  <div class="related-section">
+    <div class="related-header">関連記事</div>
+    <div class="related-list">
+      <a class="related-item" href="../principles/">
+        <span class="related-tag">投資哲学</span>
+        <span class="related-title">私の投資原則</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../analysis-template/">
+        <span class="related-tag">企業分析</span>
+        <span class="related-title">企業分析テンプレート<span class="related-soon">準備中</span></span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../fcf/">
+        <span class="related-tag">財務分析</span>
+        <span class="related-title">FCFとは何か<span class="related-soon">準備中</span></span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../hajimete/">
+        <span class="related-tag">入門</span>
+        <span class="related-title">初めての方へ</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-title">長期投資と思考のライブラリ</div>
+  <div><a href="../">← 賢者の本棚（書籍・名言集）に戻る</a></div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);});</script>
+</body>
+</html>
