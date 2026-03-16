@@ -50,6 +50,23 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .hero-stat-num{font-family:var(--serif);font-size:1.6rem;color:var(--gold4);font-weight:700;line-height:1;}
 .hero-stat-label{font-family:var(--mono);font-size:.5rem;color:var(--parch4);letter-spacing:.12em;margin-top:4px;}
 
+/* ── INTRO BLOCK ── */
+.intro-block{background:var(--parch);border-bottom:1px solid var(--parch4);padding:32px 20px;}
+.intro-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:24px;}
+@media(min-width:700px){.intro-inner{grid-template-columns:1fr 1fr;align-items:start;gap:32px;}}
+.intro-concept{font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:600;color:var(--ink);line-height:1.5;border-left:3px solid var(--gold2);padding-left:16px;margin-bottom:10px;}
+.intro-body{font-size:.85rem;color:var(--ink3);line-height:1.9;font-weight:300;}
+.intro-links{display:flex;flex-direction:column;gap:10px;}
+.intro-links-title{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.14em;margin-bottom:4px;}
+.intro-link-item{display:flex;align-items:center;gap:8px;text-decoration:none;padding:10px 14px;background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;transition:all .18s;}
+.intro-link-item:hover{border-color:var(--gold3);background:var(--parch3);}
+.intro-link-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.intro-link-dot.green{background:#5a8a3a;}
+.intro-link-dot.gold{background:var(--gold2);}
+.intro-link-dot.blue{background:#4a6a9a;}
+.intro-link-label{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.06em;white-space:nowrap;}
+.intro-link-name{font-size:.8rem;color:var(--ink2);font-weight:500;}
+
 /* ── FILTER BAR ── */
 .filter-bar{background:var(--ink2);border-bottom:1px solid var(--gold)22;padding:12px 20px;position:sticky;top:0;z-index:50;}
 .filter-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
@@ -165,6 +182,49 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div class="hero-stat">
       <div class="hero-stat-num" id="statReady">0</div>
       <div class="hero-stat-label">ANALYZED</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── INTRO BLOCK ── -->
+<div class="intro-block">
+  <div class="intro-inner">
+    <div>
+      <p class="intro-concept">業種から企業へ、企業から思考へ。</p>
+      <p class="intro-body">
+        投資の出発点は、個別企業の前に「業種の構造」を理解することにある。<br>
+        どの業種に競争優位が生まれやすいか。どの業種でmoatは持続するか。<br>
+        どの業種がセクターローテーションの文脈で注目されているか。<br><br>
+        このページは、東証プライム上場企業を33業種の視点で整理し、<br>
+        トップダウンの思考を支える入口として設計されている。<br>
+        業種を眺め、企業に触れ、分析へと自然に進んでほしい。
+      </p>
+    </div>
+    <div>
+      <div class="intro-links-title">RELATED ARTICLES</div>
+      <div class="intro-links">
+        <a class="intro-link-item" href="../analysis-template/">
+          <span class="intro-link-dot green"></span>
+          <div>
+            <div class="intro-link-label">ANALYSIS</div>
+            <div class="intro-link-name">企業分析テンプレート</div>
+          </div>
+        </a>
+        <a class="intro-link-item" href="../moat/">
+          <span class="intro-link-dot gold"></span>
+          <div>
+            <div class="intro-link-label">MOAT</div>
+            <div class="intro-link-name">moat をどう見るか</div>
+          </div>
+        </a>
+        <a class="intro-link-item" href="../fcf/">
+          <span class="intro-link-dot blue"></span>
+          <div>
+            <div class="intro-link-label">FINANCE</div>
+            <div class="intro-link-name">FCFとは何か</div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
