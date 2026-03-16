@@ -361,6 +361,33 @@ body::before{
 }
 .welcome-link:hover{background:var(--gold2);color:var(--ink);border-color:var(--gold2)}
 
+/* ── FLAGSHIP ARTICLE ── */
+.flagship{
+  background:var(--parch2);
+  border-bottom:1px solid var(--parch4);
+  padding:0 20px;
+}
+.flagship-inner{
+  max-width:860px;margin:0 auto;padding:20px 0;
+}
+.flagship-label{font-family:var(--mono);font-size:.52rem;color:var(--gold2);letter-spacing:.18em;margin-bottom:10px;}
+.flagship-card{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  border:1px solid var(--gold)33;border-radius:2px;
+  padding:20px 22px;display:flex;align-items:center;gap:16px;
+  text-decoration:none;color:inherit;transition:all .25s;
+}
+.flagship-card:hover{border-color:var(--gold2);box-shadow:0 4px 24px rgba(26,18,8,.3);}
+.flagship-num{
+  font-family:var(--mono);font-size:.58rem;color:var(--gold3);
+  background:var(--gold)18;border:1px solid var(--gold)33;
+  padding:6px 10px;flex-shrink:0;line-height:1.2;
+}
+.flagship-body{flex:1}
+.flagship-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--parch);margin-bottom:4px;}
+.flagship-desc{font-size:.72rem;color:var(--parch4);line-height:1.6;}
+.flagship-arrow{color:var(--gold3);font-size:1.1rem;flex-shrink:0;opacity:.7;}
+
 /* ── FOOTER ── */
 .footer{
   background:var(--ink);color:var(--parch4);
@@ -430,6 +457,22 @@ body::before{
       <div class="welcome-body">このサイトは<strong>長期投資と思考のライブラリ</strong>です。銘柄推薦ではなく、投資家の判断基準を積み上げる知的アーカイブです。</div>
     </div>
     <a class="welcome-link" href="hajimete/">初めての方へ →</a>
+  </div>
+</div>
+
+<!-- ══════════════ FLAGSHIP ARTICLE ══════════════ -->
+
+<div class="flagship">
+  <div class="flagship-inner">
+    <div class="flagship-label">FEATURED ARTICLE — 看板記事</div>
+    <a class="flagship-card" href="principles/">
+      <div class="flagship-num">投資哲学<br>No.1</div>
+      <div class="flagship-body">
+        <div class="flagship-title">私の投資原則</div>
+        <div class="flagship-desc">moat・資本配分・財務・経営者の質——長期投資において重視している8つの基本原則。このサイトの思想的な中心記事。</div>
+      </div>
+      <div class="flagship-arrow">→</div>
+    </a>
   </div>
 </div>
 

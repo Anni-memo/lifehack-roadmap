@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="私の投資原則｜長期投資と思考のライブラリ"/>
+<meta property="og:description" content="永続的競争優位性・資本配分・財務・経営者の質——長期投資において重視している8つの基本原則。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>私の投資原則｜長期投資と思考のライブラリ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --ink:    #1a1208;
+  --ink2:   #2d2010;
+  --ink3:   #4a3520;
+  --parch:  #f5ede0;
+  --parch2: #efe4d0;
+  --parch3: #e8d8be;
+  --parch4: #dfc9a8;
+  --gold:   #8b6914;
+  --gold2:  #b8900a;
+  --gold3:  #d4aa22;
+  --gold4:  #f0cc55;
+  --serif:  'Cormorant Garamond', 'Noto Serif JP', serif;
+  --jp:     'Noto Serif JP', 'Cormorant Garamond', serif;
+  --mono:   'DM Mono', monospace;
+  --shadow: 0 4px 24px rgba(26,18,8,.18);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:1000;opacity:.5;
+}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:var(--gold)44;font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg, var(--ink) 0%, var(--ink2) 40%, #3a2510 100%);
+  color:var(--parch);padding:56px 24px 44px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,144,10,.12) 0%, transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:1rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(2rem,6vw,3.2rem);font-weight:700;line-height:1.15;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(212,170,34,.25);position:relative;}
+.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.65em;letter-spacing:.04em;margin-top:4px;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;letter-spacing:.04em;margin-top:16px;line-height:1.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.56rem;color:var(--gold3);border:1px solid var(--gold)44;padding:3px 10px;letter-spacing:.1em;}
+
+/* ── TOC ── */
+.toc{
+  background:var(--ink);color:var(--parch4);
+  max-width:800px;margin:0 auto;
+  padding:24px 28px;border-bottom:1px solid var(--gold)22;
+}
+.toc-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.18em;margin-bottom:14px;}
+.toc-list{display:flex;flex-wrap:wrap;gap:6px 16px;list-style:none;}
+.toc-list a{font-family:var(--serif);font-size:.82rem;color:var(--parch4);text-decoration:none;transition:color .2s;}
+.toc-list a:hover{color:var(--gold4)}
+.toc-num{font-family:var(--mono);font-size:.56rem;color:var(--gold)88;margin-right:5px;}
+
+/* ── ARTICLE ── */
+.article{max-width:800px;margin:0 auto;padding:40px 20px 20px;}
+
+.intro-block{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  color:var(--parch);border-radius:2px;padding:28px 28px;
+  margin-bottom:40px;border-left:4px solid var(--gold2);
+  position:relative;overflow:hidden;
+}
+.intro-block::before{content:'\201C';position:absolute;top:-8px;left:14px;font-family:var(--serif);font-size:7rem;color:var(--gold3);opacity:.1;line-height:1;pointer-events:none;}
+.intro-text{font-family:var(--serif);font-size:clamp(.95rem,2.5vw,1.1rem);line-height:1.9;color:var(--parch2);}
+.intro-text strong{color:var(--gold4)}
+
+/* ── PRINCIPLE CARD ── */
+.principle{
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-radius:2px;padding:28px 26px;margin-bottom:20px;
+  border-top:3px solid var(--gold2);
+  box-shadow:0 2px 16px rgba(26,18,8,.1);
+  scroll-margin-top:20px;
+}
+.principle-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+.principle-num{font-family:var(--mono);font-size:.58rem;color:var(--gold2);letter-spacing:.15em;background:var(--gold)15;border:1px solid var(--gold)33;padding:3px 8px;flex-shrink:0;}
+.principle-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);}
+.principle-body{font-size:.82rem;line-height:1.9;color:var(--ink2);}
+.principle-body p{margin-bottom:12px;}
+.principle-body p:last-child{margin-bottom:0}
+.principle-body strong{color:var(--ink);font-weight:600;}
+.principle-body ul{list-style:none;margin:10px 0 12px 0;display:flex;flex-direction:column;gap:7px;}
+.principle-body ul li{display:flex;gap:10px;align-items:flex-start;}
+.principle-body ul li::before{content:'✦';color:var(--gold2);flex-shrink:0;margin-top:2px;font-size:.6rem;}
+
+/* ── SUMMARY ── */
+.summary{
+  background:linear-gradient(135deg,var(--ink) 0%,#2a1c08 100%);
+  color:var(--parch);border-radius:2px;padding:32px 28px;
+  margin-bottom:32px;border:1px solid var(--gold)33;
+  position:relative;overflow:hidden;
+}
+.summary::before{content:'\2605';position:absolute;top:-10px;right:20px;font-size:8rem;color:var(--gold3);opacity:.06;line-height:1;}
+.summary-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.18em;margin-bottom:14px;}
+.summary-text{font-family:var(--serif);font-size:clamp(1rem,2.5vw,1.15rem);font-style:italic;line-height:1.9;color:var(--parch);}
+.summary-text strong{color:var(--gold4);font-style:normal;}
+
+/* ── RELATED ── */
+.related-section{margin-bottom:40px;}
+.related-header{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--parch4);}
+.related-list{display:flex;flex-direction:column;gap:10px;}
+.related-item{
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-radius:2px;padding:14px 18px;
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;color:inherit;transition:all .2s;
+}
+.related-item:hover{background:var(--parch3);transform:translateX(4px);}
+.related-tag{font-family:var(--mono);font-size:.52rem;color:var(--gold2);background:var(--gold)12;border:1px solid var(--gold)28;padding:2px 8px;flex-shrink:0;}
+.related-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);flex:1;}
+.related-soon{font-family:var(--mono);font-size:.5rem;color:var(--ink3);border:1px solid var(--parch4);padding:2px 6px;margin-left:8px;}
+.related-arrow{color:var(--gold3);flex-shrink:0;opacity:.6;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid var(--gold)44;}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+/* ── SCROLL TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.principle{animation:fadeIn .4s ease both;}
+.principle:nth-child(1){animation-delay:.05s}
+.principle:nth-child(2){animation-delay:.1s}
+.principle:nth-child(3){animation-delay:.15s}
+.principle:nth-child(4){animation-delay:.2s}
+.principle:nth-child(5){animation-delay:.25s}
+.principle:nth-child(6){animation-delay:.3s}
+.principle:nth-child(7){animation-delay:.35s}
+.principle:nth-child(8){animation-delay:.4s}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../">← 賢者の本棚へ戻る</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../hajimete/">初めての方へ</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">私の投資原則</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-ornament">― MY INVESTMENT PRINCIPLES ―</div>
+  <h1 class="hero-title">
+    私の投資原則
+    <em>長期投資と思考のライブラリ</em>
+  </h1>
+  <p class="hero-sub">
+    株価の上下に反応するのではなく、何を基準に判断するかを明確に持つ。<br>
+    長期投資において重視している8つの原則。
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">#投資原則</span>
+    <span class="hero-tag">#長期投資</span>
+    <span class="hero-tag">#moat</span>
+    <span class="hero-tag">#資本配分</span>
+    <span class="hero-tag">#財務分析</span>
+    <span class="hero-tag">#判断力</span>
+  </div>
+</div>
+
+<!-- ── TOC ── -->
+<nav class="toc">
+  <div class="toc-label">CONTENTS — 目次</div>
+  <ul class="toc-list">
+    <li><a href="#p1"><span class="toc-num">01</span>永続的競争優位性（moat）</a></li>
+    <li><a href="#p2"><span class="toc-num">02</span>資本配分</a></li>
+    <li><a href="#p3"><span class="toc-num">03</span>財務</a></li>
+    <li><a href="#p4"><span class="toc-num">04</span>経営者の質</a></li>
+    <li><a href="#p5"><span class="toc-num">05</span>理解できる範囲</a></li>
+    <li><a href="#p6"><span class="toc-num">06</span>仮説と反証</a></li>
+    <li><a href="#p7"><span class="toc-num">07</span>企業価値を重視</a></li>
+    <li><a href="#p8"><span class="toc-num">08</span>生活習慣</a></li>
+  </ul>
+</nav>
+
+<!-- ── ARTICLE ── -->
+<div class="article">
+
+  <div class="intro-block">
+    <div class="intro-text">
+      投資で最も大切なのは、毎回の株価の上下に反応することではなく、<strong>何を基準に判断するかを明確に持つこと</strong>だと考えています。<br><br>
+      このページでは、私が長期投資において重視している基本原則を整理します。
+    </div>
+  </div>
+
+  <!-- 01 -->
+  <div class="principle" id="p1">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 01</span>
+      <h2 class="principle-title">永続的競争優位性（moat）を最重要視する</h2>
+    </div>
+    <div class="principle-body">
+      <p>私が最も重視しているのは、企業が長期にわたって高い収益性を維持できる理由があるかどうかです。</p>
+      <ul>
+        <li>スイッチングコスト</li>
+        <li>ネットワーク効果</li>
+        <li>ブランド</li>
+        <li>エコシステム</li>
+        <li>参入障壁</li>
+        <li>顧客基盤の強さ</li>
+      </ul>
+      <p>単に「今伸びている会社」ではなく、<strong>なぜその強さが続くのか</strong>を考えます。</p>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="principle" id="p2">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 02</span>
+      <h2 class="principle-title">資本配分を重視する</h2>
+    </div>
+    <div class="principle-body">
+      <p>企業が生み出した利益やキャッシュを、経営者がどう使うかは非常に重要です。</p>
+      <ul>
+        <li>成長投資に再投資するのか</li>
+        <li>無理なM&amp;Aをしていないか</li>
+        <li>自社株買いが合理的か</li>
+        <li>配当方針は適切か</li>
+        <li>キャッシュを眠らせすぎていないか</li>
+      </ul>
+      <p>良い事業でも、資本配分が悪ければ株主価値は毀損します。逆に、資本配分の上手い経営者は企業価値を大きく伸ばします。</p>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="principle" id="p3">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 03</span>
+      <h2 class="principle-title">財務を重視する</h2>
+    </div>
+    <div class="principle-body">
+      <p>利益だけでなく、キャッシュの流れを重視します。特にフリーキャッシュフロー（FCF）、営業キャッシュフロー、投資キャッシュフローを見ます。</p>
+      <ul>
+        <li>契約負債</li>
+        <li>売上債権</li>
+        <li>在庫</li>
+        <li>のれん</li>
+        <li>自己資本比率</li>
+        <li>ROICやROE</li>
+      </ul>
+      <p>数字を表面的に追うのではなく、<strong>その数字が何を意味しているのか</strong>を考えます。</p>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="principle" id="p4">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 04</span>
+      <h2 class="principle-title">経営者の質を重視する</h2>
+    </div>
+    <div class="principle-body">
+      <p>長期投資では、経営者の質が非常に重要です。</p>
+      <ul>
+        <li>誠実さ</li>
+        <li>長期志向</li>
+        <li>資本配分能力</li>
+        <li>説明の一貫性</li>
+        <li>株主への向き合い方</li>
+        <li>無理な楽観をしていないか</li>
+      </ul>
+      <p>どれだけ良い事業でも、経営者の姿勢によって将来は大きく変わります。</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="principle" id="p5">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 05</span>
+      <h2 class="principle-title">わからないものには手を出しすぎない</h2>
+    </div>
+    <div class="principle-body">
+      <p>魅力的に見えるテーマでも、自分の理解が浅いものには慎重であるべきだと思っています。</p>
+      <p>「わかりやすい強さ」がない企業や、「なぜ勝てるのか」を自分の言葉で説明できない企業には、無理に投資しません。</p>
+      <p>理解できる範囲にとどまることは、地味ですが<strong>非常に重要な防御策</strong>です。</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="principle" id="p6">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 06</span>
+      <h2 class="principle-title">仮説と反証を持つ</h2>
+    </div>
+    <div class="principle-body">
+      <p>投資は確信だけで進めるものではなく、仮説と反証の両方を持つべきだと考えています。</p>
+      <ul>
+        <li>なぜこの企業は良いと思うのか</li>
+        <li>その前提は何か</li>
+        <li>その前提が崩れるとしたら何か</li>
+        <li>何を見たら自分の考えを修正するか</li>
+      </ul>
+      <p>を明確にしておくことが大切です。</p>
+    </div>
+  </div>
+
+  <!-- 07 -->
+  <div class="principle" id="p7">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 07</span>
+      <h2 class="principle-title">株価より企業価値を重視する</h2>
+    </div>
+    <div class="principle-body">
+      <p>短期の株価は市場心理に大きく左右されます。一方で、長期的には企業価値の積み上がりが株価に反映されていくと考えています。</p>
+      <p>そのため、私は日々の値動き以上に、</p>
+      <ul>
+        <li>事業の質</li>
+        <li>moatの強さ</li>
+        <li>財務の健全性</li>
+        <li>経営者の質</li>
+        <li>成長余地</li>
+        <li>資本配分</li>
+      </ul>
+      <p>を重視します。</p>
+    </div>
+  </div>
+
+  <!-- 08 -->
+  <div class="principle" id="p8">
+    <div class="principle-head">
+      <span class="principle-num">PRINCIPLE 08</span>
+      <h2 class="principle-title">投資判断を支える生活習慣も重視する</h2>
+    </div>
+    <div class="principle-body">
+      <p>良い投資判断は、画面の前だけで生まれるわけではありません。日々の生活習慣、感情管理、睡眠、読書、思考整理といった土台が判断の質を支えます。</p>
+      <p>そのため、このサイトでは投資だけでなく、<strong>判断力を支える習慣</strong>についても扱います。</p>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <div class="summary-label">SUMMARY — まとめ</div>
+    <div class="summary-text">
+      私の投資原則を一言でまとめると、<br>
+      <strong>長期で強い企業を見極め、その強さが持続する理由を考え、経営者と資本配分を重視しながら、自分の判断の質も磨き続けること</strong>です。<br><br>
+      今後、このサイトではこれらの原則を土台にして、企業分析や投資の考え方を少しずつ整理していきます。
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="related-section">
+    <div class="related-header">関連記事</div>
+    <div class="related-list">
+      <a class="related-item" href="../hajimete/">
+        <span class="related-tag">入門</span>
+        <span class="related-title">初めての方へ — このサイトの使い方</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../moat/">
+        <span class="related-tag">企業分析</span>
+        <span class="related-title">永続的競争優位性（moat）をどう見るか<span class="related-soon">準備中</span></span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../fcf/">
+        <span class="related-tag">財務分析</span>
+        <span class="related-title">FCFとは何か<span class="related-soon">準備中</span></span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../analysis-template/">
+        <span class="related-tag">企業分析</span>
+        <span class="related-title">企業分析テンプレート<span class="related-soon">準備中</span></span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-item" href="../">
+        <span class="related-tag">書籍</span>
+        <span class="related-title">賢者の本棚 — Munger・Buffett・Fisher 推薦書籍</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">長期投資と思考のライブラリ</div>
+  <div><a href="../">← 賢者の本棚（書籍・名言集）に戻る</a></div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 200);
+});
+</script>
+</body>
+</html>
