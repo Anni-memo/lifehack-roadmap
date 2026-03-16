@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="東証プライム 業種一覧｜長期投資と思考のライブラリ"/>
+<meta property="og:description" content="東証プライム企業を業種別に辿る。業種の特性・代表企業・分析の視点を整理した投資家のためのデータベース入口。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>東証プライム 業種一覧｜長期投資と思考のライブラリ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:var(--gold)44;font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#100e18 50%,#1a1428 100%);
+  color:var(--parch);padding:56px 24px 44px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--mono);font-size:.72rem;color:var(--gold3);letter-spacing:.4em;margin-bottom:16px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.15;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(212,170,34,.2);position:relative;}
+.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.6em;letter-spacing:.06em;margin-top:6px;}
+.hero-sub{font-size:.84rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.85;position:relative;}
+.hero-stats{display:flex;justify-content:center;gap:28px;margin-top:24px;position:relative;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--serif);font-size:1.6rem;color:var(--gold4);font-weight:700;line-height:1;}
+.hero-stat-label{font-family:var(--mono);font-size:.5rem;color:var(--parch4);letter-spacing:.12em;margin-top:4px;}
+
+/* ── FILTER BAR ── */
+.filter-bar{background:var(--ink2);border-bottom:1px solid var(--gold)22;padding:12px 20px;position:sticky;top:0;z-index:50;}
+.filter-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.filter-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.12em;flex-shrink:0;}
+.filter-pills{display:flex;gap:6px;flex-wrap:wrap;}
+.fpill{font-family:var(--mono);font-size:.56rem;padding:4px 12px;border:1px solid var(--gold)33;color:var(--parch4);background:transparent;cursor:pointer;border-radius:2px;letter-spacing:.06em;transition:all .15s;}
+.fpill:hover{border-color:var(--gold2);color:var(--gold3)}
+.fpill.active{background:var(--gold2);border-color:var(--gold2);color:var(--ink);font-weight:600;}
+.filter-count{font-family:var(--mono);font-size:.52rem;color:var(--parch4);margin-left:auto;flex-shrink:0;}
+
+/* ── GRID ── */
+.grid-wrap{max-width:1000px;margin:0 auto;padding:32px 20px 40px;}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:560px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ── INDUSTRY CARD ── */
+.ind-card{
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-radius:2px;overflow:hidden;
+  box-shadow:0 2px 16px rgba(26,18,8,.1);
+  transition:all .22s;display:flex;flex-direction:column;
+  animation:fadeIn .4s ease both;
+}
+.ind-card:hover{box-shadow:0 6px 28px rgba(26,18,8,.2);transform:translateY(-3px);}
+.ind-card[data-ready="false"]{opacity:.75;}
+
+.ind-header{padding:16px 18px 12px;border-bottom:1px solid var(--parch4);}
+.ind-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;}
+.ind-code{font-family:var(--mono);font-size:.5rem;color:var(--gold2);letter-spacing:.1em;background:var(--gold)12;border:1px solid var(--gold)28;padding:2px 7px;border-radius:1px;flex-shrink:0;}
+.ind-status{font-family:var(--mono);font-size:.5rem;padding:2px 7px;border-radius:1px;flex-shrink:0;}
+.ind-status.ready{background:rgba(58,104,40,.15);color:#3d6828;border:1px solid rgba(58,104,40,.3);}
+.ind-status.soon{background:rgba(74,53,32,.12);color:var(--ink3);border:1px solid var(--parch4);}
+.ind-name{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.ind-name-en{font-family:var(--mono);font-size:.54rem;color:var(--ink3);letter-spacing:.06em;}
+
+.ind-body{padding:12px 18px;flex:1;}
+.ind-desc{font-size:.76rem;line-height:1.8;color:var(--ink2);margin-bottom:12px;}
+.ind-companies{display:flex;flex-wrap:wrap;gap:5px;}
+.ind-company{font-family:var(--mono);font-size:.52rem;color:var(--ink3);background:var(--parch3);border:1px solid var(--parch4);padding:2px 7px;border-radius:1px;}
+
+.ind-footer{padding:10px 18px;border-top:1px solid var(--parch4);display:flex;align-items:center;justify-content:space-between;}
+.ind-meta{font-family:var(--mono);font-size:.52rem;color:var(--ink3);}
+.ind-link{
+  font-family:var(--serif);font-size:.76rem;color:var(--gold2);
+  text-decoration:none;display:flex;align-items:center;gap:5px;
+  transition:color .15s;
+}
+.ind-link:hover{color:var(--gold3)}
+.ind-link.disabled{color:var(--ink3);pointer-events:none;}
+
+/* ── COMING SOON BANNER ── */
+.expand-note{
+  background:var(--ink);color:var(--parch4);
+  max-width:1000px;margin:0 auto;
+  border:1px solid var(--gold)22;border-radius:2px;
+  padding:18px 22px;margin-top:0;margin-bottom:28px;
+  margin-left:20px;margin-right:20px;
+  display:flex;gap:14px;align-items:center;
+}
+.expand-note-icon{font-size:1.2rem;flex-shrink:0;}
+.expand-note-text{font-size:.76rem;line-height:1.8;color:var(--parch4);}
+.expand-note-text strong{color:var(--gold3);}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid var(--gold)44;margin-top:20px;}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.ind-card:nth-child(1){animation-delay:.02s}.ind-card:nth-child(2){animation-delay:.05s}
+.ind-card:nth-child(3){animation-delay:.08s}.ind-card:nth-child(4){animation-delay:.11s}
+.ind-card:nth-child(5){animation-delay:.14s}.ind-card:nth-child(6){animation-delay:.17s}
+.ind-card:nth-child(7){animation-delay:.2s}.ind-card:nth-child(8){animation-delay:.23s}
+.ind-card:nth-child(9){animation-delay:.26s}.ind-card:nth-child(10){animation-delay:.29s}
+.ind-card:nth-child(11){animation-delay:.32s}.ind-card:nth-child(12){animation-delay:.35s}
+.ind-card:nth-child(13){animation-delay:.38s}.ind-card:nth-child(14){animation-delay:.41s}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../">← 賢者の本棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">業種一覧</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-ornament">TSE PRIME — INDUSTRY DATABASE</div>
+  <h1 class="hero-title">
+    東証プライム 業種一覧
+    <em>Industry Navigator · 業種から企業へ</em>
+  </h1>
+  <p class="hero-sub">
+    業種の特性を理解し、競争構造と代表企業を把握する。<br>
+    トップダウンの企業分析の出発点。
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num" id="statSectors">14</div>
+      <div class="hero-stat-label">SECTORS</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">1,600+</div>
+      <div class="hero-stat-label">PRIME LISTED</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" id="statReady">0</div>
+      <div class="hero-stat-label">ANALYZED</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FILTER BAR ── -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">FILTER</span>
+    <div class="filter-pills">
+      <button class="fpill active" onclick="filterIndustries('all')">すべて</button>
+      <button class="fpill" onclick="filterIndustries('tech')">テクノロジー</button>
+      <button class="fpill" onclick="filterIndustries('manufacturing')">製造業</button>
+      <button class="fpill" onclick="filterIndustries('finance')">金融</button>
+      <button class="fpill" onclick="filterIndustries('consumer')">消費・サービス</button>
+      <button class="fpill" onclick="filterIndustries('infra')">インフラ・建設</button>
+    </div>
+    <span class="filter-count" id="filterCount">14 業種</span>
+  </div>
+</div>
+
+<!-- ── GRID ── -->
+<div class="grid-wrap">
+  <div class="grid" id="industriesGrid"></div>
+
+  <div class="expand-note">
+    <div class="expand-note-icon">📋</div>
+    <div class="expand-note-text">
+      各業種の詳細ページ（銘柄一覧・業種特性・分析視点）は順次公開予定です。<strong>業種カードの「詳細を見る」</strong>から将来のページへアクセスできるようになります。企業分析テンプレートと組み合わせることで、業種を横断した比較分析が可能になります。
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">長期投資と思考のライブラリ</div>
+  <div>
+    <a href="../">← 賢者の本棚（書籍・名言集）</a>　·
+    <a href="../principles/">私の投資原則</a>　·
+    <a href="../analysis-template/">企業分析テンプレート</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+// ══════════════════════════════════════════════
+// 業種データ — ここを編集・追加するだけで拡張できます
+// ══════════════════════════════════════════════
+const INDUSTRIES = [
+  {
+    id: "it-telecom",
+    code: "SEC-33",
+    name: "情報・通信業",
+    nameEn: "Information & Communication",
+    group: "tech",
+    desc: "SaaS・通信インフラ・ITサービス・メディアを含む広義の情報産業。スイッチングコストやネットワーク効果によるmoatが見られる業種。",
+    companies: ["NTT", "KDDI", "ソフトバンク", "サイボウズ", "富士通"],
+    ready: false,
+    path: "it-telecom/"
+  },
+  {
+    id: "electronics",
+    code: "SEC-36",
+    name: "電気機器",
+    nameEn: "Electric Appliances",
+    group: "tech",
+    desc: "半導体・産業機器・家電・センサーなどを含む日本の製造業の中核。グローバルニッチ企業が多く、B2Bの参入障壁が高い業種が多い。",
+    companies: ["ソニー", "キーエンス", "日立", "信越半導体", "オムロン"],
+    ready: false,
+    path: "electronics/"
+  },
+  {
+    id: "machinery",
+    code: "SEC-35",
+    name: "機械",
+    nameEn: "Machinery",
+    group: "manufacturing",
+    desc: "工作機械・産業用ロボット・農機・建機など。技術蓄積と顧客との長期関係がmoatになる。グローバル競争力を持つ企業が多い。",
+    companies: ["ファナック", "小松製作所", "DMG森精機", "ダイキン"],
+    ready: false,
+    path: "machinery/"
+  },
+  {
+    id: "chemicals",
+    code: "SEC-30",
+    name: "化学",
+    nameEn: "Chemicals",
+    group: "manufacturing",
+    desc: "素材・特殊化学品・プラスチック・農薬など。参入障壁の高い特殊化学品分野に長期的な競争優位を持つ企業が存在する。",
+    companies: ["信越化学", "旭化成", "三菱ケミカル", "日本ペイント"],
+    ready: false,
+    path: "chemicals/"
+  },
+  {
+    id: "pharma",
+    code: "SEC-31",
+    name: "医薬品",
+    nameEn: "Pharmaceutical",
+    group: "manufacturing",
+    desc: "新薬・ジェネリック・医療機器を含む。特許期間中の独占収益と膨大なR&D投資が特徴。パテントクリフリスクを理解することが重要。",
+    companies: ["武田薬品", "エーザイ", "第一三共", "中外製薬"],
+    ready: false,
+    path: "pharma/"
+  },
+  {
+    id: "real-estate",
+    code: "SEC-40",
+    name: "不動産業",
+    nameEn: "Real Estate",
+    group: "infra",
+    desc: "ディベロッパー・REITスポンサー・管理会社を含む。立地の希少性と開発能力がmoatになる。金利動向との連動性が高い業種。",
+    companies: ["三井不動産", "住友不動産", "三菱地所", "東急不動産"],
+    ready: false,
+    path: "real-estate/"
+  },
+  {
+    id: "wholesale",
+    code: "SEC-43",
+    name: "卸売業",
+    nameEn: "Wholesale Trade",
+    group: "consumer",
+    desc: "総合商社・専門商社を含む。情報・ネットワーク・資本を組み合わせたビジネスモデル。バフェットが注目した日本の総合商社の資本配分も注目。",
+    companies: ["三菱商事", "伊藤忠商事", "三井物産", "住友商事"],
+    ready: false,
+    path: "wholesale/"
+  },
+  {
+    id: "retail",
+    code: "SEC-44",
+    name: "小売業",
+    nameEn: "Retail Trade",
+    group: "consumer",
+    desc: "コンビニ・スーパー・専門店・ECなど消費者接点を持つ業種。ブランド・立地・規模の経済がmoatになることが多い。",
+    companies: ["ファーストリテイリング", "セブン&アイ", "イオン", "MonotaRO"],
+    ready: false,
+    path: "retail/"
+  },
+  {
+    id: "services",
+    code: "SEC-45",
+    name: "サービス業",
+    nameEn: "Services",
+    group: "consumer",
+    desc: "人材・広告・外食・情報サービス・SaaSなど多様。スイッチングコストやネットワーク効果によるmoatが見られるサービスが多い。",
+    companies: ["リクルート", "電通", "パーソルHD", "サイバーエージェント"],
+    ready: false,
+    path: "services/"
+  },
+  {
+    id: "banking",
+    code: "SEC-07",
+    name: "銀行業",
+    nameEn: "Banks",
+    group: "finance",
+    desc: "メガバンク・地方銀行・信託銀行を含む。規模の経済と顧客基盤がmoatになる一方、規制環境と金利動向の影響を強く受ける。",
+    companies: ["三菱UFJ", "三井住友FG", "みずほFG", "ゆうちょ銀行"],
+    ready: false,
+    path: "banking/"
+  },
+  {
+    id: "insurance",
+    code: "SEC-08",
+    name: "保険業",
+    nameEn: "Insurance",
+    group: "finance",
+    desc: "損保・生保を含む。フロートを運用するビジネスモデルはバフェットが高く評価。規模・ブランド・販売網がmoatになる。",
+    companies: ["東京海上HD", "第一生命", "MS&ADインシュアランス"],
+    ready: false,
+    path: "insurance/"
+  },
+  {
+    id: "automotive",
+    code: "SEC-38",
+    name: "輸送用機器",
+    nameEn: "Transportation Equipment",
+    group: "manufacturing",
+    desc: "自動車・二輪・航空機部品など。EV・自動運転の技術転換が業界全体のmoatを再定義しつつある重要な変革期にある。",
+    companies: ["トヨタ", "ホンダ", "デンソー", "アイシン"],
+    ready: false,
+    path: "automotive/"
+  },
+  {
+    id: "construction",
+    code: "SEC-02",
+    name: "建設業",
+    nameEn: "Construction",
+    group: "infra",
+    desc: "ゼネコン・サブコン・住宅・インフラ整備を含む。技術力・施工実績・顧客との長期関係がmoatになる。受注残高が将来収益の先行指標。",
+    companies: ["大林組", "鹿島建設", "清水建設", "大和ハウス"],
+    ready: false,
+    path: "construction/"
+  },
+  {
+    id: "food",
+    code: "SEC-09",
+    name: "食料品",
+    nameEn: "Foods",
+    group: "consumer",
+    desc: "食品メーカー・飲料・調味料を含む。ブランドと販売チャネルがmoatになる。生活必需品としての安定収益と、原材料コストリスクのバランスが重要。",
+    companies: ["日清食品", "明治HD", "キッコーマン", "味の素"],
+    ready: false,
+    path: "food/"
+  }
+];
+
+// ══════════════════════════════════════════════
+// レンダリング
+// ══════════════════════════════════════════════
+let currentFilter = 'all';
+
+function renderIndustries(filter) {
+  const grid = document.getElementById('industriesGrid');
+  const filtered = filter === 'all' ? INDUSTRIES : INDUSTRIES.filter(i => i.group === filter);
+  document.getElementById('filterCount').textContent = filtered.length + ' 業種';
+
+  grid.innerHTML = filtered.map((ind, i) => `
+    <div class="ind-card" data-ready="${ind.ready}" data-group="${ind.group}" style="animation-delay:${i * 0.03}s">
+      <div class="ind-header">
+        <div class="ind-top">
+          <span class="ind-code">${ind.code}</span>
+          <span class="ind-status ${ind.ready ? 'ready' : 'soon'}">${ind.ready ? '公開中' : '準備中'}</span>
+        </div>
+        <div class="ind-name">${ind.name}</div>
+        <div class="ind-name-en">${ind.nameEn}</div>
+      </div>
+      <div class="ind-body">
+        <div class="ind-desc">${ind.desc}</div>
+        <div class="ind-companies">
+          ${ind.companies.map(c => `<span class="ind-company">${c}</span>`).join('')}
+        </div>
+      </div>
+      <div class="ind-footer">
+        <span class="ind-meta">${ind.companies.length}+ 代表企業</span>
+        ${ind.ready
+          ? `<a class="ind-link" href="${ind.path}">詳細を見る →</a>`
+          : `<span class="ind-link disabled">詳細は準備中</span>`
+        }
+      </div>
+    </div>
+  `).join('');
+
+  // 統計更新
+  const readyCount = INDUSTRIES.filter(i => i.ready).length;
+  document.getElementById('statReady').textContent = readyCount;
+  document.getElementById('statSectors').textContent = INDUSTRIES.length;
+}
+
+function filterIndustries(group) {
+  currentFilter = group;
+  document.querySelectorAll('.fpill').forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+  renderIndustries(group);
+}
+
+// 初期表示
+renderIndustries('all');
+
+// スクロールトップ
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 200);
+});
+</script>
+</body>
+</html>

@@ -361,6 +361,36 @@ body::before{
 }
 .welcome-link:hover{background:var(--gold2);color:var(--ink);border-color:var(--gold2)}
 
+/* ── INDUSTRY NAV ── */
+.industry-nav{
+  background:var(--ink2);
+  border-bottom:1px solid var(--gold)22;
+  padding:0 20px;
+}
+.industry-nav-inner{
+  max-width:860px;margin:0 auto;
+  display:flex;align-items:center;gap:14px;
+  padding:14px 0;
+}
+.industry-nav-icon{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(139,105,20,.15);border:1px solid var(--gold)33;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.industry-nav-text{flex:1;}
+.industry-nav-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:3px;}
+.industry-nav-body{font-family:var(--serif);font-size:.84rem;color:var(--parch3);line-height:1.5;}
+.industry-nav-body strong{color:var(--parch);}
+.industry-nav-link{
+  display:inline-flex;align-items:center;gap:5px;
+  background:transparent;border:1px solid var(--gold)44;
+  color:var(--gold3);font-family:var(--mono);font-size:.62rem;
+  padding:6px 14px;text-decoration:none;border-radius:2px;
+  white-space:nowrap;flex-shrink:0;transition:all .2s;letter-spacing:.06em;
+}
+.industry-nav-link:hover{background:var(--gold2);color:var(--ink);border-color:var(--gold2);}
+
 /* ── FLAGSHIP ARTICLE ── */
 .flagship{
   background:var(--parch2);
@@ -457,6 +487,19 @@ body::before{
       <div class="welcome-body">このサイトは<strong>長期投資と思考のライブラリ</strong>です。銘柄推薦ではなく、投資家の判断基準を積み上げる知的アーカイブです。</div>
     </div>
     <a class="welcome-link" href="hajimete/">初めての方へ →</a>
+  </div>
+</div>
+
+<!-- ══════════════ INDUSTRY NAVIGATOR ══════════════ -->
+
+<div class="industry-nav">
+  <div class="industry-nav-inner">
+    <div class="industry-nav-icon">🏭</div>
+    <div class="industry-nav-text">
+      <div class="industry-nav-label">INDUSTRY DATABASE</div>
+      <div class="industry-nav-body"><strong>東証プライム 業種一覧</strong> — 業種の特性と代表企業をトップダウンで辿る</div>
+    </div>
+    <a class="industry-nav-link" href="industries/">業種を見る →</a>
   </div>
 </div>
 
