@@ -330,6 +330,37 @@ body::before{
 }
 .rb-btn:hover{background:var(--gold2)}
 
+/* ── WELCOME BANNER ── */
+.welcome-banner{
+  background:linear-gradient(135deg,var(--ink2) 0%,#2a1c0a 100%);
+  border-bottom:1px solid var(--gold)44;
+  padding:0 20px;
+}
+.welcome-inner{
+  max-width:860px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;
+  padding:18px 0;
+}
+.welcome-icon{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--gold)18;border:1px solid var(--gold)44;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;flex-shrink:0;
+}
+.welcome-text{flex:1}
+.welcome-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.15em;margin-bottom:4px}
+.welcome-body{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:1.6}
+.welcome-body strong{color:var(--parch);font-weight:600}
+.welcome-link{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold)22;border:1px solid var(--gold)55;
+  color:var(--gold4);font-family:var(--serif);font-size:.8rem;
+  padding:8px 16px;text-decoration:none;border-radius:2px;
+  white-space:nowrap;flex-shrink:0;transition:all .2s;
+  letter-spacing:.04em;
+}
+.welcome-link:hover{background:var(--gold2);color:var(--ink);border-color:var(--gold2)}
+
 /* ── FOOTER ── */
 .footer{
   background:var(--ink);color:var(--parch4);
@@ -386,6 +417,19 @@ body::before{
     <button class="hero-tab active" onclick="showSection('books')">📚 推薦図書</button>
     <button class="hero-tab" onclick="showSection('quotes')">💬 名言集</button>
     <button class="hero-tab" onclick="showSection('reading')">📖 読書記録</button>
+  </div>
+</div>
+
+<!-- ══════════════ WELCOME BANNER ══════════════ -->
+
+<div class="welcome-banner">
+  <div class="welcome-inner">
+    <div class="welcome-icon">📖</div>
+    <div class="welcome-text">
+      <div class="welcome-label">FIRST TIME HERE?</div>
+      <div class="welcome-body">このサイトは<strong>長期投資と思考のライブラリ</strong>です。銘柄推薦ではなく、投資家の判断基準を積み上げる知的アーカイブです。</div>
+    </div>
+    <a class="welcome-link" href="hajimete/">初めての方へ →</a>
   </div>
 </div>
 
