@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="バリュー投資の図書館｜Munger・Buffett・Fisher"/>
+<meta property="og:description" content="チャーリー・マンガー、ウォーレン・バフェット、フィリップ・フィッシャーの推薦書籍と名言集。Amazon直リンク付き。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>バリュー投資の図書館｜Munger · Buffett · Fisher</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --ink:    #1a1208;
+  --ink2:   #2d2010;
+  --ink3:   #4a3520;
+  --parch:  #f5ede0;
+  --parch2: #efe4d0;
+  --parch3: #e8d8be;
+  --parch4: #dfc9a8;
+  --gold:   #8b6914;
+  --gold2:  #b8900a;
+  --gold3:  #d4aa22;
+  --gold4:  #f0cc55;
+  --rust:   #8b3a1a;
+  --rust2:  #c05020;
+  --green:  #2a4a1a;
+  --green2: #3d6828;
+  --green3: #5a8a3a;
+  --blue:   #1a2a4a;
+  --blue2:  #2a3d6a;
+  --serif:  'Cormorant Garamond', 'Noto Serif JP', serif;
+  --jp:     'Noto Serif JP', 'Cormorant Garamond', serif;
+  --mono:   'DM Mono', monospace;
+  --shadow: 0 4px 24px rgba(26,18,8,.18);
+  --shadow2:0 8px 48px rgba(26,18,8,.28);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{
+  font-family:var(--jp);
+  background:var(--parch);
+  color:var(--ink);
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* ── Grain texture overlay ── */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:1000;opacity:.5;
+}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg, var(--ink) 0%, var(--ink2) 40%, #3a2510 100%);
+  color:var(--parch);
+  padding:60px 24px 48px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:3px solid var(--gold);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,144,10,.12) 0%, transparent 70%);
+}
+.hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold3),transparent);
+}
+.hero-ornament{
+  font-family:var(--serif);font-size:1.1rem;color:var(--gold3);
+  letter-spacing:.35em;margin-bottom:18px;opacity:.8;
+}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,6vw,3.6rem);
+  font-weight:700;line-height:1.12;
+  color:var(--parch);
+  margin-bottom:8px;
+  text-shadow:0 2px 20px rgba(212,170,34,.25);
+}
+.hero-title em{
+  font-style:italic;color:var(--gold4);
+  display:block;font-size:.72em;letter-spacing:.04em;
+}
+.hero-sub{
+  font-size:.88rem;color:var(--parch3);
+  font-weight:300;letter-spacing:.06em;
+  margin-bottom:28px;line-height:1.7;
+}
+.hero-tabs{
+  display:flex;justify-content:center;gap:6px;flex-wrap:wrap;
+}
+.hero-tab{
+  padding:8px 20px;border-radius:2px;
+  background:transparent;border:1px solid var(--gold)66;
+  color:var(--parch3);font-family:var(--serif);font-size:.85rem;
+  letter-spacing:.06em;cursor:pointer;transition:all .2s;
+}
+.hero-tab.active{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:600}
+.hero-tab:hover:not(.active){background:var(--gold)22;border-color:var(--gold);color:var(--gold4)}
+
+/* ── FEATURED MUNGER QUOTE ── */
+.featured-quote{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  color:var(--parch);
+  padding:36px 28px;
+  margin:0;
+  border-bottom:2px solid var(--gold)44;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:all .3s;
+}
+.featured-quote:hover{background:linear-gradient(135deg,var(--ink2) 0%,#3a2510 100%)}
+.featured-quote::before{
+  content:'\201C';
+  position:absolute;top:-10px;left:20px;
+  font-family:var(--serif);font-size:8rem;
+  color:var(--gold3);opacity:.12;line-height:1;pointer-events:none;
+}
+.fq-label{
+  font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;
+  color:var(--gold3);margin-bottom:14px;
+}
+.fq-text{
+  font-family:var(--serif);font-size:clamp(1.05rem,3vw,1.35rem);
+  font-style:italic;line-height:1.72;color:var(--parch);
+  margin-bottom:14px;
+}
+.fq-author{
+  font-family:var(--mono);font-size:.62rem;color:var(--gold3);
+  letter-spacing:.08em;text-align:right;
+}
+.fq-hint{font-size:.58rem;color:var(--ink3);text-align:center;margin-top:8px;opacity:.6}
+
+/* ── SECTION ── */
+.section{padding:40px 20px;max-width:860px;margin:0 auto}
+.section-header{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid var(--parch4)}
+.section-num{font-family:var(--mono);font-size:.58rem;color:var(--gold2);letter-spacing:.15em}
+.section-title{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink)}
+.section-sub{font-size:.72rem;color:var(--ink3);margin-left:auto;letter-spacing:.04em}
+
+/* ── INVESTOR PROFILE ── */
+.investor-card{
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-radius:2px;padding:22px;margin-bottom:28px;
+  box-shadow:var(--shadow);
+  border-left:4px solid var(--gold2);
+  position:relative;overflow:hidden;
+}
+.investor-card.munger{border-left-color:var(--gold2)}
+.investor-card.buffett{border-left-color:var(--rust)}
+.investor-card.fisher{border-left-color:var(--green2)}
+.inv-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.inv-avatar{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:1.5rem;font-weight:700;
+  flex-shrink:0;border:2px solid;
+}
+.munger .inv-avatar{background:var(--gold)18;color:var(--gold2);border-color:var(--gold2)}
+.buffett .inv-avatar{background:var(--rust)18;color:var(--rust2);border-color:var(--rust)}
+.fisher .inv-avatar{background:var(--green)18;color:var(--green2);border-color:var(--green2)}
+.inv-info{flex:1}
+.inv-name{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+.inv-dates{font-family:var(--mono);font-size:.58rem;color:var(--ink3);margin-bottom:6px}
+.inv-bio{font-size:.78rem;line-height:1.75;color:var(--ink2)}
+.inv-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.inv-tag{font-size:.58rem;padding:2px 8px;border-radius:10px;border:1px solid}
+.munger .inv-tag{background:var(--gold)12;color:var(--gold2);border-color:var(--gold)44}
+.buffett .inv-tag{background:var(--rust)12;color:var(--rust2);border-color:var(--rust)44}
+.fisher .inv-tag{background:var(--green)12;color:var(--green2);border-color:var(--green)44}
+
+/* ── BOOK GRID ── */
+.book-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:520px){.book-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:760px){.book-grid{grid-template-columns:repeat(3,1fr)}}
+
+.book-card{
+  background:var(--parch2);
+  border:1px solid var(--parch4);
+  border-radius:2px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:all .25s;
+  text-decoration:none;
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.book-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow2);
+  border-color:var(--gold2)66;
+}
+.book-spine{
+  height:5px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+}
+.book-spine.munger{background:linear-gradient(90deg,var(--gold),var(--gold3))}
+.book-spine.buffett{background:linear-gradient(90deg,var(--rust),var(--rust2))}
+.book-spine.fisher{background:linear-gradient(90deg,var(--green),var(--green2))}
+.book-cover{
+  padding:18px 16px 12px;
+  flex:1;display:flex;flex-direction:column;
+}
+.book-author-tag{
+  font-family:var(--mono);font-size:.54rem;letter-spacing:.12em;
+  margin-bottom:8px;
+}
+.book-title{
+  font-family:var(--serif);font-size:1.0rem;font-weight:700;
+  color:var(--ink);line-height:1.38;margin-bottom:6px;flex:1;
+}
+.book-title-jp{font-size:.78rem;font-weight:400;color:var(--ink2);margin-bottom:8px;line-height:1.5}
+.book-desc{font-size:.72rem;color:var(--ink3);line-height:1.68;margin-bottom:12px}
+.book-stars{color:var(--gold3);font-size:.75rem;letter-spacing:.05em;margin-bottom:8px}
+.book-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.book-badge{font-size:.55rem;padding:2px 7px;border-radius:10px;background:var(--parch3);color:var(--ink3);border:1px solid var(--parch4)}
+.book-badge.must{background:var(--gold)22;color:var(--gold2);border-color:var(--gold)44;font-weight:600}
+.book-badge.reading{background:var(--green)18;color:var(--green2);border-color:var(--green)44;font-weight:600}
+.book-cta{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:9px 14px;margin:0 16px 16px;
+  background:var(--ink);color:var(--parch);
+  border-radius:2px;font-size:.72rem;font-weight:500;
+  text-decoration:none;letter-spacing:.04em;
+  transition:all .2s;border:1px solid transparent;
+}
+.book-cta:hover{background:var(--gold2);color:var(--ink)}
+
+/* ── QUOTES SECTION ── */
+.quotes-grid{display:flex;flex-direction:column;gap:0}
+.quote-card{
+  padding:24px 24px;
+  border-bottom:1px solid var(--parch4);
+  cursor:pointer;
+  transition:background .15s;
+  position:relative;
+  animation:fadeIn .4s ease both;
+}
+.quote-card:hover{background:var(--parch2)}
+.quote-card::before{
+  content:'\201C';
+  position:absolute;top:14px;left:14px;
+  font-family:var(--serif);font-size:2.8rem;
+  line-height:1;pointer-events:none;opacity:.12;
+}
+.q-text{
+  font-family:var(--serif);
+  font-size:clamp(.9rem,2.5vw,1.08rem);
+  font-style:italic;line-height:1.82;
+  color:var(--ink);margin-bottom:12px;
+  padding-left:20px;
+}
+.q-footer{display:flex;align-items:center;gap:8px;padding-left:20px}
+.q-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.q-author{font-family:var(--mono);font-size:.6rem;color:var(--ink3);letter-spacing:.06em}
+.q-source{font-size:.6rem;color:var(--gold2);font-style:italic}
+.q-fav{
+  margin-left:auto;background:none;border:none;cursor:pointer;
+  font-size:1rem;transition:transform .2s;padding:4px;color:var(--parch4);
+}
+.q-fav.active{color:var(--gold3)}
+.q-fav:hover{transform:scale(1.3)}
+
+/* ── CURRENTLY READING ── */
+.reading-card{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  color:var(--parch);
+  border-radius:2px;padding:28px;margin-bottom:28px;
+  border:1px solid var(--gold)33;
+  box-shadow:var(--shadow2);
+  position:relative;overflow:hidden;
+}
+.reading-card::after{
+  content:'';position:absolute;top:0;right:0;
+  width:120px;height:120px;
+  background:radial-gradient(circle at 100% 0%,var(--gold)14,transparent 70%);
+}
+.rc-label{font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;color:var(--gold3);margin-bottom:14px}
+.rc-title{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--parch);margin-bottom:4px}
+.rc-sub{font-size:.75rem;color:var(--parch3);margin-bottom:14px;font-style:italic}
+.rc-note{font-size:.8rem;line-height:1.75;color:var(--parch2);border-left:2px solid var(--gold3);padding-left:14px;margin-bottom:18px}
+.rc-progress{margin-bottom:16px}
+.rc-prog-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.58rem;color:var(--gold3);margin-bottom:5px}
+.rc-prog-track{height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.rc-prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold4));border-radius:2px;animation:grow 1.2s ease both}
+.rc-link{
+  display:inline-flex;align-items:center;gap:6px;padding:9px 18px;
+  background:var(--gold);color:var(--ink);border-radius:2px;
+  text-decoration:none;font-size:.75rem;font-weight:600;
+  transition:all .2s;
+}
+.rc-link:hover{background:var(--gold3)}
+
+/* ── FILTER PILLS ── */
+.filter-wrap{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px}
+.filter-wrap::-webkit-scrollbar{display:none}
+.fpill{
+  white-space:nowrap;padding:5px 13px;border-radius:20px;
+  border:1px solid var(--parch4);background:var(--parch2);
+  color:var(--ink3);font-size:.65rem;cursor:pointer;transition:all .12s;
+  font-family:var(--serif);
+}
+.fpill.active{background:var(--ink);color:var(--gold4);border-color:var(--ink)}
+.fpill:hover:not(.active){border-color:var(--gold2);color:var(--gold2)}
+
+/* ── RANDOM QUOTE BANNER ── */
+.random-banner{
+  background:var(--parch3);border-top:1px solid var(--parch4);border-bottom:1px solid var(--parch4);
+  padding:20px 24px;display:flex;align-items:center;gap:12px;
+  cursor:pointer;transition:background .2s;
+}
+.random-banner:hover{background:var(--parch4)}
+.rb-icon{font-size:1.5rem;flex-shrink:0}
+.rb-text{font-family:var(--serif);font-size:.88rem;font-style:italic;color:var(--ink2);flex:1;line-height:1.6}
+.rb-btn{
+  padding:6px 14px;background:var(--ink);color:var(--parch);
+  border-radius:2px;font-size:.65rem;cursor:pointer;border:none;
+  font-family:var(--serif);white-space:nowrap;transition:all .15s;
+}
+.rb-btn:hover{background:var(--gold2)}
+
+/* ── FOOTER ── */
+.footer{
+  background:var(--ink);color:var(--parch4);
+  padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;
+  border-top:2px solid var(--gold)44;
+}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── READING PROGRESS TRACKER ── */
+.tracker{
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-radius:2px;padding:20px;margin-bottom:14px;
+}
+.tracker-title{font-family:var(--serif);font-size:1.0rem;font-weight:600;color:var(--ink);margin-bottom:14px}
+.tracker-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tracker-check{width:16px;height:16px;border-radius:2px;border:1px solid var(--parch4);background:var(--parch);cursor:pointer;flex-shrink:0;transition:all .15s;display:flex;align-items:center;justify-content:center;font-size:.6rem}
+.tracker-check.done{background:var(--gold2);border-color:var(--gold2);color:var(--ink)}
+.tracker-label{font-size:.75rem;color:var(--ink2);flex:1}
+.tracker-label.done{text-decoration:line-through;color:var(--ink3)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes grow{from{width:0}to{width:var(--target-width,60%)}}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{
+  position:fixed;bottom:24px;right:24px;z-index:100;
+  width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);
+  transition:all .2s;opacity:0;pointer-events:none;
+}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+
+<div class="hero">
+  <div class="hero-ornament">― THE VALUE INVESTOR'S LIBRARY ―</div>
+  <h1 class="hero-title">
+    賢者の本棚
+    <em>Munger · Buffett · Fisher</em>
+  </h1>
+  <p class="hero-sub">
+    バリュー投資の三巨人が残した書籍と言葉。<br>
+    読書こそが、最も確かな複利である。
+  </p>
+  <div class="hero-tabs">
+    <button class="hero-tab active" onclick="showSection('books')">📚 推薦図書</button>
+    <button class="hero-tab" onclick="showSection('quotes')">💬 名言集</button>
+    <button class="hero-tab" onclick="showSection('reading')">📖 読書記録</button>
+  </div>
+</div>
+
+<!-- ══════════════ FEATURED MUNGER QUOTE ══════════════ -->
+
+<div class="featured-quote" onclick="randomizeHero()">
+  <div class="fq-label">TODAY'S WISDOM — CHARLIE MUNGER</div>
+  <div class="fq-text" id="heroQuoteText">"素晴らしい企業を公正な価格で買うほうが、公正な企業を素晴らしい価格で買うよりはるかに良い。"</div>
+  <div class="fq-author" id="heroQuoteAuthor">— Charlie Munger</div>
+  <div class="fq-hint">タップで別の言葉へ ✦</div>
+</div>
+
+<!-- ══════════════ BOOKS SECTION ══════════════ -->
+
+<div id="booksSection">
+  <div class="section">
+
+<!-- Currently Reading -->
+<div class="reading-card">
+  <div class="rc-label">📖 NOW READING — あなたの現在の一冊</div>
+  <div class="rc-title">実践グレアム式バリュー投資</div>
+  <div class="rc-sub">チャーリー・マンガー推薦 · ジャネット・ロウ著</div>
+  <div class="rc-note">
+    グレアムの割安株戦略をマンガー流の「良い企業に集中投資する」哲学と融合させた一冊。
+    バークシャー・ハサウェイの成功の根幹にある思考法が、マンガー自身の言葉と共に詰まっている。
+    「ミスター・マーケット」の概念と、安全マージンという考え方が、あなたの投資を変える。
+  </div>
+  <div class="rc-progress">
+    <div class="rc-prog-label"><span>読書進捗</span><span>60%</span></div>
+    <div class="rc-prog-track"><div class="rc-prog-fill" style="--target-width:60%;width:60%"></div></div>
+  </div>
+  <a class="rc-link" href="https://www.amazon.co.jp/s?k=%E5%AE%9F%E8%B7%B5+%E3%82%B0%E3%83%AC%E3%82%A2%E3%83%A0+%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BC&tag=YOUR_ASSOCIATE_TAG" target="_blank" rel="noopener">
+    📦 Amazonで詳細を見る →
+  </a>
+</div>
+
+<!-- Charlie Munger Books -->
+<div class="section-header">
+  <span class="section-num">01</span>
+  <h2 class="section-title">Charlie Munger</h2>
+  <span class="section-sub">チャーリー・マンガー</span>
+</div>
+<div class="investor-card munger">
+  <div class="inv-head">
+    <div class="inv-avatar">CM</div>
+    <div class="inv-info">
+      <div class="inv-name">チャーリー・マンガー</div>
+      <div class="inv-dates">1924 – 2023 · バークシャー・ハサウェイ副会長</div>
+      <div class="inv-bio">
+        バフェットの「賢明なるパートナー」。グレアムの割安株戦略をより発展させ、
+        「素晴らしい企業を公正な価格で」という哲学を確立。心理学・歴史・科学など多分野からの
+        「多面的思考モデル（Mental Models）」を投資に応用した20世紀最高の思想家の一人。
+      </div>
+      <div class="inv-tags">
+        <span class="inv-tag">多面的思考</span>
+        <span class="inv-tag">逆張り思考</span>
+        <span class="inv-tag">集中投資</span>
+        <span class="inv-tag">長期保有</span>
+        <span class="inv-tag">心理バイアスの排除</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="book-grid">
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BC+%E3%83%97%E3%82%A2%E3%83%BC%E6%80%9D%E8%80%83%E6%B3%95" target="_blank" rel="noopener">
+    <div class="book-spine munger"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--gold2)">Charlie Munger</div>
+      <div class="book-title">Poor Charlie's Almanack</div>
+      <div class="book-title-jp">プアー・チャーリーズ・アルマナック</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">マンガーの講演・エッセイを集めた「バイブル」。多面的思考モデル、心理バイアス25種、人生哲学のすべてがここに。世界で最も読まれるべき投資書。</div>
+      <div class="book-meta">
+        <span class="book-badge must">必読</span>
+        <span class="book-badge">1000ページ超</span>
+        <span class="book-badge">英語版</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E5%AE%9F%E8%B7%B5+%E3%82%B0%E3%83%AC%E3%82%A2%E3%83%A0+%E3%83%90%E3%83%AA%E3%83%A5%E3%83%BC%E6%8A%95%E8%B3%87+%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BC" target="_blank" rel="noopener">
+    <div class="book-spine munger"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--gold2)">Janet Lowe（マンガー推薦）</div>
+      <div class="book-title">実践グレアム式バリュー投資</div>
+      <div class="book-title-jp">Value Investing Made Easy</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">あなたが今まさに読んでいる一冊。グレアムの教えをマンガーの哲学で昇華。「ミスター・マーケット」と「安全マージン」の本質を丁寧に解説。</div>
+      <div class="book-meta">
+        <span class="book-badge reading">📖 読書中</span>
+        <span class="book-badge must">マンガー推薦</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BC+%E4%BC%9D" target="_blank" rel="noopener">
+    <div class="book-spine munger"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--gold2)">Janet Lowe 著</div>
+      <div class="book-title">Damn Right!</div>
+      <div class="book-title-jp">チャーリー・マンガー伝</div>
+      <div class="book-stars">★★★★☆</div>
+      <div class="book-desc">マンガーの生涯と投資哲学の形成過程を追った伝記。なぜ彼が独特の多面的思考法を開発したのか、その人間としての物語が明かされる。</div>
+      <div class="book-meta">
+        <span class="book-badge must">必読</span>
+        <span class="book-badge">伝記</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E6%8A%95%E8%B3%87%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BC%E3%81%AE%E6%99%BA%E6%85%A7" target="_blank" rel="noopener">
+    <div class="book-spine munger"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--gold2)">Tren Griffin 著</div>
+      <div class="book-title">Charlie Munger: The Complete Investor</div>
+      <div class="book-title-jp">マンガーの投資術完全版</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">マンガーの投資原則を25の思考モデルに体系化した決定版。心理バイアス・機会費用・ミスター・マーケット。実践的で読みやすい入門書にして深書。</div>
+      <div class="book-meta">
+        <span class="book-badge must">次の一冊</span>
+        <span class="book-badge">体系的</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+</div>
+
+<!-- Buffett Books -->
+<div class="section-header" style="margin-top:40px">
+  <span class="section-num">02</span>
+  <h2 class="section-title">Warren Buffett</h2>
+  <span class="section-sub" style="color:var(--rust)">ウォーレン・バフェット</span>
+</div>
+<div class="investor-card buffett">
+  <div class="inv-head">
+    <div class="inv-avatar">WB</div>
+    <div class="inv-info">
+      <div class="inv-name">ウォーレン・バフェット</div>
+      <div class="inv-dates">1930 – · バークシャー・ハサウェイCEO · 世界有数の億万長者</div>
+      <div class="inv-bio">
+        「オマハの賢人」。グレアムに師事し割安株投資を学んだ後、マンガーの影響で「素晴らしい企業を長期保有する」スタイルに進化。
+        年平均20%超のリターンで60年以上市場を上回り続けた人類史上最高の投資家。
+        毎年書く株主への手紙は投資家必読の書。
+      </div>
+      <div class="inv-tags">
+        <span class="inv-tag">経済的優位性（堀）</span>
+        <span class="inv-tag">長期保有</span>
+        <span class="inv-tag">集中投資</span>
+        <span class="inv-tag">経営者の質重視</span>
+        <span class="inv-tag">消費者独占</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="book-grid">
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E8%B3%A2%E6%98%8E%E3%81%AA%E3%82%8B%E6%8A%95%E8%B3%87%E5%AE%B6+%E3%82%B0%E3%83%AC%E3%82%A2%E3%83%A0" target="_blank" rel="noopener">
+    <div class="book-spine buffett"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--rust2)">Benjamin Graham 著</div>
+      <div class="book-title">The Intelligent Investor</div>
+      <div class="book-title-jp">賢明なる投資家</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">バフェットが「投資で読んだ最高の本」と称する永遠の古典。ミスター・マーケット、安全マージン、防御的投資家と積極的投資家の概念。時代を超えた必読書。</div>
+      <div class="book-meta">
+        <span class="book-badge must">バフェット推薦No.1</span>
+        <span class="book-badge">古典</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%AB+%E3%83%90%E3%83%95%E3%82%A7%E3%83%83%E3%83%88" target="_blank" rel="noopener">
+    <div class="book-spine buffett"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--rust2)">Alice Schroeder 著</div>
+      <div class="book-title">The Snowball</div>
+      <div class="book-title-jp">スノーボール（バフェット伝）</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">バフェット唯一の公認伝記。2000ページに渡る圧倒的な内容。投資哲学の形成から人間関係まで、バフェットという人間の全てが明かされる。</div>
+      <div class="book-meta">
+        <span class="book-badge must">必読</span>
+        <span class="book-badge">公認伝記</span>
+        <span class="book-badge">2巻</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%83%90%E3%83%95%E3%82%A7%E3%83%83%E3%83%88+%E6%A0%AA%E4%B8%BB%E3%81%B8%E3%81%AE%E6%89%8B%E7%B4%99" target="_blank" rel="noopener">
+    <div class="book-spine buffett"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--rust2)">Warren Buffett 著</div>
+      <div class="book-title">Berkshire Letters to Shareholders</div>
+      <div class="book-title-jp">バフェットからの手紙</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">50年以上にわたる株主への手紙をまとめた書。毎年の投資判断、経済観、人生哲学。これを読まずしてバリュー投資は語れない永遠の教科書。</div>
+      <div class="book-meta">
+        <span class="book-badge must">年次必読</span>
+        <span class="book-badge">無料公開</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%83%90%E3%83%95%E3%82%A7%E3%83%83%E3%83%88%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%8A%E3%83%BC%E3%82%BA%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB" target="_blank" rel="noopener">
+    <div class="book-spine buffett"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--rust2)">Robert Hagstrom 著</div>
+      <div class="book-title">The Warren Buffett Way</div>
+      <div class="book-title-jp">バフェットの投資原則</div>
+      <div class="book-stars">★★★★☆</div>
+      <div class="book-desc">バフェットの実際の投資事例を詳細分析。コカコーラ・ワシントンポスト・ジレットなど個別銘柄の選定基準を解剖。実践的なバフェット入門書の決定版。</div>
+      <div class="book-meta">
+        <span class="book-badge">実践的</span>
+        <span class="book-badge">事例豊富</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AC%E3%83%B3%E3%83%BB%E3%83%90%E3%83%95%E3%82%A7%E3%83%83%E3%83%88+%E8%87%AA%E5%88%86+%E5%BD%B9%E5%93%A1" target="_blank" rel="noopener">
+    <div class="book-spine buffett"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--rust2)">Lawrence Cunningham 編</div>
+      <div class="book-title">The Essays of Warren Buffett</div>
+      <div class="book-title-jp">バフェット自身の言葉</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">株主への手紙からテーマ別に再編集した名著。コーポレートガバナンス、企業評価、会計、合併買収。バフェットの思考が体系的に理解できる。</div>
+      <div class="book-meta">
+        <span class="book-badge must">体系的理解</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+</div>
+
+<!-- Fisher Books -->
+<div class="section-header" style="margin-top:40px">
+  <span class="section-num">03</span>
+  <h2 class="section-title">Philip Fisher</h2>
+  <span class="section-sub" style="color:var(--green2)">フィリップ・フィッシャー</span>
+</div>
+<div class="investor-card fisher">
+  <div class="inv-head">
+    <div class="inv-avatar">PF</div>
+    <div class="inv-info">
+      <div class="inv-name">フィリップ・フィッシャー</div>
+      <div class="inv-dates">1907 – 2004 · 成長株投資の父</div>
+      <div class="inv-bio">
+        「バフェットの投資哲学の85%はグレアム、15%はフィッシャー」とバフェット自身が語る成長株投資の先駆者。
+        「スカットルバット（情報収集）」手法と15の投資原則で知られる。
+        モトローラに数十年保有し続けた「良い会社を買って永遠に持ち続ける」手法の開祖。
+      </div>
+      <div class="inv-tags">
+        <span class="inv-tag">成長株投資</span>
+        <span class="inv-tag">質的分析</span>
+        <span class="inv-tag">スカットルバット</span>
+        <span class="inv-tag">経営陣の質</span>
+        <span class="inv-tag">研究開発重視</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="book-grid">
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E6%88%90%E9%95%B7%E6%A0%AA%E6%8A%95%E8%B3%87%E3%81%AE%E5%8F%A4%E5%85%B8+%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A3%E3%83%BC" target="_blank" rel="noopener">
+    <div class="book-spine fisher"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--green2)">Philip Fisher 著</div>
+      <div class="book-title">Common Stocks and Uncommon Profits</div>
+      <div class="book-title-jp">フィッシャーの「超」成長株投資</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">投資書の古典中の古典。「15の投資原則」と「スカットルバット手法」。バフェットが「投資書で最も重要な一冊」と称した書。1958年刊行も今なお色褪せない。</div>
+      <div class="book-meta">
+        <span class="book-badge must">バフェット推薦</span>
+        <span class="book-badge">1958年古典</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A3%E3%83%BC+%E4%BF%9D%E5%AE%88%E7%9A%84%E6%8A%95%E8%B3%87%E5%AE%B6" target="_blank" rel="noopener">
+    <div class="book-spine fisher"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--green2)">Philip Fisher 著</div>
+      <div class="book-title">Conservative Investors Sleep Well</div>
+      <div class="book-title-jp">保守的投資家は夜ぐっすり眠れる</div>
+      <div class="book-stars">★★★★☆</div>
+      <div class="book-desc">「真の安全性とは何か」を問い直す書。低PBRの割安株より、競争優位を持つ成長企業こそが最も安全な投資先という逆説を説く。</div>
+      <div class="book-meta">
+        <span class="book-badge">リスク管理</span>
+        <span class="book-badge">成長株</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A3%E3%83%BC+%E6%8A%95%E8%B3%87%E3%83%8E%E3%83%BC%E3%83%88" target="_blank" rel="noopener">
+    <div class="book-spine fisher"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--green2)">Philip Fisher 著</div>
+      <div class="book-title">Developing an Investment Philosophy</div>
+      <div class="book-title-jp">フィッシャーの投資哲学</div>
+      <div class="book-stars">★★★★☆</div>
+      <div class="book-desc">フィッシャーが後年まとめた投資哲学の集大成。半世紀の経験から蒸留された知恵。「なぜ自分だけの投資哲学を持つ必要があるか」を語る。</div>
+      <div class="book-meta">
+        <span class="book-badge">哲学書</span>
+      </div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+</div>
+
+<!-- 補足良書 -->
+<div class="section-header" style="margin-top:40px">
+  <span class="section-num">04</span>
+  <h2 class="section-title">関連推薦図書</h2>
+  <span class="section-sub">三人が推薦・影響を受けた本</span>
+</div>
+<div class="book-grid">
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E8%AD%B0%E4%BC%9A%E9%8C%B2+%E6%9C%AC+%E3%83%99%E3%83%B3%E3%82%B8%E3%83%A3%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%AC%E3%82%A2%E3%83%A0" target="_blank" rel="noopener">
+    <div class="book-spine" style="background:linear-gradient(90deg,#4a3520,#8b6914)"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--gold2)">Benjamin Graham 著</div>
+      <div class="book-title">Security Analysis</div>
+      <div class="book-title-jp">証券分析（グレアム）</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">バリュー投資の聖典。1934年初版。財務諸表分析・債券分析・株式評価の方法論を確立した「投資分析の父」グレアムの最高傑作。900ページの大作。</div>
+      <div class="book-meta"><span class="book-badge must">全ての源</span><span class="book-badge">上級</span></div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%82%AA%E3%83%8D%E3%83%83%E3%83%88+%E6%8A%95%E8%B3%87%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB" target="_blank" rel="noopener">
+    <div class="book-spine" style="background:linear-gradient(90deg,#2a4a1a,#5a8a3a)"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--green2)">Joel Greenblatt 著</div>
+      <div class="book-title">The Little Book That Beats the Market</div>
+      <div class="book-title-jp">株デビューする前に知っておくべき「魔法の公式」</div>
+      <div class="book-stars">★★★★☆</div>
+      <div class="book-desc">ROCEとEV/EBITを使った「マジック・フォーミュラ」で市場を上回り続ける手法。マンガーの「素晴らしい企業を割安に買う」を数式化した入門書。</div>
+      <div class="book-meta"><span class="book-badge">定量的</span><span class="book-badge">入門書</span></div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+
+  <a class="book-card" href="https://www.amazon.co.jp/s?k=%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BC%E6%80%9D%E8%80%83%E6%B3%95+%E5%BF%83%E7%90%86" target="_blank" rel="noopener">
+    <div class="book-spine" style="background:linear-gradient(90deg,#1a2a4a,#2a3d6a)"></div>
+    <div class="book-cover">
+      <div class="book-author-tag" style="color:var(--blue2)">Robert Cialdini 著</div>
+      <div class="book-title">Influence</div>
+      <div class="book-title-jp">影響力の武器</div>
+      <div class="book-stars">★★★★★</div>
+      <div class="book-desc">マンガーが「投資家必読の心理学書」と推薦。返報性・コミットメント・社会的証明・権威など6つの影響力の原則。市場心理を理解するための最重要書。</div>
+      <div class="book-meta"><span class="book-badge must">マンガー推薦</span><span class="book-badge">心理学</span></div>
+    </div>
+    <div class="book-cta">📦 Amazonで購入</div>
+  </a>
+</div>
+
+  </div>
+</div>
+
+<!-- ══════════════ QUOTES SECTION ══════════════ -->
+
+<div id="quotesSection" style="display:none">
+  <div class="random-banner" onclick="showRandomQuote()">
+    <div class="rb-icon">🎲</div>
+    <div class="rb-text" id="randomBannerText">「読書は最も確かな自己投資だ。複利で効いてくる。」— Charlie Munger</div>
+    <button class="rb-btn">別の言葉へ</button>
+  </div>
+
+  <div class="section" style="padding-top:28px">
+    <div class="section-header">
+      <span class="section-num">✦</span>
+      <h2 class="section-title">賢者の言葉</h2>
+    </div>
+
+<div class="filter-wrap" id="quoteFilters">
+  <button class="fpill active" onclick="filterQuotes('all')">すべて</button>
+  <button class="fpill" onclick="filterQuotes('munger')">マンガー</button>
+  <button class="fpill" onclick="filterQuotes('buffett')">バフェット</button>
+  <button class="fpill" onclick="filterQuotes('fisher')">フィッシャー</button>
+  <button class="fpill" onclick="filterQuotes('investing')">投資哲学</button>
+  <button class="fpill" onclick="filterQuotes('psychology')">心理・行動</button>
+  <button class="fpill" onclick="filterQuotes('life')">人生・思考</button>
+  <button class="fpill" onclick="filterQuotes('favorites')">⭐ お気に入り</button>
+</div>
+
+<div id="quotesContainer" class="quotes-grid"></div>
+
+  </div>
+</div>
+
+<!-- ══════════════ READING SECTION ══════════════ -->
+
+<div id="readingSection" style="display:none">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">📚</span>
+      <h2 class="section-title">読書記録</h2>
+      <span class="section-sub">Your Reading Journey</span>
+    </div>
+
+<div class="tracker">
+  <div class="tracker-title">📖 読了チェックリスト — マンガー推薦リスト</div>
+  <div id="checklistItems"></div>
+</div>
+
+<div style="background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:20px;margin-bottom:14px">
+  <div style="font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:12px">マンガー流 読書のすすめ方</div>
+  <div style="font-size:.78rem;line-height:1.85;color:var(--ink2)">
+    <p style="margin-bottom:8px">「私が知っている成功した人は、例外なく大量の読書家だ。バフェットは毎日500ページを読む。私もそうだ。知識は複利で積み上がる。」</p>
+    <p style="margin-bottom:8px">マンガーは単一の分野だけでなく、心理学・歴史学・物理学・生物学・経済学・文学など<strong>多分野にわたる読書</strong>を推奨した。</p>
+    <p>「一つの分野の専門家よりも、多くの分野を知る『ジェネラリスト』の方が複雑な問題を解決できる。これが私の<em>Mental Models（多面的思考）</em>の源泉だ。」</p>
+  </div>
+</div>
+
+<div style="background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:20px">
+  <div style="font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:14px">推奨読書順序（バリュー投資入門から上級へ）</div>
+  <div id="readingOrder"></div>
+</div>
+
+  </div>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+
+<footer class="footer">
+  <div class="footer-title">賢者の本棚 · Value Investor's Library</div>
+  <div>書籍情報・Amazonリンクは参考です。購入前に最新情報をご確認ください。</div>
+  <div>Powered by <strong>KABU LENS</strong> · <a href="#">投資スクリーナーへ戻る</a></div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- ══════════════ DATA & LOGIC ══════════════ -->
+
+<script>
+// ── QUOTES DATA ──
+const QUOTES = [
+  // MUNGER — 投資哲学
+  {id:1, person:"munger", name:"Charlie Munger", text:"素晴らしい企業を公正な価格で買うほうが、公正な企業を素晴らしい価格で買うよりはるかに良い。", source:"バークシャー株主総会", tags:["munger","investing"], fav:false},
+  {id:2, person:"munger", name:"Charlie Munger", text:"私たちは決して急いで買おうとは思わない。素晴らしい企業が適正な価格で手に入るまで、ただ待つだけだ。", source:"株主総会", tags:["munger","investing"], fav:false},
+  {id:3, person:"munger", name:"Charlie Munger", text:"株を買うとき、あなたはそのビジネスのオーナーになる。その事業が5年後、10年後にどうなっているかを考えよ。", source:"Poor Charlie's Almanack", tags:["munger","investing"], fav:false},
+  {id:4, person:"munger", name:"Charlie Munger", text:"インセンティブの力を決して過小評価してはいけない。人はインセンティブに従って行動する。それが人間の本質だ。", source:"Poor Charlie's Almanack", tags:["munger","psychology"], fav:false},
+  {id:5, person:"munger", name:"Charlie Munger", text:"逆から考えよ。常に逆から考えよ。問題を逆転させると、解決策が見えてくることが多い。", source:"Poor Charlie's Almanack", tags:["munger","life","psychology"], fav:false},
+  {id:6, person:"munger", name:"Charlie Munger", text:"私たちが成功したのは、難しい問題を解こうとしたからではない。簡単な問題を見つけて、それだけを解いたからだ。", source:"バークシャー株主総会", tags:["munger","life"], fav:false},
+  {id:7, person:"munger", name:"Charlie Munger", text:"一生に一度か二度しか訪れない素晴らしい機会がある。そのとき全力で賭けることのできる投資家だけが、大きな富を築く。", source:"Poor Charlie's Almanack", tags:["munger","investing"], fav:false},
+  {id:8, person:"munger", name:"Charlie Munger", text:"賢くなりたければ、なぜ愚かなのかを問い続けよ。愚かさの原因を知ることが、知恵への近道だ。", source:"Poor Charlie's Almanack", tags:["munger","life","psychology"], fav:false},
+  {id:9, person:"munger", name:"Charlie Munger", text:"あなたが稼いだ最初の10万ドルは苦しい。しかし最初の10万ドルさえ貯めれば、後は自動的についてくる。複利の魔法だ。", source:"インタビュー", tags:["munger","investing"], fav:false},
+  {id:10, person:"munger", name:"Charlie Munger", text:"私が読んだ本の中で最も重要なのは、人間の心理と判断の誤りに関するものだった。投資家として、これ以上に重要な知識はない。", source:"Poor Charlie's Almanack", tags:["munger","psychology"], fav:false},
+  {id:11, person:"munger", name:"Charlie Munger", text:"読書は最も確かな自己投資だ。知識は複利で効いてくる。毎日何かを学ばない日は、無駄にした日だと思え。", source:"バークシャー株主総会", tags:["munger","life"], fav:false},
+  {id:12, person:"munger", name:"Charlie Munger", text:"成功するためのシンプルな方法がある。あなたが見つけられる最高の考えを見つけ出し、それに反論しよ。もし反論できなければ、それが正しい考えだ。", source:"Poor Charlie's Almanack", tags:["munger","life"], fav:false},
+  {id:13, person:"munger", name:"Charlie Munger", text:"嫉妬は人間が持つ最も愚かな感情だ。嫉妬によって楽しくなることはない。ただ苦しくなるだけだ。", source:"バークシャー株主総会", tags:["munger","life","psychology"], fav:false},
+  {id:14, person:"munger", name:"Charlie Munger", text:"自分が何かを所有すれば、それを過大評価する傾向がある。これを保有効果という。投資家として最も注意すべき心理バイアスの一つだ。", source:"Poor Charlie's Almanack", tags:["munger","psychology","investing"], fav:false},
+  {id:15, person:"munger", name:"Charlie Munger", text:"私が長年の間に発見した最も確かな事実は、物事のほとんどは複数の要因によって引き起こされるということだ。単純な原因を求めるな。", source:"Poor Charlie's Almanack", tags:["munger","life"], fav:false},
+  {id:16, person:"munger", name:"Charlie Munger", text:"ウォーレンと私に長年に渡って最大の利益をもたらしたのは、間違いを犯したときに素早くそれを認め、修正する能力だった。", source:"バークシャー株主総会", tags:["munger","life","investing"], fav:false},
+  {id:17, person:"munger", name:"Charlie Munger", text:"あなたは、長期にわたり複利で運用できるような資産を保有すべきだ。複利は世界で最も強力な力だとアインシュタインも言った。", source:"インタビュー", tags:["munger","investing"], fav:false},
+  {id:18, person:"munger", name:"Charlie Munger", text:"私はいつも「このビジネスは競合他社が10億ドルを投じても打ち倒せないか？」と自問する。そのような企業だけを買う。", source:"バークシャー株主総会", tags:["munger","investing"], fav:false},
+
+  // BUFFETT
+  {id:20, person:"buffett", name:"Warren Buffett", text:"他人が貪欲なときに恐れ、他人が恐れているときに貪欲になれ。", source:"株主への手紙", tags:["buffett","investing","psychology"], fav:false},
+  {id:21, person:"buffett", name:"Warren Buffett", text:"株式市場は、活動的な投資家から忍耐強い投資家へとお金を移す装置だ。", source:"バークシャー年次報告書", tags:["buffett","investing"], fav:false},
+  {id:22, person:"buffett", name:"Warren Buffett", text:"リスクとは、自分が何をしているか分からないことから生まれる。", source:"バークシャー年次総会", tags:["buffett","investing"], fav:false},
+  {id:23, person:"buffett", name:"Warren Buffett", text:"10年間保有する意思がない株は、10分間でも保有すべきではない。", source:"株主への手紙", tags:["buffett","investing"], fav:false},
+  {id:24, person:"buffett", name:"Warren Buffett", text:"素晴らしいビジネスを合理的な価格で買う方が、合理的なビジネスを素晴らしい価格で買うよりずっと良い。", source:"1989年株主への手紙", tags:["buffett","investing"], fav:false},
+  {id:25, person:"buffett", name:"Warren Buffett", text:"私たちのお気に入りの保有期間は、永遠だ。", source:"株主への手紙", tags:["buffett","investing"], fav:false},
+  {id:26, person:"buffett", name:"Warren Buffett", text:"価格はあなたが払うもの。価値はあなたが得るものだ。", source:"バークシャー年次報告書", tags:["buffett","investing"], fav:false},
+  {id:27, person:"buffett", name:"Warren Buffett", text:"私は寝るとき、500ページの年次報告書を読む。知識は雪だるまのように積み重なっていく。", source:"インタビュー", tags:["buffett","life"], fav:false},
+  {id:28, person:"buffett", name:"Warren Buffett", text:"人生で最も重要な投資は、あなた自身への投資だ。誰もそれをあなたから奪えない。", source:"バークシャー株主総会", tags:["buffett","life"], fav:false},
+  {id:29, person:"buffett", name:"Warren Buffett", text:"経済的なお堀（モート）を持つ企業を買え。そのお堀が毎年広がっているかどうかを確認せよ。", source:"株主への手紙", tags:["buffett","investing"], fav:false},
+  {id:30, person:"buffett", name:"Warren Buffett", text:"あなたが尊敬する人のように行動せよ。そうすれば、やがてその人になる。", source:"バークシャー株主総会", tags:["buffett","life"], fav:false},
+  {id:31, person:"buffett", name:"Warren Buffett", text:"正直であることにコストはかからない。しかし不正直であることのコストは計り知れない。", source:"バークシャー株主総会", tags:["buffett","life"], fav:false},
+  {id:32, person:"buffett", name:"Warren Buffett", text:"チャーリーは私に、素晴らしい企業を公正な価格で買うことを教えてくれた。それが私の人生を変えた。", source:"株主への手紙", tags:["buffett","investing"], fav:false},
+
+  // FISHER
+  {id:40, person:"fisher", name:"Philip Fisher", text:"株を買う最良の時期は、あなたが良い企業を見つけたときだ。市場全体がどこにあるかは関係ない。", source:"Common Stocks and Uncommon Profits", tags:["fisher","investing"], fav:false},
+  {id:41, person:"fisher", name:"Philip Fisher", text:"偉大な企業の株を売るべき理由はほとんどない。忍耐こそが最大のリターンをもたらす。", source:"Conservative Investors Sleep Well", tags:["fisher","investing"], fav:false},
+  {id:42, person:"fisher", name:"Philip Fisher", text:"素晴らしい企業の株式は、一度買ったら死ぬまで保有し続けることができる。これがスカットルバット投資法の真髄だ。", source:"Common Stocks and Uncommon Profits", tags:["fisher","investing"], fav:false},
+  {id:43, person:"fisher", name:"Philip Fisher", text:"企業を評価するには、財務諸表だけでは不十分だ。顧客・競合・従業員・仕入先に直接話を聞くことで、真実が見えてくる。", source:"Common Stocks and Uncommon Profits", tags:["fisher","investing"], fav:false},
+  {id:44, person:"fisher", name:"Philip Fisher", text:"最も危険な投資家とは、少し知識があると思っている人だ。謙虚さと継続的な学習こそが投資の基本だ。", source:"Developing an Investment Philosophy", tags:["fisher","life","investing"], fav:false},
+  {id:45, person:"fisher", name:"Philip Fisher", text:"研究開発に積極的に投資している企業は、10年後に大きく成長している可能性が高い。目先の利益より未来への投資を見よ。", source:"Common Stocks and Uncommon Profits", tags:["fisher","investing"], fav:false},
+  {id:46, person:"fisher", name:"Philip Fisher", text:"経営者の誠実さは、その企業への投資において最も重要な要素の一つだ。優れた財務指標も、不誠実な経営者の前では無力だ。", source:"Common Stocks and Uncommon Profits", tags:["fisher","investing"], fav:false},
+];
+
+// ── READING CHECKLIST ──
+const BOOKLIST = [
+  {title:"実践グレアム式バリュー投資（Janet Lowe）", done:true, priority:1, note:"現在読書中！マンガーの言葉が散りばめられた名著"},
+  {title:"Poor Charlie's Almanack（Munger）", done:false, priority:1, note:"マンガーの全てが詰まったバイブル。次の一冊"},
+  {title:"賢明なる投資家（Graham）", done:false, priority:1, note:"バフェットが「最高の投資書」と称す古典"},
+  {title:"Common Stocks and Uncommon Profits（Fisher）", done:false, priority:1, note:"成長株投資の聖典。15の原則を学ぶ"},
+  {title:"The Snowball バフェット伝（Schroeder）", done:false, priority:2, note:"バフェットの人生と哲学の形成過程"},
+  {title:"Charlie Munger: The Complete Investor", done:false, priority:2, note:"マンガーの思考法を25の原則に体系化"},
+  {title:"影響力の武器（Cialdini）", done:false, priority:2, note:"マンガーが推薦する心理学必読書"},
+  {title:"Security Analysis（Graham）", done:false, priority:3, note:"全ての源流。上級者向けの聖典"},
+  {title:"バフェットからの手紙", done:false, priority:3, note:"50年以上の株主への手紙集"},
+];
+
+// ── STATE ──
+let activeQuoteFilter = 'all';
+let favorites = JSON.parse(localStorage.getItem('munger_favs')||'[]');
+let checklist = JSON.parse(localStorage.getItem('munger_checklist')||JSON.stringify(BOOKLIST.map((_,i)=>i===0)));
+
+// ── HERO QUOTE ──
+const mungerQuotes = QUOTES.filter(q=>q.person==='munger');
+let heroIdx = 0;
+function randomizeHero(){
+  heroIdx = (heroIdx + 1 + Math.floor(Math.random()*(mungerQuotes.length-1))) % mungerQuotes.length;
+  const q = mungerQuotes[heroIdx];
+  const el = document.getElementById('heroQuoteText');
+  el.style.opacity = '0';
+  setTimeout(()=>{
+    el.textContent = `"${q.text}"`;
+    el.style.opacity = '1';
+    el.style.transition = 'opacity .4s';
+  }, 200);
+}
+
+// ── RANDOM BANNER ──
+function showRandomQuote(){
+  const q = QUOTES[Math.floor(Math.random()*QUOTES.length)];
+  document.getElementById('randomBannerText').textContent = `「${q.text}」— ${q.name}`;
+}
+
+// ── SECTION SWITCH ──
+function showSection(s){
+  ['books','quotes','reading'].forEach(id=>{
+    document.getElementById(id+'Section').style.display = id===s ? '' : 'none';
+  });
+  document.querySelectorAll('.hero-tab').forEach((t,i)=>{
+    t.className = 'hero-tab' + (['books','quotes','reading'][i]===s?' active':'');
+  });
+  if(s==='quotes') renderQuotes();
+  if(s==='reading') renderReading();
+}
+
+// ── QUOTES RENDER ──
+function renderQuotes(){
+  const favSet = new Set(favorites);
+  let filtered = QUOTES.filter(q=>{
+    if(activeQuoteFilter==='all') return true;
+    if(activeQuoteFilter==='favorites') return favSet.has(q.id);
+    return q.tags.includes(activeQuoteFilter);
+  });
+  const colors = {munger:'var(--gold2)',buffett:'var(--rust2)',fisher:'var(--green2)'};
+  document.getElementById('quotesContainer').innerHTML = filtered.map((q,i)=>{
+    const isFav = favSet.has(q.id);
+    return `
+    <div class="quote-card" style="animation-delay:${Math.min(i,.15)*0.06}s">
+      <div class="q-text">${q.text}</div>
+      <div class="q-footer">
+        <div class="q-dot" style="background:${colors[q.person]}"></div>
+        <span class="q-author">${q.name}</span>
+        <span class="q-source">— ${q.source}</span>
+        <button class="q-fav ${isFav?'active':''}" onclick="toggleFav(${q.id})" title="お気に入り">
+          ${isFav?'⭐':'☆'}
+        </button>
+      </div>
+    </div>`;
+  }).join('') || `<div style="padding:40px;text-align:center;color:var(--ink3);font-size:.8rem">該当する言葉がありません</div>`;
+}
+
+function filterQuotes(f){
+  activeQuoteFilter = f;
+  document.querySelectorAll('.fpill').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  renderQuotes();
+}
+
+function toggleFav(id){
+  const idx = favorites.indexOf(id);
+  if(idx>=0) favorites.splice(idx,1);
+  else favorites.push(id);
+  localStorage.setItem('munger_favs', JSON.stringify(favorites));
+  renderQuotes();
+}
+
+// ── READING RENDER ──
+function renderReading(){
+  document.getElementById('checklistItems').innerHTML = BOOKLIST.map((b,i)=>`
+    <div class="tracker-row">
+      <div class="tracker-check ${checklist[i]?'done':''}" onclick="toggleCheck(${i})">${checklist[i]?'✓':''}</div>
+      <div class="tracker-label ${checklist[i]?'done':''}">${b.title}${b.note?` <span style="font-size:.65rem;color:var(--gold2)">— ${b.note}</span>`:''}</div>
+    </div>
+  `).join('');
+
+  const order = [
+    {n:1,title:"実践グレアム式バリュー投資",why:"今まさに読んでいる。グレアム×マンガー哲学の橋渡し"},
+    {n:2,title:"Poor Charlie's Almanack",why:"マンガーの全集。これを読めば投資観が根本から変わる"},
+    {n:3,title:"賢明なる投資家",why:"全てのバリュー投資の源流。ミスター・マーケットの概念"},
+    {n:4,title:"Common Stocks（Fisher）",why:"成長株視点を加えると、バリュー投資が完成する"},
+    {n:5,title:"スノーボール（バフェット伝）",why:"哲学の実践者であるバフェットの人生から学ぶ"},
+    {n:6,title:"影響力の武器（Cialdini）",why:"心理バイアスを知ることで、市場の非合理を利用できる"},
+  ];
+  document.getElementById('readingOrder').innerHTML = order.map(o=>`
+    <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--parch4);align-items:flex-start">
+      <div style="font-family:var(--mono);font-size:.65rem;color:var(--gold2);min-width:22px;font-weight:700;padding-top:2px">0${o.n}</div>
+      <div>
+        <div style="font-size:.8rem;font-weight:600;color:var(--ink);margin-bottom:2px">${o.title}</div>
+        <div style="font-size:.7rem;color:var(--ink3);line-height:1.55">${o.why}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleCheck(i){
+  checklist[i] = !checklist[i];
+  localStorage.setItem('munger_checklist', JSON.stringify(checklist));
+  renderReading();
+}
+
+// ── SCROLL TOP ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
+});
+
+// ── INIT ──
+renderQuotes();
+</script>
+
+</body>
+</html>
