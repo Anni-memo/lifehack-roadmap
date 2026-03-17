@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta property="og:title" content="バリュー投資の図書館｜Munger・Buffett・Fisher"/>
-<meta property="og:description" content="チャーリー・マンガー、ウォーレン・バフェット、フィリップ・フィッシャーの推薦書籍と名言集。Amazon直リンク付き。"/>
+<meta property="og:title" content="投資と思考の書斎｜長期投資のライブラリ"/>
+<meta property="og:description" content="銘柄の正解ではなく、判断基準を育てる場所。投資を入口に、文明・歴史・資本・人間理解へ歩いていく静かな知の図書館。"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<title>バリュー投資の図書館｜Munger · Buffett · Fisher</title>
+<title>投資と思考の書斎｜長期投資のライブラリ</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
@@ -453,6 +453,65 @@ body::before{
 }
 .scroll-top.visible{opacity:1;pointer-events:all}
 .scroll-top:hover{background:var(--gold2);color:var(--ink)}
+
+/* ── SHELVES ── */
+.shelves{background:var(--parch);border-bottom:1px solid var(--parch4);padding:40px 24px;}
+.shelves-inner{max-width:860px;margin:0 auto;}
+.shelves-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.18em;margin-bottom:8px;}
+.shelves-title{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:28px;letter-spacing:.03em;}
+.shelves-grid{display:grid;grid-template-columns:1fr;gap:2px;}
+@media(min-width:600px){.shelves-grid{grid-template-columns:repeat(2,1fr);}}
+a.shelf-item,.shelf-item{
+  display:flex;align-items:center;gap:14px;padding:16px 18px;
+  background:var(--parch2);border:1px solid var(--parch4);
+  text-decoration:none;color:inherit;transition:all .18s;
+}
+a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
+.shelf-item.shelf-coming{opacity:.5;cursor:default;}
+.shelf-num{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:22px;}
+.shelf-body{flex:1;}
+.shelf-name{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.shelf-desc{font-family:var(--mono);font-size:.54rem;color:var(--ink3);letter-spacing:.04em;}
+.shelf-arrow{font-size:.9rem;color:var(--gold3);flex-shrink:0;}
+.shelf-soon{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.08em;font-style:italic;}
+
+/* ── CORE READS ── */
+.core-reads{background:var(--ink);padding:36px 24px;}
+.core-reads-inner{max-width:860px;margin:0 auto;}
+.core-reads-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.18em;margin-bottom:24px;opacity:.8;}
+.core-card{
+  display:flex;align-items:flex-start;gap:16px;padding:18px 0;
+  border-bottom:1px solid rgba(139,105,20,.18);
+  text-decoration:none;color:inherit;transition:all .2s;
+}
+.core-card:last-child{border-bottom:none;}
+.core-card:hover .core-title{color:var(--gold4);}
+.core-num{font-family:var(--mono);font-size:.56rem;color:var(--gold3);flex-shrink:0;padding-top:4px;letter-spacing:.06em;width:28px;}
+.core-body{flex:1;}
+.core-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--parch);margin-bottom:4px;transition:color .2s;}
+.core-desc{font-size:.72rem;color:var(--parch4);line-height:1.65;}
+.core-arrow{color:var(--gold3);font-size:1rem;flex-shrink:0;padding-top:4px;opacity:.6;}
+
+/* ── HORIZONS ── */
+.horizons{background:var(--parch2);border-top:1px solid var(--parch4);border-bottom:1px solid var(--parch4);padding:44px 24px;}
+.horizons-inner{max-width:860px;margin:0 auto;}
+.horizons-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.18em;margin-bottom:14px;opacity:.8;}
+.horizons-lead{font-family:var(--serif);font-size:.92rem;color:var(--ink3);line-height:2;margin-bottom:28px;font-weight:300;}
+.horizons-list{display:grid;grid-template-columns:1fr;gap:2px;}
+@media(min-width:600px){.horizons-list{grid-template-columns:repeat(2,1fr);}}
+.horizons-item{
+  display:block;padding:18px 20px;background:var(--parch);border:1px solid var(--parch4);
+  text-decoration:none;transition:all .18s;
+}
+.horizons-item:hover{border-color:var(--gold3);background:var(--parch3);}
+.horizons-item-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.14em;margin-bottom:6px;}
+.horizons-item-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);}
+.horizons-item.coming{opacity:.45;pointer-events:none;}
+.horizons-more{margin-top:16px;font-family:var(--mono);font-size:.52rem;color:var(--ink3);letter-spacing:.06em;font-style:italic;}
+
+/* ── STILL WATER ── */
+.still-water{background:var(--ink);padding:52px 24px;text-align:center;}
+.sw-text{font-family:var(--serif);font-size:clamp(.88rem,2vw,1.05rem);color:var(--parch4);line-height:2.2;font-weight:300;letter-spacing:.04em;}
 </style>
 
 </head>
@@ -461,19 +520,19 @@ body::before{
 <!-- ══════════════ HERO ══════════════ -->
 
 <div class="hero">
-  <div class="hero-ornament">― THE VALUE INVESTOR'S LIBRARY ―</div>
+  <div class="hero-ornament">THE INVESTOR'S LIBRARY</div>
   <h1 class="hero-title">
-    賢者の本棚
-    <em>Munger · Buffett · Fisher</em>
+    投資と思考の書斎
+    <em>A quiet library for long-term thinkers</em>
   </h1>
   <p class="hero-sub">
-    バリュー投資の三巨人が残した書籍と言葉。<br>
-    読書こそが、最も確かな複利である。
+    銘柄の正解ではなく、判断基準を育てる場所。<br>
+    投資を入口に、文明・歴史・資本・人間理解へ歩いていく。
   </p>
   <div class="hero-tabs">
-    <button class="hero-tab active" onclick="showSection('books')">📚 推薦図書</button>
-    <button class="hero-tab" onclick="showSection('quotes')">💬 名言集</button>
-    <button class="hero-tab" onclick="showSection('reading')">📖 読書記録</button>
+    <button class="hero-tab active" onclick="showSection('books')">書籍</button>
+    <button class="hero-tab" onclick="showSection('quotes')">言葉</button>
+    <button class="hero-tab" onclick="showSection('reading')">読書記録</button>
   </div>
 </div>
 
@@ -483,10 +542,69 @@ body::before{
   <div class="welcome-inner">
     <div class="welcome-icon">📖</div>
     <div class="welcome-text">
-      <div class="welcome-label">FIRST TIME HERE?</div>
-      <div class="welcome-body">このサイトは<strong>長期投資と思考のライブラリ</strong>です。銘柄推薦ではなく、投資家の判断基準を積み上げる知的アーカイブです。</div>
+      <div class="welcome-label">FIRST VISIT</div>
+      <div class="welcome-body">このサイトは、銘柄を推薦する場所ではありません。<br><strong>投資家の判断基準を育てるための、静かな図書館です。</strong></div>
     </div>
-    <a class="welcome-link" href="hajimete/">初めての方へ →</a>
+    <a class="welcome-link" href="hajimete/">ここから読む</a>
+  </div>
+</div>
+
+<!-- ══════════════ SHELVES ══════════════ -->
+
+<div class="shelves">
+  <div class="shelves-inner">
+    <div class="shelves-label">LIBRARY SHELVES</div>
+    <div class="shelves-title">書架から読む</div>
+    <div class="shelves-grid">
+      <a class="shelf-item" href="hajimete/">
+        <div class="shelf-num">01</div>
+        <div class="shelf-body">
+          <div class="shelf-name">はじめの棚</div>
+          <div class="shelf-desc">長期投資の入口 · 投資原則</div>
+        </div>
+        <div class="shelf-arrow">→</div>
+      </a>
+      <a class="shelf-item" href="moat/">
+        <div class="shelf-num">02</div>
+        <div class="shelf-body">
+          <div class="shelf-name">概念の棚</div>
+          <div class="shelf-desc">moat · FCF · 企業分析</div>
+        </div>
+        <div class="shelf-arrow">→</div>
+      </a>
+      <a class="shelf-item" href="industries/">
+        <div class="shelf-num">03</div>
+        <div class="shelf-body">
+          <div class="shelf-name">業種から歩く棚</div>
+          <div class="shelf-desc">東証プライム · 業種別一覧</div>
+        </div>
+        <div class="shelf-arrow">→</div>
+      </a>
+      <a class="shelf-item" href="#booksSection">
+        <div class="shelf-num">04</div>
+        <div class="shelf-body">
+          <div class="shelf-name">賢者の読書リスト</div>
+          <div class="shelf-desc">Munger · Buffett · Fisher</div>
+        </div>
+        <div class="shelf-arrow">→</div>
+      </a>
+      <a class="shelf-item" href="horizons/">
+        <div class="shelf-num">05</div>
+        <div class="shelf-body">
+          <div class="shelf-name">思考を広げる棚</div>
+          <div class="shelf-desc">文明 · 資本 · 人間理解</div>
+        </div>
+        <div class="shelf-arrow">→</div>
+      </a>
+      <div class="shelf-item shelf-coming">
+        <div class="shelf-num">06</div>
+        <div class="shelf-body">
+          <div class="shelf-name">拡張予定の棚</div>
+          <div class="shelf-desc">歴史 · 制度 · 意思決定</div>
+        </div>
+        <div class="shelf-soon">near future</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -503,18 +621,34 @@ body::before{
   </div>
 </div>
 
-<!-- ══════════════ FLAGSHIP ARTICLE ══════════════ -->
+<!-- ══════════════ CORE READS ══════════════ -->
 
-<div class="flagship">
-  <div class="flagship-inner">
-    <div class="flagship-label">FEATURED ARTICLE — 看板記事</div>
-    <a class="flagship-card" href="principles/">
-      <div class="flagship-num">投資哲学<br>No.1</div>
-      <div class="flagship-body">
-        <div class="flagship-title">私の投資原則</div>
-        <div class="flagship-desc">moat・資本配分・財務・経営者の質——長期投資において重視している8つの基本原則。このサイトの思想的な中心記事。</div>
+<div class="core-reads">
+  <div class="core-reads-inner">
+    <div class="core-reads-label">この書斎の中心を読む</div>
+    <a class="core-card" href="principles/">
+      <div class="core-num">01</div>
+      <div class="core-body">
+        <div class="core-title">私の投資原則</div>
+        <div class="core-desc">moat・資本配分・財務・経営者の質——長期投資において重視している8つの基本原則。このサイトの思想的な中心。</div>
       </div>
-      <div class="flagship-arrow">→</div>
+      <div class="core-arrow">→</div>
+    </a>
+    <a class="core-card" href="moat/">
+      <div class="core-num">02</div>
+      <div class="core-body">
+        <div class="core-title">moatをどう見るか</div>
+        <div class="core-desc">ネットワーク効果・スイッチングコスト・コスト優位——競争優位の6類型と、実際の企業分析への応用。</div>
+      </div>
+      <div class="core-arrow">→</div>
+    </a>
+    <a class="core-card" href="fcf/">
+      <div class="core-num">03</div>
+      <div class="core-body">
+        <div class="core-title">FCFとは何か</div>
+        <div class="core-desc">企業が本質的に稼ぐ力を測る指標。営業CF・投資CF・フリーCFの読み方と、長期投資での活用。</div>
+      </div>
+      <div class="core-arrow">→</div>
     </a>
   </div>
 </div>
@@ -525,7 +659,6 @@ body::before{
   <div class="fq-label">TODAY'S WISDOM — CHARLIE MUNGER</div>
   <div class="fq-text" id="heroQuoteText">"素晴らしい企業を公正な価格で買うほうが、公正な企業を素晴らしい価格で買うよりはるかに良い。"</div>
   <div class="fq-author" id="heroQuoteAuthor">— Charlie Munger</div>
-  <div class="fq-hint">タップで別の言葉へ ✦</div>
 </div>
 
 <!-- ══════════════ BOOKS SECTION ══════════════ -->
@@ -947,12 +1080,54 @@ body::before{
   </div>
 </div>
 
+<!-- ══════════════ HORIZONS ══════════════ -->
+
+<div class="horizons">
+  <div class="horizons-inner">
+    <div class="horizons-label">EXPANDING HORIZONS</div>
+    <p class="horizons-lead">
+      投資を学ぶとは、資本主義を学ぶことであり、<br>
+      歴史を学ぶことであり、人間を学ぶことでもある。
+    </p>
+    <div class="horizons-list">
+      <a class="horizons-item" href="horizons/civilization/">
+        <div class="horizons-item-label">CIVILIZATION</div>
+        <div class="horizons-item-title">投資を入口に文明を考える</div>
+      </a>
+      <a class="horizons-item" href="horizons/capitalism/">
+        <div class="horizons-item-label">CAPITALISM</div>
+        <div class="horizons-item-title">資本主義とは何か</div>
+      </a>
+      <div class="horizons-item coming">
+        <div class="horizons-item-label">MONEY & CREDIT</div>
+        <div class="horizons-item-title">お金の歴史とは何か</div>
+      </div>
+      <div class="horizons-item coming">
+        <div class="horizons-item-label">HUMAN NATURE</div>
+        <div class="horizons-item-title">人類はなぜ協力できたのか</div>
+      </div>
+    </div>
+    <p class="horizons-more">
+      <a href="horizons/" style="color:var(--gold);text-decoration:none;">思考を広げる棚をすべて見る →</a>
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════ STILL WATER ══════════════ -->
+
+<div class="still-water">
+  <p class="sw-text">
+    急がない。焦らない。深く読む。<br>
+    この書架を静かに歩く仲間がいる。
+  </p>
+</div>
+
 <!-- ══════════════ FOOTER ══════════════ -->
 
 <footer class="footer">
-  <div class="footer-title">賢者の本棚 · Value Investor's Library</div>
+  <div class="footer-title">投資と思考の書斎</div>
   <div>書籍情報・Amazonリンクは参考です。購入前に最新情報をご確認ください。</div>
-  <div>Powered by <strong>KABU LENS</strong> · <a href="#">投資スクリーナーへ戻る</a></div>
+  <div>投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
 </footer>
 
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>

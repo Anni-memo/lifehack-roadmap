@@ -401,9 +401,47 @@ body::before{
 </div>
 
 <!-- ── FOOTER ── -->
+<style>
+.further{background:var(--parch);border-top:1px solid var(--parch4);padding:36px 24px;}
+.further-inner{max-width:860px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:18px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+</style>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">原則の背景にある概念を深めるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../moat/">
+        <span class="further-link-tag">MOAT</span>
+        <span class="further-link-title">moatをどう見るか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../fcf/">
+        <span class="further-link-tag">FINANCE</span>
+        <span class="further-link-title">FCFとは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../horizons/">
+        <span class="further-link-tag">HORIZONS</span>
+        <span class="further-link-title">思考を広げる棚へ進む</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
 <footer class="footer">
-  <div class="footer-title">長期投資と思考のライブラリ</div>
-  <div><a href="../">← 賢者の本棚（書籍・名言集）に戻る</a></div>
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../">← 書斎の入口へ戻る</a></div>
   <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
 </footer>
 

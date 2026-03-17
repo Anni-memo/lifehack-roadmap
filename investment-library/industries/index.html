@@ -67,6 +67,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .intro-link-label{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.06em;white-space:nowrap;}
 .intro-link-name{font-size:.8rem;color:var(--ink2);font-weight:500;}
 
+/* ── QUESTION ── */
+.ind-question{font-family:var(--serif);font-size:.72rem;color:var(--gold);font-style:italic;line-height:1.6;margin-top:6px;margin-bottom:2px;letter-spacing:.01em;}
+
 /* ── FILTER BAR ── */
 .filter-bar{background:var(--ink2);border-bottom:1px solid var(--gold)22;padding:12px 20px;position:sticky;top:0;z-index:50;}
 .filter-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
@@ -259,9 +262,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 <!-- ── FOOTER ── -->
 <footer class="footer">
-  <div class="footer-title">長期投資と思考のライブラリ</div>
+  <div class="footer-title">投資と思考の書斎</div>
   <div>
-    <a href="../">← 賢者の本棚（書籍・名言集）</a>　·
+    <a href="../">← 書斎の入口へ戻る</a>　·
     <a href="../principles/">私の投資原則</a>　·
     <a href="../analysis-template/">企業分析テンプレート</a>
   </div>
@@ -281,6 +284,7 @@ const INDUSTRIES = [
     name: "情報・通信業",
     nameEn: "Information & Communication",
     group: "tech",
+    question: "スイッチングコストとネットワーク効果はどこに宿るか",
     desc: "SaaS・通信インフラ・ITサービス・メディアを含む広義の情報産業。スイッチングコストやネットワーク効果によるmoatが見られる業種。",
     companies: ["NTT", "KDDI", "ソフトバンク", "サイボウズ", "富士通"],
     ready: false,
@@ -292,6 +296,7 @@ const INDUSTRIES = [
     name: "電気機器",
     nameEn: "Electric Appliances",
     group: "tech",
+    question: "グローバルニッチの参入障壁はどこから来るか",
     desc: "半導体・産業機器・家電・センサーなどを含む日本の製造業の中核。グローバルニッチ企業が多く、B2Bの参入障壁が高い業種が多い。",
     companies: ["ソニー", "キーエンス", "日立", "信越半導体", "オムロン"],
     ready: false,
@@ -303,6 +308,7 @@ const INDUSTRIES = [
     name: "機械",
     nameEn: "Machinery",
     group: "manufacturing",
+    question: "顧客との長期関係が価格転嫁力をどう支えるか",
     desc: "工作機械・産業用ロボット・農機・建機など。技術蓄積と顧客との長期関係がmoatになる。グローバル競争力を持つ企業が多い。",
     companies: ["ファナック", "小松製作所", "DMG森精機", "ダイキン"],
     ready: false,
@@ -314,6 +320,7 @@ const INDUSTRIES = [
     name: "化学",
     nameEn: "Chemicals",
     group: "manufacturing",
+    question: "特殊素材の参入障壁と汎用品の罠をどう見分けるか",
     desc: "素材・特殊化学品・プラスチック・農薬など。参入障壁の高い特殊化学品分野に長期的な競争優位を持つ企業が存在する。",
     companies: ["信越化学", "旭化成", "三菱ケミカル", "日本ペイント"],
     ready: false,
@@ -325,6 +332,7 @@ const INDUSTRIES = [
     name: "医薬品",
     nameEn: "Pharmaceutical",
     group: "manufacturing",
+    question: "特許の崖とパイプラインの持続性をどう評価するか",
     desc: "新薬・ジェネリック・医療機器を含む。特許期間中の独占収益と膨大なR&D投資が特徴。パテントクリフリスクを理解することが重要。",
     companies: ["武田薬品", "エーザイ", "第一三共", "中外製薬"],
     ready: false,
@@ -336,6 +344,7 @@ const INDUSTRIES = [
     name: "不動産業",
     nameEn: "Real Estate",
     group: "infra",
+    question: "立地の希少性と賃料改定力をどう見るか",
     desc: "ディベロッパー・REITスポンサー・管理会社を含む。立地の希少性と開発能力がmoatになる。金利動向との連動性が高い業種。",
     companies: ["三井不動産", "住友不動産", "三菱地所", "東急不動産"],
     ready: false,
@@ -347,6 +356,7 @@ const INDUSTRIES = [
     name: "卸売業",
     nameEn: "Wholesale Trade",
     group: "consumer",
+    question: "情報・ネットワーク・資本の組み合わせがmoatになるか",
     desc: "総合商社・専門商社を含む。情報・ネットワーク・資本を組み合わせたビジネスモデル。バフェットが注目した日本の総合商社の資本配分も注目。",
     companies: ["三菱商事", "伊藤忠商事", "三井物産", "住友商事"],
     ready: false,
@@ -358,6 +368,7 @@ const INDUSTRIES = [
     name: "小売業",
     nameEn: "Retail Trade",
     group: "consumer",
+    question: "ロケーションとPBが価格支配力をどう作るか",
     desc: "コンビニ・スーパー・専門店・ECなど消費者接点を持つ業種。ブランド・立地・規模の経済がmoatになることが多い。",
     companies: ["ファーストリテイリング", "セブン&アイ", "イオン", "MonotaRO"],
     ready: false,
@@ -369,6 +380,7 @@ const INDUSTRIES = [
     name: "サービス業",
     nameEn: "Services",
     group: "consumer",
+    question: "スイッチングコストはどのサービス層に宿るか",
     desc: "人材・広告・外食・情報サービス・SaaSなど多様。スイッチングコストやネットワーク効果によるmoatが見られるサービスが多い。",
     companies: ["リクルート", "電通", "パーソルHD", "サイバーエージェント"],
     ready: false,
@@ -380,6 +392,7 @@ const INDUSTRIES = [
     name: "銀行業",
     nameEn: "Banks",
     group: "finance",
+    question: "低コスト預金と信用コストの循環をどう読むか",
     desc: "メガバンク・地方銀行・信託銀行を含む。規模の経済と顧客基盤がmoatになる一方、規制環境と金利動向の影響を強く受ける。",
     companies: ["三菱UFJ", "三井住友FG", "みずほFG", "ゆうちょ銀行"],
     ready: false,
@@ -391,6 +404,7 @@ const INDUSTRIES = [
     name: "保険業",
     nameEn: "Insurance",
     group: "finance",
+    question: "フロート（浮動保険料）の運用力をどう見るか",
     desc: "損保・生保を含む。フロートを運用するビジネスモデルはバフェットが高く評価。規模・ブランド・販売網がmoatになる。",
     companies: ["東京海上HD", "第一生命", "MS&ADインシュアランス"],
     ready: false,
@@ -402,6 +416,7 @@ const INDUSTRIES = [
     name: "輸送用機器",
     nameEn: "Transportation Equipment",
     group: "manufacturing",
+    question: "EVシフトと垂直統合の間でmoatはどこに残るか",
     desc: "自動車・二輪・航空機部品など。EV・自動運転の技術転換が業界全体のmoatを再定義しつつある重要な変革期にある。",
     companies: ["トヨタ", "ホンダ", "デンソー", "アイシン"],
     ready: false,
@@ -413,6 +428,7 @@ const INDUSTRIES = [
     name: "建設業",
     nameEn: "Construction",
     group: "infra",
+    question: "受注残と技術蓄積が参入障壁になるか",
     desc: "ゼネコン・サブコン・住宅・インフラ整備を含む。技術力・施工実績・顧客との長期関係がmoatになる。受注残高が将来収益の先行指標。",
     companies: ["大林組", "鹿島建設", "清水建設", "大和ハウス"],
     ready: false,
@@ -424,6 +440,7 @@ const INDUSTRIES = [
     name: "食料品",
     nameEn: "Foods",
     group: "consumer",
+    question: "ブランドと流通網が価格支配力をどう作るか",
     desc: "食品メーカー・飲料・調味料を含む。ブランドと販売チャネルがmoatになる。生活必需品としての安定収益と、原材料コストリスクのバランスが重要。",
     companies: ["日清食品", "明治HD", "キッコーマン", "味の素"],
     ready: false,
@@ -450,6 +467,7 @@ function renderIndustries(filter) {
         </div>
         <div class="ind-name">${ind.name}</div>
         <div class="ind-name-en">${ind.nameEn}</div>
+        <div class="ind-question">${ind.question}</div>
       </div>
       <div class="ind-body">
         <div class="ind-desc">${ind.desc}</div>
