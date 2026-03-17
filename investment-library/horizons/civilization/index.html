@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="投資を入口に文明を考える｜投資と思考の書斎"/>
+<meta property="og:description" content="投資は、お金を増やすための技術である前に、人間・社会・文明をどう見るかという問いの入口である。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>投資を入口に文明を考える｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0e1018 45%,#181428 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(110,85,200,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(120,95,210,.15);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">投資を入口に文明を考える</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 01 — 投資の奥にあるもの</div>
+  <div class="hero-ornament">CIVILIZATION · CAPITAL · HUMANITY</div>
+  <h1 class="hero-title">投資を入口に文明を考える</h1>
+  <p class="hero-lead">
+    投資は、お金を増やすための技術である前に、<br>
+    人間・社会・文明をどう見るかという問いの入口である。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 本質 -->
+  <div class="article-section">
+    <div class="section-label">THE ESSENCE</div>
+    <h2 class="section-title">投資は、単なる売買技術ではない</h2>
+    <div class="section-body">
+      <p>投資という言葉を聞くと、多くの人はまず株価や利益を思い浮かべる。</p>
+      <p>もちろん、それは重要である。しかし、それだけで投資を捉えると、投資は単なる売買技術やお金のゲームに見えてしまう。</p>
+      <p>本来、投資はもっと大きな文脈を持っている。</p>
+      <ul>
+        <li>人はなぜ他者を信じてお金を預けられるのか</li>
+        <li>企業とは何か</li>
+        <li>株式とは何か</li>
+        <li>貨幣とは何か</li>
+        <li>資本主義は何を可能にし、何を歪めるのか</li>
+        <li>長期で価値を生むとはどういうことか</li>
+      </ul>
+      <p>こうした問いは、投資を続けるほど避けて通れなくなる。</p>
+      <p>だから投資は、企業分析の技術であると同時に、文明理解の入口でもある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 未来への配分 -->
+  <div class="article-section">
+    <div class="section-label">CAPITAL ALLOCATION</div>
+    <h2 class="section-title">投資は「未来への配分」である</h2>
+    <div class="section-body">
+      <p>投資とは、いま手元にある資本を、どの未来に配分するかを決める行為である。</p>
+      <p>この会社に資本を置くのか。この経営者を信じるのか。この産業に長期的価値があるとみるのか。</p>
+      <p>それは単なる数字合わせではない。未来に対する判断であり、世界観の表明でもある。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">どこに資本が流れるかで、社会の形は少しずつ変わる。<br>その意味で投資は、個人の損得だけに閉じた行為ではなく、社会の方向にも接続している。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 協力の仕組み -->
+  <div class="article-section">
+    <div class="section-label">COOPERATION</div>
+    <h2 class="section-title">株式とは、見えない他者との協力の仕組みである</h2>
+    <div class="section-body">
+      <p>株式市場は、目の前にいない他者たちと、長期的に協力するための仕組みでもある。</p>
+      <p>投資家は経営者に資本を預ける。経営者は従業員や顧客や取引先と関係を築く。その活動の果実が、長い時間をかけて株主に返ってくる。</p>
+      <p>ここには、契約、制度、信頼、会計、法、文化が重なっている。</p>
+      <p>つまり投資とは、文明がつくってきた高度な協力装置の上に乗っている行為である。株価だけを見ていると見失いやすいが、本質はこの「協力の構造」にある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 人間理解 -->
+  <div class="article-section">
+    <div class="section-label">HUMAN NATURE</div>
+    <h2 class="section-title">企業分析は、人間理解でもある</h2>
+    <div class="section-body">
+      <p>企業を分析することは、数字を読むことだけではない。</p>
+      <ul>
+        <li>経営者は何を大事にしているか</li>
+        <li>組織はどのような文化を持つか</li>
+        <li>顧客はなぜその企業を選ぶのか</li>
+        <li>社員はなぜそこに残るのか</li>
+        <li>競争優位は、どんな人間行動の上に成り立っているか</li>
+      </ul>
+      <p>こうした問いを掘ると、企業分析は自然と人間理解へつながる。</p>
+      <p>moatも、価格決定力も、スイッチングコストも、結局は人間がどう行動するかに関わっている。投資を深めるほど、数字の奥にいる人間を見なければならなくなる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 資本主義 -->
+  <div class="article-section">
+    <div class="section-label">CAPITALISM</div>
+    <h2 class="section-title">資本主義を学ぶことは、投資を学ぶことでもある</h2>
+    <div class="section-body">
+      <p>投資を続けるなら、資本主義の理解は避けられない。なぜなら投資とは、資本主義社会における資本配分そのものだからである。</p>
+      <ul>
+        <li>資本はどこへ流れるのか</li>
+        <li>なぜ格差が生まれるのか</li>
+        <li>なぜイノベーションが起きるのか</li>
+        <li>なぜバブルが起こるのか</li>
+        <li>市場はなぜ熱狂し、なぜ悲観するのか</li>
+      </ul>
+      <p>こうした問いは、企業の決算を読む力とは別に、社会そのものを読む力を求める。投資は、経済の末端ではなく、社会の構造と深くつながっている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 時間感覚 -->
+  <div class="article-section">
+    <div class="section-label">TIME & PATIENCE</div>
+    <h2 class="section-title">長期投資は、時間感覚を鍛える</h2>
+    <div class="section-body">
+      <p>長期投資の面白さの一つは、時間に対する感覚が変わることである。</p>
+      <p>短期では見えないものを待つ。複利を信じる。一時の騒音に振り回されず、構造の変化を見る。</p>
+      <p>この姿勢は、人生にもそのままつながる。</p>
+      <ul>
+        <li>何を今すぐ求めるのか</li>
+        <li>何を長く育てるのか</li>
+        <li>何に忍耐を払い、何を捨てるのか</li>
+      </ul>
+      <p>長期投資は、資産形成の技術であると同時に、時間との向き合い方を鍛える訓練でもある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 世界の見え方 -->
+  <div class="article-section">
+    <div class="section-label">A WIDER VIEW</div>
+    <h2 class="section-title">投資を通じて、世界の見え方は変わる</h2>
+    <div class="section-body">
+      <p>投資を学ぶと、ニュースの見え方が変わる。企業の見え方が変わる。消費の見え方が変わる。歴史の見え方が変わる。</p>
+      <p>戦争、技術革新、人口動態、制度変更、文化の変化。それらが企業と市場にどう影響するかを考えるようになる。</p>
+      <p>つまり投資とは、世界の出来事を「自分ごととして読む力」を育てる行為でもある。それは、単に儲けるためだけの力ではない。世界理解を深める力である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- このLibraryで -->
+  <div class="article-section">
+    <div class="section-label">THIS LIBRARY</div>
+    <h2 class="section-title">このLibraryで目指したいこと</h2>
+    <div class="section-body">
+      <p>この投資Libraryで目指したいのは、投資のテクニックを並べることだけではない。</p>
+      <p>投資を入口にして、読者が少しずつ</p>
+      <ul>
+        <li>企業を見る目を養い</li>
+        <li>資本を見る目を養い</li>
+        <li>歴史を見る目を養い</li>
+        <li>人間を見る目を養い</li>
+        <li>自分の判断基準を磨いていく</li>
+      </ul>
+      <p>そんな場をつくることである。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">投資は、ときに冷たく見える。利益と損失、勝ち負け、数字の世界に見えるからである。<br><br>だが、その奥には、信頼、協力、制度、時間、人間、文明がある。<br><br>そこまで視野を広げたとき、投資は単なるお金の話ではなくなる。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">文明として資本主義を捉えるために。そして投資の実務へ戻るために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../capitalism/">
+        <span class="further-link-tag">CAPITALISM</span>
+        <span class="further-link-title">資本主義とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../principles/">
+        <span class="further-link-tag">PRINCIPLES</span>
+        <span class="further-link-title">私の投資原則</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../analysis-template/">
+        <span class="further-link-tag">ANALYSIS</span>
+        <span class="further-link-title">企業分析テンプレート</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">思考を広げる棚</a>　·
+    <a href="../../principles/">投資原則</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>
