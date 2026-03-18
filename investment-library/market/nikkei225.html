@@ -19,10 +19,9 @@
   --gold2:  #b8900a;
   --gold3:  #d4aa22;
   --gold4:  #f0cc55;
-  --rust:   #8b3a1a;
-  --serif:  'Cormorant Garamond', 'Noto Serif JP', serif;
-  --jp:     'Noto Serif JP', 'Cormorant Garamond', serif;
-  --mono:   'DM Mono', monospace;
+  --serif:  'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:     'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:   'DM Mono',monospace;
   --shadow: 0 4px 24px rgba(26,18,8,.18);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -35,138 +34,109 @@ body::before{
 }
 
 /* ── HEADER ── */
-.site-header{
-  background:var(--ink2);border-bottom:1px solid var(--gold)33;
-  padding:0 20px;
-}
-.site-header-inner{
-  max-width:860px;margin:0 auto;
-  display:flex;align-items:center;gap:14px;padding:14px 0;
-}
-.back-link{
-  font-family:var(--mono);font-size:.58rem;color:var(--gold3);
-  text-decoration:none;letter-spacing:.08em;opacity:.7;
-  transition:opacity .15s;
-}
+.site-header{background:var(--ink2);border-bottom:1px solid rgba(139,105,20,.2);padding:0 20px}
+.site-header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:14px 0}
+.back-link{font-family:var(--mono);font-size:.56rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.7;transition:opacity .15s}
 .back-link:hover{opacity:1}
-.header-sep{color:var(--gold)44;font-size:.7rem}
-.header-crumb{font-family:var(--mono);font-size:.58rem;color:var(--parch4);letter-spacing:.06em}
+.hd-sep{color:rgba(139,105,20,.3);font-size:.65rem;margin:0 2px}
+.hd-crumb{font-family:var(--mono);font-size:.56rem;color:var(--parch4);letter-spacing:.06em}
 
 /* ── HERO ── */
 .hero{
-  background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 40%,#3a2510 100%);
-  color:var(--parch);padding:48px 24px 40px;
+  background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#3a2510 100%);
+  color:var(--parch);padding:52px 24px 44px;
   border-bottom:3px solid var(--gold);position:relative;overflow:hidden;
 }
 .hero::before{
   content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.10) 0%,transparent 70%);
 }
-.hero-ornament{
-  font-family:var(--mono);font-size:.56rem;color:var(--gold3);
-  letter-spacing:.25em;margin-bottom:16px;opacity:.7;
-}
-.hero-title{
-  font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.8rem);
-  font-weight:700;line-height:1.15;color:var(--parch);
-  margin-bottom:6px;
-}
-.hero-title em{
-  font-style:italic;color:var(--gold4);
-  display:block;font-size:.65em;letter-spacing:.04em;margin-top:4px;
-}
-.hero-updated{
-  font-family:var(--mono);font-size:.56rem;color:var(--gold3);
-  letter-spacing:.08em;margin-top:16px;opacity:.6;
-}
+.hero-ornament{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.25em;margin-bottom:16px;opacity:.7}
+.hero-title{font-family:var(--serif);font-size:clamp(1.9rem,5vw,2.9rem);font-weight:700;line-height:1.12;color:var(--parch);margin-bottom:6px}
+.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.6em;letter-spacing:.04em;margin-top:5px}
+.hero-meta{font-family:var(--mono);font-size:.55rem;color:var(--gold3);letter-spacing:.08em;margin-top:18px;opacity:.6}
 
 /* ── PREFACE ── */
-.preface{
-  background:var(--ink);border-bottom:1px solid var(--gold)22;
-  padding:28px 24px;
-}
-.preface-inner{max-width:860px;margin:0 auto}
+.preface{background:var(--ink);border-bottom:1px solid rgba(139,105,20,.18);padding:32px 24px}
+.preface-inner{max-width:900px;margin:0 auto}
+.preface-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.2em;margin-bottom:14px;opacity:.6}
 .preface-text{
-  font-family:var(--serif);font-size:clamp(.85rem,2vw,1.0rem);
-  color:var(--parch4);line-height:2.1;font-weight:300;
-  letter-spacing:.03em;font-style:italic;
+  font-family:var(--serif);font-size:clamp(.88rem,2vw,1.05rem);
+  color:var(--parch4);line-height:2.15;font-weight:300;letter-spacing:.03em;
 }
+.preface-text br{display:block;margin-bottom:.3em}
 
 /* ── CONTROLS ── */
-.controls{
-  background:var(--parch2);border-bottom:1px solid var(--parch4);
-  padding:16px 20px;
-}
-.controls-inner{
-  max-width:860px;margin:0 auto;
-  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-}
-.ctrl-label{font-family:var(--mono);font-size:.54rem;color:var(--ink3);letter-spacing:.1em;flex-shrink:0}
-.ctrl-select{
-  font-family:var(--jp);font-size:.75rem;color:var(--ink);
+.controls{background:var(--parch2);border-bottom:2px solid var(--parch4);padding:18px 20px}
+.controls-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ctrl-label{font-family:var(--mono);font-size:.52rem;color:var(--ink3);letter-spacing:.1em;flex-shrink:0}
+.ctrl-select,.ctrl-search{
+  font-family:var(--jp);font-size:.74rem;color:var(--ink);
   background:var(--parch);border:1px solid var(--parch4);
-  padding:6px 10px;border-radius:2px;outline:none;cursor:pointer;
+  padding:7px 10px;border-radius:2px;outline:none;
   transition:border-color .15s;
 }
-.ctrl-select:focus{border-color:var(--gold2)}
-.ctrl-search{
-  font-family:var(--jp);font-size:.75rem;color:var(--ink);
+.ctrl-select:focus,.ctrl-search:focus{border-color:var(--gold2)}
+.ctrl-search{width:170px}
+.ctrl-sort{display:flex;align-items:center;gap:5px;margin-left:auto}
+.sort-btn{
+  font-family:var(--mono);font-size:.52rem;color:var(--ink3);
   background:var(--parch);border:1px solid var(--parch4);
-  padding:6px 10px;border-radius:2px;outline:none;
-  width:160px;transition:border-color .15s;
+  padding:5px 9px;border-radius:2px;cursor:pointer;
+  transition:all .15s;white-space:nowrap;letter-spacing:.04em;
 }
-.ctrl-search:focus{border-color:var(--gold2)}
-.ctrl-count{
-  margin-left:auto;font-family:var(--mono);font-size:.56rem;
-  color:var(--ink3);letter-spacing:.06em;
-}
+.sort-btn:hover{border-color:var(--gold2);color:var(--gold2)}
+.sort-btn.active{background:var(--ink);color:var(--gold4);border-color:var(--ink)}
+.ctrl-count{font-family:var(--mono);font-size:.54rem;color:var(--ink3);letter-spacing:.06em;white-space:nowrap}
 
-/* ── TABLE WRAPPER ── */
-.table-wrap{max-width:860px;margin:0 auto;padding:32px 20px 48px}
-.data-note{
-  font-family:var(--mono);font-size:.54rem;color:var(--ink3);
-  letter-spacing:.06em;margin-bottom:20px;line-height:1.8;
-}
-
-table{width:100%;border-collapse:collapse;font-size:.78rem}
+/* ── TABLE ── */
+.table-wrap{max-width:900px;margin:0 auto;padding:28px 20px 52px;overflow-x:auto}
+.data-note{font-family:var(--mono);font-size:.52rem;color:var(--ink3);letter-spacing:.06em;margin-bottom:18px;line-height:1.9;opacity:.8}
+table{width:100%;border-collapse:collapse;font-size:.77rem;min-width:580px}
 thead th{
-  font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;
+  font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;
   color:var(--ink3);font-weight:400;
-  padding:8px 10px;border-bottom:2px solid var(--parch4);
+  padding:9px 10px;border-bottom:2px solid var(--parch4);
   text-align:left;white-space:nowrap;
 }
 thead th.num{text-align:right}
+thead th.sortable{cursor:pointer;user-select:none;transition:color .15s}
+thead th.sortable:hover{color:var(--gold2)}
+thead th.sort-asc::after{content:' ↑';color:var(--gold2);font-size:.48rem}
+thead th.sort-desc::after{content:' ↓';color:var(--gold2);font-size:.48rem}
 tbody tr{border-bottom:1px solid var(--parch3);transition:background .1s}
 tbody tr:hover{background:var(--parch2)}
-td{padding:11px 10px;vertical-align:middle;line-height:1.4}
-td.code{
-  font-family:var(--mono);font-size:.62rem;
-  color:var(--gold2);letter-spacing:.06em;width:54px;
-}
-td.name{font-weight:500;color:var(--ink)}
-td.sector{font-size:.68rem;color:var(--ink3);max-width:120px}
-td.num{
-  font-family:var(--mono);font-size:.72rem;
-  text-align:right;color:var(--ink2);
-}
-td.na{color:var(--parch4);font-family:var(--mono);font-size:.6rem;text-align:right}
-td.updated{font-family:var(--mono);font-size:.58rem;color:var(--ink3);white-space:nowrap}
+td{padding:11px 10px;vertical-align:middle;line-height:1.45}
+td.code{font-family:var(--mono);font-size:.6rem;color:var(--gold2);letter-spacing:.08em;width:50px}
+td.name{font-weight:500;color:var(--ink);min-width:120px}
+td.sector{font-size:.66rem;color:var(--ink3)}
+td.num{font-family:var(--mono);font-size:.7rem;text-align:right;color:var(--ink2)}
+td.na{font-family:var(--mono);font-size:.58rem;text-align:right;color:var(--parch4)}
+td.updated{font-family:var(--mono);font-size:.56rem;color:var(--ink3);white-space:nowrap}
 
-/* ── LOADING / EMPTY ── */
-.state-msg{
-  text-align:center;padding:48px 20px;
-  font-family:var(--serif);font-size:.9rem;
-  color:var(--ink3);font-style:italic;
+/* ── STATE ── */
+.state-msg{text-align:center;padding:52px 20px;font-family:var(--serif);font-size:.92rem;color:var(--ink3);font-style:italic}
+
+/* ── BOTTOM NAV ── */
+.bottom-nav{background:var(--ink2);border-top:1px solid rgba(139,105,20,.2);padding:36px 24px}
+.bottom-nav-inner{max-width:900px;margin:0 auto}
+.bn-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.2em;margin-bottom:18px;opacity:.7}
+.bn-grid{display:grid;grid-template-columns:1fr;gap:2px}
+@media(min-width:540px){.bn-grid{grid-template-columns:repeat(3,1fr)}}
+.bn-item{
+  display:flex;align-items:center;gap:12px;padding:16px 18px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(139,105,20,.15);
+  text-decoration:none;color:inherit;transition:all .18s;
 }
+.bn-item:hover{background:rgba(139,105,20,.08);border-color:rgba(212,170,34,.3)}
+.bn-num{font-family:var(--mono);font-size:.52rem;color:var(--gold3);flex-shrink:0;letter-spacing:.06em}
+.bn-body{flex:1}
+.bn-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--parch);margin-bottom:2px}
+.bn-desc{font-family:var(--mono);font-size:.5rem;color:var(--parch4);letter-spacing:.04em}
+.bn-arrow{color:var(--gold3);font-size:.85rem;opacity:.6;flex-shrink:0}
 
 /* ── FOOTER ── */
-.footer{
-  background:var(--ink);color:var(--parch4);
-  padding:28px 24px;text-align:center;
-  font-size:.68rem;line-height:1.9;
-  border-top:2px solid var(--gold)44;
-}
-.footer-title{font-family:var(--serif);font-size:1.0rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer{background:var(--ink);color:var(--parch4);padding:24px;text-align:center;font-size:.66rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
 .footer a{color:var(--gold3);text-decoration:none}
 </style>
 </head>
@@ -176,8 +146,10 @@ td.updated{font-family:var(--mono);font-size:.58rem;color:var(--ink3);white-spac
 <div class="site-header">
   <div class="site-header-inner">
     <a class="back-link" href="../">← 書斎に戻る</a>
-    <span class="header-sep">/</span>
-    <span class="header-crumb">日経225データ棚</span>
+    <span class="hd-sep">/</span>
+    <span class="hd-crumb">市場データ棚</span>
+    <span class="hd-sep">/</span>
+    <span class="hd-crumb">日経225</span>
   </div>
 </div>
 
@@ -188,16 +160,17 @@ td.updated{font-family:var(--mono);font-size:.58rem;color:var(--ink3);white-spac
     日経225データ棚
     <em>A quiet shelf for observing the market's outline</em>
   </h1>
-  <div class="hero-updated" id="heroUpdated">データを読み込み中...</div>
+  <div class="hero-meta" id="heroMeta">データを読み込み中...</div>
 </div>
 
 <!-- ── 序文 ── -->
 <div class="preface">
   <div class="preface-inner">
+    <div class="preface-label">このページについて</div>
     <p class="preface-text">
-      このページは、売買を急かすためにあるのではない。<br>
-      市場の輪郭を静かに観察し、企業を数字の手前で知るためのデータ棚である。<br>
-      数字は問いの入口であり、答えではない。
+      このページは、売買を急かすためのものではありません。<br>
+      市場の輪郭を静かに観察し、<br>
+      企業比較の土台を整えるためのデータ棚です。
     </p>
   </div>
 </div>
@@ -209,7 +182,15 @@ td.updated{font-family:var(--mono);font-size:.58rem;color:var(--ink3);white-spac
     <select class="ctrl-select" id="sectorFilter" onchange="applyFilters()">
       <option value="">すべて</option>
     </select>
-    <input class="ctrl-search" type="text" id="nameSearch" placeholder="銘柄名で探す" oninput="applyFilters()"/>
+    <input class="ctrl-search" type="text" id="nameSearch" placeholder="銘柄名・コードで探す" oninput="applyFilters()"/>
+    <div class="ctrl-sort">
+      <span class="ctrl-label">並び替え</span>
+      <button class="sort-btn active" onclick="setSort('code')"    id="sort-code">コード</button>
+      <button class="sort-btn"        onclick="setSort('name')"    id="sort-name">銘柄名</button>
+      <button class="sort-btn"        onclick="setSort('close')"   id="sort-close">株価</button>
+      <button class="sort-btn"        onclick="setSort('per')"     id="sort-per">PER</button>
+      <button class="sort-btn"        onclick="setSort('pbr')"     id="sort-pbr">PBR</button>
+    </div>
     <span class="ctrl-count" id="countLabel"></span>
   </div>
 </div>
@@ -220,118 +201,173 @@ td.updated{font-family:var(--mono);font-size:.58rem;color:var(--ink3);white-spac
   <div id="tableArea"><div class="state-msg">データを読み込んでいます...</div></div>
 </div>
 
+<!-- ── 下部ナビ ── -->
+<div class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <div class="bn-label">この書斎の他の棚へ</div>
+    <div class="bn-grid">
+      <a class="bn-item" href="../industries/">
+        <div class="bn-num">→</div>
+        <div class="bn-body">
+          <div class="bn-title">業種一覧</div>
+          <div class="bn-desc">東証プライム · 業種別</div>
+        </div>
+        <div class="bn-arrow">→</div>
+      </a>
+      <a class="bn-item" href="../analysis-template/">
+        <div class="bn-num">→</div>
+        <div class="bn-body">
+          <div class="bn-title">企業分析テンプレート</div>
+          <div class="bn-desc">moat · FCF · 定性分析</div>
+        </div>
+        <div class="bn-arrow">→</div>
+      </a>
+      <a class="bn-item" href="../principles/">
+        <div class="bn-num">→</div>
+        <div class="bn-body">
+          <div class="bn-title">私の投資原則</div>
+          <div class="bn-desc">判断基準 · 長期投資の軸</div>
+        </div>
+        <div class="bn-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- ── フッター ── -->
 <footer class="footer">
-  <div class="footer-title">投資と思考の書斎</div>
-  データは J-Quants より取得。<br>
-  投資判断の根拠として使用しないでください。<br>
-  <a href="../">← ライブラリトップへ</a>
+  データは J-Quants より取得。投資判断の根拠として使用しないでください。<br>
+  <a href="../">← 投資と思考の書斎へ戻る</a>
 </footer>
 
 <script>
 const DATA_URL = '../data/nikkei225.json';
-let allStocks = [];
+let allStocks  = [];
+let sortKey    = 'code';
+let sortAsc    = true;
 
 async function init() {
   try {
     const resp = await fetch(DATA_URL);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const json = await resp.json();
-    allStocks = json.stocks || [];
+    const json  = await resp.json();
+    allStocks   = json.stocks || [];
 
-    // 更新日表示
-    document.getElementById('heroUpdated').textContent =
-      `最終更新: ${json.updated_at || '—'}　／　対象日: ${json.data_date || '—'}`;
+    document.getElementById('heroMeta').textContent =
+      `最終更新: ${json.updated_at || '—'}　／　データ日: ${json.data_date || '—'}`;
 
-    // 注記
     const errors = (json.errors || []).length;
-    const noteEl = document.getElementById('dataNoteArea');
     if (errors > 0) {
-      noteEl.textContent = `※ ${errors} 銘柄はデータ取得不可のため一部項目が空欄です。`;
+      document.getElementById('dataNoteArea').textContent =
+        `※ ${errors} 銘柄はデータ取得不可のため一部項目が空欄です。`;
     }
 
-    // 業種フィルター構築
+    // 業種セレクタ構築
     const sectors = [...new Set(allStocks.map(s => s.sector).filter(Boolean))].sort();
     const sel = document.getElementById('sectorFilter');
     sectors.forEach(sec => {
       const opt = document.createElement('option');
-      opt.value = sec;
-      opt.textContent = sec;
+      opt.value = sec; opt.textContent = sec;
       sel.appendChild(opt);
     });
 
     applyFilters();
   } catch(e) {
     document.getElementById('tableArea').innerHTML =
-      `<div class="state-msg">データの読み込みに失敗しました。<br><small>${e.message}</small></div>`;
+      `<div class="state-msg">データの読み込みに失敗しました。<br><small style="font-family:var(--mono);font-size:.6rem">${e.message}</small></div>`;
   }
 }
 
-function fmt(val, digits = 1) {
-  if (val === null || val === undefined || val === '') return null;
-  const n = parseFloat(val);
-  if (isNaN(n)) return null;
-  return n.toFixed(digits);
+function setSort(key) {
+  if (sortKey === key) { sortAsc = !sortAsc; }
+  else { sortKey = key; sortAsc = key === 'name' || key === 'code'; }
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sort-' + key).classList.add('active');
+  applyFilters();
 }
 
-function fmtPrice(val) {
-  if (val === null || val === undefined) return null;
-  const n = parseFloat(val);
-  if (isNaN(n)) return null;
-  return n.toLocaleString('ja-JP', {maximumFractionDigits: 1});
-}
-
-function cell(val, suffix = '') {
-  if (val === null) return `<td class="na">—</td>`;
-  return `<td class="num">${val}${suffix}</td>`;
+function numVal(v) {
+  const n = parseFloat(v);
+  return isNaN(n) ? null : n;
 }
 
 function applyFilters() {
   const sector = document.getElementById('sectorFilter').value;
   const query  = document.getElementById('nameSearch').value.trim();
 
-  const filtered = allStocks.filter(s => {
+  let list = allStocks.filter(s => {
     if (sector && s.sector !== sector) return false;
     if (query && !s.name.includes(query) && !s.code.includes(query)) return false;
     return true;
   });
 
-  document.getElementById('countLabel').textContent = `${filtered.length} 社`;
-  renderTable(filtered);
+  // 並び替え
+  list = [...list].sort((a, b) => {
+    let va, vb;
+    if (sortKey === 'code' || sortKey === 'name') {
+      va = (a[sortKey] || ''); vb = (b[sortKey] || '');
+      return sortAsc ? va.localeCompare(vb, 'ja') : vb.localeCompare(va, 'ja');
+    } else {
+      va = numVal(a[sortKey]); vb = numVal(b[sortKey]);
+      if (va === null && vb === null) return 0;
+      if (va === null) return 1;
+      if (vb === null) return -1;
+      return sortAsc ? va - vb : vb - va;
+    }
+  });
+
+  document.getElementById('countLabel').textContent = `${list.length} 社`;
+  renderTable(list);
+}
+
+function fmtNum(v, digits) {
+  const n = parseFloat(v);
+  return isNaN(n) ? null : n.toFixed(digits);
+}
+function fmtPrice(v) {
+  const n = parseFloat(v);
+  if (isNaN(n)) return null;
+  return n.toLocaleString('ja-JP', {maximumFractionDigits: 0});
+}
+function tdNum(val, suffix='') {
+  return val !== null ? `<td class="num">${val}${suffix}</td>` : `<td class="na">—</td>`;
 }
 
 function renderTable(stocks) {
-  if (stocks.length === 0) {
+  if (!stocks.length) {
     document.getElementById('tableArea').innerHTML =
       '<div class="state-msg">該当する銘柄がありません。</div>';
     return;
   }
 
   const rows = stocks.map(s => {
-    const price = fmtPrice(s.close);
-    const per   = fmt(s.per, 1);
-    const pbr   = fmt(s.pbr, 2);
-    return `
-      <tr>
-        <td class="code">${s.code}</td>
-        <td class="name">${s.name || '—'}</td>
-        <td class="sector">${s.sector || '—'}</td>
-        ${price !== null ? `<td class="num">${price}</td>` : `<td class="na">—</td>`}
-        ${cell(per, '')}
-        ${cell(pbr, '')}
-      </tr>`;
+    const price       = fmtPrice(s.close);
+    const per         = fmtNum(s.per, 1);
+    const pbr         = fmtNum(s.pbr, 2);
+    const discDate    = s.disclosure_date || null;
+
+    return `<tr>
+      <td class="code">${s.code}</td>
+      <td class="name">${s.name || '—'}</td>
+      <td class="sector">${s.sector || '—'}</td>
+      ${tdNum(price)}
+      ${tdNum(per)}
+      ${tdNum(pbr)}
+      ${discDate ? `<td class="updated">${discDate}</td>` : `<td class="na">—</td>`}
+    </tr>`;
   }).join('');
 
   document.getElementById('tableArea').innerHTML = `
     <table>
       <thead>
         <tr>
-          <th>コード</th>
-          <th>銘柄名</th>
+          <th class="sortable" onclick="setSort('code')">コード</th>
+          <th class="sortable" onclick="setSort('name')">銘柄名</th>
           <th>業種</th>
-          <th class="num">株価</th>
-          <th class="num">PER</th>
-          <th class="num">PBR</th>
+          <th class="num sortable" onclick="setSort('close')">株価</th>
+          <th class="num sortable" onclick="setSort('per')">PER</th>
+          <th class="num sortable" onclick="setSort('pbr')">PBR</th>
+          <th>更新日</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
