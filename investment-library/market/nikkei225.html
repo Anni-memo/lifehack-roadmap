@@ -252,7 +252,9 @@ async function init() {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const json  = await resp.json();
     allStocks   = json.stocks || [];
-    console.log('[nikkei225] 先頭1件:', JSON.stringify(allStocks[0], null, 2));
+    allStocks.slice(0, 3).forEach((s, i) => {
+      console.log(`[nikkei225] 先頭${i+1}件目 code=${s.code} name=${s.name} sector=${s.sector} close=${s.close} per=${s.per} pbr=${s.pbr}`);
+    });
 
     document.getElementById('heroMeta').textContent =
       `最終更新: ${json.updated_at || '—'}　／　データ日: ${json.data_date || '—'}`;

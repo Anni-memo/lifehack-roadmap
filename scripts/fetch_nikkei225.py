@@ -59,6 +59,25 @@ NIKKEI225_CODES = [
     "9532","9602","9613","9735","9766","9983","9984",
 ]
 
+# ── コード正規化 ──────────────────────────────────────
+def normalize_code(raw) -> str:
+    """
+    APIが返すコード（4桁 or 5桁）を 4桁表示コードに正規化する。
+    例: "13010" -> "1301",  "1301" -> "1301",  13010 -> "1301"
+    """
+    s = str(raw).strip().lstrip("0") if not str(raw).strip().startswith("0") else str(raw).strip()
+    # 数字のみ抽出
+    digits = "".join(c for c in s if c.isdigit())
+    # 5桁で末尾が"0"なら先頭4桁が銘柄コード
+    if len(digits) == 5 and digits.endswith("0"):
+        return digits[:4]
+    return digits[:4]
+
+# 4桁→5桁変換セット（APIが5桁を返す場合の逆引き用）
+N225_SET_4  = set(NIKKEI225_CODES)                          # {"1301", ...}
+N225_SET_5  = {c + "0" for c in NIKKEI225_CODES}           # {"13010", ...}
+N225_ALL    = N225_SET_4 | N225_SET_5                       # 両方受け付ける
+
 # ── API ヘルパー ──────────────────────────────────────
 def api_get(path: str, params: dict = None, max_retries: int = 3) -> dict:
     """429 は指数バックオフでリトライ。それ以外のエラーは即例外。"""
@@ -176,8 +195,6 @@ def main():
     print(f"  出力先: {OUTPUT_PATH}", flush=True)
     date = prev_business_day(datetime.now())
     print(f"  対象日: {date}", flush=True)
-    n225_set = set(NIKKEI225_CODES)
-
     # Step 1: 銘柄マスタ
     print("\n--- Step1: /equities/master ---", flush=True)
     try:
@@ -186,24 +203,27 @@ def main():
         print(f"FATAL: {e}", flush=True)
         sys.exit(1)
 
-    # 先頭1件の全キーを出力してキー名を確認
-    if master_items:
-        print(f"  [master] 先頭1件の全キー: {list(master_items[0].keys())}", flush=True)
-        print(f"  [master] 先頭1件の値: {json.dumps(master_items[0], ensure_ascii=False)[:400]}", flush=True)
+    # 先頭3件のコード正規化を確認
+    print("  [master] コード正規化確認（先頭3件）:", flush=True)
+    for item in master_items[:3]:
+        raw = item.get("code", item.get("Code", ""))
+        norm = normalize_code(raw)
+        hit = norm in N225_SET_4
+        print(f"    元コード={raw!r} → 正規化={norm!r} → N225マッチ={hit}", flush=True)
 
     master_map = {}
     for item in master_items:
-        code = str(item.get("code", item.get("Code", "")))[:4]
-        if code in n225_set:
-            master_map[code] = {
+        raw  = item.get("code", item.get("Code", ""))
+        norm = normalize_code(raw)
+        if norm in N225_SET_4:
+            master_map[norm] = {
                 "name":   item.get("companyName", item.get("CompanyName", item.get("name", ""))),
                 "sector": item.get("sector17Name", item.get("sectorName", item.get("Sector17CodeName", ""))),
             }
     print(f"  日経225銘柄マッチ: {len(master_map)} 社", flush=True)
-    # マッチした先頭1件の内容を確認
     if master_map:
-        first_code = next(iter(master_map))
-        print(f"  [master] マッチ例 ({first_code}): {master_map[first_code]}", flush=True)
+        fc = next(iter(master_map))
+        print(f"  [master] マッチ例 ({fc}): {master_map[fc]}", flush=True)
 
     # Step 2: 株価四本値
     print(f"\n--- Step2: /equities/bars/daily ---", flush=True)
@@ -219,9 +239,10 @@ def main():
 
     quotes_map = {}
     for item in bars_items:
-        code = str(item.get("code", item.get("Code", "")))[:4]
-        if code in n225_set:
-            quotes_map[code] = {
+        raw  = item.get("code", item.get("Code", ""))
+        norm = normalize_code(raw)
+        if norm in N225_SET_4:
+            quotes_map[norm] = {
                 "close": item.get("close", item.get("Close")),
                 "per":   item.get("per",   item.get("PER")),
                 "pbr":   item.get("pbr",   item.get("PBR")),
@@ -239,11 +260,11 @@ def main():
         # 一括取得成功 → コード別に最新レコードを選択
         code_fins: dict[str, list] = {}
         for item in fins_items:
-            code = str(item.get("code", item.get("Code", "")))[:4]
-            if code in n225_set:
-                code_fins.setdefault(code, []).append(item)
-        for code, items in code_fins.items():
-            fins_map[code] = parse_fins(items[-1])
+            norm = normalize_code(item.get("code", item.get("Code", "")))
+            if norm in N225_SET_4:
+                code_fins.setdefault(norm, []).append(item)
+        for norm, items in code_fins.items():
+            fins_map[norm] = parse_fins(items[-1])
         print(f"  一括取得成功: {len(fins_map)} 社", flush=True)
 
     except RuntimeError as e:
