@@ -1,9 +1,12 @@
 """
 fetch_nikkei225.py
-J-Quants API V2 (API Key方式) で日経225の財務データを取得し、
+J-Quants API で日経225の財務データを取得し、
 investment-library/data/nikkei225.json に出力する。
 
-認証: Authorization: Bearer <JQUANTS_API_KEY>
+認証フロー:
+  JQUANTS_API_KEY（ダッシュボードのリフレッシュトークン）
+  → POST /token/auth_refresh → IDトークン取得
+  → Authorization: Bearer <IDトークン> で各APIを呼び出す
 """
 
 import os
@@ -19,7 +22,7 @@ except ImportError:
     sys.exit(1)
 
 # ── 設定 ─────────────────────────────────────────────
-API_KEY = os.environ.get("JQUANTS_API_KEY", "").strip()
+REFRESH_TOKEN = os.environ.get("JQUANTS_API_KEY", "").strip()
 BASE_URL = "https://api.jquants.com/v1"
 OUTPUT_PATH = os.path.join(
     os.path.dirname(__file__), "..", "investment-library", "data", "nikkei225.json"
@@ -54,15 +57,39 @@ NIKKEI225_CODES = [
     "9532","9602","9613","9735","9766","9983","9984",
 ]
 
+# ── 認証：リフレッシュトークン → IDトークン ──────────────
+def get_id_token(refresh_token: str) -> str:
+    """
+    リフレッシュトークンを使ってIDトークンを取得する。
+    IDトークンの有効期限は24時間。
+    """
+    url = f"{BASE_URL}/token/auth_refresh"
+    resp = requests.post(url, params={"refreshToken": refresh_token}, timeout=30)
+    if resp.status_code == 401:
+        raise RuntimeError(
+            f"[認証失敗 401] JQUANTS_API_KEY（リフレッシュトークン）が無効です。\n"
+            f"  J-Quantsダッシュボードで再発行してください。\n"
+            f"  Response: {resp.text[:300]}"
+        )
+    if not resp.ok:
+        raise RuntimeError(
+            f"[トークン取得失敗 {resp.status_code}] {resp.text[:300]}"
+        )
+    id_token = resp.json().get("idToken")
+    if not id_token:
+        raise RuntimeError(f"[トークン取得失敗] レスポンスにidTokenがありません: {resp.text[:300]}")
+    return id_token
+
+
 # ── API ヘルパー ──────────────────────────────────────
-def api_get(path: str, params: dict = None) -> dict:
+def api_get(path: str, params: dict = None, id_token: str = "") -> dict:
     """
     GET リクエストを送信して JSON を返す。
     失敗時は詳細なエラーメッセージを出力して例外を送出する。
     """
     url = f"{BASE_URL}{path}"
     headers = {
-        "Authorization": f"Bearer {API_KEY}",
+        "Authorization": f"Bearer {id_token}",
         "Content-Type": "application/json",
     }
     try:
@@ -91,10 +118,10 @@ def api_get(path: str, params: dict = None) -> dict:
 
 
 # ── データ取得関数 ────────────────────────────────────
-def fetch_listed_info() -> dict:
+def fetch_listed_info(id_token: str) -> dict:
     """上場企業情報を取得し、コード→社名のマップを返す"""
     print("  上場企業情報を取得中...", flush=True)
-    data = api_get("/listed/info")
+    data = api_get("/listed/info", id_token=id_token)
     info_map = {}
     for item in data.get("info", []):
         code = item.get("Code", "")[:4]  # 先頭4桁
@@ -105,10 +132,10 @@ def fetch_listed_info() -> dict:
     return info_map
 
 
-def fetch_all_quotes(date_str: str) -> dict:
+def fetch_all_quotes(date_str: str, id_token: str) -> dict:
     """指定日の全銘柄株価を一括取得し、コード→株価データのマップを返す"""
     print(f"  株価データを取得中 (日付: {date_str})...", flush=True)
-    data = api_get("/prices/daily_quotes", params={"date": date_str})
+    data = api_get("/prices/daily_quotes", params={"date": date_str}, id_token=id_token)
     quotes_map = {}
     for q in data.get("daily_quotes", []):
         code = q.get("Code", "")[:4]
@@ -120,9 +147,9 @@ def fetch_all_quotes(date_str: str) -> dict:
     return quotes_map
 
 
-def fetch_latest_statements(code: str) -> dict | None:
+def fetch_latest_statements(code: str, id_token: str) -> dict | None:
     """指定銘柄の最新財務諸表を取得する"""
-    data = api_get("/fins/statements", params={"code": code})
+    data = api_get("/fins/statements", params={"code": code}, id_token=id_token)
     stmts = data.get("statements", [])
     if not stmts:
         return None
@@ -140,10 +167,10 @@ def fetch_latest_statements(code: str) -> dict | None:
     }
 
 
-def fetch_announcements() -> dict:
+def fetch_announcements(id_token: str) -> dict:
     """決算発表予定を取得し、コード→発表情報のマップを返す"""
     print("  決算発表予定を取得中...", flush=True)
-    data = api_get("/fins/announcement")
+    data = api_get("/fins/announcement", id_token=id_token)
     ann_map = {}
     for item in data.get("announcement", []):
         code = item.get("Code", "")[:4]
@@ -156,11 +183,20 @@ def fetch_announcements() -> dict:
 
 # ── メイン処理 ────────────────────────────────────────
 def main():
-    if not API_KEY:
+    if not REFRESH_TOKEN:
         print("ERROR: 環境変数 JQUANTS_API_KEY が設定されていません。", flush=True)
         sys.exit(1)
 
     print(f"=== 日経225データ取得開始 ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ===", flush=True)
+
+    # Step 0: リフレッシュトークン → IDトークン
+    print("  IDトークンを取得中...", flush=True)
+    try:
+        id_token = get_id_token(REFRESH_TOKEN)
+        print("  IDトークン取得成功", flush=True)
+    except RuntimeError as e:
+        print(f"FATAL: 認証に失敗しました。\n{e}", flush=True)
+        sys.exit(1)
 
     # 直近の営業日を取得（土日はスキップ）
     today = datetime.now()
@@ -177,21 +213,21 @@ def main():
 
     # Step 1: 上場企業情報
     try:
-        info_map = fetch_listed_info()
+        info_map = fetch_listed_info(id_token)
     except RuntimeError as e:
         print(f"FATAL: 上場企業情報の取得に失敗しました。\n{e}", flush=True)
         sys.exit(1)
 
     # Step 2: 株価（全銘柄一括）
     try:
-        quotes_map = fetch_all_quotes(date_str)
+        quotes_map = fetch_all_quotes(date_str, id_token)
     except RuntimeError as e:
         print(f"FATAL: 株価データの取得に失敗しました。\n{e}", flush=True)
         sys.exit(1)
 
     # Step 3: 決算発表予定
     try:
-        ann_map = fetch_announcements()
+        ann_map = fetch_announcements(id_token)
     except RuntimeError as e:
         print(f"WARNING: 決算発表予定の取得に失敗しました（スキップ）。\n{e}", flush=True)
         ann_map = {}
@@ -205,7 +241,7 @@ def main():
 
         stmt = None
         try:
-            stmt = fetch_latest_statements(code)
+            stmt = fetch_latest_statements(code, id_token)
         except RuntimeError as e:
             err_msg = f"  [{i}/{len(NIKKEI225_CODES)}] {code} 財務諸表取得失敗: {e}"
             print(err_msg, flush=True)
