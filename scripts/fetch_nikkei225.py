@@ -217,8 +217,8 @@ def main():
         norm = normalize_code(raw)
         if norm in N225_SET_4:
             master_map[norm] = {
-                "name":   item.get("companyName", item.get("CompanyName", item.get("name", ""))),
-                "sector": item.get("sector17Name", item.get("sectorName", item.get("Sector17CodeName", ""))),
+                "name":   item.get("CoName", ""),
+                "sector": item.get("S17Nm", ""),
             }
     print(f"  日経225銘柄マッチ: {len(master_map)} 社", flush=True)
     if master_map:
