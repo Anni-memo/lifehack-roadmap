@@ -1,7 +1,8 @@
 """
-fetch_nikkei225.py - 疎通確認版
+fetch_nikkei225.py - 疎通確認版（J-Quants V2）
 
-認証: Authorization: Bearer <JQUANTS_API_KEY>
+認証: x-api-key ヘッダーに JQUANTS_API_KEY を付与
+疎通確認: GET /equities/master
 """
 
 import os
@@ -14,7 +15,7 @@ except ImportError:
     sys.exit(1)
 
 API_KEY = os.environ.get("JQUANTS_API_KEY", "").strip()
-BASE_URL = "https://api.jquants.com/v1"
+BASE_URL = "https://api.jquants.com/v2"
 
 
 def main():
@@ -24,8 +25,8 @@ def main():
 
     print(f"API_KEY 長さ: {len(API_KEY)} 文字", flush=True)
 
-    url = f"{BASE_URL}/listed/info"
-    headers = {"Authorization": f"Bearer {API_KEY}"}
+    url = f"{BASE_URL}/equities/master"
+    headers = {"x-api-key": API_KEY}
 
     print(f"GET {url}", flush=True)
     resp = requests.get(url, headers=headers, timeout=30)
@@ -34,8 +35,9 @@ def main():
     print(f"レスポンス: {resp.text[:500]}", flush=True)
 
     if resp.ok:
-        count = len(resp.json().get("info", []))
-        print(f"取得件数: {count} 社", flush=True)
+        data = resp.json()
+        count = len(data) if isinstance(data, list) else len(data.get("items", data.get("data", [])))
+        print(f"取得件数: {count} 件", flush=True)
         print("=== 疎通確認 OK ===", flush=True)
     else:
         print("=== 疎通確認 FAILED ===", flush=True)
