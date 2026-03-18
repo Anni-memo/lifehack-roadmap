@@ -4,15 +4,17 @@ fetch_nikkei225.py - J-Quants V2 本実装
 認証: x-api-key ヘッダー
 エンドポイント:
   GET /equities/master      - 銘柄マスタ
-  GET /equities/bars/daily  - 株価四本値（from/to）
-  GET /fins/summary         - 財務情報（code）
+  GET /equities/bars/daily  - 株価四本値（date）
+  GET /fins/summary         - 財務情報（date 一括 → 失敗時 code 個別）
 """
 
 import os
 import json
 import time
 import sys
+import re
 from datetime import datetime, timedelta
+from collections import Counter
 
 try:
     import requests
@@ -22,9 +24,12 @@ except ImportError:
 
 API_KEY  = os.environ.get("JQUANTS_API_KEY", "").strip()
 BASE_URL = "https://api.jquants.com/v2"
-OUTPUT_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "investment-library", "data", "nikkei225.json"
+
+# OUTPUT_PATH: GitHub Actions では GITHUB_WORKSPACE、ローカルは __file__ 基準
+_repo_root = os.environ.get("GITHUB_WORKSPACE") or os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..")
 )
+OUTPUT_PATH = os.path.join(_repo_root, "investment-library", "data", "nikkei225.json")
 
 NIKKEI225_CODES = [
     "1301","1332","1605","1721","1801","1802","1803","1808","1812",
@@ -55,58 +60,60 @@ NIKKEI225_CODES = [
 ]
 
 # ── API ヘルパー ──────────────────────────────────────
-def api_get(path: str, params: dict = None) -> dict:
+def api_get(path: str, params: dict = None, max_retries: int = 3) -> dict:
+    """429 は指数バックオフでリトライ。それ以外のエラーは即例外。"""
     url = f"{BASE_URL}{path}"
     headers = {"x-api-key": API_KEY}
-    try:
-        resp = requests.get(url, headers=headers, params=params, timeout=30)
-    except requests.exceptions.ConnectionError as e:
-        raise RuntimeError(f"[接続エラー] {url}: {e}") from e
-    except requests.exceptions.Timeout:
-        raise RuntimeError(f"[タイムアウト] {url}")
+    for attempt in range(max_retries + 1):
+        try:
+            resp = requests.get(url, headers=headers, params=params, timeout=30)
+        except requests.exceptions.ConnectionError as e:
+            raise RuntimeError(f"[接続エラー] {url}: {e}") from e
+        except requests.exceptions.Timeout:
+            raise RuntimeError(f"[タイムアウト] {url}")
 
-    if not resp.ok:
-        raise RuntimeError(
-            f"[APIエラー {resp.status_code}] {url}\n  Response: {resp.text[:300]}"
-        )
-    return resp.json()
+        if resp.status_code == 429:
+            wait = 2 ** attempt
+            print(f"  [429 Rate limit] {wait}s 待機してリトライ ({attempt+1}/{max_retries})...", flush=True)
+            time.sleep(wait)
+            continue
+
+        if not resp.ok:
+            raise RuntimeError(
+                f"[APIエラー {resp.status_code}] {url}\n  Response: {resp.text[:300]}"
+            )
+        return resp.json()
+
+    raise RuntimeError(f"[429 リトライ上限] {url}")
 
 
-def find_items(data: dict) -> list:
-    """レスポンスから items 配列を取り出す（キー名のゆれに対応）"""
+def find_items(data) -> list:
+    if isinstance(data, list):
+        return data
     for key in ("items", "data", "info", "bars", "summary"):
         if key in data and isinstance(data[key], list):
             return data[key]
-    # リスト自体が返ってきた場合
-    if isinstance(data, list):
-        return data
     return []
 
 
 def fetch_all_pages(path: str, params: dict = None, debug_label: str = "") -> list:
-    """ページネーション対応の全件取得"""
     params = dict(params or {})
     results = []
     page = 1
     while True:
         data = api_get(path, params)
-
-        # 初回のみ生データ構造をデバッグ出力
         if page == 1 and debug_label:
             keys = list(data.keys()) if isinstance(data, dict) else type(data).__name__
             first = find_items(data)[:1]
-            print(f"  [{debug_label}] レスポンスキー: {keys}", flush=True)
+            print(f"  [{debug_label}] キー: {keys}", flush=True)
             print(f"  [{debug_label}] 先頭1件: {json.dumps(first, ensure_ascii=False)[:300]}", flush=True)
-
         items = find_items(data)
         results.extend(items)
-
         pagination_key = data.get("pagination_key") if isinstance(data, dict) else None
         if not pagination_key:
             break
         params["pagination_key"] = pagination_key
         page += 1
-
     return results
 
 
@@ -120,41 +127,43 @@ def prev_business_day(base: datetime) -> str:
         offset += 1
 
 
-def fetch_bars_with_fallback(date: str) -> list:
+def resolve_date_with_fallback(date: str, path: str, extra_params: dict = None) -> tuple[list, str]:
     """
-    /equities/bars/daily を呼び出す。
-    契約範囲外エラーが返ってきた場合、レスポンスから上限日を抽出して自動リトライ。
+    指定 date でフェッチ。契約範囲外エラーなら上限日に補正してリトライ。
+    (items, 実際に使用した date) を返す。
     """
-    import re
+    params = {"date": date, **(extra_params or {})}
     try:
-        return fetch_all_pages(
-            "/equities/bars/daily",
-            params={"date": date},
-            debug_label="bars/daily",
-        )
+        items = fetch_all_pages(path, params=params, debug_label=path.split("/")[-1])
+        return items, date
     except RuntimeError as e:
         msg = str(e)
-        print(f"  bars/daily エラー: {msg}", flush=True)
-
-        # "subscription covers: YYYY-MM-DD ~ YYYY-MM-DD" を抽出
         m = re.search(r"subscription covers.*?(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})", msg)
         if m:
             sub_start, sub_end = m.group(1), m.group(2)
             print(f"  契約範囲: {sub_start} ~ {sub_end}", flush=True)
-
-            # リクエスト日が上限を超えていたら上限日の直近営業日で再試行
             if date > sub_end:
                 fallback = prev_business_day(
                     datetime.strptime(sub_end, "%Y-%m-%d") + timedelta(days=1)
                 )
                 print(f"  → {date} は範囲外。{fallback} で再試行します。", flush=True)
-                return fetch_all_pages(
-                    "/equities/bars/daily",
-                    params={"date": fallback},
-                    debug_label="bars/daily(fallback)",
-                )
-
+                items = fetch_all_pages(path, params={"date": fallback, **(extra_params or {})},
+                                        debug_label=f"{path.split('/')[-1]}(fallback)")
+                return items, fallback
         raise
+
+
+def parse_fins(item: dict) -> dict:
+    return {
+        "roe":              item.get("roe",             item.get("ROE")),
+        "eps":              item.get("eps",             item.get("EPS",             item.get("earningsPerShare"))),
+        "bps":              item.get("bps",             item.get("BPS",             item.get("bookValuePerShare"))),
+        "net_sales":        item.get("netSales",        item.get("NetSales")),
+        "operating_profit": item.get("operatingProfit", item.get("OperatingProfit")),
+        "net_income":       item.get("netIncome",       item.get("NetIncome",       item.get("profit", item.get("Profit")))),
+        "fiscal_year_end":  item.get("fiscalYearEnd",   item.get("FiscalYearEnd",   item.get("CurrentFiscalYearEndDate"))),
+        "disclosure_date":  item.get("disclosureDate",  item.get("DisclosureDate",  item.get("DisclosedDate"))),
+    }
 
 
 # ── メイン処理 ────────────────────────────────────────
@@ -164,6 +173,7 @@ def main():
         sys.exit(1)
 
     print(f"=== 日経225データ取得開始 ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ===", flush=True)
+    print(f"  出力先: {OUTPUT_PATH}", flush=True)
     date = prev_business_day(datetime.now())
     print(f"  対象日: {date}", flush=True)
     n225_set = set(NIKKEI225_CODES)
@@ -178,19 +188,18 @@ def main():
 
     master_map = {}
     for item in master_items:
-        # キー名はデバッグ出力で確認後に調整
         code = str(item.get("code", item.get("Code", "")))[:4]
         if code in n225_set:
             master_map[code] = {
-                "name": item.get("companyName", item.get("CompanyName", item.get("name", ""))),
+                "name":   item.get("companyName", item.get("CompanyName", item.get("name", ""))),
                 "sector": item.get("sector17Name", item.get("sectorName", item.get("Sector17CodeName", ""))),
             }
     print(f"  日経225銘柄マッチ: {len(master_map)} 社", flush=True)
 
     # Step 2: 株価四本値
-    print(f"\n--- Step2: /equities/bars/daily (date={date}) ---", flush=True)
+    print(f"\n--- Step2: /equities/bars/daily ---", flush=True)
     try:
-        bars_items = fetch_bars_with_fallback(date)
+        bars_items, bars_date = resolve_date_with_fallback(date, "/equities/bars/daily")
     except RuntimeError as e:
         print(f"FATAL: {e}", flush=True)
         sys.exit(1)
@@ -204,39 +213,46 @@ def main():
                 "per":   item.get("per",   item.get("PER")),
                 "pbr":   item.get("pbr",   item.get("PBR")),
             }
+    print(f"  日経225株価取得: {len(quotes_map)} 社", flush=True)
 
-    # Step 3: 財務情報
-    print(f"\n--- Step3: /fins/summary ({len(NIKKEI225_CODES)} 銘柄) ---", flush=True)
+    # Step 3: 財務情報（date 一括取得を先に試みる）
+    print(f"\n--- Step3: /fins/summary ---", flush=True)
     fins_map = {}
     errors = []
-    first_fins = True
-    for i, code in enumerate(NIKKEI225_CODES, 1):
-        try:
-            items = fetch_all_pages(
-                "/fins/summary",
-                params={"code": code},
-                debug_label="fins/summary" if first_fins else "",
-            )
-            first_fins = False
-            if items:
-                latest = items[-1]
-                fins_map[code] = {
-                    "roe":              latest.get("roe",             latest.get("ROE")),
-                    "eps":              latest.get("eps",             latest.get("EPS",             latest.get("earningsPerShare"))),
-                    "bps":              latest.get("bps",             latest.get("BPS",             latest.get("bookValuePerShare"))),
-                    "net_sales":        latest.get("netSales",        latest.get("NetSales")),
-                    "operating_profit": latest.get("operatingProfit", latest.get("OperatingProfit")),
-                    "net_income":       latest.get("netIncome",       latest.get("NetIncome",       latest.get("profit", latest.get("Profit")))),
-                    "fiscal_year_end":  latest.get("fiscalYearEnd",   latest.get("FiscalYearEnd",   latest.get("CurrentFiscalYearEndDate"))),
-                    "disclosure_date":  latest.get("disclosureDate",  latest.get("DisclosureDate",  latest.get("DisclosedDate"))),
-                }
-        except RuntimeError as e:
-            print(f"  [{i}/{len(NIKKEI225_CODES)}] {code} 失敗: {e}", flush=True)
-            errors.append({"code": code, "error": str(e)})
 
-        if i % 30 == 0:
-            print(f"  ... {i}/{len(NIKKEI225_CODES)} 完了", flush=True)
-        time.sleep(0.3)
+    print("  date 一括取得を試みます...", flush=True)
+    try:
+        fins_items, _ = resolve_date_with_fallback(bars_date, "/fins/summary")
+        # 一括取得成功 → コード別に最新レコードを選択
+        code_fins: dict[str, list] = {}
+        for item in fins_items:
+            code = str(item.get("code", item.get("Code", "")))[:4]
+            if code in n225_set:
+                code_fins.setdefault(code, []).append(item)
+        for code, items in code_fins.items():
+            fins_map[code] = parse_fins(items[-1])
+        print(f"  一括取得成功: {len(fins_map)} 社", flush=True)
+
+    except RuntimeError as e:
+        print(f"  一括取得失敗 ({e})。個別取得に切り替えます。", flush=True)
+        first = True
+        for i, code in enumerate(NIKKEI225_CODES, 1):
+            try:
+                items = fetch_all_pages(
+                    "/fins/summary",
+                    params={"code": code},
+                    debug_label="fins/summary" if first else "",
+                )
+                first = False
+                if items:
+                    fins_map[code] = parse_fins(items[-1])
+            except RuntimeError as err:
+                print(f"  [{i}/{len(NIKKEI225_CODES)}] {code} 失敗: {err}", flush=True)
+                errors.append({"code": code, "error": str(err)})
+
+            if i % 30 == 0:
+                print(f"  ... {i}/{len(NIKKEI225_CODES)} 完了", flush=True)
+            time.sleep(1.0)  # 個別取得時はレート制御を厚めに
 
     # Step 4: 結合・出力
     results = []
@@ -254,7 +270,6 @@ def main():
                 per = round(float(quote["close"]) / float(fins["eps"]), 2)
             except (ZeroDivisionError, TypeError, ValueError):
                 pass
-
         if pbr is None and fins.get("bps") and quote.get("close"):
             try:
                 pbr = round(float(quote["close"]) / float(fins["bps"]), 2)
@@ -276,26 +291,30 @@ def main():
             "disclosure_date":  fins.get("disclosure_date"),
         })
 
+    # 常に JSON を保存（partial success でも）
     output = {
         "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S JST"),
-        "data_date":  date,
+        "data_date":  bars_date,
         "count":      len(results),
         "errors":     errors,
         "stocks":     results,
     }
-
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
+    # 集計サマリ
     print(f"\n=== 完了 ===", flush=True)
     print(f"  取得成功: {len(results) - len(errors)} / {len(NIKKEI225_CODES)} 銘柄", flush=True)
     if errors:
         print(f"  取得失敗: {len(errors)} 銘柄", flush=True)
+        reason_counts = Counter(
+            e["error"].split("]")[0].lstrip("[") if "]" in e["error"] else e["error"][:40]
+            for e in errors
+        )
+        for reason, count in reason_counts.most_common():
+            print(f"    - {reason}: {count} 件", flush=True)
     print(f"  出力先: {OUTPUT_PATH}", flush=True)
-
-    if errors:
-        sys.exit(1)
 
 
 if __name__ == "__main__":
