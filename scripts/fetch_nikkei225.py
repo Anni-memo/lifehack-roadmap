@@ -111,14 +111,50 @@ def fetch_all_pages(path: str, params: dict = None, debug_label: str = "") -> li
 
 
 # ── 日付ヘルパー ──────────────────────────────────────
-def latest_business_day() -> str:
-    d = datetime.now()
+def prev_business_day(base: datetime) -> str:
     offset = 1
     while True:
-        candidate = d - timedelta(days=offset)
+        candidate = base - timedelta(days=offset)
         if candidate.weekday() < 5:
             return candidate.strftime("%Y-%m-%d")
         offset += 1
+
+
+def fetch_bars_with_fallback(date: str) -> list:
+    """
+    /equities/bars/daily を呼び出す。
+    契約範囲外エラーが返ってきた場合、レスポンスから上限日を抽出して自動リトライ。
+    """
+    import re
+    try:
+        return fetch_all_pages(
+            "/equities/bars/daily",
+            params={"date": date},
+            debug_label="bars/daily",
+        )
+    except RuntimeError as e:
+        msg = str(e)
+        print(f"  bars/daily エラー: {msg}", flush=True)
+
+        # "subscription covers: YYYY-MM-DD ~ YYYY-MM-DD" を抽出
+        m = re.search(r"subscription covers.*?(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})", msg)
+        if m:
+            sub_start, sub_end = m.group(1), m.group(2)
+            print(f"  契約範囲: {sub_start} ~ {sub_end}", flush=True)
+
+            # リクエスト日が上限を超えていたら上限日の直近営業日で再試行
+            if date > sub_end:
+                fallback = prev_business_day(
+                    datetime.strptime(sub_end, "%Y-%m-%d") + timedelta(days=1)
+                )
+                print(f"  → {date} は範囲外。{fallback} で再試行します。", flush=True)
+                return fetch_all_pages(
+                    "/equities/bars/daily",
+                    params={"date": fallback},
+                    debug_label="bars/daily(fallback)",
+                )
+
+        raise
 
 
 # ── メイン処理 ────────────────────────────────────────
@@ -128,7 +164,7 @@ def main():
         sys.exit(1)
 
     print(f"=== 日経225データ取得開始 ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ===", flush=True)
-    date = latest_business_day()
+    date = prev_business_day(datetime.now())
     print(f"  対象日: {date}", flush=True)
     n225_set = set(NIKKEI225_CODES)
 
@@ -154,11 +190,7 @@ def main():
     # Step 2: 株価四本値
     print(f"\n--- Step2: /equities/bars/daily (date={date}) ---", flush=True)
     try:
-        bars_items = fetch_all_pages(
-            "/equities/bars/daily",
-            params={"date": date},
-            debug_label="bars/daily",
-        )
+        bars_items = fetch_bars_with_fallback(date)
     except RuntimeError as e:
         print(f"FATAL: {e}", flush=True)
         sys.exit(1)
