@@ -186,6 +186,11 @@ def main():
         print(f"FATAL: {e}", flush=True)
         sys.exit(1)
 
+    # 先頭1件の全キーを出力してキー名を確認
+    if master_items:
+        print(f"  [master] 先頭1件の全キー: {list(master_items[0].keys())}", flush=True)
+        print(f"  [master] 先頭1件の値: {json.dumps(master_items[0], ensure_ascii=False)[:400]}", flush=True)
+
     master_map = {}
     for item in master_items:
         code = str(item.get("code", item.get("Code", "")))[:4]
@@ -195,6 +200,10 @@ def main():
                 "sector": item.get("sector17Name", item.get("sectorName", item.get("Sector17CodeName", ""))),
             }
     print(f"  日経225銘柄マッチ: {len(master_map)} 社", flush=True)
+    # マッチした先頭1件の内容を確認
+    if master_map:
+        first_code = next(iter(master_map))
+        print(f"  [master] マッチ例 ({first_code}): {master_map[first_code]}", flush=True)
 
     # Step 2: 株価四本値
     print(f"\n--- Step2: /equities/bars/daily ---", flush=True)
@@ -203,6 +212,10 @@ def main():
     except RuntimeError as e:
         print(f"FATAL: {e}", flush=True)
         sys.exit(1)
+
+    if bars_items:
+        print(f"  [bars] 先頭1件の全キー: {list(bars_items[0].keys())}", flush=True)
+        print(f"  [bars] 先頭1件の値: {json.dumps(bars_items[0], ensure_ascii=False)[:400]}", flush=True)
 
     quotes_map = {}
     for item in bars_items:
