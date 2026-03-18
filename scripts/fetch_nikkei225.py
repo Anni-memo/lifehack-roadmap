@@ -64,7 +64,7 @@ def get_id_token(refresh_token: str) -> str:
     IDトークンの有効期限は24時間。
     """
     url = f"{BASE_URL}/token/auth_refresh"
-    resp = requests.post(url, json={"refreshToken": refresh_token}, timeout=30)
+    resp = requests.post(url, params={"refreshtoken": refresh_token}, timeout=30)
     if resp.status_code == 401:
         raise RuntimeError(
             f"[認証失敗 401] JQUANTS_API_KEY（リフレッシュトークン）が無効です。\n"
