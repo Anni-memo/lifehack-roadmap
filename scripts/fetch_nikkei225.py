@@ -109,7 +109,9 @@ def api_get(path: str, params: dict = None, max_retries: int = 3) -> dict:
 def find_items(data) -> list:
     if isinstance(data, list):
         return data
-    for key in ("items", "data", "info", "bars", "summary"):
+    # J-Quants V2 の既知レスポンスキーを網羅
+    for key in ("daily_quotes", "items", "data", "info", "bars",
+                "summary", "fins_summary", "equities", "master"):
         if key in data and isinstance(data[key], list):
             return data[key]
     return []
@@ -122,10 +124,14 @@ def fetch_all_pages(path: str, params: dict = None, debug_label: str = "") -> li
     while True:
         data = api_get(path, params)
         if page == 1 and debug_label:
-            keys = list(data.keys()) if isinstance(data, dict) else type(data).__name__
-            first = find_items(data)[:1]
-            print(f"  [{debug_label}] キー: {keys}", flush=True)
-            print(f"  [{debug_label}] 先頭1件: {json.dumps(first, ensure_ascii=False)[:300]}", flush=True)
+            # レスポンスの生キーを必ず出力（find_items 前に確認できるよう）
+            raw_keys = list(data.keys()) if isinstance(data, dict) else type(data).__name__
+            print(f"  [{debug_label}] レスポンスキー: {raw_keys}", flush=True)
+            items_raw = find_items(data)
+            if items_raw:
+                print(f"  [{debug_label}] 先頭1件: {json.dumps(items_raw[0], ensure_ascii=False)[:500]}", flush=True)
+            else:
+                print(f"  [{debug_label}] ※ find_items が空を返しました（上記キーを要確認）", flush=True)
         items = find_items(data)
         results.extend(items)
         pagination_key = data.get("pagination_key") if isinstance(data, dict) else None
@@ -173,15 +179,16 @@ def resolve_date_with_fallback(date: str, path: str, extra_params: dict = None) 
 
 
 def parse_fins(item: dict) -> dict:
+    # J-Quants V2 /fins/summary の実フィールド名（PascalCase）を優先して試みる
     return {
-        "roe":              item.get("roe",             item.get("ROE")),
-        "eps":              item.get("eps",             item.get("EPS",             item.get("earningsPerShare"))),
-        "bps":              item.get("bps",             item.get("BPS",             item.get("bookValuePerShare"))),
-        "net_sales":        item.get("netSales",        item.get("NetSales")),
-        "operating_profit": item.get("operatingProfit", item.get("OperatingProfit")),
-        "net_income":       item.get("netIncome",       item.get("NetIncome",       item.get("profit", item.get("Profit")))),
-        "fiscal_year_end":  item.get("fiscalYearEnd",   item.get("FiscalYearEnd",   item.get("CurrentFiscalYearEndDate"))),
-        "disclosure_date":  item.get("disclosureDate",  item.get("DisclosureDate",  item.get("DisclosedDate"))),
+        "roe":              item.get("ROE",                   item.get("roe")),
+        "eps":              item.get("EarningsPerShare",      item.get("eps",  item.get("EPS"))),
+        "bps":              item.get("BookValuePerShare",     item.get("bps",  item.get("BPS"))),
+        "net_sales":        item.get("NetSales",              item.get("netSales")),
+        "operating_profit": item.get("OperatingProfit",       item.get("operatingProfit")),
+        "net_income":       item.get("Profit",                item.get("netIncome", item.get("NetIncome"))),
+        "fiscal_year_end":  item.get("CurrentFiscalYearEndDate", item.get("FiscalYearEnd",  item.get("fiscalYearEnd"))),
+        "disclosure_date":  item.get("DisclosedDate",         item.get("DisclosureDate",    item.get("disclosureDate"))),
     }
 
 
@@ -239,13 +246,14 @@ def main():
 
     quotes_map = {}
     for item in bars_items:
-        raw  = item.get("code", item.get("Code", ""))
+        raw  = item.get("Code", item.get("code", ""))
         norm = normalize_code(raw)
         if norm in N225_SET_4:
             quotes_map[norm] = {
-                "close": item.get("close", item.get("Close")),
-                "per":   item.get("per",   item.get("PER")),
-                "pbr":   item.get("pbr",   item.get("PBR")),
+                # V2 bars/daily: Close (終値) または AdjustmentClose (調整後終値)
+                "close": item.get("Close",           item.get("AdjustmentClose", item.get("close"))),
+                "per":   item.get("PER",             item.get("per")),
+                "pbr":   item.get("PBR",             item.get("pbr")),
             }
     print(f"  日経225株価取得: {len(quotes_map)} 社", flush=True)
 
@@ -260,7 +268,8 @@ def main():
         # 一括取得成功 → コード別に最新レコードを選択
         code_fins: dict[str, list] = {}
         for item in fins_items:
-            norm = normalize_code(item.get("code", item.get("Code", "")))
+            # V2 fins/summary は LocalCode を使う場合あり
+            norm = normalize_code(item.get("LocalCode", item.get("Code", item.get("code", ""))))
             if norm in N225_SET_4:
                 code_fins.setdefault(norm, []).append(item)
         for norm, items in code_fins.items():
@@ -324,6 +333,15 @@ def main():
             "fiscal_year_end":  fins.get("fiscal_year_end"),
             "disclosure_date":  fins.get("disclosure_date"),
         })
+
+    # [final] 先頭3件の確認ログ
+    print("\n--- [final] 先頭3件確認 ---", flush=True)
+    for s in results[:3]:
+        print(
+            f"  [final] {s['code']} name={s['name']!r} sector={s['sector']!r} "
+            f"price={s['close']} updatedAt={bars_date} per={s['per']} pbr={s['pbr']}",
+            flush=True,
+        )
 
     # 常に JSON を保存（partial success でも）
     output = {
