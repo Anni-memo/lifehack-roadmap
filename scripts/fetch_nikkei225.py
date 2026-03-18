@@ -109,9 +109,10 @@ def api_get(path: str, params: dict = None, max_retries: int = 3) -> dict:
 def find_items(data) -> list:
     if isinstance(data, list):
         return data
-    # J-Quants V2 の既知レスポンスキーを網羅
-    for key in ("daily_quotes", "items", "data", "info", "bars",
-                "summary", "fins_summary", "equities", "master"):
+    # J-Quants V2 の既知レスポンスキーを網羅（優先順）
+    for key in ("daily_quotes", "fins", "items", "data", "info",
+                "bars", "summary", "fins_summary", "stocks", "quotes",
+                "equities", "master"):
         if key in data and isinstance(data[key], list):
             return data[key]
     return []
@@ -240,51 +241,82 @@ def main():
         print(f"FATAL: {e}", flush=True)
         sys.exit(1)
 
+    print(f"  bars_items 件数: {len(bars_items)}", flush=True)
     if bars_items:
         print(f"  [bars] 先頭1件の全キー: {list(bars_items[0].keys())}", flush=True)
-        print(f"  [bars] 先頭1件の値: {json.dumps(bars_items[0], ensure_ascii=False)[:400]}", flush=True)
+        print(f"  [bars] 先頭1件の値: {json.dumps(bars_items[0], ensure_ascii=False)[:500]}", flush=True)
 
     quotes_map = {}
     for item in bars_items:
-        raw  = item.get("Code", item.get("code", ""))
+        # コードキー: Code / code / StockCode / SecCode など可能性があるため全試行
+        raw = (item.get("Code") or item.get("code") or
+               item.get("StockCode") or item.get("SecCode") or "")
         norm = normalize_code(raw)
         if norm in N225_SET_4:
             quotes_map[norm] = {
                 # V2 bars/daily: Close (終値) または AdjustmentClose (調整後終値)
-                "close": item.get("Close",           item.get("AdjustmentClose", item.get("close"))),
-                "per":   item.get("PER",             item.get("per")),
-                "pbr":   item.get("PBR",             item.get("pbr")),
+                "close": (item.get("Close") if item.get("Close") is not None
+                          else item.get("AdjustmentClose") if item.get("AdjustmentClose") is not None
+                          else item.get("close")),
+                "per":   item.get("PER", item.get("per")),
+                "pbr":   item.get("PBR", item.get("pbr")),
             }
+
     print(f"  日経225株価取得: {len(quotes_map)} 社", flush=True)
+    # quotes_map が空なのに bars_items がある場合 → コードキー診断
+    if not quotes_map and bars_items:
+        print(f"  ⚠ quotes_map が空です。先頭3件のコードキー確認:", flush=True)
+        for item in bars_items[:3]:
+            print(f"    全キー={list(item.keys())}  値={json.dumps(item, ensure_ascii=False)[:200]}", flush=True)
+    elif quotes_map:
+        sample = next(iter(quotes_map))
+        print(f"  [bars] マッチ例 ({sample}): {quotes_map[sample]}", flush=True)
 
     # Step 3: 財務情報（date 一括取得を先に試みる）
     print(f"\n--- Step3: /fins/summary ---", flush=True)
     fins_map = {}
     errors = []
 
-    print("  date 一括取得を試みます...", flush=True)
-    try:
-        fins_items, _ = resolve_date_with_fallback(bars_date, "/fins/summary")
-        # 一括取得成功 → コード別に最新レコードを選択
+    def _build_fins_map_from_items(fins_items: list) -> dict:
+        """fins_items リストから {4桁コード: parse_fins結果} を構築して返す"""
         code_fins: dict[str, list] = {}
         for item in fins_items:
-            # V2 fins/summary は LocalCode を使う場合あり
-            norm = normalize_code(item.get("LocalCode", item.get("Code", item.get("code", ""))))
+            # V2 fins/summary: LocalCode / Code / code を全試行
+            raw = (item.get("LocalCode") or item.get("Code") or item.get("code") or "")
+            norm = normalize_code(raw)
             if norm in N225_SET_4:
                 code_fins.setdefault(norm, []).append(item)
+        result = {}
         for norm, items in code_fins.items():
-            fins_map[norm] = parse_fins(items[-1])
-        print(f"  一括取得成功: {len(fins_map)} 社", flush=True)
+            result[norm] = parse_fins(items[-1])
+        return result
 
+    print("  date 一括取得を試みます...", flush=True)
+    use_individual = False
+    try:
+        fins_items, _ = resolve_date_with_fallback(bars_date, "/fins/summary")
+        print(f"  fins_items 件数: {len(fins_items)}", flush=True)
+        if fins_items:
+            print(f"  [fins] 先頭1件の全キー: {list(fins_items[0].keys())}", flush=True)
+            print(f"  [fins] 先頭1件の値: {json.dumps(fins_items[0], ensure_ascii=False)[:500]}", flush=True)
+        fins_map = _build_fins_map_from_items(fins_items)
+        print(f"  一括取得結果: {len(fins_map)} 社", flush=True)
+        # ★ 0件なら個別取得へ切り替え（例外なしで空になるケース対策）
+        if not fins_map:
+            print("  一括取得で 0 社しか取れませんでした。個別取得に切り替えます。", flush=True)
+            use_individual = True
     except RuntimeError as e:
         print(f"  一括取得失敗 ({e})。個別取得に切り替えます。", flush=True)
+        use_individual = True
+
+    if use_individual:
         first = True
         for i, code in enumerate(NIKKEI225_CODES, 1):
             try:
                 items = fetch_all_pages(
                     "/fins/summary",
                     params={"code": code},
-                    debug_label="fins/summary" if first else "",
+                    debug_label="fins-individual" if first else "",
                 )
                 first = False
                 if items:
@@ -296,6 +328,11 @@ def main():
             if i % 30 == 0:
                 print(f"  ... {i}/{len(NIKKEI225_CODES)} 完了", flush=True)
             time.sleep(1.0)  # 個別取得時はレート制御を厚めに
+
+    print(f"  fins_map 最終: {len(fins_map)} 社", flush=True)
+    if fins_map:
+        sample = next(iter(fins_map))
+        print(f"  [fins] マッチ例 ({sample}): {fins_map[sample]}", flush=True)
 
     # Step 4: 結合・出力
     results = []
@@ -334,16 +371,16 @@ def main():
             "disclosure_date":  fins.get("disclosure_date"),
         })
 
-    # [final] 先頭3件の確認ログ
-    print("\n--- [final] 先頭3件確認 ---", flush=True)
+    # [final-json] 書き込み直前ログ
+    print("\n--- [final-json] 先頭3件確認 ---", flush=True)
     for s in results[:3]:
         print(
-            f"  [final] {s['code']} name={s['name']!r} sector={s['sector']!r} "
-            f"price={s['close']} updatedAt={bars_date} per={s['per']} pbr={s['pbr']}",
+            f"  [final-json] {s['code']} close={s['close']} per={s['per']} pbr={s['pbr']}"
+            f" roe={s['roe']} disclosure_date={s['disclosure_date']}",
             flush=True,
         )
 
-    # 常に JSON を保存（partial success でも）
+    # JSON 書き込み
     output = {
         "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S JST"),
         "data_date":  bars_date,
@@ -354,6 +391,18 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
+
+    # 書き込み後に先頭1件を再読み込みして値を確認
+    print("\n--- [verify-json] 書き込み後の先頭1件再読み込み ---", flush=True)
+    with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
+        verify = json.load(f)
+    if verify.get("stocks"):
+        v = verify["stocks"][0]
+        print(
+            f"  [verify-json] {v['code']} name={v['name']!r} close={v['close']}"
+            f" per={v['per']} pbr={v['pbr']} disclosure_date={v['disclosure_date']}",
+            flush=True,
+        )
 
     # 集計サマリ
     print(f"\n=== 完了 ===", flush=True)
