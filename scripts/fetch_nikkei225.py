@@ -1,6 +1,11 @@
 """
-fetch_nikkei225.py - 最小疎通確認版
-listed/info への1リクエストのみ実行して認証を確認する。
+fetch_nikkei225.py - 疎通確認版（V1 Bearer方式）
+
+認証フロー:
+  JQUANTS_API_KEY（リフレッシュトークン）
+  → POST /v1/token/auth_refresh?refreshtoken=<token>
+  → idToken 取得
+  → Authorization: Bearer <idToken> で /listed/info を呼ぶ
 """
 
 import os
@@ -12,36 +17,54 @@ except ImportError:
     print("ERROR: requests がインストールされていません。", flush=True)
     sys.exit(1)
 
-API_KEY = os.environ.get("JQUANTS_API_KEY", "").strip()
+REFRESH_TOKEN = os.environ.get("JQUANTS_API_KEY", "").strip()
 BASE_URL = "https://api.jquants.com/v1"
 
+
+def get_id_token() -> str:
+    url = f"{BASE_URL}/token/auth_refresh"
+    resp = requests.post(url, params={"refreshtoken": REFRESH_TOKEN}, timeout=30)
+    print(f"  auth_refresh ステータス: {resp.status_code}", flush=True)
+    print(f"  auth_refresh レスポンス: {resp.text[:300]}", flush=True)
+    if not resp.ok:
+        raise RuntimeError(f"idToken取得失敗 ({resp.status_code})")
+    token = resp.json().get("idToken")
+    if not token:
+        raise RuntimeError(f"idTokenがレスポンスに含まれていません: {resp.text[:300]}")
+    return token
+
+
 def main():
-    if not API_KEY:
+    if not REFRESH_TOKEN:
         print("ERROR: JQUANTS_API_KEY が未設定です。", flush=True)
         sys.exit(1)
 
-    print(f"API_KEY 長さ: {len(API_KEY)} 文字", flush=True)
-    print(f"API_KEY 先頭10文字: {API_KEY[:10]}...", flush=True)
+    print(f"REFRESH_TOKEN 長さ: {len(REFRESH_TOKEN)} 文字", flush=True)
+    print(f"REFRESH_TOKEN 先頭10文字: {REFRESH_TOKEN[:10]}...", flush=True)
 
+    print("\n--- Step1: idToken取得 ---", flush=True)
+    try:
+        id_token = get_id_token()
+        print(f"  idToken取得成功 (先頭10文字: {id_token[:10]}...)", flush=True)
+    except RuntimeError as e:
+        print(f"FATAL: {e}", flush=True)
+        sys.exit(1)
+
+    print("\n--- Step2: /listed/info 呼び出し ---", flush=True)
     url = f"{BASE_URL}/listed/info"
-    headers = {"x-api-key": API_KEY}
-
-    print(f"\nリクエスト: GET {url}", flush=True)
-    print(f"ヘッダー: x-api-key = {API_KEY[:10]}...", flush=True)
-
+    headers = {"Authorization": f"Bearer {id_token}"}
     resp = requests.get(url, headers=headers, timeout=30)
-
-    print(f"\nステータスコード: {resp.status_code}", flush=True)
-    print(f"レスポンス: {resp.text[:500]}", flush=True)
+    print(f"  ステータスコード: {resp.status_code}", flush=True)
+    print(f"  レスポンス: {resp.text[:300]}", flush=True)
 
     if resp.ok:
-        data = resp.json()
-        count = len(data.get("info", []))
+        count = len(resp.json().get("info", []))
         print(f"\n取得件数: {count} 社", flush=True)
         print("=== 疎通確認 OK ===", flush=True)
     else:
-        print("\n=== 疎通確認 FAILED ===", flush=True)
+        print("=== 疎通確認 FAILED ===", flush=True)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
