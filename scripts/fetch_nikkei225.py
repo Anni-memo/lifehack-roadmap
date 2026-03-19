@@ -106,16 +106,26 @@ def api_get(path: str, params: dict = None, max_retries: int = 3) -> dict:
     raise RuntimeError(f"[429 リトライ上限] {url}")
 
 
+_KNOWN_KEYS = ("daily_quotes", "fins", "items", "data", "info",
+               "bars", "summary", "fins_summary", "stocks", "quotes",
+               "equities", "master")
+
 def find_items(data) -> list:
     if isinstance(data, list):
         return data
-    # J-Quants V2 の既知レスポンスキーを網羅（優先順）
-    for key in ("daily_quotes", "fins", "items", "data", "info",
-                "bars", "summary", "fins_summary", "stocks", "quotes",
-                "equities", "master"):
+    for key in _KNOWN_KEYS:
         if key in data and isinstance(data[key], list):
             return data[key]
     return []
+
+def find_items_key(data) -> str:
+    """find_items が実際に使ったリストキー名を返す（ログ用）"""
+    if isinstance(data, list):
+        return "(list)"
+    for key in _KNOWN_KEYS:
+        if key in data and isinstance(data[key], list):
+            return key
+    return "(not found)"
 
 
 def fetch_all_pages(path: str, params: dict = None, debug_label: str = "") -> list:
@@ -125,9 +135,10 @@ def fetch_all_pages(path: str, params: dict = None, debug_label: str = "") -> li
     while True:
         data = api_get(path, params)
         if page == 1 and debug_label:
-            # レスポンスの生キーを必ず出力（find_items 前に確認できるよう）
             raw_keys = list(data.keys()) if isinstance(data, dict) else type(data).__name__
+            used_key = find_items_key(data)
             print(f"  [{debug_label}] レスポンスキー: {raw_keys}", flush=True)
+            print(f"  [{debug_label}] 使用リストキー: {used_key!r}", flush=True)
             items_raw = find_items(data)
             if items_raw:
                 print(f"  [{debug_label}] 先頭1件: {json.dumps(items_raw[0], ensure_ascii=False)[:500]}", flush=True)
@@ -263,14 +274,16 @@ def main():
             }
 
     print(f"  日経225株価取得: {len(quotes_map)} 社", flush=True)
+    # サンプル3件を出力
+    for k in list(quotes_map.keys())[:3]:
+        print(f"  [quotes_map] {k}: {quotes_map[k]}", flush=True)
+    # 1301 個別 lookup
+    print(f"  [bars-lookup] 1301 -> {quotes_map.get('1301', '(not found)')}", flush=True)
     # quotes_map が空なのに bars_items がある場合 → コードキー診断
     if not quotes_map and bars_items:
-        print(f"  ⚠ quotes_map が空です。先頭3件のコードキー確認:", flush=True)
+        print(f"  ⚠ quotes_map が空です。先頭3件の生データ:", flush=True)
         for item in bars_items[:3]:
             print(f"    全キー={list(item.keys())}  値={json.dumps(item, ensure_ascii=False)[:200]}", flush=True)
-    elif quotes_map:
-        sample = next(iter(quotes_map))
-        print(f"  [bars] マッチ例 ({sample}): {quotes_map[sample]}", flush=True)
 
     # Step 3: 財務情報（date 一括取得を先に試みる）
     print(f"\n--- Step3: /fins/summary ---", flush=True)
@@ -330,9 +343,11 @@ def main():
             time.sleep(1.0)  # 個別取得時はレート制御を厚めに
 
     print(f"  fins_map 最終: {len(fins_map)} 社", flush=True)
-    if fins_map:
-        sample = next(iter(fins_map))
-        print(f"  [fins] マッチ例 ({sample}): {fins_map[sample]}", flush=True)
+    # サンプル3件を出力
+    for k in list(fins_map.keys())[:3]:
+        print(f"  [fins_map] {k}: {fins_map[k]}", flush=True)
+    # 1301 個別 lookup
+    print(f"  [fins-lookup] 1301 -> {fins_map.get('1301', '(not found)')}", flush=True)
 
     # Step 4: 結合・出力
     results = []
@@ -371,12 +386,19 @@ def main():
             "disclosure_date":  fins.get("disclosure_date"),
         })
 
-    # [final-json] 書き込み直前ログ
-    print("\n--- [final-json] 先頭3件確認 ---", flush=True)
+    # [final-json] 書き込み直前ログ — 先頭3件 + 1301 を名指し確認
+    print("\n--- [final-json] 書き込み直前確認 ---", flush=True)
     for s in results[:3]:
         print(
             f"  [final-json] {s['code']} close={s['close']} per={s['per']} pbr={s['pbr']}"
             f" roe={s['roe']} disclosure_date={s['disclosure_date']}",
+            flush=True,
+        )
+    r1301 = next((s for s in results if s["code"] == "1301"), None)
+    if r1301:
+        print(
+            f"  [final-json] 1301(確認) close={r1301['close']} per={r1301['per']}"
+            f" pbr={r1301['pbr']} roe={r1301['roe']} disclosure_date={r1301['disclosure_date']}",
             flush=True,
         )
 
@@ -392,17 +414,19 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    # 書き込み後に先頭1件を再読み込みして値を確認
-    print("\n--- [verify-json] 書き込み後の先頭1件再読み込み ---", flush=True)
+    # 書き込み後に再読み込みして 1301 を名指し確認
+    print("\n--- [verify-json] 書き込み後の再読み込み確認 ---", flush=True)
     with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
         verify = json.load(f)
-    if verify.get("stocks"):
-        v = verify["stocks"][0]
+    v1301 = next((s for s in verify.get("stocks", []) if s["code"] == "1301"), None)
+    if v1301:
         print(
-            f"  [verify-json] {v['code']} name={v['name']!r} close={v['close']}"
-            f" per={v['per']} pbr={v['pbr']} disclosure_date={v['disclosure_date']}",
+            f"  [verify-json] 1301 name={v1301['name']!r} close={v1301['close']}"
+            f" per={v1301['per']} pbr={v1301['pbr']} disclosure_date={v1301['disclosure_date']}",
             flush=True,
         )
+    else:
+        print("  [verify-json] 1301 が stocks 配列に見つかりません", flush=True)
 
     # 集計サマリ
     print(f"\n=== 完了 ===", flush=True)
