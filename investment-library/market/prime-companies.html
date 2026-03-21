@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="東証プライム企業一覧｜投資と思考の書斎"/>
+<meta property="og:description" content="東証プライム上場企業を業種・キーワードで検索。長期投資家のための静かな企業データベース。"/>
+<title>東証プライム企業一覧｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#100e18 50%,#1a1428 100%);
+  color:var(--parch);padding:52px 24px 44px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.4em;margin-bottom:16px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);margin-bottom:8px;text-shadow:0 2px 20px rgba(212,170,34,.2);position:relative;}
+.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.55em;letter-spacing:.06em;margin-top:8px;font-weight:400;}
+.hero-sub{font-size:.83rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.9;position:relative;}
+.hero-stats{display:flex;justify-content:center;gap:32px;margin-top:24px;position:relative;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--serif);font-size:1.7rem;color:var(--gold4);font-weight:700;line-height:1;}
+.hero-stat-label{font-family:var(--mono);font-size:.48rem;color:var(--parch4);letter-spacing:.12em;margin-top:4px;}
+
+/* SEARCH BAR */
+.search-wrap{background:var(--ink2);border-bottom:1px solid var(--gold)22;padding:16px 20px;position:sticky;top:0;z-index:50;}
+.search-inner{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+.search-row{display:flex;gap:8px;align-items:center;}
+.search-box{
+  flex:1;padding:9px 14px;
+  font-family:var(--jp);font-size:.84rem;
+  background:rgba(255,255,255,.08);border:1px solid var(--gold)33;
+  color:var(--parch);border-radius:2px;outline:none;
+  transition:border-color .15s;
+}
+.search-box::placeholder{color:var(--parch4);opacity:.5;}
+.search-box:focus{border-color:var(--gold3);}
+.search-btn{
+  padding:9px 18px;font-family:var(--mono);font-size:.6rem;
+  background:var(--gold2);border:none;color:var(--ink);
+  cursor:pointer;border-radius:2px;letter-spacing:.06em;font-weight:600;
+  transition:background .15s;white-space:nowrap;
+}
+.search-btn:hover{background:var(--gold3);}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.filter-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.1em;flex-shrink:0;}
+.fpill{font-family:var(--mono);font-size:.54rem;padding:4px 11px;border:1px solid var(--gold)33;color:var(--parch4);background:transparent;cursor:pointer;border-radius:2px;letter-spacing:.05em;transition:all .15s;}
+.fpill:hover{border-color:var(--gold2);color:var(--gold3)}
+.fpill.active{background:var(--gold2);border-color:var(--gold2);color:var(--ink);font-weight:600;}
+.result-count{font-family:var(--mono);font-size:.52rem;color:var(--parch4);margin-left:auto;}
+
+/* STATUS FILTER */
+.status-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.spill{font-family:var(--mono);font-size:.52rem;padding:3px 10px;border:1px solid rgba(255,255,255,.1);color:var(--parch4);background:transparent;cursor:pointer;border-radius:2px;transition:all .15s;}
+.spill:hover{border-color:var(--gold2);color:var(--gold3)}
+.spill.active{background:rgba(255,255,255,.1);color:var(--parch);}
+
+/* TABLE WRAP */
+.table-wrap{max-width:900px;margin:0 auto;padding:28px 20px 48px;}
+
+/* COMPANY TABLE */
+.co-table{width:100%;border-collapse:collapse;}
+.co-table th{
+  font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;
+  background:var(--ink2);color:var(--gold3);
+  padding:10px 14px;text-align:left;
+  border-bottom:2px solid var(--gold)44;
+  white-space:nowrap;cursor:pointer;user-select:none;
+}
+.co-table th:hover{color:var(--gold4);}
+.co-table th .sort-arrow{margin-left:4px;opacity:.5;}
+.co-table th.sorted .sort-arrow{opacity:1;}
+.co-table td{
+  padding:10px 14px;border-bottom:1px solid var(--parch3);
+  font-size:.8rem;vertical-align:middle;
+  transition:background .1s;
+}
+.co-table tr:hover td{background:var(--parch2);}
+
+.td-code{font-family:var(--mono);font-size:.72rem;color:var(--gold2);font-weight:500;white-space:nowrap;}
+.td-name{font-weight:500;color:var(--ink);}
+.td-name-sub{font-family:var(--mono);font-size:.52rem;color:var(--ink3);margin-top:1px;}
+.td-sector{font-family:var(--mono);font-size:.58rem;color:var(--ink3);}
+.td-status{white-space:nowrap;}
+.status-badge{
+  font-family:var(--mono);font-size:.48rem;padding:2px 8px;border-radius:2px;letter-spacing:.05em;
+  white-space:nowrap;display:inline-block;
+}
+.status-badge.watch{background:rgba(184,144,10,.12);color:var(--gold2);border:1px solid rgba(184,144,10,.3);}
+.status-badge.analyzed{background:rgba(40,120,60,.12);color:#3a7a28;border:1px solid rgba(40,120,60,.3);}
+.status-badge.none{background:var(--parch3);color:var(--ink3);border:1px solid var(--parch4);}
+.td-memo{font-size:.72rem;color:var(--ink3);font-style:italic;max-width:200px;}
+.td-ir{white-space:nowrap;}
+.ir-link{font-family:var(--mono);font-size:.56rem;color:var(--gold2);text-decoration:none;padding:3px 8px;border:1px solid var(--gold)33;border-radius:2px;transition:all .15s;}
+.ir-link:hover{background:var(--gold2);color:var(--ink);}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:60px 20px;color:var(--ink3);}
+.empty-state-icon{font-size:2.4rem;margin-bottom:16px;opacity:.4;}
+.empty-state-text{font-size:.84rem;line-height:1.8;}
+
+/* PAGINATION */
+.pagination{display:flex;justify-content:center;gap:6px;margin-top:24px;flex-wrap:wrap;}
+.page-btn{font-family:var(--mono);font-size:.58rem;padding:6px 12px;border:1px solid var(--parch4);background:var(--parch2);color:var(--ink2);cursor:pointer;border-radius:2px;transition:all .15s;}
+.page-btn:hover{border-color:var(--gold3);color:var(--gold2);}
+.page-btn.active{background:var(--gold2);border-color:var(--gold2);color:var(--ink);font-weight:600;}
+.page-btn:disabled{opacity:.35;cursor:default;}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid var(--gold)44;margin-top:20px;}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+
+@media(max-width:600px){
+  .co-table th:nth-child(4),.co-table td:nth-child(4){display:none;}
+  .co-table th:nth-child(6),.co-table td:nth-child(6){display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../">← 書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../industries/">業種一覧</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">東証プライム企業一覧</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">TSE PRIME — COMPANY DATABASE</div>
+  <h1 class="hero-title">
+    東証プライム 企業一覧
+    <em>Company Navigator · 業種から企業へ、企業から分析へ</em>
+  </h1>
+  <p class="hero-sub">
+    東証プライム上場企業を業種・キーワードで検索する。<br>
+    企業名・証券コードで絞り込み、IRページへ直接アクセス。
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num" id="statTotal">—</div>
+      <div class="hero-stat-label">COMPANIES</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" id="statSectors">33</div>
+      <div class="hero-stat-label">SECTORS</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" id="statWatch">—</div>
+      <div class="hero-stat-label">WATCHLIST</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <div class="search-inner">
+    <div class="search-row">
+      <input class="search-box" id="searchBox" type="text" placeholder="企業名・証券コードで検索...（例：ソニー, 6758）" oninput="handleSearch()"/>
+      <button class="search-btn" onclick="clearSearch()">クリア</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">SECTOR</span>
+      <button class="fpill active" onclick="filterSector('all',this)">すべて</button>
+      <button class="fpill" onclick="filterSector('テクノロジー',this)">テクノロジー</button>
+      <button class="fpill" onclick="filterSector('製造業',this)">製造業</button>
+      <button class="fpill" onclick="filterSector('金融',this)">金融</button>
+      <button class="fpill" onclick="filterSector('消費・サービス',this)">消費・サービス</button>
+      <button class="fpill" onclick="filterSector('インフラ・建設',this)">インフラ</button>
+      <span class="result-count" id="resultCount">— 件</span>
+    </div>
+    <div class="status-row">
+      <span class="filter-label">STATUS</span>
+      <button class="spill active" onclick="filterStatus('all',this)">すべて</button>
+      <button class="spill" onclick="filterStatus('watch',this)">注目</button>
+      <button class="spill" onclick="filterStatus('analyzed',this)">分析済み</button>
+    </div>
+  </div>
+</div>
+
+<!-- TABLE -->
+<div class="table-wrap">
+  <table class="co-table">
+    <thead>
+      <tr>
+        <th onclick="sortTable('code')">コード <span class="sort-arrow">↕</span></th>
+        <th onclick="sortTable('name')">会社名 <span class="sort-arrow">↕</span></th>
+        <th onclick="sortTable('sector')">業種 <span class="sort-arrow">↕</span></th>
+        <th>注目メモ</th>
+        <th onclick="sortTable('status')">ステータス <span class="sort-arrow">↕</span></th>
+        <th>IR</th>
+      </tr>
+    </thead>
+    <tbody id="companyTableBody"></tbody>
+  </table>
+  <div id="emptyState" class="empty-state" style="display:none;">
+    <div class="empty-state-icon">🔍</div>
+    <div class="empty-state-text">条件に一致する企業が見つかりませんでした。<br>キーワードを変えてお試しください。</div>
+  </div>
+  <div class="pagination" id="pagination"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../">← 書斎の入口へ戻る</a>　·
+    <a href="../industries/">業種一覧</a>　·
+    <a href="../analysis-template/">企業分析テンプレート</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+// ══════════════════════════════════════
+// 東証プライム 企業データ
+// 追加・更新したい時はここに行を足すだけ
+// status: 'watch'=注目, 'analyzed'=分析済み, ''=未分析
+// ══════════════════════════════════════
+const COMPANIES = [
+  // ── テクノロジー ────────────────────
+  {code:"6758",name:"ソニーグループ",nameEn:"Sony Group",sector:"テクノロジー",industry:"電気機器",status:"watch",memo:"エンタメ×半導体の二刀流moat",ir:"https://www.sony.com/ja/SonyInfo/IR/"},
+  {code:"6861",name:"キーエンス",nameEn:"Keyence",sector:"テクノロジー",industry:"電気機器",status:"watch",memo:"超高利益率・FA分野のmoat",ir:"https://www.keyence.co.jp/company/investor/"},
+  {code:"9432",name:"日本電信電話（NTT）",nameEn:"NTT",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://group.ntt/jp/ir/"},
+  {code:"9433",name:"KDDI",nameEn:"KDDI",sector:"テクノロジー",industry:"情報・通信業",status:"watch",memo:"通信×ライフデザインのmoat",ir:"https://ir.kddi.com/"},
+  {code:"9434",name:"ソフトバンク",nameEn:"SoftBank Corp.",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.softbank.jp/corp/ir/"},
+  {code:"4776",name:"サイボウズ",nameEn:"Cybozu",sector:"テクノロジー",industry:"情報・通信業",status:"analyzed",memo:"グループウェアのスイッチングコスト",ir:"https://cybozu.co.jp/company/ir/"},
+  {code:"9984",name:"ソフトバンクグループ",nameEn:"SoftBank Group",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://group.softbank/ir/"},
+  {code:"6702",name:"富士通",nameEn:"Fujitsu",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.fujitsu.com/jp/about/ir/"},
+  {code:"6501",name:"日立製作所",nameEn:"Hitachi",sector:"テクノロジー",industry:"電気機器",status:"watch",memo:"DX・社会インフラへのピボット",ir:"https://www.hitachi.co.jp/IR/"},
+  {code:"6594",name:"日本電産（ニデック）",nameEn:"Nidec",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.nidec.com/ja/ir/"},
+  {code:"4063",name:"信越化学工業",nameEn:"Shin-Etsu Chemical",sector:"テクノロジー",industry:"化学",status:"watch",memo:"シリコンウエハー世界首位のmoat",ir:"https://www.shinetsu.co.jp/jp/ir/"},
+  {code:"6146",name:"ディスコ",nameEn:"DISCO",sector:"テクノロジー",industry:"機械",status:"watch",memo:"半導体切断装置の世界標準",ir:"https://www.disco.co.jp/jp/ir/"},
+  {code:"6920",name:"レーザーテック",nameEn:"Lasertec",sector:"テクノロジー",industry:"精密機器",status:"watch",memo:"EUVマスク検査装置の独占的地位",ir:"https://www.lasertec.co.jp/ja/ir/"},
+  {code:"4543",name:"テルモ",nameEn:"Terumo",sector:"テクノロジー",industry:"精密機器",status:"",memo:"",ir:"https://www.terumo.co.jp/ir/"},
+  {code:"6645",name:"オムロン",nameEn:"OMRON",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.omron.com/jp/ja/ir/"},
+  // ── 製造業 ────────────────────────
+  {code:"7203",name:"トヨタ自動車",nameEn:"Toyota Motor",sector:"製造業",industry:"輸送用機器",status:"watch",memo:"TPS・グローバルサプライチェーンのmoat",ir:"https://global.toyota/jp/ir/"},
+  {code:"7267",name:"本田技研工業",nameEn:"Honda Motor",sector:"製造業",industry:"輸送用機器",status:"",memo:"",ir:"https://www.honda.co.jp/investors/"},
+  {code:"6902",name:"デンソー",nameEn:"DENSO",sector:"製造業",industry:"輸送用機器",status:"",memo:"",ir:"https://www.denso.com/jp/ja/investors/"},
+  {code:"6301",name:"小松製作所（コマツ）",nameEn:"Komatsu",sector:"製造業",industry:"機械",status:"watch",memo:"建機×デジタル化のmoat",ir:"https://komatsu.jp/ja/ir/"},
+  {code:"6367",name:"ダイキン工業",nameEn:"Daikin Industries",sector:"製造業",industry:"機械",status:"watch",memo:"空調のグローバルmoat",ir:"https://www.daikin.co.jp/investor/"},
+  {code:"6954",name:"ファナック",nameEn:"FANUC",sector:"製造業",industry:"機械",status:"watch",memo:"FA・ロボットの超高利益率企業",ir:"https://www.fanuc.co.jp/ja/ir/index.html"},
+  {code:"4901",name:"富士フイルムHD",nameEn:"Fujifilm HD",sector:"製造業",industry:"化学",status:"watch",memo:"フィルムからヘルスケアへの転換力",ir:"https://ir.fujifilm.com/ja/"},
+  {code:"4183",name:"三井化学",nameEn:"Mitsui Chemicals",sector:"製造業",industry:"化学",status:"",memo:"",ir:"https://jp.mitsuichemicals.com/jp/ir/"},
+  {code:"4502",name:"武田薬品工業",nameEn:"Takeda Pharmaceutical",sector:"製造業",industry:"医薬品",status:"",memo:"",ir:"https://www.takeda.com/ja-jp/investors/"},
+  {code:"4519",name:"中外製薬",nameEn:"Chugai Pharmaceutical",sector:"製造業",industry:"医薬品",status:"watch",memo:"ロシュとの提携×抗体医薬",ir:"https://www.chugai-pharm.co.jp/ir/"},
+  {code:"4568",name:"第一三共",nameEn:"Daiichi Sankyo",sector:"製造業",industry:"医薬品",status:"watch",memo:"ADC（抗体薬物複合体）のパイプライン",ir:"https://www.daiichisankyo.co.jp/ir/"},
+  {code:"5401",name:"日本製鉄",nameEn:"Nippon Steel",sector:"製造業",industry:"鉄鋼",status:"",memo:"",ir:"https://www.nipponsteel.com/ir/"},
+  {code:"3402",name:"東レ",nameEn:"Toray Industries",sector:"製造業",industry:"繊維製品",status:"",memo:"",ir:"https://ir.toray/jp/"},
+  // ── 金融 ────────────────────────
+  {code:"8306",name:"三菱UFJフィナンシャルG",nameEn:"MUFG",sector:"金融",industry:"銀行業",status:"watch",memo:"メガバンク最大手・金利上昇の恩恵",ir:"https://www.mufg.jp/ir/"},
+  {code:"8316",name:"三井住友フィナンシャルG",nameEn:"SMFG",sector:"金融",industry:"銀行業",status:"watch",memo:"低コスト経営と資本効率",ir:"https://www.smfg.co.jp/investor/"},
+  {code:"8411",name:"みずほフィナンシャルG",nameEn:"Mizuho FG",sector:"金融",industry:"銀行業",status:"",memo:"",ir:"https://www.mizuho-fg.co.jp/investors/"},
+  {code:"8750",name:"第一生命HD",nameEn:"Dai-ichi Life HD",sector:"金融",industry:"保険業",status:"",memo:"",ir:"https://www.dai-ichi-life.co.jp/dil/ir/"},
+  {code:"8766",name:"東京海上HD",nameEn:"Tokio Marine HD",sector:"金融",industry:"保険業",status:"watch",memo:"損保×グローバルのフロート活用",ir:"https://www.tokiomarinehd.com/ir/"},
+  {code:"8725",name:"MS&ADインシュアランスG",nameEn:"MS&AD Insurance",sector:"金融",industry:"保険業",status:"",memo:"",ir:"https://www.ms-ad-hd.com/ja/ir/"},
+  {code:"8697",name:"日本取引所グループ",nameEn:"Japan Exchange Group",sector:"金融",industry:"証券業",status:"watch",memo:"取引所インフラの強固なmoat",ir:"https://www.jpx.co.jp/corporate/ir/"},
+  {code:"8031",name:"三井物産",nameEn:"Mitsui & Co.",sector:"金融",industry:"卸売業",status:"watch",memo:"バフェット注目・資本配分の質",ir:"https://www.mitsui.com/jp/ja/ir/"},
+  {code:"8001",name:"伊藤忠商事",nameEn:"Itochu",sector:"金融",industry:"卸売業",status:"watch",memo:"非資源・消費ビジネスのポートフォリオ",ir:"https://www.itochu.co.jp/ja/ir/"},
+  {code:"8002",name:"丸紅",nameEn:"Marubeni",sector:"金融",industry:"卸売業",status:"",memo:"",ir:"https://www.marubeni.com/jp/ir/"},
+  {code:"8058",name:"三菱商事",nameEn:"Mitsubishi Corp.",sector:"金融",industry:"卸売業",status:"watch",memo:"バフェット注目・資源×非資源の多角化",ir:"https://www.mitsubishicorp.com/jp/ja/ir/"},
+  // ── 消費・サービス ────────────────
+  {code:"9983",name:"ファーストリテイリング",nameEn:"Fast Retailing",sector:"消費・サービス",industry:"小売業",status:"watch",memo:"グローバルSPA・柳井流経営",ir:"https://www.fastretailing.com/jp/ir/"},
+  {code:"3382",name:"セブン&アイHD",nameEn:"Seven & i HD",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.7andi.com/ir/"},
+  {code:"8267",name:"イオン",nameEn:"AEON",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.aeon.info/ir/"},
+  {code:"4755",name:"楽天グループ",nameEn:"Rakuten Group",sector:"消費・サービス",industry:"情報・通信業",status:"",memo:"",ir:"https://corp.rakuten.co.jp/investors/"},
+  {code:"4689",name:"LINEヤフー",nameEn:"LY Corporation",sector:"消費・サービス",industry:"情報・通信業",status:"",memo:"",ir:"https://lygroup.co.jp/ir/"},
+  {code:"6098",name:"リクルートHD",nameEn:"Recruit HD",sector:"消費・サービス",industry:"サービス業",status:"watch",memo:"IndeedのグローバルHRネットワーク効果",ir:"https://recruit-holdings.com/ja/ir/"},
+  {code:"4324",name:"電通グループ",nameEn:"Dentsu Group",sector:"消費・サービス",industry:"サービス業",status:"",memo:"",ir:"https://www.dentsugroup.com/ir"},
+  {code:"2502",name:"アサヒグループHD",nameEn:"Asahi Group HD",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.asahigroup-holdings.com/ir/"},
+  {code:"2503",name:"キリンHD",nameEn:"Kirin HD",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.kirinholdings.com/jp/ir/"},
+  {code:"2802",name:"味の素",nameEn:"Ajinomoto",sector:"消費・サービス",industry:"食料品",status:"watch",memo:"アミノ酸技術×グローバル展開",ir:"https://www.ajinomoto.co.jp/company/ir/"},
+  {code:"2897",name:"日清食品HD",nameEn:"Nissin Foods HD",sector:"消費・サービス",industry:"食料品",status:"watch",memo:"即席麺のブランドmoat",ir:"https://www.nissin.com/jp/ir/"},
+  {code:"2801",name:"キッコーマン",nameEen:"Kikkoman",sector:"消費・サービス",industry:"食料品",status:"watch",memo:"醤油グローバルブランドの希少性",ir:"https://www.kikkoman.com/jp/ir/"},
+  {code:"7974",name:"任天堂",nameEn:"Nintendo",sector:"消費・サービス",industry:"その他製品",status:"watch",memo:"キャラクターIPとエコシステムのmoat",ir:"https://www.nintendo.co.jp/ir/"},
+  // ── インフラ・建設 ────────────────
+  {code:"8801",name:"三井不動産",nameEn:"Mitsui Fudosan",sector:"インフラ・建設",industry:"不動産業",status:"watch",memo:"立地希少性と総合開発力",ir:"https://www.mitsuifudosan.co.jp/ir/"},
+  {code:"8802",name:"三菱地所",nameEn:"Mitsubishi Estate",sector:"インフラ・建設",industry:"不動産業",status:"",memo:"",ir:"https://www.mec.co.jp/j/investor/"},
+  {code:"8830",name:"住友不動産",nameEn:"Sumitomo Realty",sector:"インフラ・建設",industry:"不動産業",status:"",memo:"",ir:"https://www.sumitomo-rd.co.jp/ir/"},
+  {code:"1925",name:"大和ハウス工業",nameEn:"Daiwa House Industry",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.daiwahouse.co.jp/ir/"},
+  {code:"1803",name:"清水建設",nameEn:"Shimizu",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.shimz.co.jp/ir/"},
+  {code:"9022",name:"東海旅客鉄道（JR東海）",nameEn:"Central Japan Railway",sector:"インフラ・建設",industry:"陸運業",status:"watch",memo:"新幹線の独占的インフラmoat",ir:"https://global.jr-central.co.jp/ja/company/ir/"},
+  {code:"9021",name:"西日本旅客鉄道（JR西日本）",nameEn:"West Japan Railway",sector:"インフラ・建設",industry:"陸運業",status:"",memo:"",ir:"https://www.westjr.co.jp/company/ir/"},
+  {code:"9001",name:"東武鉄道",nameEn:"Tobu Railway",sector:"インフラ・建設",industry:"陸運業",status:"",memo:"",ir:"https://www.tobu.co.jp/ir/"},
+  {code:"9101",name:"日本郵船",nameEn:"NYK Line",sector:"インフラ・建設",industry:"海運業",status:"watch",memo:"商社株並みの高ROE・資本配分転換",ir:"https://www.nyk.com/ir/"},
+  {code:"9104",name:"商船三井",nameEn:"MOL",sector:"インフラ・建設",industry:"海運業",status:"watch",memo:"LNG船×株主還元の強化",ir:"https://www.mol.co.jp/ir/"},
+  // ── テクノロジー追加 ──────────────────
+  {code:"4307",name:"野村総合研究所",nameEn:"NRI",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.nri.com/jp/ir"},
+  {code:"4704",name:"トレンドマイクロ",nameEn:"Trend Micro",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.trendmicro.com/ja_jp/about/investor-relations.html"},
+  {code:"9613",name:"NTTデータグループ",nameEn:"NTT Data",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.nttdata.com/jp/ja/ir/"},
+  {code:"4062",name:"イビデン",nameEn:"Ibiden",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.ibiden.co.jp/ir/"},
+  {code:"6723",name:"ルネサスエレクトロニクス",nameEn:"Renesas Electronics",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.renesas.com/jp/ja/about/investor-relations"},
+  {code:"6857",name:"アドバンテスト",nameEn:"Advantest",sector:"テクノロジー",industry:"電気機器",status:"watch",memo:"半導体テスト装置の世界首位",ir:"https://www.advantest.com/investors/"},
+  {code:"8035",name:"東京エレクトロン",nameEn:"Tokyo Electron",sector:"テクノロジー",industry:"電気機器",status:"watch",memo:"半導体製造装置のグローバルmoat",ir:"https://www.tel.com/ir/"},
+  {code:"6770",name:"アルプスアルパイン",nameEn:"Alps Alpine",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.alpsalpine.com/j/ir/"},
+  {code:"6981",name:"村田製作所",nameEn:"Murata Manufacturing",sector:"テクノロジー",industry:"電気機器",status:"watch",memo:"積層セラミックコンデンサの世界首位",ir:"https://www.murata.com/ja-jp/ir"},
+  {code:"6504",name:"富士電機",nameEn:"Fuji Electric",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.fujielectric.co.jp/ir/"},
+  {code:"6506",name:"安川電機",nameEn:"Yaskawa Electric",sector:"テクノロジー",industry:"電気機器",status:"watch",memo:"産業ロボット×モーション制御",ir:"https://www.yaskawa.co.jp/ir"},
+  {code:"6841",name:"横河電機",nameEn:"Yokogawa Electric",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.yokogawa.com/jp/ir/"},
+  {code:"6971",name:"京セラ",nameEn:"Kyocera",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.kyocera.co.jp/ir/"},
+  {code:"6976",name:"太陽誘電",nameEn:"Taiyo Yuden",sector:"テクノロジー",industry:"電気機器",status:"",memo:"",ir:"https://www.yuden.co.jp/jp/ir/"},
+  {code:"3659",name:"ネクソン",nameEn:"NEXON",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://ir.nexon.co.jp/ja/"},
+  {code:"9697",name:"カプコン",nameEn:"CAPCOM",sector:"テクノロジー",industry:"情報・通信業",status:"watch",memo:"IPの反復収益モデルのmoat",ir:"https://www.capcom.co.jp/ir/"},
+  {code:"4552",name:"JCRファーマ",nameEn:"JCR Pharmaceuticals",sector:"テクノロジー",industry:"医薬品",status:"",memo:"",ir:"https://www.jcrpharm.co.jp/ir/"},
+  {code:"2432",name:"DeNA",nameEn:"DeNA",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://ir.dena.com/ja/"},
+  {code:"3765",name:"ガンホー・オンライン・エンターテイメント",nameEn:"GungHo Online",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.gungho.jp/ir/"},
+  {code:"9766",name:"コナミグループ",nameEn:"Konami Group",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.konami.com/ir/ja/"},
+  {code:"7832",name:"バンダイナムコホールディングス",nameEn:"Bandai Namco HD",sector:"テクノロジー",industry:"その他製品",status:"watch",memo:"強力IPポートフォリオのmoat",ir:"https://www.bandainamco.co.jp/ir/"},
+  {code:"4021",name:"日産化学",nameEn:"Nissan Chemical",sector:"テクノロジー",industry:"化学",status:"",memo:"",ir:"https://www.nissanchem.co.jp/ir/"},
+  {code:"4042",name:"東ソー",nameEn:"Tosoh",sector:"テクノロジー",industry:"化学",status:"",memo:"",ir:"https://www.tosoh.co.jp/ir/"},
+  {code:"4188",name:"三菱ケミカルグループ",nameEn:"Mitsubishi Chemical Group",sector:"テクノロジー",industry:"化学",status:"",memo:"",ir:"https://www.mitsubishichem-hd.co.jp/ir/"},
+  // ── 製造業追加 ──────────────────────
+  {code:"5108",name:"ブリヂストン",nameEn:"Bridgestone",sector:"製造業",industry:"ゴム製品",status:"watch",memo:"タイヤ世界首位のブランドmoat",ir:"https://www.bridgestone.co.jp/ir/"},
+  {code:"5101",name:"横浜ゴム",nameEn:"Yokohama Rubber",sector:"製造業",industry:"ゴム製品",status:"",memo:"",ir:"https://www.y-yokohama.com/ir/"},
+  {code:"7269",name:"スズキ",nameEn:"Suzuki Motor",sector:"製造業",industry:"輸送用機器",status:"",memo:"",ir:"https://www.suzuki.co.jp/ir/"},
+  {code:"7270",name:"SUBARU",nameEn:"SUBARU",sector:"製造業",industry:"輸送用機器",status:"",memo:"",ir:"https://www.subaru.co.jp/ir/"},
+  {code:"7201",name:"日産自動車",nameEn:"Nissan Motor",sector:"製造業",industry:"輸送用機器",status:"",memo:"",ir:"https://www.nissan-global.com/JP/IR/"},
+  {code:"7202",name:"いすゞ自動車",nameEn:"Isuzu Motors",sector:"製造業",industry:"輸送用機器",status:"",memo:"",ir:"https://www.isuzu.co.jp/ir/"},
+  {code:"7012",name:"川崎重工業",nameEn:"Kawasaki Heavy Industries",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.khi.co.jp/ir/"},
+  {code:"7011",name:"三菱重工業",nameEn:"Mitsubishi Heavy Industries",sector:"製造業",industry:"機械",status:"watch",memo:"防衛・エネルギー転換の成長期待",ir:"https://www.mhi.com/jp/finance/"},
+  {code:"7013",name:"IHI",nameEn:"IHI",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.ihi.co.jp/ir/"},
+  {code:"5201",name:"AGC",nameEn:"AGC",sector:"製造業",industry:"ガラス・土石製品",status:"watch",memo:"ガラス×電子材料の多角化moat",ir:"https://www.agc.com/ir/"},
+  {code:"5202",name:"日本板硝子",nameEn:"NSG Group",sector:"製造業",industry:"ガラス・土石製品",status:"",memo:"",ir:"https://www.nsg.com/ja/ir"},
+  {code:"5301",name:"東海カーボン",nameEn:"Tokai Carbon",sector:"製造業",industry:"ガラス・土石製品",status:"",memo:"",ir:"https://www.tokaicarbon.co.jp/ir/"},
+  {code:"5406",name:"神戸製鋼所",nameEn:"Kobe Steel",sector:"製造業",industry:"鉄鋼",status:"",memo:"",ir:"https://www.kobelco.co.jp/ir/"},
+  {code:"5411",name:"JFEホールディングス",nameEn:"JFE Holdings",sector:"製造業",industry:"鉄鋼",status:"",memo:"",ir:"https://www.jfe-holdings.co.jp/ir/"},
+  {code:"3103",name:"ユニチカ",nameEn:"Unitika",sector:"製造業",industry:"繊維製品",status:"",memo:"",ir:"https://www.unitika.co.jp/ir/"},
+  {code:"3863",name:"日本製紙",nameEn:"Nippon Paper Industries",sector:"製造業",industry:"パルプ・紙",status:"",memo:"",ir:"https://www.nipponpapergroup.com/ir/"},
+  {code:"3861",name:"王子ホールディングス",nameEn:"Oji Holdings",sector:"製造業",industry:"パルプ・紙",status:"",memo:"",ir:"https://www.ojiholdings.co.jp/ir/"},
+  {code:"6103",name:"オークマ",nameEn:"Okuma",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.okuma.co.jp/ir/"},
+  {code:"6104",name:"芝浦機械",nameEn:"Shibaura Machine",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.shibaura-machine.co.jp/ir/"},
+  {code:"6141",name:"DMG森精機",nameEn:"DMG Mori Seiki",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.dmgmori.co.jp/ir/"},
+  {code:"6273",name:"SMC",nameEn:"SMC",sector:"製造業",industry:"機械",status:"watch",memo:"空気圧機器の世界トップシェア",ir:"https://www.smcworld.com/ir/ja/"},
+  {code:"6305",name:"日立建機",nameEn:"Hitachi Construction Machinery",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.hitachicm.com/global/ja/ir/"},
+  {code:"6326",name:"クボタ",nameEn:"Kubota",sector:"製造業",industry:"機械",status:"watch",memo:"農機×水インフラのグローバルmoat",ir:"https://www.kubota.co.jp/ir/"},
+  {code:"6361",name:"荏原製作所",nameEn:"Ebara",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.ebara.co.jp/ir/"},
+  {code:"6472",name:"NTN",nameEn:"NTN",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.ntn.co.jp/japan/ir/"},
+  {code:"6473",name:"ジェイテクト",nameEn:"JTEKT",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.jtekt.co.jp/ir/"},
+  {code:"6479",name:"ミネベアミツミ",nameEn:"MinebeaMitsumi",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.minebeamitsumi.com/corp/ir/"},
+  {code:"6481",name:"THK",nameEn:"THK",sector:"製造業",industry:"機械",status:"",memo:"",ir:"https://www.thk.com/jp/ir/"},
+  {code:"7733",name:"オリンパス",nameEn:"Olympus",sector:"製造業",industry:"精密機器",status:"watch",memo:"内視鏡の世界首位・医療集中",ir:"https://www.olympus.co.jp/ir/"},
+  {code:"7751",name:"キヤノン",nameEn:"Canon",sector:"製造業",industry:"精密機器",status:"watch",memo:"光学技術×医療・産業への展開",ir:"https://global.canon/ja/ir/"},
+  {code:"7762",name:"シチズン時計",nameEn:"Citizen Watch",sector:"製造業",industry:"精密機器",status:"",memo:"",ir:"https://www.citizen.co.jp/ir/"},
+  {code:"6952",name:"カシオ計算機",nameEn:"Casio Computer",sector:"製造業",industry:"電気機器",status:"",memo:"",ir:"https://www.casio.co.jp/ir/"},
+  {code:"7731",name:"ニコン",nameEn:"Nikon",sector:"製造業",industry:"精密機器",status:"",memo:"",ir:"https://www.nikon.com/company/ir/"},
+  {code:"7741",name:"HOYA",nameEn:"HOYA",sector:"製造業",industry:"精密機器",status:"",memo:"",ir:"https://www.hoya.co.jp/ir/"},
+  {code:"6383",name:"ダイフク",nameEn:"Daifuku",sector:"製造業",industry:"機械",status:"watch",memo:"物流自動化・マテハンの世界首位",ir:"https://www.daifuku.com/jp/ir/"},
+  {code:"6460",name:"セガサミーホールディングス",nameEn:"SEGA SAMMY HD",sector:"製造業",industry:"その他製品",status:"",memo:"",ir:"https://www.segasammy.co.jp/ir/"},
+  // ── 金融追加 ────────────────────────
+  {code:"8309",name:"三井住友トラスト・ホールディングス",nameEn:"SMTH",sector:"金融",industry:"銀行業",status:"",memo:"",ir:"https://www.smth.jp/ir/"},
+  {code:"8331",name:"千葉銀行",nameEn:"Chiba Bank",sector:"金融",industry:"銀行業",status:"",memo:"",ir:"https://www.chibabank.co.jp/ir/"},
+  {code:"8354",name:"ふくおかフィナンシャルグループ",nameEn:"Fukuoka FG",sector:"金融",industry:"銀行業",status:"",memo:"",ir:"https://www.fukuoka-fg.com/ir/"},
+  {code:"8377",name:"ほくほくフィナンシャルグループ",nameEn:"Hokuhoku FG",sector:"金融",industry:"銀行業",status:"",memo:"",ir:"https://www.hokuhoku-fg.co.jp/ir/"},
+  {code:"8591",name:"オリックス",nameEn:"Orix",sector:"金融",industry:"その他金融業",status:"watch",memo:"多角化金融×株主還元の強化",ir:"https://www.orix.co.jp/grp/ir/"},
+  {code:"8601",name:"大和証券グループ本社",nameEn:"Daiwa Securities Group",sector:"金融",industry:"証券業",status:"",memo:"",ir:"https://www.daiwa-grp.jp/ir/"},
+  {code:"8604",name:"野村ホールディングス",nameEn:"Nomura HD",sector:"金融",industry:"証券業",status:"",memo:"",ir:"https://www.nomuraholdings.com/jp/ir/"},
+  {code:"8630",name:"SOMPOホールディングス",nameEn:"SOMPO HD",sector:"金融",industry:"保険業",status:"",memo:"",ir:"https://www.sompo-hd.com/ir/"},
+  {code:"8893",name:"新日本建物",nameEn:"Shin Nihon Tatemono",sector:"金融",industry:"不動産業",status:"",memo:"",ir:""},
+  {code:"8951",name:"日本ビルファンド投資法人",nameEn:"Nippon Building Fund",sector:"金融",industry:"不動産業",status:"watch",memo:"オフィスREIT最大手",ir:"https://www.nbf-m.com/nbf/ir/"},
+  {code:"8952",name:"ジャパンリアルエステイト投資法人",nameEn:"Japan Real Estate Investment",sector:"金融",industry:"不動産業",status:"",memo:"",ir:"https://www.jre.co.jp/ir/"},
+  {code:"3289",name:"東急不動産ホールディングス",nameEn:"Tokyu Fudosan HD",sector:"金融",industry:"不動産業",status:"",memo:"",ir:"https://www.tokyu-fudosan-hd.co.jp/ir/"},
+  {code:"3003",name:"ヒューリック",nameEn:"Hulic",sector:"金融",industry:"不動産業",status:"watch",memo:"都心優良物件の集中戦略",ir:"https://www.hulic.co.jp/ir/"},
+  {code:"3231",name:"野村不動産ホールディングス",nameEn:"Nomura Real Estate HD",sector:"金融",industry:"不動産業",status:"",memo:"",ir:"https://www.nomura-re-hd.co.jp/ir/"},
+  {code:"8905",name:"イオンモール",nameEn:"AEON Mall",sector:"金融",industry:"不動産業",status:"",memo:"",ir:"https://www.aeonmall.com/ir/"},
+  {code:"7182",name:"ゆうちょ銀行",nameEn:"Japan Post Bank",sector:"金融",industry:"銀行業",status:"",memo:"",ir:"https://www.jp-bank.japanpost.jp/ir/"},
+  {code:"7181",name:"かんぽ生命保険",nameEn:"Japan Post Insurance",sector:"金融",industry:"保険業",status:"",memo:"",ir:"https://www.jp-life.japanpost.jp/ir/"},
+  {code:"2768",name:"双日",nameEn:"Sojitz",sector:"金融",industry:"卸売業",status:"",memo:"",ir:"https://www.sojitz.com/jp/ir/"},
+  {code:"8015",name:"豊田通商",nameEn:"Toyota Tsusho",sector:"金融",industry:"卸売業",status:"watch",memo:"トヨタグループ商社の安定基盤",ir:"https://www.toyota-tsusho.com/ir/"},
+  {code:"2651",name:"ローソン",nameEn:"Lawson",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.lawson.co.jp/company/ir/"},
+  // ── 消費・サービス追加 ──────────────────
+  {code:"3099",name:"三越伊勢丹ホールディングス",nameEn:"Isetan Mitsukoshi HD",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.imhds.co.jp/ja/ir/"},
+  {code:"3086",name:"J.フロント リテイリング",nameEn:"J.Front Retailing",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.j-front-retailing.com/ir/"},
+  {code:"3050",name:"DCMホールディングス",nameEn:"DCM Holdings",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.dcm-hldgs.co.jp/ir/"},
+  {code:"2670",name:"エービーシー・マート",nameEn:"ABC-Mart",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.abc-mart.net/ir/"},
+  {code:"2702",name:"日本マクドナルドホールディングス",nameEn:"McDonald's Japan HD",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.mcd-holdings.co.jp/ir/"},
+  {code:"3197",name:"すかいらーくホールディングス",nameEn:"Skylark HD",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://ir.skylark.co.jp/"},
+  {code:"2875",name:"東洋水産",nameEn:"Toyo Suisan",sector:"消費・サービス",industry:"食料品",status:"watch",memo:"マルちゃん海外展開の成長力",ir:"https://www.maruchan.co.jp/company/ir.html"},
+  {code:"2914",name:"日本たばこ産業（JT）",nameEn:"Japan Tobacco",sector:"消費・サービス",industry:"食料品",status:"watch",memo:"高配当×グローバル煙草事業",ir:"https://www.jti.co.jp/investors/"},
+  {code:"2269",name:"明治ホールディングス",nameEn:"Meiji Holdings",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.meiji.com/ir/"},
+  {code:"2501",name:"サッポロホールディングス",nameEn:"Sapporo Holdings",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.sapporoholdings.jp/ir/"},
+  {code:"2531",name:"宝ホールディングス",nameEn:"Takara Holdings",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.takara.co.jp/ir/"},
+  {code:"4452",name:"花王",nameEn:"Kao",sector:"消費・サービス",industry:"化学",status:"watch",memo:"日用品×ブランドの高参入障壁",ir:"https://www.kao.com/jp/corporate/investor-relations/"},
+  {code:"4911",name:"資生堂",nameEn:"Shiseido",sector:"消費・サービス",industry:"化学",status:"watch",memo:"化粧品グローバルブランドのmoat",ir:"https://corp.shiseido.com/jp/ir/"},
+  {code:"4413",name:"ビジョナル",nameEn:"Visional",sector:"消費・サービス",industry:"サービス業",status:"",memo:"",ir:"https://visional.inc/ir/"},
+  {code:"4661",name:"オリエンタルランド",nameEn:"Oriental Land",sector:"消費・サービス",industry:"サービス業",status:"watch",memo:"TDRの圧倒的ブランドmoat",ir:"https://www.olc.co.jp/ja/ir/"},
+  {code:"9201",name:"日本航空",nameEn:"Japan Airlines",sector:"消費・サービス",industry:"空運業",status:"",memo:"",ir:"https://www.jal.com/ja/investor/"},
+  {code:"9202",name:"ANAホールディングス",nameEn:"ANA Holdings",sector:"消費・サービス",industry:"空運業",status:"",memo:"",ir:"https://www.ana.co.jp/ir/"},
+  {code:"9602",name:"東宝",nameEn:"Toho",sector:"消費・サービス",industry:"サービス業",status:"watch",memo:"映画配給×不動産の複合moat",ir:"https://www.toho.co.jp/ir/"},
+  {code:"9681",name:"帝国ホテル",nameEn:"Imperial Hotel",sector:"消費・サービス",industry:"サービス業",status:"",memo:"",ir:"https://www.imperialhotel.co.jp/j/company/ir/"},
+  {code:"3563",name:"FOOD & LIFE COMPANIES",nameEn:"Food & Life Companies",sector:"消費・サービス",industry:"小売業",status:"watch",memo:"スシローのデジタル×海外展開",ir:"https://www.food-and-life.co.jp/ir/"},
+  {code:"2201",name:"森永製菓",nameEn:"Morinaga & Co.",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.morinaga.co.jp/ir/"},
+  {code:"2206",name:"江崎グリコ",nameEn:"Ezaki Glico",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.glico.com/jp/ir/"},
+  {code:"2282",name:"日本ハム",nameEn:"Nippon Ham",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.nipponham.co.jp/ir/"},
+  {code:"2871",name:"ニチレイ",nameEn:"Nichirei",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.nichirei.co.jp/ir/"},
+  {code:"2296",name:"伊藤ハム米久ホールディングス",nameEn:"Itoham Yonekyu HD",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.itoham-yonekyu-hd.com/ir/"},
+  {code:"6178",name:"日本郵政",nameEn:"Japan Post Holdings",sector:"消費・サービス",industry:"サービス業",status:"",memo:"",ir:"https://www.japanpost.jp/ir/"},
+  {code:"9064",name:"ヤマトホールディングス",nameEn:"Yamato Holdings",sector:"消費・サービス",industry:"陸運業",status:"watch",memo:"宅配ネットワークの参入障壁",ir:"https://www.yamato-hd.co.jp/ir/"},
+  {code:"9062",name:"日本通運",nameEn:"Nippon Express HD",sector:"消費・サービス",industry:"陸運業",status:"",memo:"",ir:"https://www.nipponexpress.com/ir/"},
+  {code:"2413",name:"エムスリー",nameEn:"M3",sector:"消費・サービス",industry:"サービス業",status:"watch",memo:"医師向けプラットフォームのmoat",ir:"https://corporate.m3.com/ir/"},
+  {code:"3087",name:"ドトール・日レスホールディングス",nameEn:"Doutor Nikko HD",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.doutor-nikko-hd.co.jp/ir/"},
+  {code:"2288",name:"丸大食品",nameEn:"Marudai Food",sector:"消費・サービス",industry:"食料品",status:"",memo:"",ir:"https://www.marudai.jp/ir/"},
+  // ── インフラ・建設追加 ──────────────────
+  {code:"1720",name:"東急建設",nameEn:"Tokyu Construction",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.tokyu-cnst.co.jp/ir/"},
+  {code:"1721",name:"コムシスホールディングス",nameEn:"Comsys Holdings",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.comsys-hd.co.jp/ir/"},
+  {code:"1801",name:"大成建設",nameEn:"Taisei",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.taisei.co.jp/ir/"},
+  {code:"1802",name:"大林組",nameEn:"Obayashi",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.obayashi.co.jp/ir/"},
+  {code:"1812",name:"鹿島建設",nameEn:"Kajima",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.kajima.co.jp/ir/"},
+  {code:"1928",name:"積水ハウス",nameEn:"Sekisui House",sector:"インフラ・建設",industry:"建設業",status:"watch",memo:"住宅×グローバル展開の多角化",ir:"https://www.sekisuihouse.co.jp/ir/"},
+  {code:"1911",name:"住友林業",nameEn:"Sumitomo Forestry",sector:"インフラ・建設",industry:"建設業",status:"watch",memo:"木材×住宅の垂直統合moat",ir:"https://www.sfc.co.jp/ir/"},
+  {code:"1963",name:"日揮ホールディングス",nameEn:"JGC Holdings",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.jgc.com/jp/ir/"},
+  {code:"1973",name:"NECネッツエスアイ",nameEn:"NEC Networks & System Integration",sector:"インフラ・建設",industry:"建設業",status:"",memo:"",ir:"https://www.nec-nexs.com/ir/"},
+  {code:"9005",name:"東急",nameEn:"Tokyu",sector:"インフラ・建設",industry:"陸運業",status:"watch",memo:"渋谷再開発×沿線まちづくり",ir:"https://www.tokyu.co.jp/ir/"},
+  {code:"9007",name:"小田急電鉄",nameEn:"Odakyu Electric Railway",sector:"インフラ・建設",industry:"陸運業",status:"",memo:"",ir:"https://www.odakyu.jp/ir/"},
+  {code:"9008",name:"京王電鉄",nameEn:"Keio",sector:"インフラ・建設",industry:"陸運業",status:"",memo:"",ir:"https://www.keio.co.jp/ir/"},
+  {code:"9009",name:"京成電鉄",nameEn:"Keisei Electric Railway",sector:"インフラ・建設",industry:"陸運業",status:"",memo:"",ir:"https://www.keisei.co.jp/ir/"},
+  {code:"9020",name:"東日本旅客鉄道",nameEn:"JR East",sector:"インフラ・建設",industry:"陸運業",status:"watch",memo:"首都圏鉄道×Suicaプラットフォーム",ir:"https://www.jreast.co.jp/investor/"},
+  {code:"9048",name:"名古屋鉄道",nameEn:"Meitetsu",sector:"インフラ・建設",industry:"陸運業",status:"",memo:"",ir:"https://www.meitetsu.co.jp/ir/"},
+  {code:"9041",name:"近鉄グループホールディングス",nameEn:"Kintetsu Group HD",sector:"インフラ・建設",industry:"陸運業",status:"",memo:"",ir:"https://www.kintetsu.co.jp/ir/"},
+  {code:"9107",name:"川崎汽船",nameEn:"K Line",sector:"インフラ・建設",industry:"海運業",status:"watch",memo:"海運3社連合・高配当株",ir:"https://www.kline.co.jp/ir/"},
+  {code:"9503",name:"関西電力",nameEn:"Kansai Electric Power",sector:"インフラ・建設",industry:"電気・ガス業",status:"",memo:"",ir:"https://www.kepco.co.jp/ir/"},
+  {code:"9501",name:"東京電力ホールディングス",nameEn:"Tokyo Electric Power HD",sector:"インフラ・建設",industry:"電気・ガス業",status:"",memo:"",ir:"https://www.tepco.co.jp/ir/"},
+  {code:"9502",name:"中部電力",nameEn:"Chubu Electric Power",sector:"インフラ・建設",industry:"電気・ガス業",status:"",memo:"",ir:"https://www.chuden.co.jp/ir/"},
+  {code:"9531",name:"東京ガス",nameEn:"Tokyo Gas",sector:"インフラ・建設",industry:"電気・ガス業",status:"",memo:"",ir:"https://www.tokyo-gas.co.jp/ir/"},
+  {code:"9532",name:"大阪ガス",nameEn:"Osaka Gas",sector:"インフラ・建設",industry:"電気・ガス業",status:"",memo:"",ir:"https://www.osakagas.co.jp/ir/"},
+  {code:"9533",name:"東邦ガス",nameEn:"Toho Gas",sector:"インフラ・建設",industry:"電気・ガス業",status:"",memo:"",ir:"https://www.tohogas.co.jp/ir/"},
+  {code:"9719",name:"SCSK",nameEn:"SCSK",sector:"テクノロジー",industry:"情報・通信業",status:"",memo:"",ir:"https://www.scsk.jp/ir/"},
+  {code:"8218",name:"コメリ",nameEn:"Komeri",sector:"消費・サービス",industry:"小売業",status:"",memo:"",ir:"https://www.komeri.co.jp/ir/"},
+];
+
+// ══════════════════════════════════════
+// アプリロジック
+// ══════════════════════════════════════
+let filtered = [...COMPANIES];
+let currentSector = 'all';
+let currentStatus = 'all';
+let currentSort = {key:'code', dir:1};
+let currentPage = 1;
+const PAGE_SIZE = 30;
+
+function updateStats(){
+  document.getElementById('statTotal').textContent = COMPANIES.length + '+';
+  const watchCount = COMPANIES.filter(c=>c.status==='watch').length;
+  document.getElementById('statWatch').textContent = watchCount;
+}
+
+function applyFilters(){
+  const q = document.getElementById('searchBox').value.trim().toLowerCase();
+  filtered = COMPANIES.filter(c=>{
+    const matchSearch = !q || c.code.includes(q) || c.name.toLowerCase().includes(q) || (c.nameEn||'').toLowerCase().includes(q);
+    const matchSector = currentSector==='all' || c.sector===currentSector;
+    const matchStatus = currentStatus==='all' || c.status===currentStatus;
+    return matchSearch && matchSector && matchStatus;
+  });
+
+  // sort
+  filtered.sort((a,b)=>{
+    const av = a[currentSort.key]||'';
+    const bv = b[currentSort.key]||'';
+    return av < bv ? -currentSort.dir : av > bv ? currentSort.dir : 0;
+  });
+
+  currentPage = 1;
+  renderTable();
+}
+
+function renderTable(){
+  const tbody = document.getElementById('companyTableBody');
+  const emptyState = document.getElementById('emptyState');
+  document.getElementById('resultCount').textContent = filtered.length + ' 件';
+
+  if(filtered.length===0){
+    tbody.innerHTML='';
+    emptyState.style.display='block';
+    document.getElementById('pagination').innerHTML='';
+    return;
+  }
+  emptyState.style.display='none';
+
+  const start = (currentPage-1)*PAGE_SIZE;
+  const page = filtered.slice(start, start+PAGE_SIZE);
+
+  const statusLabel = {watch:'注目',analyzed:'分析済み','':'未分析'};
+  const statusClass = {watch:'watch',analyzed:'analyzed','':'none'};
+
+  tbody.innerHTML = page.map(c=>`
+    <tr>
+      <td class="td-code">${c.code}</td>
+      <td>
+        <div class="td-name">${c.name}</div>
+        <div class="td-name-sub">${c.nameEn||''}</div>
+      </td>
+      <td class="td-sector">${c.industry}</td>
+      <td class="td-memo">${c.memo||'—'}</td>
+      <td class="td-status">
+        <span class="status-badge ${statusClass[c.status]}">${statusLabel[c.status]}</span>
+      </td>
+      <td class="td-ir">
+        ${c.ir ? `<a class="ir-link" href="${c.ir}" target="_blank" rel="noopener">IR →</a>` : '—'}
+      </td>
+    </tr>
+  `).join('');
+
+  renderPagination();
+}
+
+function renderPagination(){
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  if(totalPages<=1){document.getElementById('pagination').innerHTML='';return;}
+  let html='';
+  html += `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>← 前</button>`;
+  for(let i=1;i<=totalPages;i++){
+    if(i===1||i===totalPages||Math.abs(i-currentPage)<=1){
+      html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+    } else if(Math.abs(i-currentPage)===2){
+      html += `<span style="color:var(--ink3);align-self:center;font-size:.7rem">…</span>`;
+    }
+  }
+  html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''}>次 →</button>`;
+  document.getElementById('pagination').innerHTML=html;
+}
+
+function goPage(p){
+  const totalPages = Math.ceil(filtered.length/PAGE_SIZE);
+  if(p<1||p>totalPages)return;
+  currentPage=p;
+  renderTable();
+  window.scrollTo({top:document.querySelector('.search-wrap').offsetTop-10,behavior:'smooth'});
+}
+
+function handleSearch(){applyFilters();}
+function clearSearch(){document.getElementById('searchBox').value='';applyFilters();}
+
+function filterSector(sector, btn){
+  currentSector=sector;
+  document.querySelectorAll('.fpill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function filterStatus(status, btn){
+  currentStatus=status;
+  document.querySelectorAll('.spill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function sortTable(key){
+  if(currentSort.key===key){currentSort.dir*=-1;}
+  else{currentSort={key,dir:1};}
+  document.querySelectorAll('.co-table th').forEach(th=>th.classList.remove('sorted'));
+  applyFilters();
+}
+
+// 初期化
+updateStats();
+applyFilters();
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="資本主義とは何か｜投資と思考の書斎"/>
+<meta property="og:description" content="資本主義の構造を理解することが、企業・市場・投資判断を深く見る土台になる。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>資本主義とは何か｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0c1010 45%,#141a14 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(80,140,80,.06) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(80,140,80,.15);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">資本主義とは何か</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 01 — 投資の奥にあるもの</div>
+  <div class="hero-ornament">CAPITALISM · CAPITAL · STRUCTURE</div>
+  <h1 class="hero-title">資本主義とは何か</h1>
+  <p class="hero-lead">
+    資本主義を理解することは、市場・企業・投資の<br>
+    奥にある構造を読む力を養うことでもある。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 本質 -->
+  <div class="article-section">
+    <div class="section-label">THE ESSENCE</div>
+    <h2 class="section-title">資本主義とは「資本が資本を生む仕組み」である</h2>
+    <div class="section-body">
+      <p>資本主義を一言で言えば、資本を投じることでより多くの資本を生み出す仕組みである。</p>
+      <p>しかしそれだけでは不十分だ。資本主義はただの経済システムではなく、人間の行動・制度・信頼・競争・協力が複雑に絡み合った社会的な構造体である。</p>
+      <p>資本主義の核心にある問いは、こうだ。</p>
+      <ul>
+        <li>誰が何に資本を配分するのか</li>
+        <li>価格はどのように情報を伝えるのか</li>
+        <li>競争はなぜイノベーションを生むのか</li>
+        <li>資本の集積はなぜ格差を生み出すのか</li>
+        <li>市場は本当に効率的か</li>
+      </ul>
+      <p>これらを理解することが、企業の価値を正しく評価し、市場の歪みを見つけ、長期投資の根拠を持つ土台となる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 三つの前提 -->
+  <div class="article-section">
+    <div class="section-label">THREE FOUNDATIONS</div>
+    <h2 class="section-title">資本主義を支える三つの前提</h2>
+    <div class="section-body">
+      <p>資本主義が機能するためには、三つの制度的な前提がある。</p>
+      <ul>
+        <li><strong>私有財産権</strong>——自分が稼いだものは自分のものだという信頼。これがなければ、誰も投資しない。</li>
+        <li><strong>契約の履行</strong>——約束が守られるという信頼。法制度と司法が担保する。</li>
+        <li><strong>自由な交換</strong>——自発的な取引が双方に利益をもたらすという原理。価格が情報を伝え、資源を配分する。</li>
+      </ul>
+      <p>これら三つが崩れると、資本主義は機能しなくなる。投資家はこの制度的信頼の上で活動している。だから新興国投資では、この前提の強度を特に注意して見なければならない。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">株式投資とは、その企業が活動する社会の制度・法・信頼に乗る行為でもある。<br>強い法制度を持つ国の企業が、長期的に安心して保有できる理由の一つはここにある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 価格機構 -->
+  <div class="article-section">
+    <div class="section-label">PRICE MECHANISM</div>
+    <h2 class="section-title">価格は情報を運ぶ</h2>
+    <div class="section-body">
+      <p>資本主義の最も驚くべき仕組みの一つが、価格機構である。</p>
+      <p>誰かが石油を大量に使い始めれば、価格が上がり、世界中の人々が節約を始める。中央から指令を出さなくても、価格というシグナルが行動を変える。</p>
+      <p>ハイエクはこれを「分散した知識を集約する仕組み」と呼んだ。一人の計画者には知りえない無数の局所的情報を、価格が集約するのだ。</p>
+      <p>株価も同じ原理で動いている。</p>
+      <ul>
+        <li>株価は、市場参加者の期待と知識の総合体だ</li>
+        <li>しかし短期では感情・バイアス・群集心理に歪む</li>
+        <li>長期では、企業の実力が価格に収斂する傾向がある</li>
+      </ul>
+      <p>だからバリュー投資は、「市場の価格形成が短期に歪む」という事実から利益を得ようとする戦略でもある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 競争とイノベーション -->
+  <div class="article-section">
+    <div class="section-label">COMPETITION & INNOVATION</div>
+    <h2 class="section-title">競争がイノベーションを駆動する</h2>
+    <div class="section-body">
+      <p>資本主義では、利益を求めて人々・企業が競争する。この競争が、技術革新・効率化・新しい価値の創出を生み出す原動力となる。</p>
+      <p>シュンペーターはこれを「創造的破壊」と呼んだ。古い産業・企業が新しい技術に淘汰され、より高い生産性と生活水準が実現する。</p>
+      <p>しかし投資家の視点では、これは逆の意味も持つ。</p>
+      <ul>
+        <li>競争が激しい業界では、超過利益はいつか消える</li>
+        <li>参入障壁（moat）を持つ企業だけが長期的に価値を維持できる</li>
+        <li>創造的破壊の波をかぶる企業への投資は、長期では大きなリスクを伴う</li>
+      </ul>
+      <p>バフェットが「競争優位（moat）」を重視するのは、資本主義の競争原理に対する深い理解から来ている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 資本の集積と格差 -->
+  <div class="article-section">
+    <div class="section-label">CAPITAL ACCUMULATION</div>
+    <h2 class="section-title">資本は集積し、格差を生む</h2>
+    <div class="section-body">
+      <p>資本主義には、資本が集積する傾向がある。大きな資本は、さらに大きな機会を生み、より多くの資本を呼び込む。</p>
+      <p>ピケティは「r（資本収益率）＞g（経済成長率）」という式で、この傾向を示した。資本を持つ者は持たざる者より速く豊かになる傾向があるという主張だ。</p>
+      <p>これは投資家にとって、複利の力として知られる現象でもある。</p>
+      <ul>
+        <li>複利効果によって、長期保有は指数的な資産成長をもたらす</li>
+        <li>一方で、初期資本の差が時間とともに拡大する</li>
+        <li>社会全体では格差拡大の問題をはらむが、個人の長期投資戦略としては有効に機能する</li>
+      </ul>
+      <p>資本の集積は、資本主義の構造的な力学である。それを理解した上で、長期的・倫理的に資本配分することが投資家の知性だと思う。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 市場の限界 -->
+  <div class="article-section">
+    <div class="section-label">MARKET LIMITS</div>
+    <h2 class="section-title">市場は万能ではない</h2>
+    <div class="section-body">
+      <p>資本主義と市場を信奉する投資家も、市場の限界を理解しておく必要がある。</p>
+      <ul>
+        <li><strong>外部性</strong>——環境汚染のように、コストを社会に転嫁することで利益を出す企業は、長期的リスクを内包している</li>
+        <li><strong>情報の非対称性</strong>——売り手が知っていて買い手が知らない情報格差が、市場を歪める</li>
+        <li><strong>短期バイアス</strong>——市場は短期的な利益を過大評価し、長期的な価値を過小評価しがちである</li>
+        <li><strong>群集心理</strong>——バブルとパニックの繰り返しは、市場が合理的でない証拠でもある</li>
+      </ul>
+      <p>資本主義の構造的な弱点を知ることが、その弱点を利用できる投資家になる道でもある。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">市場は長期では賢いが、短期では愚かになることがある。<br>この非対称性を利用できる忍耐力と判断力が、長期投資家の武器である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家として資本主義を見る -->
+  <div class="article-section">
+    <div class="section-label">AS AN INVESTOR</div>
+    <h2 class="section-title">投資家として資本主義をどう見るか</h2>
+    <div class="section-body">
+      <p>資本主義を理解した上で、投資家はこう問いを立てることができる。</p>
+      <ul>
+        <li>この企業は、競争に勝てる構造を持っているか</li>
+        <li>この業界の競争原理は、企業の利益をどの程度守るか</li>
+        <li>この経営者は、資本を適切に配分しているか</li>
+        <li>この事業は、社会の変化の中でも長期的に価値を維持できるか</li>
+        <li>この国の制度は、株主の権利を守れるか</li>
+      </ul>
+      <p>資本主義の構造を理解することは、こうした問いに対する答えを深める力を育てることでもある。</p>
+      <p>投資は、資本主義という大きな舞台の上で行われている。その舞台の構造を知ることが、より確かな判断の基盤となる。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">資本主義の構造を理解した上で、投資の実務と企業分析に進むために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../civilization/">
+        <span class="further-link-tag">CIVILIZATION</span>
+        <span class="further-link-title">投資を入口に文明を考える</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../principles/">
+        <span class="further-link-tag">PRINCIPLES</span>
+        <span class="further-link-title">私の投資原則</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../moat/">
+        <span class="further-link-tag">MOAT</span>
+        <span class="further-link-title">moatをどう見るか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">思考を広げる棚</a>　·
+    <a href="../../principles/">投資原則</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>
