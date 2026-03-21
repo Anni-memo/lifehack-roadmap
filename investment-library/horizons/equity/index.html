@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="株式とは何か｜投資と思考の書斎"/>
+<meta property="og:description" content="所有・リスク・リターンの分配。株式という仕組みの本質。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>株式とは何か｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0e1010 45%,#181414 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(120,100,40,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(120,100,40,.15);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">株式とは何か</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 02 — お金・信用・制度</div>
+  <div class="hero-ornament">EQUITY · OWNERSHIP · RIGHTS</div>
+  <h1 class="hero-title">株式とは何か</h1>
+  <p class="hero-lead">
+    所有・リスク・リターンの分配。株式という仕組みの本質。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 株式とは会社の一部を所有することである -->
+  <div class="article-section">
+    <div class="section-label">OWNERSHIP</div>
+    <h2 class="section-title">株式とは会社の一部を所有することである</h2>
+    <div class="section-body">
+      <p>株式とは、企業という存在の「所有権」を細かく分割したものだ。1株を持つということは、その企業の一部のオーナーになることを意味する。</p>
+      <p>株主は何を持つのか。主に三つの権利がある。</p>
+      <ul>
+        <li><strong>残余財産請求権</strong>——企業が清算されたとき、債権者への返済後に残った財産を受け取る権利</li>
+        <li><strong>議決権</strong>——株主総会で経営方針や取締役の選任に投票する権利</li>
+        <li><strong>配当受領権</strong>——企業が利益を分配する場合、持株比率に応じて受け取る権利</li>
+      </ul>
+      <p>しかし株主は「残余請求権者」でもある。企業が負債を返済できなければ、株主の取り分はゼロになる。株式投資には、この根本的なリスクが含まれている。</p>
+      <p>だからこそ、株主は債権者より高いリターンを期待できる。リスクを引き受ける対価として、より大きな上昇余地が与えられている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 株式市場はなぜ存在するか -->
+  <div class="article-section">
+    <div class="section-label">WHY MARKETS EXIST</div>
+    <h2 class="section-title">株式市場はなぜ存在するか</h2>
+    <div class="section-body">
+      <p>株式市場がなければ、株式を売りたいときに売れない。市場は「流動性」を提供する——これが株式市場の最も根本的な機能だ。</p>
+      <p>市場が果たす役割は三つある。</p>
+      <ul>
+        <li><strong>流動性の提供</strong>——いつでも売買できる環境を作ることで、投資家がリスクをとりやすくなる</li>
+        <li><strong>価格発見</strong>——無数の投資家の判断が集積し、企業の「今この瞬間の価値」を継続的に計算する</li>
+        <li><strong>資本調達</strong>——企業はIPOや増資を通じて、広く社会から成長資金を調達できる</li>
+      </ul>
+      <p>株式市場は巨大な情報処理装置でもある。何百万人もの投資家が、それぞれの知識・判断・感情をもって売買することで、価格が形成される。この集合知は多くの場合に賢いが、短期的には感情に歪む。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 株式リターンの源泉 -->
+  <div class="article-section">
+    <div class="section-label">SOURCES OF RETURN</div>
+    <h2 class="section-title">株式リターンの源泉</h2>
+    <div class="section-body">
+      <p>株式投資のリターンは、三つの要素の合計で説明できる。</p>
+      <ul>
+        <li><strong>配当</strong>——企業が株主に支払う現金。特に成熟企業の安定的なリターン源</li>
+        <li><strong>EPS成長</strong>——一株あたり利益の増大。企業が稼ぐ力の向上がリターンを生む</li>
+        <li><strong>バリュエーション変化</strong>——PERなどの評価倍率の変動。市場の楽観・悲観が価格に反映</li>
+      </ul>
+      <p>長期的なリターンの大部分は、EPS成長と配当再投資によるものだ。バリュエーション変化は短期的には大きいが、長期では平均回帰する傾向がある。</p>
+      <p>この理解は重要な示唆を与える。高いPERで買った株は、たとえ利益が順調に伸びても、PERが下がれば株価は上がりにくい。逆に低いPERで買えば、利益成長の恩恵をより大きく享受できる。</p>
+
+      <div class="callout">
+        <p class="callout-text">「株を買うとは、その企業のオーナーになることである。価格を追うのではなく、事業を見る。」</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 普通株と優先株・債券との違い -->
+  <div class="article-section">
+    <div class="section-label">CAPITAL STRUCTURE</div>
+    <h2 class="section-title">普通株と優先株・債券との違い</h2>
+    <div class="section-body">
+      <p>企業の資本構造は、リスクとリターンの階層として理解できる。</p>
+      <ul>
+        <li><strong>債券（社債・銀行借入）</strong>——最もリスクが低く、固定の利息を受け取る。企業破綻時の返済優先度が高い</li>
+        <li><strong>優先株</strong>——普通株より配当の優先権・清算時の請求権が上位。議決権は通常なし</li>
+        <li><strong>普通株</strong>——最もリスクが高いが、上昇余地も最大。残余請求権者として最後に取り分がある</li>
+      </ul>
+      <p>リスク階層の上位（債券）ほど安全だが、リターンの上限も低い。普通株は階層の最下位にいるが、企業の成長をフルに享受できる。</p>
+      <p>長期的な資産形成において、普通株が最も有力な資産クラスである理由は、ここにある。リスクを引き受ける対価として、長期では最大のリターンが期待できる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家として株式を見る -->
+  <div class="article-section">
+    <div class="section-label">AS AN INVESTOR</div>
+    <h2 class="section-title">投資家として株式を見る</h2>
+    <div class="section-body">
+      <p>「株を買う」という行為を、価格の上下を予測することと捉えている人は多い。しかしより本質的な理解はこうだ——株を買うとは、その企業のオーナーになることだ。</p>
+      <p>オーナーとして考えれば、問うべきことは変わる。</p>
+      <ul>
+        <li>この企業は5年後、10年後も強い競争優位を持ち続けるか</li>
+        <li>経営者は資本を適切に配分し、株主価値を高めているか</li>
+        <li>EPS成長は持続的か。それを支える事業の構造は何か</li>
+        <li>今の株価は、この企業の本来の価値に対して割安か・割高か</li>
+        <li>この企業に投資することは、その事業に自信を持てることを意味するか</li>
+      </ul>
+      <p>株式市場は毎日価格を提示してくる。しかしその価格は、事業の価値と常に一致するわけではない。価格と価値の乖離を見抜く目を養うこと——それが株式投資家としての本質的な仕事だ。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">株式という仕組みを理解した上で、資本主義・企業財務・競争優位へと思考を深めるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../capitalism/">
+        <span class="further-link-tag">CAPITALISM</span>
+        <span class="further-link-title">資本主義とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../fcf/">
+        <span class="further-link-tag">FINANCE</span>
+        <span class="further-link-title">FCFとは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../moat/">
+        <span class="further-link-tag">MOAT</span>
+        <span class="further-link-title">moatをどう見るか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">思考を広げる棚</a>　·
+    <a href="../../principles/">投資原則</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

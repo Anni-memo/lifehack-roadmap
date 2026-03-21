@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="中央銀行とは何か｜投資と思考の書斎"/>
+<meta property="og:description" content="通貨と金融安定の守護者。その役割と限界。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>中央銀行とは何か｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0a0e14 45%,#0e1420 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(40,80,140,.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(40,80,140,.15);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">中央銀行とは何か</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 02 — お金・信用・制度</div>
+  <div class="hero-ornament">CENTRAL BANK · MONETARY POLICY · STABILITY</div>
+  <h1 class="hero-title">中央銀行とは何か</h1>
+  <p class="hero-lead">
+    通貨と金融安定の守護者。その役割と限界。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 中央銀行は銀行の銀行である -->
+  <div class="article-section">
+    <div class="section-label">LENDER OF LAST RESORT</div>
+    <h2 class="section-title">中央銀行は銀行の銀行である</h2>
+    <div class="section-body">
+      <p>中央銀行とは何か。最もシンプルな定義は「銀行の銀行」だ。一般の銀行が個人・企業の預金を預かるように、中央銀行は一般の銀行の預金を預かり、資金を貸し出す。</p>
+      <p>中央銀行には二つの根本的な役割がある。</p>
+      <ul>
+        <li><strong>最後の貸し手</strong>——金融危機の際、健全な銀行に緊急融資を行い、連鎖的な破綻を防ぐ。2008年のリーマンショック後にFRBが行ったのも、この機能だ</li>
+        <li><strong>決済システムの番人</strong>——銀行間の資金決済を円滑に行う。決済インフラの安定が経済全体を支える</li>
+      </ul>
+      <p>中央銀行の存在意義は、金融システムへの信頼を保つことにある。銀行に対する信頼が崩れれば、預金の引き出しが連鎖し、金融システムは崩壊する。中央銀行はその信頼の最後の砦だ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 金融政策の仕組み -->
+  <div class="article-section">
+    <div class="section-label">MONETARY POLICY</div>
+    <h2 class="section-title">金融政策の仕組み</h2>
+    <div class="section-body">
+      <p>中央銀行の最も重要な機能が、金融政策の実施だ。主な手段は三つある。</p>
+      <ul>
+        <li><strong>政策金利の設定</strong>——中央銀行が銀行に貸し出す金利の基準。これを下げれば市中金利が低下し、借り入れが増えて経済が刺激される。上げれば逆の効果</li>
+        <li><strong>公開市場操作</strong>——国債などを市場で売買することで、市中に流通するお金の量を調節する</li>
+        <li><strong>量的緩和（QE）</strong>——政策金利がゼロに達した後も、大量の国債・社債を買い入れることで、長期金利を押し下げ、金融を緩和する</li>
+      </ul>
+      <p>2008年以降、主要国の中央銀行は前例のない規模の量的緩和を実施した。FRBのバランスシートは2008年の約8,000億ドルから、2022年には約9兆ドルへと膨張した。この「非伝統的金融政策」の時代が、資産価格に与えた影響は計り知れない。</p>
+
+      <div class="callout">
+        <p class="callout-text">「中央銀行に逆らうな（Don't fight the Fed）」——これは市場格言だ。<br>中央銀行が緩和方向を向いているとき、資産価格には強い追い風がある。引き締めに転じるとき、逆風が来る。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- インフレターゲットとデュアルマンデート -->
+  <div class="article-section">
+    <div class="section-label">MANDATE & TARGETS</div>
+    <h2 class="section-title">インフレターゲットとデュアルマンデート</h2>
+    <div class="section-body">
+      <p>中央銀行の政策目標は、国によって異なる。主要な中央銀行の位置づけを整理しておこう。</p>
+      <ul>
+        <li><strong>FRB（米国連邦準備制度）</strong>——「デュアルマンデート」。物価安定（インフレ2%目標）と最大雇用という二つの目標を同等に重視する</li>
+        <li><strong>ECB（欧州中央銀行）</strong>——物価安定を唯一の目標とする。ユーロ圏の構造上、複数の国の利害調整が難しい</li>
+        <li><strong>日本銀行（BOJ）</strong>——物価安定（2%インフレ目標）と金融システムの安定。長年のデフレからの脱却が最大の課題だった</li>
+      </ul>
+      <p>インフレターゲット制とは、「2%のインフレを目標とし、それを達成するために金融政策を運営する」という透明性の高い枠組みだ。市場参加者は中央銀行の行動を予測しやすくなり、経済の安定に寄与する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 金融緩和と資産バブル -->
+  <div class="article-section">
+    <div class="section-label">EASY MONEY & BUBBLES</div>
+    <h2 class="section-title">金融緩和と資産バブル</h2>
+    <div class="section-body">
+      <p>低金利・量的緩和が株価を押し上げるメカニズムを、理解しておく必要がある。</p>
+      <ul>
+        <li>低金利は、株式の「割引率」を下げ、将来の企業価値の現在価値を高める</li>
+        <li>低金利は、債券や預金の魅力を下げ、相対的に株式への資金流入を促す</li>
+        <li>量的緩和で大量の資金が市中に溢れ、行き場を求めて資産市場に流れ込む</li>
+        <li>低コストの借り入れを使った「レバレッジ投資」が活発化し、資産価格をさらに押し上げる</li>
+      </ul>
+      <p>この構造が行き過ぎると、資産バブルが形成される。実体経済の成長を超えた株価上昇は、金融政策によって生み出された幻想の一部だ。引き締めに転じたとき、その幻想は崩れる。</p>
+      <p>2021〜2022年の高インフレを受けたFRBの急速な利上げが、グロース株・暗号資産・不動産価格を急落させた現象は、この構造の鏡像である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家として中央銀行を見る -->
+  <div class="article-section">
+    <div class="section-label">AS AN INVESTOR</div>
+    <h2 class="section-title">投資家として中央銀行を見る</h2>
+    <div class="section-body">
+      <p>中央銀行の動向は、ポートフォリオに直接的な影響を与える。投資家として押さえるべきポイントを整理する。</p>
+      <ul>
+        <li>FOMCの決定（年8回）とその声明文を定期的に確認する</li>
+        <li>日銀の政策決定会合は、円相場・日本株の動向に直結する</li>
+        <li>フォワードガイダンス（将来の政策方針の示唆）を読み解く——市場は「今の金利」より「将来の金利経路」で動く</li>
+        <li>インフレ率（CPI・PCE）と雇用統計は、中央銀行の次の一手を占う重要指標</li>
+        <li>金融政策の転換点（利上げ終了・利下げ開始）は、業種ローテーションの大きな契機となる</li>
+      </ul>
+      <p>中央銀行は全知全能ではない。インフレを「一時的」と見誤ったFRBのように、政策の失敗は起きる。中央銀行への過信も過小評価も危険だ。その限界を理解した上で、中長期のマクロ環境を読む視点が、投資家としての判断を深める。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">中央銀行の役割を理解した上で、金利・資本主義・信用へと思考を深めるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../interest/">
+        <span class="further-link-tag">INTEREST</span>
+        <span class="further-link-title">金利とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../capitalism/">
+        <span class="further-link-tag">CAPITALISM</span>
+        <span class="further-link-title">資本主義とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../credit/">
+        <span class="further-link-tag">CREDIT</span>
+        <span class="further-link-title">信用とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">思考を広げる棚</a>　·
+    <a href="../../principles/">投資原則</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

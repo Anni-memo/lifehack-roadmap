@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="金利とは何か｜投資と思考の書斎"/>
+<meta property="og:description" content="時間価値と資本コストの根幹にある概念。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>金利とは何か｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0a1014 45%,#101820 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(40,100,140,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(40,100,140,.15);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">金利とは何か</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 02 — お金・信用・制度</div>
+  <div class="hero-ornament">INTEREST · TIME VALUE · CAPITAL COST</div>
+  <h1 class="hero-title">金利とは何か</h1>
+  <p class="hero-lead">
+    時間価値と資本コストの根幹にある概念。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 金利とは時間の値段である -->
+  <div class="article-section">
+    <div class="section-label">TIME VALUE OF MONEY</div>
+    <h2 class="section-title">金利とは時間の値段である</h2>
+    <div class="section-body">
+      <p>金利とは、お金を「今」使うことを諦め、「将来」に回すことへの報酬である。別の言い方をすれば、金利は時間の値段だ。</p>
+      <p>今日の100万円と、1年後の100万円は、同じ価値を持たない。今日の100万円は、1年間投資すれば増えるし、何かに使えば今すぐ価値を得られる。この「今すぐ使える」価値への選好を、経済学では「時間選好」と呼ぶ。</p>
+      <ul>
+        <li>人間は一般に、将来より現在を好む——時間選好の正の性質</li>
+        <li>貸し手は現在の消費を諦める対価として金利を要求する</li>
+        <li>借り手は将来の支払いと引き換えに現在の資金を得る</li>
+        <li>金利はこの需給バランスで決まる——資金の価格である</li>
+      </ul>
+      <p>また金利は「機会費用」でもある。ある投資に資金を使えば、別の投資には使えない。最も良い代替案を諦めるコストが、金利の経済的な意味だ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 金利の種類と構造 -->
+  <div class="article-section">
+    <div class="section-label">TYPES & STRUCTURE</div>
+    <h2 class="section-title">金利の種類と構造</h2>
+    <div class="section-body">
+      <p>金利には様々な種類がある。投資家として重要な区分を整理しておこう。</p>
+      <ul>
+        <li><strong>名目金利</strong>——表面上の金利。インフレの影響を含む</li>
+        <li><strong>実質金利</strong>——名目金利からインフレ率を引いたもの。本当の購買力の変化</li>
+        <li><strong>政策金利</strong>——中央銀行が設定する短期金利の基準。全ての金利の出発点</li>
+        <li><strong>長期金利</strong>——10年・30年国債の利回り。経済の長期期待を反映する</li>
+      </ul>
+      <p>イールドカーブとは、短期から長期にかけての金利水準を並べたグラフだ。通常は長期金利が短期を上回る（順イールド）が、景気後退の前には逆転する（逆イールド）ことがある。</p>
+      <p>逆イールドとは、将来の金利低下（景気悪化・中央銀行の利下げ）を市場が織り込んでいることを意味する。過去の景気後退の多くは、逆イールドの後に来た。</p>
+
+      <div class="callout">
+        <p class="callout-text">実質金利がマイナスのとき、現金を持つことは確実に価値を失うことを意味する。<br>低金利・高インフレの環境下で、投資家が株式・実物資産に向かうのは合理的な行動である。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 金利と企業価値の関係 -->
+  <div class="article-section">
+    <div class="section-label">INTEREST & VALUATION</div>
+    <h2 class="section-title">金利と企業価値の関係</h2>
+    <div class="section-body">
+      <p>企業価値を計算するDCF（割引キャッシュフロー）モデルでは、将来の利益を現在価値に割り引く。この「割引率」の核心にあるのが、金利である。</p>
+      <p>金利が下がると、将来の利益の現在価値が高まる。逆に金利が上がると、将来の利益の現在価値は低下する。これが「金利と株価は逆相関する」と言われる理由だ。</p>
+      <ul>
+        <li>金利低下 → 割引率低下 → 将来収益の現在価値上昇 → 株価上昇圧力</li>
+        <li>金利上昇 → 割引率上昇 → 将来収益の現在価値低下 → 株価下落圧力</li>
+        <li>特にグロース株は「遠い将来の利益」の比重が高く、金利変動の影響を大きく受ける</li>
+        <li>バリュー株や高配当株は相対的に足元の利益・配当への依存度が高い</li>
+      </ul>
+      <p>2020〜2022年のゼロ金利時代に成長株が急騰し、2022年以降の急速な利上げ局面でグロース株が急落した現象は、このメカニズムの典型的な表れだった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 金利と業種の関係 -->
+  <div class="article-section">
+    <div class="section-label">SECTORS & RATES</div>
+    <h2 class="section-title">金利と業種の関係</h2>
+    <div class="section-body">
+      <p>金利は全ての企業に同じように影響するわけではない。業種によって、金利感応度は大きく異なる。</p>
+      <ul>
+        <li><strong>金融業（銀行・保険）</strong>——金利上昇は収益にプラス。利ざやが拡大する</li>
+        <li><strong>不動産・REIT</strong>——借入コスト増大と利回り比較の観点から、金利上昇は逆風</li>
+        <li><strong>公益事業</strong>——安定した配当が魅力だが、金利上昇時は国債との比較で魅力低下</li>
+        <li><strong>ハイテク・グロース</strong>——遠い将来の利益に依存するため、金利上昇に最も敏感</li>
+        <li><strong>消費財・ヘルスケア</strong>——需要の安定性が高く、金利の影響を相対的に受けにくい</li>
+      </ul>
+      <p>金利局面と業種の相性を理解することで、ポートフォリオの構成を環境に応じて調整する視点が生まれる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家として金利を見る -->
+  <div class="article-section">
+    <div class="section-label">AS AN INVESTOR</div>
+    <h2 class="section-title">投資家として金利を見る</h2>
+    <div class="section-body">
+      <p>投資家は、常に「金利環境」を意識した上で投資判断を行う必要がある。金利は企業価値計算の根幹に関わるからだ。</p>
+      <ul>
+        <li>米国10年債利回りを定期的に確認する習慣を持つ</li>
+        <li>FOMCの決定と市場の金利期待（FFレート先物）を追う</li>
+        <li>実質金利（名目金利 − 期待インフレ率）の水準を意識する</li>
+        <li>金利局面が変わるとき、業種ローテーションが起きやすい</li>
+        <li>金利は「すべての資産価格の重力」——低金利は資産価格の浮力、高金利は引力</li>
+      </ul>
+      <p>「金利なき世界」に慣れた投資家が金利上昇に面食らうように、金利環境の変化は市場の構造を一変させる。金利を理解することは、投資家としての基礎体力を高めることである。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">金利の理解を土台に、信用・資本主義・企業のmoatへと思考を広げるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../credit/">
+        <span class="further-link-tag">CREDIT</span>
+        <span class="further-link-title">信用とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../capitalism/">
+        <span class="further-link-tag">CAPITALISM</span>
+        <span class="further-link-title">資本主義とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../moat/">
+        <span class="further-link-tag">MOAT</span>
+        <span class="further-link-title">moatをどう見るか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">思考を広げる棚</a>　·
+    <a href="../../principles/">投資原則</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

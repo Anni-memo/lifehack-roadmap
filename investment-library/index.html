@@ -391,6 +391,40 @@ body::before{
 }
 .industry-nav-link:hover{background:var(--gold2);color:var(--ink);border-color:var(--gold2);}
 
+/* ── COMPANY ANALYSIS FEATURE ── */
+.company-feature{
+  background:linear-gradient(135deg,var(--ink) 0%,#0a160a 60%,#121a08 100%);
+  border-top:1px solid rgba(90,138,58,.2);
+  border-bottom:1px solid rgba(90,138,58,.2);
+  padding:0 20px;
+}
+.company-feature-inner{
+  max-width:860px;margin:0 auto;
+  padding:28px 0;
+  display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap;
+}
+.company-feature-badge{
+  font-family:var(--mono);font-size:.46rem;color:#7ab05a;
+  border:1px solid rgba(90,138,58,.4);padding:3px 10px;
+  letter-spacing:.14em;white-space:nowrap;flex-shrink:0;margin-top:2px;
+}
+.company-feature-text{flex:1;min-width:220px;}
+.company-feature-label{font-family:var(--mono);font-size:.5rem;color:#7ab05a;letter-spacing:.16em;margin-bottom:6px;opacity:.85;}
+.company-feature-title{font-family:var(--serif);font-size:clamp(1rem,2.5vw,1.25rem);font-weight:700;color:var(--parch);line-height:1.35;margin-bottom:8px;}
+.company-feature-body{font-size:.76rem;color:var(--parch3);line-height:1.8;font-weight:300;}
+.company-feature-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.company-feature-pill{font-family:var(--mono);font-size:.46rem;background:rgba(90,138,58,.12);border:1px solid rgba(90,138,58,.25);color:#7ab05a;padding:2px 8px;letter-spacing:.08em;}
+.company-feature-links{display:flex;flex-direction:column;gap:4px;flex-shrink:0;min-width:180px;}
+.company-feature-link{
+  display:flex;align-items:center;gap:10px;padding:11px 14px;
+  border:1px solid rgba(90,138,58,.2);text-decoration:none;transition:all .2s;
+  background:rgba(90,138,58,.06);
+}
+.company-feature-link:hover{border-color:rgba(90,138,58,.5);background:rgba(90,138,58,.12);}
+.company-feature-link-tag{font-family:var(--mono);font-size:.46rem;color:#7ab05a;letter-spacing:.1em;width:56px;flex-shrink:0;}
+.company-feature-link-name{font-family:var(--serif);font-size:.84rem;color:var(--parch);flex:1;}
+.company-feature-link-arr{color:#7ab05a;font-size:.8rem;}
+
 /* ── FLAGSHIP ARTICLE ── */
 .flagship{
   background:var(--parch2);
@@ -618,6 +652,37 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="industry-nav-body">東証プライム企業を業種ごとに眺め、セクターから企業へ、企業から分析へ進める入口です。</div>
     </div>
     <a class="industry-nav-link" href="industries/">業種一覧を見る →</a>
+  </div>
+</div>
+
+<!-- ══════════════ COMPANY ANALYSIS FEATURE ══════════════ -->
+
+<div class="company-feature">
+  <div class="company-feature-inner">
+    <span class="company-feature-badge">NEW</span>
+    <div class="company-feature-text">
+      <div class="company-feature-label">COMPANY ANALYSIS LIBRARY</div>
+      <div class="company-feature-title">企業を、もっと深く読む</div>
+      <div class="company-feature-body">
+        moatスコアカード・フリーキャッシュフロー推移・主要指標・IR一次情報へのリンクを一か所で整理。<br>
+        決算短信をmoatの視点で読むための、静かな企業研究の場。
+      </div>
+      <div class="company-feature-pills">
+        <span class="company-feature-pill">moat 6タイプ採点</span>
+        <span class="company-feature-pill">FCFチャート</span>
+        <span class="company-feature-pill">決算短信リンク</span>
+        <span class="company-feature-pill">ROIC · ROE · FCFマージン</span>
+      </div>
+    </div>
+    <div class="company-feature-links">
+      <div style="font-family:var(--mono);font-size:.46rem;color:rgba(122,176,90,.6);letter-spacing:.12em;margin-bottom:2px;">公開中の企業分析</div>
+      <a class="company-feature-link" href="companies/keyence/">
+        <span class="company-feature-link-tag">6861</span>
+        <span class="company-feature-link-name">キーエンス</span>
+        <span class="company-feature-link-arr">→</span>
+      </a>
+      <div style="font-family:var(--mono);font-size:.44rem;color:rgba(122,176,90,.4);letter-spacing:.08em;padding:8px 0 0;font-style:italic;">順次追加予定...</div>
+    </div>
   </div>
 </div>
 
