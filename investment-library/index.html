@@ -107,6 +107,9 @@ body::before{
 }
 .hero-tab.active{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:600}
 .hero-tab:hover:not(.active){background:var(--gold)22;border-color:var(--gold);color:var(--gold4)}
+.hero-tab.tab-companies{border-color:rgba(90,138,58,.5);color:#7ab05a;}
+.hero-tab.tab-companies.active{background:#3d6828;border-color:#3d6828;color:var(--parch);}
+.hero-tab.tab-companies:hover:not(.active){background:rgba(90,138,58,.15);border-color:rgba(90,138,58,.6);color:#7ab05a;}
 
 /* ── FEATURED MUNGER QUOTE ── */
 .featured-quote{
@@ -564,7 +567,8 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
     投資を入口に、文明・歴史・資本・人間理解へ歩いていく。
   </p>
   <div class="hero-tabs">
-    <button class="hero-tab active" onclick="showSection('books')">書籍</button>
+    <button class="hero-tab tab-companies active" onclick="showSection('companies')">企業を深く読む</button>
+    <button class="hero-tab" onclick="showSection('books')">書籍</button>
     <button class="hero-tab" onclick="showSection('quotes')">言葉</button>
     <button class="hero-tab" onclick="showSection('reading')">読書記録</button>
   </div>
@@ -630,14 +634,14 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
         </div>
         <div class="shelf-arrow">→</div>
       </a>
-      <div class="shelf-item shelf-coming">
-        <div class="shelf-num">06</div>
+      <a class="shelf-item" href="companies/keyence/" style="border-left:2px solid rgba(90,138,58,.4);">
+        <div class="shelf-num" style="color:#5a8a3a;">06</div>
         <div class="shelf-body">
-          <div class="shelf-name">拡張予定の棚</div>
-          <div class="shelf-desc">歴史 · 制度 · 意思決定</div>
+          <div class="shelf-name">企業分析の棚</div>
+          <div class="shelf-desc">moat · FCF · IR一次情報</div>
         </div>
-        <div class="shelf-soon">near future</div>
-      </div>
+        <div class="shelf-arrow" style="color:#5a8a3a;">→</div>
+      </a>
     </div>
   </div>
 </div>
@@ -742,9 +746,47 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
   <div class="fq-author" id="heroQuoteAuthor">— Charlie Munger</div>
 </div>
 
+<!-- ══════════════ COMPANIES SECTION ══════════════ -->
+
+<div id="companiesSection">
+<div style="background:linear-gradient(160deg,#0a160a 0%,#0e1a0a 100%);padding:40px 24px;border-bottom:1px solid rgba(90,138,58,.15);">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:#7ab05a;letter-spacing:.2em;margin-bottom:10px;opacity:.8;">COMPANY ANALYSIS LIBRARY</div>
+    <div style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700;color:#f5ede0;margin-bottom:10px;">企業を、もっと深く読む</div>
+    <div style="font-size:.78rem;color:#c8b89a;line-height:1.9;font-weight:300;max-width:580px;">
+      moatスコアカード・フリーキャッシュフロー推移・主要指標・IR一次情報リンクを一か所で整理。<br>
+      決算短信をmoatの視点で読み解くための、静かな企業研究の場。
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+      <span style="font-family:'DM Mono',monospace;font-size:.46rem;background:rgba(90,138,58,.12);border:1px solid rgba(90,138,58,.25);color:#7ab05a;padding:3px 10px;letter-spacing:.08em;">moat 6タイプ採点</span>
+      <span style="font-family:'DM Mono',monospace;font-size:.46rem;background:rgba(90,138,58,.12);border:1px solid rgba(90,138,58,.25);color:#7ab05a;padding:3px 10px;letter-spacing:.08em;">FCFチャート</span>
+      <span style="font-family:'DM Mono',monospace;font-size:.46rem;background:rgba(90,138,58,.12);border:1px solid rgba(90,138,58,.25);color:#7ab05a;padding:3px 10px;letter-spacing:.08em;">決算短信リンク</span>
+      <span style="font-family:'DM Mono',monospace;font-size:.46rem;background:rgba(90,138,58,.12);border:1px solid rgba(90,138,58,.25);color:#7ab05a;padding:3px 10px;letter-spacing:.08em;">ROIC · ROE · FCFマージン</span>
+    </div>
+  </div>
+</div>
+<div style="background:#f5ede0;padding:28px 24px 40px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:#8b6914;letter-spacing:.16em;margin-bottom:14px;opacity:.8;">公開中の企業分析</div>
+    <a href="companies/keyence/" style="display:flex;align-items:center;gap:16px;padding:22px 20px;background:#efe4d0;border:1px solid #dfc9a8;border-left:3px solid #3d6828;text-decoration:none;color:inherit;transition:all .2s;margin-bottom:3px;" onmouseover="this.style.borderLeftColor='#5a8a3a';this.style.background='#e8d8be'" onmouseout="this.style.borderLeftColor='#3d6828';this.style.background='#efe4d0'">
+      <div style="font-family:'DM Mono',monospace;font-size:.58rem;color:#8b6914;letter-spacing:.08em;flex-shrink:0;width:44px;">6861</div>
+      <div style="flex:1;">
+        <div style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:1.05rem;font-weight:700;color:#1a1208;margin-bottom:4px;">キーエンス</div>
+        <div style="font-size:.7rem;color:#4a3520;line-height:1.6;">直販モデル · FA用センサー · 営業利益率55% · moatスコア · FCF推移 · IR一次情報</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+        <span style="font-family:'DM Mono',monospace;font-size:.46rem;background:rgba(61,104,40,.12);border:1px solid rgba(61,104,40,.3);color:#3d6828;padding:2px 8px;letter-spacing:.08em;">moat分析 公開中</span>
+        <span style="color:#b8900a;font-size:.9rem;">→</span>
+      </div>
+    </a>
+    <div style="padding:16px 0 0;font-family:'DM Mono',monospace;font-size:.46rem;color:#8b6914;opacity:.5;letter-spacing:.08em;font-style:italic;">三菱商事・トヨタ・ファーストリテイリングなど順次追加予定...</div>
+  </div>
+</div>
+</div>
+
 <!-- ══════════════ BOOKS SECTION ══════════════ -->
 
-<div id="booksSection">
+<div id="booksSection" style="display:none;">
   <div class="section">
 
 <!-- Currently Reading -->
@@ -1304,11 +1346,14 @@ function showRandomQuote(){
 
 // ── SECTION SWITCH ──
 function showSection(s){
-  ['books','quotes','reading'].forEach(id=>{
+  ['companies','books','quotes','reading'].forEach(id=>{
     document.getElementById(id+'Section').style.display = id===s ? '' : 'none';
   });
-  document.querySelectorAll('.hero-tab').forEach((t,i)=>{
-    t.className = 'hero-tab' + (['books','quotes','reading'][i]===s?' active':'');
+  const tabs = document.querySelectorAll('.hero-tab');
+  const keys = ['companies','books','quotes','reading'];
+  tabs.forEach((t,i)=>{
+    const isActive = keys[i]===s;
+    t.className = 'hero-tab' + (i===0?' tab-companies':'') + (isActive?' active':'');
   });
   if(s==='quotes') renderQuotes();
   if(s==='reading') renderReading();
