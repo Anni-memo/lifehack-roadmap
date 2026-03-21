@@ -98,12 +98,15 @@ body::before{
 }
 .hero-tabs{
   display:flex;justify-content:center;gap:6px;flex-wrap:wrap;
+  position:relative;z-index:10;
 }
 .hero-tab{
+  display:inline-flex;align-items:center;
   padding:8px 20px;border-radius:2px;
   background:transparent;border:1px solid var(--gold)66;
   color:var(--parch3);font-family:var(--serif);font-size:.85rem;
   letter-spacing:.06em;cursor:pointer;transition:all .2s;
+  text-decoration:none;
 }
 .hero-tab.active{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:600}
 .hero-tab:hover:not(.active){background:var(--gold)22;border-color:var(--gold);color:var(--gold4)}
