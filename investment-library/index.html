@@ -68,11 +68,11 @@ body::before{
   border-bottom:3px solid var(--gold);
 }
 .hero::before{
-  content:'';position:absolute;inset:0;
+  content:'';position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,144,10,.12) 0%, transparent 70%);
 }
 .hero::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;pointer-events:none;
   background:linear-gradient(90deg,transparent,var(--gold3),transparent);
 }
 .hero-ornament{
