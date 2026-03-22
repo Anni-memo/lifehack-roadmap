@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="意思決定：不確実性の中でどう判断するか｜投資と思考の書斎"/>
+<meta property="og:description" content="投資家の意思決定の構造。不確実性の中で判断する技術と、確率的思考の本質を考える。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>意思決定：不確実性の中でどう判断するか｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0e0c10 45%,#141018 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(100,80,160,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(100,80,160,.15);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.callout-source{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.08em;margin-top:8px;opacity:.75;}
+
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">意思決定</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">SHELF 04 — 思考・判断・長期</div>
+  <div class="hero-ornament">DECISION · PROBABILITY · JUDGMENT</div>
+  <h1 class="hero-title">意思決定<br>不確実性の中でどう判断するか</h1>
+  <p class="hero-lead">
+    良い結果が良い判断を証明するわけではない。<br>
+    判断の質は、プロセスによってのみ評価できる。
+  </p>
+</div>
+
+<main class="article">
+
+  <div class="article-section">
+    <div class="section-label">THE QUESTION</div>
+    <h2 class="section-title">結果ではなく、プロセスを問う</h2>
+    <div class="section-body">
+      <p>投資家は日々、不完全な情報のもとで判断を下す。どの企業が10年後も競争優位を維持しているか。この経営者は資本を賢く配分し続けるか。この業界のコスト構造はどう変化するか——これらに対する確かな答えは、誰も持っていない。</p>
+      <p>では、不確実性の中で意思決定をするとはどういうことか。この問いに対して多くの投資家が陥る誤りは、「結果で判断の質を測る」ことだ。良い結果は良い判断から来るとは限らない。運が良かっただけかもしれない。同様に、悪い結果が悪い判断を意味するとも限らない。</p>
+      <p>賢明な意思決定とは、与えられた情報と制約のもとで、最も合理的なプロセスを経ることである。結果は管理できないが、プロセスは管理できる。ここに、長期投資家の核心的な技術がある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">DEFINITION</div>
+    <h2 class="section-title">意思決定とは何か</h2>
+    <div class="section-body">
+      <p>意思決定とは、複数の選択肢の中から一つを選ぶ行為である。その本質は「トレードオフの受け入れ」にある。何かを選ぶことは、他の何かを諦めることだ。この機会コストの概念は、投資における「何に投資しないか」という判断と同じ構造を持つ。</p>
+      <p>投資における意思決定は、確率的な構造を持つ。将来のキャッシュフロー・競合の動向・マクロ経済の変化——これらは確定的に予測できない。投資家は「確率×結果の期待値」を推定し、その期待値が現在価格と比較して高いかを判断する。</p>
+      <p>重要な区別がある。リスク（確率が推定できる不確かさ）とナイトの不確実性（確率そのものが不明な不確かさ）は異なる。投資には両方が存在するが、後者を前者に偽装することで「管理できている」という錯覚が生まれやすい。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">STRUCTURE</div>
+    <h2 class="section-title">良い意思決定の四つの要素</h2>
+    <div class="section-body">
+      <p>心理学者アニー・デュークは、優れた意思決定を「結果の質ではなく、プロセスの質で評価する」と定義した。そのプロセスを支える要素を四つに整理できる。</p>
+      <ul>
+        <li><strong>前提の明示化</strong>——判断の根拠となる前提を明確にする。「この会社の競争優位は5年続く」という判断は、どの前提に基づくか。前提が崩れたとき、判断を更新できるか。</li>
+        <li><strong>反対意見の統合</strong>——最も鋭い反論を自ら構築し、検討する。確証バイアスへの構造的な対抗策だ。マンガーはこれを「逆転思考」と呼んだ。</li>
+        <li><strong>確率的な表現</strong>——「この企業の競争優位は維持される」ではなく「70%の確率で維持される」と考える習慣。曖昧さを数値化することで、後から判断を評価できる。</li>
+        <li><strong>判断の記録と更新</strong>——なぜその判断をしたかを記録し、新しい情報が来たとき適切に更新する。人間は自分の過去の判断を都合よく書き換える傾向がある。記録はその歯止めになる。</li>
+      </ul>
+      <p>この四つは、独立した技術ではなく、相互に強化し合うシステムである。前提が明確なら反論も構築しやすく、確率的な表現があれば記録と更新が意味を持つ。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">「私は常に確率で考える。60%の確率で正しいと思う判断でも、40%の可能性で間違っていることを忘れない。それが謙虚さの基盤だ。」<br><span class="callout-source">— チャーリー・マンガー</span></p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">HISTORY</div>
+    <h2 class="section-title">偉大な投資家たちの意思決定の方法</h2>
+    <div class="section-body">
+      <p>バフェットとマンガーは、バークシャーへの投資判断において「インバージョン（逆転思考）」を多用することで知られる。「この投資がうまくいく理由」を探すのではなく、「この投資が失敗するとすれば何が原因か」を徹底的に考える。失敗のシナリオを潰せない限り、投資しない。</p>
+      <p>フィリップ・フィッシャーは「スカットルバット法」として、企業の顧客・競合・元従業員・業界専門家から情報を集める手法を体系化した。「二次情報より一次情報」という原則は、前提の質を高めるための方法論だ。</p>
+      <p>ハワード・マークスは「投資メモ」という形で、自分の判断の根拠を定期的に記録し続けることで知られる。1990年から続くこのメモは、自分の思考の変化と市場の変化を対照させる記録でもある。結果よりプロセスを重視する姿勢の、具体的な実践例だ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">AS AN INVESTOR</div>
+    <h2 class="section-title">意思決定の質を高めるための問い</h2>
+    <div class="section-body">
+      <p>投資の意思決定を改善するために、以下の問いを習慣にすることを勧める。これは技術的な分析の補完であり、思考の癖を意識的に整える試みだ。</p>
+      <ul>
+        <li>この判断の前提は何か。その前提はどれほど確かか。</li>
+        <li>最も賢い反対意見は何か。それに答えられるか。</li>
+        <li>この判断を確率で表現するなら、何%か。その根拠は。</li>
+        <li>どんな情報が来たら、この判断を更新するか。</li>
+        <li>1年後、この判断を振り返ったとき、何を確認したいか。</li>
+      </ul>
+      <p>意思決定の質は、単一の判断ではなく、積み重ねの中で評価される。良い投資家とは、良い結果を出し続ける人ではなく、良いプロセスを繰り返し、悪い判断から学び続ける人だと思う。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">意思決定の技術とは、不確実性を消去することではない。<br>不確実性の中に居続けながら、誠実に判断し続けることである。</p>
+    </div>
+  </div>
+
+</main>
+
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">意思決定の構造を理解した上で、バイアス・長期思考・不確実性へと思考を広げるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../bias/">
+        <span class="further-link-tag">BIAS</span>
+        <span class="further-link-title">認知バイアス：投資家が陥る思考の罠</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../uncertainty/">
+        <span class="further-link-tag">UNCERTAINTY</span>
+        <span class="further-link-title">不確実性：未来は知りえないという前提に立つ</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../long-term/">
+        <span class="further-link-tag">LONG TERM</span>
+        <span class="further-link-title">長期思考：なぜ短期的な合理性は長期的に失敗するのか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">思考を広げる棚</a>　·
+    <a href="../../principles/">投資原則</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

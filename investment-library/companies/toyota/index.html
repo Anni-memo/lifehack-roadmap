@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="トヨタ自動車｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="トヨタ自動車（7203）のmoat分析。TPS・ブランド・ハイブリッド特許・ディーラーネットワーク。競争優位の源泉と長期投資としての見方を整理する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>トヨタ自動車 — moat分析｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0d0d14 45%,#121220 100%);
+  color:var(--parch);padding:52px 24px 44px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid #3a3a8a;
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(58,58,138,.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#6a6acc,transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:#8a8adc;letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(2rem,6vw,3.5rem);font-weight:700;color:var(--parch);position:relative;line-height:1;}
+.hero-name-en{font-family:var(--mono);font-size:.7rem;color:#8a8adc;letter-spacing:.2em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(106,106,204,.4);color:#aaaaee;letter-spacing:.1em;}
+.hero-verdict{
+  margin-top:28px;position:relative;
+  font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);
+  color:var(--parch3);font-style:italic;line-height:1.9;
+  max-width:540px;margin-left:auto;margin-right:auto;
+}
+
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}
+.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.3em;}
+.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}
+@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}
+.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;}
+.moat-dot{width:10px;height:10px;border-radius:50%;}
+.moat-dot.on{background:var(--green3);}
+.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}
+@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}
+.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}
+.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+
+.chart-wrap{background:var(--parch2);border:1px solid var(--parch4);padding:24px;margin-top:4px;}
+.chart-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
+.chart-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);}
+.chart-note{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.06em;}
+.chart-canvas-wrap{position:relative;height:220px;}
+
+.callout{border-left:3px solid #3a3a8a;padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}
+.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}
+.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}
+.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}
+.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}
+.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}
+.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}
+.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">企業分析</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">トヨタ自動車</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-code">TSE · 7203 · 輸送用機器</div>
+  <div class="hero-name">トヨタ自動車</div>
+  <div class="hero-name-en">TOYOTA MOTOR CORPORATION</div>
+  <div class="hero-tags">
+    <span class="hero-tag">TPS</span>
+    <span class="hero-tag">ハイブリッド特許</span>
+    <span class="hero-tag">世界販売首位級</span>
+    <span class="hero-tag">ディーラー網</span>
+    <span class="hero-tag">水素・EV転換</span>
+  </div>
+  <p class="hero-verdict">
+    100年に一度の変革期を、最も分厚い資産で乗り越えようとする自動車の巨人。<br>
+    TPSとハイブリッド技術が、他社には容易に真似できない堀を形成する。
+  </p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">トヨタ自動車とは何をしている会社か</h2>
+    <div class="section-body">
+      <p>トヨタ自動車は、年間販売台数1,000万台超を誇る世界最大級の自動車メーカーである。レクサス・トヨタブランドを中心に、乗用車・商用車・二輪車まで幅広いラインナップを持つ。</p>
+      <p>その強さの根幹にあるのが「トヨタ生産方式（TPS）」だ。ジャスト・イン・タイムとカイゼンを柱とするこの生産哲学は、70年以上かけて磨かれた組織的知識であり、他社が部分的に模倣しても全体を再現することは極めて難しい。</p>
+      <p>ハイブリッド技術では「プリウス」以来の蓄積で特許網を構築し、電動化競争においても技術的な優位性を持つ。現在はEV・水素・ハイブリッドの「全方位戦略」で電動化転換に臨んでいる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">競争優位の構造を見る</h2>
+    <div class="section-body" style="margin-bottom:20px;">
+      <p>6つのmoatタイプ別に、トヨタの競争優位の強さを評価する。●が多いほど強い（最大5）。</p>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">低コストで競合を凌駕できるか</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">ブランド・特許・ノウハウ</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">市場規模が限定的で新規参入が非合理</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">一度導入すると乗り換えが難しい</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">ユーザーが増えるほど価値が高まる</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（トールロード）</div>
+          <div class="moat-sub">通過せざるを得ないインフラ性</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:24px;">
+      <p class="callout-text">トヨタのmoatの核心は「コスト優位」と「無形資産」の複合にある。<br>TPSという組織知識は70年以上かけて形成されたもので、コンサルタントを呼んでも短期では再現できない。加えてトヨタ・レクサスブランドへの信頼と、ハイブリッド特許群が参入障壁を形成している。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">数字で見るトヨタ自動車</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">営業利益率</div>
+        <div class="metric-value">10<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">自動車メーカー最高水準</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">14<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">円安追い風で急拡大</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROIC</div>
+        <div class="metric-value">8<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">巨大な資産ベースを考慮</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">FCFマージン</div>
+        <div class="metric-value">8<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">EV投資増大で変化に注目</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">有利子負債</div>
+        <div class="metric-value">20<span style="font-size:.9rem">兆</span></div>
+        <div class="metric-unit">金融事業含む概算</div>
+        <div class="metric-note">金融子会社の負債が大部分</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">海外売上比率</div>
+        <div class="metric-value">85<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">北米・アジアが主要市場</div>
+      </div>
+    </div>
+    <p style="font-size:.62rem;color:var(--ink3);margin-top:12px;font-family:var(--mono);">※概算値・参考値。投資判断の根拠にしないこと。必ず一次情報をご確認ください。</p>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">FREE CASH FLOW</div>
+    <h2 class="section-title">フリーキャッシュフローの推移</h2>
+    <div class="section-body" style="margin-bottom:16px;">
+      <p>コロナ禍の落ち込みから急回復し、FY2023・FY2024は歴史的な高水準のFCFを記録。円安効果と半導体供給回復が重なった特異な好況期の数字であることに留意が必要。</p>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <div class="chart-title">フリーキャッシュフロー（10億円）</div>
+        <div class="chart-note">概算値・参考値 / 投資判断の根拠にしないこと</div>
+      </div>
+      <div class="chart-canvas-wrap">
+        <canvas id="fcfChart"></canvas>
+      </div>
+    </div>
+    <div class="section-body" style="margin-top:16px;">
+      <p>EV・次世代技術への投資拡大により、今後のFCFは設備投資増大の影響を受ける可能性がある。長期的なキャッシュ創出力を見極めるには、投資フェーズを理解することが重要だ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT DEEP DIVE</div>
+    <h2 class="section-title">なぜトヨタのmoatは強いのか</h2>
+    <div class="section-body">
+      <p><strong>トヨタ生産方式（TPS）という組織知識</strong>。ジャスト・イン・タイム、カイゼン、アンドン。これらは単なる手法ではなく、工場の床の上で70年以上かけて積み上げられた「暗黙知の集積」だ。書物で学んでも組織に実装することは難しく、競合他社が完全に模倣するには数十年かかる。</p>
+      <p><strong>ハイブリッド特許の壁</strong>。1997年のプリウス発売以来、トヨタはハイブリッド技術の特許を積み上げてきた。HEV・PHEVの電動化競争において、トヨタの技術ライセンスなしに同等の性能を実現することは容易ではない。</p>
+      <p><strong>グローバルディーラーネットワーク</strong>。世界170以上の国・地域に展開するディーラー網は、新規参入者が一から構築するには莫大な投資と時間を要するインフラだ。アフターサービス・部品供給網を含めた顧客関係の深さが、ブランドロイヤルティを支えている。</p>
+    </div>
+    <div class="callout">
+      <p class="callout-text">「トヨタの本当の強さは製品ではなく、製品をつくる仕組みにある。」<br><br>自動車産業がEVへ転換しても、生産効率・品質管理・コスト管理の能力は引き継がれる。この能力の移転可能性こそが、トヨタのmoatを持続的なものにしている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">RISKS TO MONITOR</div>
+    <h2 class="section-title">注視すべきリスク</h2>
+    <div class="section-body">
+      <p><strong>EV転換の速度リスク</strong>。欧州や中国でのEVシフトが想定より早く進んだ場合、ハイブリッド偏重の製品ラインナップが裏目に出る可能性がある。テスラや中国BYDとのEV競争は激化している。</p>
+      <p><strong>円高リスク</strong>。海外売上比率85%のトヨタにとって、円高は業績に直撃する。FY2023〜2024の好業績は円安効果が大きく、通貨変動の影響を常に意識する必要がある。</p>
+      <p><strong>自動運転・SDVへの対応</strong>。ソフトウェア定義自動車（SDV）の時代において、ハードウェアメーカーからソフトウェア企業への転換が求められている。この変革への対応速度が、将来のポジションを左右する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">IR · PRIMARY SOURCES</div>
+    <h2 class="section-title">一次情報へのリンク</h2>
+    <div class="section-body" style="margin-bottom:16px;">
+      <p>分析の前に、必ず一次情報に当たること。以下はトヨタ自動車の主要IR資料へのリンクである。</p>
+    </div>
+    <div class="ir-links">
+      <a class="ir-link" href="https://global.toyota/jp/ir/" target="_blank" rel="noopener">
+        <span class="ir-tag">IR TOP</span>
+        <div class="ir-name">
+          トヨタ自動車 投資家情報
+          <div class="ir-note">決算資料・株主総会・IRカレンダーの公式ページ</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://global.toyota/jp/ir/financial-data/earnings/" target="_blank" rel="noopener">
+        <span class="ir-tag">決算資料</span>
+        <div class="ir-name">
+          決算発表資料・短信
+          <div class="ir-note">FCF・セグメント別業績・設備投資計画</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://global.toyota/jp/ir/library/integrated-report/" target="_blank" rel="noopener">
+        <span class="ir-tag">統合報告書</span>
+        <div class="ir-name">
+          統合報告書（アニュアルレポート）
+          <div class="ir-note">TPS・電動化戦略・長期ビジョンを読む</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=7203" target="_blank" rel="noopener">
+        <span class="ir-tag">日経データ</span>
+        <div class="ir-name">
+          日経会社情報 — トヨタ自動車（7203）
+          <div class="ir-note">株価・PER・PBR・ROE等の財務データ</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED</div>
+    <div class="related-links">
+      <a class="related-link" href="../">
+        <span class="related-tag">COMPANIES</span>
+        <span class="related-title">企業分析一覧</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../moat/">
+        <span class="related-tag">CONCEPT</span>
+        <span class="related-title">moatをどう見るか</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../fcf/">
+        <span class="related-tag">CONCEPT</span>
+        <span class="related-title">FCFとは何か</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../analysis-template/">
+        <span class="related-tag">TEMPLATE</span>
+        <span class="related-title">企業分析テンプレート</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">企業分析一覧</a>　·
+    <a href="../../analysis-template/">分析テンプレート</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。掲載データは概算・参考値であり、正確性を保証するものではありません。必ず一次情報をご確認ください。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+const ctx = document.getElementById('fcfChart').getContext('2d');
+const years = ['FY2019','FY2020','FY2021','FY2022','FY2023','FY2024'];
+const fcf   = [800, 500, 1200, 1500, 2800, 3200];
+const op_cf = [1400, 1000, 2000, 2400, 4000, 4500];
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: years,
+    datasets: [
+      {
+        label: '営業CF',
+        data: op_cf,
+        backgroundColor: 'rgba(90,138,58,.2)',
+        borderColor: 'rgba(90,138,58,.4)',
+        borderWidth: 1,
+        borderRadius: 2,
+        order: 2,
+      },
+      {
+        label: 'フリーCF',
+        data: fcf,
+        backgroundColor: 'rgba(90,138,58,.65)',
+        borderColor: 'rgba(90,138,58,1)',
+        borderWidth: 1,
+        borderRadius: 2,
+        order: 1,
+      },
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        labels: {
+          color: '#4a3520',
+          font: { family: "'DM Mono', monospace", size: 10 },
+          boxWidth: 12,
+        }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}B円`
+        },
+        backgroundColor: '#1a1208',
+        titleColor: '#d4aa22',
+        bodyColor: '#efe4d0',
+        titleFont: { family: "'DM Mono', monospace", size: 10 },
+        bodyFont: { family: "'Noto Serif JP', serif", size: 11 },
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#4a3520', font: { family: "'DM Mono', monospace", size: 9 } },
+        grid: { color: 'rgba(139,105,20,.1)' }
+      },
+      y: {
+        ticks: {
+          color: '#4a3520',
+          font: { family: "'DM Mono', monospace", size: 9 },
+          callback: v => v + 'B'
+        },
+        grid: { color: 'rgba(139,105,20,.1)' }
+      }
+    }
+  }
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

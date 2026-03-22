@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="国家と市場：見えざる手と見える手｜投資と思考の書斎"/>
+<meta property="og:description" content="規制・制度・競争政策。市場を成立させる見えない前提と、国家の役割を考える。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>国家と市場：見えざる手と見える手｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#100c0e 45%,#180e14 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(120,80,140,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(120,80,140,.15);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.callout-source{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.08em;margin-top:8px;opacity:.75;}
+
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">国家と市場</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">SHELF 03 — 協力・競争・制度</div>
+  <div class="hero-ornament">STATE · MARKET · INSTITUTION</div>
+  <h1 class="hero-title">国家と市場<br>見えざる手と見える手</h1>
+  <p class="hero-lead">
+    市場は自律的に機能するように見えて、<br>
+    その外側に国家という構造を必要としている。
+  </p>
+</div>
+
+<main class="article">
+
+  <div class="article-section">
+    <div class="section-label">THE QUESTION</div>
+    <h2 class="section-title">市場は、誰が作るのか</h2>
+    <div class="section-body">
+      <p>アダム・スミスが「見えざる手」と呼んだのは、個人の利己的行動が意図せず社会全体の利益を生み出すという現象だった。しかしスミスが同時に強調したのは、その「手」が機能するためには制度的な基盤——法・秩序・信頼——が不可欠だということでもあった。</p>
+      <p>市場は、自然に存在するものではない。それは人間が設計し、国家が維持する制度的構造物である。財産権の保護、契約の執行、通貨の発行、競争の維持——これらはすべて「見える手」、すなわち国家の役割である。</p>
+      <p>投資家はしばしば「市場対国家」という二項対立で物事を考える。しかしより正確には、両者は相互依存の関係にある。この関係の質が、投資対象の国・業種・企業の長期的な価値に大きく影響する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">DEFINITION</div>
+    <h2 class="section-title">市場とは何か。国家とは何か。</h2>
+    <div class="section-body">
+      <p>市場とは、財・サービス・資本が自発的な取引によって交換される場である。価格が情報を伝え、需給が均衡を見つける。中央からの指令なしに、資源の配分が行われる。</p>
+      <p>国家とは、特定の領域において正当な強制力を独占する組織体である。法を制定し、契約を執行し、通貨を管理し、外敵から国民を守る。現代の国家はさらに、社会保障・教育・インフラという公共財の提供者でもある。</p>
+      <p>この二つが交差する点に、「制度」が生まれる。独占禁止法は競争を守る制度だ。証券規制は情報の非対称性を是正する制度だ。中央銀行は通貨の信頼を守る制度だ。投資家が活動する市場は、こうした制度の網の目の上に成立している。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">STRUCTURE</div>
+    <h2 class="section-title">国家と市場の均衡——三つの緊張</h2>
+    <div class="section-body">
+      <p>国家と市場の関係は、静的なものではなく、常に動的な緊張をはらんでいる。その緊張は三つの形で現れる。</p>
+      <ul>
+        <li><strong>規制と競争の緊張</strong>——規制は市場の失敗を補正するが、過剰な規制は競争と革新を損なう。適切な規制の強度を見極めることが、政策立案者にとっても投資家にとっても難題である。</li>
+        <li><strong>短期と長期の緊張</strong>——市場は短期的な価格シグナルに従う。しかし気候変動・インフラ・教育のような長期的課題は、市場だけでは対処できない。国家が長期的視野を補完する役割を担う。</li>
+        <li><strong>効率と公正の緊張</strong>——市場は効率的な資源配分を実現するが、公正な分配は保証しない。格差の拡大は政治的反発を生み、規制の強化や税制変更という形で市場に跳ね返る。</li>
+      </ul>
+      <p>この三つの緊張を理解することは、規制リスク・政治リスクの評価に直結する。業種によっては、この緊張の行方が企業価値を大きく左右する。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">市場は制度に依存する。制度は政治に依存する。<br>長期投資家が「制度の安定性」に敏感であるのは、このためである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">HISTORY</div>
+    <h2 class="section-title">振り子の歴史——市場と国家の交代</h2>
+    <div class="section-body">
+      <p>歴史は、市場重視と国家介入の間を揺れ動く振り子のようだった。19世紀の古典的自由主義は市場の自律性を信頼したが、1929年の大恐慌がその限界を露わにした。ケインズは国家による需要管理の必要性を説き、戦後の先進国は「混合経済」の時代に入った。</p>
+      <p>1970年代のスタグフレーションは、今度はケインズ政策の限界を示した。サッチャーとレーガンは規制緩和・民営化・市場原理への回帰を推進した。しかし2008年の金融危機は再び国家の役割を問い直し、中央銀行は未曾有の介入に踏み込んだ。</p>
+      <p>この振り子の動きは今も続いている。デジタルプラットフォームへの規制、気候変動への対応、半導体サプライチェーンの国家関与——国家と市場の境界は常に書き直されている。</p>
+      <p>投資家にとって重要なのは、「今この振り子がどこにあるか」を判断することだ。規制強化の波は、特定の業種・企業にとってリスクを意味し、別の企業にとっては参入障壁の強化を意味する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">AS AN INVESTOR</div>
+    <h2 class="section-title">制度リスクを読む力</h2>
+    <div class="section-body">
+      <p>フィリップ・フィッシャーは、企業分析において「経営の誠実さ」を重視したが、同時に「その企業が活動する制度環境」にも目を向けた。どれほど優れた経営者も、制度が崩れた社会では力を発揮できない。</p>
+      <p>制度リスクを評価する際、以下の問いが有効である。</p>
+      <ul>
+        <li>この業種は、今後の規制変化にさらされやすいか</li>
+        <li>その国の法の支配は、長期的に安定しているか</li>
+        <li>この企業のビジネスモデルは、規制の変化に耐えうる柔軟性を持つか</li>
+        <li>国家の産業政策が、この業種の追い風・向かい風になっているか</li>
+      </ul>
+      <p>国家と市場の関係は、投資家にとって「外部環境」ではない。それは企業価値の構成要素そのものである。制度を読む力は、企業分析の精度を大きく高める。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">「見えざる手」は、見える手（制度・法・国家）があって初めて機能する。<br>投資家は、両方の手を同時に見ていなければならない。</p>
+    </div>
+  </div>
+
+</main>
+
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">国家・市場・制度を理解した上で、産業の歴史と人間の意思決定へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../industrial-revolution/">
+        <span class="further-link-tag">INDUSTRY</span>
+        <span class="further-link-title">産業革命：資本主義が加速した転換点</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../cooperation/">
+        <span class="further-link-tag">COOPERATION</span>
+        <span class="further-link-title">協力と競争：なぜ人間は協力し、そして競争するのか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../capitalism/">
+        <span class="further-link-tag">CAPITALISM</span>
+        <span class="further-link-title">資本主義とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">思考を広げる棚</a>　·
+    <a href="../../principles/">投資原則</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

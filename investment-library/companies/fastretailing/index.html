@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="ファーストリテイリング｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="ファーストリテイリング（9983）のmoat分析。ユニクロブランド・SPA（製造小売）モデル・素材開発力。競争優位の源泉と長期投資としての見方を整理する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>ファーストリテイリング — moat分析｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0a0a0a 45%,#141414 100%);
+  color:var(--parch);padding:52px 24px 44px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid #5a5a5a;
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(90,90,90,.06) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#8a8a8a,transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:#9a9a9a;letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(2rem,6vw,3.5rem);font-weight:700;color:var(--parch);position:relative;line-height:1;}
+.hero-name-en{font-family:var(--mono);font-size:.7rem;color:#9a9a9a;letter-spacing:.2em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(154,154,154,.35);color:#c0c0c0;letter-spacing:.1em;}
+.hero-verdict{
+  margin-top:28px;position:relative;
+  font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);
+  color:var(--parch3);font-style:italic;line-height:1.9;
+  max-width:540px;margin-left:auto;margin-right:auto;
+}
+
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}
+.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.3em;}
+.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}
+@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}
+.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;}
+.moat-dot{width:10px;height:10px;border-radius:50%;}
+.moat-dot.on{background:var(--green3);}
+.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}
+@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}
+.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}
+.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+
+.chart-wrap{background:var(--parch2);border:1px solid var(--parch4);padding:24px;margin-top:4px;}
+.chart-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
+.chart-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);}
+.chart-note{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.06em;}
+.chart-canvas-wrap{position:relative;height:220px;}
+
+.callout{border-left:3px solid var(--green2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}
+.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}
+.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}
+.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}
+.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}
+.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}
+.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}
+.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">企業分析</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">ファーストリテイリング</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-code">TSE · 9983 · 小売業</div>
+  <div class="hero-name">ファーストリテイリング</div>
+  <div class="hero-name-en">FAST RETAILING CO., LTD.</div>
+  <div class="hero-tags">
+    <span class="hero-tag">ユニクロ</span>
+    <span class="hero-tag">SPAモデル</span>
+    <span class="hero-tag">素材開発力</span>
+    <span class="hero-tag">アジア展開</span>
+    <span class="hero-tag">ヒートテック</span>
+  </div>
+  <p class="hero-verdict">
+    「服を変え、常識を変え、世界を変えていく」。<br>
+    素材開発力とSPAモデルが、ファッションの常識を書き換え続ける。
+  </p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">ファーストリテイリングとは何をしている会社か</h2>
+    <div class="section-body">
+      <p>ファーストリテイリングは、「ユニクロ」「GU」「セオリー」等のブランドを展開するアパレル小売グループである。創業者・柳井正氏が主導するSPA（製造小売業）モデルにより、企画・製造・販売を一貫して管理することで高品質・低価格を実現している。</p>
+      <p>ユニクロは「LifeWear（究極の日常着）」というコンセプトのもと、ベーシックながら機能性の高い衣料品を提供する。ヒートテック・エアリズム・フリースといった独自素材は、東レとの共同開発によるもので、単なる衣料品を超えた機能性製品として顧客に認知されている。</p>
+      <p>海外展開では中国・東南アジアを中心に急成長しており、アジアでの存在感はZARAやH&Mを上回る市場も多い。「グローバル化と地域密着」のバランスが問われる段階にある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">競争優位の構造を見る</h2>
+    <div class="section-body" style="margin-bottom:20px;">
+      <p>6つのmoatタイプ別に、ファーストリテイリングの競争優位の強さを評価する。●が多いほど強い（最大5）。</p>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">ブランド・特許・ノウハウ</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">低コストで競合を凌駕できるか</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">市場規模が限定的で新規参入が非合理</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">一度導入すると乗り換えが難しい</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">ユーザーが増えるほど価値が高まる</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（トールロード）</div>
+          <div class="moat-sub">通過せざるを得ないインフラ性</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">1/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:24px;">
+      <p class="callout-text">ファーストリテイリングのmoatの核心は「無形資産」にある。<br>ユニクロブランドへの信頼、ヒートテック・エアリズムという素材開発力、そしてSPAモデルで培われた製造・物流ノウハウ。これらは数年で模倣できるものではなく、継続的な投資と失敗の積み重ねで形成されたものだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">数字で見るファーストリテイリング</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">営業利益率</div>
+        <div class="metric-value">12<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">アパレル小売で高水準</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">20<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">資本効率の高さが際立つ</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROIC</div>
+        <div class="metric-value">16<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">SPAモデルの収益効率</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">FCFマージン</div>
+        <div class="metric-value">10<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">店舗拡大投資と並行して安定</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">有利子負債</div>
+        <div class="metric-value">1200<span style="font-size:.9rem">億</span></div>
+        <div class="metric-unit">概算（円）</div>
+        <div class="metric-note">借入は小さく財務健全</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">海外売上比率</div>
+        <div class="metric-value">55<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">中国・アジアが成長エンジン</div>
+      </div>
+    </div>
+    <p style="font-size:.62rem;color:var(--ink3);margin-top:12px;font-family:var(--mono);">※概算値・参考値。投資判断の根拠にしないこと。必ず一次情報をご確認ください。</p>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">FREE CASH FLOW</div>
+    <h2 class="section-title">フリーキャッシュフローの推移</h2>
+    <div class="section-body" style="margin-bottom:16px;">
+      <p>コロナ禍でも黒字FCFを維持し、その後は継続的に拡大。アジア展開の加速とデジタル投資を並行させながら、安定的なキャッシュ創出を実現している。</p>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <div class="chart-title">フリーキャッシュフロー（10億円）</div>
+        <div class="chart-note">概算値・参考値 / 投資判断の根拠にしないこと</div>
+      </div>
+      <div class="chart-canvas-wrap">
+        <canvas id="fcfChart"></canvas>
+      </div>
+    </div>
+    <div class="section-body" style="margin-top:16px;">
+      <p>アパレル業界においてFCFを継続的に成長させ続けることは容易ではない。在庫リスク・為替リスク・店舗投資を抱えながらこの水準を維持できるのは、SPAモデルの強さの証左である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT DEEP DIVE</div>
+    <h2 class="section-title">なぜファーストリテイリングのmoatは強いのか</h2>
+    <div class="section-body">
+      <p><strong>ユニクロブランドの「LifeWear」思想</strong>。単なる安さではなく、「すべての人の、日常のための、究極の服」というコンセプトが、ZARAやH&Mとの明確な差別化を生む。ブランドに共感した顧客は、価格競争ではなく価値で選ぶ。</p>
+      <p><strong>素材開発の参入障壁</strong>。ヒートテック（東レ共同開発）、エアリズム、ウルトラライトダウン。これらは単なるマーケティング上の差別化ではなく、素材メーカーとの数年にわたる共同開発によって生まれた機能的優位性だ。競合が模倣しようとしても、素材特許と製造ノウハウの壁がある。</p>
+      <p><strong>SPAモデルの垂直統合効率</strong>。企画から製造・物流・販売・顧客データまでを一元管理するSPAモデルは、在庫管理精度と売れ筋の即応性を高める。この情報の流れの速さが、トレンドへの適応力を生む。</p>
+    </div>
+    <div class="callout">
+      <p class="callout-text">「良い服を、より多くの人に、より安く。」<br><br>柳井正のビジョンは、製品ではなく「仕組み」で実現される。SPAという垂直統合モデルと素材開発への執着が、ユニクロを単なる衣料品店ではなく、製造業に近い企業に変えた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">RISKS TO MONITOR</div>
+    <h2 class="section-title">注視すべきリスク</h2>
+    <div class="section-body">
+      <p><strong>中国市場リスク</strong>。中国は最大市場の一つだが、地政学的緊張や「不買い運動」のリスクが常に存在する。2021年の新疆綿問題では欧米ブランドへの影響が大きかったが、ユニクロは相対的に影響を限定できた。今後も微妙な政治的バランスが必要だ。</p>
+      <p><strong>在庫・季節リスク</strong>。アパレル業の宿命として、在庫管理の失敗は大きな減益要因になる。気候変動による季節感の変化も、需要予測を難しくする要因だ。</p>
+      <p><strong>後継者問題</strong>。柳井正氏のカリスマ経営に依存する部分が大きく、後継者リスクは長期投資家が注目すべき点だ。組織的・制度的な経営への移行が試される。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">IR · PRIMARY SOURCES</div>
+    <h2 class="section-title">一次情報へのリンク</h2>
+    <div class="section-body" style="margin-bottom:16px;">
+      <p>分析の前に、必ず一次情報に当たること。以下はファーストリテイリングの主要IR資料へのリンクである。</p>
+    </div>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.fastretailing.com/jp/ir/" target="_blank" rel="noopener">
+        <span class="ir-tag">IR TOP</span>
+        <div class="ir-name">
+          ファーストリテイリング 投資家情報
+          <div class="ir-note">決算資料・中期経営計画・IRカレンダーの公式ページ</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://www.fastretailing.com/jp/ir/financials/summary.html" target="_blank" rel="noopener">
+        <span class="ir-tag">決算資料</span>
+        <div class="ir-name">
+          決算発表資料・業績ハイライト
+          <div class="ir-note">FCF・ブランド別業績・海外比率の詳細</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://www.fastretailing.com/jp/ir/library/annual.html" target="_blank" rel="noopener">
+        <span class="ir-tag">統合報告書</span>
+        <div class="ir-name">
+          統合報告書（アニュアルレポート）
+          <div class="ir-note">LifeWear思想・ESG・グローバル戦略を読む</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=9983" target="_blank" rel="noopener">
+        <span class="ir-tag">日経データ</span>
+        <div class="ir-name">
+          日経会社情報 — ファーストリテイリング（9983）
+          <div class="ir-note">株価・PER・PBR・ROE等の財務データ</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED</div>
+    <div class="related-links">
+      <a class="related-link" href="../">
+        <span class="related-tag">COMPANIES</span>
+        <span class="related-title">企業分析一覧</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../moat/">
+        <span class="related-tag">CONCEPT</span>
+        <span class="related-title">moatをどう見るか</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../fcf/">
+        <span class="related-tag">CONCEPT</span>
+        <span class="related-title">FCFとは何か</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../analysis-template/">
+        <span class="related-tag">TEMPLATE</span>
+        <span class="related-title">企業分析テンプレート</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">企業分析一覧</a>　·
+    <a href="../../analysis-template/">分析テンプレート</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。掲載データは概算・参考値であり、正確性を保証するものではありません。必ず一次情報をご確認ください。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+const ctx = document.getElementById('fcfChart').getContext('2d');
+const years = ['FY2019','FY2020','FY2021','FY2022','FY2023','FY2024'];
+const fcf   = [80, 120, 200, 250, 320, 380];
+const op_cf = [140, 190, 300, 360, 450, 520];
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: years,
+    datasets: [
+      {
+        label: '営業CF',
+        data: op_cf,
+        backgroundColor: 'rgba(90,138,58,.2)',
+        borderColor: 'rgba(90,138,58,.4)',
+        borderWidth: 1,
+        borderRadius: 2,
+        order: 2,
+      },
+      {
+        label: 'フリーCF',
+        data: fcf,
+        backgroundColor: 'rgba(90,138,58,.65)',
+        borderColor: 'rgba(90,138,58,1)',
+        borderWidth: 1,
+        borderRadius: 2,
+        order: 1,
+      },
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        labels: {
+          color: '#4a3520',
+          font: { family: "'DM Mono', monospace", size: 10 },
+          boxWidth: 12,
+        }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}B円`
+        },
+        backgroundColor: '#1a1208',
+        titleColor: '#d4aa22',
+        bodyColor: '#efe4d0',
+        titleFont: { family: "'DM Mono', monospace", size: 10 },
+        bodyFont: { family: "'Noto Serif JP', serif", size: 11 },
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#4a3520', font: { family: "'DM Mono', monospace", size: 9 } },
+        grid: { color: 'rgba(139,105,20,.1)' }
+      },
+      y: {
+        ticks: {
+          color: '#4a3520',
+          font: { family: "'DM Mono', monospace", size: 9 },
+          callback: v => v + 'B'
+        },
+        grid: { color: 'rgba(139,105,20,.1)' }
+      }
+    }
+  }
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>
