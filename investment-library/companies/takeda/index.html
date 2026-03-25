@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="武田薬品工業｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="武田薬品工業（4502）のmoat分析。日本最大の製薬会社。Shire買収でグローバル展開。希少疾患・GI・神経科学に集中した長期投資の視点を整理する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>武田薬品工業 — moat分析｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;--accent:#280808;--accent2:#380c0c;--accent3:#481818;--accent4:#d06060;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--accent) 45%,var(--accent2) 100%);color:var(--parch);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,255,255,.05) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent4),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(255,255,255,.2);color:var(--parch3);letter-spacing:.1em;}
+.hero-verdict{margin-top:28px;position:relative;font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);color:var(--parch3);font-style:italic;line-height:1.9;max-width:540px;margin-left:auto;margin-right:auto;}
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.3em;}.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;align-items:center;}.moat-dot{width:10px;height:10px;border-radius:50%;}.moat-dot.on{background:var(--green3);}.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span><a class="nav-back" href="../">企業分析</a><span class="nav-sep">/</span><span class="nav-current">武田薬品工業</span></nav>
+
+<div class="hero">
+  <div class="hero-code">TSE · 4502 · 医薬品</div>
+  <div class="hero-name">武田薬品工業</div>
+  <div class="hero-name-en">TAKEDA PHARMACEUTICAL COMPANY LIMITED</div>
+  <div class="hero-tags">
+    <span class="hero-tag">日本最大の製薬</span>
+    <span class="hero-tag">グローバル展開</span>
+    <span class="hero-tag">Shire買収</span>
+    <span class="hero-tag">希少疾患・オンコロジー</span>
+  </div>
+  <p class="hero-verdict">日本最大の製薬会社にして、グローバルトップ10に迫る巨人。<br>Shireの巨額買収でGI・希少疾患・神経科学に強いパイプラインを獲得——日本の製薬企業が真のグローバル競争に入った象徴。</p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">企業概要——日本発のグローバル製薬巨人</h2>
+    <div class="section-body">
+      <p>武田薬品工業は日本最大の製薬会社であり、売上規模ではグローバルトップ10に迫る存在だ。1781年に大阪で創業した240年以上の歴史を持つ老舗企業でありながら、2019年のアイルランド・Shire社の買収（約6.2兆円）という日本製薬史上最大規模のM&Aにより、その姿を一変させた。消化器疾患（GI）・希少疾患・神経科学・血漿分画製剤の4領域に経営資源を集中し、売上の約80%が海外由来という真のグローバル企業となっている。</p>
+      <p>Shire買収により、アデラール（ADHD治療薬）・ベリノン（希少疾患）・タクザイロ（遺伝性血管浮腫）など強力な希少疾患ポートフォリオを一気に手中に収めた。希少疾患薬は患者数が少ない一方で薬価が非常に高く、疾患の特性上長期継続処方が前提となるため、安定した高収益ストリームを生む。GI領域でも腸疾患治療薬エンタイビオが世界的なブロックバスターとなっており、複数の高額薬剤がポートフォリオを支えている。</p>
+      <p>長期投資家が注目すべきは、パイプライン（開発中薬剤）の充実度と特許切れへの対応だ。エンタイビオの特許期限が近づいており、これを次世代薬剤でどう補完するかが株価の最大の変数となる。現在30品目以上の後期臨床試験候補を抱えており、パイプラインの充実度は日本の製薬企業の中でも最大級だ。Shire買収後の財務負担（有利子負債数兆円）の削減も着実に進んでいる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">moatスコアカード</h2>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">希少疾患・GI領域の特許群とグローバル販売承認</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">製薬にネットワーク効果は基本的にない</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">1/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">慢性疾患患者の薬剤変更コスト・保険適用の維持</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（toll road）</div>
+          <div class="moat-sub">慢性疾患薬・希少疾患薬の長期継続処方</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">グローバル規模の研究・販売インフラ</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">研究開発コストの高さが利益を圧迫</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-text">武田のmoatはグローバルに認められた希少疾患・GI領域のブランドと特許群にある。希少疾患薬は患者数が少ないが薬価が非常に高く、代替品が少ないため長期的な処方継続が見込める。問題はShire買収による負債と特許切れリスクで、パイプラインの充実が株価の最大の変数となる。</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">主要指標</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">売上高</div>
+        <div class="metric-value">4兆+</div>
+        <div class="metric-unit">円（年間）</div>
+        <div class="metric-note">日本最大の製薬企業</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">研究開発費</div>
+        <div class="metric-value">7,000億+</div>
+        <div class="metric-unit">円（年間）</div>
+        <div class="metric-note">売上比18%前後</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">海外売上比率</div>
+        <div class="metric-value">約80%</div>
+        <div class="metric-unit">グローバル比率</div>
+        <div class="metric-note">真のグローバル企業</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">5〜10%</div>
+        <div class="metric-unit">改善余地あり</div>
+        <div class="metric-note">負債削減中</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY RISKS</div>
+    <h2 class="section-title">主要リスク——長期投資家が注視すべき変数</h2>
+    <div class="section-body">
+      <p>武田薬品の最大リスクは、Shire買収に伴う多額の有利子負債だ。買収直後の純有利子負債は5兆円を超えており、財務の柔軟性を大幅に損なった。資産売却と営業キャッシュフローによる返済が進んでいるものの、負債水準は依然として高く、新型危機や訴訟リスクへの耐久力が問われる局面も想定される。</p>
+      <p>特許切れリスクも深刻だ。エンタイビオ（腸疾患治療薬）は売上の20%以上を占めるブロックバスターだが、特許期限が近づいており、バイオシミラーの参入による売上減少は避けられない。ベルケード（多発性骨髄腫薬）の特許切れはすでに進行中だ。これらを補うパイプラインの成功率が、今後10年の業績を左右する。</p>
+      <p>為替リスクも無視できない。売上の80%が海外由来であるため、円高が進めば円換算の業績を直撃する。また、米国・欧州での薬価引き下げ圧力（インフレ抑制法等による薬価交渉制度）も中長期の収益を圧迫する可能性がある。グローバル製薬企業としての規模は強みである一方、政治的・規制的リスクにもさらされやすい。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">IR RESOURCES</div>
+    <h2 class="section-title">IRリソース</h2>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.takeda.com/ja-jp/investors/" target="_blank" rel="noopener">
+        <span class="ir-tag">公式IR</span>
+        <div><div class="ir-name">武田薬品工業 投資家情報</div><div class="ir-note">決算説明資料・アニュアルレポート・パイプライン情報</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.takeda.com/ja-jp/investors/pipeline/" target="_blank" rel="noopener">
+        <span class="ir-tag">パイプライン</span>
+        <div><div class="ir-name">研究開発パイプライン</div><div class="ir-note">開発中薬剤の一覧・フェーズ・疾患領域</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=4502" target="_blank" rel="noopener">
+        <span class="ir-tag">日経</span>
+        <div><div class="ir-name">日経 株価・財務情報（4502）</div><div class="ir-note">株価チャート・財務ハイライト・アナリスト評価</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED COMPANIES &amp; PAGES</div>
+    <div class="related-links">
+      <a class="related-link" href="../chugai/"><span class="related-tag">4519</span><span class="related-title">中外製薬——ロシュ傘下・バイオ抗体医薬・高ROE</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../daiichi-sankyo/"><span class="related-tag">4568</span><span class="related-title">第一三共——ADC技術世界首位・エンハーツ・AstraZeneca提携</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../eisai/"><span class="related-tag">4523</span><span class="related-title">エーザイ——アルツハイマー治療薬・レカネマブ・Biogen提携</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../shionogi/"><span class="related-tag">4507</span><span class="related-title">塩野義製薬——感染症特化・HIV治療薬・ゾコーバ</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../../industries/pharma/"><span class="related-tag">INDUSTRY</span><span class="related-title">医薬品業を歩く——業種全体の構造と問い</span><span class="related-arrow">→</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="footer-title">投資と思考の書斎</div><a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a></footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});</script>
+</body>
+</html>

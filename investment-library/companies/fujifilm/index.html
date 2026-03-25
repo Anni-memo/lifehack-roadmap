@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="富士フイルムHD｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="富士フイルムHD（4901）のmoat分析。フィルム技術を転用しヘルスケア・半導体材料・CDMOへ展開した稀有な技術転換企業。技術の横展開という組織能力が源泉のモートを読む。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>富士フイルムHD — moat分析｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;--accent:#081820;--accent2:#102830;--accent3:#184050;--accent4:#50a0c0;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--accent) 45%,var(--accent2) 100%);color:var(--parch);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,255,255,.05) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent4),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(80,160,192,.3);color:var(--accent4);letter-spacing:.1em;}
+.hero-verdict{margin-top:28px;position:relative;font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);color:var(--parch3);font-style:italic;line-height:1.9;max-width:540px;margin-left:auto;margin-right:auto;}
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.3em;}.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;align-items:center;}.moat-dot{width:10px;height:10px;border-radius:50%;}.moat-dot.on{background:var(--green3);}.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span><a class="nav-back" href="../">企業分析</a><span class="nav-sep">/</span><span class="nav-current">富士フイルムHD</span></nav>
+<div class="hero">
+  <div class="hero-code">TSE · 4901 · 化学・精密機器</div>
+  <div class="hero-name">富士フイルムHD</div>
+  <div class="hero-name-en">FUJIFILM HOLDINGS CORPORATION</div>
+  <div class="hero-tags">
+    <span class="hero-tag">フィルム技術転用</span>
+    <span class="hero-tag">ヘルスケア転換</span>
+    <span class="hero-tag">医薬品CDMO</span>
+    <span class="hero-tag">デジタルイメージング</span>
+  </div>
+  <p class="hero-verdict">写真フィルムの消滅という危機を、技術の横展開で乗り越えた稀有な企業。<br>コーティング・精密素材技術がヘルスケア・半導体材料・CDMOで新たなモートを生んだ。</p>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">富士フイルムHDとは何をしている会社か</h2>
+    <div class="section-body">
+      <p>富士フイルムホールディングスは、写真フィルムの世界的メーカーとして20世紀後半に全盛を誇ったが、デジタルカメラの普及によってフィルム市場は2000年代に急速に消滅した。同じ苦境に立たされたコダック（米）が経営破綻したのに対し、富士フイルムは生き残り、今日では売上規模・利益率ともにフィルム時代を超える企業に変貌した。この転換は、日本の製造業史上最も劇的な事業変革の一つとして語り継がれる。</p>
+      <p>その変革を可能にしたのは、「技術の横展開」という戦略だ。写真フィルムの製造には、極薄コーティング技術・精密分散技術・高純度素材合成・光学材料設計など、他産業への応用が可能な先端技術が多数含まれていた。同社はこれらの技術をヘルスケア（医療機器・医薬品）と電子材料（半導体フォトレジスト・フラットパネル材料）に転用することで、まったく異なる産業での競争優位を確立した。</p>
+      <p>現在の事業構造は、ヘルスケア（医療機器・医薬品CDMO）・マテリアルズ（半導体材料・記録材料）・ビジネスイノベーション（オフィス複合機・ドキュメントソリューション）の3セグメントから成る。ヘルスケア事業が売上の50%以上を占め、医療機器（デジタルX線・内視鏡等）と医薬品受託製造（CDMO）が成長を牽引する。CDMOは新薬の製造工程設計から大量生産まで担う高付加価値事業で、グローバルの製薬企業から需要が高まっている。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">競争優位の構造を見る</h2>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">フィルム由来の素材・精密技術特許群と医療機器ブランド「FUJIFILM」の信頼性</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">医療機器エコシステム（病院・医師）への浸透が一定のネットワーク効果を持つ</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">医療機器・CDMO・オフィス機器はいずれも深い顧客の業務への入り込みがある</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（トールロード）</div>
+          <div class="moat-sub">医療機器・オフィス機器のサプライ品・保守サービスが継続的な収益を生む</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">医薬品CDMOの製造設備投資・グローバル展開には巨額の資本が必要で参入障壁が高い</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">素材製造の垂直統合と長年の製造ノウハウ蓄積。フィルム製造時代からの工程最適化</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <p class="callout-text">富士フイルムのモートは「技術の横展開」という稀有な組織能力にある。写真フィルムで極めたコーティング・精密素材技術をヘルスケアと半導体材料に応用し、まったく異なる産業で競争優位を確立した。医療機器・CDMOでのスイッチングコストは高く、長期的な収益安定性を支える。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">数字で見る富士フイルムHD</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">REVENUE</div>
+        <div class="metric-value">3兆</div>
+        <div class="metric-unit">円超（概算）</div>
+        <div class="metric-note">3セグメント連結売上高</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">OP MARGIN</div>
+        <div class="metric-value">8〜11</div>
+        <div class="metric-unit">% 概算</div>
+        <div class="metric-note">ヘルスケア牽引で改善傾向</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">HEALTHCARE</div>
+        <div class="metric-value">50%+</div>
+        <div class="metric-unit">売上比率</div>
+        <div class="metric-note">医療機器・CDMO中心</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">8〜12</div>
+        <div class="metric-unit">% 概算</div>
+        <div class="metric-note">事業転換後に安定化</div>
+      </div>
+    </div>
+    <p style="font-size:.62rem;color:var(--ink3);margin-top:12px;font-family:var(--mono);">※概算値・参考値。投資判断の根拠にしないこと。必ず一次情報をご確認ください。</p>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY RISKS</div>
+    <h2 class="section-title">見ておくべきリスク</h2>
+    <div class="section-body">
+      <p>最大のリスクは医薬品CDMO市場の競争激化だ。CDMO市場はバイオ医薬品の需要増加を背景に高成長しているが、富士フイルムのほかSamsung Biologics（韓国）・Lonza（スイス）・Catalent（米）など強力なグローバルプレイヤーが競合する。設備投資規模と製造能力のグローバル展開において、後発組である富士フイルムがどこまで差別化できるかが問われる。</p>
+      <p>第二に半導体材料のサイクルリスクがある。フォトレジスト・CMP材料などの半導体製造材料は、半導体市場の設備投資サイクルに業績が連動する。好況期は需要が急増する一方、サイクルの転換点では急速な需要減少が起こる。半導体材料の比率が高まるほど、業績の変動性も大きくなる傾向がある。</p>
+      <p>第三にオフィス機器事業の長期的な縮小傾向がある。ビジネスイノベーション（旧ゼロックス系事業）はペーパーレス化・リモートワーク普及の影響を受け、複合機・プリンター市場は構造的に縮小している。この事業が今後も収益の足を引っ張る可能性は否定できない。ヘルスケアへの重心移動がどこまで実現できるかが、長期的な企業価値の鍵となる。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">IR RESOURCES</div>
+    <h2 class="section-title">一次情報へのリンク</h2>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=4901" target="_blank" rel="noopener">
+        <span class="ir-tag">IR TOP</span>
+        <div><div class="ir-name">日経会社情報 — 富士フイルムHD（4901）</div><div class="ir-note">決算情報・業績データ</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://ir.fujifilm.com/ja/home.html" target="_blank" rel="noopener">
+        <span class="ir-tag">IR PAGE</span>
+        <div><div class="ir-name">富士フイルムHD 公式IRページ</div><div class="ir-note">有価証券報告書・決算説明資料</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.traders.co.jp/domestic_stocks/invest_tool/fundamental/fundamental_main.asp?code=4901" target="_blank" rel="noopener">
+        <span class="ir-tag">FINANCE</span>
+        <div><div class="ir-name">トレーダーズウェブ — 財務データ（4901）</div><div class="ir-note">売上・営業利益・ROE等の推移</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED PAGES</div>
+    <div class="related-links">
+      <a class="related-link" href="../shinEtsu/">
+        <span class="related-tag">4063</span>
+        <span class="related-title">信越化学工業</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../mitsubishi-chem/">
+        <span class="related-tag">4188</span>
+        <span class="related-title">三菱ケミカルグループ</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../industries/chemicals/">
+        <span class="related-tag">SECTOR</span>
+        <span class="related-title">化学セクターを歩く</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a>
+</footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});</script>
+</body>
+</html>

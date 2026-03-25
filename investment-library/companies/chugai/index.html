@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="中外製薬｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="中外製薬（4519）のmoat分析。ロシュ傘下でバイオ抗体医薬に特化。アクテムラ・ヘムライブラ・ROE25%超。日本最高の研究効率を誇る製薬企業の長期投資視点。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>中外製薬 — moat分析｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;--accent:#08101a;--accent2:#101828;--accent3:#182838;--accent4:#6090c0;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--accent) 45%,var(--accent2) 100%);color:var(--parch);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,255,255,.05) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent4),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(255,255,255,.2);color:var(--parch3);letter-spacing:.1em;}
+.hero-verdict{margin-top:28px;position:relative;font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);color:var(--parch3);font-style:italic;line-height:1.9;max-width:540px;margin-left:auto;margin-right:auto;}
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.3em;}.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;align-items:center;}.moat-dot{width:10px;height:10px;border-radius:50%;}.moat-dot.on{background:var(--green3);}.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span><a class="nav-back" href="../">企業分析</a><span class="nav-sep">/</span><span class="nav-current">中外製薬</span></nav>
+
+<div class="hero">
+  <div class="hero-code">TSE · 4519 · 医薬品</div>
+  <div class="hero-name">中外製薬</div>
+  <div class="hero-name-en">CHUGAI PHARMACEUTICAL CO., LTD.</div>
+  <div class="hero-tags">
+    <span class="hero-tag">ロシュ傘下</span>
+    <span class="hero-tag">バイオ医薬品</span>
+    <span class="hero-tag">アクテムラ</span>
+    <span class="hero-tag">ヘムライブラ</span>
+    <span class="hero-tag">高ROE</span>
+  </div>
+  <p class="hero-verdict">ロシュという世界最強の製薬会社の傘下で、日本最高の研究効率を誇る製薬会社。<br>「バイオ抗体医薬」に特化した研究力と、ロシュの世界販売網——日本の製薬企業で最も投資効率が高い。</p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">企業概要——ロシュと組んだ日本最高効率の製薬企業</h2>
+    <div class="section-body">
+      <p>中外製薬はスイスのロシュが約60%を保有する親子上場企業だ。2002年にロシュの戦略的パートナーとなって以来、「自立的協調」というユニークなモデルで成長を続けている。ロシュとのパートナーシップにより、日本での独占的な販売権とロシュの世界販売網へのアクセスを得るとともに、研究開発の自律性も保持している。時価総額は国内製薬企業の中でトップ水準に位置し、ROE25%超という日本の大企業では突出した収益効率を誇る。</p>
+      <p>主力製品は関節リウマチ・全身性炎症疾患治療薬「アクテムラ（IL-6阻害剤）」と、血友病B治療薬「ヘムライブラ」だ。アクテムラはCOVID-19重症患者への適応拡大でも注目を集め、世界販売で大きな成功を収めた。ヘムライブラは従来の血友病B治療では困難だった皮下注射投与を可能にした革新的薬剤で、血友病治療の標準治療を変えつつある。両薬剤ともロシュのグローバル販売網を通じて世界に展開されている。</p>
+      <p>注目すべきは中外製薬独自のバイオ抗体工学技術（MABIX法等）だ。ヒト抗体の構造を改変して薬剤としての性能を高める技術で、これが革新的新薬の継続的な創出を支えている。パイプラインにはがん・神経疾患・骨代謝異常などの領域にわたる複数の有望候補薬があり、次世代の成長エンジンが整備されつつある。研究開発費の効率はROEに反映されており、R&D投資が収益に転化される速度は日本の製薬大手で最も高い。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">moatスコアカード</h2>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">バイオ抗体工学技術の特許群とロシュ連携による開発力</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">製薬にネットワーク効果は限定的</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">1/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">生物学的製剤の切り替えコストが極めて高い</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（toll road）</div>
+          <div class="moat-sub">長期継続投与の慢性疾患薬・血友病薬</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">ロシュの世界インフラ活用</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">高ROEが示す優れた研究効率</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="moat-radar-wrap" style="margin-top:24px;background:var(--parch);border:1px solid var(--parch4);padding:20px 24px;">
+      <div style="font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.14em;margin-bottom:12px;opacity:.75;">MOAT RADAR</div>
+      <div style="position:relative;max-width:320px;margin:0 auto;height:280px;">
+        <canvas id="moatRadar"></canvas>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-text">中外製薬のmoatは日本製薬で最も強固なものの一つだ。バイオ抗体工学技術の深さとロシュとの戦略的パートナーシップが、革新的新薬の継続的な創出を可能にする。生物学的製剤（バイオ医薬品）はバイオシミラーへの切り替えに高い医学的・手続き的コストがかかり、患者の長期継続投与が安定収益を生む。ROE25%超は日本の大企業で突出した水準だ。</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">主要指標</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">売上高</div>
+        <div class="metric-value">1兆+</div>
+        <div class="metric-unit">円（年間）</div>
+        <div class="metric-note">国内製薬2位水準</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">営業利益率</div>
+        <div class="metric-value">30%+</div>
+        <div class="metric-unit">製薬国内最高水準</div>
+        <div class="metric-note">コスト効率の高さ</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">25%+</div>
+        <div class="metric-unit">国内大企業で突出</div>
+        <div class="metric-note">研究効率の証明</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">時価総額</div>
+        <div class="metric-value">国内製薬トップ</div>
+        <div class="metric-unit">製薬セクター</div>
+        <div class="metric-note">ロシュ連携効果</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY RISKS</div>
+    <h2 class="section-title">主要リスク——長期投資家が注視すべき変数</h2>
+    <div class="section-body">
+      <p>最大のリスクはロシュとの関係変化だ。ロシュが60%超を保有するため、中外製薬の経営独立性はある意味でロシュの意向に依存している。ロシュが中外製薬を完全子会社化する可能性（TOB）は常にあり、それが上場廃止につながれば株主にとって一大イベントとなる。また、ロシュ自身の経営方針や財務状況の変化が、中外製薬への影響を及ぼすリスクもある。</p>
+      <p>特許切れリスクも看過できない。主力のアクテムラの特許期限は到来しており、すでに欧米市場ではバイオシミラー（生物学的後発医薬品）が参入し始めている。バイオシミラーは低分子後発品と異なり医師・患者が自動的に切り替えるわけではないが、薬価低下圧力はかかる。ヘムライブラの特許期限も将来的な課題であり、その前にパイプラインの次世代候補薬が収益化できるかが問われる。</p>
+      <p>パイプライン集中リスクとして、有望候補薬が特定の疾患領域に偏っていることも挙げられる。また、日本国内での薬価制度改革（薬価の毎年改定）は全製薬企業に共通のリスクだが、高利益率企業ほど薬価引き下げのターゲットとなりやすく、中外製薬も例外ではない。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">IR RESOURCES</div>
+    <h2 class="section-title">IRリソース</h2>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.chugai-pharm.co.jp/ir/" target="_blank" rel="noopener">
+        <span class="ir-tag">公式IR</span>
+        <div><div class="ir-name">中外製薬 投資家情報</div><div class="ir-note">決算説明資料・アニュアルレポート・パイプライン情報</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.chugai-pharm.co.jp/ir/pipeline/" target="_blank" rel="noopener">
+        <span class="ir-tag">パイプライン</span>
+        <div><div class="ir-name">研究開発パイプライン</div><div class="ir-note">開発中薬剤の一覧・フェーズ・疾患領域</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=4519" target="_blank" rel="noopener">
+        <span class="ir-tag">日経</span>
+        <div><div class="ir-name">日経 株価・財務情報（4519）</div><div class="ir-note">株価チャート・財務ハイライト・アナリスト評価</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED COMPANIES &amp; PAGES</div>
+    <div class="related-links">
+      <a class="related-link" href="../takeda/"><span class="related-tag">4502</span><span class="related-title">武田薬品工業——日本最大の製薬・Shire買収・希少疾患</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../daiichi-sankyo/"><span class="related-tag">4568</span><span class="related-title">第一三共——ADC技術世界首位・エンハーツ・AstraZeneca提携</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../eisai/"><span class="related-tag">4523</span><span class="related-title">エーザイ——アルツハイマー治療薬・レカネマブ・Biogen提携</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../shionogi/"><span class="related-tag">4507</span><span class="related-title">塩野義製薬——感染症特化・HIV治療薬・ゾコーバ</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../../industries/pharma/"><span class="related-tag">INDUSTRY</span><span class="related-title">医薬品業を歩く——業種全体の構造と問い</span><span class="related-arrow">→</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="footer-title">投資と思考の書斎</div><a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a></footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});</script>
+</body>
+</html>

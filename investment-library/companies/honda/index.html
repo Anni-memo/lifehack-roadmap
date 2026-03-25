@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="本田技研工業｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="ホンダ（7267）のmoat分析。二輪車世界首位・F1由来のエンジン技術・グローバル展開。電動化転換とエンジン技術資産の両立が問われる局面。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>本田技研工業 — moat分析｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;--accent:#1a0808;--accent2:#5a1010;--accent3:#9a2020;--accent4:#d06060;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,#140000 45%,#1e0000 100%);color:var(--parch);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(90,16,16,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent4),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(154,32,32,.4);color:var(--accent4);letter-spacing:.1em;}
+.hero-verdict{margin-top:28px;position:relative;font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);color:var(--parch3);font-style:italic;line-height:1.9;max-width:540px;margin-left:auto;margin-right:auto;}
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.3em;}.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;}.moat-dot{width:10px;height:10px;border-radius:50%;}.moat-dot.on{background:var(--green3);}.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span><a class="nav-back" href="../">企業分析</a><span class="nav-sep">/</span><span class="nav-current">本田技研工業</span></nav>
+<div class="hero">
+  <div class="hero-code">TSE · 7267 · 輸送用機器</div>
+  <div class="hero-name">本田技研工業</div>
+  <div class="hero-name-en">HONDA MOTOR CO., LTD.</div>
+  <div class="hero-tags"><span class="hero-tag">二輪車世界首位</span><span class="hero-tag">F1エンジン技術</span><span class="hero-tag">グローバル展開</span><span class="hero-tag">電動化転換</span><span class="hero-tag">日産との連携</span></div>
+  <p class="hero-verdict">「人の移動の夢を動力で実現する」創業者精神が生んだ技術の結晶。<br>二輪・四輪・航空機エンジンを擁する独立自尊のメーカー。</p>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">ホンダとは何をしている会社か</h2>
+    <div class="section-body">
+      <p>本田技研工業（ホンダ）は、四輪車・二輪車・パワープロダクツ（発電機・農機）・航空機エンジンを手がける総合モビリティメーカーだ。二輪車は世界首位、四輪車はグローバル5位前後の規模を誇る。トヨタと異なり、グループ内の系列部品メーカーへの依存度が低く、独立自尊の企業文化を持つ。</p>
+      <p>技術面の強みは「エンジン」だ。F1への長年の参戦で培った内燃機関技術は、二輪・四輪・航空機（HondaJet）に横断的に展開されている。特にHondaJetは小型ビジネスジェット市場で出荷台数首位を獲得しており、ホンダの技術力の象徴だ。</p>
+      <p>課題は電動化転換だ。EVでは出遅れが指摘されており、日産自動車との経営統合協議（2024年〜）は業界の構造変化への対応として注目された。二輪車はアジア新興国市場での成長が継続しており、EV化の波に対しても比較的対応しやすい事業ポートフォリオを持つ。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">競争優位の構造を見る</h2>
+    <div class="moat-grid">
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">無形資産</div><div class="moat-sub">ブランド・エンジン特許・F1技術</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-score-num">5/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">ネットワーク効果</div><div class="moat-sub">ユーザーが増えるほど価値が高まる</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">2/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">スイッチングコスト</div><div class="moat-sub">ブランドロイヤリティ・販売網</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">3/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">通行料（トールロード）</div><div class="moat-sub">通過せざるを得ないインフラ性</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">2/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">効率的規模</div><div class="moat-sub">市場規模が限定的で新規参入が非合理</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">3/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">コスト優位</div><div class="moat-sub">低コストで競合を凌駕できるか</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">3/5</span></div></div>
+    </div>
+    <div class="callout" style="margin-top:24px;"><p class="callout-text">ホンダのmoatの核心は「無形資産（技術・ブランド）5/5」にある。<br>F1由来のエンジン技術・HondaJetの航空機事業・二輪車世界首位のブランドは、モビリティ全域に及ぶ知識の蓄積だ。電動化転換がこのmoatを強化するか弱体化させるかが、長期投資の問いになる。</p></div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">数字で見るホンダ</h2>
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">売上収益</div><div class="metric-value">20<span style="font-size:.9rem">兆+</span></div><div class="metric-unit">概算値</div><div class="metric-note">二輪・四輪・金融の複合</div></div>
+      <div class="metric-card"><div class="metric-label">営業利益率</div><div class="metric-value">5<span style="font-size:.9rem">%</span></div><div class="metric-unit">概算値</div><div class="metric-note">四輪の低収益が足を引く</div></div>
+      <div class="metric-card"><div class="metric-label">二輪世界シェア</div><div class="metric-value">1<span style="font-size:.9rem">位</span></div><div class="metric-unit">世界首位</div><div class="metric-note">アジア新興国が成長エンジン</div></div>
+      <div class="metric-card"><div class="metric-label">配当利回り</div><div class="metric-value">3<span style="font-size:.9rem">%+</span></div><div class="metric-unit">概算値</div><div class="metric-note">増配・自社株買いを推進</div></div>
+    </div>
+    <p style="font-size:.62rem;color:var(--ink3);margin-top:12px;font-family:var(--mono);">※概算値・参考値。投資判断の根拠にしないこと。必ず一次情報をご確認ください。</p>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY RISKS</div>
+    <h2 class="section-title">見ておくべきリスク</h2>
+    <div class="section-body">
+      <p><strong>EV出遅れリスク：</strong>中国・欧州でのEV普及加速に対し、ホンダの対応は遅れが指摘されている。内燃機関技術の優位性が電動化時代に移転できるかが問われる。</p>
+      <p><strong>中国市場の減速：</strong>中国での四輪販売が現地メーカー（BYD等）との競争激化により落ち込んでいる。中国依存度の高さは業績変動リスクとなる。</p>
+      <p><strong>日産との統合問題：</strong>2024〜2025年に協議された日産との経営統合は白紙に戻ったが、電動化・EV開発への資本投下戦略は引き続き不透明な部分がある。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">IR RESOURCES</div>
+    <h2 class="section-title">一次情報へのリンク</h2>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.honda.co.jp/investors/" target="_blank" rel="noopener"><span class="ir-tag">IR TOP</span><div><div class="ir-name">本田技研工業 投資家情報</div><div class="ir-note">決算情報・中期経営計画・統合報告書</div></div><span class="ir-arrow">→</span></a>
+    </div>
+  </div>
+</div>
+<div class="related"><div class="related-inner"><div class="related-label">RELATED PAGES</div><div class="related-links">
+  <a class="related-link" href="../toyota/"><span class="related-tag">7203</span><span class="related-title">トヨタ自動車</span><span class="related-arrow">→</span></a>
+  <a class="related-link" href="../denso/"><span class="related-tag">6902</span><span class="related-title">デンソー</span><span class="related-arrow">→</span></a>
+  <a class="related-link" href="../../industries/automotive/"><span class="related-tag">SECTOR</span><span class="related-title">輸送用機器を歩く</span><span class="related-arrow">→</span></a>
+  <a class="related-link" href="../../moat/"><span class="related-tag">MOAT</span><span class="related-title">モートをどう見るか</span><span class="related-arrow">→</span></a>
+</div></div></div>
+<footer class="footer"><div class="footer-title">投資と思考の書斎</div><a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a></footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});</script>
+</body>
+</html>

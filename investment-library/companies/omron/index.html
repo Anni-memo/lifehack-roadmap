@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="オムロン｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="オムロン（6645）のmoat分析。FA制御機器・センサー・PLC。工場ラインへの組み込みが生む最強のスイッチングコスト。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>オムロン — moat分析｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;--accent:#180410;--accent2:#3a0a10;--accent3:#6a1a28;--accent4:#9a4060;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,#140410 45%,#200818 100%);color:var(--parch);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(58,10,16,.2) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent4),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(106,26,40,.4);color:var(--accent4);letter-spacing:.1em;}
+.hero-verdict{margin-top:28px;position:relative;font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);color:var(--parch3);font-style:italic;line-height:1.9;max-width:540px;margin-left:auto;margin-right:auto;}
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.3em;}.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;}.moat-dot{width:10px;height:10px;border-radius:50%;}.moat-dot.on{background:var(--green3);}.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span><a class="nav-back" href="../">企業分析</a><span class="nav-sep">/</span><span class="nav-current">オムロン</span></nav>
+<div class="hero">
+  <div class="hero-code">TSE · 6645 · 電気機器</div>
+  <div class="hero-name">オムロン</div>
+  <div class="hero-name-en">OMRON CORPORATION</div>
+  <div class="hero-tags"><span class="hero-tag">FA制御機器</span><span class="hero-tag">センサー</span><span class="hero-tag">PLCワールドクラス</span><span class="hero-tag">ヘルスケア</span><span class="hero-tag">社会的課題解決</span></div>
+  <p class="hero-verdict">「機械が人の代わりに働く社会の実現」という創業精神が生んだ制御機器の雄。<br>工場ラインへの組み込みが生む最強クラスのスイッチングコストが護城河の核心だ。</p>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">オムロンとは何をしている会社か</h2>
+    <div class="section-body">
+      <p>オムロンは、FA（工場自動化）向けの制御機器・センサー・PLC（プログラマブルロジックコントローラ）を製造する精密機器メーカーだ。1933年、立石一真が創業。「機械が人の代わりに働く社会の実現」という創業精神のもと、ものづくりの自動化を支えてきた。</p>
+      <p>FAコントロールコンポーネント＆システムズ事業（制御機器・センサー）が中核だ。PLC・ロボットコントローラ・モーションコントローラ・産業用スイッチ・近接センサーなど多様な製品群が、世界の工場ラインで標準部品として使われている。特にアジア市場でのシェアは高い。</p>
+      <p>ヘルスケア事業（血圧計・体温計）も世界的ブランドを持つ。「社会的課題の解決」を事業テーマとするSSB（ソーシャルソリューションビジネス）戦略で差別化を図り、単なる部品メーカーを超えたポジショニングを目指す。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">競争優位の構造を見る</h2>
+    <div class="moat-grid">
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">無形資産</div><div class="moat-sub">センサー・PLC技術特許・ブランド</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-score-num">4/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">ネットワーク効果</div><div class="moat-sub">エンジニアのオムロン標準化が波及</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">3/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">スイッチングコスト</div><div class="moat-sub">PLC・制御システムは工場ライン全体に組み込み</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-score-num">5/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">通行料（トールロード）</div><div class="moat-sub">消耗センサー・定期交換部品の繰り返し購買</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">3/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">効率的規模</div><div class="moat-sub">アジア首位圏の量産・調達規模</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-score-num">4/5</span></div></div>
+      <div class="moat-item"><div class="moat-label-wrap"><div class="moat-name">コスト優位</div><div class="moat-sub">量産効果・アジア製造拠点の効率</div></div><div class="moat-score-wrap"><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-score-num">3/5</span></div></div>
+    </div>
+    <div class="callout" style="margin-top:24px;"><p class="callout-text">PLCや制御システムは、一度工場ラインに組み込まれると変更が極めて困難だ。オムロンのスイッチングコスト5/5の源泉はここにある。ラインを停止して制御システムを変更するには、数週間の工場停止と莫大なコストが必要になる。一度採用されたPLCは、そのラインが廃棄されるまで交換されない。</p></div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">数字で見るオムロン</h2>
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">売上収益</div><div class="metric-value">9000<span style="font-size:.9rem">億+</span></div><div class="metric-unit">概算値</div><div class="metric-note">FA・ヘルスケア・社会システムの複合</div></div>
+      <div class="metric-card"><div class="metric-label">営業利益率</div><div class="metric-value">7<span style="font-size:.9rem">%</span></div><div class="metric-unit">概算値</div><div class="metric-note">FA投資サイクルで変動</div></div>
+      <div class="metric-card"><div class="metric-label">FA制御機器</div><div class="metric-value">アジア<span style="font-size:.9rem">首位圏</span></div><div class="metric-unit">地域シェア</div><div class="metric-note">中国・東南アジアで強い地盤</div></div>
+      <div class="metric-card"><div class="metric-label">ヘルスケア</div><div class="metric-value">血圧計<span style="font-size:.9rem">世界的</span></div><div class="metric-unit">世界ブランド</div><div class="metric-note">医療グレード血圧計の信頼性</div></div>
+    </div>
+    <p style="font-size:.62rem;color:var(--ink3);margin-top:12px;font-family:var(--mono);">※概算値・参考値。投資判断の根拠にしないこと。必ず一次情報をご確認ください。</p>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY RISKS</div>
+    <h2 class="section-title">見ておくべきリスク</h2>
+    <div class="section-body">
+      <p><strong>中国FA投資の停滞：</strong>中国の製造業設備投資が停滞すると、FA制御機器の需要が急減する。中国売上への依存度が高いオムロンにとって、中国景気の減速は業績への直撃になる。</p>
+      <p><strong>キーエンス・シーメンスとの競合：</strong>産業用センサー・PLCの高付加価値帯では、キーエンスや欧州シーメンスとの競合が激化する。差別化を維持するための継続的な研究開発投資が必要だ。</p>
+      <p><strong>ヘルスケア事業の競合：</strong>血圧計・体温計市場では中国メーカーの低コスト品との競争が続く。高付加価値ポジションの維持が課題だ。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">IR RESOURCES</div>
+    <h2 class="section-title">一次情報へのリンク</h2>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.omron.com/jp/ja/ir/" target="_blank" rel="noopener"><span class="ir-tag">IR TOP</span><div><div class="ir-name">オムロン 投資家情報</div><div class="ir-note">決算情報・中期経営計画・統合報告書</div></div><span class="ir-arrow">→</span></a>
+    </div>
+  </div>
+</div>
+<div class="related"><div class="related-inner"><div class="related-label">RELATED PAGES</div><div class="related-links">
+  <a class="related-link" href="../keyence/"><span class="related-tag">6861</span><span class="related-title">キーエンス</span><span class="related-arrow">→</span></a>
+  <a class="related-link" href="../fanuc/"><span class="related-tag">6954</span><span class="related-title">ファナック</span><span class="related-arrow">→</span></a>
+  <a class="related-link" href="../smc/"><span class="related-tag">6273</span><span class="related-title">SMC</span><span class="related-arrow">→</span></a>
+  <a class="related-link" href="../../industries/electronics/"><span class="related-tag">SECTOR</span><span class="related-title">電気機器セクターを歩く</span><span class="related-arrow">→</span></a>
+</div></div></div>
+<footer class="footer"><div class="footer-title">投資と思考の書斎</div><a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a></footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});</script>
+</body>
+</html>

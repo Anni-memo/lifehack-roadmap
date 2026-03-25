@@ -46,10 +46,22 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 .container{max-width:860px;margin:0 auto;padding:56px 24px 0;}
 
+/* 検索バー */
+.search-wrap{position:relative;margin-bottom:12px;}
+.search-input{width:100%;padding:10px 40px 10px 16px;font-family:var(--mono);font-size:.62rem;background:var(--parch2);border:1px solid var(--parch4);color:var(--ink);letter-spacing:.06em;outline:none;transition:border-color .2s;}
+.search-input:focus{border-color:var(--gold2);}
+.search-input::placeholder{color:var(--ink3);opacity:.7;}
+.search-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:.7rem;color:var(--ink3);cursor:pointer;background:none;border:none;padding:0;line-height:1;display:none;}
+.search-clear.visible{display:block;}
+
 /* フィルター */
 .filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px;}
 .filter-btn{font-family:var(--mono);font-size:.5rem;padding:5px 14px;border:1px solid var(--parch4);background:transparent;color:var(--ink3);cursor:pointer;letter-spacing:.1em;transition:all .18s;}
 .filter-btn:hover,.filter-btn.active{background:var(--ink);color:var(--gold3);border-color:rgba(184,144,10,.4);}
+
+/* 検索結果なし */
+.no-results{display:none;padding:40px 20px;text-align:center;font-family:var(--mono);font-size:.62rem;color:var(--ink3);letter-spacing:.08em;background:var(--parch2);border:1px solid var(--parch4);}
+.no-results.visible{display:block;}
 
 /* 企業カード */
 .companies-grid{display:grid;grid-template-columns:1fr;gap:2px;}
@@ -133,10 +145,44 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
   <div class="section-header">
     <div class="section-label">ALL COMPANIES</div>
-    <div class="section-title">分析済み企業 — 7社</div>
+    <div class="section-title">分析済み企業 — <span id="visibleCount">69</span>社 <span id="filterLabel" style="font-family:var(--mono);font-size:.6rem;color:var(--gold);font-weight:400;letter-spacing:.1em;"></span></div>
   </div>
 
-  <div class="companies-grid">
+  <div class="search-wrap">
+    <input class="search-input" id="searchInput" type="text" placeholder="企業名・業種・キーワードで検索… (例: 医薬品, トヨタ, スイッチング)" autocomplete="off" />
+    <button class="search-clear" id="searchClear">✕</button>
+  </div>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">ALL</button>
+    <button class="filter-btn" data-filter="銀行業">銀行</button>
+    <button class="filter-btn" data-filter="情報通信業">IT・通信</button>
+    <button class="filter-btn" data-filter="輸送用機器">自動車</button>
+    <button class="filter-btn" data-filter="機械">機械</button>
+    <button class="filter-btn" data-filter="電気機器">電気機器</button>
+    <button class="filter-btn" data-filter="化学">化学</button>
+    <button class="filter-btn" data-filter="食品">食品</button>
+    <button class="filter-btn" data-filter="卸売業">卸売</button>
+    <button class="filter-btn" data-filter="保険業">保険</button>
+    <button class="filter-btn" data-filter="医薬品">医薬品</button>
+    <button class="filter-btn" data-filter="不動産業">不動産</button>
+    <button class="filter-btn" data-filter="建設業">建設</button>
+    <button class="filter-btn" data-filter="小売業">小売</button>
+    <button class="filter-btn" data-filter="サービス業">サービス</button>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:16px;">
+    <span style="font-family:var(--mono);font-size:.46rem;color:var(--ink3);letter-spacing:.08em;">SORT</span>
+    <select id="sortSelect" style="font-family:var(--mono);font-size:.5rem;padding:4px 10px;border:1px solid var(--parch4);background:var(--parch2);color:var(--ink);outline:none;cursor:pointer;letter-spacing:.06em;">
+      <option value="default">デフォルト</option>
+      <option value="moat-desc">moatスコア高 → 低</option>
+      <option value="moat-asc">moatスコア低 → 高</option>
+      <option value="industry">業種別</option>
+    </select>
+  </div>
+
+  <div class="no-results" id="noResults">該当する企業が見つかりません</div>
+  <div class="companies-grid" id="companiesGrid">
 
     <!-- キーエンス -->
     <a class="company-card" href="keyence/">
@@ -294,6 +340,484 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       </div>
     </a>
 
+    <!-- NTT -->
+    <a class="company-card" href="ntt/">
+      <div class="card-accent" style="background:#1a3a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 9432 · 情報通信業</div>
+        <div class="card-name">日本電信電話</div>
+        <div class="card-name-en">NIPPON TELEGRAPH AND TELEPHONE</div>
+        <div class="card-desc">日本の通信インフラを支える基幹事業者。光ファイバー網という再構築不可能なインフラと、ドコモ・NTTデータを束ねるグループ力。</div>
+        <div class="card-tags">
+          <span class="card-tag">光回線インフラ</span>
+          <span class="card-tag">NTTドコモ</span>
+          <span class="card-tag">高配当</span>
+          <span class="card-tag">IOWN戦略</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 通行料（トールロード）</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- KDDI -->
+    <a class="company-card" href="kddi/">
+      <div class="card-accent" style="background:#2a5a30;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 9433 · 情報通信業</div>
+        <div class="card-name">KDDI</div>
+        <div class="card-name-en">KDDI CORPORATION</div>
+        <div class="card-desc">auブランドを軸に金融・決済・保険・電力を束ねるau経済圏。24期連続増配。スイッチングコストを深化させる「生活の束ね」戦略。</div>
+        <div class="card-tags">
+          <span class="card-tag">au経済圏</span>
+          <span class="card-tag">au PAY</span>
+          <span class="card-tag">24期連続増配</span>
+          <span class="card-tag">スマートライフ</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 三菱UFJ -->
+    <a class="company-card" href="mufg/">
+      <div class="card-accent" style="background:#3a2a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8306 · 銀行業</div>
+        <div class="card-name">三菱UFJフィナンシャルG</div>
+        <div class="card-name-en">MITSUBISHI UFJ FINANCIAL GROUP</div>
+        <div class="card-desc">総資産350兆円超・国内最大のメガバンク。金利上昇恩恵とグローバル展開で純利益が過去最高圏へ。MUFGの規模と信用が競争優位の源泉。</div>
+        <div class="card-tags">
+          <span class="card-tag">国内最大</span>
+          <span class="card-tag">グローバル展開</span>
+          <span class="card-tag">金利上昇恩恵</span>
+          <span class="card-tag">資産運用強化</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト・効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 三井住友FG -->
+    <a class="company-card" href="smfg/">
+      <div class="card-accent" style="background:#6a2a10;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8316 · 銀行業</div>
+        <div class="card-name">三井住友フィナンシャルG</div>
+        <div class="card-name-en">SUMITOMO MITSUI FINANCIAL GROUP</div>
+        <div class="card-desc">メガバンク中でROEへのこだわりが最も際立つ金融グループ。SMBCグループの資本効率経営と積極的な株主還元が、長期投資家の視点で評価される。</div>
+        <div class="card-tags">
+          <span class="card-tag">ROE重視経営</span>
+          <span class="card-tag">SMBCグループ</span>
+          <span class="card-tag">三井住友カード</span>
+          <span class="card-tag">連続増配</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- みずほFG -->
+    <a class="company-card" href="mizuho/">
+      <div class="card-accent" style="background:#1a3a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8411 · 銀行業</div>
+        <div class="card-name">みずほFG</div>
+        <div class="card-name-en">MIZUHO FINANCIAL GROUP</div>
+        <div class="card-desc">3大メガバンクの一角。システム障害からの信頼回復を経て、金利正常化という追い風で収益改善フェーズへ。デジタル化・資産運用強化が中期課題。</div>
+        <div class="card-tags">
+          <span class="card-tag">3大メガバンク</span>
+          <span class="card-tag">システム再建</span>
+          <span class="card-tag">金利上昇恩恵</span>
+          <span class="card-tag">資産運用強化</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- りそなHD -->
+    <a class="company-card" href="resona/">
+      <div class="card-accent" style="background:#2a5a2a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8308 · 銀行業</div>
+        <div class="card-name">りそなHD</div>
+        <div class="card-name-en">RESONA HOLDINGS</div>
+        <div class="card-desc">リテール特化のメガバンク。NISA・資産運用・信託機能を活かした相続サービスで手数料収入を拡大。首都圏・近畿圏の強固な顧客基盤。</div>
+        <div class="card-tags">
+          <span class="card-tag">リテール特化</span>
+          <span class="card-tag">NISA・資産運用</span>
+          <span class="card-tag">高配当</span>
+          <span class="card-tag">信託機能</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- コンコルディアFG -->
+    <a class="company-card" href="concordia/">
+      <div class="card-accent" style="background:#2a2a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 7186 · 銀行業</div>
+        <div class="card-name">コンコルディアFG</div>
+        <div class="card-name-en">CONCORDIA FINANCIAL GROUP</div>
+        <div class="card-desc">横浜銀行を擁する首都圏近郊地銀最大手。神奈川県での圧倒的な地域シェアと100年超の信頼が、安定した顧客基盤と持続的な配当を支える。</div>
+        <div class="card-tags">
+          <span class="card-tag">横浜銀行</span>
+          <span class="card-tag">首都圏近郊地銀</span>
+          <span class="card-tag">地域ブランド</span>
+          <span class="card-tag">安定配当</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産・スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- ソフトバンクG -->
+    <a class="company-card" href="softbank/">
+      <div class="card-accent" style="background:#6a3a0a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 9984 · 情報通信業</div>
+        <div class="card-name">ソフトバンクグループ</div>
+        <div class="card-name-en">SOFTBANK GROUP CORP.</div>
+        <div class="card-desc">通信会社からAI投資会社へ。ARM保有がSBG評価の核心。半導体IPライセンスの通行料モート（5/5）がAIブームで急浮上。孫正義の大きな賭け。</div>
+        <div class="card-tags">
+          <span class="card-tag">ARM保有</span>
+          <span class="card-tag">ビジョンファンド</span>
+          <span class="card-tag">AI投資会社</span>
+          <span class="card-tag">孫正義</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 通行料（ARM）</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- NTTデータG -->
+    <a class="company-card" href="nttdata/">
+      <div class="card-accent" style="background:#1a3a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 9613 · 情報通信業</div>
+        <div class="card-name">NTTデータグループ</div>
+        <div class="card-name-en">NTT DATA GROUP</div>
+        <div class="card-desc">国内最大のSIer。官公庁・金融機関の基幹システムを担い、スイッチングコスト5/5という最強クラスのモートを形成。グローバル展開も加速中。</div>
+        <div class="card-tags">
+          <span class="card-tag">国内最大SIer</span>
+          <span class="card-tag">官公庁・金融</span>
+          <span class="card-tag">スイッチングコスト</span>
+          <span class="card-tag">DX支援</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 富士通 -->
+    <a class="company-card" href="fujitsu/">
+      <div class="card-accent" style="background:#3a1a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6702 · 情報通信業</div>
+        <div class="card-name">富士通</div>
+        <div class="card-name-en">FUJITSU LIMITED</div>
+        <div class="card-desc">ハードウェアからITサービスへの構造転換を断行。ROEが大幅改善し、量子コンピュータ分野でも先行。DXパートナーとしての再定義が進む。</div>
+        <div class="card-tags">
+          <span class="card-tag">ITサービス転換</span>
+          <span class="card-tag">量子コンピュータ</span>
+          <span class="card-tag">構造改革</span>
+          <span class="card-tag">DX支援</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト・無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- リクルートHD -->
+    <a class="company-card" href="recruit/">
+      <div class="card-accent" style="background:#6a1a24;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6098 · 情報通信業</div>
+        <div class="card-name">リクルートHD</div>
+        <div class="card-name-en">RECRUIT HOLDINGS</div>
+        <div class="card-desc">Indeed/Glassdoorを擁するグローバル求人プラットフォーム。求職者×採用企業の両面市場ネットワーク効果（5/5）が最大の競争優位。</div>
+        <div class="card-tags">
+          <span class="card-tag">Indeed保有</span>
+          <span class="card-tag">ネットワーク効果</span>
+          <span class="card-tag">グローバルHR</span>
+          <span class="card-tag">高ROE</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — ネットワーク効果</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- ホンダ -->
+    <a class="company-card" href="honda/">
+      <div class="card-accent" style="background:#5a1010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 7267 · 輸送用機器</div>
+        <div class="card-name">本田技研工業</div>
+        <div class="card-name-en">HONDA MOTOR CO., LTD.</div>
+        <div class="card-desc">二輪車世界首位・F1エンジン技術・HondaJet。独立自尊の企業文化と技術の蓄積が無形資産5/5のmoatを形成。EV転換の行方が長期評価の鍵。</div>
+        <div class="card-tags"><span class="card-tag">二輪世界首位</span><span class="card-tag">F1技術</span><span class="card-tag">HondaJet</span><span class="card-tag">EV転換</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 無形資産</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- デンソー -->
+    <a class="company-card" href="denso/">
+      <div class="card-accent" style="background:#1a4a1a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6902 · 輸送用機器</div>
+        <div class="card-name">デンソー</div>
+        <div class="card-name-en">DENSO CORPORATION</div>
+        <div class="card-desc">自動車部品メーカー世界最大級。無形資産5/5×スイッチングコスト5/5の二重moat。電動化・CASE対応で付加価値が増大する構造的勝者候補。</div>
+        <div class="card-tags"><span class="card-tag">トヨタ系部品</span><span class="card-tag">電動化部品</span><span class="card-tag">CASE対応</span><span class="card-tag">二重moat</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 無形資産・スイッチングコスト</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- アイシン -->
+    <a class="company-card" href="aisin/">
+      <div class="card-accent" style="background:#3a5a1a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 7259 · 輸送用機器</div>
+        <div class="card-name">アイシン</div>
+        <div class="card-name-en">AISIN CORPORATION</div>
+        <div class="card-desc">トヨタ系部品大手。ATシステム・ブレーキでスイッチングコスト5/5。電動化部品へのシフトを進める系列最大手の変革期。</div>
+        <div class="card-tags"><span class="card-tag">ATシステム</span><span class="card-tag">ブレーキ</span><span class="card-tag">電動化転換</span><span class="card-tag">トヨタ系</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — スイッチングコスト</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 豊田自動織機 -->
+    <a class="company-card" href="toyotaind/">
+      <div class="card-accent" style="background:#5a4a1a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6201 · 輸送用機器</div>
+        <div class="card-name">豊田自動織機</div>
+        <div class="card-name-en">TOYOTA INDUSTRIES</div>
+        <div class="card-desc">フォークリフト世界首位（効率的規模5/5）・トヨタの源流企業。物流自動化需要が成長エンジン。トヨタ株の大株主でもある。</div>
+        <div class="card-tags"><span class="card-tag">フォークリフト世界首位</span><span class="card-tag">トヨタ源流</span><span class="card-tag">物流自動化</span><span class="card-tag">高配当</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 効率的規模</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- コマツ -->
+    <a class="company-card" href="komatsu/">
+      <div class="card-accent" style="background:#5a3a0a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6301 · 機械</div>
+        <div class="card-name">小松製作所（コマツ）</div>
+        <div class="card-name-en">KOMATSU LTD.</div>
+        <div class="card-desc">建設・鉱山機械世界2位。コムトラックスIoTで稼働データを独占しスイッチングコストを強化。スマート建機・無人化ダンプがDX先行企業の証明。</div>
+        <div class="card-tags"><span class="card-tag">建設機械世界2位</span><span class="card-tag">コムトラックス</span><span class="card-tag">鉱山機械</span><span class="card-tag">スマート建機</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 無形資産・スイッチングコスト</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- ダイキン -->
+    <a class="company-card" href="daikin/">
+      <div class="card-accent" style="background:#0a3a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6367 · 機械</div>
+        <div class="card-name">ダイキン工業</div>
+        <div class="card-name-en">DAIKIN INDUSTRIES</div>
+        <div class="card-desc">空調機器世界首位・冷媒技術の無形資産5/5。海外比率85%超の日本発グローバルチャンピオン。省エネ・脱炭素トレンドが構造的な追い風。</div>
+        <div class="card-tags"><span class="card-tag">エアコン世界首位</span><span class="card-tag">冷媒技術</span><span class="card-tag">グローバル展開</span><span class="card-tag">省エネ</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 無形資産</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- DMG森精機 -->
+    <a class="company-card" href="dmgmori/">
+      <div class="card-accent" style="background:#1a2a3a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6141 · 機械</div>
+        <div class="card-name">DMG森精機</div>
+        <div class="card-name-en">DMG MORI CO., LTD.</div>
+        <div class="card-desc">工作機械世界最大。日独統合で技術と販売網を融合。一度導入した工作機械は加工プログラム・治具ごとロックインされる最強のスイッチングコスト。</div>
+        <div class="card-tags"><span class="card-tag">工作機械世界最大</span><span class="card-tag">日独統合</span><span class="card-tag">CNC</span><span class="card-tag">精密加工</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — スイッチングコスト</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- SMC -->
+    <a class="company-card" href="smc/">
+      <div class="card-accent" style="background:#2a1a3a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6273 · 機械</div>
+        <div class="card-name">SMC</div>
+        <div class="card-name-en">SMC CORPORATION</div>
+        <div class="card-desc">空気圧機器世界首位・営業利益率25%超。キーエンスに近い「ニッチトップ×スイッチングコスト×効率的規模」の三重moat構造を持つ隠れた名門。</div>
+        <div class="card-tags"><span class="card-tag">空気圧機器世界首位</span><span class="card-tag">FAインフラ</span><span class="card-tag">無借金</span><span class="card-tag">高ROE</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 効率的規模・スイッチングコスト</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 日立 -->
+    <a class="company-card" href="hitachi/">
+      <div class="card-accent" style="background:#1a1a3a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6501 · 電気機器</div>
+        <div class="card-name">日立製作所</div>
+        <div class="card-name-en">HITACHI, LTD.</div>
+        <div class="card-desc">「総合電機」から「社会インフラDX」へ転換成功。Lumadaが社会インフラのOT/IT統合プラットフォームとして機能し、20〜30年単位のロックインを実現。</div>
+        <div class="card-tags"><span class="card-tag">Lumada</span><span class="card-tag">OT/IT融合</span><span class="card-tag">社会インフラ</span><span class="card-tag">構造改革成功</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — スイッチングコスト・通行料</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- ニデック -->
+    <a class="company-card" href="nidec/">
+      <div class="card-accent" style="background:#3a1a0a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6594 · 電気機器</div>
+        <div class="card-name">ニデック</div>
+        <div class="card-name-en">NIDEC CORPORATION</div>
+        <div class="card-desc">モーター世界首位・効率的規模5/5。EV向けeAxleでモーターが自動車の中核部品になる時代を見据える。永守重信の「すぐやる・必ずやる」経営哲学。</div>
+        <div class="card-tags"><span class="card-tag">モーター世界首位</span><span class="card-tag">EV向けeAxle</span><span class="card-tag">M&A成長</span><span class="card-tag">永守経営</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 効率的規模・無形資産</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- オムロン -->
+    <a class="company-card" href="omron/">
+      <div class="card-accent" style="background:#3a0a10;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6645 · 電気機器</div>
+        <div class="card-name">オムロン</div>
+        <div class="card-name-en">OMRON CORPORATION</div>
+        <div class="card-desc">FA制御機器・PLC。工場ラインへの深い組み込みがスイッチングコスト5/5を生む。「社会的課題の解決」を事業軸とする独自の経営哲学。</div>
+        <div class="card-tags"><span class="card-tag">FA制御機器</span><span class="card-tag">PLC</span><span class="card-tag">ヘルスケア</span><span class="card-tag">社会課題解決</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — スイッチングコスト</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 京セラ -->
+    <a class="company-card" href="kyocera/">
+      <div class="card-accent" style="background:#3a2a0a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 6971 · 電気機器</div>
+        <div class="card-name">京セラ</div>
+        <div class="card-name-en">KYOCERA CORPORATION</div>
+        <div class="card-desc">セラミック技術の無形資産5/5。半導体向けセラミック部品は代替供給者がほぼ不在。稲盛和夫のアメーバ経営×自己資本比率60%超の超健全財務。</div>
+        <div class="card-tags"><span class="card-tag">セラミック技術</span><span class="card-tag">半導体部品</span><span class="card-tag">稲盛哲学</span><span class="card-tag">超健全財務</span></div>
+      </div>
+      <div class="card-moat">
+        <div><div class="card-moat-label">MOAT TOP — 無形資産</div><div class="card-moat-dots"><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span></div></div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
     <!-- ソニーグループ -->
     <a class="company-card" href="sony/">
       <div class="card-accent" style="background:#1a1a5a;"></div>
@@ -314,6 +838,1021 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
           <div class="card-moat-label">MOAT TOP — 無形資産</div>
           <div class="card-moat-dots">
             <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+
+    <!-- 旭化成 -->
+    <a class="company-card" href="asahi-kasei/">
+      <div class="card-accent" style="background:#7a3020;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 3407 · 化学</div>
+        <div class="card-name">旭化成</div>
+        <div class="card-name-en">ASAHI KASEI CORPORATION</div>
+        <div class="card-desc">化学・住宅・ヘルスケアの3事業。ヘーベルハウスの長期保証と住宅事業のスイッチングコスト、医療機器・医薬品での技術的moatを持つ。</div>
+        <div class="card-tags">
+          <span class="card-tag">化学・素材</span>
+          <span class="card-tag">ヘーベルハウス</span>
+          <span class="card-tag">ヘルスケア</span>
+          <span class="card-tag">多角化</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 日本ペイントHD -->
+    <a class="company-card" href="nippon-paint/">
+      <div class="card-accent" style="background:#1a4a7a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4612 · 化学</div>
+        <div class="card-name">日本ペイントHD</div>
+        <div class="card-name-en">NIPPON PAINT HOLDINGS</div>
+        <div class="card-desc">アジア最大の塗料メーカー。中国・東南アジアでの圧倒的シェアと現地パートナーとの合弁構造が高い参入障壁を形成する。</div>
+        <div class="card-tags">
+          <span class="card-tag">塗料</span>
+          <span class="card-tag">アジア展開</span>
+          <span class="card-tag">効率的規模</span>
+          <span class="card-tag">中国シェア</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 三菱ケミカルG -->
+    <a class="company-card" href="mitsubishi-chem/">
+      <div class="card-accent" style="background:#7a1a4a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4188 · 化学</div>
+        <div class="card-name">三菱ケミカルグループ</div>
+        <div class="card-name-en">MITSUBISHI CHEMICAL GROUP</div>
+        <div class="card-desc">機能性化学品・ヘルスケア・MXCのグローバル化学コングロマリット。高付加価値素材の技術力と顧客への深い組み込みがコアモート。</div>
+        <div class="card-tags">
+          <span class="card-tag">機能性化学</span>
+          <span class="card-tag">グローバル</span>
+          <span class="card-tag">MXC素材</span>
+          <span class="card-tag">ヘルスケア</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 富士フイルムHD -->
+    <a class="company-card" href="fujifilm/">
+      <div class="card-accent" style="background:#1a5a6a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4901 · 化学</div>
+        <div class="card-name">富士フイルムHD</div>
+        <div class="card-name-en">FUJIFILM HOLDINGS</div>
+        <div class="card-desc">フィルムからヘルスケア・高機能材料へ転換した変革企業。医療機器・CDMO・複合機の3本柱で安定収益を確保。唯一無二の技術資産。</div>
+        <div class="card-tags">
+          <span class="card-tag">医療機器</span>
+          <span class="card-tag">CDMO</span>
+          <span class="card-tag">複合機</span>
+          <span class="card-tag">変革成功</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 日清食品HD -->
+    <a class="company-card" href="nissin/">
+      <div class="card-accent" style="background:#7a4010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 2897 · 食品</div>
+        <div class="card-name">日清食品HD</div>
+        <div class="card-name-en">NISSIN FOODS HOLDINGS</div>
+        <div class="card-desc">インスタントラーメンを発明した「食の革命企業」。チキンラーメン・カップヌードルの圧倒的ブランドと世界80カ国以上への展開。</div>
+        <div class="card-tags">
+          <span class="card-tag">インスタント麺</span>
+          <span class="card-tag">グローバル</span>
+          <span class="card-tag">ブランド力</span>
+          <span class="card-tag">発明者利点</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 明治HD -->
+    <a class="company-card" href="meiji/">
+      <div class="card-accent" style="background:#4a1a7a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 2269 · 食品</div>
+        <div class="card-name">明治HD</div>
+        <div class="card-name-en">MEIJI HOLDINGS</div>
+        <div class="card-desc">食品（チョコレート・乳製品）と医薬品の二軸経営。明治ブランドの信頼性と抗生物質を中心とした医薬事業での安定収益が特徴。</div>
+        <div class="card-tags">
+          <span class="card-tag">乳製品・チョコ</span>
+          <span class="card-tag">医薬品</span>
+          <span class="card-tag">ブランド</span>
+          <span class="card-tag">二軸経営</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- キッコーマン -->
+    <a class="company-card" href="kikkoman/">
+      <div class="card-accent" style="background:#6a3a10;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 2801 · 食品</div>
+        <div class="card-name">キッコーマン</div>
+        <div class="card-name-en">KIKKOMAN CORPORATION</div>
+        <div class="card-desc">醤油ブランドの世界的普及と海外での圧倒的認知度。北米・欧州での現地生産と「日本食のゲートウェイ」としての文化的なmoat。</div>
+        <div class="card-tags">
+          <span class="card-tag">醤油・調味料</span>
+          <span class="card-tag">海外展開</span>
+          <span class="card-tag">文化的moat</span>
+          <span class="card-tag">グローバル</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 味の素 -->
+    <a class="company-card" href="ajinomoto/">
+      <div class="card-accent" style="background:#1a6a2a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 2802 · 食品</div>
+        <div class="card-name">味の素</div>
+        <div class="card-name-en">AJINOMOTO CO., INC.</div>
+        <div class="card-desc">アミノ酸技術に立脚する食品・医薬・電子材料の3軸企業。半導体向けABFが隠れた高収益事業。途上国での調味料市場開拓力も強固なmoat。</div>
+        <div class="card-tags">
+          <span class="card-tag">アミノ酸</span>
+          <span class="card-tag">ABF基板材料</span>
+          <span class="card-tag">途上国展開</span>
+          <span class="card-tag">技術特許</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- キリンHD -->
+    <a class="company-card" href="kirin/">
+      <div class="card-accent" style="background:#7a6010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 2503 · 食品</div>
+        <div class="card-name">キリンHD</div>
+        <div class="card-name-en">KIRIN HOLDINGS</div>
+        <div class="card-desc">ビール・飲料・医薬品の3本柱。協和キリンの医薬事業が高成長ドライバー。日本プレミアムビール市場での一番搾りブランドは根強いmoat。</div>
+        <div class="card-tags">
+          <span class="card-tag">ビール・飲料</span>
+          <span class="card-tag">医薬品</span>
+          <span class="card-tag">協和キリン</span>
+          <span class="card-tag">ブランド</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 伊藤忠商事 -->
+    <a class="company-card" href="itochu/">
+      <div class="card-accent" style="background:#6a1010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8001 · 卸売業</div>
+        <div class="card-name">伊藤忠商事</div>
+        <div class="card-name-en">ITOCHU CORPORATION</div>
+        <div class="card-desc">非資源・消費者関連に特化した総合商社。ファミリーマートの経営権取得とCITIC・CPGの中国・アジア基盤が独自の競争優位を形成。</div>
+        <div class="card-tags">
+          <span class="card-tag">非資源特化</span>
+          <span class="card-tag">ファミマ</span>
+          <span class="card-tag">CITIC</span>
+          <span class="card-tag">消費財</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 通行料</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 三井物産 -->
+    <a class="company-card" href="mitsui-bussan/">
+      <div class="card-accent" style="background:#1a4a1a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8031 · 卸売業</div>
+        <div class="card-name">三井物産</div>
+        <div class="card-name-en">MITSUI &amp; CO., LTD.</div>
+        <div class="card-desc">資源・エネルギー・インフラに強みを持つ総合商社。LNG権益と鉄鉱石での世界的なポジションと、長期インフラ契約による安定収益。</div>
+        <div class="card-tags">
+          <span class="card-tag">LNG権益</span>
+          <span class="card-tag">鉄鉱石</span>
+          <span class="card-tag">インフラ</span>
+          <span class="card-tag">資源特化</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 通行料</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 住友商事 -->
+    <a class="company-card" href="sumitomo-shoji/">
+      <div class="card-accent" style="background:#1a1a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8053 · 卸売業</div>
+        <div class="card-name">住友商事</div>
+        <div class="card-name-en">SUMITOMO CORPORATION</div>
+        <div class="card-desc">ニッケル・金属・メディア事業に特色を持つ総合商社。TBSホールディングスへの出資とメディア・データ分野での差別化戦略。</div>
+        <div class="card-tags">
+          <span class="card-tag">ニッケル権益</span>
+          <span class="card-tag">メディア</span>
+          <span class="card-tag">TBS出資</span>
+          <span class="card-tag">小売・生活</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 通行料</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 丸紅 -->
+    <a class="company-card" href="marubeni/">
+      <div class="card-accent" style="background:#6a1a2a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8002 · 卸売業</div>
+        <div class="card-name">丸紅</div>
+        <div class="card-name-en">MARUBENI CORPORATION</div>
+        <div class="card-desc">穀物・農業・電力に強みを持つ総合商社。GAViLONを通じた穀物トレーディングとアジア電力インフラでの独自ポジション。</div>
+        <div class="card-tags">
+          <span class="card-tag">穀物トレード</span>
+          <span class="card-tag">電力インフラ</span>
+          <span class="card-tag">農業</span>
+          <span class="card-tag">GAViLON</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 通行料</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 東京海上HD -->
+    <a class="company-card" href="tokiomarine/">
+      <div class="card-accent" style="background:#1a2a7a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8766 · 保険業</div>
+        <div class="card-name">東京海上HD</div>
+        <div class="card-name-en">TOKIO MARINE HOLDINGS</div>
+        <div class="card-desc">日本最大の損害保険グループ。規制による効率的規模と北米での買収戦略（フィラデルフィア・HCC）により利益率・ROEともに国内保険最高水準。</div>
+        <div class="card-tags">
+          <span class="card-tag">損害保険首位</span>
+          <span class="card-tag">海外M&A</span>
+          <span class="card-tag">高ROE</span>
+          <span class="card-tag">保険料収益</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- MS&AD -->
+    <a class="company-card" href="msad/">
+      <div class="card-accent" style="background:#1a4a2a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8725 · 保険業</div>
+        <div class="card-name">MS&ADインシュアランスG</div>
+        <div class="card-name-en">MS&AD INSURANCE GROUP</div>
+        <div class="card-desc">三井住友海上・あいおいニッセイ同和を中核とする損保グループ。アジア展開と自動車保険での強固な地盤。政策株式削減で資本効率改善中。</div>
+        <div class="card-tags">
+          <span class="card-tag">損害保険</span>
+          <span class="card-tag">自動車保険</span>
+          <span class="card-tag">アジア展開</span>
+          <span class="card-tag">資本効率改善</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- SOMPO -->
+    <a class="company-card" href="sompo/">
+      <div class="card-accent" style="background:#1a4a4a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8630 · 保険業</div>
+        <div class="card-name">SOMPOホールディングス</div>
+        <div class="card-name-en">SOMPO HOLDINGS</div>
+        <div class="card-desc">損害保険・国内生保・介護・海外の4事業。介護事業「SOMPOケア」は業界最大規模。デジタルデータ活用でリスクの精緻な査定能力を構築中。</div>
+        <div class="card-tags">
+          <span class="card-tag">損害保険</span>
+          <span class="card-tag">介護事業</span>
+          <span class="card-tag">デジタル戦略</span>
+          <span class="card-tag">4事業軸</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 第一生命HD -->
+    <a class="company-card" href="daiichi-life/">
+      <div class="card-accent" style="background:#3a1a6a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8750 · 保険業</div>
+        <div class="card-name">第一生命HD</div>
+        <div class="card-name-en">DAI-ICHI LIFE HOLDINGS</div>
+        <div class="card-desc">日本第2位の生命保険グループ。対面営業の深いリレーションと長期契約による解約率の低さがmoatの核心。米国のProtective Lifeも保有。</div>
+        <div class="card-tags">
+          <span class="card-tag">生命保険</span>
+          <span class="card-tag">長期契約</span>
+          <span class="card-tag">対面営業</span>
+          <span class="card-tag">米国展開</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 武田薬品 -->
+    <a class="company-card" href="takeda/">
+      <div class="card-accent" style="background:#6a1010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4502 · 医薬品</div>
+        <div class="card-name">武田薬品工業</div>
+        <div class="card-name-en">TAKEDA PHARMACEUTICAL</div>
+        <div class="card-desc">アジア最大のグローバル製薬企業。シャイアー買収でGI・希少疾患・血漿分画製剤に特化。特許ポートフォリオと新薬パイプラインが長期競争力。</div>
+        <div class="card-tags">
+          <span class="card-tag">希少疾患</span>
+          <span class="card-tag">GI</span>
+          <span class="card-tag">血漿分画製剤</span>
+          <span class="card-tag">グローバル</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 中外製薬 -->
+    <a class="company-card" href="chugai/">
+      <div class="card-accent" style="background:#1a3a7a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4519 · 医薬品</div>
+        <div class="card-name">中外製薬</div>
+        <div class="card-name-en">CHUGAI PHARMACEUTICAL</div>
+        <div class="card-desc">ロシュ傘下の高利益率バイオ製薬企業。抗体エンジニアリング技術「スマートアンチボディ」と血友病薬エミシズマブが世界的大型品。</div>
+        <div class="card-tags">
+          <span class="card-tag">バイオ医薬</span>
+          <span class="card-tag">ロシュ傘下</span>
+          <span class="card-tag">抗体技術</span>
+          <span class="card-tag">高利益率</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 第一三共 -->
+    <a class="company-card" href="daiichi-sankyo/">
+      <div class="card-accent" style="background:#3a4a5a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4568 · 医薬品</div>
+        <div class="card-name">第一三共</div>
+        <div class="card-name-en">DAIICHI SANKYO</div>
+        <div class="card-desc">ADC（抗体薬物複合体）の世界的リーダー。エンハーツ（DS-8201）がアストラゼネカとの共同開発で世界がん治療に革命をもたらしている。</div>
+        <div class="card-tags">
+          <span class="card-tag">ADC技術</span>
+          <span class="card-tag">エンハーツ</span>
+          <span class="card-tag">がん治療</span>
+          <span class="card-tag">AZ提携</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- エーザイ -->
+    <a class="company-card" href="eisai/">
+      <div class="card-accent" style="background:#4a1a6a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4523 · 医薬品</div>
+        <div class="card-name">エーザイ</div>
+        <div class="card-name-en">EISAI CO., LTD.</div>
+        <div class="card-desc">神経科学・がん領域の研究開発型製薬。アルツハイマー病薬レカネマブ（バイオジェンと共同）が認知症治療の新時代を切り開く可能性。</div>
+        <div class="card-tags">
+          <span class="card-tag">神経科学</span>
+          <span class="card-tag">レカネマブ</span>
+          <span class="card-tag">アルツハイマー</span>
+          <span class="card-tag">研究開発型</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 塩野義製薬 -->
+    <a class="company-card" href="shionogi/">
+      <div class="card-accent" style="background:#1a5a2a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4507 · 医薬品</div>
+        <div class="card-name">塩野義製薬</div>
+        <div class="card-name-en">SHIONOGI &amp; CO., LTD.</div>
+        <div class="card-desc">抗感染症・疼痛・精神神経領域の専門製薬。コロナ治療薬ゾコーバ（エンシトレルビル）開発でPandemic対応能力を証明。高利益率が特徴。</div>
+        <div class="card-tags">
+          <span class="card-tag">抗感染症</span>
+          <span class="card-tag">ゾコーバ</span>
+          <span class="card-tag">疼痛・精神神経</span>
+          <span class="card-tag">高利益率</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 三井不動産 -->
+    <a class="company-card" href="mitsui-fudosan/">
+      <div class="card-accent" style="background:#1a5a2a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8801 · 不動産業</div>
+        <div class="card-name">三井不動産</div>
+        <div class="card-name-en">MITSUI FUDOSAN CO., LTD.</div>
+        <div class="card-desc">オフィス・商業施設・住宅・物流の総合不動産デベロッパー首位。三井ショッピングパークのリテールネットワークとプレミアムオフィスの開発力。</div>
+        <div class="card-tags">
+          <span class="card-tag">オフィス開発</span>
+          <span class="card-tag">商業施設</span>
+          <span class="card-tag">物流不動産</span>
+          <span class="card-tag">住宅</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 三菱地所 -->
+    <a class="company-card" href="mitsubishi-jisho/">
+      <div class="card-accent" style="background:#1a3a7a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8802 · 不動産業</div>
+        <div class="card-name">三菱地所</div>
+        <div class="card-name-en">MITSUBISHI ESTATE CO., LTD.</div>
+        <div class="card-desc">丸の内エリアを中心とした「一街区支配」モデルが究極の効率的規模。東京屈指の立地における再開発権と長期賃貸契約が安定的FCFを生む。</div>
+        <div class="card-tags">
+          <span class="card-tag">丸の内</span>
+          <span class="card-tag">一街区支配</span>
+          <span class="card-tag">オフィス賃貸</span>
+          <span class="card-tag">再開発</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 住友不動産 -->
+    <a class="company-card" href="sumitomo-fudosan/">
+      <div class="card-accent" style="background:#6a1010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8830 · 不動産業</div>
+        <div class="card-name">住友不動産</div>
+        <div class="card-name-en">SUMITOMO REALTY &amp; DEVELOPMENT</div>
+        <div class="card-desc">新築マンション・オフィスビル賃貸・リフォームの3本柱。自社施工・直販モデルによる高利益率と、都心部への集中投資で安定成長を継続。</div>
+        <div class="card-tags">
+          <span class="card-tag">新築マンション</span>
+          <span class="card-tag">オフィス賃貸</span>
+          <span class="card-tag">リフォーム</span>
+          <span class="card-tag">直販モデル</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 東急不動産HD -->
+    <a class="company-card" href="tokyu-fudosan/">
+      <div class="card-accent" style="background:#1a2a6a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 3289 · 不動産業</div>
+        <div class="card-name">東急不動産HD</div>
+        <div class="card-name-en">TOKYU FUDOSAN HOLDINGS</div>
+        <div class="card-desc">渋谷・東急沿線エリアに特化した不動産デベロッパー。渋谷スクランブルスクエア・ヒカリエ等の再開発と再エネ事業への転換が特徴。</div>
+        <div class="card-tags">
+          <span class="card-tag">渋谷再開発</span>
+          <span class="card-tag">東急沿線</span>
+          <span class="card-tag">再エネ</span>
+          <span class="card-tag">都市開発</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- ヒューリック -->
+    <a class="company-card" href="hulic/">
+      <div class="card-accent" style="background:#7a5a10;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 3003 · 不動産業</div>
+        <div class="card-name">ヒューリック</div>
+        <div class="card-name-en">HULIC CO., LTD.</div>
+        <div class="card-desc">旧富士銀行系の不動産会社。東京都心駅近物件への集中戦略と温泉旅館・介護施設への多角化。高いROEと安定した賃料収入が際立つ。</div>
+        <div class="card-tags">
+          <span class="card-tag">都心駅近</span>
+          <span class="card-tag">旧富士銀行系</span>
+          <span class="card-tag">高ROE</span>
+          <span class="card-tag">旅館・介護</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 大林組 -->
+    <a class="company-card" href="obayashi/">
+      <div class="card-accent" style="background:#1a3a6a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 1802 · 建設業</div>
+        <div class="card-name">大林組</div>
+        <div class="card-name-en">OBAYASHI CORPORATION</div>
+        <div class="card-desc">大手スーパーゼネコンの一角。複雑な超高層建築・トンネル・原子力施設の施工技術が参入障壁を形成。海外事業とPPPでの安定収益化が進む。</div>
+        <div class="card-tags">
+          <span class="card-tag">超高層建築</span>
+          <span class="card-tag">トンネル技術</span>
+          <span class="card-tag">PPP</span>
+          <span class="card-tag">海外展開</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 鹿島建設 -->
+    <a class="company-card" href="kajima/">
+      <div class="card-accent" style="background:#1a4a1a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 1812 · 建設業</div>
+        <div class="card-name">鹿島建設</div>
+        <div class="card-name-en">KAJIMA CORPORATION</div>
+        <div class="card-desc">免震・制震技術でトップクラスのスーパーゼネコン。発電所・原子力・海洋土木の超難易度案件施工と、不動産・ホテル事業の安定収益。</div>
+        <div class="card-tags">
+          <span class="card-tag">免震・制震</span>
+          <span class="card-tag">原子力施工</span>
+          <span class="card-tag">不動産開発</span>
+          <span class="card-tag">ホテル</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 清水建設 -->
+    <a class="company-card" href="shimizu/">
+      <div class="card-accent" style="background:#2a4a6a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 1803 · 建設業</div>
+        <div class="card-name">清水建設</div>
+        <div class="card-name-en">SHIMIZU CORPORATION</div>
+        <div class="card-desc">病院・ライフサイエンス施設の施工技術に強みを持つスーパーゼネコン。「つくるとつかう」の融合を掲げ、施工後の運営・維持管理まで手がける。</div>
+        <div class="card-tags">
+          <span class="card-tag">病院施工</span>
+          <span class="card-tag">ライフサイエンス</span>
+          <span class="card-tag">維持管理</span>
+          <span class="card-tag">スマートビル</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 大成建設 -->
+    <a class="company-card" href="taisei/">
+      <div class="card-accent" style="background:#1a1a4a;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 1801 · 建設業</div>
+        <div class="card-name">大成建設</div>
+        <div class="card-name-en">TAISEI CORPORATION</div>
+        <div class="card-desc">東京五輪・新国立競技場を手がけた総合建設会社。シールド工法・地中熱など地下・インフラ技術に強みを持ち、国際プロジェクトにも参画。</div>
+        <div class="card-tags">
+          <span class="card-tag">シールド工法</span>
+          <span class="card-tag">地下インフラ</span>
+          <span class="card-tag">国際プロジェクト</span>
+          <span class="card-tag">スタジアム</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 無形資産</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 大和ハウス -->
+    <a class="company-card" href="daiwa-house/">
+      <div class="card-accent" style="background:#7a4010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 1925 · 建設業</div>
+        <div class="card-name">大和ハウス工業</div>
+        <div class="card-name-en">DAIWA HOUSE INDUSTRY</div>
+        <div class="card-desc">住宅・物流施設・商業施設を手がける総合建設・不動産企業。EC物流ニーズで急成長する物流施設開発と戸建住宅の長期保証が強固なmoat。</div>
+        <div class="card-tags">
+          <span class="card-tag">物流施設</span>
+          <span class="card-tag">戸建住宅</span>
+          <span class="card-tag">EC対応</span>
+          <span class="card-tag">長期保証</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- セブン&アイHD -->
+    <a class="company-card" href="seven-i/">
+      <div class="card-accent" style="background:#103010;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 3382 · 小売業</div>
+        <div class="card-name">セブン&アイHD</div>
+        <div class="card-name-en">SEVEN &amp; i HOLDINGS</div>
+        <div class="card-desc">コンビニ（7-Eleven）・イトーヨーカ堂・セブン銀行のコングロマリット。セブンイレブンのフランチャイズモデルと金融事業が収益の核心。</div>
+        <div class="card-tags">
+          <span class="card-tag">7-Eleven</span>
+          <span class="card-tag">フランチャイズ</span>
+          <span class="card-tag">セブン銀行</span>
+          <span class="card-tag">グローバル</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- イオン -->
+    <a class="company-card" href="aeon/">
+      <div class="card-accent" style="background:#181848;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 8267 · 小売業</div>
+        <div class="card-name">イオン</div>
+        <div class="card-name-en">AEON CO., LTD.</div>
+        <div class="card-desc">総合スーパー・SM・専門店・金融の複合体。トップバリュPBと大規模モールの集客力が競争優位の柱。イオン銀行・イオンカードの金融事業が成長ドライバー。</div>
+        <div class="card-tags">
+          <span class="card-tag">総合スーパー</span>
+          <span class="card-tag">トップバリュPB</span>
+          <span class="card-tag">イオン銀行</span>
+          <span class="card-tag">モール集客</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — 効率的規模</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- MonotaRO -->
+    <a class="company-card" href="monotaro/">
+      <div class="card-accent" style="background:#402810;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 3064 · 小売業</div>
+        <div class="card-name">MonotaRO</div>
+        <div class="card-name-en">MONOTARO CO., LTD.</div>
+        <div class="card-desc">工場・工事現場向けMROのEC専業。2,000万点超の品揃えと検索精度がネットワーク効果を生む。高い利益率と継続的な成長性を兼ね備える。</div>
+        <div class="card-tags">
+          <span class="card-tag">MRO・EC</span>
+          <span class="card-tag">法人向け</span>
+          <span class="card-tag">ネットワーク効果</span>
+          <span class="card-tag">高成長</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — ネットワーク効果</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- ニトリHD -->
+    <a class="company-card" href="nitori/">
+      <div class="card-accent" style="background:#182038;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 9843 · 小売業</div>
+        <div class="card-name">ニトリHD</div>
+        <div class="card-name-en">NITORI HOLDINGS</div>
+        <div class="card-desc">家具・インテリアのSPA（製造小売業）。海外生産によるコスト優位と「お値段以上」のブランド認知が強力なmoat。為替差益の取り込みも独自戦略。</div>
+        <div class="card-tags">
+          <span class="card-tag">家具SPA</span>
+          <span class="card-tag">コスト優位</span>
+          <span class="card-tag">ブランド</span>
+          <span class="card-tag">為替戦略</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — コスト優位</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 電通グループ -->
+    <a class="company-card" href="dentsu/">
+      <div class="card-accent" style="background:#381818;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4324 · サービス業</div>
+        <div class="card-name">電通グループ</div>
+        <div class="card-name-en">DENTSU GROUP INC.</div>
+        <div class="card-desc">国内最大の広告代理店。デジタル広告・データ分析への転換を加速中。クライアントとの長期的な関係とグローバル広告ネットワークがスイッチングコストを生む。</div>
+        <div class="card-tags">
+          <span class="card-tag">広告代理店</span>
+          <span class="card-tag">デジタル転換</span>
+          <span class="card-tag">グローバル</span>
+          <span class="card-tag">データ分析</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- パーソルHD -->
+    <a class="company-card" href="persol/">
+      <div class="card-accent" style="background:#183030;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 2181 · サービス業</div>
+        <div class="card-name">パーソルHD</div>
+        <div class="card-name-en">PERSOL HOLDINGS</div>
+        <div class="card-desc">人材派遣・人材紹介・アウトソーシングの総合人材サービス。企業の採用・人事機能への深い入り込みとアジア展開がmoatの核心。テクノロジー活用で差別化。</div>
+        <div class="card-tags">
+          <span class="card-tag">人材派遣</span>
+          <span class="card-tag">アウトソーシング</span>
+          <span class="card-tag">アジア展開</span>
+          <span class="card-tag">HR Tech</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — スイッチングコスト</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- サイバーエージェント -->
+    <a class="company-card" href="cyberagent/">
+      <div class="card-accent" style="background:#201828;"></div>
+      <div class="card-body">
+        <div class="card-code">TSE · 4751 · サービス業</div>
+        <div class="card-name">サイバーエージェント</div>
+        <div class="card-name-en">CYBERAGENT, INC.</div>
+        <div class="card-desc">インターネット広告・AbemaTV・ゲームの3事業。デジタル広告の高度な運用知識とAbemaTVのコンテンツ投資が中長期の競争力を左右する。</div>
+        <div class="card-tags">
+          <span class="card-tag">ネット広告</span>
+          <span class="card-tag">AbemaTV</span>
+          <span class="card-tag">ゲーム</span>
+          <span class="card-tag">メディア</span>
+        </div>
+      </div>
+      <div class="card-moat">
+        <div>
+          <div class="card-moat-label">MOAT TOP — ネットワーク効果</div>
+          <div class="card-moat-dots">
+            <span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot on"></span><span class="mdot off"></span>
           </div>
         </div>
         <span class="card-arrow">→</span>
@@ -374,6 +1913,100 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 window.addEventListener('scroll',()=>{
   document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
 });
+
+// 検索 + フィルター機能
+(function(){
+  const grid = document.getElementById('companiesGrid');
+  const cards = Array.from(grid.querySelectorAll('.company-card'));
+  const btns = document.querySelectorAll('#filterBar .filter-btn');
+  const countEl = document.getElementById('visibleCount');
+  const labelEl = document.getElementById('filterLabel');
+  const searchInput = document.getElementById('searchInput');
+  const searchClear = document.getElementById('searchClear');
+  const noResults = document.getElementById('noResults');
+
+  let currentFilter = 'all';
+  let currentQuery = '';
+
+  function getIndustry(card) {
+    const codeEl = card.querySelector('.card-code');
+    if (!codeEl) return '';
+    const parts = codeEl.textContent.split('·');
+    return parts.length >= 3 ? parts[2].trim() : '';
+  }
+
+  function getSearchText(card) {
+    return card.textContent.toLowerCase();
+  }
+
+  const sortSelect = document.getElementById('sortSelect');
+  let currentSort = 'default';
+  const originalOrder = [...cards];
+
+  function getMoatScore(card) {
+    return card.querySelectorAll('.mdot.on').length;
+  }
+
+  function applyFilters() {
+    const q = currentQuery.toLowerCase().trim();
+    let visible = 0;
+
+    // ソート
+    let sorted = [...originalOrder];
+    if (currentSort === 'moat-desc') {
+      sorted.sort((a, b) => getMoatScore(b) - getMoatScore(a));
+    } else if (currentSort === 'moat-asc') {
+      sorted.sort((a, b) => getMoatScore(a) - getMoatScore(b));
+    } else if (currentSort === 'industry') {
+      sorted.sort((a, b) => getIndustry(a).localeCompare(getIndustry(b), 'ja'));
+    }
+
+    // DOM順序を更新
+    sorted.forEach(card => grid.appendChild(card));
+
+    // フィルター適用
+    sorted.forEach(card => {
+      const industryMatch = currentFilter === 'all' || getIndustry(card) === currentFilter;
+      const searchMatch = q === '' || getSearchText(card).includes(q);
+      const show = industryMatch && searchMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    countEl.textContent = visible;
+    const filterLabel = currentFilter === 'all' ? '' : '— ' + currentFilter;
+    const searchLabel = q ? ' · 「' + currentQuery + '」' : '';
+    labelEl.textContent = filterLabel + searchLabel;
+    noResults.classList.toggle('visible', visible === 0);
+  }
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', () => {
+    currentQuery = searchInput.value;
+    searchClear.classList.toggle('visible', currentQuery.length > 0);
+    applyFilters();
+  });
+
+  searchClear.addEventListener('click', () => {
+    searchInput.value = '';
+    currentQuery = '';
+    searchClear.classList.remove('visible');
+    searchInput.focus();
+    applyFilters();
+  });
+
+  sortSelect.addEventListener('change', () => {
+    currentSort = sortSelect.value;
+    applyFilters();
+  });
+})();
 </script>
 </body>
 </html>
