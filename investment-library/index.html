@@ -426,31 +426,56 @@ a.hero-tab{text-decoration:none;}
   padding:0 20px;
 }
 .company-feature-inner{
-  max-width:860px;margin:0 auto;
-  padding:28px 0;
-  display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap;
+  max-width:900px;margin:0 auto;
+  padding:36px 0;
+  display:grid;
+  grid-template-columns:1fr 1px 220px;
+  gap:0;
+  align-items:start;
+}
+@media(max-width:680px){
+  .company-feature-inner{grid-template-columns:1fr;gap:24px;}
+  .company-feature-divider{display:none;}
+}
+.company-feature-divider{
+  background:rgba(90,138,58,.2);
+  align-self:stretch;
+  margin:0 28px;
 }
 .company-feature-badge{
+  display:inline-block;
   font-family:var(--mono);font-size:.46rem;color:#7ab05a;
   border:1px solid rgba(90,138,58,.4);padding:3px 10px;
-  letter-spacing:.14em;white-space:nowrap;flex-shrink:0;margin-top:2px;
+  letter-spacing:.14em;white-space:nowrap;margin-bottom:12px;
 }
-.company-feature-text{flex:1;min-width:220px;}
+.company-feature-text{padding-right:4px;}
 .company-feature-label{font-family:var(--mono);font-size:.5rem;color:#7ab05a;letter-spacing:.16em;margin-bottom:6px;opacity:.85;}
-.company-feature-title{font-family:var(--serif);font-size:clamp(1rem,2.5vw,1.25rem);font-weight:700;color:var(--parch);line-height:1.35;margin-bottom:8px;}
-.company-feature-body{font-size:.76rem;color:var(--parch3);line-height:1.8;font-weight:300;}
-.company-feature-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
-.company-feature-pill{font-family:var(--mono);font-size:.46rem;background:rgba(90,138,58,.12);border:1px solid rgba(90,138,58,.25);color:#7ab05a;padding:2px 8px;letter-spacing:.08em;}
-.company-feature-links{display:flex;flex-direction:column;gap:4px;flex-shrink:0;min-width:180px;}
-.company-feature-link{
-  display:flex;align-items:center;gap:10px;padding:11px 14px;
-  border:1px solid rgba(90,138,58,.2);text-decoration:none;transition:all .2s;
-  background:rgba(90,138,58,.06);
+.company-feature-title{font-family:var(--serif);font-size:clamp(1rem,2.5vw,1.3rem);font-weight:700;color:var(--parch);line-height:1.35;margin-bottom:10px;}
+.company-feature-body{font-size:.76rem;color:var(--parch3);line-height:1.9;font-weight:300;}
+.company-feature-pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:12px;}
+.company-feature-pill{font-family:var(--mono);font-size:.44rem;background:rgba(90,138,58,.1);border:1px solid rgba(90,138,58,.25);color:#7ab05a;padding:2px 8px;letter-spacing:.08em;}
+.company-feature-links{display:flex;flex-direction:column;gap:3px;padding-left:4px;}
+.company-feature-links-header{
+  font-family:var(--mono);font-size:.46rem;color:rgba(122,176,90,.55);
+  letter-spacing:.12em;margin-bottom:8px;
 }
-.company-feature-link:hover{border-color:rgba(90,138,58,.5);background:rgba(90,138,58,.12);}
-.company-feature-link-tag{font-family:var(--mono);font-size:.46rem;color:#7ab05a;letter-spacing:.1em;width:56px;flex-shrink:0;}
-.company-feature-link-name{font-family:var(--serif);font-size:.84rem;color:var(--parch);flex:1;}
-.company-feature-link-arr{color:#7ab05a;font-size:.8rem;}
+.company-feature-link{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;
+  border:1px solid rgba(90,138,58,.18);text-decoration:none;transition:all .2s;
+  background:rgba(90,138,58,.04);
+}
+.company-feature-link:hover{border-color:rgba(90,138,58,.5);background:rgba(90,138,58,.12);transform:translateX(2px);}
+.company-feature-link-tag{font-family:var(--mono);font-size:.44rem;color:#7ab05a;letter-spacing:.08em;width:36px;flex-shrink:0;}
+.company-feature-link-name{font-family:var(--serif);font-size:.82rem;color:var(--parch);flex:1;}
+.company-feature-link-arr{color:rgba(122,176,90,.5);font-size:.75rem;}
+.company-feature-cta{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-top:8px;padding:10px 12px;
+  background:rgba(90,138,58,.12);border:1px solid rgba(90,138,58,.3);
+  text-decoration:none;transition:all .18s;
+}
+.company-feature-cta:hover{background:rgba(90,138,58,.22);}
+.company-feature-cta span{font-family:var(--mono);font-size:.48rem;color:#7ab05a;letter-spacing:.08em;}
 
 /* ── FLAGSHIP ARTICLE ── */
 .flagship{
@@ -610,21 +635,33 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
 <!-- ══════════════ PHILOSOPHY ══════════════ -->
 
-<div style="background:var(--parch);border-bottom:1px solid var(--parch4);padding:52px 24px;">
-  <div style="max-width:680px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:.52rem;color:var(--gold);letter-spacing:.22em;margin-bottom:22px;opacity:.7;">INVESTMENT PHILOSOPHY</div>
-    <p style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:clamp(1.05rem,2.8vw,1.4rem);font-weight:600;color:var(--ink);line-height:1.9;margin-bottom:20px;">
+<div style="background:var(--parch);border-bottom:1px solid var(--parch4);padding:40px 24px;">
+  <div style="max-width:720px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:.52rem;color:var(--gold);letter-spacing:.22em;margin-bottom:18px;opacity:.7;">INVESTMENT PHILOSOPHY</div>
+    <p style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:clamp(1.05rem,2.8vw,1.4rem);font-weight:600;color:var(--ink);line-height:1.9;margin-bottom:16px;">
       銘柄の正解ではなく、判断基準を育てる場所。
     </p>
-    <p style="font-size:.88rem;color:var(--ink3);line-height:2.2;font-weight:300;margin-bottom:28px;">
+    <p style="font-size:.86rem;color:var(--ink3);line-height:2.1;font-weight:300;margin-bottom:28px;">
       企業の本質は、<strong style="color:var(--ink2);">moat（競争優位）</strong>と<strong style="color:var(--ink2);">FCF（フリーキャッシュフロー）</strong>に宿る。<br>
       なぜその企業は競合に勝ち続けるのか。どれだけ現金を生み出せるのか。<br>
       その2つの問いを入口に、投資を通じて文明・資本・人間を深く理解していく。
     </p>
-    <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
-      <a href="moat/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:var(--gold);text-decoration:none;letter-spacing:.1em;border-bottom:1px solid rgba(139,105,20,.3);padding-bottom:2px;transition:all .2s;" onmouseover="this.style.color='#b8900a'" onmouseout="this.style.color='#8b6914'">moatをどう見るか →</a>
-      <a href="fcf/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:var(--gold);text-decoration:none;letter-spacing:.1em;border-bottom:1px solid rgba(139,105,20,.3);padding-bottom:2px;transition:all .2s;" onmouseover="this.style.color='#b8900a'" onmouseout="this.style.color='#8b6914'">FCFとは何か →</a>
-      <a href="companies/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:#5a8a3a;text-decoration:none;letter-spacing:.1em;border-bottom:1px solid rgba(90,138,58,.3);padding-bottom:2px;transition:all .2s;" onmouseover="this.style.color='#3d6828'" onmouseout="this.style.color='#5a8a3a'">69社の企業分析を読む →</a>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:600px;margin:0 auto;">
+      <a href="moat/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='#b8900a';this.style.background='#e8d8be'" onmouseout="this.style.borderColor='#dfc9a8';this.style.background='#efe4d0'">
+        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.12em;opacity:.7;">01</span>
+        <span style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:.9rem;font-weight:600;color:var(--ink);">moatとは何か</span>
+        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.08em;">読む →</span>
+      </a>
+      <a href="fcf/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='#b8900a';this.style.background='#e8d8be'" onmouseout="this.style.borderColor='#dfc9a8';this.style.background='#efe4d0'">
+        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.12em;opacity:.7;">02</span>
+        <span style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:.9rem;font-weight:600;color:var(--ink);">FCFとは何か</span>
+        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.08em;">読む →</span>
+      </a>
+      <a href="companies/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;background:rgba(42,74,26,.06);border:1px solid rgba(90,138,58,.25);text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='#5a8a3a';this.style.background='rgba(42,74,26,.12)'" onmouseout="this.style.borderColor='rgba(90,138,58,.25)';this.style.background='rgba(42,74,26,.06)'">
+        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:#5a8a3a;letter-spacing:.12em;opacity:.8;">69社</span>
+        <span style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:.9rem;font-weight:600;color:var(--ink);">企業分析を読む</span>
+        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:#5a8a3a;letter-spacing:.08em;">読む →</span>
+      </a>
     </div>
   </div>
 </div>
@@ -646,27 +683,31 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
 <div class="company-feature">
   <div class="company-feature-inner">
-    <span class="company-feature-badge">69社 分析済み</span>
+    <!-- LEFT: text -->
     <div class="company-feature-text">
-      <div class="company-feature-label">COMPANY ANALYSIS LIBRARY · 全14業種</div>
+      <span class="company-feature-badge">69社 分析済み · 全14業種</span>
+      <div class="company-feature-label">COMPANY ANALYSIS LIBRARY</div>
       <div class="company-feature-title">企業を、もっと深く読む</div>
       <div class="company-feature-body">
-        moatスコアカード・レーダーチャート・フリーキャッシュフロー推移・主要指標・IR一次情報へのリンクを一か所で整理。<br>
-        銀行・自動車・医薬品・不動産・商社など全14業種、69社。決算短信をmoatの視点で読むための、静かな企業研究の場。
+        moatスコアカード・レーダーチャート・FCF推移・主要指標を一か所に整理。<br>
+        銀行・自動車・医薬品・不動産・商社など69社、決算をmoatの視点で読む書斎。
       </div>
       <div class="company-feature-pills">
         <span class="company-feature-pill">moat 6タイプ採点</span>
-        <span class="company-feature-pill">moatレーダーチャート</span>
+        <span class="company-feature-pill">レーダーチャート</span>
         <span class="company-feature-pill">FCFチャート</span>
         <span class="company-feature-pill">主要財務指標</span>
-        <span class="company-feature-pill">IR一次情報リンク</span>
+        <span class="company-feature-pill">IR一次情報</span>
       </div>
-      <div style="margin-top:14px;">
-        <a href="companies/" style="font-family:var(--mono);font-size:.56rem;color:#7ab05a;text-decoration:none;letter-spacing:.1em;border-bottom:1px solid rgba(90,138,58,.3);padding-bottom:2px;transition:all .2s;" onmouseover="this.style.color='#b0e070'" onmouseout="this.style.color='#7ab05a'">企業一覧・検索・業種フィルターで探す →</a>
+      <div style="margin-top:16px;">
+        <a href="companies/" style="font-family:var(--mono);font-size:.54rem;color:#7ab05a;text-decoration:none;letter-spacing:.1em;border-bottom:1px solid rgba(90,138,58,.3);padding-bottom:2px;transition:all .2s;" onmouseover="this.style.color='#b0e070'" onmouseout="this.style.color='#7ab05a'">全69社 — 検索・業種フィルターで探す →</a>
       </div>
     </div>
+    <!-- DIVIDER -->
+    <div class="company-feature-divider"></div>
+    <!-- RIGHT: featured links -->
     <div class="company-feature-links">
-      <div style="font-family:var(--mono);font-size:.46rem;color:rgba(122,176,90,.6);letter-spacing:.12em;margin-bottom:6px;">FEATURED · 注目企業</div>
+      <div class="company-feature-links-header">FEATURED · 注目企業</div>
       <a class="company-feature-link" href="companies/keyence/">
         <span class="company-feature-link-tag">6861</span>
         <span class="company-feature-link-name">キーエンス</span>
@@ -697,8 +738,8 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
         <span class="company-feature-link-name">三井不動産</span>
         <span class="company-feature-link-arr">→</span>
       </a>
-      <a href="companies/" style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:10px 16px;background:rgba(90,138,58,.15);border:1px solid rgba(90,138,58,.35);text-decoration:none;transition:all .18s;" onmouseover="this.style.background='rgba(90,138,58,.25)'" onmouseout="this.style.background='rgba(90,138,58,.15)'">
-        <span style="font-family:var(--mono);font-size:.5rem;color:#7ab05a;letter-spacing:.1em;">全69社の分析を見る →</span>
+      <a class="company-feature-cta" href="companies/">
+        <span>全69社の分析を見る →</span>
       </a>
     </div>
   </div>
