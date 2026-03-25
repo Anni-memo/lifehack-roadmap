@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="企業を深く読む｜moat × FCF × 競争優位｜投資と思考の書斎"/>
+<meta property="og:description" content="なぜその企業は競合に勝ち続けるのか。フリーキャッシュフローはどれだけ生み出せるか。moatとFCFで日本の優良企業69社を深く読む。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>企業を深く読む — 投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0a160a 50%,#0d1e08 100%);
+  color:var(--parch);padding:64px 24px 56px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--green2);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(58,104,40,.12) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green3),transparent);}
+.hero-label{font-family:var(--mono);font-size:.58rem;color:var(--green4);letter-spacing:.3em;margin-bottom:16px;opacity:.75;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(2rem,6vw,3.8rem);font-weight:700;color:var(--parch);line-height:1.05;position:relative;margin-bottom:6px;}
+.hero-title em{display:block;font-style:italic;font-size:.38em;color:var(--green4);letter-spacing:.12em;margin-top:10px;font-weight:400;}
+.hero-lead{font-family:var(--jp);font-size:clamp(.84rem,2vw,1rem);color:var(--parch3);font-weight:300;line-height:2.1;position:relative;max-width:560px;margin:24px auto 0;}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:36px;position:relative;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--green4);line-height:1;}
+.hero-stat-label{font-family:var(--mono);font-size:.48rem;color:var(--parch4);letter-spacing:.14em;margin-top:4px;opacity:.75;}
+.hero-cta{margin-top:40px;position:relative;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.cta-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--green2);color:var(--parch);font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-decoration:none;border:1px solid var(--green3);transition:all .2s;}
+.cta-primary:hover{background:var(--green3);}
+.cta-secondary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:transparent;color:var(--green4);font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-decoration:none;border:1px solid rgba(90,138,58,.4);transition:all .2s;}
+.cta-secondary:hover{border-color:var(--green3);background:rgba(90,138,58,.08);}
+
+/* CONTAINER */
+.container{max-width:860px;margin:0 auto;padding:64px 24px 0;}
+.section{margin-bottom:72px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:10px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:clamp(1.3rem,3.5vw,1.9rem);font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.2;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.2;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body strong{color:var(--ink);font-weight:600;}
+
+/* CONCEPT CARDS */
+.concept-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:24px;}
+@media(min-width:640px){.concept-grid{grid-template-columns:1fr 1fr;}}
+.concept-card{background:var(--parch2);border:1px solid var(--parch4);padding:28px 26px;position:relative;overflow:hidden;}
+.concept-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.concept-card.moat::before{background:linear-gradient(90deg,var(--green2),var(--green3));}
+.concept-card.fcf::before{background:linear-gradient(90deg,var(--gold),var(--gold2));}
+.concept-card-icon{font-family:var(--mono);font-size:1.8rem;margin-bottom:14px;opacity:.6;}
+.concept-card-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.concept-card-body{font-size:.8rem;color:var(--ink2);line-height:1.9;font-weight:300;}
+.concept-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;text-decoration:none;border-bottom:1px solid rgba(139,105,20,.3);padding-bottom:2px;transition:color .2s;}
+.concept-card-link:hover{color:var(--gold2);}
+
+/* MOAT TYPES */
+.moat-types{display:grid;grid-template-columns:1fr;gap:2px;margin-top:20px;}
+@media(min-width:580px){.moat-types{grid-template-columns:1fr 1fr;}}
+@media(min-width:860px){.moat-types{grid-template-columns:1fr 1fr 1fr;}}
+.moat-type{background:var(--parch2);border:1px solid var(--parch4);border-left:3px solid var(--green3);padding:16px 18px;}
+.moat-type-name{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.moat-type-ex{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.08em;margin-bottom:6px;}
+.moat-type-desc{font-size:.72rem;color:var(--ink3);line-height:1.7;font-weight:300;}
+
+/* RADAR DEMO */
+.radar-demo{background:var(--ink);border:1px solid rgba(90,138,58,.2);padding:32px 24px;margin-top:24px;}
+.radar-demo-inner{max-width:600px;margin:0 auto;}
+.radar-demo-label{font-family:var(--mono);font-size:.5rem;color:var(--green4);letter-spacing:.2em;margin-bottom:4px;opacity:.75;}
+.radar-demo-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--parch);margin-bottom:6px;}
+.radar-demo-note{font-family:var(--mono);font-size:.46rem;color:rgba(122,176,90,.5);letter-spacing:.08em;margin-bottom:24px;}
+.radar-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+@media(min-width:640px){.radar-grid{grid-template-columns:1fr 1fr;align-items:center;}}
+.radar-canvas-wrap{position:relative;height:260px;}
+.radar-companies{display:flex;flex-direction:column;gap:3px;}
+.radar-company{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.15);cursor:pointer;transition:all .18s;}
+.radar-company:hover,.radar-company.active{border-color:rgba(90,138,58,.4);background:rgba(90,138,58,.08);}
+.radar-company-code{font-family:var(--mono);font-size:.46rem;color:var(--gold3);width:36px;flex-shrink:0;}
+.radar-company-name{font-family:var(--serif);font-size:.88rem;color:var(--parch);flex:1;}
+.radar-company-top{font-family:var(--mono);font-size:.44rem;color:var(--green4);flex-shrink:0;}
+
+/* FCF DEMO */
+.fcf-demo{background:var(--parch2);border:1px solid var(--parch4);padding:28px 24px;margin-top:24px;}
+.fcf-demo-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.18em;margin-bottom:4px;opacity:.75;}
+.fcf-demo-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:20px;}
+.fcf-canvas-wrap{position:relative;height:200px;}
+
+/* INDUSTRY GRID */
+.industry-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:20px;}
+@media(min-width:640px){.industry-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:860px){.industry-grid{grid-template-columns:repeat(4,1fr);}}
+.industry-card{display:flex;flex-direction:column;padding:18px 16px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;color:inherit;transition:all .18s;position:relative;}
+.industry-card:hover{border-color:rgba(139,105,20,.5);background:var(--parch3);transform:translateY(-1px);}
+.industry-card-code{font-family:var(--mono);font-size:.44rem;color:var(--gold);letter-spacing:.1em;margin-bottom:6px;opacity:.75;}
+.industry-card-name{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.industry-card-count{font-family:var(--mono);font-size:.44rem;color:var(--green3);letter-spacing:.06em;margin-bottom:6px;}
+.industry-card-q{font-size:.68rem;color:var(--ink3);line-height:1.5;font-weight:300;}
+.industry-card-arr{font-size:.7rem;color:var(--gold3);margin-top:auto;padding-top:10px;text-align:right;}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,var(--ink) 0%,#0a160a 100%);border-top:1px solid rgba(90,138,58,.2);border-bottom:1px solid rgba(90,138,58,.2);padding:48px 24px;margin-top:0;}
+.cta-banner-inner{max-width:860px;margin:0 auto;text-align:center;}
+.cta-banner-label{font-family:var(--mono);font-size:.52rem;color:var(--green4);letter-spacing:.22em;margin-bottom:12px;opacity:.7;}
+.cta-banner-title{font-family:var(--serif);font-size:clamp(1.3rem,3.5vw,2rem);font-weight:700;color:var(--parch);margin-bottom:12px;line-height:1.2;}
+.cta-banner-body{font-size:.82rem;color:var(--parch3);font-weight:300;line-height:1.9;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;}
+.cta-banner-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-decoration:none;transition:all .2s;}
+.cta-btn.primary{background:var(--green2);color:var(--parch);border:1px solid var(--green3);}
+.cta-btn.primary:hover{background:var(--green3);}
+.cta-btn.secondary{background:transparent;color:var(--gold3);border:1px solid rgba(184,144,10,.35);}
+.cta-btn.secondary:hover{border-color:var(--gold2);background:rgba(184,144,10,.08);}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 72px;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">企業を深く読む</span>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-label">COMPANY ANALYSIS LIBRARY · 全14業種</div>
+  <h1 class="hero-title">
+    企業を、深く読む
+    <em>Read companies deeply — moat × FCF</em>
+  </h1>
+  <p class="hero-lead">
+    なぜその企業は競合に勝ち続けるのか。<br>
+    どれだけフリーキャッシュフローを生み出せるのか。<br>
+    その2つの問いから、日本の優良企業69社を静かに読み解く。
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">69</div>
+      <div class="hero-stat-label">企業分析</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">14</div>
+      <div class="hero-stat-label">業種カバー</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">6</div>
+      <div class="hero-stat-label">moatタイプ</div>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a class="cta-primary" href="../">全69社を検索・フィルターで探す →</a>
+    <a class="cta-secondary" href="../../industries/">業種から選ぶ →</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ══ SECTION 1: 2つの問い ══ -->
+  <div class="section">
+    <div class="section-label">THE TWO QUESTIONS</div>
+    <h2 class="section-title">企業分析の入口は、2つの問いだ</h2>
+    <div class="section-body">
+      <p>投資において、株価は「結果」にすぎない。大切なのは企業の<strong>本質的な価値</strong>を理解することだ。その入口となる問いが2つある。</p>
+    </div>
+    <div class="concept-grid">
+      <div class="concept-card moat">
+        <div class="concept-card-icon">🏰</div>
+        <div class="concept-card-title">moat（経済的な堀）</div>
+        <div class="concept-card-body">なぜその企業は競合に勝ち続けるのか。特許・ブランド・ネットワーク・コスト優位など、6つのタイプで競争優位を採点する。強いmoatは、長期的な超過利益の源泉になる。</div>
+        <a class="concept-card-link" href="../../moat/">moatをどう見るか →</a>
+      </div>
+      <div class="concept-card fcf">
+        <div class="concept-card-icon">💰</div>
+        <div class="concept-card-title">FCF（フリーキャッシュフロー）</div>
+        <div class="concept-card-body">企業が本当に稼いでいる現金はいくらか。利益より正直なFCFの推移を読むことで、企業の実力と成長の持続性が見えてくる。10年のFCF推移が、その企業の「本当の姿」を語る。</div>
+        <a class="concept-card-link" href="../../fcf/">FCFとは何か →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 2: moat 6タイプ ══ -->
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">moatの6タイプ — 競争優位の分類法</h2>
+    <div class="section-body">
+      <p>チャーリー・マンガーとパット・ドーシーの思考を基に、競争優位を6つのタイプに分類し、各企業を5点満点で採点する。</p>
+    </div>
+    <div class="moat-types">
+      <div class="moat-type">
+        <div class="moat-type-name">無形資産</div>
+        <div class="moat-type-ex">例：キッコーマン・日清食品</div>
+        <div class="moat-type-desc">ブランド・特許・ライセンスが生み出す参入障壁。顧客が他社に切り替えない心理的な理由。</div>
+      </div>
+      <div class="moat-type">
+        <div class="moat-type-name">ネットワーク効果</div>
+        <div class="moat-type-ex">例：MonotaRO・リクルート</div>
+        <div class="moat-type-desc">ユーザーが増えるほどサービスの価値が高まる構造。先行者が圧倒的に有利になる。</div>
+      </div>
+      <div class="moat-type">
+        <div class="moat-type-name">スイッチングコスト</div>
+        <div class="moat-type-ex">例：キーエンス・MUFG</div>
+        <div class="moat-type-desc">乗り換えに伴うコスト・リスク・手間が顧客を引き止める。一度組み込まれると動かせない。</div>
+      </div>
+      <div class="moat-type">
+        <div class="moat-type-name">通行料（Toll Road）</div>
+        <div class="moat-type-ex">例：三菱商事・三井物産</div>
+        <div class="moat-type-desc">資源・インフラ・流通などの要所を押さえ、通過するだけで収益が得られる仕組み。</div>
+      </div>
+      <div class="moat-type">
+        <div class="moat-type-name">効率的規模</div>
+        <div class="moat-type-ex">例：三菱地所・東京海上</div>
+        <div class="moat-type-desc">市場規模に対して参入者が増えると全員が損をするため、自然と寡占状態が生まれる構造。</div>
+      </div>
+      <div class="moat-type">
+        <div class="moat-type-name">コスト優位</div>
+        <div class="moat-type-ex">例：ニトリ・大和ハウス</div>
+        <div class="moat-type-desc">規模・立地・プロセスにより競合より低コストで生産できる。価格競争でも生き残れる強さ。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 3: レーダーチャートデモ ══ -->
+  <div class="section">
+    <div class="section-label">VISUAL MOAT RADAR</div>
+    <h2 class="section-title">moatレーダーチャートで企業を視覚的に比較する</h2>
+    <div class="section-body">
+      <p>各企業ページでは、6つのmoatタイプをレーダーチャートで表示する。形の違いが、企業の「強みの構造」の違いを示す。右のパネルで企業を切り替えて比べてみよう。</p>
+    </div>
+    <div class="radar-demo">
+      <div class="radar-demo-inner">
+        <div class="radar-demo-label">INTERACTIVE DEMO</div>
+        <div class="radar-demo-title">企業別 moatレーダーチャート</div>
+        <div class="radar-demo-note">クリックで切り替え · スコアは概算値・参考値</div>
+        <div class="radar-grid">
+          <div class="radar-canvas-wrap">
+            <canvas id="demoRadar"></canvas>
+          </div>
+          <div class="radar-companies" id="radarCompanies">
+            <div class="radar-company active" data-idx="0">
+              <span class="radar-company-code">6861</span>
+              <span class="radar-company-name">キーエンス</span>
+              <span class="radar-company-top">SC 5/5</span>
+            </div>
+            <div class="radar-company" data-idx="1">
+              <span class="radar-company-code">4568</span>
+              <span class="radar-company-name">第一三共</span>
+              <span class="radar-company-top">無形 5/5</span>
+            </div>
+            <div class="radar-company" data-idx="2">
+              <span class="radar-company-code">8802</span>
+              <span class="radar-company-name">三菱地所</span>
+              <span class="radar-company-top">効率 5/5</span>
+            </div>
+            <div class="radar-company" data-idx="3">
+              <span class="radar-company-code">3064</span>
+              <span class="radar-company-name">MonotaRO</span>
+              <span class="radar-company-top">NW 5/5</span>
+            </div>
+            <div class="radar-company" data-idx="4">
+              <span class="radar-company-code">8031</span>
+              <span class="radar-company-name">三井物産</span>
+              <span class="radar-company-top">通行料 5/5</span>
+            </div>
+            <div class="radar-company" data-idx="5">
+              <span class="radar-company-code">9843</span>
+              <span class="radar-company-name">ニトリHD</span>
+              <span class="radar-company-top">コスト 5/5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 4: FCFデモ ══ -->
+  <div class="section">
+    <div class="section-label">FCF VISUALIZATION</div>
+    <h2 class="section-title">FCF推移チャートで「稼ぐ力」の変化を読む</h2>
+    <div class="section-body">
+      <p>各企業ページでは、過去5〜10年のフリーキャッシュフロー推移をバーチャートで表示する。右肩上がりのFCFは<strong>moatの強さの証拠</strong>であり、景気後退局面でも安定したFCFは経営の底力を示す。</p>
+    </div>
+    <div class="fcf-demo">
+      <div class="fcf-demo-label">FCF CHART EXAMPLE</div>
+      <div class="fcf-demo-title">キーエンス — フリーキャッシュフロー推移（10億円）</div>
+      <div class="fcf-canvas-wrap">
+        <canvas id="fcfDemo"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<hr class="divider"/>
+
+<!-- ══ INDUSTRY GRID ══ -->
+<div style="background:var(--parch2);border-top:1px solid var(--parch4);padding:56px 24px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:8px;opacity:.75;">BROWSE BY INDUSTRY</div>
+    <div style="font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:var(--ink);margin-bottom:6px;">業種から企業を探す</div>
+    <div style="font-size:.82rem;color:var(--ink2);line-height:1.9;font-weight:300;margin-bottom:24px;">業種の構造と問いを理解してから、企業ページへ進む。それが最も深い読み方だ。</div>
+    <div class="industry-grid">
+      <a class="industry-card" href="../../industries/banking/">
+        <div class="industry-card-code">BANKING</div>
+        <div class="industry-card-name">銀行業</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">金利上昇で何が変わるか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/it-telecom/">
+        <div class="industry-card-code">IT · TELECOM</div>
+        <div class="industry-card-name">IT・通信</div>
+        <div class="industry-card-count">6社分析済み</div>
+        <div class="industry-card-q">プラットフォームの堀はどこか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/automotive/">
+        <div class="industry-card-code">AUTOMOTIVE</div>
+        <div class="industry-card-name">自動車</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">EV転換でmoatは守れるか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/machinery/">
+        <div class="industry-card-code">MACHINERY</div>
+        <div class="industry-card-name">機械</div>
+        <div class="industry-card-count">4社分析済み</div>
+        <div class="industry-card-q">技術力と顧客への組み込み</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/electronics/">
+        <div class="industry-card-code">ELECTRONICS</div>
+        <div class="industry-card-name">電気機器</div>
+        <div class="industry-card-count">7社分析済み</div>
+        <div class="industry-card-q">技術の差が価格決定力を生むか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/chemicals/">
+        <div class="industry-card-code">CHEMICALS</div>
+        <div class="industry-card-name">化学</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">特殊化学品の参入障壁はどこか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/food/">
+        <div class="industry-card-code">FOODS</div>
+        <div class="industry-card-name">食品</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">ブランドと流通網が価格支配力を作るか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/wholesale/">
+        <div class="industry-card-code">WHOLESALE</div>
+        <div class="industry-card-name">卸売・商社</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">資源権益と情報ネットワーク</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/insurance/">
+        <div class="industry-card-code">INSURANCE</div>
+        <div class="industry-card-name">保険業</div>
+        <div class="industry-card-count">4社分析済み</div>
+        <div class="industry-card-q">規模と規制が作る参入障壁</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/pharma/">
+        <div class="industry-card-code">PHARMA</div>
+        <div class="industry-card-name">医薬品</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">特許切れ後にmoatは残るか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/real-estate/">
+        <div class="industry-card-code">REAL ESTATE</div>
+        <div class="industry-card-name">不動産業</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">立地と再開発が安定収益を生むか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/construction/">
+        <div class="industry-card-code">CONSTRUCTION</div>
+        <div class="industry-card-name">建設業</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">技術蓄積と受注残が参入障壁になるか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/retail/">
+        <div class="industry-card-code">RETAIL</div>
+        <div class="industry-card-name">小売業</div>
+        <div class="industry-card-count">5社分析済み</div>
+        <div class="industry-card-q">PBと立地がEC時代に通用するか</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+      <a class="industry-card" href="../../industries/services/">
+        <div class="industry-card-code">SERVICES</div>
+        <div class="industry-card-name">サービス業</div>
+        <div class="industry-card-count">4社分析済み</div>
+        <div class="industry-card-q">人・データ・プラットフォームの結合</div>
+        <div class="industry-card-arr">→</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA BANNER ══ -->
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <div class="cta-banner-label">COMPANY ANALYSIS LIBRARY</div>
+    <div class="cta-banner-title">全69社を、検索・フィルターで探す</div>
+    <div class="cta-banner-body">業種・キーワード・moatタイプで絞り込み。ソニー・トヨタ・三菱商事から、第一三共・ニトリ・MonotaROまで。</div>
+    <div class="cta-banner-btns">
+      <a class="cta-btn primary" href="../">全69社の企業分析一覧へ →</a>
+      <a class="cta-btn secondary" href="../../">書斎の入口へ戻る</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>掲載データはすべて概算値・参考値です。投資判断の根拠には使用しないでください。</div>
+  <div style="margin-top:6px;"><a href="../../">TOP</a>　·　<a href="../">企業一覧</a>　·　<a href="../../industries/">業種一覧</a>　·　<a href="../../moat/">moatとは</a>　·　<a href="../../fcf/">FCFとは</a></div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+
+// ── デモ用データ ──
+const COMPANIES = [
+  { name:'キーエンス',     data:[5,2,5,2,3,3] },
+  { name:'第一三共',       data:[5,1,3,4,4,3] },
+  { name:'三菱地所',       data:[3,2,4,4,5,3] },
+  { name:'MonotaRO',       data:[3,5,4,3,3,2] },
+  { name:'三井物産',       data:[3,2,3,5,4,3] },
+  { name:'ニトリHD',       data:[4,1,3,2,3,5] },
+];
+const LABELS = ['無形資産','ネットワーク効果','スイッチングコスト','通行料','効率的規模','コスト優位'];
+
+// レーダーチャート
+const radarCtx = document.getElementById('demoRadar').getContext('2d');
+const radarChart = new Chart(radarCtx, {
+  type: 'radar',
+  data: {
+    labels: LABELS,
+    datasets: [{
+      data: COMPANIES[0].data,
+      backgroundColor: 'rgba(90,138,58,0.18)',
+      borderColor: 'rgba(90,138,58,0.8)',
+      borderWidth: 2,
+      pointBackgroundColor: 'rgba(90,138,58,1)',
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      r: {
+        min: 0, max: 5,
+        ticks: { stepSize: 1, display: false },
+        grid: { color: 'rgba(122,176,90,0.2)' },
+        angleLines: { color: 'rgba(122,176,90,0.2)' },
+        pointLabels: {
+          font: { family: "'DM Mono',monospace", size: 10 },
+          color: '#c8b89a'
+        }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.parsed.r + '/5' } }
+    }
+  }
+});
+
+document.querySelectorAll('.radar-company').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.radar-company').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const idx = parseInt(btn.dataset.idx);
+    radarChart.data.datasets[0].data = COMPANIES[idx].data;
+    radarChart.update();
+  });
+});
+
+// FCFデモチャート
+const fcfCtx = document.getElementById('fcfDemo').getContext('2d');
+new Chart(fcfCtx, {
+  type: 'bar',
+  data: {
+    labels: ['FY19','FY20','FY21','FY22','FY23','FY24'],
+    datasets: [{
+      data: [210, 195, 310, 380, 420, 460],
+      backgroundColor: 'rgba(61,104,40,0.7)',
+      borderColor: 'rgba(90,138,58,0.9)',
+      borderWidth: 1,
+      borderRadius: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.parsed.y + '億円' } }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(139,105,20,0.1)' },
+        ticks: { font: { family: "'DM Mono',monospace", size: 10 }, color: '#4a3520' }
+      },
+      y: {
+        grid: { color: 'rgba(139,105,20,0.1)' },
+        ticks: { font: { family: "'DM Mono',monospace", size: 10 }, color: '#4a3520' }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
