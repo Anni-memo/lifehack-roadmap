@@ -149,6 +149,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         </div>
       </div>
     </div>
+    <div class="moat-radar-wrap" style="margin-top:24px;background:var(--parch);border:1px solid var(--parch4);padding:20px 24px;">
+      <div style="font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.14em;margin-bottom:12px;opacity:.75;">MOAT RADAR</div>
+      <div style="position:relative;max-width:320px;margin:0 auto;height:280px;">
+        <canvas id="moatRadar"></canvas>
+      </div>
+    </div>
     <div class="callout" style="margin-top:24px;">
       <p class="callout-text">大林組のmoatは「技術者と施工ノウハウの蓄積」にある。スーパーゼネコンは大型・複雑な工事を安全確実に施工できる技術力と施工管理能力が参入障壁となる。130年超の経験で蓄積した技術・人材は容易に模倣できない。ただし建設業は受注型ビジネスであり、通行料的な安定収益は低く景気サイクルの影響を受けやすい。</p>
     </div>
@@ -226,6 +232,59 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a>
 </footer>
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});</script>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});
+// Moat Radar Chart
+(function(){
+  var items = document.querySelectorAll('.moat-item');
+  if (!items.length) return;
+  var labels = [], data = [];
+  items.forEach(function(item){
+    var nameEl = item.querySelector('.moat-name');
+    var numEl = item.querySelector('.moat-score-num');
+    if (!nameEl || !numEl) return;
+    var name = nameEl.textContent.trim().replace('（toll road）','').replace('（Toll Road）','');
+    var scoreText = numEl.textContent.trim();
+    var score = parseInt(scoreText.split('/')[0]) || 0;
+    labels.push(name);
+    data.push(score);
+  });
+  if (!labels.length) return;
+  var canvas = document.getElementById('moatRadar');
+  if (!canvas) return;
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        backgroundColor: 'rgba(90,138,58,0.15)',
+        borderColor: 'rgba(90,138,58,0.7)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(90,138,58,0.9)',
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          min: 0,
+          max: 5,
+          ticks: { stepSize: 1, display: false },
+          grid: { color: 'rgba(139,105,20,0.2)' },
+          angleLines: { color: 'rgba(139,105,20,0.2)' },
+          pointLabels: { font: { family: "'DM Mono', monospace", size: 10 }, color: '#4a3520' }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: function(ctx){ return ctx.parsed.r + '/5'; } } }
+      }
+    }
+  });
+})();
+</script>
 </body>
 </html>

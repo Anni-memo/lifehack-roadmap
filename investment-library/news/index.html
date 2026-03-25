@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="News Curation｜投資と思考の書斎"/>
+<meta property="og:description" content="日経新聞の主要記事を長期投資家の視点でキュレーション。moat・FCF・資本配分の軸で読み解く、日記的なニュースログ。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>News Curation｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --rust:#8b3a1a;--rust2:#c05020;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;
+  --blue:#1a2a4a;--blue2:#2a3d6a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── Nav ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.2);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(184,144,10,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── Hero ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#2a1a0a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:1rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,3rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-sub{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.25em;margin-top:10px;opacity:.7;position:relative;}
+.hero-lead{margin-top:22px;position:relative;font-family:var(--serif);font-size:clamp(.84rem,2vw,.96rem);color:var(--parch3);font-style:italic;line-height:2;max-width:560px;margin-left:auto;margin-right:auto;}
+
+/* ── Layout ── */
+.container{max-width:800px;margin:0 auto;padding:56px 24px 0;}
+
+/* ── Concept Box ── */
+.concept-box{
+  border-left:4px solid var(--gold);padding:22px 26px;
+  background:var(--parch2);margin-bottom:56px;
+}
+.concept-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.2em;margin-bottom:10px;opacity:.75;}
+.concept-text{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+
+/* ── Archive Grid ── */
+.archive-year{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--parch4);}
+.archive-list{display:flex;flex-direction:column;gap:3px;margin-bottom:56px;}
+.archive-item{
+  display:flex;align-items:stretch;gap:0;
+  background:var(--parch2);border:1px solid var(--parch3);
+  text-decoration:none;color:var(--ink);
+  transition:all .2s;
+}
+.archive-item:hover{background:var(--parch3);border-color:var(--gold);transform:translateX(3px);}
+.archive-date-col{
+  font-family:var(--mono);font-size:.58rem;
+  color:var(--gold);letter-spacing:.06em;
+  padding:18px 20px;min-width:110px;
+  border-right:1px solid var(--parch3);
+  display:flex;flex-direction:column;justify-content:center;gap:2px;
+  background:rgba(139,105,20,.04);
+}
+.archive-date-num{font-size:.88rem;font-weight:500;color:var(--ink);}
+.archive-content-col{padding:18px 20px;flex:1;}
+.archive-title{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.4;}
+.archive-desc{font-size:.78rem;color:var(--ink3);line-height:1.8;font-weight:300;}
+.archive-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+.archive-tag{font-family:var(--mono);font-size:.44rem;padding:2px 8px;border:1px solid rgba(139,105,20,.3);color:var(--gold);letter-spacing:.08em;}
+.archive-arrow{display:flex;align-items:center;padding:0 18px;font-family:var(--mono);font-size:.65rem;color:var(--gold3);opacity:.5;}
+
+/* ── Empty State ── */
+.coming-soon{
+  text-align:center;padding:48px 24px;
+  border:1px dashed var(--parch4);
+  margin-bottom:56px;
+}
+.coming-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.6;}
+.coming-text{font-size:.84rem;color:var(--ink3);font-style:italic;}
+
+/* ── Footer ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;margin-top:80px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:16px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.7;transition:opacity .2s;}.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.48rem;color:var(--parch4);opacity:.4;letter-spacing:.1em;}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a class="nav-back" href="../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">News Curation</span>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-ornament">◆ NEWS CURATION ◆</div>
+  <h1 class="hero-title">今日の注目記事</h1>
+  <div class="hero-sub">LONG-TERM INVESTOR'S DAILY LOG</div>
+  <p class="hero-lead">日経新聞から気になった記事をピックアップ。<br>moat・FCF・資本配分の視点で読み解く、投資思考の日記。</p>
+</div>
+
+<!-- Main -->
+<div class="container">
+
+  <!-- Concept -->
+  <div class="concept-box">
+    <div class="concept-label">ABOUT THIS PAGE</div>
+    <p class="concept-text">
+      毎日の経済ニュースを「長期投資家の目」で読み直すためのページ。
+      話題の記事を選んで、モート・FCF・経営の質という軸で投資的視点のコメントを加えています。
+      ニュースに振り回されるのではなく、ニュースを自分の投資哲学を鍛えるための素材として使うために。
+    </p>
+  </div>
+
+  <!-- Archive 2026 -->
+  <div class="archive-year">2026年</div>
+  <div class="archive-list">
+
+    <!-- 2026-03-25 -->
+    <a class="archive-item" href="2026-03-25/">
+      <div class="archive-date-col">
+        <span>2026</span>
+        <span class="archive-date-num">03.25</span>
+        <span>水曜日</span>
+      </div>
+      <div class="archive-content-col">
+        <div class="archive-title">BOJ利上げ観測・商社自社株買い・ラピダス量産前倒し・東証PBR改革・円148円台</div>
+        <div class="archive-desc">5本ピックアップ。金利上昇局面でFCFと資本効率が問われる相場へ。</div>
+        <div class="archive-tags">
+          <span class="archive-tag">BOJ</span>
+          <span class="archive-tag">商社株</span>
+          <span class="archive-tag">半導体</span>
+          <span class="archive-tag">株主還元</span>
+          <span class="archive-tag">円相場</span>
+        </div>
+      </div>
+      <div class="archive-arrow">→</div>
+    </a>
+
+  </div>
+
+  <!-- Coming soon placeholder -->
+  <div class="coming-soon">
+    <div class="coming-label">UPCOMING</div>
+    <p class="coming-text">次回の更新をお待ちください。</p>
+  </div>
+
+</div><!-- /container -->
+
+<!-- Footer -->
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="../">Library Top</a>
+    <a href="../companies/">企業分析</a>
+    <a href="../moat/">Moat</a>
+    <a href="../fcf/">FCF</a>
+    <a href="../principles/">投資原則</a>
+  </nav>
+  <div class="footer-copy">© 2026 投資と思考の書斎 — All Rights Reserved</div>
+</footer>
+
+</body>
+</html>
