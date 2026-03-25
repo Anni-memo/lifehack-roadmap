@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="投資哲学｜長期投資と思考のライブラリ"/>
+<meta property="og:description" content="バフェット・マンガー・フィッシャーの哲学をベースに、長期投資家としての判断基準を整理する。"/>
+<title>投資哲学｜長期投資と思考のライブラリ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 40%,#3a2510 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.12) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:.9rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:14px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.85;position:relative;}
+.container{max-width:780px;margin:0 auto;padding:52px 24px 0;}
+.section{margin-bottom:60px;}
+.sec-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.2em;margin-bottom:10px;opacity:.75;}
+.sec-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--parch4);}
+.body-text{font-size:.88rem;color:var(--ink2);line-height:2.2;font-weight:300;}
+.body-text p{margin-bottom:1.3em;}.body-text p:last-child{margin-bottom:0;}
+.body-text strong{font-weight:600;color:var(--ink);}
+
+/* ── Quote block ── */
+.quote-block{background:linear-gradient(135deg,var(--ink),var(--ink2));border-left:4px solid var(--gold2);padding:24px 26px;margin:28px 0;position:relative;overflow:hidden;}
+.quote-block::before{content:'\201C';position:absolute;top:-10px;left:14px;font-family:var(--serif);font-size:6rem;color:var(--gold3);opacity:.12;line-height:1;}
+.quote-text{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);font-style:italic;color:var(--parch);line-height:1.9;position:relative;}
+.quote-author{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.15em;margin-top:12px;opacity:.8;}
+
+/* ── Principle cards ── */
+.principle-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}
+@media(min-width:600px){.principle-grid{grid-template-columns:1fr 1fr;}}
+.principle-card{background:var(--parch2);border:1px solid var(--parch4);border-left:3px solid var(--gold);padding:20px 18px;}
+.principle-num{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.2em;margin-bottom:6px;}
+.principle-title{font-family:var(--serif);font-size:.98rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.principle-desc{font-size:.78rem;color:var(--ink2);line-height:1.85;font-weight:300;}
+
+/* ── Thinker section ── */
+.thinker-row{display:grid;grid-template-columns:1fr;gap:16px;margin-top:4px;}
+@media(min-width:600px){.thinker-row{grid-template-columns:repeat(3,1fr);}}
+.thinker-card{background:var(--parch2);border:1px solid var(--parch4);padding:22px 18px;}
+.thinker-name{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.thinker-sub{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.1em;margin-bottom:12px;opacity:.8;}
+.thinker-points{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.thinker-points li{font-size:.76rem;color:var(--ink2);line-height:1.7;padding-left:14px;position:relative;}
+.thinker-points li::before{content:'✦';position:absolute;left:0;color:var(--gold3);font-size:.5rem;top:3px;}
+
+/* ── Footer ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:32px 24px;margin-top:80px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.54rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.7;transition:opacity .2s;}.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.4;letter-spacing:.1em;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">初めての方へ</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">投資哲学</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">◆ INVESTMENT PHILOSOPHY ◆</div>
+  <h1 class="hero-title">投資哲学</h1>
+  <p class="hero-sub">バフェット・マンガー・フィッシャー——三者の知恵から<br>自分自身の判断基準を育てる。</p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="sec-label">PHILOSOPHY — 01</div>
+    <h2 class="sec-title">なぜ「哲学」が投資で重要なのか</h2>
+    <div class="body-text">
+      <p>投資において最も難しいのは、「何を買うか」ではなく「どう考えるか」だ。相場が崩れたとき、周囲が売り急ぐとき、自分の判断を静かに保てるか。その土台になるのが投資哲学だ。</p>
+      <p>哲学を持つ投資家は、市場のノイズに振り回されにくい。「なぜその企業を保有しているか」を語れる人は、株価が30%下落しても冷静でいられる。語れない人は、最初の下落で手放してしまう。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「私はいつも逆から考える。どうすれば失敗するかを先に考え、それを避けるだけでかなりのことが達成できる。」</div>
+      <div class="quote-author">— Charlie Munger</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">PHILOSOPHY — 02</div>
+    <h2 class="sec-title">長期投資家が持つべき8つの原則</h2>
+    <div class="principle-grid">
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 01</div>
+        <div class="principle-title">moat（経済的な堀）を持つ企業だけ買う</div>
+        <div class="principle-desc">競合が10億ドルを投じても崩せない競争優位性。ブランド・ネットワーク効果・スイッチングコスト・コスト優位・規制の壁——この5つのいずれかを持つ企業だけを対象にする。</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 02</div>
+        <div class="principle-title">FCFで本質的価値を測る</div>
+        <div class="principle-desc">会計上の利益は操作できる。FCF（フリーキャッシュフロー）は現金の実態を映す。毎年安定してFCFを生み出し、それが成長している企業が理想だ。</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 03</div>
+        <div class="principle-title">資本配分の質で経営者を評価する</div>
+        <div class="principle-desc">稼いだFCFをどう使うか——再投資・配当・自社株買い・M&A。この判断が長期リターンを決める。ROEの高さではなく、ROEを維持しながら規模を拡大できるかを見る。</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 04</div>
+        <div class="principle-title">理解できる企業だけ保有する</div>
+        <div class="principle-desc">マンガーの「能力の輪（Circle of Competence）」。自分が説明できない企業には投資しない。シンプルなビジネスモデルほど、長期的な予測がしやすい。</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 05</div>
+        <div class="principle-title">安全マージンを要求する</div>
+        <div class="principle-desc">グレアムが提唱した「安全マージン（Margin of Safety）」。どんなに良い企業でも高すぎる価格で買えば損をする。本質的価値より十分に低い価格でのみ買う。</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 06</div>
+        <div class="principle-title">分散より集中——わかる企業に絞る</div>
+        <div class="principle-desc">バフェットの言葉「分散はリスクヘッジではなく、無知のヘッジだ」。理解できる企業が5〜10社ある人は、その企業に集中すべきだ。</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 07</div>
+        <div class="principle-title">下落相場こそ買い場と心得る</div>
+        <div class="principle-desc">「他人が貪欲なとき恐れ、他人が恐れているとき貪欲になれ」（バフェット）。市場が悲観的なときにこそ、優良企業が安く手に入る機会が生まれる。</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">PRINCIPLE 08</div>
+        <div class="principle-title">保有期間は「永遠」を前提にする</div>
+        <div class="principle-desc">「お気に入りの保有期間は永遠だ」（バフェット）。売却を考えるのは、企業のmoatが崩れたとき・より良い投資先が見つかったとき・資金が必要なとき、この3つだけ。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">PHILOSOPHY — 03</div>
+    <h2 class="sec-title">三大思想家から学ぶ</h2>
+    <div class="thinker-row">
+      <div class="thinker-card">
+        <div class="thinker-name">Warren Buffett</div>
+        <div class="thinker-sub">1930— · バークシャー会長</div>
+        <ul class="thinker-points">
+          <li>経済的な堀（moat）の概念</li>
+          <li>素晴らしい企業を公正な価格で</li>
+          <li>保有期間は永遠</li>
+          <li>FCF・資本配分の重視</li>
+          <li>経営者の誠実さを最優先</li>
+        </ul>
+      </div>
+      <div class="thinker-card">
+        <div class="thinker-name">Charlie Munger</div>
+        <div class="thinker-sub">1924–2023 · バークシャー副会長</div>
+        <ul class="thinker-points">
+          <li>多面的思考（Mental Models）</li>
+          <li>逆から考える（Inversion）</li>
+          <li>能力の輪を守る</li>
+          <li>心理バイアスを認識する</li>
+          <li>失敗のパターンを学ぶ</li>
+        </ul>
+      </div>
+      <div class="thinker-card">
+        <div class="thinker-name">Philip Fisher</div>
+        <div class="thinker-sub">1907–2004 · 成長株投資の父</div>
+        <ul class="thinker-points">
+          <li>Scuttlebutt（口コミ調査）手法</li>
+          <li>経営者の質を徹底的に見る</li>
+          <li>研究開発・人材への投資</li>
+          <li>15の投資原則</li>
+          <li>売るべきでないときを知る</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">PHILOSOPHY — 04</div>
+    <h2 class="sec-title">投資哲学を育てる読書リスト</h2>
+    <div class="body-text">
+      <p>哲学は1冊の本で身につくものではない。繰り返し読み、実際の企業分析に応用し、失敗から学ぶことで少しずつ深まっていく。</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:3px;margin-top:16px;">
+      <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);">
+        <span style="font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.1em;width:24px;flex-shrink:0;">01</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:3px;">賢明なる投資家（The Intelligent Investor）</div>
+          <div style="font-size:.72rem;color:var(--ink3);">Benjamin Graham著 · 安全マージン・ミスター・マーケットの概念</div>
+        </div>
+        <span style="font-family:var(--mono);font-size:.44rem;color:var(--gold3);border:1px solid rgba(184,144,10,.3);padding:2px 7px;">必読</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);">
+        <span style="font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.1em;width:24px;flex-shrink:0;">02</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Poor Charlie's Almanack</div>
+          <div style="font-size:.72rem;color:var(--ink3);">Charlie Munger著 · 多面的思考・心理バイアス・逆張り</div>
+        </div>
+        <span style="font-family:var(--mono);font-size:.44rem;color:var(--gold3);border:1px solid rgba(184,144,10,.3);padding:2px 7px;">必読</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);">
+        <span style="font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.1em;width:24px;flex-shrink:0;">03</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:3px;">Common Stocks and Uncommon Profits</div>
+          <div style="font-size:.72rem;color:var(--ink3);">Philip Fisher著 · 定性分析・15の投資原則・Scuttlebutt</div>
+        </div>
+        <span style="font-family:var(--mono);font-size:.44rem;color:var(--gold3);border:1px solid rgba(184,144,10,.3);padding:2px 7px;">必読</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);">
+        <span style="font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.1em;width:24px;flex-shrink:0;">04</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:3px;">バフェットの財務諸表を読む力</div>
+          <div style="font-size:.72rem;color:var(--ink3);">Mary Buffett / David Clark著 · 消費者独占・財務分析の実践</div>
+        </div>
+        <span style="font-family:var(--mono);font-size:.44rem;color:var(--gold3);border:1px solid rgba(184,144,10,.3);padding:2px 7px;">財務分析</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">初めての方へ</a>
+    <a href="../financial/">財務分析</a>
+    <a href="../../principles/">投資原則</a>
+    <a href="../../moat/">Moat</a>
+  </nav>
+  <div class="footer-copy">© 2026 投資と思考の書斎</div>
+</footer>
+</body>
+</html>

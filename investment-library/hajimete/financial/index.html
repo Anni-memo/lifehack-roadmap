@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="財務分析｜バフェットの財務諸表を読む力"/>
+<meta property="og:description" content="消費者独占型企業を財務諸表で見抜く。損益計算書・貸借対照表・キャッシュフロー計算書の読み方をバフェット流で解説。"/>
+<title>財務分析｜バフェットの財務諸表を読む力</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 40%,#3a2510 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.12) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:.9rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:14px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.9;position:relative;}
+.hero-src{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.14em;margin-top:14px;opacity:.6;position:relative;}
+.container{max-width:800px;margin:0 auto;padding:52px 24px 0;}
+.section{margin-bottom:64px;}
+.sec-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.2em;margin-bottom:10px;opacity:.75;}
+.sec-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--parch4);}
+.body-text{font-size:.88rem;color:var(--ink2);line-height:2.2;font-weight:300;}
+.body-text p{margin-bottom:1.3em;}.body-text p:last-child{margin-bottom:0;}
+.body-text strong{font-weight:600;color:var(--ink);}
+
+/* ── Two-type comparison ── */
+.type-compare{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:20px 0;}
+@media(max-width:580px){.type-compare{grid-template-columns:1fr;}}
+.type-card{padding:22px 18px;}
+.type-card.good{background:linear-gradient(135deg,rgba(42,74,26,.08),rgba(42,74,26,.04));border:1px solid rgba(90,138,58,.3);border-top:3px solid var(--green3);}
+.type-card.bad{background:var(--parch2);border:1px solid var(--parch4);border-top:3px solid rgba(139,58,26,.4);}
+.type-label{font-family:var(--mono);font-size:.46rem;letter-spacing:.12em;margin-bottom:8px;}
+.type-card.good .type-label{color:var(--green3);}
+.type-card.bad .type-label{color:rgba(139,58,26,.7);}
+.type-name{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.type-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.type-list li{font-size:.75rem;color:var(--ink2);line-height:1.65;padding-left:14px;position:relative;}
+.type-list li::before{position:absolute;left:0;font-size:.55rem;top:2px;}
+.type-card.good .type-list li::before{content:'✓';color:var(--green3);}
+.type-card.bad .type-list li::before{content:'✗';color:rgba(139,58,26,.6);}
+
+/* ── Metric row ── */
+.metric-section{margin-top:24px;}
+.metric-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:3px;padding:14px 18px 0;background:var(--parch2);border:1px solid var(--parch4);border-bottom:none;}
+.metric-grid{display:grid;grid-template-columns:1fr;gap:0;}
+.metric-item{display:flex;gap:0;border:1px solid var(--parch4);border-top:none;background:var(--parch2);}
+.metric-item:nth-child(even){background:var(--parch3);}
+.metric-key{font-family:var(--mono);font-size:.56rem;color:var(--ink);padding:14px 16px;width:160px;flex-shrink:0;border-right:1px solid var(--parch4);display:flex;align-items:center;}
+.metric-val{font-family:var(--mono);font-size:.52rem;color:var(--green3);padding:14px 16px;width:100px;flex-shrink:0;border-right:1px solid var(--parch4);display:flex;align-items:center;}
+.metric-desc{font-size:.76rem;color:var(--ink2);padding:14px 16px;flex:1;line-height:1.75;display:flex;align-items:center;}
+
+/* ── Statement section ── */
+.stmt-block{margin-top:28px;}
+.stmt-header{background:linear-gradient(135deg,var(--ink),var(--ink2));color:var(--parch);padding:14px 20px;display:flex;align-items:center;gap:12px;}
+.stmt-icon{font-size:1.2rem;}
+.stmt-name{font-family:var(--serif);font-size:1rem;font-weight:700;}
+.stmt-body{background:var(--parch2);border:1px solid var(--parch4);border-top:none;padding:20px 20px;}
+.stmt-points{display:flex;flex-direction:column;gap:10px;}
+.stmt-point{display:flex;gap:12px;align-items:flex-start;}
+.stmt-point-key{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.08em;width:120px;flex-shrink:0;padding-top:2px;}
+.stmt-point-text{font-size:.8rem;color:var(--ink2);line-height:1.8;flex:1;}
+.stmt-point-text strong{color:var(--ink);font-weight:600;}
+.stmt-point-val{font-family:var(--mono);font-size:.5rem;color:var(--green3);border:1px solid rgba(90,138,58,.3);padding:2px 8px;flex-shrink:0;white-space:nowrap;height:fit-content;}
+
+/* ── Checklist ── */
+.checklist{display:flex;flex-direction:column;gap:3px;margin-top:16px;}
+.check-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);}
+.check-box{width:18px;height:18px;border:1px solid var(--gold);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--gold);}
+.check-text{font-size:.82rem;color:var(--ink2);line-height:1.75;}
+.check-text strong{color:var(--ink);font-weight:600;}
+
+/* ── Footer ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:32px 24px;margin-top:80px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.54rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.7;transition:opacity .2s;}.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.4;letter-spacing:.1em;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">初めての方へ</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">財務分析</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">◆ FINANCIAL ANALYSIS ◆</div>
+  <h1 class="hero-title">財務分析</h1>
+  <p class="hero-sub">損益計算書・貸借対照表・キャッシュフロー計算書——<br>バフェット流で「消費者独占型企業」を見抜く。</p>
+  <div class="hero-src">参考文献：バフェットの財務諸表を読む力（Mary Buffett / David Clark著）</div>
+</div>
+
+<div class="container">
+
+  <!-- Section 1: 2タイプの企業 -->
+  <div class="section">
+    <div class="sec-label">FINANCIAL ANALYSIS — 01</div>
+    <h2 class="sec-title">バフェットが探す企業、避ける企業</h2>
+    <div class="body-text">
+      <p>バフェットは財務諸表を見るとき、まず企業を2種類に分類する。<strong>「消費者独占型」</strong>と<strong>「コモディティ型」</strong>だ。この違いを理解することが、財務分析の出発点になる。</p>
+    </div>
+    <div class="type-compare">
+      <div class="type-card good">
+        <div class="type-label">BUFFETT LOVES — バフェットが買う</div>
+        <div class="type-name">消費者独占型企業</div>
+        <ul class="type-list">
+          <li>高い粗利益率（40%以上）が続く</li>
+          <li>広告や営業に多くを使わなくて良い</li>
+          <li>設備投資が少なくてすむ</li>
+          <li>長期負債が少ない、または不要</li>
+          <li>継続的に自社株買いや配当ができる</li>
+          <li>ROEが安定して高い（15%以上）</li>
+          <li>例：コカコーラ・キーエンス・信越化学</li>
+        </ul>
+      </div>
+      <div class="type-card bad">
+        <div class="type-label">BUFFETT AVOIDS — バフェットが避ける</div>
+        <div class="type-name">コモディティ型企業</div>
+        <ul class="type-list">
+          <li>価格競争に巻き込まれる</li>
+          <li>粗利益率が低く（10〜20%）不安定</li>
+          <li>大規模な設備投資が継続的に必要</li>
+          <li>長期負債が多く財務が重い</li>
+          <li>株主還元より設備に資金が消える</li>
+          <li>ROEが低く・不安定</li>
+          <li>例：鉄鋼・航空・汎用品メーカー</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: 損益計算書 -->
+  <div class="section">
+    <div class="sec-label">FINANCIAL ANALYSIS — 02</div>
+    <h2 class="sec-title">損益計算書（P&L）の読み方</h2>
+    <div class="body-text">
+      <p>損益計算書で最初に見るのは<strong>粗利益率</strong>だ。売上から売上原価だけを引いた粗利益の比率が、企業の競争優位性を端的に示す。</p>
+    </div>
+    <div class="stmt-block">
+      <div class="stmt-header">
+        <span class="stmt-icon">📋</span>
+        <span class="stmt-name">損益計算書（P&L）— バフェットが見るポイント</span>
+      </div>
+      <div class="stmt-body">
+        <div class="stmt-points">
+          <div class="stmt-point">
+            <div class="stmt-point-key">粗利益率</div>
+            <div class="stmt-point-text"><strong>40%以上が理想。</strong>消費者独占型企業は競合に価格を下げさせられないため、粗利益率が高く安定している。20%を割る場合は競争優位性が疑わしい。</div>
+            <div class="stmt-point-val">目安 ≥ 40%</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">販管費比率</div>
+            <div class="stmt-point-text">粗利益に対する販管費の比率。<strong>30%以下が望ましい。</strong>広告・営業に大量のコストをかけなければ売れない企業は、moatが弱い証拠。</div>
+            <div class="stmt-point-val">目安 ≤ 30%</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">研究開発費</div>
+            <div class="stmt-point-text">R&Dに依存しすぎる企業は将来の利益が不確実。バフェットは<strong>R&Dが少なくても競争優位を維持できる企業</strong>を好む（コカコーラ等）。ただし製薬・半導体は例外。</div>
+            <div class="stmt-point-val">依存度に注意</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">純利益率</div>
+            <div class="stmt-point-text">売上に対する純利益の比率。<strong>20%以上が優秀。</strong>長期にわたって高い純利益率を維持できる企業は、価格支配力を持っている。</div>
+            <div class="stmt-point-val">目安 ≥ 20%</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">減価償却費</div>
+            <div class="stmt-point-text">設備集約型企業ほど減価償却費が大きく、キャッシュフローと利益の乖離が大きくなる。<strong>設備投資が少ない企業ほどFCFが利益に近い。</strong></div>
+            <div class="stmt-point-val">少ないほど良い</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: 貸借対照表 -->
+  <div class="section">
+    <div class="sec-label">FINANCIAL ANALYSIS — 03</div>
+    <h2 class="sec-title">貸借対照表（B/S）の読み方</h2>
+    <div class="body-text">
+      <p>貸借対照表では、<strong>企業がどれだけ借金をせずに事業を運営できているか</strong>を見る。消費者独占型企業は自己資本が厚く、長期負債が少ない。</p>
+    </div>
+    <div class="stmt-block">
+      <div class="stmt-header">
+        <span class="stmt-icon">🏦</span>
+        <span class="stmt-name">貸借対照表（B/S）— バフェットが見るポイント</span>
+      </div>
+      <div class="stmt-body">
+        <div class="stmt-points">
+          <div class="stmt-point">
+            <div class="stmt-point-key">現金・現金同等物</div>
+            <div class="stmt-point-text"><strong>純キャッシュポジション（現金 − 負債）が大きいほど良い。</strong>不況時でも自力で乗り切れる財務的安全性を示す。バフェットはバークシャーで常に大量の現金を保有する。</div>
+            <div class="stmt-point-val">多いほど良い</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">長期負債</div>
+            <div class="stmt-point-text">消費者独占型企業は長期負債がほとんどない。<strong>年間純利益の3〜4倍以内に収まっているか確認する。</strong>それを超える負債は財務リスクのサイン。</div>
+            <div class="stmt-point-val">純利益×3以内</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">自己資本比率</div>
+            <div class="stmt-point-text">総資産に占める自己資本の比率。<strong>40〜60%以上が健全。</strong>ただし金融・不動産は業種特性上低くなる傾向があるため、同業比較が重要。</div>
+            <div class="stmt-point-val">目安 ≥ 40%</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">ROE（自己資本利益率）</div>
+            <div class="stmt-point-text">自己資本に対して何%の利益を生み出しているか。<strong>15%以上が継続していれば優秀。</strong>高ROEを借金なしで達成しているかが重要で、過度な借入でROEを嵩上げしている場合は注意。</div>
+            <div class="stmt-point-val">目安 ≥ 15%</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">のれん・無形資産</div>
+            <div class="stmt-point-text">M&Aを繰り返す企業はのれんが積み上がる。<strong>のれんが総資産の過半を占める場合は買収依存型の成長</strong>を疑う。ブランド・特許等の無形資産が競争優位の源泉になっている場合は別途評価する。</div>
+            <div class="stmt-point-val">比率に注意</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: CF計算書 -->
+  <div class="section">
+    <div class="sec-label">FINANCIAL ANALYSIS — 04</div>
+    <h2 class="sec-title">キャッシュフロー計算書の読み方</h2>
+    <div class="body-text">
+      <p>バフェットがもっとも重視する財務指標のひとつがFCF（フリーキャッシュフロー）だ。<strong>「稼いだ現金から設備投資を引いて残る現金」</strong>であり、配当・自社株買い・M&Aの原資になる。</p>
+    </div>
+    <div class="stmt-block">
+      <div class="stmt-header">
+        <span class="stmt-icon">💰</span>
+        <span class="stmt-name">キャッシュフロー計算書 — バフェットが見るポイント</span>
+      </div>
+      <div class="stmt-body">
+        <div class="stmt-points">
+          <div class="stmt-point">
+            <div class="stmt-point-key">営業CF</div>
+            <div class="stmt-point-text"><strong>毎年プラスであることが大前提。</strong>純利益より大きい場合は会計上の利益が実態を正確に反映している証拠。逆に純利益 > 営業CFが続く場合は要注意。</div>
+            <div class="stmt-point-val">毎年プラス必須</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">設備投資（CAPEX）</div>
+            <div class="stmt-point-text">消費者独占型企業は設備投資が少なくてすむ。<strong>営業CFに対するCAPEXの比率（25%以下が理想）</strong>を見る。設備投資が多い企業はFCFが圧迫される。</div>
+            <div class="stmt-point-val">営業CFの25%以下</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">FCF（フリーCF）</div>
+            <div class="stmt-point-text">営業CF − 設備投資 = FCF。<strong>FCFが毎年安定して成長しているかが最重要。</strong>FCFが増えることで配当増加・自社株買いが可能になり、株主価値が高まる。</div>
+            <div class="stmt-point-val">増加トレンドが理想</div>
+          </div>
+          <div class="stmt-point">
+            <div class="stmt-point-key">自社株買い</div>
+            <div class="stmt-point-text">FCFの使途として自社株買いを継続する企業は、<strong>株主価値の向上に真剣な経営者</strong>であることを示す。長期にわたって自社株を買い続ける企業はバフェットが高く評価する。</div>
+            <div class="stmt-point-val">継続性を確認</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: チェックリスト -->
+  <div class="section">
+    <div class="sec-label">FINANCIAL ANALYSIS — 05</div>
+    <h2 class="sec-title">消費者独占型企業チェックリスト</h2>
+    <div class="body-text">
+      <p>以下の項目を10年分の財務データで確認する。すべてに✓がつく企業は、バフェットが喜んで長期保有する「消費者独占型」である可能性が高い。</p>
+    </div>
+    <div class="checklist">
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>粗利益率が40%以上で安定している</strong>（10年間のトレンドを確認）</div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>販管費が粗利益の30%以下</strong>（広告費に頼りすぎていない）</div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>純利益率が20%以上</strong>（業種平均と比較する）</div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>ROEが15%以上で安定</strong>（借入に依存せずに達成）</div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>長期負債が年間純利益の3〜4倍以内</strong></div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>設備投資がCAPEX / 営業CFで25%以下</strong></div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>FCFが毎年プラスで成長トレンドにある</strong></div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>自社株買いまたは増配を継続している</strong></div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>営業CFが純利益を上回る年が多い</strong></div></div>
+      <div class="check-item"><div class="check-box">✦</div><div class="check-text"><strong>10年後も同じビジネスで稼いでいると確信できる</strong></div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">初めての方へ</a>
+    <a href="../../fcf/">FCFとは何か</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../philosophy/">投資哲学</a>
+  </nav>
+  <div class="footer-copy">© 2026 投資と思考の書斎　参考：バフェットの財務諸表を読む力（Mary Buffett / David Clark著）</div>
+</footer>
+</body>
+</html>
