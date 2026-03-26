@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="TSMCエコシステムのmoat解剖｜論考の棚"/>
+<meta property="og:description" content="ASML・KLA・TELから信越化学・アドバンテストまで、先端半導体を支える9社の競争優位を強さ順に解剖する。長期投資家の視点で読む半導体サプライチェーンのmoat地図。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>TSMCエコシステムのmoat解剖｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --rust:#8b3a1a;--rust2:#c05020;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;
+  --blue:#1a2a4a;--blue2:#2a3d6a;--blue3:#3a5a8a;
+  --semi:#1a3a5a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(165deg,#04090e 0%,#080f18 30%,#0c1520 60%,#081018 100%);
+  color:var(--parch);padding:64px 24px 52px;
+  position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(42,90,138,.6);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 45% at 50% 0%,rgba(42,90,138,.12) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 10% 100%,rgba(26,58,90,.08) 0%,transparent 50%);
+}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(58,90,138,.6),transparent);}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(122,160,200,.55);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(100,150,200,.7);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{
+  font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.8rem);
+  font-weight:700;color:var(--parch);line-height:1.15;
+  margin-bottom:14px;
+}
+.hero-subtitle{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(.82rem,2vw,.96rem);
+  color:rgba(200,210,225,.7);line-height:1.9;margin-bottom:28px;
+}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(122,160,200,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(58,90,138,.45);color:rgba(122,160,200,.8);letter-spacing:.08em;}
+.hero-tag.green{border-color:rgba(61,104,40,.45);color:rgba(90,138,58,.9);}
+
+/* ── SUMMARY BOX ── */
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:780px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--gold2);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+
+/* ── RANKING TABLE (overview) ── */
+.rank-table-wrap{background:var(--parch2);border-bottom:2px solid var(--parch4);padding:0 24px;}
+.rank-table-inner{max-width:780px;margin:0 auto;padding:32px 0;}
+.rank-table-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.rank-table{width:100%;border-collapse:collapse;}
+.rank-table th{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.12em;padding:8px 12px;border-bottom:2px solid var(--parch4);text-align:left;background:var(--parch3);}
+.rank-table td{padding:10px 12px;border-bottom:1px solid var(--parch3);font-size:.78rem;color:var(--ink2);vertical-align:middle;}
+.rank-table tr:hover td{background:var(--parch3);}
+.rank-table .rank-num{font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--ink);text-align:center;width:36px;}
+.rank-table .rank-num.gold{color:var(--gold2);}
+.rank-table .rank-company{font-family:var(--serif);font-weight:700;font-size:.92rem;color:var(--ink);}
+.rank-table .rank-country{font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.06em;}
+.rank-table .rank-role{font-size:.72rem;color:var(--ink3);}
+.moat-bar{display:flex;align-items:center;gap:6px;}
+.moat-dots{display:flex;gap:3px;}
+.moat-dot{width:8px;height:8px;border-radius:50%;background:var(--parch4);}
+.moat-dot.filled{background:var(--gold2);}
+.moat-dot.filled.high{background:#2a6a8a;}
+.moat-score{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.04em;}
+
+/* ── ARTICLE BODY ── */
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:780px;margin:0 auto;padding:56px 0 80px;}
+
+/* ── RANK CARD ── */
+.rank-card{
+  margin-bottom:56px;
+  border-left:3px solid var(--parch4);
+  padding-left:0;
+}
+.rank-card.rank-1{border-left-color:#2a6a8a;}
+.rank-card.rank-2{border-left-color:#3a6a9a;}
+.rank-card.rank-3{border-left-color:#4a7a6a;}
+.rank-card.rank-4{border-left-color:var(--green2);}
+.rank-card.rank-5{border-left-color:var(--gold);}
+.rank-card.rank-6{border-left-color:var(--gold2);}
+.rank-card.rank-7{border-left-color:var(--gold3);}
+.rank-card.rank-8{border-left-color:var(--ink3);}
+.rank-card.rank-9{border-left-color:var(--ink3);}
+
+.rank-card-header{
+  display:flex;align-items:flex-start;gap:16px;
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-left:none;padding:22px 24px;margin-bottom:0;
+  position:relative;
+}
+.rank-badge{
+  font-family:var(--mono);font-size:1.15rem;font-weight:700;
+  min-width:44px;text-align:center;flex-shrink:0;
+  padding-top:2px;
+}
+.rank-1 .rank-badge{color:#2a6a8a;}
+.rank-2 .rank-badge{color:#3a6a9a;}
+.rank-3 .rank-badge{color:#4a7a6a;}
+.rank-4 .rank-badge{color:var(--green2);}
+.rank-5 .rank-badge{color:var(--gold);}
+.rank-6 .rank-badge{color:var(--gold2);}
+.rank-7 .rank-badge{color:var(--gold3);}
+.rank-8 .rank-badge{color:var(--ink3);}
+.rank-9 .rank-badge{color:var(--ink3);}
+
+.rank-head-body{flex:1;}
+.rank-company-name{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.rank-company-sub{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.08em;margin-bottom:8px;}
+.rank-moat-line{display:flex;align-items:center;gap:10px;}
+.rank-moat-label{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.14em;opacity:.7;}
+.rank-moat-dots{display:flex;gap:4px;}
+.rank-moat-dot{width:10px;height:10px;border-radius:50%;background:var(--parch4);border:1px solid var(--parch3);}
+.rank-moat-dot.on{background:var(--gold2);border-color:var(--gold);}
+.rank-1 .rank-moat-dot.on,.rank-2 .rank-moat-dot.on{background:#2a6a8a;border-color:#1a4a6a;}
+.rank-3 .rank-moat-dot.on{background:#4a7a6a;border-color:#3a6a5a;}
+.rank-4 .rank-moat-dot.on{background:var(--green2);border-color:var(--green);}
+
+.rank-card-body{
+  background:var(--parch);border:1px solid var(--parch4);border-top:none;border-left:none;
+  padding:24px 24px 24px 84px;
+}
+.rank-headline{
+  font-family:var(--serif);font-size:1.0rem;font-weight:600;color:var(--ink);
+  margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--parch4);
+  font-style:italic;
+}
+.rank-text{font-size:.83rem;color:var(--ink2);line-height:2.05;font-weight:300;}
+.rank-text strong{color:var(--ink);font-weight:600;}
+.rank-text em{color:var(--gold2);font-style:normal;font-weight:600;}
+
+.rank-key-points{
+  margin-top:18px;display:flex;flex-direction:column;gap:6px;
+}
+.key-point{
+  display:flex;align-items:flex-start;gap:10px;
+  background:var(--parch2);border-left:2px solid var(--parch4);
+  padding:8px 12px;font-size:.75rem;color:var(--ink3);line-height:1.7;
+}
+.rank-1 .key-point{border-left-color:#2a6a8a;}
+.rank-2 .key-point{border-left-color:#3a6a9a;}
+.rank-3 .key-point{border-left-color:#4a7a6a;}
+.rank-4 .key-point{border-left-color:var(--green2);}
+.rank-5 .key-point{border-left-color:var(--gold);}
+.rank-6 .key-point,.rank-7 .key-point{border-left-color:var(--gold2);}
+.key-point-icon{flex-shrink:0;font-size:.8rem;margin-top:1px;}
+.key-point strong{color:var(--ink);font-weight:600;}
+
+/* ── DIVIDER ── */
+.article-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:0 0 48px;
+  font-family:var(--mono);font-size:.44rem;color:var(--ink3);
+  letter-spacing:.2em;opacity:.4;
+}
+.article-divider::before,.article-divider::after{content:'';flex:1;height:1px;background:var(--parch4);}
+
+/* ── CLOSING NOTE ── */
+.closing-note{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  border:1px solid rgba(184,144,10,.2);
+  padding:28px 28px;margin-top:0;
+}
+.closing-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:14px;opacity:.75;}
+.closing-text{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:2.1;font-weight:300;}
+.closing-text strong{color:var(--parch);font-weight:500;}
+
+/* ── BACK LINK ── */
+.back-link-wrap{margin-top:48px;text-align:center;}
+.back-link{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border:1px solid rgba(184,144,10,.35);
+  font-family:var(--mono);font-size:.56rem;color:var(--gold3);
+  text-decoration:none;letter-spacing:.1em;transition:all .2s;
+}
+.back-link:hover{background:rgba(184,144,10,.08);border-color:var(--gold2);}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}
+.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">TSMCエコシステムのmoat解剖</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">THE RESEARCH SHELF · ESSAY 01</div>
+    <div class="hero-label">SEMICONDUCTOR ECOSYSTEM · MOAT ANALYSIS</div>
+    <h1 class="hero-title">TSMCエコシステムのmoat解剖</h1>
+    <p class="hero-subtitle">
+      ASML・KLA・TELから信越化学・アドバンテストまで——<br>
+      先端半導体を支える9社の競争優位を強さ順に読む
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.26</span>
+      <span class="hero-tag">半導体</span>
+      <span class="hero-tag green">moat分析</span>
+      <span class="hero-tag">エコシステム</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── SUMMARY ── -->
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">PREMISE — この記事の前提</div>
+    <p class="summary-text">
+      TSMCは世界最先端の半導体ファウンドリとして、その製造プロセスを成立させるために
+      多くの装置・材料・検査企業に依存している。<br><br>
+      本稿では、TSMCの設備投資から最も直接的な恩恵を受け、かつ<strong>長期的な競争優位（moat）が強い企業</strong>を
+      強さ順にランキングする。「誰に代替されにくいか」「導入後のロックインはあるか」を軸に判断する。
+    </p>
+  </div>
+</div>
+
+<!-- ── RANKING TABLE ── -->
+<div class="rank-table-wrap">
+  <div class="rank-table-inner">
+    <div class="rank-table-label">RANKING OVERVIEW</div>
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th style="width:40px;text-align:center;">順位</th>
+          <th>企業</th>
+          <th>主な役割</th>
+          <th style="width:120px;">moat強度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank-num gold">1</td>
+          <td><div class="rank-company">ASML</div><div class="rank-country">NL · 露光装置</div></td>
+          <td class="rank-role">EUV露光・事実上の独占</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">2</td>
+          <td><div class="rank-company">KLA</div><div class="rank-country">US · 検査・計測</div></td>
+          <td class="rank-role">歩留まり管理・工程制御</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">3</td>
+          <td><div class="rank-company">東京エレクトロン</div><div class="rank-country">JP · 前工程装置</div></td>
+          <td class="rank-role">複数工程・installed base</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">4</td>
+          <td><div class="rank-company">信越化学</div><div class="rank-country">JP · 材料</div></td>
+          <td class="rank-role">シリコンウェハー・材料プラットフォーム</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">5</td>
+          <td><div class="rank-company">Applied Materials</div><div class="rank-country">US · 総合装置</div></td>
+          <td class="rank-role">成膜・エッチング・工程横断</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">6</td>
+          <td><div class="rank-company">SUMCO</div><div class="rank-country">JP · ウェハー</div></td>
+          <td class="rank-role">シリコンウェハー・品質認定</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">7</td>
+          <td><div class="rank-company">SCREEN</div><div class="rank-country">JP · 洗浄装置</div></td>
+          <td class="rank-role">洗浄工程ニッチ強者</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">8</td>
+          <td><div class="rank-company">JSR / 東京応化工業</div><div class="rank-country">JP · フォトレジスト</div></td>
+          <td class="rank-role">フォトレジスト・材料認定</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">9</td>
+          <td><div class="rank-company">アドバンテスト</div><div class="rank-country">JP · テスト装置</div></td>
+          <td class="rank-role">半導体テスター・AI/HPC需要</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── ARTICLE BODY ── -->
+<div class="article-wrap">
+<div class="article-inner">
+
+  <!-- 1位 ASML -->
+  <div class="rank-card rank-1">
+    <div class="rank-card-header">
+      <div class="rank-badge">#1</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">ASML</div>
+        <div class="rank-company-sub">NL · 露光装置 · EUVリソグラフィ</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「技術独占」と「導入後の保守収益」——二重のmoatを持つ唯一の企業</div>
+      <p class="rank-text">
+        先端ロジックで不可欠な <strong>EUV露光</strong> の中核に位置し、2025年もEUVシステムを <em>48台</em> 販売、
+        Q4受注のうち <em>€7.4bn</em> がEUVだった。
+        ASMLは装置を売って終わりではなく、<strong>Installed Base Management（IBM）</strong> 売上が
+        2025年に <em>€8.2bn</em> まで積み上がっている。<br><br>
+        つまりmoatは「技術独占に近い地位」だけでなく、「導入後の保守・アップグレード収益」でも強い。
+        EUVを代替できる技術は現時点で存在せず、TSMCが先端ノードで勝負し続ける限り、ASMLへの依存は外れない。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>EUV独占：</strong>先端ロジックに不可欠なEUV露光装置を世界で唯一製造。代替なし。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>IBM収益：</strong>保守・アップグレード・サービスで年間€8.2bn。装置を売った後も収益が続く構造。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>技術的参入障壁：</strong>EUV装置の製造には光学・ソフトウェア・精密機械の複合的な知識が必要で、後発は極めて困難。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 2位 KLA -->
+  <div class="rank-card rank-2">
+    <div class="rank-card-header">
+      <div class="rank-badge">#2</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">KLA</div>
+        <div class="rank-company-sub">US · 検査・計測・工程制御</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「歩留まりを成立させる装置」——先端化が進むほど重要性が増す</div>
+      <p class="rank-text">
+        KLAは検査・計測で極めて強い。会社自身が <strong>"market leader in process control"</strong> と述べており、
+        先端化が進むほど歩留まり改善の重要性は上がる。<br><br>
+        露光や成膜は "入れる装置" だが、KLAは <em>"歩留まりを成立させる装置"</em> に近く、
+        先端ノードでは簡単に外しにくい。AI向けで foundry/logic・advanced packaging の重要性が増しているという
+        会社コメントも、moatの継続性を裏づける。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>工程制御リーダー：</strong>先端ノードで歩留まりを管理する検査・計測の圧倒的なシェア。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>先端化ほど強まる需要：</strong>ノードが進むほど欠陥許容度が下がり、KLAの重要性が増す構造。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>AI向け需要の追い風：</strong>HBM・advanced packaging拡大でKLAの検査需要は直接伸びる。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 3位 TEL -->
+  <div class="rank-card rank-3">
+    <div class="rank-card-header">
+      <div class="rank-badge">#3</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">東京エレクトロン</div>
+        <div class="rank-company-sub">JP · 前工程装置（TEL）</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「複数工程への深い入り込み」——installed baseが年々拡大する粘着モデル</div>
+      <p class="rank-text">
+        TELはASMLやKLAほどの単独支配ではないものの、前工程の複数工程に深く入り込み、
+        設置台数の積み上がりが毎年 <em>4,000〜6,000台</em> という点が強い。<br><br>
+        installed baseが増えるほど部品・保守・プロセス最適化の関係が強まり、
+        顧客側の切替コストも上がる。単工程の一点突破ではなく、
+        <strong>複数工程で顧客ラインに入り込める</strong>のがTELの質の高いmoatだ。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>複数工程：</strong>CVD・洗浄・コーター/デベロッパーなど複数の前工程でシェアを持つ。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>設置台数の粘着性：</strong>年間4,000〜6,000台の積み上がりにより、保守・最適化収益が年々拡大。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>切替コスト：</strong>顧客ラインへの深い組み込みにより、装置メーカー変更のコストと時間が大きい。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 4位 信越化学 -->
+  <div class="rank-card rank-4">
+    <div class="rank-card-header">
+      <div class="rank-badge">#4</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">信越化学工業</div>
+        <div class="rank-company-sub">JP · 電子材料・シリコン</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「材料プラットフォーム」——原材料から川下まで深く関わる材料最強企業</div>
+      <p class="rank-text">
+        材料企業の中で最もmoatが強い。電子材料事業が
+        <strong>半導体シリコン、フォトレジスト、フォトマスクブランクス、石英製品</strong> まで広く持ち、
+        グループ内で原材料から川下までかなり深く関わっている。<br><br>
+        年報でもシリコン金属からポリシリコン、ウェハー、石英ガラス、ケース類まで広い供給網が示されており、
+        これは単なる素材メーカーよりも <em>"工程に食い込んだ材料プラットフォーム"</em> に近い。
+        材料認定には時間がかかるため、一度入り込むと粘着性が高い。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>材料プラットフォーム：</strong>ウェハー・レジスト・石英ガラスまで電子材料を川上から川下まで一気通貫。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>材料認定の粘着性：</strong>新材料の認定には長期間の評価が必要で、一度認定されると切り替えコストが極めて高い。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>垂直統合：</strong>シリコン金属から最終材料まで自社グループで製造できる独自の強み。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 5位 AMAT -->
+  <div class="rank-card rank-5">
+    <div class="rank-card-header">
+      <div class="rank-badge">#5</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">Applied Materials</div>
+        <div class="rank-company-sub">US · 総合装置（AMAT）</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「工程横断の関係性とサービス化」——総合装置の厚みで勝つ</div>
+      <p class="rank-text">
+        AMATはすごく強いが、ASMLやKLAより上に置きにくいのは、
+        絶対独占というより <em>総合装置の厚み</em> で勝つ会社だからだ。
+        ただしこれは弱いという意味ではなく、成膜・エッチング・CMPなど工程の広さに加え、
+        年報でも <strong>installed baseの拡大と長期サービス契約更新</strong> でサービス需要が伸びると明示している。<br><br>
+        moatは「装置単体」より「工程横断の関係性とサービス化」にある。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>工程の広さ：</strong>CVD・PVD・エッチング・CMPなど複数の重要工程をカバーする総合力。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>サービス化：</strong>長期サービス契約で装置販売後も継続収益が積み上がる。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>スケール優位：</strong>世界最大の半導体装置メーカーとしての規模がR&D投資と顧客関係を支える。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 6位 SUMCO -->
+  <div class="rank-card rank-6">
+    <div class="rank-card-header">
+      <div class="rank-badge">#6</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">SUMCO</div>
+        <div class="rank-company-sub">JP · シリコンウェハー</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「11年連続TSMC表彰」——品質・信頼の蓄積が参入障壁になる</div>
+      <p class="rank-text">
+        シリコンウェハーで非常に重要な存在。TSMCから <em>11年連続で Excellent Performance Award</em> を
+        受けたことを自社レポートで示しており、品質・供給安定性・信頼関係の強さを示す。<br><br>
+        もっとも、装置企業ほどの"設置後ロックイン"は弱く、ウェハーは巨額認定が必要でも
+        市場構造はASMLほど一点集中ではないので、この位置に置く。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>TSMC表彰11年連続：</strong>品質・供給安定性の実績が信頼関係を積み上げ、実質的な参入障壁となる。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>材料認定の粘着性：</strong>ウェハーの品質認定は長期間必要で、切り替えはコストがかかる。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 7位 SCREEN -->
+  <div class="rank-card rank-7">
+    <div class="rank-card-header">
+      <div class="rank-badge">#7</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">SCREEN ホールディングス</div>
+        <div class="rank-company-sub">JP · 洗浄装置</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「洗浄装置のニッチ強者」——先端化で洗浄の重要性は上がる</div>
+      <p class="rank-text">
+        SCREENは洗浄装置で非常に有力であり、TSMCからも表彰実績がある。
+        ただし、moatの質としては「極めて優秀なニッチ強者」で、
+        ASMLやKLAのような <em>代替不能性の強さ</em> までは置きにくい。<br><br>
+        とはいえ、先端化で洗浄工程の重要性は高く、TSMC投資の直接恩恵はかなり受けやすい側だ。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>洗浄シェア：</strong>先端ノードの洗浄工程で高いシェアを持つ、洗浄専業の強み。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>先端化の追い風：</strong>ノードが進むほど微細な汚染が問題になり、洗浄装置の精度・重要性が増す。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 8位 JSR / TOK -->
+  <div class="rank-card rank-8">
+    <div class="rank-card-header">
+      <div class="rank-badge">#8</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">JSR / 東京応化工業（TOK）</div>
+        <div class="rank-company-sub">JP · フォトレジスト</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「TSMCが名指しで挙げる主要サプライヤー」——材料認定が参入障壁</div>
+      <p class="rank-text">
+        JSR・TOKはフォトレジストで強い。TSMCの年報でも、
+        <strong>JSR、Shin-Etsu Chemical、T.O.K. などを "worldwide suppliers of lithographic materials"</strong>
+        と明記している。材料認定には時間がかかるのでmoatは十分強いのだが、
+        装置側のASMLやKLAほど <em>"その会社でないと先端ラインが回らない"</em> という構図まではやや弱い。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>TSMC公認サプライヤー：</strong>TSMCの年報に名指しで記載される主要フォトレジストサプライヤー。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>材料認定の参入障壁：</strong>新材料の認定プロセスが長く、後発の参入を抑制する。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 9位 アドバンテスト -->
+  <div class="rank-card rank-9">
+    <div class="rank-card-header">
+      <div class="rank-badge">#9</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">アドバンテスト</div>
+        <div class="rank-company-sub">JP · 半導体テスト装置</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「優秀だが前工程より一段後ろ」——AI/HPC需要では直接恩恵を受ける</div>
+      <p class="rank-text">
+        会社としては非常に優秀だが、TSMCの設備投資を直接受ける
+        <em>前工程・材料・検査計測という軸</em> では、前述の企業群より一段下に置く。
+        テスターは重要だが、TSMCのファブ投資そのものへの直結度では、
+        露光・検査・成膜・材料よりワンテンポ後ろだ。<br><br>
+        なおTSMCからの表彰実績はあり、<strong>AI/HPC需要の拡大</strong>では恩恵を受けやすい。
+      </p>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>AI/HPC追い風：</strong>高度なチップのテスト需要増でアドバンテストの需要は直接恩恵を受ける。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>TSMC表彰実績あり：</strong>品質・供給安定性の実績は積み上がっている。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- CLOSING NOTE -->
+  <div class="closing-note">
+    <div class="closing-label">INVESTOR'S NOTE — この記事の結論</div>
+    <p class="closing-text">
+      TSMCを「直接買えない」または「分散したい」投資家にとって、このエコシステム分析は有効な地図になる。<br><br>
+      最も重要な視点は「<strong>moatの強さ = 代替されにくさ + 導入後のロックイン</strong>」の掛け合わせだ。
+      ASMLがなぜ最強かと言えば、この二つを同時に持つ唯一の企業だからだ。<br><br>
+      KLA・TEL・信越化学・AMATもそれぞれ強いmoatを持ち、TSMCが先端投資を続ける限り
+      恩恵を受け続ける立場にある。どの企業が自分の投資哲学に合うか、
+      この地図を手がかりに考えてほしい。
+    </p>
+  </div>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="../">← 論考の棚に戻る</a>
+  </div>
+
+</div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+
+</body>
+</html>
