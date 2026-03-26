@@ -204,6 +204,50 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .closing-text{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:2.1;font-weight:300;}
 .closing-text strong{color:var(--parch);font-weight:500;}
 
+/* ── REFERENCES ── */
+.references-wrap{
+  margin-top:48px;
+  border:1px solid var(--parch4);
+  background:var(--parch2);
+}
+.references-header{
+  padding:16px 24px;border-bottom:1px solid var(--parch4);
+  display:flex;align-items:center;gap:12px;
+}
+.references-label{
+  font-family:var(--mono);font-size:.5rem;color:var(--gold);
+  letter-spacing:.22em;opacity:.7;
+}
+.references-note{
+  font-family:var(--mono);font-size:.46rem;color:var(--ink3);
+  letter-spacing:.04em;opacity:.6;
+}
+.references-body{padding:20px 24px;}
+.ref-group{margin-bottom:20px;}
+.ref-group:last-child{margin-bottom:0;}
+.ref-group-title{
+  font-family:var(--mono);font-size:.46rem;color:var(--ink3);
+  letter-spacing:.14em;margin-bottom:10px;opacity:.6;
+  padding-bottom:5px;border-bottom:1px solid var(--parch4);
+}
+.ref-list{display:flex;flex-direction:column;gap:6px;}
+.ref-item{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.73rem;color:var(--ink2);line-height:1.6;
+}
+.ref-num{
+  font-family:var(--mono);font-size:.46rem;color:var(--gold);
+  min-width:20px;flex-shrink:0;padding-top:2px;opacity:.7;
+}
+.ref-item a{color:var(--blue3);text-decoration:none;word-break:break-all;}
+.ref-item a:hover{color:var(--blue2);text-decoration:underline;}
+.ref-disclaimer{
+  margin-top:16px;padding:10px 14px;
+  background:var(--parch3);border-left:3px solid var(--parch4);
+  font-family:var(--mono);font-size:.44rem;color:var(--ink3);
+  line-height:1.8;letter-spacing:.03em;opacity:.75;
+}
+
 /* ── BACK LINK ── */
 .back-link-wrap{margin-top:48px;text-align:center;}
 .back-link{
@@ -690,6 +734,46 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       恩恵を受け続ける立場にある。どの企業が自分の投資哲学に合うか、
       この地図を手がかりに考えてほしい。
     </p>
+  </div>
+
+  <!-- ── REFERENCES ── -->
+  <div class="references-wrap">
+    <div class="references-header">
+      <span class="references-label">REFERENCES &amp; SOURCES</span>
+      <span class="references-note">— 参考・引用文献 / このランキングと分析は著者の独自見解です</span>
+    </div>
+    <div class="references-body">
+
+      <div class="ref-group">
+        <div class="ref-group-title">各社 公式 IR（Investor Relations）</div>
+        <div class="ref-list">
+          <div class="ref-item"><span class="ref-num">[1]</span><div><strong>ASML</strong> — Investor Relations<br><a href="https://www.asml.com/en/investors" target="_blank" rel="noopener">https://www.asml.com/en/investors</a></div></div>
+          <div class="ref-item"><span class="ref-num">[2]</span><div><strong>KLA Corporation</strong> — Investor Relations<br><a href="https://ir.kla.com/" target="_blank" rel="noopener">https://ir.kla.com/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[3]</span><div><strong>東京エレクトロン（TEL）</strong> — 投資家向け情報<br><a href="https://www.tel.co.jp/ir/" target="_blank" rel="noopener">https://www.tel.co.jp/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[4]</span><div><strong>信越化学工業</strong> — Investor Relations<br><a href="https://www.shinetsu.co.jp/en/ir/" target="_blank" rel="noopener">https://www.shinetsu.co.jp/en/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[5]</span><div><strong>Applied Materials（AMAT）</strong> — Investor Relations<br><a href="https://ir.appliedmaterials.com/" target="_blank" rel="noopener">https://ir.appliedmaterials.com/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[6]</span><div><strong>SUMCO</strong> — Investor Relations<br><a href="https://www.sumcosi.com/english/ir/" target="_blank" rel="noopener">https://www.sumcosi.com/english/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[7]</span><div><strong>SCREENホールディングス</strong> — IR情報<br><a href="https://www.screen.co.jp/ir" target="_blank" rel="noopener">https://www.screen.co.jp/ir</a></div></div>
+          <div class="ref-item"><span class="ref-num">[8]</span><div><strong>東京応化工業（TOK）</strong> — 株主・投資家情報<br><a href="https://www.tok.co.jp/ir" target="_blank" rel="noopener">https://www.tok.co.jp/ir</a> ／ ※JSRは2024年6月に非上場化（JIC傘下）</div></div>
+          <div class="ref-item"><span class="ref-num">[9]</span><div><strong>アドバンテスト</strong> — 投資家の皆様へ<br><a href="https://www.advantest.com/ja/investors/" target="_blank" rel="noopener">https://www.advantest.com/ja/investors/</a></div></div>
+        </div>
+      </div>
+
+      <div class="ref-group">
+        <div class="ref-group-title">業界データ・統計</div>
+        <div class="ref-list">
+          <div class="ref-item"><span class="ref-num">[10]</span><div><strong>SEMI</strong> — 半導体製造装置・材料の国際業界団体（装置出荷統計 BSSI 等）<br><a href="https://www.semi.org/en" target="_blank" rel="noopener">https://www.semi.org/en</a></div></div>
+          <div class="ref-item"><span class="ref-num">[11]</span><div><strong>TechInsights</strong>（旧 IC Insights）— 半導体市場調査・分析レポート<br><a href="https://www.techinsights.com/" target="_blank" rel="noopener">https://www.techinsights.com/</a></div></div>
+        </div>
+      </div>
+
+      <div class="ref-disclaimer">
+        本記事のランキング・moat評価は著者の独自分析・見解であり、投資勧誘を目的とするものではありません。
+        投資判断はご自身の責任において行ってください。各数値・事実の出典は上記IRおよび各社公開資料に基づきます。
+        著作権は各出典に帰属します。
+      </div>
+
+    </div>
   </div>
 
   <div class="back-link-wrap">
