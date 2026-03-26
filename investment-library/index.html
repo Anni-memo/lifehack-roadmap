@@ -167,8 +167,9 @@ body::before{
   font-family:var(--mono);font-size:.5rem;color:var(--gold);
   letter-spacing:.22em;margin-bottom:24px;opacity:.7;text-align:center;
 }
-.site-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
-@media(max-width:560px){.site-nav-grid{grid-template-columns:1fr;}}
+.site-nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+@media(max-width:700px){.site-nav-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.site-nav-grid{grid-template-columns:1fr;}}
 .site-nav-card{
   display:flex;flex-direction:column;
   padding:26px 22px;
@@ -729,6 +730,20 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
         <div class="site-nav-num">04</div>
         <div class="site-nav-name">銘柄メモ</div>
         <div class="site-nav-desc">長期投資家による銘柄ごとの思考の記録。moat・FCF・経営者の質を言語化するアーカイブ。</div>
+        <div class="site-nav-arrow">読む →</div>
+      </a>
+      <a class="site-nav-card" href="research/" style="border-top-color:var(--blue2);">
+        <div class="site-nav-icon">📚</div>
+        <div class="site-nav-num">05</div>
+        <div class="site-nav-name">論考の棚</div>
+        <div class="site-nav-desc">時間が経っても読み返せる「考え抜いた記事」だけを置く棚。moat・FCF・資本配分の軸で企業を解剖する。</div>
+        <div class="site-nav-arrow">読む →</div>
+      </a>
+      <a class="site-nav-card" href="news/" style="border-top-color:var(--rust);">
+        <div class="site-nav-icon">📰</div>
+        <div class="site-nav-num">06</div>
+        <div class="site-nav-name">ニュース記事</div>
+        <div class="site-nav-desc">日経新聞を長期投資家の視点で読み解く毎日の投資日記。moat・FCF・資本配分の軸でキュレーション。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
     </div>
