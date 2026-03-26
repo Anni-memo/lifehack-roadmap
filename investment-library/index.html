@@ -59,81 +59,127 @@ body::before{
 
 /* ── HERO ── */
 .hero{
-  background:linear-gradient(160deg, var(--ink) 0%, var(--ink2) 40%, #3a2510 100%);
+  background:linear-gradient(170deg,#0c0805 0%,var(--ink) 30%,#1e1005 65%,var(--ink2) 100%);
   color:var(--parch);
-  padding:60px 24px 48px;
+  min-height:520px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:80px 24px 60px;
   text-align:center;
-  position:relative;
-  overflow:hidden;
-  border-bottom:3px solid var(--gold);
+  position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(184,144,10,.15);
 }
 .hero::before{
   content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,144,10,.12) 0%, transparent 70%);
+  background:
+    radial-gradient(ellipse 75% 55% at 50% 15%,rgba(184,144,10,.1) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 40% at 50% 100%,rgba(58,37,16,.6) 0%,transparent 55%);
 }
 .hero::after{
   content:'';position:absolute;bottom:0;left:0;right:0;height:1px;pointer-events:none;
-  background:linear-gradient(90deg,transparent,var(--gold3),transparent);
+  background:linear-gradient(90deg,transparent 0%,var(--gold3) 30%,var(--gold4) 50%,var(--gold3) 70%,transparent 100%);
 }
 .hero-ornament{
-  font-family:var(--serif);font-size:1.1rem;color:var(--gold3);
-  letter-spacing:.35em;margin-bottom:18px;opacity:.8;
+  font-family:var(--mono);font-size:.5rem;color:var(--gold3);
+  letter-spacing:.4em;margin-bottom:28px;opacity:.55;position:relative;
 }
 .hero-title{
   font-family:var(--serif);
-  font-size:clamp(2.2rem,6vw,3.6rem);
-  font-weight:700;line-height:1.12;
-  color:var(--parch);
-  margin-bottom:8px;
-  text-shadow:0 2px 20px rgba(212,170,34,.25);
+  font-size:clamp(2.6rem,7vw,4.4rem);
+  font-weight:700;line-height:1.05;
+  color:var(--parch);letter-spacing:-.01em;
+  margin-bottom:32px;position:relative;
+  text-shadow:0 4px 40px rgba(184,144,10,.2);
 }
-.hero-title em{
-  font-style:italic;color:var(--gold4);
-  display:block;font-size:.72em;letter-spacing:.04em;
+.hero-rule{
+  display:flex;align-items:center;gap:14px;
+  justify-content:center;margin-bottom:22px;position:relative;
+  width:100%;max-width:300px;
 }
-.hero-sub{
-  font-size:.88rem;color:var(--parch3);
-  font-weight:300;letter-spacing:.06em;
-  margin-bottom:20px;line-height:1.7;
+.hero-rule-line{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(212,170,34,.45));}
+.hero-rule-line.r{background:linear-gradient(to left,transparent,rgba(212,170,34,.45));}
+.hero-rule-gem{color:var(--gold3);font-size:.65rem;opacity:.85;flex-shrink:0;}
+.hero-tagline{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(.85rem,2.2vw,1rem);
+  color:var(--gold3);letter-spacing:.08em;
+  margin-bottom:34px;position:relative;opacity:.88;
 }
-.hero-first-visit{
-  display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;
-  background:rgba(139,105,20,.1);border:1px solid rgba(184,144,10,.25);
-  padding:14px 22px;margin:0 auto 28px;max-width:560px;
-  position:relative;z-index:10;
+.hero-message{max-width:480px;margin:0 auto 42px;position:relative;}
+.hero-message-main{
+  font-family:var(--serif);
+  font-size:clamp(.98rem,2.5vw,1.1rem);
+  font-weight:600;color:var(--parch);
+  display:block;margin-bottom:16px;line-height:1.65;
 }
-.hero-first-icon{font-size:1.15rem;flex-shrink:0;}
-.hero-first-text{
-  font-family:var(--jp);font-size:.78rem;color:var(--parch3);
-  line-height:1.75;text-align:left;flex:1;min-width:180px;
+.hero-message-body{
+  font-size:.84rem;color:var(--parch3);
+  line-height:2.1;font-weight:300;display:block;
 }
-.hero-first-text strong{color:var(--parch);font-weight:500;}
-.hero-first-link{
-  display:inline-flex;align-items:center;
-  padding:7px 16px;background:var(--gold);color:var(--ink);
-  font-family:var(--serif);font-size:.78rem;font-weight:600;
-  text-decoration:none;letter-spacing:.04em;white-space:nowrap;
-  transition:background .2s;flex-shrink:0;border-radius:2px;
+.hero-message strong{color:var(--parch);font-weight:500;}
+.hero-cta-row{
+  display:flex;gap:12px;flex-wrap:wrap;
+  justify-content:center;margin-bottom:52px;position:relative;
 }
-.hero-first-link:hover{background:var(--gold3);}
-.hero-tabs{
-  display:flex;justify-content:center;gap:6px;flex-wrap:wrap;
-  position:relative;z-index:10;
+.hero-cta-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 30px;
+  background:var(--gold);color:var(--ink);
+  font-family:var(--serif);font-size:.92rem;font-weight:600;
+  text-decoration:none;letter-spacing:.04em;transition:all .2s;
 }
-.hero-tab{
-  display:inline-flex;align-items:center;
-  padding:8px 20px;border-radius:2px;
-  background:transparent;border:1px solid var(--gold)66;
-  color:var(--parch3);font-family:var(--serif);font-size:.85rem;
-  letter-spacing:.06em;cursor:pointer;transition:all .2s;
-  text-decoration:none;
+.hero-cta-primary:hover{background:var(--gold3);}
+.hero-cta-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 30px;
+  background:transparent;border:1px solid rgba(184,144,10,.4);
+  color:var(--parch3);
+  font-family:var(--serif);font-size:.92rem;
+  text-decoration:none;letter-spacing:.04em;transition:all .2s;
 }
-.hero-tab.active{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:600}
-.hero-tab:hover:not(.active){background:var(--gold)22;border-color:var(--gold);color:var(--gold4)}
-.hero-tab.tab-companies{border-color:rgba(90,138,58,.5);color:#7ab05a;}
-.hero-tab.tab-companies.active{background:#3d6828;border-color:#3d6828;color:var(--parch);}
-.hero-tab.tab-companies:hover:not(.active){background:rgba(90,138,58,.15);border-color:rgba(90,138,58,.6);color:#7ab05a;}
-a.hero-tab{text-decoration:none;}
+.hero-cta-secondary:hover{border-color:var(--gold);color:var(--gold4);background:rgba(184,144,10,.06);}
+.hero-stats{
+  display:flex;align-items:center;justify-content:center;
+  gap:6px;position:relative;
+}
+.hero-stat{display:flex;flex-direction:column;align-items:center;gap:3px;}
+.hero-stat-num{
+  font-family:var(--mono);font-size:1.15rem;color:var(--gold4);
+  font-weight:500;line-height:1;letter-spacing:.04em;
+}
+.hero-stat-label{
+  font-family:var(--mono);font-size:.38rem;color:var(--parch4);
+  letter-spacing:.18em;opacity:.55;
+}
+.hero-stat-sep{color:rgba(184,144,10,.25);font-size:.7rem;padding:0 6px;margin-top:-6px;}
+
+/* ── SITE NAVIGATION CARDS ── */
+.site-nav{background:var(--parch);border-bottom:1px solid var(--parch4);padding:52px 24px;}
+.site-nav-inner{max-width:860px;margin:0 auto;}
+.site-nav-label{
+  font-family:var(--mono);font-size:.5rem;color:var(--gold);
+  letter-spacing:.22em;margin-bottom:24px;opacity:.7;text-align:center;
+}
+.site-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+@media(max-width:560px){.site-nav-grid{grid-template-columns:1fr;}}
+.site-nav-card{
+  display:flex;flex-direction:column;
+  padding:26px 22px;
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-top:3px solid var(--gold);
+  text-decoration:none;color:inherit;
+  transition:all .22s;
+}
+.site-nav-card:hover{
+  background:var(--parch3);border-color:var(--gold2);
+  border-top-color:var(--gold2);
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(26,18,8,.12);
+}
+.site-nav-icon{font-size:1.35rem;margin-bottom:10px;}
+.site-nav-num{font-family:var(--mono);font-size:.44rem;color:var(--gold);letter-spacing:.2em;opacity:.7;}
+.site-nav-name{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--ink);margin:6px 0 8px;}
+.site-nav-desc{font-size:.76rem;color:var(--ink3);line-height:1.85;flex:1;}
+.site-nav-arrow{font-family:var(--mono);font-size:.5rem;color:var(--gold);margin-top:14px;letter-spacing:.1em;}
 
 /* ── FEATURED MUNGER QUOTE ── */
 .featured-quote{
@@ -606,61 +652,76 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 <!-- ══════════════ HERO ══════════════ -->
 
 <div class="hero">
-  <div class="hero-ornament">THE INVESTOR'S LIBRARY</div>
-  <h1 class="hero-title">
-    投資と思考の書斎
-    <em>A quiet library for long-term thinkers</em>
-  </h1>
-  <p class="hero-sub">
-    moat（競争優位）とFCF（フリーキャッシュフロー）で企業の本質を読む。<br>
-    判断基準を育てる、静かな投資の書斎。
-  </p>
-  <div class="hero-first-visit">
-    <div class="hero-first-icon">📖</div>
-    <div class="hero-first-text">
-      このサイトは、銘柄を推薦する場所ではありません。<br>
-      <strong>投資家の判断基準を育てるための、静かな図書館です。</strong>
-    </div>
-    <a class="hero-first-link" href="hajimete/">ここから読む</a>
+  <div class="hero-ornament">THE INVESTOR'S LIBRARY · 2026</div>
+  <h1 class="hero-title">投資と思考の書斎</h1>
+  <div class="hero-rule">
+    <span class="hero-rule-line"></span>
+    <span class="hero-rule-gem">◆</span>
+    <span class="hero-rule-line r"></span>
   </div>
-  <div class="hero-tabs">
-    <a class="hero-tab tab-companies" href="companies/intro/">企業を深く読む</a>
-    <a class="hero-tab" href="industries/">業種から学ぶ</a>
-    <a class="hero-tab" href="horizons/">思考を広げる</a>
-    <a class="hero-tab" href="market/prime-companies.html">市場データ</a>
+  <div class="hero-tagline">A quiet library for long-term thinkers</div>
+  <div class="hero-message">
+    <span class="hero-message-main">銘柄の正解ではなく、判断基準を育てる場所。</span>
+    <span class="hero-message-body">
+      このサイトは、銘柄を推薦する場所ではありません。<br>
+      投資家の<strong>判断基準</strong>を育てるための、静かな図書館です。
+    </span>
+  </div>
+  <div class="hero-cta-row">
+    <a class="hero-cta-primary" href="hajimete/">📖 はじめての方へ</a>
+    <a class="hero-cta-secondary" href="companies/">企業分析を読む →</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">69</span>
+      <span class="hero-stat-label">COMPANIES</span>
+    </div>
+    <span class="hero-stat-sep">·</span>
+    <div class="hero-stat">
+      <span class="hero-stat-num">14</span>
+      <span class="hero-stat-label">INDUSTRIES</span>
+    </div>
+    <span class="hero-stat-sep">·</span>
+    <div class="hero-stat">
+      <span class="hero-stat-num">6</span>
+      <span class="hero-stat-label">MOAT TYPES</span>
+    </div>
   </div>
 </div>
 
-<!-- ══════════════ WELCOME BANNER (moved to hero) ══════════════ -->
+<!-- ══════════════ SITE NAVIGATION ══════════════ -->
 
-<!-- ══════════════ PHILOSOPHY ══════════════ -->
-
-<div style="background:var(--parch);border-bottom:1px solid var(--parch4);padding:40px 24px;">
-  <div style="max-width:720px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:.52rem;color:var(--gold);letter-spacing:.22em;margin-bottom:18px;opacity:.7;">INVESTMENT PHILOSOPHY</div>
-    <p style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:clamp(1.05rem,2.8vw,1.4rem);font-weight:600;color:var(--ink);line-height:1.9;margin-bottom:16px;">
-      銘柄の正解ではなく、判断基準を育てる場所。
-    </p>
-    <p style="font-size:.86rem;color:var(--ink3);line-height:2.1;font-weight:300;margin-bottom:28px;">
-      企業の本質は、<strong style="color:var(--ink2);">moat（競争優位）</strong>と<strong style="color:var(--ink2);">FCF（フリーキャッシュフロー）</strong>に宿る。<br>
-      なぜその企業は競合に勝ち続けるのか。どれだけ現金を生み出せるのか。<br>
-      その2つの問いを入口に、投資を通じて文明・資本・人間を深く理解していく。
-    </p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:600px;margin:0 auto;">
-      <a href="moat/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='#b8900a';this.style.background='#e8d8be'" onmouseout="this.style.borderColor='#dfc9a8';this.style.background='#efe4d0'">
-        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.12em;opacity:.7;">01</span>
-        <span style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:.9rem;font-weight:600;color:var(--ink);">moatとは何か</span>
-        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.08em;">読む →</span>
+<div class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-label">EXPLORE THE LIBRARY — 書斎を探索する</div>
+    <div class="site-nav-grid">
+      <a class="site-nav-card" href="hajimete/philosophy/">
+        <div class="site-nav-icon">📐</div>
+        <div class="site-nav-num">01</div>
+        <div class="site-nav-name">投資哲学</div>
+        <div class="site-nav-desc">バフェット・マンガー・フィッシャーの思想から判断基準を育てる。「なぜ買うのか」を言語化する場所。</div>
+        <div class="site-nav-arrow">読む →</div>
       </a>
-      <a href="fcf/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='#b8900a';this.style.background='#e8d8be'" onmouseout="this.style.borderColor='#dfc9a8';this.style.background='#efe4d0'">
-        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.12em;opacity:.7;">02</span>
-        <span style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:.9rem;font-weight:600;color:var(--ink);">FCFとは何か</span>
-        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:var(--gold);letter-spacing:.08em;">読む →</span>
+      <a class="site-nav-card" href="companies/intro/">
+        <div class="site-nav-icon">🔍</div>
+        <div class="site-nav-num">02</div>
+        <div class="site-nav-name">企業分析</div>
+        <div class="site-nav-desc">69社・14業種のmoatスコアカード・レーダーチャート・FCFチャートで企業の本質を読む。</div>
+        <div class="site-nav-arrow">読む →</div>
       </a>
-      <a href="companies/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;background:rgba(42,74,26,.06);border:1px solid rgba(90,138,58,.25);text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='#5a8a3a';this.style.background='rgba(42,74,26,.12)'" onmouseout="this.style.borderColor='rgba(90,138,58,.25)';this.style.background='rgba(42,74,26,.06)'">
-        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:#5a8a3a;letter-spacing:.12em;opacity:.8;">69社</span>
-        <span style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:.9rem;font-weight:600;color:var(--ink);">企業分析を読む</span>
-        <span style="font-family:'DM Mono',monospace;font-size:.44rem;color:#5a8a3a;letter-spacing:.08em;">読む →</span>
+      <a class="site-nav-card" href="hajimete/financial/">
+        <div class="site-nav-icon">📊</div>
+        <div class="site-nav-num">03</div>
+        <div class="site-nav-name">財務分析</div>
+        <div class="site-nav-desc">バフェット流・財務諸表を読む力。消費者独占型企業を財務数値で見抜くチェックリスト。</div>
+        <div class="site-nav-arrow">読む →</div>
+      </a>
+      <a class="site-nav-card" href="hajimete/memo/">
+        <div class="site-nav-icon">🧠</div>
+        <div class="site-nav-num">04</div>
+        <div class="site-nav-name">銘柄メモ</div>
+        <div class="site-nav-desc">長期投資家による銘柄ごとの思考の記録。moat・FCF・経営者の質を言語化するアーカイブ。</div>
+        <div class="site-nav-arrow">読む →</div>
       </a>
     </div>
   </div>
