@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="自社株買いの解剖｜論考の棚"/>
+<meta property="og:description" content="「自社株買い＝良いこと」は本当か。良い自社株買いと悪い自社株買いの見分け方を、FCF・タイミング・経営の意図という3軸で長期投資家の視点から解剖する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>自社株買いの解剖｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --copper:#7a4a14;--copper2:#a06020;--copper3:#c88030;
+  --green:#2a4a1a;--green2:#3d6828;
+  --blue:#1a2a4a;--blue2:#2a3d6a;--blue3:#3a5a8a;
+  --bad:#7a1a1a;--bad2:#a02020;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(168,96,32,.3);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{
+  background:linear-gradient(165deg,#0a0804 0%,#140e06 40%,#1c1408 70%,#100c04 100%);
+  color:var(--parch);padding:64px 24px 52px;position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(168,96,32,.5);
+}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(168,96,32,.12) 0%,transparent 60%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,128,48,.5),transparent);}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(200,160,100,.5);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(200,140,80,.65);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.8rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:14px;}
+.hero-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(.82rem,2vw,.96rem);color:rgba(220,190,150,.7);line-height:1.9;margin-bottom:28px;}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(200,160,100,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(168,96,32,.4);color:rgba(200,150,90,.85);letter-spacing:.08em;}
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:780px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--copper2);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:780px;margin:0 auto;padding:52px 0 80px;}
+/* 判定カード */
+.judge-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:52px;}
+@media(max-width:600px){.judge-grid{grid-template-columns:1fr;}}
+.judge-card{border:1px solid var(--parch4);overflow:hidden;}
+.judge-card-header{padding:14px 18px;display:flex;align-items:center;gap:10px;}
+.judge-good .judge-card-header{background:rgba(42,74,26,.08);border-bottom:2px solid var(--green2);}
+.judge-bad .judge-card-header{background:rgba(122,26,26,.06);border-bottom:2px solid var(--bad);}
+.judge-icon{font-size:1.1rem;}
+.judge-title{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);}
+.judge-subtitle{font-family:var(--mono);font-size:.44rem;letter-spacing:.08em;margin-top:2px;}
+.judge-good .judge-subtitle{color:var(--green2);}
+.judge-bad .judge-subtitle{color:var(--bad);}
+.judge-body{background:var(--parch);padding:18px;}
+.judge-items{display:flex;flex-direction:column;gap:8px;}
+.judge-item{display:flex;align-items:flex-start;gap:8px;font-size:.78rem;color:var(--ink2);line-height:1.7;padding:8px 10px;}
+.judge-good .judge-item{background:rgba(42,74,26,.04);border-left:2px solid var(--green2);}
+.judge-bad .judge-item{background:rgba(122,26,26,.04);border-left:2px solid var(--bad);}
+.judge-item-icon{flex-shrink:0;font-size:.8rem;margin-top:1px;}
+.judge-item strong{color:var(--ink);font-weight:600;}
+/* 本文セクション */
+.essay-section{margin-bottom:48px;}
+.essay-num{font-family:var(--mono);font-size:.5rem;color:var(--copper2);letter-spacing:.25em;margin-bottom:8px;opacity:.75;}
+.essay-heading{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--parch4);}
+.essay-heading span{color:var(--copper2);}
+.essay-text{font-size:.86rem;color:var(--ink2);line-height:2.2;font-weight:300;}
+.essay-text strong{color:var(--ink);font-weight:600;}
+.essay-text em{color:var(--copper2);font-style:normal;font-weight:600;}
+.callout{margin:20px 0;padding:16px 20px;background:var(--parch2);border-left:3px solid var(--copper2);}
+.callout-text{font-family:var(--serif);font-size:.92rem;color:var(--ink);line-height:2;font-style:italic;}
+.callout-text strong{font-style:normal;font-weight:700;}
+/* 三分法表 */
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0;}
+@media(max-width:560px){.three-col{grid-template-columns:1fr;}}
+.three-card{padding:14px;border:1px solid var(--parch4);background:var(--parch2);text-align:center;}
+.three-card-label{font-family:var(--mono);font-size:.44rem;letter-spacing:.12em;margin-bottom:6px;}
+.three-card.good .three-card-label{color:var(--green2);}
+.three-card.mid .three-card-label{color:var(--gold);}
+.three-card.bad .three-card-label{color:var(--bad);}
+.three-card-val{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.three-card-desc{font-size:.7rem;color:var(--ink3);line-height:1.6;}
+.article-divider{display:flex;align-items:center;gap:16px;margin:0 0 44px;font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.2em;opacity:.4;}
+.article-divider::before,.article-divider::after{content:'';flex:1;height:1px;background:var(--parch4);}
+.closing-note{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);border:1px solid rgba(184,144,10,.2);padding:28px;margin-top:0;}
+.closing-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:14px;opacity:.75;}
+.closing-text{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:2.1;font-weight:300;}
+.closing-text strong{color:var(--parch);font-weight:500;}
+.back-link-wrap{margin-top:48px;text-align:center;}
+.back-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(184,144,10,.35);font-family:var(--mono);font-size:.56rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;transition:all .2s;}
+.back-link:hover{background:rgba(184,144,10,.08);border-color:var(--gold2);}
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}
+.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">自社株買いの解剖</span>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">THE RESEARCH SHELF · ESSAY 06</div>
+    <div class="hero-label">CAPITAL ALLOCATION · BUYBACK ANATOMY</div>
+    <h1 class="hero-title">自社株買いの解剖</h1>
+    <p class="hero-subtitle">
+      「自社株買い＝株主還元」は本当か——<br>
+      FCF・タイミング・経営の意図という3軸で良し悪しを見分ける
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.27</span>
+      <span class="hero-tag">資本配分</span>
+      <span class="hero-tag">投資哲学</span>
+      <span class="hero-tag">株主還元</span>
+    </div>
+  </div>
+</div>
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">PREMISE — この記事の前提</div>
+    <p class="summary-text">
+      「自社株買いを発表した」というニュースで株価が上がる場面をよく見る。
+      市場は自社株買いを好感するが、<strong>全ての自社株買いが株主にとって良いわけではない</strong>。<br><br>
+      自社株買いには「真に価値を創造するもの」と「EPSを嵩上げするだけのもの」がある。
+      長期投資家はその違いを見抜く目を持たなければならない。
+    </p>
+  </div>
+</div>
+<div class="article-wrap">
+<div class="article-inner">
+
+  <!-- 良い vs 悪い 判定カード -->
+  <div class="judge-grid">
+    <div class="judge-card judge-good">
+      <div class="judge-card-header">
+        <div class="judge-icon">✓</div>
+        <div>
+          <div class="judge-title">良い自社株買い</div>
+          <div class="judge-subtitle">VALUE-CREATING BUYBACK</div>
+        </div>
+      </div>
+      <div class="judge-body">
+        <div class="judge-items">
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>株価が内在価値より割安なとき：</strong>PBR1倍以下・PER低位で買う</div></div>
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>余剰FCFから実施：</strong>借金してではなく、稼いだキャッシュから</div></div>
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>経営者が理由を説明できる：</strong>「今が割安」という判断根拠がある</div></div>
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>消却まで行う：</strong>買い戻した株式を金庫株にせず消却</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="judge-card judge-bad">
+      <div class="judge-card-header">
+        <div class="judge-icon">✗</div>
+        <div>
+          <div class="judge-title">悪い自社株買い</div>
+          <div class="judge-subtitle">EPS-MANIPULATION BUYBACK</div>
+        </div>
+      </div>
+      <div class="judge-body">
+        <div class="judge-items">
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>高値で実施：</strong>株価がPBR3倍以上の局面でも機械的に買う</div></div>
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>借入で資金調達：</strong>有利子負債を増やしながら自社株を買う</div></div>
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>EPS目標のため：</strong>ストックオプション希薄化を相殺するだけ</div></div>
+          <div class="judge-item"><span class="judge-item-icon">◆</span><div><strong>金庫株として保持：</strong>消却せず、後のストックオプション原資にする</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 本文 -->
+  <div class="essay-section">
+    <div class="essay-num">01 / 04</div>
+    <h2 class="essay-heading"><span>そもそも</span>自社株買いとは何か</h2>
+    <p class="essay-text">
+      企業が市場で自社の株式を買い戻す行為を自社株買い（自己株取得）という。
+      買い戻した株式は「金庫株」として保有するか、消却（抹消）することができる。<br><br>
+      消却した場合、発行済み株式数が減るため1株あたりの価値が理論上高まる。
+      これが<em>「株主価値を高める」</em>と言われる理由だ。<br><br>
+      しかし株式数が減れば必ずEPS（1株あたり利益）は上がる。
+      問題は<strong>「本当に企業価値が上がったのか、それともEPSが機械的に上がっただけなのか」</strong>の区別にある。
+    </p>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="essay-section">
+    <div class="essay-num">02 / 04</div>
+    <h2 class="essay-heading"><span>判断の核心：</span>「買い戻し価格 vs 内在価値」</h2>
+    <p class="essay-text">
+      バフェットはこう述べている。「自社株買いが価値を創造するのは、
+      株価が内在価値を下回っているときだけだ。
+      それ以外の場合、継続株主は損をする」。<br><br>
+      これが全てだ。<em>内在価値より高い価格で買い戻しても、残った株主の持ち分は薄まる</em>。
+      たとえば1株の内在価値が1,000円の企業が、株価1,500円で自社株を買い戻すと、
+      差額500円分の価値を消失させたのと同じだ。
+    </p>
+    <div class="callout">
+      <p class="callout-text">
+        「<strong>自社株買いが良いことかどうかは、価格次第だ。</strong>
+        割安な株を買い戻すことは資本の賢い使い方だが、
+        割高な株を買い戻すことは資本の破壊だ。」<br>
+        <span style="font-size:.72rem;opacity:.7;display:block;margin-top:8px;">— ウォーレン・バフェット（バークシャー・ハサウェイ 株主への手紙より要旨）</span>
+      </p>
+    </div>
+    <div class="three-col">
+      <div class="three-card good">
+        <div class="three-card-label">GOOD · 割安時</div>
+        <div class="three-card-val">PBR &lt; 1倍</div>
+        <div class="three-card-desc">帳簿価値より安く買い戻せる。残株主の1株あたり純資産が増加</div>
+      </div>
+      <div class="three-card mid">
+        <div class="three-card-label">NEUTRAL · 適正</div>
+        <div class="three-card-val">PBR 1〜2倍</div>
+        <div class="three-card-desc">FCFや将来成長を踏まえた評価が必要。一概に良悪とは言えない</div>
+      </div>
+      <div class="three-card bad">
+        <div class="three-card-label">BAD · 割高時</div>
+        <div class="three-card-val">PBR 3倍超</div>
+        <div class="three-card-desc">成長投資・配当に回す方が合理的。高値買いは価値を毀損する</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="essay-section">
+    <div class="essay-num">03 / 04</div>
+    <h2 class="essay-heading"><span>日本企業の</span>自社株買いが増えた理由</h2>
+    <p class="essay-text">
+      東証は2023年に「PBR1倍割れ企業への改善要請」を出した。
+      これを受けて日本企業の自社株買いは急増し、2024年度は過去最高水準に達した。<br><br>
+      背景には<strong>「余剰現金を抱えたまま低PBRで放置されていた企業が多い」</strong>という日本特有の問題がある。
+      株主資本比率が高く現金が潤沢なのに、ROEが低い——その解決策として自社株買いが使われている。<br><br>
+      ただしこのトレンドには注意が必要だ。
+      <em>「東証に言われたから」「PBRを上げるために」</em>という動機で実施される自社株買いは、
+      経営者が本当に「今が割安」と確信しているわけではない可能性がある。
+      動機と実行の質を見分けることが、長期投資家の仕事だ。
+    </p>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="essay-section">
+    <div class="essay-num">04 / 04</div>
+    <h2 class="essay-heading"><span>長期投資家が</span>自社株買いを見る3つの視点</h2>
+    <p class="essay-text">
+      <strong>① FCFから出ているか</strong><br>
+      本業で稼いだフリーキャッシュフローから実施している自社株買いは健全だ。
+      有利子負債を増やしながらの自社株買いは財務リスクを高める。
+      まず「キャッシュフロー計算書」で財務活動CFと営業活動CFの関係を確認する。<br><br>
+      <strong>② 経営者が明確な根拠を示しているか</strong><br>
+      IRや決算説明会で「現在の株価は内在価値を下回っていると判断する」という
+      明確なコメントがある企業は信頼できる。「還元方針の一環として」という定型文だけの企業は要注意だ。<br><br>
+      <strong>③ 消却するか金庫株にするか</strong><br>
+      買い戻した株式を消却している企業は、株式数の実質的な減少をコミットしている。
+      金庫株として保有し続ける場合、将来のM&amp;Aやストックオプションに使われる可能性があり、
+      希薄化リスクが残る。
+    </p>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="closing-note">
+    <div class="closing-label">INVESTOR'S NOTE — この記事の結論</div>
+    <p class="closing-text">
+      自社株買いそのものは「良い」でも「悪い」でもない。
+      <strong>「何のために・いつ・どう実施するか」</strong>が全てを決める。<br><br>
+      長期投資家として理想的なのは、<strong>「本業でFCFを稼ぎ続け、株価が割安な局面だけ自社株を買い、消却する」</strong>サイクルを繰り返す企業だ。
+      この行動を一貫して取れる経営者は、資本配分の哲学を持っている。<br><br>
+      逆に「発表のたびに株価が反応するが、内在価値は増えていない」企業は、
+      自社株買いをパフォーマンスとして使っているに過ぎない。
+      スクリーンの数字より、経営者の言葉と行動の一貫性を追いかけることが、
+      長期投資家の本質的な仕事だ。
+    </p>
+  </div>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="../">← 論考の棚に戻る</a>
+  </div>
+</div>
+</div>
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+</body>
+</html>
