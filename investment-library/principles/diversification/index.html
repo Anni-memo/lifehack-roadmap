@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="なぜ分散投資が必要なのか。バフェットの集中投資、マンガーの少数精鋭戦略、一般投資家にとっての最適な集中と分散のバランスを、具体例とともに考える。"/>
+<meta property="og:title" content="なぜ分散投資が必要なのか：集中と分散のバランス｜投資と思考の書斎"/>
+<meta property="og:description" content="バフェットの集中投資、マンガーの少数精鋭。一般投資家にとっての最適解を考える。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/principles/diversification/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="分散投資と集中投資のバランス — 投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/principles/diversification/"/>
+<title>なぜ分散投資が必要なのか：集中と分散のバランス｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "なぜ分散投資が必要なのか：集中と分散のバランス",
+  "description": "バフェットの集中投資、マンガーの少数精鋭。一般投資家にとっての最適解を考える。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "分散投資"}, {"@type": "Thing", "name": "集中投資"}, {"@type": "Thing", "name": "ポートフォリオ"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "投資原則", "item": "https://anni-memo.github.io/investment-library/principles/"},
+    {"@type": "ListItem", "position": 3, "name": "分散投資のバランス"}
+  ]}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../shared.css"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --rust:#8b3a1a;--rust2:#c05020;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 40%,#3a2510 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.12) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:1rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.18;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(212,170,34,.25);position:relative;}
+.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.62em;letter-spacing:.04em;margin-top:4px;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.8;position:relative;}
+
+.article{max-width:800px;margin:0 auto;padding:36px 20px 20px;}
+
+.intro-block{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:24px 26px;margin-bottom:32px;border-left:4px solid var(--rust);}
+.intro-label{font-family:var(--mono);font-size:.54rem;color:var(--rust2);letter-spacing:.18em;margin-bottom:10px;}
+.intro-text{font-family:var(--serif);font-size:clamp(.92rem,2.5vw,1.05rem);font-style:italic;line-height:1.9;color:var(--ink2);}
+.intro-text strong{color:var(--rust2);font-style:normal;}
+
+h2{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--parch4);}
+h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--ink2);margin:24px 0 12px;}
+p{font-size:.86rem;line-height:2;color:var(--ink2);margin-bottom:16px;}
+blockquote{background:var(--parch2);border-left:4px solid var(--gold2);padding:16px 20px;margin:20px 0;font-family:var(--serif);font-style:italic;font-size:.92rem;line-height:1.85;color:var(--ink2);}
+blockquote cite{display:block;margin-top:8px;font-family:var(--mono);font-size:.6rem;color:var(--gold2);font-style:normal;letter-spacing:.06em;}
+
+.key-box{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--parch);border-radius:2px;padding:24px 26px;margin:24px 0;border-left:4px solid var(--gold3);}
+.key-box-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.18em;margin-bottom:10px;}
+.key-box p{color:var(--parch2);}
+.key-box strong{color:var(--gold4);}
+.key-box ul{padding-left:18px;margin-bottom:12px;}
+.key-box li{font-size:.82rem;line-height:1.85;color:var(--parch3);margin-bottom:6px;}
+
+.compare-table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:.78rem;}
+.compare-table th{background:var(--ink);color:var(--parch);padding:10px 14px;text-align:left;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;}
+.compare-table td{padding:10px 14px;border-bottom:1px solid var(--parch4);color:var(--ink2);line-height:1.6;}
+.compare-table tr:hover td{background:var(--parch2);}
+
+ul,ol{padding-left:20px;margin-bottom:16px;}
+li{font-size:.84rem;line-height:1.95;color:var(--ink2);margin-bottom:6px;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">← 書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">投資原則</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">分散投資のバランス</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">DIVERSIFICATION</div>
+  <h1 class="hero-title">
+    なぜ分散投資が必要なのか
+    <em>集中と分散のバランス</em>
+  </h1>
+  <p class="hero-sub">
+    バフェットは「分散投資は無知に対するヘッジだ」と言った。<br>
+    しかしマンガーは「少数の優れた投資先に集中せよ」と説く。矛盾するのか？
+  </p>
+</div>
+
+<div class="article">
+
+<div class="intro-block">
+  <div class="intro-label">DEBATE</div>
+  <div class="intro-text">
+    集中投資と分散投資——投資家にとって永遠のテーマ。<br>
+    バフェットとマンガーの<strong>集中投資の哲学</strong>と、<br>
+    一般投資家にとっての<strong>現実的な最適解</strong>を考える。
+  </div>
+</div>
+
+<h2 id="buffett-concentration">バフェットの集中投資</h2>
+
+<blockquote>
+  「分散投資は、自分が何をしているか分からない投資家のためのものだ。自分が何をしているか分かっているなら、分散する意味はない。」
+  <cite>— Warren Buffett</cite>
+</blockquote>
+
+<p>バフェットのバークシャー・ハサウェイのポートフォリオは、上位5銘柄で全体の70%以上を占める。これは典型的な集中投資だ。バフェットがこの戦略を取る理由は明確。</p>
+
+<ul>
+  <li><strong>深い理解</strong> — 少数の企業を徹底的に分析し、経営者と直接対話する</li>
+  <li><strong>確信度</strong> — 「これだ」と確信できる企業にのみ投資する</li>
+  <li><strong>複利の最大化</strong> — 最良の投資先に資金を集中することで、リターンが最大化される</li>
+</ul>
+
+<h2 id="munger-few">マンガーの「少数精鋭」</h2>
+
+<blockquote>
+  「人生で本当に素晴らしい機会は、ごく少数しか訪れない。そのとき全力で賭けることのできる投資家だけが、大きな富を築く。」
+  <cite>— Charlie Munger, Poor Charlie's Almanack</cite>
+</blockquote>
+
+<p>マンガーの投資哲学はさらに極端だ。</p>
+
+<ul>
+  <li>一生で3〜4回の「素晴らしい機会」に全力で賭ける</li>
+  <li>20銘柄以上持つポートフォリオは「ノアの箱舟」（各銘柄の影響が薄すぎる）</li>
+  <li>理解できない企業には絶対に投資しない（能力の輪）</li>
+</ul>
+
+<h2 id="why-diversify">それでも分散が必要な理由</h2>
+
+<p>バフェットとマンガーの集中投資が成功するのには前提条件がある。</p>
+
+<table class="compare-table">
+  <thead>
+    <tr><th>条件</th><th>バフェット/マンガー</th><th>一般投資家</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>分析時間</td><td>フルタイムで企業分析</td><td>仕事の合間に分析</td></tr>
+    <tr><td>情報アクセス</td><td>経営者と直接対話</td><td>公開情報のみ</td></tr>
+    <tr><td>経験年数</td><td>60年以上</td><td>数年〜十数年</td></tr>
+    <tr><td>資金規模</td><td>数千億ドル</td><td>数百万〜数千万円</td></tr>
+    <tr><td>心理的耐性</td><td>極めて高い</td><td>暴落時にパニックしがち</td></tr>
+  </tbody>
+</table>
+
+<p>一般投資家がバフェットと同じ集中投資を行うのは、<strong>飛行士免許なしでジェット機を操縦するようなもの</strong>だ。技術も経験も情報も足りない。</p>
+
+<h2 id="optimal">一般投資家にとっての最適解</h2>
+
+<div class="key-box">
+  <div class="key-box-label">PRACTICAL GUIDELINE</div>
+  <ul>
+    <li><strong>コア：インデックス投資（60〜80%）</strong> — S&P500やTOPIXの低コストインデックスファンドで市場全体を保有する</li>
+    <li><strong>サテライト：個別株（20〜40%）</strong> — 自分が深く理解できる企業を5〜15銘柄に厳選して投資する</li>
+    <li><strong>1銘柄の上限は全体の10%</strong> — どれほど確信があっても、1銘柄に資産の10%以上は投じない</li>
+    <li><strong>業種の分散</strong> — 同じ業種に偏らない。景気循環型とディフェンシブを混ぜる</li>
+  </ul>
+</div>
+
+<h3>マンガーの知恵を活かしつつ守る</h3>
+<p>マンガーの「少数精鋭」は、サテライト部分に適用する。個別株の部分では、本当に理解し、確信を持てる企業だけを厳選する。しかし、コア部分のインデックス投資が「安全マージン」として機能し、個別株の判断ミスから資産全体を守る。</p>
+
+<blockquote>
+  「大事なのは、大きなミスを避けることだ。小さなミスは避けられない。しかし、致命的なミスは避けなければならない。」
+  <cite>— Warren Buffett</cite>
+</blockquote>
+
+<div class="related-pages" style="margin-top:40px;">
+  <div class="related-pages-label">RELATED PAGES</div>
+  <div class="related-pages-grid">
+    <a class="related-page-link" href="../">
+      <div class="related-page-tag">PRINCIPLES</div>
+      <div class="related-page-title">私の投資原則</div>
+    </a>
+    <a class="related-page-link" href="../../horizons/safety-margin/">
+      <div class="related-page-tag">MARGIN OF SAFETY</div>
+      <div class="related-page-title">安全マージンの哲学</div>
+    </a>
+    <a class="related-page-link" href="../../horizons/mental-models/">
+      <div class="related-page-tag">MENTAL MODELS</div>
+      <div class="related-page-title">マンガーの思考法：メンタルモデル入門</div>
+    </a>
+    <a class="related-page-link" href="../../industries/japan-sectors/">
+      <div class="related-page-tag">JAPAN SECTORS</div>
+      <div class="related-page-title">日本株セクター別の特徴</div>
+    </a>
+  </div>
+</div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../">投資原則</a> ·
+    <a href="../../industries/">業種から歩く</a> ·
+    <a href="../../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script src="../../shared.js"></script>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);});
+(function(){var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;var btn=document.getElementById('musicToggle');var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';window.onYouTubeIframeAPIReady=function(){player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});};var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);btn.addEventListener('click',function(){if(!playerReady)return;if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}});})();
+</script>
+</body>
+</html>

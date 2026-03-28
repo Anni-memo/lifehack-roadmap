@@ -1,0 +1,186 @@
+{
+  "site": "投資と思考の書斎",
+  "url": "https://anni-memo.github.io/investment-library/",
+  "description": "銘柄の正解ではなく、判断基準を育てる場所。Munger・Buffett・Fisherの思想に学び、投資を入口に文明・歴史・資本・人間理解へ歩いていく静かな知の図書館。",
+  "language": "ja",
+  "license": "CC BY 4.0",
+  "lastUpdated": "2026-03-28",
+  "articles": [
+    {
+      "title": "私の投資原則",
+      "url": "/investment-library/principles/",
+      "description": "永続的競争優位性・資本配分・財務の健全性・経営者の質——長期投資において重視している8つの基本原則。",
+      "category": "principles",
+      "tags": ["投資原則", "バリュー投資", "長期投資"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "永続的競争優位性（moat）をどう見るか",
+      "url": "/investment-library/moat/",
+      "description": "長期投資で最も重要な概念「moat（堀）」を6つの種類と実務的な視点で解説。ネットワーク効果・スイッチングコスト・コスト優位。",
+      "category": "concepts",
+      "tags": ["moat", "競争優位性", "企業分析"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "FCF（フリーキャッシュフロー）とは何か",
+      "url": "/investment-library/fcf/",
+      "description": "フリーキャッシュフロー（FCF）の意味・計算方法・投資での使い方を解説。会計利益ではわからない企業の実力を読む。",
+      "category": "concepts",
+      "tags": ["FCF", "財務分析", "企業分析"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "企業分析テンプレート",
+      "url": "/investment-library/analysis-template/",
+      "description": "moat・FCF・経営者の質を統合した企業分析テンプレート。長期投資の判断基準を実践に落とし込む。",
+      "category": "tools",
+      "tags": ["企業分析", "テンプレート", "実践"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "この書斎の歩き方",
+      "url": "/investment-library/hajimete/",
+      "description": "初めてこの書斎を訪れた方のためのガイド。どこから読み始め、どう歩いていくかを案内する。",
+      "category": "guide",
+      "tags": ["初めて", "ガイド"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "業種から歩く棚",
+      "url": "/investment-library/industries/",
+      "description": "業種の構造を知ると企業の見え方が変わる。14業種の構造・moat・FCF特性を俯瞰する。",
+      "category": "industries",
+      "tags": ["業種分析", "セクター"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "情報通信業の構造を歩く",
+      "url": "/investment-library/industries/it-telecom/",
+      "description": "情報通信業のビジネスモデル・moatの源泉・FCF特性を解説。SaaS・プラットフォーム・通信キャリアの違い。",
+      "category": "industries",
+      "tags": ["情報通信業", "SaaS", "IT"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "サイボウズとKintone",
+      "url": "/investment-library/industries/cybozu-kintone/",
+      "description": "サイボウズのKintoneを題材に、SaaS企業のmoat・スイッチングコスト・ARR成長を分析する。",
+      "category": "industries",
+      "tags": ["サイボウズ", "Kintone", "SaaS"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "投資を入口に文明を考える",
+      "url": "/investment-library/horizons/civilization/",
+      "description": "投資の先にある文明の大きな流れ。なぜ投資家は歴史を学ぶべきなのか。",
+      "category": "horizons",
+      "tags": ["文明", "歴史", "思考"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "資本主義とは何か",
+      "url": "/investment-library/horizons/capitalism/",
+      "description": "資本主義の本質を歴史的に考える。アダム・スミスからマンガーまで、資本と自由の関係を辿る。",
+      "category": "horizons",
+      "tags": ["資本主義", "経済思想"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "複利の力：なぜ長期投資家は時間を味方にできるのか",
+      "url": "/investment-library/horizons/compound-interest/",
+      "description": "バフェットの「雪だるま」の本質。利益が利益を生む連鎖と、複利が効く3つの条件。",
+      "category": "horizons",
+      "tags": ["複利", "長期投資", "資産形成"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "バリュー投資の本質：内在価値とは何か",
+      "url": "/investment-library/horizons/value-investing-essence/",
+      "description": "ミスター・マーケット、安全マージン、グレアムからバフェットへのバリュー投資の進化。",
+      "category": "horizons",
+      "tags": ["バリュー投資", "内在価値", "安全マージン"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "マーケットを読む前に、自分を読む：行動経済学と投資判断",
+      "url": "/investment-library/horizons/behavioral-economics/",
+      "description": "行動経済学が明かす6つの認知バイアスと、マンガーの「反転」という処方箋。",
+      "category": "horizons",
+      "tags": ["行動経済学", "認知バイアス", "投資心理"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "お金の歴史",
+      "url": "/investment-library/horizons/money-history/",
+      "description": "物々交換から仮想通貨まで、貨幣の進化を辿ることで資本主義の本質を理解する。",
+      "category": "horizons",
+      "tags": ["お金の歴史", "貨幣"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "落合陽一と投資的思考",
+      "url": "/investment-library/horizons/ochiai-yoichi/",
+      "description": "落合陽一の思考法を投資家の視点から読み解く。テクノロジーと社会変革の交差点。",
+      "category": "horizons",
+      "tags": ["落合陽一", "テクノロジー"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "FOMO（取り残される恐怖）を超える",
+      "url": "/investment-library/human/fomo/",
+      "description": "投資家を惑わすFOMOの正体と、マンガー流の克服法。焦りが最悪の意思決定を生む仕組み。",
+      "category": "human",
+      "tags": ["FOMO", "投資心理", "行動バイアス"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "損失回避バイアス：なぜ人は損切りできないのか",
+      "url": "/investment-library/human/loss-aversion/",
+      "description": "カーネマンが発見した損失回避の心理。投資における非合理的な判断を理解し、克服する方法。",
+      "category": "human",
+      "tags": ["損失回避", "行動経済学", "投資心理"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "安全マージンの哲学：なぜ余白が富を生むのか",
+      "url": "/investment-library/horizons/safety-margin/",
+      "description": "グレアムの安全マージン概念を投資・経営・人生設計に応用する。マンガーの「余裕を持て」の思想。",
+      "category": "horizons",
+      "tags": ["安全マージン", "グレアム", "リスク管理"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "フリーキャッシュフロー入門：企業の真の稼ぐ力を見る",
+      "url": "/investment-library/fcf/intro/",
+      "description": "FCFとは何か。営業CF−設備投資で見る企業の実力。なぜ営業利益よりFCFが重要なのか。FCF利回りの見方。",
+      "category": "concepts",
+      "tags": ["FCF", "フリーキャッシュフロー", "初心者向け"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "チャーリー・マンガーの思考法：メンタルモデル入門",
+      "url": "/investment-library/horizons/mental-models/",
+      "description": "マンガーのメンタルモデルとは。反転・複利・機会費用・インセンティブ・能力の輪の5つを解説。",
+      "category": "horizons",
+      "tags": ["メンタルモデル", "マンガー", "思考法"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "なぜ分散投資が必要なのか：集中と分散のバランス",
+      "url": "/investment-library/principles/diversification/",
+      "description": "バフェットの集中投資、マンガーの少数精鋭、一般投資家にとっての最適解を考える。",
+      "category": "principles",
+      "tags": ["分散投資", "集中投資", "ポートフォリオ"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "日本株の構造を知る：セクター別の特徴",
+      "url": "/investment-library/industries/japan-sectors/",
+      "description": "日本株14業種の概要マップ。景気循環型vsディフェンシブ、各業種のFCF特性を俯瞰する。",
+      "category": "industries",
+      "tags": ["日本株", "セクター", "業種分析"],
+      "dateAdded": "2026-03-28"
+    }
+  ]
+}

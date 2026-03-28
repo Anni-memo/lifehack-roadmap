@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="バリュー投資の本質とは何か。内在価値（intrinsic value）の概念、安全マージンの考え方、そしてミスター・マーケットとの付き合い方。グレアム・バフェット・マンガーの思想を整理する。"/>
+<meta property="og:title" content="バリュー投資の本質：内在価値とは何か｜投資と思考の書斎"/>
+<meta property="og:description" content="バリュー投資の本質とは何か。内在価値の概念、安全マージン、ミスター・マーケットとの付き合い方をグレアム・バフェット・マンガーの思想から整理する。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/horizons/value-investing-essence/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/horizons/value-investing-essence/"/>
+<title>バリュー投資の本質：内在価値とは何か｜投資と思考の書斎</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "バリュー投資の本質：内在価値とは何か",
+  "description": "バリュー投資の本質とは何か。内在価値（intrinsic value）の概念、安全マージンの考え方、そしてミスター・マーケットとの付き合い方。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "バリュー投資"}, {"@type": "Thing", "name": "内在価値"}, {"@type": "Thing", "name": "安全マージン"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "思考を広げる棚", "item": "https://anni-memo.github.io/investment-library/horizons/"},
+    {"@type": "ListItem", "position": 3, "name": "バリュー投資の本質"}
+  ]}
+}
+</script>
+
+<link rel="stylesheet" href="../../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#2a1c0a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:14px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:700;line-height:1.25;color:var(--parch);text-shadow:0 2px 20px rgba(212,170,34,.15);position:relative;margin-bottom:18px;}
+.hero-lead{font-size:.88rem;color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:540px;margin:0 auto;}
+
+.article{max-width:680px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body strong{color:var(--ink);font-weight:600;}
+
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+
+.concept-card{background:var(--parch2);border:1px solid var(--parch4);border-left:3px solid var(--gold2);padding:22px 24px;margin:24px 0;}
+.concept-card-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.concept-card-body{font-size:.84rem;color:var(--ink2);line-height:2;}
+
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:680px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.footer-links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">バリュー投資の本質</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">VALUE INVESTING</div>
+  <h1 class="hero-title">バリュー投資の本質：<br>内在価値とは何か</h1>
+  <p class="hero-lead">
+    株価は市場が決める。しかし企業の価値は、事業が決める。<br>
+    この二つの違いを見極めることが、バリュー投資の出発点である。
+  </p>
+</div>
+
+<main class="article">
+
+  <!-- 内在価値とは何か -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 01</div>
+    <h2 class="section-title">内在価値とは何か</h2>
+    <div class="section-body">
+      <p>内在価値（intrinsic value）とは、企業が将来にわたって生み出すキャッシュフローの現在価値の合計である。</p>
+      <p>これは教科書的な定義だが、実務ではもう少し直感的に捉えることができる。内在価値とは、<strong>「その企業を丸ごと買い取るとしたら、いくら払うのが合理的か」</strong>という問いへの答えだ。</p>
+      <p>バフェットは内在価値を「企業から残りの寿命の間に取り出せるキャッシュを割り引いた金額」と定義している。この概念が理解できれば、日々の株価変動は本質的に意味を持たなくなる。</p>
+    </div>
+
+    <div class="concept-card">
+      <div class="concept-card-title">内在価値の三つの柱</div>
+      <div class="concept-card-body">
+        <strong>1. 事業の質</strong> ── 強いmoatを持ち、安定したキャッシュフローを生む力があるか。<br>
+        <strong>2. 成長性</strong> ── そのキャッシュフローは今後も成長していくか。<br>
+        <strong>3. 持続性</strong> ── その成長は5年、10年、20年と持続可能か。
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ミスター・マーケット -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 02</div>
+    <h2 class="section-title">ミスター・マーケットという寓話</h2>
+    <div class="section-body">
+      <p>ベンジャミン・グレアムが『賢明なる投資家』で描いた有名な寓話がある。</p>
+      <p>あなたのビジネスパートナーに「ミスター・マーケット」という人物がいる。彼は毎日やってきて、あなたの持ち分を売ってくれ、あるいは彼の持ち分を買ってくれと提案してくる。</p>
+      <p>問題は、ミスター・マーケットが極端に感情的な人物だということだ。ある日は楽観的で高値を提示し、別の日は悲観的で叩き売りの値段を持ってくる。</p>
+      <p><strong>あなたがすべきことは明快だ。彼の提案が合理的なときだけ応じ、それ以外は無視すればいい。</strong></p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">"ミスター・マーケットはあなたの召使いであって、あなたの主人ではない。彼の財布は利用しても、彼の知恵に頼ってはならない。"<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;">── Benjamin Graham</span></p>
+    </div>
+
+    <div class="section-body">
+      <p>この寓話が教えることは深い。株価は企業の価値を正確に反映しているわけではない。株価は、無数の投資家の感情・期待・恐怖の集合体にすぎない。</p>
+      <p>バリュー投資家が株価と内在価値を分けて考えるのは、この認識があるからだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 安全マージン -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 03</div>
+    <h2 class="section-title">安全マージンという知恵</h2>
+    <div class="section-body">
+      <p>グレアムが投資の世界に残した最も重要な概念は「安全マージン（margin of safety）」である。</p>
+      <p>安全マージンとは、企業の内在価値と購入価格の差のことだ。内在価値が1,000円と推定される企業を、700円で買えれば、300円の安全マージンがある。</p>
+      <p>なぜ安全マージンが必要なのか。</p>
+      <p><strong>第一に、内在価値の推定は必ず不正確だからだ。</strong>将来のキャッシュフローを正確に予測できる人間はいない。安全マージンは、その不正確さに対する保険である。</p>
+      <p><strong>第二に、予測不能な事態は必ず起きるからだ。</strong>パンデミック、金融危機、経営者の不祥事。安全マージンは、予測できなかったリスクに対する緩衝材である。</p>
+      <p><strong>第三に、安全マージンがリターンの源泉になるからだ。</strong>内在価値以下で買えば、市場が企業の真の価値に気づいたとき、その差が利益になる。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">"橋を渡るときに、耐荷重10トンと表示されていたら、9.8トンのトラックで渡ろうとは思わないだろう。自分の計算が正確だと確信していても、橋には余裕を持たせる。投資も同じだ。"<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;">── Warren Buffett</span></p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- グレアムからバフェットへ -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 04</div>
+    <h2 class="section-title">グレアムからバフェットへ：バリュー投資の進化</h2>
+    <div class="section-body">
+      <p>グレアムのバリュー投資は、主に定量的な基準に基づいていた。PBR（株価純資産倍率）が低い株を買い、価格が回復したら売る。これは「シガーバット（吸い殻）投資」とも呼ばれる。</p>
+      <p>バフェットはマンガーの影響を受け、このアプローチを大きく進化させた。</p>
+      <p><strong>「まあまあの企業を素晴らしい価格で買うより、素晴らしい企業をまあまあの価格で買うほうがはるかに良い」</strong></p>
+      <p>この転換は革命的だった。安いというだけで買うのではなく、質の高い企業を適正な価格で買い、長期間保有する。複利の力で、質の高い企業は時間とともに自らの価値を大きくしていくからだ。</p>
+      <p>グレアムが「安全マージンを定量的に確保する」ことを教えたとすれば、バフェットとマンガーは「企業の質こそが最大の安全マージンである」ことを示した。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 実践への接続 -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 05</div>
+    <h2 class="section-title">バリュー投資を実践するために</h2>
+    <div class="section-body">
+      <p>バリュー投資の実践において、最も難しいのは「待つこと」である。</p>
+      <p>良い企業を見つけても、価格が高ければ買わない。安くなるまで待つ。そして安くなったとき、多くの人が恐怖に支配されている中で買う。</p>
+      <p>これは理論としては単純だが、実行するには強い精神力が必要だ。市場が暴落しているとき、周囲が総悲観のとき、冷静に企業の内在価値と株価を比較し、「今がチャンスだ」と判断できる人は少ない。</p>
+      <p>だからこそ、<strong>平時にこそ企業の内在価値を理解しておくことが重要</strong>なのだ。暴落が起きてから慌てて調べるのではなく、日頃から企業を研究し、「この企業は〇〇円なら買いたい」というリストを持っておく。</p>
+      <p>バリュー投資は、準備の投資術である。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">この記事の隣に置いてある本</div>
+    <p class="further-reason">内在価値を理解したら、次は投資判断を歪める人間の心理について考えよう。</p>
+    <div class="further-links">
+      <a class="further-link" href="../behavioral-economics/">
+        <span class="further-link-tag">次の記事</span>
+        <span class="further-link-title">マーケットを読む前に、自分を読む</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../compound-interest/">
+        <span class="further-link-tag">前の記事</span>
+        <span class="further-link-title">複利の力：なぜ長期投資家は時間を味方にできるのか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../fcf/">
+        <span class="further-link-tag">財務</span>
+        <span class="further-link-title">FCFとは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div class="footer-links">
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../../industries/">業種から歩く</a> ·
+    <a href="../">思考を広げる</a>
+  </div>
+  <div>人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">&#x1F3B5;</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});
+  };
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
+    else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
+  });
+})();
+</script>
+<script src="../../shared.js"></script>
+</body>
+</html>

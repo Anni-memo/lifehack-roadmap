@@ -4,10 +4,78 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Munger・Buffett・Fisherの投資哲学を体系的に学べる無料のオンライン図書館。moat（競争優位性）・FCF（フリーキャッシュフロー）・投資原則・業種分析・行動経済学・メンタルモデルまで、長期投資家の判断基準を育てる。"/>
 <meta property="og:title" content="投資と思考の書斎｜長期投資のライブラリ"/>
-<meta property="og:description" content="銘柄の正解ではなく、判断基準を育てる場所。投資を入口に、文明・歴史・資本・人間理解へ歩いていく静かな知の図書館。"/>
+<meta property="og:description" content="Munger・Buffett・Fisherの投資哲学を体系的に学べる無料の知の図書館。moat・FCF・投資原則・業種分析・メンタルモデルを網羅。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎 — Munger・Buffett・Fisherの思想に学ぶ長期投資のライブラリ"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/"/>
 <title>投資と思考の書斎｜長期投資のライブラリ</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "投資と思考の書斎",
+      "url": "https://anni-memo.github.io/investment-library/",
+      "description": "銘柄の正解ではなく、判断基準を育てる場所。Munger・Buffett・Fisherの思想に学び、長期投資の知的基盤を構築するための図書館。",
+      "inLanguage": "ja",
+      "author": {"@type": "Person", "name": "anni_memo"}
+    },
+    {
+      "@type": "Organization",
+      "name": "投資と思考の書斎",
+      "url": "https://anni-memo.github.io/investment-library/",
+      "description": "長期投資の知的ライブラリ。moat・FCF・業種分析・投資心理・文明と資本主義を網羅した思考の書斎。"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "投資と思考の書斎とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Munger・Buffett・Fisherの投資哲学を体系的に学べる無料のオンライン図書館です。銘柄の推薦ではなく、長期投資家としての判断基準を育てることを目的としています。moat（競争優位性）・FCF（フリーキャッシュフロー）・投資原則・業種分析・行動経済学・メンタルモデルなどを網羅しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "moat（経済的堀）とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "moat（経済的堀）とは、企業が競合他社から自社のビジネスを守る永続的な競争優位性のことです。ネットワーク効果・スイッチングコスト・コスト優位・無形資産・効率的な規模の6種類があり、バフェットとマンガーが最も重視する企業評価の概念です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "フリーキャッシュフロー（FCF）とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "フリーキャッシュフロー（FCF）とは、営業キャッシュフローから設備投資を差し引いた「企業が自由に使えるお金」のことです。会計上の利益は操作可能ですが、現金は嘘をつきません。FCFは企業の真の稼ぐ力を表す最も信頼できる指標です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "バリュー投資の安全マージンとは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "安全マージン（Margin of Safety）とは、企業の内在価値と市場価格の差のことです。ベンジャミン・グレアムが提唱し、バフェットが実践する概念で、分析の誤りや予期しない悪材料から投資家を守る「緩衝材」として機能します。"
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
@@ -341,12 +409,6 @@ body::before{
   display:flex;align-items:center;gap:16px;
   padding:18px 0;
 }
-.welcome-icon{
-  width:44px;height:44px;border-radius:50%;
-  background:var(--gold)18;border:1px solid var(--gold)44;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.2rem;flex-shrink:0;
-}
 .welcome-text{flex:1}
 .welcome-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.15em;margin-bottom:4px}
 .welcome-body{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:1.6}
@@ -390,6 +452,9 @@ body::before{
   white-space:nowrap;flex-shrink:0;transition:all .2s;letter-spacing:.06em;
 }
 .industry-nav-link:hover{background:var(--gold2);color:var(--ink);border-color:var(--gold2);}
+.industry-nav-links{display:flex;flex-direction:column;align-items:flex-end;gap:7px;flex-shrink:0;}
+.industry-nav-link-sub{font-family:var(--mono);font-size:.52rem;color:rgba(212,170,34,.5);text-decoration:none;letter-spacing:.05em;transition:color .18s;}
+.industry-nav-link-sub:hover{color:var(--gold3);}
 
 /* ── FLAGSHIP ARTICLE ── */
 .flagship{
@@ -453,12 +518,16 @@ body::before{
 }
 .scroll-top.visible{opacity:1;pointer-events:all}
 .scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
 
 /* ── SHELVES ── */
 .shelves{background:var(--parch);border-bottom:1px solid var(--parch4);padding:40px 24px;}
 .shelves-inner{max-width:860px;margin:0 auto;}
 .shelves-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.18em;margin-bottom:8px;}
-.shelves-title{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:28px;letter-spacing:.03em;}
+.shelves-title{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:10px;letter-spacing:.03em;}
+.shelves-lead{font-family:var(--jp);font-size:.82rem;color:var(--ink3);margin-bottom:28px;font-weight:300;}
 .shelves-grid{display:grid;grid-template-columns:1fr;gap:2px;}
 @media(min-width:600px){.shelves-grid{grid-template-columns:repeat(2,1fr);}}
 a.shelf-item,.shelf-item{
@@ -513,7 +582,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 .still-water{background:var(--ink);padding:52px 24px;text-align:center;}
 .sw-text{font-family:var(--serif);font-size:clamp(.88rem,2vw,1.05rem);color:var(--parch4);line-height:2.2;font-weight:300;letter-spacing:.04em;}
 </style>
-
+<link rel="stylesheet" href="shared.css"/>
 </head>
 <body>
 
@@ -540,12 +609,73 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
 <div class="welcome-banner">
   <div class="welcome-inner">
-    <div class="welcome-icon">📖</div>
     <div class="welcome-text">
-      <div class="welcome-label">FIRST VISIT</div>
-      <div class="welcome-body">このサイトは、銘柄を推薦する場所ではありません。<br><strong>投資家の判断基準を育てるための、静かな図書館です。</strong></div>
+      <div class="welcome-label">人とAIが共に使える、無料の知の図書館</div>
+      <div class="welcome-body">このサイトは、銘柄を推薦する場所ではありません。<br><strong>投資家の判断基準を育てるための、静かな図書館です。</strong><br><span style="font-size:.76rem;color:rgba(223,201,168,.5)">人間にとっても、AIエージェントにとっても使いやすい構造化された知識を、誰でも無料で。</span></div>
     </div>
-    <a class="welcome-link" href="hajimete/">ここから読む</a>
+    <a class="welcome-link" href="hajimete/">この書斎の歩き方 →</a>
+  </div>
+</div>
+
+<!-- ══════════════ SEARCH ══════════════ -->
+<div style="background:var(--parch);border-bottom:1px solid var(--parch4);padding:24px 0 20px;">
+  <div class="search-container">
+    <div class="search-box">
+      <span class="search-icon">&#x1F50D;</span>
+      <input class="search-input" type="text" id="siteSearch" placeholder="記事を検索... (例: moat, FCF, 複利, マンガー)" autocomplete="off"/>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- NEW ARTICLES HIGHLIGHT -->
+<style>
+.new-articles{background:var(--parch);border-bottom:1px solid var(--parch4);padding:32px 20px;}
+.new-articles-inner{max-width:860px;margin:0 auto;}
+.new-articles-label{font-family:var(--mono);font-size:.52rem;color:var(--gold2);letter-spacing:.18em;margin-bottom:16px;}
+.new-articles-grid{display:grid;grid-template-columns:1fr;gap:2px;}
+@media(min-width:600px){.new-articles-grid{grid-template-columns:repeat(3,1fr);}}
+.new-article-card{
+  display:block;padding:18px 20px;
+  background:var(--parch2);border:1px solid var(--parch4);border-top:3px solid var(--gold2);
+  text-decoration:none;color:inherit;transition:all .18s;
+}
+.new-article-card:hover{background:var(--parch3);border-top-color:var(--gold3);transform:translateY(-2px);box-shadow:var(--shadow);}
+.new-article-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;}
+.new-article-title{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.35;}
+.new-article-desc{font-size:.72rem;color:var(--ink3);line-height:1.65;font-weight:300;}
+</style>
+
+<div class="new-articles">
+  <div class="new-articles-inner">
+    <div class="new-articles-label">NEW — 最近追加された記事</div>
+    <div class="new-articles-grid">
+      <a class="new-article-card" href="horizons/mental-models/">
+        <div class="new-article-tag">MENTAL MODELS</div>
+        <div class="new-article-title">チャーリー・マンガーの思考法：メンタルモデル入門</div>
+        <div class="new-article-desc">反転・複利・機会費用・インセンティブ・能力の輪。マンガーの代表的な5つの思考モデル。</div>
+      </a>
+      <a class="new-article-card" href="horizons/safety-margin/">
+        <div class="new-article-tag">MARGIN OF SAFETY</div>
+        <div class="new-article-title">安全マージンの哲学：なぜ余白が富を生むのか</div>
+        <div class="new-article-desc">グレアムの安全マージン概念。投資・経営・人生設計への応用とマンガーの「余裕を持て」の思想。</div>
+      </a>
+      <a class="new-article-card" href="horizons/compound-interest/">
+        <div class="new-article-tag">COMPOUND INTEREST</div>
+        <div class="new-article-title">複利の力：なぜ長期投資家は時間を味方にできるのか</div>
+        <div class="new-article-desc">バフェットの「雪だるま」の本質。利益が利益を生む連鎖と、複利が効く3つの条件。</div>
+      </a>
+      <a class="new-article-card" href="horizons/value-investing-essence/">
+        <div class="new-article-tag">VALUE INVESTING</div>
+        <div class="new-article-title">バリュー投資の本質：内在価値とは何か</div>
+        <div class="new-article-desc">ミスター・マーケット、安全マージン、そしてグレアムからバフェットへのバリュー投資の進化。</div>
+      </a>
+      <a class="new-article-card" href="horizons/behavioral-economics/">
+        <div class="new-article-tag">BEHAVIORAL ECONOMICS</div>
+        <div class="new-article-title">マーケットを読む前に、自分を読む</div>
+        <div class="new-article-desc">行動経済学が明かす6つの認知バイアスと、マンガーの「反転」という処方箋。</div>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -555,12 +685,13 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
   <div class="shelves-inner">
     <div class="shelves-label">LIBRARY SHELVES</div>
     <div class="shelves-title">書架から読む</div>
+    <div class="shelves-lead">棚01と棚02を順に歩いてから、気になるところへ進んでください。</div>
     <div class="shelves-grid">
       <a class="shelf-item" href="hajimete/">
         <div class="shelf-num">01</div>
         <div class="shelf-body">
           <div class="shelf-name">はじめの棚</div>
-          <div class="shelf-desc">長期投資の入口 · 投資原則</div>
+          <div class="shelf-desc">最初の一冊 · この書斎の土台</div>
         </div>
         <div class="shelf-arrow">→</div>
       </a>
@@ -568,7 +699,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
         <div class="shelf-num">02</div>
         <div class="shelf-body">
           <div class="shelf-name">概念の棚</div>
-          <div class="shelf-desc">moat · FCF · 企業分析</div>
+          <div class="shelf-desc">競争優位の見方 · 財務の読み方</div>
         </div>
         <div class="shelf-arrow">→</div>
       </a>
@@ -576,7 +707,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
         <div class="shelf-num">03</div>
         <div class="shelf-body">
           <div class="shelf-name">業種から歩く棚</div>
-          <div class="shelf-desc">東証プライム · 業種別一覧</div>
+          <div class="shelf-desc">業種の構造を知る · 競争優位の在り処</div>
         </div>
         <div class="shelf-arrow">→</div>
       </a>
@@ -602,7 +733,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
           <div class="shelf-name">拡張予定の棚</div>
           <div class="shelf-desc">歴史 · 制度 · 意思決定</div>
         </div>
-        <div class="shelf-soon">near future</div>
+        <div class="shelf-soon">順次追加</div>
       </div>
     </div>
   </div>
@@ -612,12 +743,14 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
 <div class="industry-nav">
   <div class="industry-nav-inner">
-    <div class="industry-nav-icon">🏭</div>
     <div class="industry-nav-text">
-      <div class="industry-nav-label">業種から探す</div>
-      <div class="industry-nav-body">東証プライム企業を業種ごとに眺め、セクターから企業へ、企業から分析へ進める入口です。</div>
+      <div class="industry-nav-label">業種から歩く棚</div>
+      <div class="industry-nav-body">業種の構造を知ると、企業の見え方が変わる。moatがどこに宿り、何で稼ぐかは、業種によって違う。<br><span style="font-size:.78rem;color:rgba(212,170,34,.6);font-family:var(--mono);letter-spacing:.04em;">情報通信業から、まず歩けます。</span></div>
     </div>
-    <a class="industry-nav-link" href="industries/">業種一覧を見る →</a>
+    <div class="industry-nav-links">
+      <a class="industry-nav-link" href="industries/it-telecom/">情報通信業を歩く →</a>
+      <a class="industry-nav-link-sub" href="industries/">業種一覧へ</a>
+    </div>
   </div>
 </div>
 
@@ -724,7 +857,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">マンガーの講演・エッセイを集めた「バイブル」。多面的思考モデル、心理バイアス25種、人生哲学のすべてがここに。世界で最も読まれるべき投資書。</div>
       <div class="book-meta">
         <span class="book-badge must">必読</span>
-        <span class="book-badge">1000ページ超</span>
+        <span class="book-badge">上級</span>
         <span class="book-badge">英語版</span>
       </div>
     </div>
@@ -742,6 +875,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-meta">
         <span class="book-badge reading">📖 読書中</span>
         <span class="book-badge must">マンガー推薦</span>
+        <span class="book-badge">初級</span>
       </div>
     </div>
     <div class="book-cta">📦 Amazonで購入</div>
@@ -757,6 +891,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">マンガーの生涯と投資哲学の形成過程を追った伝記。なぜ彼が独特の多面的思考法を開発したのか、その人間としての物語が明かされる。</div>
       <div class="book-meta">
         <span class="book-badge must">必読</span>
+        <span class="book-badge">初級</span>
         <span class="book-badge">伝記</span>
       </div>
     </div>
@@ -773,6 +908,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">マンガーの投資原則を25の思考モデルに体系化した決定版。心理バイアス・機会費用・ミスター・マーケット。実践的で読みやすい入門書にして深書。</div>
       <div class="book-meta">
         <span class="book-badge must">次の一冊</span>
+        <span class="book-badge">中級</span>
         <span class="book-badge">体系的</span>
       </div>
     </div>
@@ -819,6 +955,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">バフェットが「投資で読んだ最高の本」と称する永遠の古典。ミスター・マーケット、安全マージン、防御的投資家と積極的投資家の概念。時代を超えた必読書。</div>
       <div class="book-meta">
         <span class="book-badge must">バフェット推薦No.1</span>
+        <span class="book-badge">中級</span>
         <span class="book-badge">古典</span>
       </div>
     </div>
@@ -835,8 +972,8 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">バフェット唯一の公認伝記。2000ページに渡る圧倒的な内容。投資哲学の形成から人間関係まで、バフェットという人間の全てが明かされる。</div>
       <div class="book-meta">
         <span class="book-badge must">必読</span>
+        <span class="book-badge">初級</span>
         <span class="book-badge">公認伝記</span>
-        <span class="book-badge">2巻</span>
       </div>
     </div>
     <div class="book-cta">📦 Amazonで購入</div>
@@ -852,6 +989,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">50年以上にわたる株主への手紙をまとめた書。毎年の投資判断、経済観、人生哲学。これを読まずしてバリュー投資は語れない永遠の教科書。</div>
       <div class="book-meta">
         <span class="book-badge must">年次必読</span>
+        <span class="book-badge">中級</span>
         <span class="book-badge">無料公開</span>
       </div>
     </div>
@@ -867,6 +1005,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-stars">★★★★☆</div>
       <div class="book-desc">バフェットの実際の投資事例を詳細分析。コカコーラ・ワシントンポスト・ジレットなど個別銘柄の選定基準を解剖。実践的なバフェット入門書の決定版。</div>
       <div class="book-meta">
+        <span class="book-badge">中級</span>
         <span class="book-badge">実践的</span>
         <span class="book-badge">事例豊富</span>
       </div>
@@ -884,6 +1023,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">株主への手紙からテーマ別に再編集した名著。コーポレートガバナンス、企業評価、会計、合併買収。バフェットの思考が体系的に理解できる。</div>
       <div class="book-meta">
         <span class="book-badge must">体系的理解</span>
+        <span class="book-badge">上級</span>
       </div>
     </div>
     <div class="book-cta">📦 Amazonで購入</div>
@@ -929,6 +1069,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-desc">投資書の古典中の古典。「15の投資原則」と「スカットルバット手法」。バフェットが「投資書で最も重要な一冊」と称した書。1958年刊行も今なお色褪せない。</div>
       <div class="book-meta">
         <span class="book-badge must">バフェット推薦</span>
+        <span class="book-badge">中級</span>
         <span class="book-badge">1958年古典</span>
       </div>
     </div>
@@ -944,6 +1085,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-stars">★★★★☆</div>
       <div class="book-desc">「真の安全性とは何か」を問い直す書。低PBRの割安株より、競争優位を持つ成長企業こそが最も安全な投資先という逆説を説く。</div>
       <div class="book-meta">
+        <span class="book-badge">中級</span>
         <span class="book-badge">リスク管理</span>
         <span class="book-badge">成長株</span>
       </div>
@@ -960,6 +1102,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-stars">★★★★☆</div>
       <div class="book-desc">フィッシャーが後年まとめた投資哲学の集大成。半世紀の経験から蒸留された知恵。「なぜ自分だけの投資哲学を持つ必要があるか」を語る。</div>
       <div class="book-meta">
+        <span class="book-badge">上級</span>
         <span class="book-badge">哲学書</span>
       </div>
     </div>
@@ -995,7 +1138,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <div class="book-title-jp">株デビューする前に知っておくべき「魔法の公式」</div>
       <div class="book-stars">★★★★☆</div>
       <div class="book-desc">ROCEとEV/EBITを使った「マジック・フォーミュラ」で市場を上回り続ける手法。マンガーの「素晴らしい企業を割安に買う」を数式化した入門書。</div>
-      <div class="book-meta"><span class="book-badge">定量的</span><span class="book-badge">入門書</span></div>
+      <div class="book-meta"><span class="book-badge">初級</span><span class="book-badge">定量的</span><span class="book-badge">入門書</span></div>
     </div>
     <div class="book-cta">📦 Amazonで購入</div>
   </a>
@@ -1098,14 +1241,26 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
         <div class="horizons-item-label">CAPITALISM</div>
         <div class="horizons-item-title">資本主義とは何か</div>
       </a>
-      <div class="horizons-item coming">
-        <div class="horizons-item-label">MONEY & CREDIT</div>
-        <div class="horizons-item-title">お金の歴史とは何か</div>
-      </div>
-      <div class="horizons-item coming">
-        <div class="horizons-item-label">HUMAN NATURE</div>
-        <div class="horizons-item-title">人類はなぜ協力できたのか</div>
-      </div>
+      <a class="horizons-item" href="horizons/compound-interest/">
+        <div class="horizons-item-label">COMPOUND INTEREST</div>
+        <div class="horizons-item-title">複利の力：時間を味方にする</div>
+      </a>
+      <a class="horizons-item" href="horizons/value-investing-essence/">
+        <div class="horizons-item-label">VALUE INVESTING</div>
+        <div class="horizons-item-title">バリュー投資の本質：内在価値とは何か</div>
+      </a>
+      <a class="horizons-item" href="horizons/behavioral-economics/">
+        <div class="horizons-item-label">BEHAVIORAL ECONOMICS</div>
+        <div class="horizons-item-title">マーケットを読む前に、自分を読む</div>
+      </a>
+      <a class="horizons-item" href="horizons/safety-margin/">
+        <div class="horizons-item-label">MARGIN OF SAFETY</div>
+        <div class="horizons-item-title">安全マージンの哲学：なぜ余白が富を生むのか</div>
+      </a>
+      <a class="horizons-item" href="horizons/mental-models/">
+        <div class="horizons-item-label">MENTAL MODELS</div>
+        <div class="horizons-item-title">マンガーの思考法：メンタルモデル入門</div>
+      </a>
     </div>
     <p class="horizons-more">
       <a href="horizons/" style="color:var(--gold);text-decoration:none;">思考を広げる棚をすべて見る →</a>
@@ -1126,11 +1281,24 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
 <footer class="footer">
   <div class="footer-title">投資と思考の書斎</div>
-  <div>書籍情報・Amazonリンクは参考です。購入前に最新情報をご確認ください。</div>
+  <div>
+    <a href="hajimete/">初めての方へ</a> ·
+    <a href="principles/">投資原則</a> ·
+    <a href="moat/">moat</a> ·
+    <a href="fcf/">FCF</a> ·
+    <a href="industries/">業種から歩く</a> ·
+    <a href="horizons/">思考を広げる</a> ·
+    <a href="api/articles.json">API</a> ·
+    <a href="llms.txt">llms.txt</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:6px">書籍情報・Amazonリンクは参考です。購入前に最新情報をご確認ください。</div>
   <div>投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
 </footer>
 
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
 
 <!-- ══════════════ DATA & LOGIC ══════════════ -->
 
@@ -1313,9 +1481,77 @@ window.addEventListener('scroll',()=>{
   document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
 });
 
+// ── MUSIC TOGGLE ──
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});
+  };
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
+    else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
+  });
+})();
+
 // ── INIT ──
 renderQuotes();
+
+// ── SEARCH ──
+var SEARCH_DATA = [
+  {title:"私の投資原則",url:"principles/",desc:"永続的競争優位性・資本配分・財務・経営者の質——8つの基本原則",cat:"PRINCIPLES"},
+  {title:"永続的競争優位性（moat）をどう見るか",url:"moat/",desc:"ネットワーク効果・スイッチングコスト・コスト優位——競争優位の6類型",cat:"MOAT"},
+  {title:"FCFとは何か",url:"fcf/",desc:"フリーキャッシュフローの意味・計算方法・投資での使い方",cat:"FCF"},
+  {title:"フリーキャッシュフロー入門",url:"fcf/intro/",desc:"営業CF−設備投資で見る企業の実力。FCF利回りの見方",cat:"FCF BASICS"},
+  {title:"企業分析テンプレート",url:"analysis-template/",desc:"moat・FCF・経営者の質を統合した実践テンプレート",cat:"TEMPLATE"},
+  {title:"この書斎の歩き方",url:"hajimete/",desc:"初めての方へ。どこから読み始め、どう歩いていくか",cat:"GUIDE"},
+  {title:"業種から歩く棚",url:"industries/",desc:"14業種の構造・moat・FCF特性を俯瞰する",cat:"INDUSTRIES"},
+  {title:"情報通信業の構造を歩く",url:"industries/it-telecom/",desc:"SaaS・プラットフォーム・通信キャリアのmoatとFCF",cat:"IT & TELECOM"},
+  {title:"サイボウズとKintone",url:"industries/cybozu-kintone/",desc:"SaaS企業のmoat・スイッチングコスト・ARR成長分析",cat:"CYBOZU"},
+  {title:"日本株セクター別の特徴",url:"industries/japan-sectors/",desc:"14業種マップ。景気循環型vsディフェンシブ、FCF特性",cat:"JAPAN SECTORS"},
+  {title:"投資を入口に文明を考える",url:"horizons/civilization/",desc:"投資の先にある文明の大きな流れ",cat:"CIVILIZATION"},
+  {title:"資本主義とは何か",url:"horizons/capitalism/",desc:"アダム・スミスからマンガーまで、資本と自由の関係",cat:"CAPITALISM"},
+  {title:"複利の力",url:"horizons/compound-interest/",desc:"バフェットの雪だるまの本質。複利が効く3つの条件",cat:"COMPOUND"},
+  {title:"バリュー投資の本質：内在価値とは何か",url:"horizons/value-investing-essence/",desc:"ミスター・マーケット、安全マージン、グレアムからバフェットへ",cat:"VALUE INVESTING"},
+  {title:"マーケットを読む前に自分を読む",url:"horizons/behavioral-economics/",desc:"行動経済学の6つの認知バイアスとマンガーの処方箋",cat:"BEHAVIORAL"},
+  {title:"お金の歴史",url:"horizons/money-history/",desc:"物々交換から仮想通貨まで、貨幣の進化",cat:"MONEY HISTORY"},
+  {title:"落合陽一と投資的思考",url:"horizons/ochiai-yoichi/",desc:"テクノロジーと社会変革の交差点",cat:"OCHIAI"},
+  {title:"安全マージンの哲学",url:"horizons/safety-margin/",desc:"グレアムの安全マージン概念。投資・経営・人生への応用",cat:"MARGIN OF SAFETY"},
+  {title:"マンガーの思考法：メンタルモデル入門",url:"horizons/mental-models/",desc:"反転・複利・機会費用・インセンティブ・能力の輪",cat:"MENTAL MODELS"},
+  {title:"な��分散投資が必要なのか",url:"principles/diversification/",desc:"バフェットの集中投資、マンガーの少数精鋭、最適解",cat:"DIVERSIFICATION"},
+  {title:"FOMO（取り残される恐怖）を超える",url:"human/fomo/",desc:"投資家を惑わすFOMOの正体とマンガー流の克服法",cat:"FOMO"},
+  {title:"損失回避バイアス",url:"human/loss-aversion/",desc:"カーネマンが発見した損失回避の心理と克服法",cat:"LOSS AVERSION"}
+];
+
+(function(){
+  var input = document.getElementById('siteSearch');
+  var results = document.getElementById('searchResults');
+  if(!input || !results) return;
+  input.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    if(q.length < 1){ results.className='search-results'; results.innerHTML=''; return; }
+    var matches = SEARCH_DATA.filter(function(a){
+      return a.title.toLowerCase().indexOf(q)!==-1 || a.desc.toLowerCase().indexOf(q)!==-1 || a.cat.toLowerCase().indexOf(q)!==-1;
+    });
+    if(matches.length===0){
+      results.className='search-results active';
+      results.innerHTML='<div class="search-no-result">該当する記事が見つかりません</div>';
+      return;
+    }
+    results.className='search-results active';
+    results.innerHTML=matches.map(function(a){
+      return '<a class="search-result-item" href="'+a.url+'"><div class="search-result-cat">'+a.cat+'</div><div class="search-result-title">'+a.title+'</div><div class="search-result-desc">'+a.desc+'</div></a>';
+    }).join('');
+  });
+  document.addEventListener('click',function(e){
+    if(!input.contains(e.target)&&!results.contains(e.target)){results.className='search-results';results.innerHTML='';}
+  });
+})();
 </script>
+<script src="shared.js"></script>
 
 </body>
 </html>

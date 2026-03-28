@@ -3,483 +3,342 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta property="og:title" content="初めての方へ｜長期投資と思考のライブラリ"/>
-<meta property="og:description" content="このサイトは何のサイトか、どこから読むべきか。長期投資家のための知的アーカイブへようこそ。"/>
+<meta name="description" content="この書斎の歩き方。何から読み始め、どの順番で進み、読んだ後にどこへ向かうか。長期投資の知識と思考を育てるための最初の地図。"/>
+<meta property="og:title" content="初めての方へ｜投資と思考の書斎"/>
+<meta property="og:description" content="この書斎の歩き方。何から読み始め、どの順番で進み、読んだ後にどこへ向かうか。最初の地図として使ってください。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/hajimete/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<title>初めての方へ｜長期投資と思考のライブラリ</title>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/hajimete/"/>
+<title>初めての方へ｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "初めての方へ——書斎の歩き方",
+  "description": "この書斎の歩き方。何から読み始め、どの順番で進み、読んだ後にどこへ向かうか。長期投資の知識と思考を育てるための最初の地図。",
+  "url": "https://anni-memo.github.io/investment-library/hajimete/",
+  "isPartOf": {"@type": "WebSite", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "初めての方へ"}
+  ]}
+}
+</script>
 
+<link rel="stylesheet" href="../shared.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 
 <style>
-:root {
-  --ink:    #1a1208;
-  --ink2:   #2d2010;
-  --ink3:   #4a3520;
-  --parch:  #f5ede0;
-  --parch2: #efe4d0;
-  --parch3: #e8d8be;
-  --parch4: #dfc9a8;
-  --gold:   #8b6914;
-  --gold2:  #b8900a;
-  --gold3:  #d4aa22;
-  --gold4:  #f0cc55;
-  --rust:   #8b3a1a;
-  --rust2:  #c05020;
-  --green:  #2a4a1a;
-  --green2: #3d6828;
-  --serif:  'Cormorant Garamond', 'Noto Serif JP', serif;
-  --jp:     'Noto Serif JP', 'Cormorant Garamond', serif;
-  --mono:   'DM Mono', monospace;
-  --shadow: 0 4px 24px rgba(26,18,8,.18);
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--ink);scroll-behavior:smooth}
-body{
-  font-family:var(--jp);
-  background:var(--parch);
-  color:var(--ink);
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-/* ── Grain texture ── */
-body::before{
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:1000;opacity:.5;
-}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
 
 /* ── NAV ── */
-.nav{
-  background:var(--ink);
-  padding:12px 24px;
-  display:flex;align-items:center;gap:8px;
-  border-bottom:1px solid rgba(184,144,10,.25);
-}
-.nav-back{
-  font-family:var(--mono);font-size:.62rem;color:var(--gold3);
-  text-decoration:none;letter-spacing:.08em;
-  display:flex;align-items:center;gap:6px;
-  transition:color .2s;
-}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
 .nav-back:hover{color:var(--gold4)}
-.nav-sep{color:var(--gold)44;font-size:.7rem}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
 .nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
 
 /* ── HERO ── */
 .hero{
-  background:linear-gradient(160deg, var(--ink) 0%, var(--ink2) 40%, #3a2510 100%);
-  color:var(--parch);
-  padding:56px 24px 44px;
-  text-align:center;
-  position:relative;overflow:hidden;
-  border-bottom:3px solid var(--gold);
+  background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#2a1c0a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
 }
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,144,10,.12) 0%, transparent 70%);
-}
-.hero::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold3),transparent);
-}
-.hero-ornament{
-  font-family:var(--serif);font-size:1rem;color:var(--gold3);
-  letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;
-}
-.hero-title{
-  font-family:var(--serif);
-  font-size:clamp(2rem,6vw,3.2rem);
-  font-weight:700;line-height:1.15;
-  color:var(--parch);
-  margin-bottom:6px;
-  text-shadow:0 2px 20px rgba(212,170,34,.25);
-  position:relative;
-}
-.hero-title em{
-  font-style:italic;color:var(--gold4);
-  display:block;font-size:.68em;letter-spacing:.04em;margin-top:4px;
-}
-.hero-sub{
-  font-size:.86rem;color:var(--parch3);
-  font-weight:300;letter-spacing:.06em;
-  margin-top:16px;line-height:1.8;position:relative;
-}
-.hero-tags{
-  display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
-  margin-top:20px;position:relative;
-}
-.hero-tag{
-  font-family:var(--mono);font-size:.56rem;color:var(--gold3);
-  border:1px solid var(--gold)44;padding:3px 10px;letter-spacing:.1em;
-}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:14px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.9rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 20px rgba(212,170,34,.15);position:relative;margin-bottom:18px;}
+.hero-lead{font-size:.9rem;color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:520px;margin:0 auto;}
 
-/* ── SECTION ── */
-.section{padding:40px 20px;max-width:800px;margin:0 auto}
-.section + .section{padding-top:0}
+/* ── ARTICLE ── */
+.article{max-width:680px;margin:0 auto;padding:56px 24px 12px;}
 
-.section-header{
-  display:flex;align-items:baseline;gap:12px;
-  margin-bottom:24px;padding-bottom:12px;
-  border-bottom:1px solid var(--parch4);
-}
-.section-num{font-family:var(--mono);font-size:.56rem;color:var(--gold2);letter-spacing:.15em}
-.section-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--ink)}
+.article-section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
 
-/* ── INTRO CARD ── */
-.intro-card{
-  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
-  color:var(--parch);
-  border-radius:2px;padding:32px 28px;
-  margin-bottom:28px;
-  border-left:4px solid var(--gold2);
-  position:relative;overflow:hidden;
-}
-.intro-card::before{
-  content:'\201C';
-  position:absolute;top:-8px;left:16px;
-  font-family:var(--serif);font-size:7rem;
-  color:var(--gold3);opacity:.1;line-height:1;pointer-events:none;
-}
-.intro-label{
-  font-family:var(--mono);font-size:.54rem;letter-spacing:.2em;
-  color:var(--gold3);margin-bottom:14px;
-}
-.intro-text{
-  font-family:var(--serif);font-size:clamp(1rem,2.5vw,1.2rem);
-  font-style:italic;line-height:1.85;color:var(--parch);
-}
+/* ── CALLOUT ── */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
 
-/* ── PILLARS ── */
-.pillars{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}
-@media(min-width:540px){.pillars{grid-template-columns:repeat(2,1fr)}}
-.pillar{
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+
+/* ── PATH LIST (reading path) ── */
+.path-list{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.path-item{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:18px 20px;
   background:var(--parch2);border:1px solid var(--parch4);
-  border-radius:2px;padding:20px 18px;
-  border-top:3px solid var(--gold2);
-  box-shadow:0 2px 12px rgba(26,18,8,.1);
+  border-left:2px solid rgba(139,105,20,.3);
+  text-decoration:none;color:inherit;transition:all .18s;
 }
-.pillar-icon{font-size:1.4rem;margin-bottom:8px}
-.pillar-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:6px}
-.pillar-desc{font-size:.75rem;line-height:1.75;color:var(--ink2)}
+.path-item:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.path-num{font-family:var(--mono);font-size:.54rem;color:var(--gold);flex-shrink:0;padding-top:3px;width:22px;letter-spacing:.06em;}
+.path-body{flex:1;}
+.path-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:5px;}
+.path-why{font-size:.76rem;color:var(--ink3);line-height:1.7;font-weight:300;}
+.path-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;padding-top:3px;opacity:.7;}
 
-/* ── READING LIST ── */
-.reading-list{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
-.reading-item{
+/* ── SHELF MAP ── */
+.shelf-map{display:flex;flex-direction:column;gap:2px;}
+.shelf-map-item{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 18px;
   background:var(--parch2);border:1px solid var(--parch4);
-  border-radius:2px;padding:20px;
-  display:flex;gap:16px;align-items:flex-start;
-  box-shadow:0 2px 12px rgba(26,18,8,.08);
-  transition:all .2s;
-  text-decoration:none;color:inherit;
+  text-decoration:none;color:inherit;transition:all .18s;
 }
-.reading-item:hover{
-  background:var(--parch3);
-  box-shadow:0 4px 20px rgba(26,18,8,.15);
-  transform:translateX(4px);
-}
-.reading-num{
-  font-family:var(--mono);font-size:.6rem;color:var(--gold2);
-  background:var(--gold)18;border:1px solid var(--gold)33;
-  padding:4px 8px;border-radius:2px;flex-shrink:0;
-  line-height:1.2;
-}
-.reading-body{flex:1}
-.reading-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:4px}
-.reading-desc{font-size:.75rem;line-height:1.7;color:var(--ink2)}
-.reading-tag{
-  display:inline-block;font-family:var(--mono);font-size:.52rem;
-  color:var(--gold2);border:1px solid var(--gold)33;
-  padding:2px 7px;margin-top:8px;letter-spacing:.08em;
-}
-.reading-arrow{color:var(--gold3);font-size:1rem;flex-shrink:0;margin-top:2px;opacity:.6}
-.coming-soon .reading-title{color:var(--ink3)}
-.coming-soon .reading-arrow{opacity:.3}
-.badge-soon{
-  display:inline-block;font-family:var(--mono);font-size:.5rem;
-  color:var(--ink3);border:1px solid var(--parch4);
-  padding:2px 7px;margin-left:8px;letter-spacing:.08em;vertical-align:middle;
-}
+.shelf-map-item:hover{background:var(--parch3);border-color:var(--gold3);}
+.shelf-map-item.quiet{opacity:.42;pointer-events:none;}
+.shelf-map-num{font-family:var(--mono);font-size:.5rem;color:var(--gold);flex-shrink:0;width:22px;letter-spacing:.06em;}
+.shelf-map-body{flex:1;}
+.shelf-map-name{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.shelf-map-role{font-size:.72rem;color:var(--ink3);font-weight:300;}
+.shelf-map-arrow{font-size:.8rem;color:var(--gold3);flex-shrink:0;}
 
-/* ── PHILOSOPHY BLOCK ── */
-.philosophy{
-  background:var(--parch2);border:1px solid var(--parch4);
-  border-radius:2px;padding:28px;margin-bottom:14px;
-  border-left:4px solid var(--gold2);
-}
-.philosophy-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:16px}
-.philosophy-list{list-style:none;display:flex;flex-direction:column;gap:12px}
-.philosophy-list li{
-  display:flex;gap:12px;align-items:flex-start;
-  font-size:.8rem;line-height:1.75;color:var(--ink2);
-}
-.philosophy-list li::before{
-  content:'✦';color:var(--gold2);flex-shrink:0;margin-top:2px;font-size:.65rem;
-}
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:680px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
 
 /* ── FOOTER ── */
-.footer{
-  background:var(--ink);color:var(--parch4);
-  padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;
-  border-top:2px solid var(--gold)44;margin-top:40px;
-}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
 .footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
 .footer a{color:var(--gold3);text-decoration:none}
 
-/* ── SCROLL TOP ── */
-.scroll-top{
-  position:fixed;bottom:24px;right:24px;z-index:100;
-  width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:0 4px 24px rgba(26,18,8,.18);
-  transition:all .2s;opacity:0;pointer-events:none;
-}
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
 .scroll-top.visible{opacity:1;pointer-events:all}
 .scroll-top:hover{background:var(--gold2);color:var(--ink)}
-
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.section{animation:fadeIn .5s ease both}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
 </style>
 </head>
 <body>
 
-<!-- ── ナビゲーション ── -->
+<!-- ── NAV ── -->
 <nav class="nav">
-  <a class="nav-back" href="../">← 賢者の本棚へ戻る</a>
+  <a class="nav-back" href="../">書斎の入口</a>
   <span class="nav-sep">/</span>
   <span class="nav-current">初めての方へ</span>
 </nav>
 
 <!-- ── HERO ── -->
 <div class="hero">
-  <div class="hero-ornament">― WELCOME TO THE LIBRARY ―</div>
-  <h1 class="hero-title">
-    初めての方へ
-    <em>長期投資と思考のライブラリ</em>
-  </h1>
-  <p class="hero-sub">
-    このサイトは何のサイトか。どこから読むべきか。<br>
-    どんな考え方で運営されているか。
+  <div class="hero-shelf">はじめての方へ · この書斎の歩き方</div>
+  <h1 class="hero-title">初めての方へ</h1>
+  <p class="hero-lead">
+    この書斎を、どう歩くか。<br>
+    最初の地図として使ってください。
   </p>
-  <div class="hero-tags">
-    <span class="hero-tag">#初めての方へ</span>
-    <span class="hero-tag">#投資哲学</span>
-    <span class="hero-tag">#長期投資</span>
-  </div>
 </div>
 
-<!-- ── このサイトについて ── -->
-<div class="section">
-  <div class="intro-card">
-    <div class="intro-label">ABOUT THIS SITE</div>
-    <div class="intro-text">
-      投資Library にお越しいただきありがとうございます。<br>
-      このサイトは、<strong style="color:var(--gold4)">長期投資と思考のライブラリ</strong>です。<br><br>
-      単なる銘柄紹介や短期的な相場観ではなく、<br>
-      長期投資家にとって重要な判断基準を蓄積していきます。
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 1. この書斎について -->
+  <div class="article-section">
+    <div class="section-label">この書斎について</div>
+    <h2 class="section-title">この場所は、何のためにあるか</h2>
+    <div class="section-body">
+      <p>この書斎は、銘柄を推薦する場所ではない。</p>
+      <p>投資家の判断基準を育てるための、静かな図書館である。</p>
+      <p>目指しているのは、速報や勝ち方のレシピではなく、「なぜそう判断するのか」を言語化できる力を少しずつ積み上げていくことである。マンガー・バフェット・フィッシャーの哲学を土台に、企業分析・財務・産業構造・人間理解へと、自分なりの歩き方で進んでいける棚を整えている。</p>
+    </div>
+    <div class="callout">
+      <p class="callout-text">投資において重要なのは「何を買うか」だけではない。どう考えるか、何を見るか、そしてどう判断を積み上げるか——この書斎は、その問いに向き合うための場所である。</p>
     </div>
   </div>
 
-  <div class="section-header">
-    <span class="section-num">01</span>
-    <h2 class="section-title">このサイトで蓄積していること</h2>
+  <hr class="divider"/>
+
+  <!-- 2. 最初の歩き方 -->
+  <div class="article-section">
+    <div class="section-label">最初の歩き方</div>
+    <h2 class="section-title">どこから読み始めるか</h2>
+    <div class="section-body">
+      <p>この書斎には複数の棚があるが、最初に読む順番がある。</p>
+      <p>哲学 → 概念 → 財務 → 実践 の流れで読むと、知識に骨格ができる。「何を重視するか」を最初に決め、そこから具体的な見方を積み上げていく順番である。</p>
+    </div>
+    <div class="path-list">
+      <a class="path-item" href="../principles/">
+        <span class="path-num">01</span>
+        <div class="path-body">
+          <div class="path-title">私の投資原則</div>
+          <div class="path-why">この書斎の思想的な中心。何を重視するかの土台を最初に読むと、以降の記事の見え方が変わる。</div>
+        </div>
+        <span class="path-arrow">→</span>
+      </a>
+      <a class="path-item" href="../moat/">
+        <span class="path-num">02</span>
+        <div class="path-body">
+          <div class="path-title">moatをどう見るか</div>
+          <div class="path-why">原則の核心にある「競争優位」を、実際の企業分析で使う方法へ。概念が具体的な問いになる。</div>
+        </div>
+        <span class="path-arrow">→</span>
+      </a>
+      <a class="path-item" href="../fcf/">
+        <span class="path-num">03</span>
+        <div class="path-body">
+          <div class="path-title">FCFとは何か</div>
+          <div class="path-why">企業の本質的な収益力を測る指標。moatを読んだ目で、数字を読む力をここでつける。</div>
+        </div>
+        <span class="path-arrow">→</span>
+      </a>
+      <a class="path-item" href="../analysis-template/">
+        <span class="path-num">04</span>
+        <div class="path-body">
+          <div class="path-title">企業分析テンプレート</div>
+          <div class="path-why">3冊を読んだら、実際に企業を整理する枠組みへ。思考の型が手に入る。</div>
+        </div>
+        <span class="path-arrow">→</span>
+      </a>
+    </div>
   </div>
 
-  <div class="pillars">
-    <div class="pillar">
-      <div class="pillar-icon">📐</div>
-      <div class="pillar-title">投資哲学</div>
-      <div class="pillar-desc">マンガー・バフェット・フィッシャーの哲学をベースに、自分自身の投資原則を整理する。「なぜ買うのか」を言語化する場所。</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🔍</div>
-      <div class="pillar-title">企業分析</div>
-      <div class="pillar-desc">個別企業の競争優位性・経営者の質・事業構造を分析するフレームワークと実践記録を蓄積する。</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">📊</div>
-      <div class="pillar-title">財務分析</div>
-      <div class="pillar-desc">FCF・ROE・資本配分の読み方など、財務諸表から企業の本質的価値を読み解く方法を整理する。</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🧠</div>
-      <div class="pillar-title">判断力・読書メモ</div>
-      <div class="pillar-desc">心理バイアスの排除・逆張り思考・複利思考など、投資判断の質を高めるための思考法と読書から得た洞察を記録する。</div>
-    </div>
-  </div>
+  <hr class="divider"/>
 
-  <div class="philosophy" style="margin-top:0">
-    <div class="philosophy-title">私が投資において重視していること</div>
-    <p style="font-size:.8rem;line-height:1.85;color:var(--ink2);margin-bottom:16px">
-      投資において最も重要なのは「何を買うか」だけではなく、<strong>どう考えるか</strong>だと思っています。良い企業を見抜く視点、経営者を見る視点、資本配分を評価する視点、そして自分自身の判断を整える習慣——それらを長期的に積み上げることが、結果として投資成果にもつながると考えています。
-    </p>
-    <ul class="philosophy-list">
-      <li>永続的競争優位性（moat）</li>
-      <li>資本配分</li>
-      <li>フリーキャッシュフロー（FCF）</li>
-      <li>契約負債や財務の読み方</li>
-      <li>長期投資に必要な感情管理</li>
-      <li>読書や習慣を通じた判断力の向上</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ── 最初に読むべき記事 ── -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-num">02</span>
-    <h2 class="section-title">最初に読むおすすめ記事</h2>
-  </div>
-
-  <div class="reading-list">
-
-    <a class="reading-item" href="../principles/">
-      <div class="reading-num">01</div>
-      <div class="reading-body">
-        <div class="reading-title">私の投資原則</div>
-        <div class="reading-desc">このサイト運営者が長期投資において大切にしている原則を整理したもの。マンガーの多面的思考、バフェットの「堀」、フィッシャーの定性分析——三者の哲学から導いた判断基準。</div>
-        <span class="reading-tag">#投資哲学</span>
+  <!-- 3. 次はどこへ -->
+  <div class="article-section">
+    <div class="section-label">書架の地図</div>
+    <h2 class="section-title">4冊を読んだあと、次はどこへ</h2>
+    <div class="section-body">
+      <p>4冊を読んだら、次はどの棚へ進むかを自分で選べるようになる。どこから歩いても構わない。それぞれの棚の役割を、簡単に記しておく。</p>
+    </div>
+    <div class="shelf-map">
+      <a class="shelf-map-item" href="../hajimete/">
+        <span class="shelf-map-num">01</span>
+        <div class="shelf-map-body">
+          <div class="shelf-map-name">はじめの棚</div>
+          <div class="shelf-map-role">投資の土台。この書斎へ最初に入る棚。いま、ここにいる。</div>
+        </div>
+        <span class="shelf-map-arrow">—</span>
+      </a>
+      <a class="shelf-map-item" href="../moat/">
+        <span class="shelf-map-num">02</span>
+        <div class="shelf-map-body">
+          <div class="shelf-map-name">概念の棚</div>
+          <div class="shelf-map-role">競争優位・財務・分析。実務の核心的な概念を整理する棚。</div>
+        </div>
+        <span class="shelf-map-arrow">→</span>
+      </a>
+      <a class="shelf-map-item" href="../industries/">
+        <span class="shelf-map-num">03</span>
+        <div class="shelf-map-body">
+          <div class="shelf-map-name">業種から歩く棚</div>
+          <div class="shelf-map-role">業種の構造を地図として、企業分析へ近づく棚。</div>
+        </div>
+        <span class="shelf-map-arrow">→</span>
+      </a>
+      <a class="shelf-map-item" href="../horizons/">
+        <span class="shelf-map-num">05</span>
+        <div class="shelf-map-body">
+          <div class="shelf-map-name">思考を広げる棚</div>
+          <div class="shelf-map-role">投資を入口に、資本主義・文明・人間理解まで広げる棚。</div>
+        </div>
+        <span class="shelf-map-arrow">→</span>
+      </a>
+      <div class="shelf-map-item quiet">
+        <span class="shelf-map-num">06</span>
+        <div class="shelf-map-body">
+          <div class="shelf-map-name">賢者の読書リスト</div>
+          <div class="shelf-map-role">Munger · Buffett · Fisher の書籍と言葉。</div>
+        </div>
+        <span class="shelf-map-arrow">—</span>
       </div>
-      <div class="reading-arrow">→</div>
-    </a>
-
-    <a class="reading-item" href="../moat/">
-      <div class="reading-num">02</div>
-      <div class="reading-body">
-        <div class="reading-title">永続的競争優位性（moat）をどう見るか</div>
-        <div class="reading-desc">バフェットが「経済的な堀（moat）」と呼ぶ概念を、実際の企業分析でどう使うか。ブランド・ネットワーク効果・スイッチングコスト・コスト優位性——4つの観点から整理する。</div>
-        <span class="reading-tag">#企業分析</span>
-        <span class="reading-tag">#投資哲学</span>
-      </div>
-      <div class="reading-arrow">→</div>
-    </a>
-
-    <a class="reading-item" href="../analysis-template/">
-      <div class="reading-num">03</div>
-      <div class="reading-body">
-        <div class="reading-title">企業分析テンプレート</div>
-        <div class="reading-desc">フィッシャーのScuttlebutt（口コミ調査）手法とバフェットのチェックリストを組み合わせた企業分析の枠組み。このテンプレートを使えば、どんな企業も同じ基準で比較できる。</div>
-        <span class="reading-tag">#企業分析</span>
-        <span class="reading-tag">#財務分析</span>
-      </div>
-      <div class="reading-arrow">→</div>
-    </a>
-
-    <a class="reading-item" href="../fcf/">
-      <div class="reading-num">04</div>
-      <div class="reading-body">
-        <div class="reading-title">FCFとは何か</div>
-        <div class="reading-desc">フリーキャッシュフロー（FCF）は、企業が実際に手元に残したお金。会計上の利益とは異なり、誤魔化しが効かない。バフェットが最重視する指標の読み方を、具体例を使って解説する。</div>
-        <span class="reading-tag">#財務分析</span>
-      </div>
-      <div class="reading-arrow">→</div>
-    </a>
-
-  </div>
-</div>
-
-<!-- ── このサイトの読み方 ── -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2 class="section-title">このサイトの読み方</h2>
-  </div>
-
-  <div class="pillars">
-    <div class="pillar">
-      <div class="pillar-icon">📐</div>
-      <div class="pillar-title">投資哲学</div>
-      <div class="pillar-desc">私の考え方の土台。なぜ長期投資なのか、何を信じているかを整理したコンテンツ。</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🔍</div>
-      <div class="pillar-title">企業分析</div>
-      <div class="pillar-desc">個別企業の見方。競争優位性・経営者・事業構造をどう評価するか。</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">📊</div>
-      <div class="pillar-title">投資の基礎</div>
-      <div class="pillar-desc">財務や指標の理解。FCF・ROE・資本配分など、数字を読む力を養う。</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🧠</div>
-      <div class="pillar-title">判断力</div>
-      <div class="pillar-desc">投資判断を支える習慣や考え方。心理バイアスの排除、感情管理、逆張り思考。</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">📚</div>
-      <div class="pillar-title">読書メモ</div>
-      <div class="pillar-desc">バフェット、マンガー、フィッシャー、哲学など。読書から得た洞察の記録。</div>
     </div>
   </div>
-</div>
 
-<!-- ── このサイトが目指すもの ── -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-num">04</span>
-    <h2 class="section-title">このサイトが目指すもの</h2>
-  </div>
-
-  <div class="philosophy">
-    <div class="philosophy-title">何度も読み返して、判断基準を磨く場所</div>
-    <p style="font-size:.8rem;line-height:1.85;color:var(--ink2);margin-bottom:16px">
-      このサイトは、読むたびに新しい速報を追う場所ではありません。<strong>何度も読み返して判断基準を磨く場所</strong>を目指しています。投資家が「この人はどう考えるのか」を学びに来られるような、知的アーカイブに育てていきたいと思っています。
-    </p>
-    <p style="font-size:.8rem;line-height:1.85;color:var(--ink2)">
-      今後も、長期投資家のための思考と知見を少しずつ積み上げていきます。
-    </p>
-  </div>
-</div>
-
-<!-- ── FOOTER ── -->
-<style>
-.further{background:var(--parch);border-top:1px solid var(--parch4);padding:36px 24px;}
-.further-inner{max-width:860px;margin:0 auto;}
-.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
-.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:18px;font-weight:300;}
-.further-links{display:flex;flex-direction:column;gap:2px;}
-.further-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
-.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
-.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
-.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
-.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
-</style>
+</main>
 
 <!-- ── FURTHER READING ── -->
 <div class="further">
   <div class="further-inner">
-    <div class="further-label">FURTHER READING</div>
-    <p class="further-reason">この書斎の中心へ進む。</p>
+    <div class="further-label">この棚の隣に置いてある本</div>
+    <p class="further-reason">この書斎の骨格をなす3冊。原則から始めて、競争優位、財務の順に読むと知識に流れができます。</p>
     <div class="further-links">
       <a class="further-link" href="../principles/">
-        <span class="further-link-tag">PRINCIPLES</span>
+        <span class="further-link-tag">原則</span>
         <span class="further-link-title">私の投資原則</span>
         <span class="further-link-arrow">→</span>
       </a>
       <a class="further-link" href="../moat/">
-        <span class="further-link-tag">MOAT</span>
+        <span class="further-link-tag">競争優位</span>
         <span class="further-link-title">moatをどう見るか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../fcf/">
+        <span class="further-link-tag">財務</span>
+        <span class="further-link-title">FCFとは何か</span>
         <span class="further-link-arrow">→</span>
       </a>
     </div>
   </div>
 </div>
 
+<!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="footer-title">投資と思考の書斎</div>
-  <div><a href="../">← 書斎の入口へ戻る</a></div>
+  <div>
+    <a href="../">書斎の入口</a> ·
+    <a href="../hajimete/">初めての��へ</a> ·
+    <a href="../principles/">投資原則</a> ·
+    <a href="../industries/">業種から歩く</a> ·
+    <a href="../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
   <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
 </footer>
 
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
 <script>
 window.addEventListener('scroll',()=>{
-  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 200);
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
 });
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});
+  };
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
+    else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
+  });
+})();
 </script>
+<script src="../shared.js"></script>
 </body>
 </html>

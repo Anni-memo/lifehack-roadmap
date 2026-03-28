@@ -3,11 +3,36 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="継続課金・スイッチングコスト・ネットワーク効果——情報通信業（NTT・KDDI・NTTデータ・富士通等）の利益の持続性を決める構造を投資家の視点で整理する。"/>
 <meta property="og:title" content="情報通信業を歩く｜業種から歩く棚｜投資と思考の書斎"/>
-<meta property="og:description" content="情報通信業を、企業名の一覧ではなく、構造と問いから見るためのページ。スイッチングコスト・ネットワーク効果・再投資余地の観点から整理する。"/>
+<meta property="og:description" content="継続課金・スイッチングコスト・ネットワーク効果——情報通信業の利益の持続性を決める構造を、静かに整理する。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/industries/it-telecom/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/industries/it-telecom/"/>
 <title>情報通信業を歩く｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "情報通信業を歩く——スイッチングコストとネットワーク効果の構造",
+  "description": "継続課金・スイッチングコスト・ネットワーク効果——情報通信業の利益の持続性を決める構造を投資家の視点で整理する。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "情報通信業"}, {"@type": "Thing", "name": "SaaS"}, {"@type": "Thing", "name": "業種分析"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "業種から歩く棚", "item": "https://anni-memo.github.io/investment-library/industries/"},
+    {"@type": "ListItem", "position": 3, "name": "情報通信業を歩く"}
+  ]}
+}
+</script>
 
+<link rel="stylesheet" href="../../shared.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 
@@ -53,43 +78,55 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .container{max-width:760px;margin:0 auto;padding:56px 24px 0;}
 
 /* ── SECTION ── */
-.section{margin-bottom:60px;}
+.section{margin-bottom:64px;}
 .section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
 .section-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:20px;line-height:1.35;}
 .section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
-.section-body p{margin-bottom:1.4em;}
+.section-body p{margin-bottom:1.5em;}
 .section-body p:last-child{margin-bottom:0;}
 
-/* ── QUESTION LIST ── */
-.question-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px;}
-.question-item{
-  display:flex;align-items:flex-start;gap:14px;
-  padding:14px 18px;
-  background:var(--parch2);border:1px solid var(--parch4);
-  border-left:2px solid rgba(58,106,138,.4);
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--sec2);
+  padding:18px 22px;margin:28px 0;
+  background:var(--parch2);
 }
-.question-mark{font-family:var(--mono);font-size:.58rem;color:var(--sec2);flex-shrink:0;margin-top:2px;letter-spacing:.04em;}
-.question-text{font-family:var(--jp);font-size:.87rem;color:var(--ink2);line-height:1.7;font-weight:400;}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.9;font-weight:500;}
 
 /* ── STRUCTURE GRID ── */
 .struct-grid{display:grid;grid-template-columns:1fr;gap:2px;margin-top:4px;}
 @media(min-width:600px){.struct-grid{grid-template-columns:1fr 1fr;}}
-.struct-card{
-  padding:18px 20px;
-  background:var(--parch2);border:1px solid var(--parch4);
-}
+.struct-card{padding:18px 20px;background:var(--parch2);border:1px solid var(--parch4);}
 .struct-card-tag{font-family:var(--mono);font-size:.5rem;color:var(--sec2);letter-spacing:.14em;margin-bottom:8px;}
 .struct-card-name{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
 .struct-card-desc{font-size:.78rem;color:var(--ink3);line-height:1.75;font-weight:300;}
 .struct-card-ex{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.06em;margin-top:8px;opacity:.8;}
 
-/* ── CALLOUT ── */
-.callout{
-  border-left:3px solid var(--sec2);
-  padding:18px 22px;margin:32px 0;
-  background:var(--parch2);
+/* ── ITEM LIST (指標・誤認共通) ── */
+.item-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px;}
+.item-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:15px 18px;
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-left:2px solid rgba(58,106,138,.35);
 }
-.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.9;font-weight:500;}
+.item-mark{font-family:var(--mono);font-size:.54rem;color:var(--sec2);flex-shrink:0;margin-top:.2em;letter-spacing:.04em;min-width:24px;}
+.item-text{font-family:var(--jp);font-size:.86rem;color:var(--ink2);line-height:1.75;font-weight:400;}
+.item-text strong{font-weight:600;color:var(--ink);}
+.item-text .reason{display:block;font-size:.78rem;color:var(--ink3);line-height:1.6;margin-top:4px;font-weight:300;}
+
+/* ── PITFALL LIST ── */
+.pitfall-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px;}
+.pitfall-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:15px 18px;
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-left:2px solid rgba(139,105,20,.3);
+}
+.pitfall-mark{font-family:var(--mono);font-size:.62rem;color:rgba(139,105,20,.6);flex-shrink:0;margin-top:.1em;}
+.pitfall-text{font-family:var(--jp);font-size:.86rem;color:var(--ink2);line-height:1.75;font-weight:400;}
+.pitfall-text strong{font-weight:600;color:var(--ink);}
+.pitfall-text .note{display:block;font-size:.78rem;color:var(--ink3);line-height:1.6;margin-top:4px;font-weight:300;}
 
 /* ── COMPANY LIST ── */
 .company-list{display:flex;flex-direction:column;gap:2px;}
@@ -104,9 +141,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .company-code{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:52px;}
 .company-name{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);flex:1;}
 .company-note{font-size:.72rem;color:var(--ink3);font-weight:300;line-height:1.5;}
-.company-badge{font-family:var(--mono);font-size:.46rem;color:var(--parch4);background:rgba(26,18,8,.35);padding:2px 7px;flex-shrink:0;letter-spacing:.08em;}
+.company-badge{font-family:var(--mono);font-size:.44rem;color:rgba(74,53,32,.45);flex-shrink:0;letter-spacing:.06em;}
 
-/* ── ANALYSIS TOOLS ── */
+/* ── TOOLS GRID ── */
 .tools-grid{display:grid;grid-template-columns:1fr;gap:2px;}
 @media(min-width:600px){.tools-grid{grid-template-columns:1fr 1fr;}}
 .tool-link{
@@ -121,7 +158,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .tool-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
 
 /* ── FURTHER READING ── */
-.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;margin-top:60px;}
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;margin-top:64px;}
 .further-inner{max-width:760px;margin:0 auto;}
 .further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
 .further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
@@ -141,6 +178,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
 .scroll-top.visible{opacity:1;pointer-events:all}
 .scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
 </style>
 </head>
 <body>
@@ -156,8 +196,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 <!-- ── HERO ── -->
 <div class="hero">
-  <div class="hero-shelf">INDUSTRY SHELF · SEC-33</div>
-  <div class="hero-ornament">INFORMATION · COMMUNICATION · PLATFORM</div>
+  <div class="hero-shelf">業種の棚 · SEC-33</div>
+  <div class="hero-ornament">継続課金 · スイッチングコスト · ネットワーク効果</div>
   <h1 class="hero-title">情報通信業を歩く<em>A quiet map of the sector</em></h1>
   <p class="hero-lead">
     この業種を、企業名の一覧ではなく、<br>
@@ -169,179 +209,225 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ── MAIN ── -->
 <div class="container">
 
-  <!-- 1. この棚について -->
+  <!-- 1. この業種をどう見るか（結論） -->
   <div class="section">
-    <div class="section-label">WHAT THIS SHELF IS FOR</div>
-    <h2 class="section-title">この棚の使い方</h2>
+    <div class="section-label">結論</div>
+    <h2 class="section-title">この業種を見るとき、最初に問うべきこと</h2>
     <div class="section-body">
-      <p>情報通信業は、東証プライム市場でもっとも企業数が多い業種のひとつです。しかし「情報通信業」という括りは広すぎる。通信インフラとプラットフォームとSIerは、稼ぎ方も競争原理もまったく異なります。</p>
-      <p>だからこそ、このページは一覧ではなく、<strong>地図</strong>として使うことを意図しています。この業種は何で稼ぎ、どこにモートが宿り、何を問うべきなのか——その地形を整理することが、ここの役割です。</p>
+      <p>情報通信業を分析するとき、最初に問うべきことは一つある。「顧客は、なぜ使い続けるのか」。</p>
+      <p>売上が伸びているかどうかではない。顧客が離れにくい構造があるかどうか、である。</p>
+      <p>情報通信業の企業価値は、継続収益の安定性と、スイッチングコストの深さで大きく変わる。そこを見ないまま、成長率や利益だけを追うと、構造の弱い企業を高く買ってしまうことがある。</p>
+    </div>
+    <div class="callout">
+      <p class="callout-text">継続課金・スイッチングコスト・ネットワーク効果——この三つが、情報通信業の利益の持続性を決める。</p>
     </div>
   </div>
 
-  <!-- 2. 業種の構造 -->
+  <!-- 2. 収益構造の基本（本質） -->
   <div class="section">
-    <div class="section-label">INDUSTRY STRUCTURE</div>
-    <h2 class="section-title">情報通信業は何で稼ぐのか</h2>
+    <div class="section-label">本質</div>
+    <h2 class="section-title">この業種は何で稼ぐのか</h2>
     <div class="section-body">
-      <p>「情報通信業」という一枚の括りの中に、稼ぎ方が根本的に異なる複数のビジネスモデルが存在します。分析の前に、どのサブセクターを見ているのかを確認することが重要です。</p>
+      <p>「情報通信業」という一枚の括りの中に、稼ぎ方がまったく異なる複数のビジネスモデルが共存している。分析を始める前に、どのサブセクターを見ているかを確認することが先決である。</p>
     </div>
     <div class="struct-grid">
       <div class="struct-card">
         <div class="struct-card-tag">TYPE 01</div>
         <div class="struct-card-name">通信インフラ</div>
-        <div class="struct-card-desc">回線・基地局・ネットワーク設備に巨額の固定費を先行投資し、月額課金で回収する。規制産業。設備の減価償却が重く、FCF構造の理解が必須。</div>
+        <div class="struct-card-desc">回線・基地局・設備に先行投資し、月額課金で回収する。規制産業。設備の減価償却が重く、FCF構造の理解が必須。</div>
         <div class="struct-card-ex">NTT · KDDI · SoftBank</div>
       </div>
       <div class="struct-card">
         <div class="struct-card-tag">TYPE 02</div>
         <div class="struct-card-name">SIer・ITサービス</div>
-        <div class="struct-card-desc">企業向けにシステムを構築・運用する。労働集約的。顧客の業務に深く入り込むほどスイッチングコストが高まり、長期契約につながる。</div>
+        <div class="struct-card-desc">企業向けにシステムを構築・運用する。労働集約的。顧客の業務に深く入り込むほどスイッチングコストが高まる。</div>
         <div class="struct-card-ex">NTTデータ · 富士通 · NEC</div>
       </div>
       <div class="struct-card">
         <div class="struct-card-tag">TYPE 03</div>
         <div class="struct-card-name">ソフトウェア・SaaS</div>
-        <div class="struct-card-desc">一度開発したソフトウェアを繰り返し販売・提供する。限界費用が低く、スケールするほど利益率が改善する。スイッチングコストが競争優位の核心。</div>
+        <div class="struct-card-desc">一度開発したソフトウェアを繰り返し提供する。限界費用が低く、スケールするほど利益率が改善しやすい。</div>
         <div class="struct-card-ex">オービック · TIS · 弥生</div>
       </div>
       <div class="struct-card">
         <div class="struct-card-tag">TYPE 04</div>
         <div class="struct-card-name">プラットフォーム</div>
-        <div class="struct-card-desc">利用者が増えるほど価値が高まるネットワーク効果型のビジネス。勝者総取りになりやすく、一度確立されたポジションは崩れにくい。</div>
+        <div class="struct-card-desc">利用者が増えるほど価値が高まるネットワーク効果型。勝者総取りになりやすく、確立されたポジションは崩れにくい。</div>
         <div class="struct-card-ex">リクルート · Mercari · DeNA</div>
       </div>
     </div>
   </div>
 
-  <!-- 3. この業種を見るときの問い -->
+  <!-- 3. moatはどこに生まれやすいか -->
   <div class="section">
-    <div class="section-label">QUESTIONS TO ASK</div>
-    <h2 class="section-title">この業種を見るときの問い</h2>
+    <div class="section-label">競争優位の在り処</div>
+    <h2 class="section-title">moatはどこに宿るか</h2>
     <div class="section-body">
-      <p>業種全体の特性を把握したうえで、個別企業を見るときには以下の問いを持つと、分析が整理されやすくなります。</p>
+      <p>moatが宿る場所は、サブセクターによって構造が違う。同じ「情報通信業」でも、根拠が異なる。</p>
+      <p>通信インフラのmoatは、設備投資の規模と規制による参入障壁にある。ただし、規制が変わればmoatも変わる。「競争優位」ではなく「規制による保護」である場合もある。</p>
+      <p>SIerやソフトウェア企業のmoatは、顧客業務への深い埋め込みにある。基幹システムを一度入れ替えると、費用・時間・リスクが膨大になる。この「痛みの大きさ」がスイッチングコストの本質である。</p>
+      <p>プラットフォーム企業のmoatは、ネットワーク効果にある。ユーザーが増えるほど価値が高まり、自己強化する。ただし、ネットワーク効果がマルチホーミング（複数サービスの同時使用）によって弱体化しないか、確認することが必要になる。</p>
     </div>
-    <ul class="question-list">
-      <li class="question-item">
-        <span class="question-mark">Q01</span>
-        <span class="question-text">この企業は何で稼いでいるのか——通信インフラか、ソフトウェアか、プラットフォームか</span>
+    <div class="callout">
+      <p class="callout-text">スイッチングコストは、金銭的なコストだけではない。時間・リスク・習慣・関係性も含む。その多くは財務諸表には現れない。</p>
+    </div>
+  </div>
+
+  <!-- 4. 見るべき指標と、その理由 -->
+  <div class="section">
+    <div class="section-label">判断の軸</div>
+    <h2 class="section-title">見るべき指標と、その理由</h2>
+    <div class="section-body">
+      <p>指標を見るとき、数値の大小だけではなく「なぜその指標を見るのか」を意識すると、分析が整理される。</p>
+    </div>
+    <ul class="item-list">
+      <li class="item-row">
+        <span class="item-mark">01</span>
+        <span class="item-text">
+          <strong>反復収益の比率</strong>
+          <span class="reason">サブスクリプション・保守・月額課金が売上に占める割合。この比率が高い企業は、来期の収益がある程度見えている。予見可能性の高さは、バリュエーションの安定に直結する。</span>
+        </span>
       </li>
-      <li class="question-item">
-        <span class="question-mark">Q02</span>
-        <span class="question-text">スイッチングコストはあるか——顧客はなぜ使い続けるのか。乗り換えの障壁は何か</span>
+      <li class="item-row">
+        <span class="item-mark">02</span>
+        <span class="item-text">
+          <strong>顧客継続率（リテンション率）</strong>
+          <span class="reason">顧客が翌期も使い続けているか。スイッチングコストの「強さ」を示す、最もシンプルな実績値。解約率が低いだけでなく、その理由が「切り替えが面倒」なのか「本当に価値がある」のかも問いたい。</span>
+        </span>
       </li>
-      <li class="question-item">
-        <span class="question-mark">Q03</span>
-        <span class="question-text">ネットワーク効果はあるか——ユーザーが増えるほど、サービスの価値は高まるか</span>
+      <li class="item-row">
+        <span class="item-mark">03</span>
+        <span class="item-text">
+          <strong>顧客あたり収益（ARPU）の推移</strong>
+          <span class="reason">単価が上がっているか。価格転嫁力の有無と、アップセル・クロスセルの余地を示す。継続率が高くても単価が下落し続ける企業は、長期的に利益が圧縮される。</span>
+        </span>
       </li>
-      <li class="question-item">
-        <span class="question-mark">Q04</span>
-        <span class="question-text">限界費用はどう変化するか——スケールするほど利益率は上がるか、それとも人員も比例して増えるか</span>
+      <li class="item-row">
+        <span class="item-mark">04</span>
+        <span class="item-text">
+          <strong>売上総利益率の推移</strong>
+          <span class="reason">SaaSはスケールとともに改善するはず。横ばいや悪化は、競争の激化か限界費用の問題を示唆する。SIerでは、エンジニア単価の変化が粗利に直接影響する。</span>
+        </span>
       </li>
-      <li class="question-item">
-        <span class="question-mark">Q05</span>
-        <span class="question-text">再投資余地はあるか——稼いだキャッシュを高リターンで再投資できる場所が残っているか</span>
-      </li>
-      <li class="question-item">
-        <span class="question-mark">Q06</span>
-        <span class="question-text">高成長と高収益は両立しているか——成長のために収益を犠牲にしていないか</span>
-      </li>
-      <li class="question-item">
-        <span class="question-mark">Q07</span>
-        <span class="question-text">規制・標準化との関係はどうか——事業の持続性が制度に大きく依存していないか</span>
-      </li>
-      <li class="question-item">
-        <span class="question-mark">Q08</span>
-        <span class="question-text">技術の変化にどう対応しているか——クラウド・AIの波は追い風か逆風か</span>
+      <li class="item-row">
+        <span class="item-mark">05</span>
+        <span class="item-text">
+          <strong>FCF変換率（FCF ÷ 売上高）</strong>
+          <span class="reason">利益がキャッシュに変わっているか。通信インフラは設備投資が重く、見かけの利益に対してFCFが低くなりやすい。会計利益だけを見ると、実態を誤解することがある。</span>
+        </span>
       </li>
     </ul>
   </div>
 
-  <!-- 4. モートの在り処 -->
+  <!-- 5. 起きやすい誤認 -->
   <div class="section">
-    <div class="section-label">WHERE THE MOAT LIVES</div>
-    <h2 class="section-title">スイッチングコストとネットワーク効果の在り処</h2>
+    <div class="section-label">判断の落とし穴</div>
+    <h2 class="section-title">この業種で起きやすい誤認</h2>
     <div class="section-body">
-      <p>情報通信業でモートが宿る場所は、サブセクターによって大きく異なります。</p>
-      <p>通信インフラ企業のモートは、主に設備投資の規模と規制参入障壁にあります。しかし、それは「競争優位」というより「規制による保護」に近い場合もある。規制が変わればモートは消えます。</p>
-      <p>SIerやソフトウェア企業のモートは、顧客業務への深い埋め込みにあります。基幹システムを一度入れ替えると、移行コスト・リスク・時間が膨大になる。この「痛み」がスイッチングコストの本質です。</p>
-      <p>プラットフォーム企業のモートは、ネットワーク効果にあります。しかし、ネットワーク効果は「使われ始める」のが遅い反面、一度確立されると自己強化します。鍵は、そのネットワークが本当に「強化的」かどうかを確認することです。</p>
+      <p>「情報通信業」は括りが広すぎる。業種名だけで判断すると、構造の異なる企業を同じ基準で見てしまいやすい。</p>
     </div>
-    <div class="callout">
-      <div class="callout-text">「スイッチングコストとは、顧客が乗り換えることを選ばない理由の集積である。コストは金銭的なものだけでなく、時間・リスク・習慣・関係性も含む。この業種では、その多くが見えにくいところに埋まっている。」</div>
-    </div>
+    <ul class="pitfall-list">
+      <li class="pitfall-row">
+        <span class="pitfall-mark">—</span>
+        <span class="pitfall-text">
+          <strong>「IT企業はすべて高収益」</strong>
+          <span class="note">SIerは労働集約的で利益率が薄い。成長しながらも従業員が比例して増え続けるビジネスと、スケールで利益率が改善するビジネスは、まったく別の評価が必要になる。</span>
+        </span>
+      </li>
+      <li class="pitfall-row">
+        <span class="pitfall-mark">—</span>
+        <span class="pitfall-text">
+          <strong>「サブスクリプション型はmoatが強い」</strong>
+          <span class="note">月額課金であっても、乗り換えが容易なサービスは多い。スイッチングコストの実態は、解約率と単価推移を見て初めて確認できる。課金の形式ではなく、顧客が離れない理由を問うこと。</span>
+        </span>
+      </li>
+      <li class="pitfall-row">
+        <span class="pitfall-mark">—</span>
+        <span class="pitfall-text">
+          <strong>「通信インフラは安定している」</strong>
+          <span class="note">規制変更・新規参入・政府の料金引き下げ圧力によって、収益性は変わりうる。規制産業であることは、保護と束縛の両面を持つ。安定しているように見える企業が、規制保護に依存しているだけの場合がある。</span>
+        </span>
+      </li>
+      <li class="pitfall-row">
+        <span class="pitfall-mark">—</span>
+        <span class="pitfall-text">
+          <strong>「高成長だから良い投資」</strong>
+          <span class="note">設備投資や開発投資が多い場合、高成長でもFCFが生まれない企業がある。成長が「キャッシュとして手元に残るか」——その質を問うことが、評価の出発点になる。</span>
+        </span>
+      </li>
+    </ul>
   </div>
 
-  <!-- 5. 主要企業への入口 -->
+  <!-- 6. 主要企業への入口 -->
   <div class="section">
-    <div class="section-label">COMPANIES IN THIS SHELF</div>
+    <div class="section-label">企業への入口</div>
     <h2 class="section-title">主要企業への入口</h2>
     <div class="section-body">
-      <p>企業を詳しく分析する前に、まず各社がどのサブセクターに属し、何で稼いでいるかを確認してください。同じ「情報通信業」でも、見るべき指標とモートの構造はまったく異なります。</p>
+      <p>各社がどのサブセクターに属し、何で稼いでいるかを確認してから分析に入ってください。同じ「情報通信業」でも、見るべき指標とmoatの構造はまったく異なります。</p>
     </div>
     <div class="company-list">
       <div class="company-item coming">
         <span class="company-code">9432</span>
         <div>
           <div class="company-name">日本電信電話（NTT）</div>
-          <div class="company-note">通信インフラ大手。国内最大規模の設備を持つ。高い配当実績。FCF構造と設備投資サイクルに注目。</div>
+          <div class="company-note">通信インフラ大手。設備更新サイクルとFCF構造、配当の持続性に注目。</div>
         </div>
-        <span class="company-badge">準備中</span>
+        <span class="company-badge">順次追加</span>
       </div>
       <div class="company-item coming">
         <span class="company-code">9433</span>
         <div>
           <div class="company-name">KDDI</div>
-          <div class="company-note">通信×ライフデザイン戦略。au経済圏の構築でスイッチングコスト強化を図る。安定したキャッシュフローが特徴。</div>
+          <div class="company-note">通信×ライフデザイン戦略。au経済圏の構築でスイッチングコスト強化を図る。</div>
         </div>
-        <span class="company-badge">準備中</span>
+        <span class="company-badge">順次追加</span>
       </div>
       <div class="company-item coming">
         <span class="company-code">9984</span>
         <div>
           <div class="company-name">ソフトバンクグループ</div>
-          <div class="company-note">通信子会社とAI・VC投資の複合体。事業の理解にはセグメント分析と持分法の把握が必須。</div>
+          <div class="company-note">通信子会社とAI・VC投資の複合体。セグメント分析と持分法の把握が必須。</div>
         </div>
-        <span class="company-badge">準備中</span>
+        <span class="company-badge">順次追加</span>
       </div>
       <div class="company-item coming">
         <span class="company-code">9613</span>
         <div>
           <div class="company-name">NTTデータグループ</div>
-          <div class="company-note">国内最大のSIer。官公庁・金融機関との深い関係がスイッチングコストの源泉。グローバル展開も加速。</div>
+          <div class="company-note">国内最大のSIer。官公庁・金融機関との関係がスイッチングコストの源泉。</div>
         </div>
-        <span class="company-badge">準備中</span>
+        <span class="company-badge">順次追加</span>
       </div>
       <div class="company-item coming">
         <span class="company-code">6702</span>
         <div>
           <div class="company-name">富士通</div>
-          <div class="company-note">ITサービスへの転換を進める大手。クラウド・DXシフトの進捗と収益性の改善度合いを見る。</div>
+          <div class="company-note">ITサービスへの転換を進める大手。クラウドシフトの進捗と収益性の改善度合いを見る。</div>
         </div>
-        <span class="company-badge">準備中</span>
+        <span class="company-badge">順次追加</span>
       </div>
       <div class="company-item coming">
         <span class="company-code">6098</span>
         <div>
           <div class="company-name">リクルートホールディングス</div>
-          <div class="company-note">HR・不動産・旅行領域のプラットフォーム。Indeed/Glassdoorを持つグローバル求人プラットフォームとしてのネットワーク効果が核心。</div>
+          <div class="company-note">HR・不動産・旅行のプラットフォーム。Indeed/Glassdoorのネットワーク効果が核心。</div>
         </div>
-        <span class="company-badge">準備中</span>
+        <span class="company-badge">順次追加</span>
       </div>
     </div>
   </div>
 
-  <!-- 6. 分析の視点へ -->
+  <!-- 7. 分析の道具へ -->
   <div class="section">
-    <div class="section-label">ANALYSIS TOOLS</div>
-    <h2 class="section-title">分析の視点へ進む</h2>
+    <div class="section-label">分析の道具</div>
+    <h2 class="section-title">この棚から、分析へ進む</h2>
     <div class="section-body">
-      <p>企業を個別に見るとき、この業種で特に役立つ考え方の道具を整理しました。</p>
+      <p>業種の地形を把握したら、次は個別企業へ。以下の道具を手に取ると、分析の視点が整理されます。</p>
     </div>
     <div class="tools-grid">
       <a class="tool-link" href="../../moat/">
         <span class="tool-tag">MOAT</span>
-        <span class="tool-name">モートをどう見るか</span>
+        <span class="tool-name">moatをどう見るか</span>
         <span class="tool-arrow">→</span>
       </a>
       <a class="tool-link" href="../../fcf/">
@@ -350,12 +436,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <span class="tool-arrow">→</span>
       </a>
       <a class="tool-link" href="../../analysis-template/">
-        <span class="tool-tag">TEMPLATE</span>
+        <span class="tool-tag">分析</span>
         <span class="tool-name">企業分析テンプレート</span>
         <span class="tool-arrow">→</span>
       </a>
       <a class="tool-link" href="../../principles/">
-        <span class="tool-tag">PRINCIPLES</span>
+        <span class="tool-tag">原則</span>
         <span class="tool-name">私の投資原則</span>
         <span class="tool-arrow">→</span>
       </a>
@@ -367,12 +453,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ── FURTHER READING ── -->
 <div class="further">
   <div class="further-inner">
-    <div class="further-label">FURTHER READING</div>
-    <p class="further-reason">業種の地形を把握したら、次は個別企業の分析へと進む。モートの概念を理解したうえで、FCFの流れを読み、テンプレートで構造を整理する——この順番で読むと、地図が精度を増す。</p>
+    <div class="further-label">この棚の隣に置いてある本</div>
+    <p class="further-reason">業種の地形を把握したら、次の三冊と並べて読むと視点が深まる。moatで競争優位の構造を問い、FCFで資本の実態を読み、テンプレートで企業を整理する。</p>
     <div class="further-links">
       <a class="further-link" href="../../moat/">
         <span class="further-link-tag">MOAT</span>
-        <span class="further-link-title">モートをどう見るか</span>
+        <span class="further-link-title">moatをどう見るか</span>
         <span class="further-link-arrow">→</span>
       </a>
       <a class="further-link" href="../../fcf/">
@@ -381,7 +467,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <span class="further-link-arrow">→</span>
       </a>
       <a class="further-link" href="../../analysis-template/">
-        <span class="further-link-tag">TEMPLATE</span>
+        <span class="further-link-tag">分析</span>
         <span class="further-link-title">企業分析テンプレート</span>
         <span class="further-link-arrow">→</span>
       </a>
@@ -392,18 +478,42 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="footer-title">投資と思考の書斎</div>
-  <a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp;
-  <a href="../">業種から歩く棚へ戻る</a>
+  <div>
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../">業種から歩く</a> ·
+    <a href="../../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
 </footer>
 
 <!-- ── SCROLL TOP ── -->
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
 
 <script>
 const btn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
   btn.classList.toggle('visible', window.scrollY > 300);
 });
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var musicBtn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();musicBtn.classList.add('playing');}}}});
+  };
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  musicBtn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();musicBtn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
+    else{player.playVideo();musicBtn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
+  });
+})();
 </script>
+<script src="../../shared.js"></script>
 </body>
 </html>

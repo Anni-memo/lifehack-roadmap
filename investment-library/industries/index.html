@@ -3,11 +3,40 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta property="og:title" content="東証プライム 業種一覧｜長期投資と思考のライブラリ"/>
-<meta property="og:description" content="東証プライム企業を業種別に辿る。業種の特性・代表企業・分析の視点を整理した投資家のためのデータベース入口。"/>
+<meta name="description" content="業種の構造を知ることで、企業が見えやすくなる。東証プライムを業種ごとに整理した、投資家のための静かな地図。情報通信・製造・金融・消費・インフラ業種の分析棚。"/>
+<meta property="og:title" content="業種から歩く棚｜投資と思考の書斎"/>
+<meta property="og:description" content="業種の構造を知ることで、企業が見えやすくなる。東証プライムを業種ごとに整理した、投資家のための静かな地図。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/industries/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<title>東証プライム 業種一覧｜長期投資と思考のライブラリ</title>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/industries/"/>
+<title>業種から歩く棚｜投資と思考の書斎</title>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "業種から歩く棚",
+  "description": "業種の構造を知ることで、企業が見えやすくなる。東証プライムを業種ごとに整理した投資家のための地図。情報通信・製造・金融・消費・インフラ業種を網羅。",
+  "url": "https://anni-memo.github.io/investment-library/industries/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "投資と思考の書斎",
+    "url": "https://anni-memo.github.io/investment-library/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+      {"@type": "ListItem", "position": 2, "name": "業種から歩く棚"}
+    ]
+  }
+}
+</script>
+
+<link rel="stylesheet" href="../shared.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 
@@ -30,163 +59,118 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
 .nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
 .nav-back:hover{color:var(--gold4)}
-.nav-sep{color:var(--gold)44;font-size:.7rem}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
 .nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
 
 /* ── HERO ── */
 .hero{
   background:linear-gradient(160deg,var(--ink) 0%,#100e18 50%,#1a1428 100%);
-  color:var(--parch);padding:56px 24px 44px;text-align:center;
+  color:var(--parch);padding:56px 24px 48px;text-align:center;
   position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
 }
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.08) 0%,transparent 70%);}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
-.hero-ornament{font-family:var(--mono);font-size:.72rem;color:var(--gold3);letter-spacing:.4em;margin-bottom:16px;opacity:.7;position:relative;}
-.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.15;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(212,170,34,.2);position:relative;}
-.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.6em;letter-spacing:.06em;margin-top:6px;}
-.hero-sub{font-size:.84rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.85;position:relative;}
-.hero-stats{display:flex;justify-content:center;gap:28px;margin-top:24px;position:relative;}
-.hero-stat{text-align:center;}
-.hero-stat-num{font-family:var(--serif);font-size:1.6rem;color:var(--gold4);font-weight:700;line-height:1;}
-.hero-stat-label{font-family:var(--mono);font-size:.5rem;color:var(--parch4);letter-spacing:.12em;margin-top:4px;}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:14px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.9rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 20px rgba(212,170,34,.15);position:relative;margin-bottom:18px;}
+.hero-sub{font-size:.88rem;color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:560px;margin:0 auto;}
 
 /* ── INTRO BLOCK ── */
 .intro-block{background:var(--parch);border-bottom:1px solid var(--parch4);padding:32px 20px;}
 .intro-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:24px;}
-@media(min-width:700px){.intro-inner{grid-template-columns:1fr 1fr;align-items:start;gap:32px;}}
-.intro-concept{font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:600;color:var(--ink);line-height:1.5;border-left:3px solid var(--gold2);padding-left:16px;margin-bottom:10px;}
-.intro-body{font-size:.85rem;color:var(--ink3);line-height:1.9;font-weight:300;}
-.intro-links{display:flex;flex-direction:column;gap:10px;}
-.intro-links-title{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.14em;margin-bottom:4px;}
-.intro-link-item{display:flex;align-items:center;gap:8px;text-decoration:none;padding:10px 14px;background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;transition:all .18s;}
-.intro-link-item:hover{border-color:var(--gold3);background:var(--parch3);}
-.intro-link-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.intro-link-dot.green{background:#5a8a3a;}
-.intro-link-dot.gold{background:var(--gold2);}
-.intro-link-dot.blue{background:#4a6a9a;}
-.intro-link-label{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.06em;white-space:nowrap;}
+@media(min-width:700px){.intro-inner{grid-template-columns:1fr 1fr;align-items:start;gap:40px;}}
+.intro-concept{font-family:var(--serif);font-size:clamp(1.05rem,2.5vw,1.3rem);font-weight:600;color:var(--ink);line-height:1.5;border-left:3px solid var(--gold2);padding-left:16px;margin-bottom:12px;}
+.intro-body{font-size:.84rem;color:var(--ink3);line-height:2;font-weight:300;}
+.intro-tools-label{font-family:var(--jp);font-size:.72rem;color:var(--ink3);margin-bottom:10px;font-weight:400;}
+.intro-links{display:flex;flex-direction:column;gap:4px;}
+.intro-link-item{display:flex;align-items:center;gap:12px;text-decoration:none;padding:11px 14px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.25);transition:all .18s;}
+.intro-link-item:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.intro-link-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;width:64px;flex-shrink:0;}
 .intro-link-name{font-size:.8rem;color:var(--ink2);font-weight:500;}
 
-/* ── QUESTION ── */
-.ind-question{font-family:var(--serif);font-size:.72rem;color:var(--gold);font-style:italic;line-height:1.6;margin-top:6px;margin-bottom:2px;letter-spacing:.01em;}
-
 /* ── FILTER BAR ── */
-.filter-bar{background:var(--ink2);border-bottom:1px solid var(--gold)22;padding:12px 20px;position:sticky;top:0;z-index:50;}
+.filter-bar{background:var(--ink2);border-bottom:1px solid rgba(139,105,20,.15);padding:10px 20px;position:sticky;top:0;z-index:50;}
 .filter-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.filter-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.12em;flex-shrink:0;}
-.filter-pills{display:flex;gap:6px;flex-wrap:wrap;}
-.fpill{font-family:var(--mono);font-size:.56rem;padding:4px 12px;border:1px solid var(--gold)33;color:var(--parch4);background:transparent;cursor:pointer;border-radius:2px;letter-spacing:.06em;transition:all .15s;}
+.filter-pills{display:flex;gap:5px;flex-wrap:wrap;flex:1;}
+.fpill{font-family:var(--jp);font-size:.62rem;padding:4px 12px;border:1px solid rgba(139,105,20,.2);color:var(--parch4);background:transparent;cursor:pointer;letter-spacing:.02em;transition:all .15s;}
 .fpill:hover{border-color:var(--gold2);color:var(--gold3)}
 .fpill.active{background:var(--gold2);border-color:var(--gold2);color:var(--ink);font-weight:600;}
-.filter-count{font-family:var(--mono);font-size:.52rem;color:var(--parch4);margin-left:auto;flex-shrink:0;}
+.filter-count{font-family:var(--mono);font-size:.5rem;color:rgba(223,201,168,.5);margin-left:auto;flex-shrink:0;}
 
 /* ── GRID ── */
-.grid-wrap{max-width:1000px;margin:0 auto;padding:32px 20px 40px;}
-.grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.grid-wrap{max-width:1000px;margin:0 auto;padding:28px 20px 12px;}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;}
 @media(min-width:560px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
 
 /* ── INDUSTRY CARD ── */
 .ind-card{
   background:var(--parch2);border:1px solid var(--parch4);
-  border-radius:2px;overflow:hidden;
-  box-shadow:0 2px 16px rgba(26,18,8,.1);
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(26,18,8,.08);
   transition:all .22s;display:flex;flex-direction:column;
   animation:fadeIn .4s ease both;
 }
-.ind-card:hover{box-shadow:0 6px 28px rgba(26,18,8,.2);transform:translateY(-3px);}
-.ind-card[data-ready="false"]{opacity:.75;}
+.ind-card:hover{box-shadow:0 5px 24px rgba(26,18,8,.16);transform:translateY(-2px);}
+.ind-card[data-ready="true"]{border:1px solid rgba(184,144,10,.28);border-left:2px solid var(--gold2);}
+.ind-card[data-ready="true"]:hover{border-left-color:var(--gold3);}
 
-.ind-header{padding:16px 18px 12px;border-bottom:1px solid var(--parch4);}
-.ind-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;}
-.ind-code{font-family:var(--mono);font-size:.5rem;color:var(--gold2);letter-spacing:.1em;background:var(--gold)12;border:1px solid var(--gold)28;padding:2px 7px;border-radius:1px;flex-shrink:0;}
-.ind-status{font-family:var(--mono);font-size:.5rem;padding:2px 7px;border-radius:1px;flex-shrink:0;}
-.ind-status.ready{background:rgba(58,104,40,.15);color:#3d6828;border:1px solid rgba(58,104,40,.3);}
-.ind-status.soon{background:rgba(74,53,32,.12);color:var(--ink3);border:1px solid var(--parch4);}
-.ind-name{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
-.ind-name-en{font-family:var(--mono);font-size:.54rem;color:var(--ink3);letter-spacing:.06em;}
+.ind-header{padding:14px 18px 12px;border-bottom:1px solid var(--parch4);}
+.ind-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.ind-code{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;opacity:.7;}
+.ind-badge-ready{font-family:var(--mono);font-size:.48rem;color:#3d6828;letter-spacing:.04em;}
+.ind-badge-soon{font-family:var(--mono);font-size:.48rem;color:rgba(74,53,32,.4);letter-spacing:.04em;}
+.ind-name{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--ink);}
 
 .ind-body{padding:12px 18px;flex:1;}
-.ind-desc{font-size:.76rem;line-height:1.8;color:var(--ink2);margin-bottom:12px;}
-.ind-companies{display:flex;flex-wrap:wrap;gap:5px;}
-.ind-company{font-family:var(--mono);font-size:.52rem;color:var(--ink3);background:var(--parch3);border:1px solid var(--parch4);padding:2px 7px;border-radius:1px;}
+.ind-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:7px;}
+.ind-row-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);width:38px;flex-shrink:0;padding-top:.2em;letter-spacing:.04em;opacity:.75;}
+.ind-row-value{font-size:.76rem;color:var(--ink2);line-height:1.65;}
+.ind-question{font-family:var(--serif);font-size:.73rem;color:var(--gold);font-style:italic;line-height:1.55;margin-top:10px;border-top:1px solid var(--parch4);padding-top:9px;}
+.ind-companies{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;}
+.ind-company{font-family:var(--mono);font-size:.5rem;color:var(--ink3);background:var(--parch3);border:1px solid var(--parch4);padding:2px 6px;}
 
-.ind-footer{padding:10px 18px;border-top:1px solid var(--parch4);display:flex;align-items:center;justify-content:space-between;}
-.ind-meta{font-family:var(--mono);font-size:.52rem;color:var(--ink3);}
-.ind-link{
-  font-family:var(--serif);font-size:.76rem;color:var(--gold2);
-  text-decoration:none;display:flex;align-items:center;gap:5px;
-  transition:color .15s;
-}
+.ind-footer{padding:9px 18px;border-top:1px solid var(--parch4);}
+.ind-link{font-family:var(--serif);font-size:.76rem;color:var(--gold2);text-decoration:none;display:flex;align-items:center;justify-content:flex-end;gap:5px;transition:color .15s;}
 .ind-link:hover{color:var(--gold3)}
-.ind-link.disabled{color:var(--ink3);pointer-events:none;}
+.ind-coming{font-family:var(--mono);font-size:.48rem;color:rgba(74,53,32,.4);text-align:right;display:block;letter-spacing:.04em;}
 
-/* ── COMING SOON BANNER ── */
-.expand-note{
-  background:var(--ink);color:var(--parch4);
-  max-width:1000px;margin:0 auto;
-  border:1px solid var(--gold)22;border-radius:2px;
-  padding:18px 22px;margin-top:0;margin-bottom:28px;
-  margin-left:20px;margin-right:20px;
-  display:flex;gap:14px;align-items:center;
-}
-.expand-note-icon{font-size:1.2rem;flex-shrink:0;}
-.expand-note-text{font-size:.76rem;line-height:1.8;color:var(--parch4);}
-.expand-note-text strong{color:var(--gold3);}
+/* ── SHELF NOTE ── */
+.shelf-note{font-size:.76rem;color:var(--ink3);line-height:1.85;font-weight:300;text-align:center;padding:20px 20px 32px;max-width:600px;margin:0 auto;}
 
 /* ── FOOTER ── */
-.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid var(--gold)44;margin-top:20px;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
 .footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
 .footer a{color:var(--gold3);text-decoration:none;}
 
-.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
 .scroll-top.visible{opacity:1;pointer-events:all}
 .scroll-top:hover{background:var(--gold2);color:var(--ink)}
 
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.ind-card:nth-child(1){animation-delay:.02s}.ind-card:nth-child(2){animation-delay:.05s}
-.ind-card:nth-child(3){animation-delay:.08s}.ind-card:nth-child(4){animation-delay:.11s}
-.ind-card:nth-child(5){animation-delay:.14s}.ind-card:nth-child(6){animation-delay:.17s}
-.ind-card:nth-child(7){animation-delay:.2s}.ind-card:nth-child(8){animation-delay:.23s}
-.ind-card:nth-child(9){animation-delay:.26s}.ind-card:nth-child(10){animation-delay:.29s}
-.ind-card:nth-child(11){animation-delay:.32s}.ind-card:nth-child(12){animation-delay:.35s}
-.ind-card:nth-child(13){animation-delay:.38s}.ind-card:nth-child(14){animation-delay:.41s}
+/* ── MUSIC TOGGLE ── */
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 
 <!-- ── NAV ── -->
 <nav class="nav">
-  <a class="nav-back" href="../">← 賢者の本棚</a>
+  <a class="nav-back" href="../">書斎の入口</a>
   <span class="nav-sep">/</span>
-  <span class="nav-current">業種一覧</span>
+  <span class="nav-current">業種から歩く棚</span>
 </nav>
 
 <!-- ── HERO ── -->
 <div class="hero">
-  <div class="hero-ornament">TSE PRIME — INDUSTRY DATABASE</div>
-  <h1 class="hero-title">
-    東証プライム 業種一覧
-    <em>Industry Navigator · 業種から企業へ</em>
-  </h1>
+  <div class="hero-shelf">実務の棚 — 東証プライム · 業種別</div>
+  <h1 class="hero-title">業種から歩く棚</h1>
   <p class="hero-sub">
-    業種の特性を理解し、競争構造と代表企業を把握する。<br>
-    トップダウンの企業分析の出発点。
+    業種の構造を知ることで、企業が見えやすくなる。<br>
+    この棚は、企業名の羅列ではなく、地図として使うために整えてある。
   </p>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-num" id="statSectors">14</div>
-      <div class="hero-stat-label">SECTORS</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">1,600+</div>
-      <div class="hero-stat-label">PRIME LISTED</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num" id="statReady">0</div>
-      <div class="hero-stat-label">ANALYZED</div>
-    </div>
-  </div>
 </div>
 
 <!-- ── INTRO BLOCK ── -->
@@ -195,37 +179,26 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div>
       <p class="intro-concept">業種から企業へ、企業から思考へ。</p>
       <p class="intro-body">
-        投資の出発点は、個別企業の前に「業種の構造」を理解することにある。<br>
         どの業種に競争優位が生まれやすいか。どの業種でmoatは持続するか。<br>
-        どの業種がセクターローテーションの文脈で注目されているか。<br><br>
-        このページは、東証プライム上場企業を33業種の視点で整理し、<br>
-        トップダウンの思考を支える入口として設計されている。<br>
-        業種を眺め、企業に触れ、分析へと自然に進んでほしい。
+        業種の特性を理解してから個別企業を見ると、見えるものが変わる。<br><br>
+        各業種の棚は、稼ぎ方・moatの核心・見るべき問いを整理してある。<br>
+        そこから企業分析の道具へ、自然につながるように設計している。
       </p>
     </div>
     <div>
-      <div class="intro-links-title">RELATED ARTICLES</div>
+      <p class="intro-tools-label">分析の道具</p>
       <div class="intro-links">
-        <a class="intro-link-item" href="../analysis-template/">
-          <span class="intro-link-dot green"></span>
-          <div>
-            <div class="intro-link-label">ANALYSIS</div>
-            <div class="intro-link-name">企業分析テンプレート</div>
-          </div>
-        </a>
         <a class="intro-link-item" href="../moat/">
-          <span class="intro-link-dot gold"></span>
-          <div>
-            <div class="intro-link-label">MOAT</div>
-            <div class="intro-link-name">moat をどう見るか</div>
-          </div>
+          <span class="intro-link-tag">MOAT</span>
+          <span class="intro-link-name">moatをどう見るか</span>
         </a>
         <a class="intro-link-item" href="../fcf/">
-          <span class="intro-link-dot blue"></span>
-          <div>
-            <div class="intro-link-label">FINANCE</div>
-            <div class="intro-link-name">FCFとは何か</div>
-          </div>
+          <span class="intro-link-tag">FCF</span>
+          <span class="intro-link-name">FCFとは何か</span>
+        </a>
+        <a class="intro-link-item" href="../analysis-template/">
+          <span class="intro-link-tag">分析</span>
+          <span class="intro-link-name">企業分析テンプレート</span>
         </a>
       </div>
     </div>
@@ -235,14 +208,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ── FILTER BAR ── -->
 <div class="filter-bar">
   <div class="filter-inner">
-    <span class="filter-label">FILTER</span>
     <div class="filter-pills">
-      <button class="fpill active" onclick="filterIndustries('all')">すべて</button>
-      <button class="fpill" onclick="filterIndustries('tech')">テクノロジー</button>
-      <button class="fpill" onclick="filterIndustries('manufacturing')">製造業</button>
-      <button class="fpill" onclick="filterIndustries('finance')">金融</button>
-      <button class="fpill" onclick="filterIndustries('consumer')">消費・サービス</button>
-      <button class="fpill" onclick="filterIndustries('infra')">インフラ・建設</button>
+      <button class="fpill active" onclick="filterIndustries('all',this)">すべて</button>
+      <button class="fpill" onclick="filterIndustries('tech',this)">テクノロジー</button>
+      <button class="fpill" onclick="filterIndustries('manufacturing',this)">製造業</button>
+      <button class="fpill" onclick="filterIndustries('finance',this)">金融</button>
+      <button class="fpill" onclick="filterIndustries('consumer',this)">消費・サービス</button>
+      <button class="fpill" onclick="filterIndustries('infra',this)">インフラ・建設</button>
     </div>
     <span class="filter-count" id="filterCount">14 業種</span>
   </div>
@@ -251,54 +223,52 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ── GRID ── -->
 <div class="grid-wrap">
   <div class="grid" id="industriesGrid"></div>
-
-  <div class="expand-note">
-    <div class="expand-note-icon">📋</div>
-    <div class="expand-note-text">
-      各業種の詳細ページ（銘柄一覧・業種特性・分析視点）は順次公開予定です。<strong>業種カードの「詳細を見る」</strong>から将来のページへアクセスできるようになります。企業分析テンプレートと組み合わせることで、業種を横断した比較分析が可能になります。
-    </div>
-  </div>
+  <p class="shelf-note">情報通信業の棚はすでに歩けます。ほかの業種は、少しずつ整えています。</p>
 </div>
 
 <!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="footer-title">投資と思考の書斎</div>
   <div>
-    <a href="../">← 書斎の入口へ戻る</a>　·
-    <a href="../principles/">私の投資原則</a>　·
-    <a href="../analysis-template/">企業分析テンプレート</a>
+    <a href="../">書斎の入口</a> ·
+    <a href="../hajimete/">初めての方へ</a> ·
+    <a href="../principles/">投資原則</a> ·
+    <a href="../industries/">業種から歩く</a> ·
+    <a href="../horizons/">思考を広げる</a>
   </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
   <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
 </footer>
 
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
 
+<!-- ── MUSIC TOGGLE ── -->
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
+
 <script>
-// ══════════════════════════════════════════════
-// 業種データ — ここを編集・追加するだけで拡張できます
-// ══════════════════════════════════════════════
 const INDUSTRIES = [
   {
     id: "it-telecom",
     code: "SEC-33",
     name: "情報・通信業",
-    nameEn: "Information & Communication",
     group: "tech",
+    earns: "月額課金・システム保守・ソフトウェアライセンスで稼ぐ",
+    moatPoint: "顧客業務への深い埋め込みと、スイッチングコストの蓄積",
     question: "スイッチングコストとネットワーク効果はどこに宿るか",
-    desc: "SaaS・通信インフラ・ITサービス・メディアを含む広義の情報産業。スイッチングコストやネットワーク効果によるmoatが見られる業種。",
-    companies: ["NTT", "KDDI", "ソフトバンク", "サイボウズ", "富士通"],
-    ready: false,
+    companies: ["NTT", "KDDI", "ソフトバンク", "NTTデータ", "富士通"],
+    ready: true,
     path: "it-telecom/"
   },
   {
     id: "electronics",
     code: "SEC-36",
     name: "電気機器",
-    nameEn: "Electric Appliances",
     group: "tech",
+    earns: "産業用部品・半導体・精密機器の設計・製造・販売で稼ぐ",
+    moatPoint: "グローバルニッチにおける技術蓄積と、参入に時間のかかる製造ノウハウ",
     question: "グローバルニッチの参入障壁はどこから来るか",
-    desc: "半導体・産業機器・家電・センサーなどを含む日本の製造業の中核。グローバルニッチ企業が多く、B2Bの参入障壁が高い業種が多い。",
-    companies: ["ソニー", "キーエンス", "日立", "信越半導体", "オムロン"],
+    companies: ["ソニー", "キーエンス", "日立", "信越化学", "オムロン"],
     ready: false,
     path: "electronics/"
   },
@@ -306,10 +276,10 @@ const INDUSTRIES = [
     id: "machinery",
     code: "SEC-35",
     name: "機械",
-    nameEn: "Machinery",
     group: "manufacturing",
+    earns: "工作機械・産業ロボット・農機の製造・販売・保守で稼ぐ",
+    moatPoint: "長期保守関係と技術ノウハウの蓄積、顧客との共同開発による深い関係",
     question: "顧客との長期関係が価格転嫁力をどう支えるか",
-    desc: "工作機械・産業用ロボット・農機・建機など。技術蓄積と顧客との長期関係がmoatになる。グローバル競争力を持つ企業が多い。",
     companies: ["ファナック", "小松製作所", "DMG森精機", "ダイキン"],
     ready: false,
     path: "machinery/"
@@ -318,10 +288,10 @@ const INDUSTRIES = [
     id: "chemicals",
     code: "SEC-30",
     name: "化学",
-    nameEn: "Chemicals",
     group: "manufacturing",
+    earns: "特殊素材・機能性化学品の製造・販売で稼ぐ",
+    moatPoint: "特殊用途素材の製造技術と、顧客との共同開発による切替えにくさ",
     question: "特殊素材の参入障壁と汎用品の罠をどう見分けるか",
-    desc: "素材・特殊化学品・プラスチック・農薬など。参入障壁の高い特殊化学品分野に長期的な競争優位を持つ企業が存在する。",
     companies: ["信越化学", "旭化成", "三菱ケミカル", "日本ペイント"],
     ready: false,
     path: "chemicals/"
@@ -330,10 +300,10 @@ const INDUSTRIES = [
     id: "pharma",
     code: "SEC-31",
     name: "医薬品",
-    nameEn: "Pharmaceutical",
     group: "manufacturing",
+    earns: "特許保護期間中の新薬販売とライセンス収入で稼ぐ",
+    moatPoint: "特許権と承認取得にかかる期間・費用が生む参入障壁",
     question: "特許の崖とパイプラインの持続性をどう評価するか",
-    desc: "新薬・ジェネリック・医療機器を含む。特許期間中の独占収益と膨大なR&D投資が特徴。パテントクリフリスクを理解することが重要。",
     companies: ["武田薬品", "エーザイ", "第一三共", "中外製薬"],
     ready: false,
     path: "pharma/"
@@ -342,10 +312,10 @@ const INDUSTRIES = [
     id: "real-estate",
     code: "SEC-40",
     name: "不動産業",
-    nameEn: "Real Estate",
     group: "infra",
+    earns: "賃貸収入・開発利益・管理手数料で稼ぐ",
+    moatPoint: "立地の希少性と、長年の開発ノウハウに基づく用地取得力",
     question: "立地の希少性と賃料改定力をどう見るか",
-    desc: "ディベロッパー・REITスポンサー・管理会社を含む。立地の希少性と開発能力がmoatになる。金利動向との連動性が高い業種。",
     companies: ["三井不動産", "住友不動産", "三菱地所", "東急不動産"],
     ready: false,
     path: "real-estate/"
@@ -354,10 +324,10 @@ const INDUSTRIES = [
     id: "wholesale",
     code: "SEC-43",
     name: "卸売業",
-    nameEn: "Wholesale Trade",
     group: "consumer",
+    earns: "売買差益・手数料・資本参加による分配金で稼ぐ",
+    moatPoint: "業界ネットワークと、情報・物流・資本を組み合わせる独自の位置づけ",
     question: "情報・ネットワーク・資本の組み合わせがmoatになるか",
-    desc: "総合商社・専門商社を含む。情報・ネットワーク・資本を組み合わせたビジネスモデル。バフェットが注目した日本の総合商社の資本配分も注目。",
     companies: ["三菱商事", "伊藤忠商事", "三井物産", "住友商事"],
     ready: false,
     path: "wholesale/"
@@ -366,10 +336,10 @@ const INDUSTRIES = [
     id: "retail",
     code: "SEC-44",
     name: "小売業",
-    nameEn: "Retail Trade",
     group: "consumer",
+    earns: "商品マークアップ・PB品の粗利・フランチャイズ収入で稼ぐ",
+    moatPoint: "ブランド認知・立地の優位・規模による仕入れ力の組み合わせ",
     question: "ロケーションとPBが価格支配力をどう作るか",
-    desc: "コンビニ・スーパー・専門店・ECなど消費者接点を持つ業種。ブランド・立地・規模の経済がmoatになることが多い。",
     companies: ["ファーストリテイリング", "セブン&アイ", "イオン", "MonotaRO"],
     ready: false,
     path: "retail/"
@@ -378,10 +348,10 @@ const INDUSTRIES = [
     id: "services",
     code: "SEC-45",
     name: "サービス業",
-    nameEn: "Services",
     group: "consumer",
+    earns: "人材マッチング・広告・サブスクリプションで稼ぐ",
+    moatPoint: "プラットフォームのネットワーク効果と、蓄積されたデータの優位",
     question: "スイッチングコストはどのサービス層に宿るか",
-    desc: "人材・広告・外食・情報サービス・SaaSなど多様。スイッチングコストやネットワーク効果によるmoatが見られるサービスが多い。",
     companies: ["リクルート", "電通", "パーソルHD", "サイバーエージェント"],
     ready: false,
     path: "services/"
@@ -390,10 +360,10 @@ const INDUSTRIES = [
     id: "banking",
     code: "SEC-07",
     name: "銀行業",
-    nameEn: "Banks",
     group: "finance",
+    earns: "預金と貸出の金利差（純利鞘）と手数料収入で稼ぐ",
+    moatPoint: "低コスト預金基盤と、長期にわたって築かれた顧客関係の厚み",
     question: "低コスト預金と信用コストの循環をどう読むか",
-    desc: "メガバンク・地方銀行・信託銀行を含む。規模の経済と顧客基盤がmoatになる一方、規制環境と金利動向の影響を強く受ける。",
     companies: ["三菱UFJ", "三井住友FG", "みずほFG", "ゆうちょ銀行"],
     ready: false,
     path: "banking/"
@@ -402,10 +372,10 @@ const INDUSTRIES = [
     id: "insurance",
     code: "SEC-08",
     name: "保険業",
-    nameEn: "Insurance",
     group: "finance",
-    question: "フロート（浮動保険料）の運用力をどう見るか",
-    desc: "損保・生保を含む。フロートを運用するビジネスモデルはバフェットが高く評価。規模・ブランド・販売網がmoatになる。",
+    earns: "保険料収入と、フロートを運用して得る投資収益で稼ぐ",
+    moatPoint: "フロート（保険料の運用余力）と、ブランド・販売網の規模",
+    question: "フロートの運用力と保険引受規律をどう見るか",
     companies: ["東京海上HD", "第一生命", "MS&ADインシュアランス"],
     ready: false,
     path: "insurance/"
@@ -414,10 +384,10 @@ const INDUSTRIES = [
     id: "automotive",
     code: "SEC-38",
     name: "輸送用機器",
-    nameEn: "Transportation Equipment",
     group: "manufacturing",
+    earns: "完成車・部品の製造・販売とアフターサービスで稼ぐ",
+    moatPoint: "ブランド・垂直統合のサプライチェーンと、広範な販売網",
     question: "EVシフトと垂直統合の間でmoatはどこに残るか",
-    desc: "自動車・二輪・航空機部品など。EV・自動運転の技術転換が業界全体のmoatを再定義しつつある重要な変革期にある。",
     companies: ["トヨタ", "ホンダ", "デンソー", "アイシン"],
     ready: false,
     path: "automotive/"
@@ -426,10 +396,10 @@ const INDUSTRIES = [
     id: "construction",
     code: "SEC-02",
     name: "建設業",
-    nameEn: "Construction",
     group: "infra",
+    earns: "請負工事の工事収益と設計・管理フィーで稼ぐ",
+    moatPoint: "施工実績と技術力の蓄積、顧客との長期的な信頼関係",
     question: "受注残と技術蓄積が参入障壁になるか",
-    desc: "ゼネコン・サブコン・住宅・インフラ整備を含む。技術力・施工実績・顧客との長期関係がmoatになる。受注残高が将来収益の先行指標。",
     companies: ["大林組", "鹿島建設", "清水建設", "大和ハウス"],
     ready: false,
     path: "construction/"
@@ -438,20 +408,15 @@ const INDUSTRIES = [
     id: "food",
     code: "SEC-09",
     name: "食料品",
-    nameEn: "Foods",
     group: "consumer",
+    earns: "食品・飲料の製造・販売と、ブランド品のプレミアム価格で稼ぐ",
+    moatPoint: "ブランドの認知と、長年かけて築いた流通チャネルの優位",
     question: "ブランドと流通網が価格支配力をどう作るか",
-    desc: "食品メーカー・飲料・調味料を含む。ブランドと販売チャネルがmoatになる。生活必需品としての安定収益と、原材料コストリスクのバランスが重要。",
     companies: ["日清食品", "明治HD", "キッコーマン", "味の素"],
     ready: false,
     path: "food/"
   }
 ];
-
-// ══════════════════════════════════════════════
-// レンダリング
-// ══════════════════════════════════════════════
-let currentFilter = 'all';
 
 function renderIndustries(filter) {
   const grid = document.getElementById('industriesGrid');
@@ -459,52 +424,91 @@ function renderIndustries(filter) {
   document.getElementById('filterCount').textContent = filtered.length + ' 業種';
 
   grid.innerHTML = filtered.map((ind, i) => `
-    <div class="ind-card" data-ready="${ind.ready}" data-group="${ind.group}" style="animation-delay:${i * 0.03}s">
+    <div class="ind-card" data-ready="${ind.ready}" style="animation-delay:${i * 0.03}s">
       <div class="ind-header">
         <div class="ind-top">
           <span class="ind-code">${ind.code}</span>
-          <span class="ind-status ${ind.ready ? 'ready' : 'soon'}">${ind.ready ? '公開中' : '準備中'}</span>
+          <span class="${ind.ready ? 'ind-badge-ready' : 'ind-badge-soon'}">${ind.ready ? '● 公開中' : '○'}</span>
         </div>
         <div class="ind-name">${ind.name}</div>
-        <div class="ind-name-en">${ind.nameEn}</div>
-        <div class="ind-question">${ind.question}</div>
       </div>
       <div class="ind-body">
-        <div class="ind-desc">${ind.desc}</div>
+        <div class="ind-row">
+          <span class="ind-row-label">稼ぎ方</span>
+          <span class="ind-row-value">${ind.earns}</span>
+        </div>
+        <div class="ind-row">
+          <span class="ind-row-label">moat</span>
+          <span class="ind-row-value">${ind.moatPoint}</span>
+        </div>
+        <div class="ind-question">${ind.question}</div>
         <div class="ind-companies">
           ${ind.companies.map(c => `<span class="ind-company">${c}</span>`).join('')}
         </div>
       </div>
       <div class="ind-footer">
-        <span class="ind-meta">${ind.companies.length}+ 代表企業</span>
         ${ind.ready
-          ? `<a class="ind-link" href="${ind.path}">詳細を見る →</a>`
-          : `<span class="ind-link disabled">詳細は準備中</span>`
+          ? `<a class="ind-link" href="${ind.path}">この業種を歩く →</a>`
+          : `<span class="ind-coming">—</span>`
         }
       </div>
     </div>
   `).join('');
-
-  // 統計更新
-  const readyCount = INDUSTRIES.filter(i => i.ready).length;
-  document.getElementById('statReady').textContent = readyCount;
-  document.getElementById('statSectors').textContent = INDUSTRIES.length;
 }
 
-function filterIndustries(group) {
-  currentFilter = group;
+function filterIndustries(group, el) {
   document.querySelectorAll('.fpill').forEach(p => p.classList.remove('active'));
-  event.target.classList.add('active');
+  el.classList.add('active');
   renderIndustries(group);
 }
 
-// 初期表示
 renderIndustries('all');
 
-// スクロールトップ
 window.addEventListener('scroll', () => {
   document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 200);
 });
+
+(function(){
+  var STORAGE_KEY='music_playing';
+  var VIDEO_ID='t_8uSnwvUeQ';
+  var player=null;
+  var playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{
+      height:'1',width:'1',
+      videoId:VIDEO_ID,
+      playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},
+      events:{
+        onReady:function(e){
+          playerReady=true;
+          e.target.setVolume(30);
+          if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}
+        }
+      }
+    });
+  };
+
+  var tag=document.createElement('script');
+  tag.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){
+      player.pauseVideo();
+      btn.classList.remove('playing');
+      localStorage.setItem(STORAGE_KEY,'false');
+    } else {
+      player.playVideo();
+      btn.classList.add('playing');
+      localStorage.setItem(STORAGE_KEY,'true');
+    }
+  });
+})();
 </script>
+<script src="../shared.js"></script>
 </body>
 </html>

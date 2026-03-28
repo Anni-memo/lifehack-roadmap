@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="マーケットを読む前に、自分を読む。行動経済学が明かす投資判断の歪み。確証バイアス・アンカリング・損失回避・群衆心理——なぜ私たちは合理的に行動できないのか。"/>
+<meta property="og:title" content="マーケットを読む前に、自分を読む：行動経済学と投資判断｜投資と思考の書斎"/>
+<meta property="og:description" content="行動経済学が明かす投資判断の歪み。確証バイアス・アンカリング・損失回避・群衆心理。なぜ私たちは合理的に行動できないのか。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/horizons/behavioral-economics/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/horizons/behavioral-economics/"/>
+<title>マーケットを読む前に、自分を読む：行動経済学と投資判断｜投資と思考の書斎</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "マーケットを読む前に、自分を読む：行動経済学と投資判断",
+  "description": "行動経済学が明かす投資判断の歪み。確証バイアス・アンカリング・損失回避・群衆心理。なぜ私たちは合理的に行動できないのか。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "行動経済学"}, {"@type": "Thing", "name": "投資心理"}, {"@type": "Thing", "name": "認知バイアス"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "思考を広げる棚", "item": "https://anni-memo.github.io/investment-library/horizons/"},
+    {"@type": "ListItem", "position": 3, "name": "行動経済学と投資判断"}
+  ]}
+}
+</script>
+
+<link rel="stylesheet" href="../../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0e1018 50%,#181428 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(100,80,180,.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:14px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.4rem);font-weight:700;line-height:1.3;color:var(--parch);text-shadow:0 2px 20px rgba(140,110,220,.15);position:relative;margin-bottom:18px;}
+.hero-lead{font-size:.88rem;color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:540px;margin:0 auto;}
+
+.article{max-width:680px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body strong{color:var(--ink);font-weight:600;}
+
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+
+/* BIAS CARD */
+.bias-grid{display:grid;grid-template-columns:1fr;gap:2px;margin:24px 0;}
+@media(min-width:500px){.bias-grid{grid-template-columns:1fr 1fr;}}
+.bias-card{background:var(--parch2);border:1px solid var(--parch4);padding:20px;border-top:3px solid var(--gold2);}
+.bias-card-num{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.12em;margin-bottom:6px;}
+.bias-card-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.bias-card-body{font-size:.8rem;color:var(--ink2);line-height:1.85;}
+.bias-card-example{font-size:.74rem;color:var(--ink3);line-height:1.7;margin-top:10px;padding-top:10px;border-top:1px solid var(--parch4);font-style:italic;}
+
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:680px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.footer-links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">行動経済学と投資判断</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">BEHAVIORAL ECONOMICS</div>
+  <h1 class="hero-title">マーケットを読む前に、<br>自分を読む</h1>
+  <p class="hero-lead">
+    投資判断を歪めるのは、情報の不足ではなく、<br>
+    自分自身の認知の偏りである。そこから始める。
+  </p>
+</div>
+
+<main class="article">
+
+  <!-- なぜ合理的に行動できないのか -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 01</div>
+    <h2 class="section-title">なぜ私たちは合理的に行動できないのか</h2>
+    <div class="section-body">
+      <p>経済学は長い間、人間を「合理的な経済人（ホモ・エコノミクス）」として扱ってきた。すべての情報を正しく処理し、常に最適な判断を下す存在として。</p>
+      <p>しかし現実の人間は違う。ダニエル・カーネマンとエイモス・トベルスキーが切り開いた行動経済学は、<strong>人間の判断が体系的に、予測可能な方向に歪む</strong>ことを明らかにした。</p>
+      <p>これは投資の世界では致命的な問題になる。なぜなら、投資判断のほぼすべてが「不確実性の中での意思決定」だからだ。そして不確実性の中でこそ、認知バイアスは最も強く働く。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">"投資で失敗する最大の原因は、情報の不足ではなく、感情の制御の失敗である。"<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;">── Charlie Munger</span></p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家を蝕む6つのバイアス -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 02</div>
+    <h2 class="section-title">投資家を蝕む6つのバイアス</h2>
+    <div class="section-body">
+      <p>マンガーは25種類の心理的傾向を体系化したが、ここでは投資判断に特に影響が大きい6つを整理する。</p>
+    </div>
+
+    <div class="bias-grid">
+      <div class="bias-card">
+        <div class="bias-card-num">BIAS 01</div>
+        <div class="bias-card-title">確証バイアス</div>
+        <div class="bias-card-body">自分の既存の信念を裏付ける情報ばかりを集め、反証する情報を無視する傾向。</div>
+        <div class="bias-card-example">例：保有銘柄のポジティブなニュースばかり読み、ネガティブな情報を「一時的だ」と片付ける。</div>
+      </div>
+      <div class="bias-card">
+        <div class="bias-card-num">BIAS 02</div>
+        <div class="bias-card-title">アンカリング</div>
+        <div class="bias-card-body">最初に得た情報（アンカー）に判断が引きずられる傾向。株価の場合、買値がアンカーになりやすい。</div>
+        <div class="bias-card-example">例：1,000円で買った株が800円に下がっても、「1,000円に戻るまで持つ」と考えてしまう。企業の内在価値が500円であっても。</div>
+      </div>
+      <div class="bias-card">
+        <div class="bias-card-num">BIAS 03</div>
+        <div class="bias-card-title">損失回避</div>
+        <div class="bias-card-body">同額の利益と損失では、損失のほうが約2倍の心理的インパクトを持つ。損を確定させることを極端に嫌う。</div>
+        <div class="bias-card-example">例：含み損の銘柄を「いつか戻る」と持ち続け、含み益の銘柄を早々に利確してしまう。</div>
+      </div>
+      <div class="bias-card">
+        <div class="bias-card-num">BIAS 04</div>
+        <div class="bias-card-title">群衆心理（FOMO）</div>
+        <div class="bias-card-body">周囲の行動に影響され、自分も同じ行動を取ってしまう。特に上昇相場では「乗り遅れたくない」という恐怖が強まる。</div>
+        <div class="bias-card-example">例：周囲が仮想通貨で儲けている話を聞き、自分も理解しないまま参入してしまう。</div>
+      </div>
+      <div class="bias-card">
+        <div class="bias-card-num">BIAS 05</div>
+        <div class="bias-card-title">過信バイアス</div>
+        <div class="bias-card-body">自分の能力や知識を過大評価する傾向。特に連続して利益を出した後に強まりやすい。</div>
+        <div class="bias-card-example">例：3回連続で値上がり銘柄を当て、「自分には相場を読む才能がある」と信じ込み、レバレッジを上げる。</div>
+      </div>
+      <div class="bias-card">
+        <div class="bias-card-num">BIAS 06</div>
+        <div class="bias-card-title">直近性バイアス</div>
+        <div class="bias-card-body">最近の出来事を過度に重視し、それが今後も続くと考える傾向。</div>
+        <div class="bias-card-example">例：直近3年間の好景気を見て「もう不況は来ない」と思い込む。あるいは暴落直後に「もう株式投資は終わりだ」と考える。</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- マンガーの処方箋 -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 03</div>
+    <h2 class="section-title">マンガーの処方箋：反転して考えよ</h2>
+    <div class="section-body">
+      <p>マンガーはバイアスへの対処法として「反転（Inversion）」を繰り返し推奨した。</p>
+      <p>「どうすれば投資で成功するか」を考えるのではなく、<strong>「どうすれば投資で確実に失敗するか」を考え、その逆をやる</strong>。</p>
+      <p>確実に失敗する方法は明白だ。</p>
+      <p>感情で売買する。群衆に追随する。理解できない企業に投資する。レバレッジを過度にかける。短期的な結果に一喜一憂する。</p>
+      <p>これらを<strong>しない</strong>だけで、すでに多くの投資家より有利な立場に立てる。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">"毎日、朝起きたら少し賢くなること。それを長い間続けると、かなりのところまで行ける。特に、長い人生の先に何が待っているかを知っていれば。"<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;">── Charlie Munger</span></p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- チェックリストという武器 -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 04</div>
+    <h2 class="section-title">チェックリストという武器</h2>
+    <div class="section-body">
+      <p>バイアスは無意識に働く。だからこそ、意思決定の前に「チェックリスト」を使うことが有効だ。</p>
+      <p>航空機のパイロットは、どれほど熟練していても、離陸前にチェックリストを確認する。投資家も同じであるべきだ。</p>
+      <p><strong>投資判断前のチェックリスト（例）：</strong></p>
+      <p>1. この判断は、恐怖や貪欲に基づいていないか。<br>
+      2. 反対の意見を十分に検討したか。<br>
+      3. 自分の理解の範囲内にある企業か。<br>
+      4. この企業のmoatは明確か。<br>
+      5. 安全マージンは十分か。<br>
+      6. 5年後、10年後にこの判断を後悔しないか。<br>
+      7. もし市場が明日から2年間閉鎖されても、この投資に満足できるか。</p>
+      <p>チェックリストは完璧ではない。しかし、<strong>感情的な判断にブレーキをかける</strong>最も実践的な道具である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 自分を知ることの価値 -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 05</div>
+    <h2 class="section-title">自分を知ることの投資的価値</h2>
+    <div class="section-body">
+      <p>行動経済学が投資家に教える最も重要なことは、「敵は外にいるのではなく、自分の中にいる」ということだ。</p>
+      <p>市場の動きを完璧に予測することは不可能だ。しかし、自分自身の認知の偏りを理解し、それをコントロールすることは可能である。</p>
+      <p>ソクラテスの「汝自身を知れ」は、投資においても最も実践的な助言かもしれない。</p>
+      <p><strong>マーケットを読む前に、まず自分を読む。それが、長期投資家として最も確実な優位性を築く方法である。</strong></p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">この記事の隣に置いてある本</div>
+    <p class="further-reason">行動経済学を学んだら、投資心理のさらに深い側面を探ってみよう。</p>
+    <div class="further-links">
+      <a class="further-link" href="../../human/fomo/">
+        <span class="further-link-tag">投資心理</span>
+        <span class="further-link-title">人はなぜ熱狂の高値で買ってしまうのか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../human/loss-aversion/">
+        <span class="further-link-tag">投資心理</span>
+        <span class="further-link-title">損失回避と投資行動</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../value-investing-essence/">
+        <span class="further-link-tag">前の記事</span>
+        <span class="further-link-title">バリュー投資の本質：内在価値とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../principles/">
+        <span class="further-link-tag">原則</span>
+        <span class="further-link-title">私の投資原則</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div class="footer-links">
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../../industries/">業種から歩く</a> ·
+    <a href="../">思考を広げる</a>
+  </div>
+  <div>人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">&#x1F3B5;</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});
+  };
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
+    else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
+  });
+})();
+</script>
+<script src="../../shared.js"></script>
+</body>
+</html>

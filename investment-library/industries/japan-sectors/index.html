@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="日本株14業種の構造を俯瞰する。景気循環型とディフェンシブの違い、各業種のFCF特性・moatの所在・代表企業を整理。セクター別の投資判断に役立つ業種マップ。"/>
+<meta property="og:title" content="日本株の構造を知る：セクター別の特徴｜投資と思考の書斎"/>
+<meta property="og:description" content="日本株14業種の概要マップ。景気循環型vsディフェンシブ、各業種のFCF特性を俯瞰する。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/industries/japan-sectors/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="日本株セクター別の特徴 — 投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/industries/japan-sectors/"/>
+<title>日本株の構造を知る：セクター別の特徴｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "日本株の構造を知る：セクター別の特徴",
+  "description": "日本株14業種の概要マップ。景気循環型vsディフェンシブ、各業種のFCF特性を俯瞰する。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "日本株"}, {"@type": "Thing", "name": "セクター分析"}, {"@type": "Thing", "name": "業種"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "業種から歩く", "item": "https://anni-memo.github.io/investment-library/industries/"},
+    {"@type": "ListItem", "position": 3, "name": "日本株セクター別の特徴"}
+  ]}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../shared.css"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--green) 60%,#1a3a1a 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--green3);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(90,138,58,.15) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:1rem;color:var(--green3);letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.18;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(90,138,58,.25);position:relative;}
+.hero-title em{font-style:italic;color:var(--green3);display:block;font-size:.62em;letter-spacing:.04em;margin-top:4px;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.8;position:relative;}
+
+.article{max-width:800px;margin:0 auto;padding:36px 20px 20px;}
+
+h2{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--parch4);}
+h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--ink2);margin:24px 0 12px;}
+p{font-size:.86rem;line-height:2;color:var(--ink2);margin-bottom:16px;}
+
+.sector-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.74rem;}
+.sector-table th{background:var(--ink);color:var(--parch);padding:10px 12px;text-align:left;font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;white-space:nowrap;}
+.sector-table td{padding:10px 12px;border-bottom:1px solid var(--parch4);color:var(--ink2);line-height:1.6;vertical-align:top;}
+.sector-table tr:hover td{background:var(--parch2);}
+.sector-table .cyclical{border-left:3px solid var(--gold2);}
+.sector-table .defensive{border-left:3px solid var(--green2);}
+
+.type-badge{display:inline-block;font-family:var(--mono);font-size:.52rem;padding:2px 7px;border-radius:10px;letter-spacing:.06em;}
+.type-badge.cyclical{background:rgba(139,105,20,.15);color:var(--gold2);border:1px solid rgba(139,105,20,.3);}
+.type-badge.defensive{background:rgba(42,74,26,.15);color:var(--green2);border:1px solid rgba(42,74,26,.3);}
+
+.key-box{background:linear-gradient(135deg,var(--ink) 0%,var(--green) 100%);color:var(--parch);border-radius:2px;padding:24px 26px;margin:24px 0;border-left:4px solid var(--green3);}
+.key-box-label{font-family:var(--mono);font-size:.54rem;color:var(--green3);letter-spacing:.18em;margin-bottom:10px;}
+.key-box p{color:var(--parch2);}
+.key-box strong{color:var(--green3);}
+.key-box ul{padding-left:18px;margin-bottom:12px;}
+.key-box li{font-size:.82rem;line-height:1.85;color:var(--parch3);margin-bottom:6px;}
+
+blockquote{background:var(--parch2);border-left:4px solid var(--green2);padding:16px 20px;margin:20px 0;font-family:var(--serif);font-style:italic;font-size:.92rem;line-height:1.85;color:var(--ink2);}
+blockquote cite{display:block;margin-top:8px;font-family:var(--mono);font-size:.6rem;color:var(--green2);font-style:normal;letter-spacing:.06em;}
+
+ul,ol{padding-left:20px;margin-bottom:16px;}
+li{font-size:.84rem;line-height:1.95;color:var(--ink2);margin-bottom:6px;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">← 書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">業種から歩く</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">日本株セクター別の特徴</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">JAPAN MARKET SECTORS</div>
+  <h1 class="hero-title">
+    日本株の構造を知る
+    <em>セクター別の特徴</em>
+  </h1>
+  <p class="hero-sub">
+    「業種を知らずに個別株を買うのは、地図を持たずに登山するようなものだ。」<br>
+    日本株の14業種を俯瞰し、それぞれのFCF特性とmoatの所在を知る。
+  </p>
+</div>
+
+<div class="article">
+
+<h2 id="cyclical-vs-defensive">景気循環型 vs ディフェンシブ</h2>
+
+<p>日本株のセクターは大きく2つに分類できる。景気の波に連動して業績が大きく変動する<strong>景気循環型（Cyclical）</strong>と、景気に左右されにくい<strong>ディフェンシブ（Defensive）</strong>だ。</p>
+
+<div class="key-box">
+  <div class="key-box-label">KEY CONCEPT</div>
+  <ul>
+    <li><strong>景気循環型</strong> — 好況時に大きく伸び、不況時に大きく落ちる。素材・自動車・不動産・銀行など</li>
+    <li><strong>ディフェンシブ</strong> — 景気に関わらず安定した需要がある。食品・医薬品・電力・通信など</li>
+  </ul>
+  <p>長期投資では両方をバランスよく保有することが重要。景気循環型だけだと不況時に資産が大きく毀損する。</p>
+</div>
+
+<h2 id="sector-map">14業種マップ</h2>
+
+<table class="sector-table">
+  <thead>
+    <tr>
+      <th>業種</th>
+      <th>タイプ</th>
+      <th>FCF特性</th>
+      <th>moatの源泉</th>
+      <th>代表企業</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cyclical">
+      <td><strong>情報通信業</strong></td>
+      <td><span class="type-badge defensive">DEFENSIVE</span></td>
+      <td>高FCFマージン。特にSaaSは安定</td>
+      <td>スイッチングコスト・ネットワーク効果</td>
+      <td>NTT、KDDI、サイボウズ</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>電気機器</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>設備投資が大きく変動が激しい</td>
+      <td>技術力・特許・ブランド</td>
+      <td>キーエンス、ソニーG、東京エレクトロン</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>輸送用機器</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>大規模CAPEX。為替影響大</td>
+      <td>規模の経済・ブランド・サプライチェーン</td>
+      <td>トヨタ、ホンダ、デンソー</td>
+    </tr>
+    <tr class="defensive">
+      <td><strong>食料品</strong></td>
+      <td><span class="type-badge defensive">DEFENSIVE</span></td>
+      <td>安定FCF。成長は緩やか</td>
+      <td>ブランド・流通網・消費者習慣</td>
+      <td>味の素、キッコーマン、日清食品</td>
+    </tr>
+    <tr class="defensive">
+      <td><strong>医薬品</strong></td>
+      <td><span class="type-badge defensive">DEFENSIVE</span></td>
+      <td>高FCF。R&D投資が大きい</td>
+      <td>特許・規制障壁・パイプライン</td>
+      <td>中外製薬、第一三共、武田薬品</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>化学</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>原材料価格に連動</td>
+      <td>プロセス技術・規模の経済</td>
+      <td>信越化学、花王、旭化成</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>機械</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>受注残で変動。設備投資循環に連動</td>
+      <td>技術力・カスタマイズ・保守契約</td>
+      <td>ダイキン、SMC、ファナック</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>銀行業</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>金利環境に大きく依存</td>
+      <td>規模・預金基盤・規制障壁</td>
+      <td>三菱UFJ、三井住友FG、みずほFG</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>不動産業</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>賃貸は安定、分譲は変動大</td>
+      <td>立地・ブランド・資産規模</td>
+      <td>三井不動産、三菱地所、住友不動産</td>
+    </tr>
+    <tr class="defensive">
+      <td><strong>小売業</strong></td>
+      <td><span class="type-badge defensive">DEFENSIVE</span></td>
+      <td>薄利多売。運転資本管理が鍵</td>
+      <td>立地・PB・サプライチェーン</td>
+      <td>ファーストリテイリング、セブン&アイ</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>建設業</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>受注残に依存。公共事業で安定化</td>
+      <td>施工実績・技術力・入札能力</td>
+      <td>大和ハウス、鹿島、大成建設</td>
+    </tr>
+    <tr class="defensive">
+      <td><strong>電気・ガス業</strong></td>
+      <td><span class="type-badge defensive">DEFENSIVE</span></td>
+      <td>規制産業。FCFは安定だが成長は限定的</td>
+      <td>地域独占・規制障壁・インフラ</td>
+      <td>東京電力、関西電力、東京ガス</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>サービス業</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>労働集約型は低FCF。プラットフォーム型は高FCF</td>
+      <td>ブランド・ネットワーク効果・データ</td>
+      <td>リクルート、エムスリー、ベネフィット・ワン</td>
+    </tr>
+    <tr class="cyclical">
+      <td><strong>卸売業</strong></td>
+      <td><span class="type-badge cyclical">CYCLICAL</span></td>
+      <td>資源価格に連動。総合商社は分散</td>
+      <td>情報力・グローバルネットワーク・資源権益</td>
+      <td>三菱商事、伊藤忠、三井物産</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="fcf-characteristics">業種別FCF特性のポイント</h2>
+
+<h3>高FCF体質の業種</h3>
+<ul>
+  <li><strong>情報通信業（特にSaaS）</strong> — ストック型収益で安定。設備投資が相対的に小さい</li>
+  <li><strong>医薬品</strong> — 高い利益率。ただし新薬開発のR&D投資が大きい</li>
+  <li><strong>食料品</strong> — 景気に左右されず安定したCFを生む。成長は緩やか</li>
+</ul>
+
+<h3>FCFが不安定な業種</h3>
+<ul>
+  <li><strong>電気機器・輸送用機器</strong> — 景気循環と為替の影響が大きい</li>
+  <li><strong>建設業</strong> — 受注残と公共事業予算に依存</li>
+  <li><strong>卸売業（総合商社）</strong> — 資源価格の変動に大きく左右される</li>
+</ul>
+
+<blockquote>
+  「業種を理解せずに企業を分析するのは、森を知らずに木を評価するようなものだ。まず森の全体像を把握してから、個々の木を見る。」
+</blockquote>
+
+<div class="related-pages" style="margin-top:40px;">
+  <div class="related-pages-label">RELATED PAGES</div>
+  <div class="related-pages-grid">
+    <a class="related-page-link" href="../">
+      <div class="related-page-tag">INDUSTRIES</div>
+      <div class="related-page-title">業種から歩く棚</div>
+    </a>
+    <a class="related-page-link" href="../it-telecom/">
+      <div class="related-page-tag">IT & TELECOM</div>
+      <div class="related-page-title">情報通信業の構造を歩く</div>
+    </a>
+    <a class="related-page-link" href="../../fcf/intro/">
+      <div class="related-page-tag">FCF BASICS</div>
+      <div class="related-page-title">フリーキャッシュフロー入門</div>
+    </a>
+    <a class="related-page-link" href="../../principles/diversification/">
+      <div class="related-page-tag">DIVERSIFICATION</div>
+      <div class="related-page-title">集中と分散のバランス</div>
+    </a>
+  </div>
+</div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../">業種から歩く</a> ·
+    <a href="../../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script src="../../shared.js"></script>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);});
+(function(){var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;var btn=document.getElementById('musicToggle');var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';window.onYouTubeIframeAPIReady=function(){player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});};var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);btn.addEventListener('click',function(){if(!playerReady)return;if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="サイボウズとKintone——人とAIの協働インフラとしてのSaaS企業分析。PSR・40%ルール・スイッチングコスト・AIエージェントに使われるプラットフォームという着想を静かに整理する。"/>
+<meta property="og:title" content="サイボウズ・Kintone——人とAIの協働インフラ｜業種から歩く棚｜投資と思考の書斎"/>
+<meta property="og:description" content="AIエージェントに使われるプラットフォームとしてのKintone。SaaS企業分析の視点（PSR・40%ルール）と、「人とAIの協働インフラ」としての価値を考える。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/industries/cybozu-kintone/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/industries/cybozu-kintone/"/>
+<title>サイボウズ・Kintone——人とAIの協働インフラ｜投資と思考の書斎</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "サイボウズ・Kintone——人とAIの協働インフラとしてのSaaS企業分析",
+  "description": "サイボウズとKintoneのビジネスモデル、AIエージェントに使われるプラットフォームという着想、SaaS企業分析の視点（PSR・40%ルール）、「人とAIの協働インフラ」としての価値を静かに整理する。",
+  "author": {
+    "@type": "Person",
+    "name": "anni_memo"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "投資と思考の書斎",
+    "url": "https://anni-memo.github.io/investment-library/"
+  },
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [
+    {"@type": "Organization", "name": "サイボウズ", "tickerSymbol": "4779.T"},
+    {"@type": "SoftwareApplication", "name": "Kintone", "applicationCategory": "BusinessApplication"},
+    {"@type": "Thing", "name": "SaaS企業分析"},
+    {"@type": "Thing", "name": "AIエージェント"}
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+      {"@type": "ListItem", "position": 2, "name": "業種から歩く棚", "item": "https://anni-memo.github.io/investment-library/industries/"},
+      {"@type": "ListItem", "position": 3, "name": "サイボウズ・Kintone"}
+    ]
+  }
+}
+</script>
+
+<link rel="stylesheet" href="../../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --sec:#1a4a3a;--sec2:#2a6a52;--sec3:#4a9a7a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0a1510 50%,#0c1a14 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(42,106,82,.14) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--sec3);letter-spacing:.28em;margin-bottom:12px;opacity:.75;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.9rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(42,106,82,.2);position:relative;margin-bottom:8px;}
+.hero-title em{font-style:italic;color:var(--sec3);display:block;font-size:.45em;letter-spacing:.08em;margin-top:8px;font-weight:400;}
+.hero-lead{font-family:var(--jp);font-size:clamp(.84rem,2vw,.98rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:20px auto 0;}
+
+/* ── CONTAINER ── */
+.container{max-width:760px;margin:0 auto;padding:56px 24px 0;}
+
+/* ── SECTION ── */
+.section{margin-bottom:64px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:20px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.5em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.35em 0 .35em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+.section-body strong{color:var(--ink);font-weight:600;}
+
+/* ── METRICS BOX ── */
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:24px 0;}
+@media(min-width:520px){.metrics-grid{grid-template-columns:repeat(3,1fr);}}
+.metric-card{background:var(--ink);color:var(--parch);padding:18px 16px;border:1px solid rgba(139,105,20,.2);}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold3);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}
+.metric-value{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--gold4);margin-bottom:4px;}
+.metric-note{font-size:.62rem;color:var(--parch4);line-height:1.5;font-weight:300;}
+
+/* ── CONCEPT BOX ── */
+.concept-box{
+  background:linear-gradient(135deg,var(--sec) 0%,#0e2018 100%);
+  color:var(--parch);padding:28px 24px;margin:28px 0;
+  border:1px solid rgba(74,154,122,.2);
+}
+.concept-box-label{font-family:var(--mono);font-size:.5rem;color:var(--sec3);letter-spacing:.18em;margin-bottom:12px;opacity:.9;}
+.concept-box-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--gold4);margin-bottom:10px;}
+.concept-box-body{font-size:.84rem;color:var(--parch3);line-height:1.95;font-weight:300;}
+
+/* ── FORMULA BOX ── */
+.formula-box{background:var(--parch2);border:1px solid var(--parch4);border-left:3px solid var(--gold2);padding:20px 24px;margin:24px 0;}
+.formula-label{font-family:var(--mono);font-size:.48rem;color:var(--gold2);letter-spacing:.14em;margin-bottom:10px;}
+.formula-body{font-family:var(--serif);font-size:1rem;color:var(--ink);line-height:1.7;}
+.formula-note{font-size:.76rem;color:var(--ink3);margin-top:8px;line-height:1.7;font-weight:300;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:48px 0;}
+
+/* ── RISK TABLE ── */
+.risk-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.82rem;}
+.risk-table th{background:var(--ink);color:var(--gold3);font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;padding:10px 14px;text-align:left;font-weight:400;}
+.risk-table td{padding:10px 14px;border-bottom:1px solid var(--parch4);color:var(--ink2);line-height:1.65;font-weight:300;vertical-align:top;}
+.risk-table tr:nth-child(even) td{background:var(--parch2);}
+
+/* ── NEXT READS ── */
+.next-reads{background:var(--ink2);border-top:1px solid rgba(139,105,20,.2);padding:36px 24px;}
+.next-reads-inner{max-width:760px;margin:0 auto;}
+.next-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}
+.next-links{display:flex;flex-direction:column;gap:2px;}
+.next-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}
+.next-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.next-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.1em;width:100px;flex-shrink:0;}
+.next-link-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TOP ── */
+.scroll-top{position:fixed;bottom:80px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+
+/* ── MUSIC TOGGLE ── */
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">業種から歩く棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">サイボウズ・Kintone</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">INDUSTRIES · SAAS · AI INFRASTRUCTURE</div>
+  <div class="hero-ornament">CYBOZU · KINTONE</div>
+  <h1 class="hero-title">
+    サイボウズ・Kintone
+    <em>Human × AI Collaboration Infrastructure</em>
+  </h1>
+  <p class="hero-lead">
+    AIエージェントに使われるプラットフォームという着想。<br>
+    「人とAIの協働インフラ」としての価値を静かに整理する。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="container">
+
+  <!-- §1 -->
+  <div class="section">
+    <div class="section-label">01 · BUSINESS MODEL</div>
+    <h2 class="section-title">サイボウズのビジネスモデル</h2>
+    <div class="section-body">
+      <p>
+        サイボウズ（東証プライム：4779）は、グループウェアとローコード開発プラットフォームを軸とする日本のSaaS企業だ。
+        主力製品はKintone（キントーン）——ノーコード・ローコードでビジネスアプリを構築できるクラウドプラットフォームである。
+      </p>
+      <p>
+        ビジネスモデルの中核は<strong>サブスクリプション（継続課金）型</strong>だ。
+        導入した企業はKintoneの上にワークフロー・データベース・業務アプリを積み上げていく。
+        蓄積された業務データと構築されたアプリが多いほど、<strong>切り替えコスト（スイッチングコスト）は高くなる</strong>。
+        これが持続的な収益の基盤になっている。
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">TICKER</div>
+          <div class="metric-value">4779</div>
+          <div class="metric-note">東証プライム</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">MODEL</div>
+          <div class="metric-value">SaaS</div>
+          <div class="metric-note">サブスクリプション型継続収益</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">PRODUCT</div>
+          <div class="metric-value">kintone</div>
+          <div class="metric-note">ローコード業務プラットフォーム</div>
+        </div>
+      </div>
+
+      <p>
+        もうひとつの柱はグループウェア製品群（Garoon・サイボウズOffice）だが、
+        成長ドライバーとしての期待はKintoneとその国際展開に集まっている。
+        米国市場へのKintone展開は、国内成熟市場からの収益分散という観点でも重要だ。
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- §2 -->
+  <div class="section">
+    <div class="section-label">02 · AI AGENT PLATFORM</div>
+    <h2 class="section-title">AIエージェントに使われるプラットフォームという着想</h2>
+    <div class="section-body">
+      <p>
+        2025〜2026年にかけて、AIエージェント（自律的に判断・行動するAIシステム）の実用化が加速している。
+        この流れの中で、ひとつの重要な問いが生まれる——<strong>AIエージェントは、何の上で動くのか</strong>。
+      </p>
+      <p>
+        エージェントが業務を実行するためには、データが必要だ。
+        承認フロー、顧客情報、在庫データ、プロジェクトの進捗——これらが整理されて蓄積されている場所こそが、
+        エージェントの「仕事場」になる。
+      </p>
+
+      <div class="concept-box">
+        <div class="concept-box-label">CONCEPT · AI INFRASTRUCTURE</div>
+        <div class="concept-box-title">AIエージェントが「使う」プラットフォーム</div>
+        <div class="concept-box-body">
+          従来のソフトウェアは「人間が使うUI」を中心に設計されていた。
+          AIエージェント時代は「AIが呼び出すAPI・データ構造」が中心になる。
+          Kintoneのように、業務データが構造化された形で蓄積されているプラットフォームは、
+          人間だけでなくAIエージェントの「実行基盤」になれる可能性がある。
+        </div>
+      </div>
+
+      <p>
+        サイボウズ自身も「kintone AI」の機能拡充を進めており、
+        自然言語でアプリを作成したりデータを検索したりする機能を開発中だ。
+        ここで重要なのは方向性だ——KintoneはAIを「使う場所」であり、
+        同時にAIが「学習・実行する土台」になろうとしている。
+      </p>
+      <p>
+        これは単なる「AI機能を追加した既存SaaS」ではなく、
+        <strong>人間とAIが協働するためのインフラ</strong>としての再定義だ。
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- §3 -->
+  <div class="section">
+    <div class="section-label">03 · SAAS VALUATION</div>
+    <h2 class="section-title">SaaS企業分析の視点——PSR・40%ルール</h2>
+    <div class="section-body">
+      <p>
+        SaaS企業を評価するとき、PER（株価収益率）よりも有用な指標がある。
+        なぜなら、成長期のSaaS企業は先行投資により利益を意図的に圧縮することが多いからだ。
+        投資家としてよく参照するフレームワークを整理する。
+      </p>
+
+      <div class="formula-box">
+        <div class="formula-label">METRIC 01 · PSR（株価売上高倍率）</div>
+        <div class="formula-body">PSR = 時価総額 ÷ 売上高</div>
+        <div class="formula-note">
+          SaaS企業の成長期における価値評価の基準指標。
+          成長率が高く・利益率改善の見込みがある企業は高いPSRが正当化される。
+          一般的に成長率20〜30%のSaaS企業で PSR 5〜15倍程度が目安とされるが、
+          成長率・利益率・解約率（チャーンレート）と合わせて判断することが重要。
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula-label">METRIC 02 · Rule of 40（40%ルール）</div>
+        <div class="formula-body">売上成長率（%）+ 営業利益率（%）≥ 40</div>
+        <div class="formula-note">
+          SaaS企業の健全性を測る経験則。
+          成長と収益性のトレードオフを一つの数字で表す。
+          成長率30% + 営業利益率10% = 40 なら合格ライン。
+          成長が鈍化した段階では利益率の改善で補えるかどうかが問われる。
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula-label">METRIC 03 · NRR（Net Revenue Retention）</div>
+        <div class="formula-body">NRR = 既存顧客からの今期売上 ÷ 前期売上</div>
+        <div class="formula-note">
+          既存顧客が追加購入・プランアップグレードでどれだけ収益を拡大したかを示す。
+          NRR &gt; 100% は「既存顧客だけで成長できる」ことを意味する最強の指標。
+          優秀なSaaS企業は120〜130%以上を記録することもある。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- §4 -->
+  <div class="section">
+    <div class="section-label">04 · MOAT ANALYSIS</div>
+    <h2 class="section-title">「人とAIの協働インフラ」としての競争優位</h2>
+    <div class="section-body">
+      <p>
+        Kintoneのmoat（競争優位の堀）を構成する要素を静かに整理する。
+      </p>
+      <ul>
+        <li><strong>スイッチングコスト</strong>——Kintone上に構築した業務アプリ・データ・ワークフローは容易に移行できない。導入年数が長いほど堀は深まる。</li>
+        <li><strong>ローコードのネットワーク効果</strong>——Kintoneのエコシステム（パートナー・テンプレート・連携サービス）が充実するほど、顧客にとっての価値が増す。</li>
+        <li><strong>業種・業務ノウハウの蓄積</strong>——製造・建設・医療・小売など、Kintoneが各業種に最適化されたテンプレートを持つことで参入障壁が高まる。</li>
+        <li><strong>AIデータ基盤としての位置づけ</strong>——構造化された業務データの蓄積量が、AI活用の質を決める。早期の顧客ほどこのアドバンテージを持つ。</li>
+      </ul>
+
+      <div class="concept-box">
+        <div class="concept-box-label">STRUCTURAL ADVANTAGE</div>
+        <div class="concept-box-title">「人とAIの協働インフラ」が持つ意味</div>
+        <div class="concept-box-body">
+          インフラとは、止められないものだ。
+          電気・水道・インターネットを止めることが事業の停止を意味するように、
+          日常業務の中枢に組み込まれたSaaSも同様の存在になる。
+          Kintoneが「AIの実行基盤」になれれば、そのスイッチングコストは現在の想像を超える水準に達する可能性がある。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- §5 -->
+  <div class="section">
+    <div class="section-label">05 · RISKS & CONSIDERATIONS</div>
+    <h2 class="section-title">リスクと留意点</h2>
+    <div class="section-body">
+      <p>
+        公平な分析のために、リスク要因も整理する。
+      </p>
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>リスク</th>
+            <th>内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>競合激化</strong></td>
+            <td>MicrosoftのPower Platform、Salesforce、国内ではSmartsheet・Airtableなど。グローバルな大企業との競合は価格圧力を生む。</td>
+          </tr>
+          <tr>
+            <td><strong>国際展開の不確実性</strong></td>
+            <td>米国・アジア展開は長期的な成長ドライバーだが、顧客獲得コストと成長ペースには不確実性が高い。</td>
+          </tr>
+          <tr>
+            <td><strong>AI競合の台頭</strong></td>
+            <td>生成AIを活用したノーコードツールが普及すると、Kintoneの「ローコード」という価値が相対化される可能性がある。</td>
+          </tr>
+          <tr>
+            <td><strong>国内市場の成熟</strong></td>
+            <td>国内グループウェア市場は成熟局面にあり、既存製品の自然減が続く中での成長維持が課題。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        これらのリスクは、Kintoneが「AIエージェントの実行基盤」としての地位を確立できるかどうかによって、
+        大きく緩和される可能性がある。AIが標準化した時代に、<strong>データと業務フローが蓄積されたプラットフォームには、
+        新参のAIツールが容易に代替できない「歴史」がある</strong>。
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── NEXT READS ── -->
+<div class="next-reads">
+  <div class="next-reads-inner">
+    <div class="next-label">関連する棚を歩く</div>
+    <div class="next-links">
+      <a class="next-link" href="../it-telecom/">
+        <span class="next-link-tag">IT INDUSTRY</span>
+        <span class="next-link-title">情報通信業を歩く</span>
+      </a>
+      <a class="next-link" href="../../horizons/ochiai-yoichi/">
+        <span class="next-link-tag">THINKERS</span>
+        <span class="next-link-title">落合陽一と「忘れる読書」の思想</span>
+      </a>
+      <a class="next-link" href="../../moat/">
+        <span class="next-link-tag">MOAT</span>
+        <span class="next-link-title">moatをどう見るか</span>
+      </a>
+      <a class="next-link" href="../../fcf/">
+        <span class="next-link-tag">FINANCE</span>
+        <span class="next-link-title">FCFとは何か</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../">業種から歩く</a> ·
+    <a href="../../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- ── MUSIC TOGGLE ── -->
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+
+(function(){
+  var STORAGE_KEY='music_playing';
+  var VIDEO_ID='t_8uSnwvUeQ';
+  var player=null;
+  var playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{
+      height:'1',width:'1',
+      videoId:VIDEO_ID,
+      playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},
+      events:{
+        onReady:function(e){
+          playerReady=true;
+          e.target.setVolume(30);
+          if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}
+        }
+      }
+    });
+  };
+
+  var tag=document.createElement('script');
+  tag.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){
+      player.pauseVideo();
+      btn.classList.remove('playing');
+      localStorage.setItem(STORAGE_KEY,'false');
+    } else {
+      player.playVideo();
+      btn.classList.add('playing');
+      localStorage.setItem(STORAGE_KEY,'true');
+    }
+  });
+})();
+</script>
+<script src="../../shared.js"></script>
+</body>
+</html>

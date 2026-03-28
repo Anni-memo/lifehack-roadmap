@@ -3,11 +3,35 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="moat・経営者・財務・資本配分の4軸で企業を評価する長期投資家のための分析フレームワーク。具体的な評価基準と質問リストで企業分析を体系化する。"/>
 <meta property="og:title" content="企業分析テンプレート｜長期投資と思考のライブラリ"/>
 <meta property="og:description" content="moat・経営者・財務・資本配分の4軸で企業を評価する長期投資家のための分析フレームワーク。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/analysis-template/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/analysis-template/"/>
 <title>企業分析テンプレート｜長期投資と思考のライブラリ</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "企業分析テンプレート——moat・経営者・財務・資本配分の4軸",
+  "description": "moat・経営者・財務・資本配分の4軸で企業を評価する長期投資家のための分析フレームワーク。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "企業分析"}, {"@type": "Thing", "name": "投資フレームワーク"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "企業分析テンプレート"}
+  ]}
+}
+</script>
 
+<link rel="stylesheet" href="../shared.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 
@@ -96,6 +120,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid var(--gold)44;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
 .scroll-top.visible{opacity:1;pointer-events:all}
 .scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
@@ -273,22 +300,22 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ── FURTHER READING ── -->
 <div class="further">
   <div class="further-inner">
-    <div class="further-label">FURTHER READING</div>
-    <p class="further-reason">テンプレートを持ったら、業種と実企業へ進む。</p>
+    <div class="further-label">この棚の隣に置いてある本</div>
+    <p class="further-reason">枠組みを持ったら、実際の業種へ歩く。最初に整備された棚として、情報通信業がある。</p>
     <div class="further-links">
+      <a class="further-link" href="../industries/it-telecom/">
+        <span class="further-link-tag">業種</span>
+        <span class="further-link-title">情報通信業を歩く</span>
+        <span class="further-link-arrow">→</span>
+      </a>
       <a class="further-link" href="../industries/">
-        <span class="further-link-tag">INDUSTRY</span>
-        <span class="further-link-title">業種から歩く</span>
+        <span class="further-link-tag">業種一覧</span>
+        <span class="further-link-title">業種から歩く棚</span>
         <span class="further-link-arrow">→</span>
       </a>
-      <a class="further-link" href="../principles/">
-        <span class="further-link-tag">PRINCIPLES</span>
-        <span class="further-link-title">私の投資原則</span>
-        <span class="further-link-arrow">→</span>
-      </a>
-      <a class="further-link" href="../horizons/">
-        <span class="further-link-tag">HORIZONS</span>
-        <span class="further-link-title">思考を広げる棚へ進む</span>
+      <a class="further-link" href="../horizons/civilization/">
+        <span class="further-link-tag">教養</span>
+        <span class="further-link-title">投資を入口に文明を考える</span>
         <span class="further-link-arrow">→</span>
       </a>
     </div>
@@ -297,11 +324,37 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 <footer class="footer">
   <div class="footer-title">投資と思考の書斎</div>
-  <div><a href="../">← 書斎の入口へ戻る</a></div>
+  <div>
+    <a href="../">書斎の入口</a> ·
+    <a href="../hajimete/">初めての方へ</a> ·
+    <a href="../principles/">投資原則</a> ·
+    <a href="../industries/">業種から歩く</a> ·
+    <a href="../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
   <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
 </footer>
 
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-<script>window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);});</script>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);});
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});
+  };
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
+    else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
+  });
+})();
+</script>
+<script src="../shared.js"></script>
 </body>
 </html>

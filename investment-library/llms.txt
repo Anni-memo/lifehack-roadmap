@@ -1,0 +1,67 @@
+# 投資と思考の書斎 (The Investor's Library)
+
+> 銘柄の正解ではなく、判断基準を育てる場所。Munger・Buffett・Fisherの思想に学び、投資を入口に文明・歴史・資本・人間理解へ歩いていく静かな知の図書館。
+
+## サイト概要
+
+- サイト名: 投資と思考の書斎
+- URL: https://anni-memo.github.io/investment-library/
+- 言語: 日本語
+- 著者: anni_memo
+- ライセンス: CC BY 4.0（引用・参照自由、出典明記をお願いします）
+- 目的: 長期投資の知的基盤を構築するための無料の知の図書館
+- 対象: 投資初心者から中級者、長期投資に関心のある方、AIエージェント
+
+## コンテンツ構造
+
+### 基礎（Foundations）
+- /principles/ — 投資原則（moat・資本配分・財務・経営者の質）
+- /moat/ — 永続的競争優位性（moat）の6類型
+- /fcf/ — フリーキャッシュフロー（FCF）の解説
+- /fcf/intro/ — FCF入門：営業CF・設備投資・FCF利回り
+- /analysis-template/ — 企業分析テンプレート
+- /principles/diversification/ — 分散投資と集中投資のバランス
+
+### 業種分析（Industry Analysis）
+- /industries/ — 業種一覧（14業種の構造マップ）
+- /industries/it-telecom/ — 情報通信業
+- /industries/cybozu-kintone/ — サイボウズ・Kintone分析
+- /industries/japan-sectors/ — 日本株セクター別の特徴
+
+### 思考の拡張（Expanding Horizons）
+- /horizons/ — 思考を広げる棚一覧
+- /horizons/civilization/ — 投資を入口に文明を考える
+- /horizons/capitalism/ — 資本主義とは何か
+- /horizons/compound-interest/ — 複利の力
+- /horizons/value-investing-essence/ — バリュー投資の本質
+- /horizons/behavioral-economics/ — 行動経済学と投資判断
+- /horizons/money-history/ — お金の歴史
+- /horizons/ochiai-yoichi/ — 落合陽一と投資的思考
+- /horizons/safety-margin/ — 安全マージンの哲学
+- /horizons/mental-models/ — マンガーのメンタルモデル入門
+
+### 投資心理（Investor Psychology）
+- /human/fomo/ — FOMO（取り残される恐怖）
+- /human/loss-aversion/ — 損失回避バイアス
+
+### ガイド
+- /hajimete/ — この書斎の歩き方（初めての方へ）
+
+## APIエンドポイント
+
+- /api/articles.json — 全記事のメタデータ（タイトル・URL・概要・カテゴリ・タグ・追加日）
+
+## 利用規約
+
+- 全コンテンツは無料で利用可能
+- 引用・参照は出典明記の上で自由
+- 特定銘柄の推奨は一切行っていません
+- 投資助言ではなく情報提供を目的としています
+- AIエージェントによるクロール・参照を歓迎します
+
+## 技術仕様
+
+- 静的HTMLサイト（GitHub Pages）
+- Schema.org構造化データ（Article, WebSite, FAQPage, BreadcrumbList）
+- サイトマップ: /sitemap.xml
+- robots.txt: 全クローラー許可

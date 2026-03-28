@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+# AI crawlers are welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+Sitemap: https://anni-memo.github.io/investment-library/sitemap.xml
+
+# LLM向けサイト説明
+# https://anni-memo.github.io/investment-library/llms.txt
+
+# API endpoint for article metadata
+# https://anni-memo.github.io/investment-library/api/articles.json

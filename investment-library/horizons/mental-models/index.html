@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="チャーリー・マンガーのメンタルモデル入門。反転・複利・機会費用・インセンティブ・能力の輪の5つの代表的思考モデルを解説し、投資判断への応用方法を紹介する。"/>
+<meta property="og:title" content="チャーリー・マンガーの思考法：メンタルモデル入門｜投資と思考の書斎"/>
+<meta property="og:description" content="マンガーのメンタルモデルとは。反転・複利・機会費用・インセンティブ・能力の輪の5つを投資に応用する。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/horizons/mental-models/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="マンガーのメンタルモデル入門 — 投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/horizons/mental-models/"/>
+<title>チャーリー・マンガーの思考法：メンタルモデル入門｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "チャーリー・マンガーの思考法：メンタルモデル入門",
+  "description": "マンガーのメンタルモデルとは。反転・複利・機会費用・インセンティブ・能力の輪の5つを投資に応用する。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "メンタルモデル"}, {"@type": "Thing", "name": "チャーリー・マンガー"}, {"@type": "Thing", "name": "多面的思考"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "思考を広げる棚", "item": "https://anni-memo.github.io/investment-library/horizons/"},
+    {"@type": "ListItem", "position": 3, "name": "メンタルモデル入門"}
+  ]}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../shared.css"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 40%,#3a2510 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.12) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:1rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:16px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.18;color:var(--parch);margin-bottom:6px;text-shadow:0 2px 20px rgba(212,170,34,.25);position:relative;}
+.hero-title em{font-style:italic;color:var(--gold4);display:block;font-size:.62em;letter-spacing:.04em;margin-top:4px;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.8;position:relative;}
+
+.article{max-width:800px;margin:0 auto;padding:36px 20px 20px;}
+
+.intro-block{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:24px 26px;margin-bottom:32px;border-left:4px solid var(--gold2);}
+.intro-label{font-family:var(--mono);font-size:.54rem;color:var(--gold2);letter-spacing:.18em;margin-bottom:10px;}
+.intro-text{font-family:var(--serif);font-size:clamp(.92rem,2.5vw,1.05rem);font-style:italic;line-height:1.9;color:var(--ink2);}
+.intro-text strong{color:var(--gold2);font-style:normal;}
+
+h2{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--parch4);}
+h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--ink2);margin:24px 0 12px;}
+p{font-size:.86rem;line-height:2;color:var(--ink2);margin-bottom:16px;}
+blockquote{background:var(--parch2);border-left:4px solid var(--gold2);padding:16px 20px;margin:20px 0;font-family:var(--serif);font-style:italic;font-size:.92rem;line-height:1.85;color:var(--ink2);}
+blockquote cite{display:block;margin-top:8px;font-family:var(--mono);font-size:.6rem;color:var(--gold2);font-style:normal;letter-spacing:.06em;}
+
+.model-card{background:var(--parch2);border:1px solid var(--parch4);border-radius:2px;padding:24px;margin:20px 0;border-top:3px solid var(--gold2);}
+.model-num{font-family:var(--mono);font-size:.56rem;color:var(--gold);letter-spacing:.15em;margin-bottom:6px;}
+.model-name{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.model-en{font-family:var(--mono);font-size:.58rem;color:var(--gold2);letter-spacing:.08em;margin-bottom:12px;}
+.model-desc{font-size:.84rem;line-height:1.95;color:var(--ink2);margin-bottom:12px;}
+.model-apply{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--parch);border-radius:2px;padding:14px 18px;font-size:.78rem;line-height:1.8;}
+.model-apply strong{color:var(--gold4);}
+
+ul,ol{padding-left:20px;margin-bottom:16px;}
+li{font-size:.84rem;line-height:1.95;color:var(--ink2);margin-bottom:6px;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em;}
+.footer a{color:var(--gold3);text-decoration:none;}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">← 書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">メンタルモデル入門</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">MENTAL MODELS</div>
+  <h1 class="hero-title">
+    チャーリー・マンガーの思考法
+    <em>メンタルモデル入門</em>
+  </h1>
+  <p class="hero-sub">
+    「ハンマーしか持っていなければ、すべてが釘に見える。」<br>
+    マンガーは多分野から思考の道具を集め、世界を立体的に理解した。
+  </p>
+</div>
+
+<div class="article">
+
+<div class="intro-block">
+  <div class="intro-label">THIS ARTICLE</div>
+  <div class="intro-text">
+    メンタルモデルとは、世界を理解するための<strong>「思考のレンズ」</strong>のこと。<br>
+    マンガーは心理学・物理学・経済学・生物学など多分野から約100のモデルを集め、<br>
+    それらを組み合わせて投資判断に応用した。この記事では代表的な5つを紹介する。
+  </div>
+</div>
+
+<h2 id="what-is-mental-model">メンタルモデルとは</h2>
+
+<blockquote>
+  「あなたの頭の中にいくつかの大きなアイデアを持っておけ。そして、現実世界で起きていることを、そのアイデアのどれに当てはまるかで考えよ。これが私の学習法だ。」
+  <cite>— Charlie Munger, Poor Charlie's Almanack</cite>
+</blockquote>
+
+<p>メンタルモデルとは、現実世界の複雑な問題を理解するための「思考の枠組み」だ。一つのモデルだけでは見えないものが、複数のモデルを組み合わせることで立体的に見えてくる。マンガーはこれを<strong>「多面的思考（Latticework of Mental Models）」</strong>と呼んだ。</p>
+
+<p>なぜ多面的思考が重要なのか。</p>
+<ul>
+  <li><strong>単一の視点は盲点を生む</strong> — 会計の専門家は財務数値だけで判断し、心理的要因を見落とす</li>
+  <li><strong>現実は多因子で動く</strong> — 企業の業績は経済・技術・心理・規制の複合結果</li>
+  <li><strong>異なる分野のモデルは相互に補完する</strong> — 物理学の「臨界質量」は市場シェアの理解に使える</li>
+</ul>
+
+<h2 id="five-models">代表的な5つのメンタルモデル</h2>
+
+<div class="model-card">
+  <div class="model-num">MODEL 01</div>
+  <div class="model-name">反転（Inversion）</div>
+  <div class="model-en">INVERSION</div>
+  <div class="model-desc">
+    「成功する方法を考えるな。失敗する方法を考えて、それを避けよ。」<br>
+    マンガーが最も愛した思考法。問題を逆から考えることで、見えなかった解決策が見えてくる。<br>
+    「素晴らしい投資家になるにはどうすればいいか？」ではなく「どうすれば投資で確実に破滅するか？」を考える。
+  </div>
+  <div class="model-apply">
+    <strong>投資への応用：</strong>「この企業が失敗するとしたら何が原因か？」を先に考える。致命的リスクがなければ、安心して投資できる。
+  </div>
+</div>
+
+<div class="model-card">
+  <div class="model-num">MODEL 02</div>
+  <div class="model-name">複利（Compound Interest）</div>
+  <div class="model-en">COMPOUND INTEREST</div>
+  <div class="model-desc">
+    小さな利益が時間とともに指数関数的に成長する力。アインシュタインが「人類最大の発明」と呼んだ概念。<br>
+    投資だけでなく、知識・人間関係・スキルにも複利は働く。マンガーが毎日数時間を読書に充てるのは、知識の複利効果を知っているからだ。
+  </div>
+  <div class="model-apply">
+    <strong>投資への応用：</strong>長期保有の力を信じる。年率15%で20年運用すれば、100万円は1,637万円になる。焦って売買するな。
+  </div>
+</div>
+
+<div class="model-card">
+  <div class="model-num">MODEL 03</div>
+  <div class="model-name">機会費用（Opportunity Cost）</div>
+  <div class="model-en">OPPORTUNITY COST</div>
+  <div class="model-desc">
+    あらゆる選択には「それを選んだことで失ったもの」がある。A株に投資した時間とお金は、B株には投資できない。<br>
+    マンガーは常に「次善の選択肢と比べてどうか？」を問う。絶対的な良し悪しではなく、相対的な比較で判断する。
+  </div>
+  <div class="model-apply">
+    <strong>投資への応用：</strong>「この株は良い投資先か？」ではなく「今持っている最良の選択肢と比べてどうか？」と問う。
+  </div>
+</div>
+
+<div class="model-card">
+  <div class="model-num">MODEL 04</div>
+  <div class="model-name">インセンティブ（Incentives）</div>
+  <div class="model-en">INCENTIVES</div>
+  <div class="model-desc">
+    「インセンティブの力を決して過小評価してはいけない。」マンガーの最も有名な教えの一つ。<br>
+    人間は理想や道徳ではなく、インセンティブ（報酬と罰）に従って行動する。企業の経営者も同じだ。<br>
+    経営者のストックオプションの設計を見れば、その人が何を最適化しようとしているかが分かる。
+  </div>
+  <div class="model-apply">
+    <strong>投資への応用：</strong>経営者の報酬体系を確認する。長期的な企業価値向上にインセンティブが揃っている企業を選ぶ。
+  </div>
+</div>
+
+<div class="model-card">
+  <div class="model-num">MODEL 05</div>
+  <div class="model-name">能力の輪（Circle of Competence）</div>
+  <div class="model-en">CIRCLE OF COMPETENCE</div>
+  <div class="model-desc">
+    自分が本当に理解できる領域の境界線を知ること。マンガーとバフェットは、理解できない事業には絶対に投資しない。<br>
+    「能力の輪の大きさは重要ではない。その境界線がどこにあるかを知ることが重要だ。」
+  </div>
+  <div class="model-apply">
+    <strong>投資への応用：</strong>自分が深く理解できる業界・ビジネスモデルにだけ投資する。「分からないものには投資しない」は最も強力なリスク管理。
+  </div>
+</div>
+
+<h2 id="how-to-build">メンタルモデルの増やし方</h2>
+
+<ul>
+  <li><strong>多分野の読書</strong> — 心理学・歴史・物理学・生物学・経済学の入門書を読む</li>
+  <li><strong>日常の出来事を複数のモデルで分析する</strong> — ニュースを「インセンティブ」「反転」「複利」の視点で考える</li>
+  <li><strong>ノートに書き出す</strong> — 学んだモデルとその応用例を記録する</li>
+  <li><strong>少数から始める</strong> — まず5〜10のモデルを深く理解してから、徐々に増やす</li>
+</ul>
+
+<blockquote>
+  「私が知っている成功した人は、例外なく大量の読書家だ。知識は複利で積み上がる。」
+  <cite>— Charlie Munger</cite>
+</blockquote>
+
+<div class="related-pages" style="margin-top:40px;">
+  <div class="related-pages-label">RELATED PAGES</div>
+  <div class="related-pages-grid">
+    <a class="related-page-link" href="../behavioral-economics/">
+      <div class="related-page-tag">BEHAVIORAL ECONOMICS</div>
+      <div class="related-page-title">マーケットを読む前に、自分を読む</div>
+    </a>
+    <a class="related-page-link" href="../compound-interest/">
+      <div class="related-page-tag">COMPOUND INTEREST</div>
+      <div class="related-page-title">複利の力：時間を味方にする</div>
+    </a>
+    <a class="related-page-link" href="../safety-margin/">
+      <div class="related-page-tag">MARGIN OF SAFETY</div>
+      <div class="related-page-title">安全マージンの哲学</div>
+    </a>
+    <a class="related-page-link" href="../../principles/">
+      <div class="related-page-tag">PRINCIPLES</div>
+      <div class="related-page-title">私の投資原則</div>
+    </a>
+  </div>
+</div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../../industries/">業種から歩く</a> ·
+    <a href="../">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script src="../../shared.js"></script>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>200);});
+(function(){var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;var btn=document.getElementById('musicToggle');var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';window.onYouTubeIframeAPIReady=function(){player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});};var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);btn.addEventListener('click',function(){if(!playerReady)return;if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="複利の力とは何か。なぜ長期投資家は時間を味方にできるのか。アインシュタインが「人類最大の発明」と呼んだ複利の本質を、バフェット・マンガーの哲学と共に解説する。"/>
+<meta property="og:title" content="複利の力：なぜ長期投資家は時間を味方にできるのか｜投資と思考の書斎"/>
+<meta property="og:description" content="複利の力とは何か。なぜ長期投資家は時間を味方にできるのか。アインシュタインが「人類最大の発明」と呼んだ複利の本質を解説する。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/horizons/compound-interest/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/horizons/compound-interest/"/>
+<title>複利の力：なぜ長期投資家は時間を味方にできるのか｜投資と思考の書斎</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "複利の力：なぜ長期投資家は時間を味方にできるのか",
+  "description": "複利の力とは何か。なぜ長期投資家は時間を味方にできるのか。アインシュタインが「人類最大の発明」と呼んだ複利の本質を、バフェット・マンガーの哲学と共に解説する。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "複利"}, {"@type": "Thing", "name": "長期投資"}, {"@type": "Thing", "name": "資産形成"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "思考を広げる棚", "item": "https://anni-memo.github.io/investment-library/horizons/"},
+    {"@type": "ListItem", "position": 3, "name": "複利の力"}
+  ]}
+}
+</script>
+
+<link rel="stylesheet" href="../../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#2a1c0a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:14px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:700;line-height:1.25;color:var(--parch);text-shadow:0 2px 20px rgba(212,170,34,.15);position:relative;margin-bottom:18px;}
+.hero-lead{font-size:.88rem;color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:540px;margin:0 auto;}
+
+/* ARTICLE */
+.article{max-width:680px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body strong{color:var(--ink);font-weight:600;}
+
+/* CALLOUT */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+
+/* TABLE */
+.compound-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.8rem;}
+.compound-table th{background:var(--ink);color:var(--gold3);font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;padding:10px 14px;text-align:left;}
+.compound-table td{padding:10px 14px;border-bottom:1px solid var(--parch4);color:var(--ink2);}
+.compound-table tr:nth-child(even){background:var(--parch2);}
+.compound-table .highlight{color:var(--gold2);font-weight:600;}
+
+/* FURTHER */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:680px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.footer-links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.footer-links a{color:var(--gold3);text-decoration:none;font-size:.68rem;}
+
+/* SCROLL/MUSIC */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">複利の力</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-shelf">COMPOUND INTEREST</div>
+  <h1 class="hero-title">複利の力：なぜ長期投資家は<br>時間を味方にできるのか</h1>
+  <p class="hero-lead">
+    利益が利益を生む。その連鎖が、時間とともに加速する。<br>
+    複利とは、長期投資家にとって最も強力な武器である。
+  </p>
+</div>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <!-- 複利とは何か -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 01</div>
+    <h2 class="section-title">複利とは何か</h2>
+    <div class="section-body">
+      <p>複利（compound interest）とは、元本だけでなく、すでに得た利息にも利息がつく仕組みのことである。</p>
+      <p>単利が「平地を歩く」ことだとすれば、複利は「坂道が次第に急になる」ことに似ている。最初はほとんど差がないが、時間が経つほど差は劇的に広がっていく。</p>
+      <p>100万円を年10%で運用した場合を見てみよう。</p>
+    </div>
+
+    <table class="compound-table">
+      <tr><th>年数</th><th>単利（10%）</th><th>複利（10%）</th><th>差額</th></tr>
+      <tr><td>1年</td><td>110万円</td><td>110万円</td><td>0円</td></tr>
+      <tr><td>5年</td><td>150万円</td><td>161万円</td><td>11万円</td></tr>
+      <tr><td>10年</td><td>200万円</td><td>259万円</td><td>59万円</td></tr>
+      <tr><td>20年</td><td>300万円</td><td class="highlight">673万円</td><td class="highlight">373万円</td></tr>
+      <tr><td>30年</td><td>400万円</td><td class="highlight">1,745万円</td><td class="highlight">1,345万円</td></tr>
+    </table>
+
+    <div class="section-body">
+      <p>30年後、単利では4倍にしかならないが、複利では<strong>17倍以上</strong>になる。この圧倒的な差が、長期投資家が時間を味方にできる根拠である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- バフェットと複利 -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 02</div>
+    <h2 class="section-title">バフェットが複利で見せたもの</h2>
+    <div class="section-body">
+      <p>ウォーレン・バフェットの資産の95%以上は、65歳以降に築かれたものである。</p>
+      <p>これは彼が晩年に急に賢くなったからではない。若い頃から積み上げてきた複利の効果が、時間の経過とともに指数関数的に拡大した結果である。</p>
+      <p>バフェットが11歳で最初の株を買ったことは有名な話だが、重要なのはその事実そのものではない。<strong>彼が70年以上にわたって複利の力を止めなかった</strong>ことが重要なのだ。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">"人生は雪だるまのようなものだ。大切なのは、十分に湿った雪と、十分に長い坂道を見つけることだ。"<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;">── Warren Buffett</span></p>
+    </div>
+
+    <div class="section-body">
+      <p>「十分に湿った雪」とは、良い投資先（高いリターンを安定的に出せる企業）のことである。「十分に長い坂道」とは、時間のことだ。この二つが揃ったとき、複利は驚異的な力を発揮する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 複利の3つの条件 -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 03</div>
+    <h2 class="section-title">複利が効くための3つの条件</h2>
+    <div class="section-body">
+      <p>複利は魔法ではない。効果を最大化するには、3つの条件が必要である。</p>
+
+      <p><strong>1. 時間を味方にすること</strong></p>
+      <p>複利の効果は、初期には微々たるものだ。真の力は10年、20年、30年という時間軸で現れる。だからこそ、「いつ始めるか」よりも「どれだけ長く続けるか」が重要になる。</p>
+
+      <p><strong>2. 途中で引き出さないこと</strong></p>
+      <p>複利の連鎖を断ち切ることは、坂道を登る途中で雪だるまを壊すようなものだ。短期的な利確や感情的な売買は、複利効果を根こそぎ奪う。バフェットの「保有期間は永遠」という姿勢は、複利を最大化する戦略そのものである。</p>
+
+      <p><strong>3. 元本を守ること</strong></p>
+      <p>複利の前提は、元本が毀損しないことだ。50%の損失を取り戻すには100%のリターンが必要になる。マンガーが「第一のルールは、絶対にお金を失わないこと」と繰り返したのは、複利の数学を深く理解していたからである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜ人は複利を過小評価するか -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 04</div>
+    <h2 class="section-title">なぜ人は複利を過小評価するのか</h2>
+    <div class="section-body">
+      <p>複利の概念自体は誰でも理解できる。しかし、<strong>その効果を直感的に実感できる人は極めて少ない</strong>。</p>
+
+      <p>人間の脳は、線形（直線的な）変化には対応できるが、指数関数的な変化を直感で把握することが苦手だ。「10年後に2.6倍」と聞くと実感が湧くが、「30年後に17倍」と聞いても現実感がない。</p>
+
+      <p>この認知のバイアスが、多くの人を短期的な利益に向かわせる。目の前の10%の利益確定は、30年後の17倍の可能性よりも、はるかに魅力的に感じてしまう。</p>
+
+      <p>だからこそ、複利を理解するだけでなく、<strong>複利を信じて行動し続ける精神的な強さ</strong>が、長期投資家に求められる最も重要な資質なのかもしれない。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">"投資における最大のリスクは、複利を止めてしまうことだ。市場の変動よりも、投資家自身の行動のほうが、はるかに大きなリスクである。"</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 複利は投資だけではない -->
+  <div class="article-section">
+    <div class="section-label">CHAPTER 05</div>
+    <h2 class="section-title">複利は投資だけのものではない</h2>
+    <div class="section-body">
+      <p>マンガーは「複利の考え方は人生のあらゆる場面に当てはまる」と語った。</p>
+
+      <p>知識の複利。毎日少しずつ読書し、学び、考え続ければ、知識は指数関数的に深まっていく。10年前に読んだ本の知見が、今日読んだ本と結びつき、新しい洞察を生む。</p>
+
+      <p>信頼の複利。誠実な行動を積み重ねれば、信頼は雪だるま式に大きくなる。ビジネスでも、人間関係でも、信頼の複利効果は計り知れない。</p>
+
+      <p>習慣の複利。良い習慣を毎日少しずつ積み重ねることは、人生における最も確実な投資である。</p>
+
+      <p><strong>複利は、お金の話であると同時に、人生の構造そのものである。</strong></p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">この記事の隣に置いてある本</div>
+    <p class="further-reason">複利の力を理解したら、次は企業の競争優位と内在価値について考えてみよう。</p>
+    <div class="further-links">
+      <a class="further-link" href="../value-investing-essence/">
+        <span class="further-link-tag">次の記事</span>
+        <span class="further-link-title">バリュー投資の本質：内在価値とは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../principles/">
+        <span class="further-link-tag">原則</span>
+        <span class="further-link-title">私の投資原則</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../moat/">
+        <span class="further-link-tag">競争優位</span>
+        <span class="further-link-title">moatをどう見るか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div class="footer-links">
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../../industries/">業種から歩く</a> ·
+    <a href="../">思考を広げる</a>
+  </div>
+  <div>人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">&#x1F3B5;</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});
+  };
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  btn.addEventListener('click',function(){
+    if(!playerReady)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
+    else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
+  });
+})();
+</script>
+<script src="../../shared.js"></script>
+</body>
+</html>
