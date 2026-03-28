@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="三菱UFJフィナンシャルG｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="三菱UFJ（8306）のmoat分析。国内最大のメガバンクグループ。金利上昇環境での収益拡大と、グローバル展開の構造を整理する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>三菱UFJフィナンシャルG — moat分析｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;
+  --accent:#2a1a3a;--accent2:#3a2a5a;--accent3:#6a4a9a;--accent4:#9a7acc;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0d0810 45%,#140d1e 100%);
+  color:var(--parch);padding:52px 24px 44px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(58,42,90,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent3),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(106,74,154,.35);color:var(--accent4);letter-spacing:.1em;}
+.hero-verdict{
+  margin-top:28px;position:relative;
+  font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);
+  color:var(--parch3);font-style:italic;line-height:1.9;
+  max-width:540px;margin-left:auto;margin-right:auto;
+}
+
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}
+.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.3em;}
+.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}
+@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}
+.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;}
+.moat-dot{width:10px;height:10px;border-radius:50%;}
+.moat-dot.on{background:var(--green3);}
+.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}
+@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}
+.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}
+.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+
+.chart-wrap{background:var(--parch2);border:1px solid var(--parch4);padding:24px;margin-top:4px;}
+.chart-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
+.chart-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);}
+.chart-note{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.06em;}
+.chart-canvas-wrap{position:relative;height:220px;}
+
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}
+.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}
+.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}
+.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}
+.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}
+.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}
+.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}
+.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">企業分析</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">三菱UFJフィナンシャルG</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-code">TSE · 8306 · 銀行業</div>
+  <div class="hero-name">三菱UFJフィナンシャルG</div>
+  <div class="hero-name-en">MITSUBISHI UFJ FINANCIAL GROUP</div>
+  <div class="hero-tags">
+    <span class="hero-tag">国内最大のメガバンク</span>
+    <span class="hero-tag">MUFGグループ</span>
+    <span class="hero-tag">グローバル展開</span>
+    <span class="hero-tag">資産運用事業強化</span>
+    <span class="hero-tag">金利上昇恩恵</span>
+  </div>
+  <p class="hero-verdict">
+    日本最大の金融グループ。総資産350兆円超の規模と、<br>
+    グローバルネットワークが生む安定した収益基盤。
+  </p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">三菱UFJフィナンシャルGとは何をしている会社か</h2>
+    <div class="section-body">
+      <p>三菱UFJフィナンシャルG（MUFG）は、三菱UFJ銀行・三菱UFJ信託銀行・三菱UFJモルガン・スタンレー証券・三菱UFJニコス・アユタヤ銀行（タイ）などを傘下に持つ国内最大の金融グループだ。総資産は約350兆円に達し、グローバルな金融機関として国際的なプレゼンスも持つ。</p>
+      <p>収益構造は、国内預金貸出業務に加え、グローバルコーポレートバンキング・資産運用・証券・リース・消費者金融など多様だ。2024年前後の日本銀行による利上げ局面は、長らく低金利に苦しんでいたメガバンクにとって利ざや改善という追い風となった。この金利環境の変化が、MUFGの業績を大きく改善させる構造的な転換点となっている。</p>
+      <p>「総合金融グループへの変革」を掲げ、資産運用ビジネスの拡大・デジタル変革・海外展開の加速を中期経営計画の柱に据えている。特に東南アジアへの展開（タイ・インドネシアなど）は、新興国の金融需要成長を取り込む戦略的な布石だ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">競争優位の構造を見る</h2>
+    <div class="section-body" style="margin-bottom:20px;">
+      <p>6つのmoatタイプ別に、MUFGの競争優位の強さを評価する。●が多いほど強い（最大5）。</p>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">ブランド・特許・ノウハウ</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">ユーザーが増えるほど価値が高まる</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">一度導入すると乗り換えが難しい</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（トールロード）</div>
+          <div class="moat-sub">通過せざるを得ないインフラ性</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">市場規模が限定的で新規参入が非合理</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">低コストで競合を凌駕できるか</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="moat-radar-wrap" style="margin-top:24px;background:var(--parch);border:1px solid var(--parch4);padding:20px 24px;">
+      <div style="font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.14em;margin-bottom:12px;opacity:.75;">MOAT RADAR</div>
+      <div style="position:relative;max-width:320px;margin:0 auto;height:280px;">
+        <canvas id="moatRadar"></canvas>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:24px;">
+      <p class="callout-text">MUFGのmoatの核心は「スイッチングコスト」と「効率的規模」にある。<br>メインバンクを変える企業・個人は少ない。この慣性と、国内最大規模の顧客基盤・グローバルネットワークが、新規参入を非合理にしている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">数字で見るMUFG</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">9<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">金利上昇で改善傾向</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">純利益</div>
+        <div class="metric-value">1.5<span style="font-size:.9rem">兆</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">過去最高水準に迫る</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">総資産</div>
+        <div class="metric-value">350<span style="font-size:.9rem">兆</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">国内金融機関最大規模</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">自己資本比率</div>
+        <div class="metric-value">15<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算（Tier1）</div>
+        <div class="metric-note">規制上の基準を上回る</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">配当利回り</div>
+        <div class="metric-value">3<span style="font-size:.9rem">%+</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">増配基調・連続増配継続</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">海外収益比率</div>
+        <div class="metric-value">40<span style="font-size:.9rem">%</span></div>
+        <div class="metric-unit">概算値</div>
+        <div class="metric-note">グローバル展開が寄与</div>
+      </div>
+    </div>
+    <p style="font-size:.62rem;color:var(--ink3);margin-top:12px;font-family:var(--mono);">※概算値・参考値。投資判断の根拠にしないこと。必ず一次情報をご確認ください。</p>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">NET PROFIT</div>
+    <h2 class="section-title">当期純利益の推移</h2>
+    <div class="section-body" style="margin-bottom:16px;">
+      <p>MUFGは長期にわたる低金利環境下で収益改善に苦しんでいたが、2022年以降の日銀の政策転換・金利上昇局面でNIM（純利鞘）が改善し、業績が大きく改善した。特に2024年度以降は金利正常化の恩恵がより本格化する見通しだ。</p>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <div class="chart-title">当期純利益（億円）</div>
+        <div class="chart-note">概算値・参考値 / 投資判断の根拠にしないこと</div>
+      </div>
+      <div class="chart-canvas-wrap">
+        <canvas id="fcfChart"></canvas>
+      </div>
+    </div>
+    <div class="section-body" style="margin-top:16px;">
+      <p>銀行業は製造業やサービス業と異なり、FCFより「当期純利益」と「ROE」が収益性の主要指標となる。MUFGの場合、金利環境と与信コスト（貸倒引当金）の動向が業績を大きく左右する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT DEEP DIVE</div>
+    <h2 class="section-title">なぜMUFGのmoatは強いのか</h2>
+    <div class="section-body">
+      <p><strong>メインバンクという慣性とスイッチングコスト</strong>。企業の資金決済・給与振込・融資取引をまとめて任せる「メインバンク関係」は、一度構築されると変更コストが膨大だ。システム移行・取引実績の喪失・担当者との関係崩壊——これらの見えないコストが、顧客をMUFGに繋ぎとめる。特に大企業・中堅企業では、この慣性が強く働く。</p>
+      <p><strong>グローバルネットワークの希少性</strong>。MUFGはアメリカ（MUFGアメリカス）・東南アジア（アユタヤ銀行・Bank Danamon）・欧州に展開するグローバルな金融ネットワークを持つ。日系企業の海外進出支援や、クロスボーダー取引での決済・融資は、同等の海外拠点を持てる邦銀が限られるため、競合の少ない領域だ。</p>
+      <p><strong>信用・ブランドの資本</strong>。「三菱」「UFJ」のブランドは、個人・法人顧客にとって「信頼の証」として機能する。特に高齢者層・地方の企業には、大手メガバンクとの関係が安心感をもたらす。このブランドの慣性は、フィンテック企業や新興銀行との競争でも一定のモートとなる。</p>
+    </div>
+    <div class="callout">
+      <p class="callout-text">銀行業のmoatは「信用と慣性」だ。<br><br>メガバンクを変える企業も個人も少ない——この静かな慣性が、MUFGが国内最大規模を維持し続ける構造的な基盤になっている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">RISKS TO MONITOR</div>
+    <h2 class="section-title">注視すべきリスク</h2>
+    <div class="section-body">
+      <p><strong>金利上昇局面の終了・逆回転リスク</strong>。金利上昇がMUFGの業績改善を牽引しているが、景気後退局面での利下げや、与信コスト（貸倒引当金）の急増は業績を大きく悪化させる。金利環境の変化に対する感応度の高さが、MUFGを含むメガバンク投資の本質的なリスクだ。</p>
+      <p><strong>デジタル金融との競合</strong>。PayPayや楽天ペイ、LINE Pay等のフィンテック企業は個人の決済・送金習慣を変えつつある。若年層を中心にメガバンクとの接点が薄れるリスクがあり、リテール収益の中長期的な構造変化に対応できるかが問われる。</p>
+      <p><strong>海外投資リスク・地政学的要因</strong>。東南アジアへの展開は成長機会を提供する一方、各国の規制・政治リスク・通貨変動が業績に影響する。特にタイ・インドネシアなどの新興国市場では、景気サイクルや政策変化によるリスクを継続的に評価する必要がある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">IR · PRIMARY SOURCES</div>
+    <h2 class="section-title">一次情報へのリンク</h2>
+    <div class="section-body" style="margin-bottom:16px;">
+      <p>分析の前に、必ず一次情報に当たること。以下はMUFGの主要IR資料へのリンクである。</p>
+    </div>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.mufg.jp/ir/" target="_blank" rel="noopener">
+        <span class="ir-tag">IR TOP</span>
+        <div>
+          <div class="ir-name">MUFG 投資家情報</div>
+          <div class="ir-note">決算資料・IRカレンダー・経営戦略の公式ページ</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://www.mufg.jp/ir/report/financialstatements/" target="_blank" rel="noopener">
+        <span class="ir-tag">決算資料</span>
+        <div>
+          <div class="ir-name">決算発表資料・有価証券報告書</div>
+          <div class="ir-note">ROE・純利益・NIM・与信コストの詳細</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://www.mufg.jp/ir/report/integrated_report/" target="_blank" rel="noopener">
+        <span class="ir-tag">統合報告書</span>
+        <div>
+          <div class="ir-name">統合報告書（アニュアルレポート）</div>
+          <div class="ir-note">中期経営計画・ESG・グローバル戦略を読む</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=8306" target="_blank" rel="noopener">
+        <span class="ir-tag">日経データ</span>
+        <div>
+          <div class="ir-name">日経会社情報 — 三菱UFJ（8306）</div>
+          <div class="ir-note">株価・PER・PBR・ROE等の財務データ</div>
+        </div>
+        <span class="ir-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED</div>
+    <div class="related-links">
+      <a class="related-link" href="../smfg/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">三井住友FG (8316)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../mizuho/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">みずほFG (8411)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../resona/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">りそなHD (8308)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../concordia/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">コンコルディアFG (7186)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../">
+        <span class="related-tag">COMPANIES</span>
+        <span class="related-title">企業分析一覧</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../industries/banking/">
+        <span class="related-tag">INDUSTRY</span>
+        <span class="related-title">銀行業の構造を見る</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../moat/">
+        <span class="related-tag">CONCEPT</span>
+        <span class="related-title">moatをどう見るか</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../fcf/">
+        <span class="related-tag">CONCEPT</span>
+        <span class="related-title">FCFとは何か</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口へ戻る</a>　·
+    <a href="../">企業分析一覧</a>　·
+    <a href="../../analysis-template/">分析テンプレート</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。掲載データは概算・参考値であり、正確性を保証するものではありません。必ず一次情報をご確認ください。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+const ctx = document.getElementById('fcfChart').getContext('2d');
+const years = ['FY2019','FY2020','FY2021','FY2022','FY2023','FY2024'];
+const netIncome = [9280, 7770, 9730, 11610, 14546, 16000];
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: years,
+    datasets: [
+      {
+        label: '当期純利益',
+        data: netIncome,
+        backgroundColor: 'rgba(106,74,154,.65)',
+        borderColor: 'rgba(106,74,154,1)',
+        borderWidth: 1,
+        borderRadius: 2,
+      },
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        labels: {
+          color: '#4a3520',
+          font: { family: "'DM Mono', monospace", size: 10 },
+          boxWidth: 12,
+        }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}億円`
+        },
+        backgroundColor: '#1a1208',
+        titleColor: '#d4aa22',
+        bodyColor: '#efe4d0',
+        titleFont: { family: "'DM Mono', monospace", size: 10 },
+        bodyFont: { family: "'Noto Serif JP', serif", size: 11 },
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#4a3520', font: { family: "'DM Mono', monospace", size: 9 } },
+        grid: { color: 'rgba(139,105,20,.1)' }
+      },
+      y: {
+        ticks: {
+          color: '#4a3520',
+          font: { family: "'DM Mono', monospace", size: 9 },
+          callback: v => v.toLocaleString() + '億'
+        },
+        grid: { color: 'rgba(139,105,20,.1)' }
+      }
+    }
+  }
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+// Moat Radar Chart
+(function(){
+  var items = document.querySelectorAll('.moat-item');
+  if (!items.length) return;
+  var labels = [], data = [];
+  items.forEach(function(item){
+    var nameEl = item.querySelector('.moat-name');
+    var numEl = item.querySelector('.moat-score-num');
+    if (!nameEl || !numEl) return;
+    var name = nameEl.textContent.trim().replace('（toll road）','').replace('（Toll Road）','');
+    var scoreText = numEl.textContent.trim();
+    var score = parseInt(scoreText.split('/')[0]) || 0;
+    labels.push(name);
+    data.push(score);
+  });
+  if (!labels.length) return;
+  var canvas = document.getElementById('moatRadar');
+  if (!canvas) return;
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        backgroundColor: 'rgba(90,138,58,0.15)',
+        borderColor: 'rgba(90,138,58,0.7)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(90,138,58,0.9)',
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          min: 0,
+          max: 5,
+          ticks: { stepSize: 1, display: false },
+          grid: { color: 'rgba(139,105,20,0.2)' },
+          angleLines: { color: 'rgba(139,105,20,0.2)' },
+          pointLabels: { font: { family: "'DM Mono', monospace", size: 10 }, color: '#4a3520' }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: function(ctx){ return ctx.parsed.r + '/5'; } } }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

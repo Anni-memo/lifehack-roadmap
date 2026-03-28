@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="商社株の資本配分哲学｜論考の棚"/>
+<meta property="og:description" content="伊藤忠・三菱商事・丸紅——3社の資本配分哲学を、ROE・FCF・自社株買い・配当という4軸で比較解剖。「なぜ商社株は変わったのか」を長期投資家の視点で読む。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>商社株の資本配分哲学｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --shosha:#6b3e10;--shosha2:#9a5c18;--shosha3:#c47a24;--shosha4:#e09840;
+  --itc:#006848;--itc2:#00875e;/* 伊藤忠 green */
+  --mc:#c8202a;--mc2:#e03040;/* 三菱 red */
+  --maru:#004b9a;--maru2:#1a6abf;/* 丸紅 blue */
+  --green:#2a4a1a;--green2:#3d6828;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(196,122,36,.3);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{
+  background:linear-gradient(165deg,#080602 0%,#120a04 40%,#1e1206 70%,#0e0802 100%);
+  color:var(--parch);padding:64px 24px 52px;position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(196,122,36,.5);
+}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 65% 45% at 50% 0%,rgba(196,122,36,.12) 0%,transparent 62%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,152,64,.5),transparent);}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(224,180,120,.45);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(220,152,70,.65);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,4.5vw,2.9rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:14px;}
+.hero-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(.82rem,2vw,.96rem);color:rgba(220,190,140,.72);line-height:1.9;margin-bottom:28px;}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(210,168,100,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(196,122,36,.4);color:rgba(224,160,96,.85);letter-spacing:.08em;}
+
+/* SUMMARY */
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:780px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--shosha2);letter-spacing:.22em;margin-bottom:16px;opacity:.75;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--shosha2);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+
+/* ARTICLE */
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:780px;margin:0 auto;padding:52px 0 80px;}
+
+/* SECTION TITLE */
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--parch4);}
+.section-title span{font-family:var(--mono);font-size:.5rem;color:var(--shosha2);letter-spacing:.18em;display:block;margin-bottom:6px;opacity:.75;}
+.article-body{font-size:.88rem;color:var(--ink2);line-height:2;margin-bottom:40px;font-weight:300;}
+.article-body p{margin-bottom:1.2em;}
+.article-body strong{color:var(--ink);font-weight:600;}
+
+/* CALLOUT */
+.callout{background:rgba(107,62,16,.06);border-left:3px solid var(--shosha3);padding:16px 20px;margin:28px 0;font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--ink2);line-height:1.9;}
+.callout cite{display:block;margin-top:8px;font-family:var(--mono);font-size:.46rem;color:var(--shosha2);letter-spacing:.1em;font-style:normal;opacity:.75;}
+
+/* 3社比較テーブル */
+.compare-table-wrap{margin-bottom:48px;overflow-x:auto;}
+.compare-table{width:100%;border-collapse:collapse;font-size:.78rem;}
+.compare-table th{background:var(--ink);color:var(--parch4);font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;padding:10px 12px;text-align:left;font-weight:400;}
+.compare-table td{padding:10px 12px;border-bottom:1px solid var(--parch4);color:var(--ink2);line-height:1.6;}
+.compare-table tr:nth-child(even) td{background:var(--parch2);}
+.compare-table .metric-label{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.06em;white-space:nowrap;}
+.compare-table .itc-val{color:var(--itc);font-weight:600;}
+.compare-table .mc-val{color:var(--mc);font-weight:600;}
+.compare-table .maru-val{color:var(--maru2);font-weight:600;}
+
+/* 4軸グリッド（資本配分スコア） */
+.alloc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px;}
+@media(max-width:620px){.alloc-grid{grid-template-columns:1fr;}}
+.alloc-card{border:1px solid var(--parch4);overflow:hidden;}
+.alloc-header{padding:14px 16px;font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--parch);}
+.alloc-header.itc{background:var(--itc);}
+.alloc-header.mc{background:var(--mc);}
+.alloc-header.maru{background:var(--maru);}
+.alloc-header small{display:block;font-family:var(--mono);font-size:.42rem;font-weight:400;letter-spacing:.12em;margin-top:3px;opacity:.8;}
+.alloc-body{padding:14px 16px;background:var(--parch);}
+.alloc-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--parch3);font-size:.74rem;color:var(--ink2);}
+.alloc-item:last-child{border-bottom:none;}
+.alloc-key{font-family:var(--mono);font-size:.46rem;color:var(--ink3);letter-spacing:.06em;}
+.alloc-val{font-weight:600;color:var(--ink);}
+.alloc-note{font-size:.7rem;color:var(--ink3);font-style:italic;margin-top:10px;line-height:1.7;}
+
+/* 哲学比較カード */
+.philosophy-wrap{display:flex;flex-direction:column;gap:14px;margin-bottom:48px;}
+.phil-card{border:1px solid var(--parch4);overflow:hidden;display:flex;align-items:stretch;}
+.phil-spine{width:6px;flex-shrink:0;}
+.phil-spine.itc{background:var(--itc);}
+.phil-spine.mc{background:var(--mc);}
+.phil-spine.maru{background:var(--maru);}
+.phil-body{padding:16px 20px;flex:1;}
+.phil-label{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.1em;margin-bottom:6px;}
+.phil-title{font-family:var(--serif);font-size:.98rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.phil-text{font-size:.76rem;color:var(--ink2);line-height:1.85;}
+
+/* INSIGHT BOX */
+.insight-box{background:rgba(107,62,16,.06);border:1px solid rgba(196,122,36,.25);padding:20px 24px;margin:32px 0;}
+.insight-label{font-family:var(--mono);font-size:.48rem;color:var(--shosha2);letter-spacing:.2em;margin-bottom:12px;}
+.insight-list{display:flex;flex-direction:column;gap:8px;}
+.insight-item{display:flex;align-items:flex-start;gap:10px;font-size:.8rem;color:var(--ink2);line-height:1.75;}
+.insight-icon{color:var(--shosha3);flex-shrink:0;margin-top:2px;}
+
+/* REFERENCES */
+.references-wrap{background:var(--parch2);border-top:1px solid var(--parch4);padding:0 24px;}
+.references-inner{max-width:780px;margin:0 auto;padding:40px 0;}
+.ref-title{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.22em;margin-bottom:20px;opacity:.6;}
+.ref-group{margin-bottom:20px;}
+.ref-group-label{font-family:var(--mono);font-size:.44rem;color:var(--gold);letter-spacing:.14em;margin-bottom:8px;opacity:.7;}
+.ref-item{display:block;font-size:.74rem;color:var(--ink3);margin-bottom:4px;}
+.ref-item a{color:var(--shosha2);text-decoration:none;}.ref-item a:hover{text-decoration:underline;}
+.ref-disclaimer{font-size:.7rem;color:var(--ink3);font-style:italic;margin-top:12px;opacity:.65;line-height:1.8;}
+
+/* BACK LINK */
+.back-link-wrap{padding:36px 24px;text-align:center;border-top:1px solid var(--parch4);}
+.back-link{font-family:var(--mono);font-size:.58rem;color:var(--gold);text-decoration:none;letter-spacing:.12em;border-bottom:1px solid rgba(139,105,20,.3);padding-bottom:2px;transition:color .2s;}.back-link:hover{color:var(--gold2)}
+
+/* FOOTER */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(196,122,36,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">Essay 04 — 商社株の資本配分哲学</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">RESEARCH SHELF · ESSAY 04</div>
+    <div class="hero-label">資本配分 / CAPITAL ALLOCATION</div>
+    <h1 class="hero-title">商社株の資本配分哲学</h1>
+    <p class="hero-subtitle">
+      伊藤忠・三菱商事・丸紅——ROE・FCF・自社株買い・配当という4軸で<br>
+      3社の哲学の違いを解剖し、「なぜ商社株は変わったのか」を読む。
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.27</span>
+      <span class="hero-tag">商社</span>
+      <span class="hero-tag">資本配分</span>
+      <span class="hero-tag">長期投資</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">SUMMARY — この記事の要点</div>
+    <p class="summary-text">
+      2020年以降、日本の総合商社は「稼いだキャッシュをどう配るか」の哲学で急速に変化した。
+      <strong>伊藤忠は「成長投資優先＋安定配当」</strong>、
+      <strong>三菱商事は「配当＋大型自社株買いの並走」</strong>、
+      <strong>丸紅は「財務再建後の積極還元シフト」</strong>——3社は同じ商社でも明確に異なる。
+      バフェットが5商社株を買ったのは、このFCF還元能力と低PBRが組み合わさった「割安な稼ぎ手」という評価があったからだ。
+    </p>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div class="article-wrap">
+  <div class="article-inner">
+
+    <!-- Section 1 -->
+    <div class="section-title">
+      <span>SECTION 01</span>
+      商社株が変わった理由
+    </div>
+    <div class="article-body">
+      <p>2010年代の商社株は「資源バブルの後遺症」に苦しんだ。資源価格の暴落でのれんの減損が相次ぎ、三菱商事・三井物産は2016年3月期に最終赤字を計上。「商社株は資源に左右されるだけ」という固定観念が定着していた。</p>
+      <p>転機は2020年代に入ってからだ。東証のPBR改善要請（2023年）に先駆けて、商社各社は「稼いだキャッシュを株主に還元する」姿勢を鮮明にしていった。<strong>資源依存型の収益構造から、非資源・川中・川下ビジネスへの多角化</strong>、そして強固なFCFを背景とした積極的な株主還元——この二つの変化が「商社株の再評価」を生んだ。</p>
+      <p>さらに2020年8月、バフェット率いるバークシャー・ハサウェイが5大商社株の各5%超取得を公表。「バフェットが認めた日本株」として世界的に注目を集め、株価は大きく反応した。</p>
+    </div>
+
+    <div class="callout">
+      「私が理解できるビジネスを、私が信頼できる人たちが、フェアな価格で経営している。商社はその三条件を満たしていた。」
+      <cite>— ウォーレン・バフェット（2020年 NHKインタビュー要約）</cite>
+    </div>
+
+    <!-- 3社比較テーブル -->
+    <div class="section-title">
+      <span>SECTION 02</span>
+      3社の資本配分指標比較（2024年度参考値）
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>指標</th>
+            <th>伊藤忠商事（8001）</th>
+            <th>三菱商事（8058）</th>
+            <th>丸紅（8002）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="metric-label">ROE 2021年度</td>
+            <td class="itc-val">12.1%</td>
+            <td class="mc-val">3.1%（減損）</td>
+            <td class="maru-val">12.3%</td>
+          </tr>
+          <tr>
+            <td class="metric-label">ROE 2022年度</td>
+            <td class="itc-val">19.5%</td>
+            <td class="mc-val">13.6%</td>
+            <td class="maru-val">18.9%</td>
+          </tr>
+          <tr>
+            <td class="metric-label">ROE 2025年度（直近）</td>
+            <td class="itc-val">15.3%</td>
+            <td class="mc-val">10.2%</td>
+            <td class="maru-val">13.9%</td>
+          </tr>
+          <tr>
+            <td class="metric-label">配当利回り（直近）</td>
+            <td class="itc-val">約5.1%</td>
+            <td class="mc-val">約4.4%</td>
+            <td class="maru-val">約4.5%</td>
+          </tr>
+          <tr>
+            <td class="metric-label">自社株買い（直近規模）</td>
+            <td class="itc-val">3,000億円（2025年度）</td>
+            <td class="mc-val">1兆円（3年間）</td>
+            <td class="maru-val">700億円（2025年度）</td>
+          </tr>
+          <tr>
+            <td class="metric-label">PBR（参考・2025〜2026年）</td>
+            <td class="itc-val">約2.3倍</td>
+            <td class="mc-val">約2.3倍</td>
+            <td class="maru-val">約2.25倍</td>
+          </tr>
+          <tr>
+            <td class="metric-label">非資源比率</td>
+            <td class="itc-val">約73%</td>
+            <td class="mc-val">約55〜60%</td>
+            <td class="maru-val">約74%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.7rem;color:var(--ink3);font-style:italic;margin-top:-36px;margin-bottom:40px;">※各社IR・有価証券報告書をもとに著者が整理した参考値。実際の数値は各社IRをご確認ください。</p>
+
+    <!-- 4軸カード -->
+    <div class="section-title">
+      <span>SECTION 03</span>
+      3社の資本配分哲学カード
+    </div>
+    <div class="alloc-grid">
+      <!-- 伊藤忠 -->
+      <div class="alloc-card">
+        <div class="alloc-header itc">
+          伊藤忠商事
+          <small>8001 · 非資源強化型</small>
+        </div>
+        <div class="alloc-body">
+          <div class="alloc-item">
+            <span class="alloc-key">ROE目標</span>
+            <span class="alloc-val">15%以上</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">配当</span>
+            <span class="alloc-val">安定増配</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">自社株買い</span>
+            <span class="alloc-val">機動的実施</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">優先度</span>
+            <span class="alloc-val">成長投資 &gt; 還元</span>
+          </div>
+          <p class="alloc-note">非資源・生活消費関連に強み。ファミリーマートやデサントなど川下ビジネスで高ROEを維持。</p>
+        </div>
+      </div>
+      <!-- 三菱商事 -->
+      <div class="alloc-card">
+        <div class="alloc-header mc">
+          三菱商事
+          <small>8058 · 総合力最強型</small>
+        </div>
+        <div class="alloc-body">
+          <div class="alloc-item">
+            <span class="alloc-key">ROE目標</span>
+            <span class="alloc-val">10〜15%水準</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">配当</span>
+            <span class="alloc-val">累進配当</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">自社株買い</span>
+            <span class="alloc-val">1兆円（3年間）</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">優先度</span>
+            <span class="alloc-val">配当＋自社株買い並走</span>
+          </div>
+          <p class="alloc-note">バフェット保有比率10.2%超（2025年3月）。経営戦略2027で累進配当＋自社株買い1兆円を発表。業界最大の総還元力。</p>
+        </div>
+      </div>
+      <!-- 丸紅 -->
+      <div class="alloc-card">
+        <div class="alloc-header maru">
+          丸紅
+          <small>8002 · 財務再建→攻撃型</small>
+        </div>
+        <div class="alloc-body">
+          <div class="alloc-item">
+            <span class="alloc-key">ROE目標</span>
+            <span class="alloc-val">13%以上</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">配当</span>
+            <span class="alloc-val">増配路線</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">自社株買い</span>
+            <span class="alloc-val">積極化</span>
+          </div>
+          <div class="alloc-item">
+            <span class="alloc-key">優先度</span>
+            <span class="alloc-val">財務健全性＋株主還元</span>
+          </div>
+          <p class="alloc-note">2010年代の財務改善を経て、2020年代は積極還元フェーズへ。農業・食料・電力に強み。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section-title">
+      <span>SECTION 04</span>
+      伊藤忠の「非資源×川下」戦略
+    </div>
+    <div class="article-body">
+      <p>5大商社の中で、伊藤忠は最も「商社らしくない」ビジネスモデルを持つ。ファミリーマート（2020年に完全子会社化）、デサント、ユニー（現・PPIHグループ）など、<strong>消費者に近い川下ビジネス</strong>へ積極的に投資し、資源市況に依存しない安定的な収益基盤を構築してきた。</p>
+      <p>この戦略の帰結が<strong>ROE15%超の安定継続</strong>だ。資源価格が下落した局面でも利益の下振れが少なく、PBRは5大商社で最も高水準を維持している。資本配分の優先順位は「成長投資 → 安定増配 → 機動的な自社株買い」の順であり、大型の自社株買いより、ROIの高い事業投資を優先する姿勢が一貫している。</p>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section-title">
+      <span>SECTION 05</span>
+      三菱商事の「総還元力」という武器
+    </div>
+    <div class="article-body">
+      <p>三菱商事は規模・収益力・還元力の三拍子が揃う。純利益9,000億円超（2024年度）は5大商社で最大規模であり、この利益を<strong>累進配当＋大型自社株買いの並走</strong>で株主に還すモデルを徹底している。</p>
+      <p>バフェットが5商社の中でも三菱商事の保有比率を最も積み上げた（8%超）背景には、この総還元力への評価があると見られる。PBRが1.5〜2倍と伊藤忠より低い点は、裏返せば「自社株買いの恩恵が大きい」ことを意味する——割安な水準で自己株を買い消却するほど、残存株主の持分価値は高まる。</p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section-title">
+      <span>SECTION 06</span>
+      丸紅の「V字改善→攻撃転換」物語
+    </div>
+    <div class="article-body">
+      <p>丸紅のストーリーは最もドラマチックだ。2016年には資源価格暴落で2,800億円規模の減損を計上、財務基盤の立て直しが最優先となった。しかし2020年代に入り、<strong>有利子負債の削減と収益構造の改善を両立</strong>させることに成功し、今や「攻撃的な株主還元」フェーズへ移行している。</p>
+      <p>農業・食料（穀物トレーディング）、電力・エネルギー分野での競争力を基盤に、ROE13%水準を安定的に達成。PBRが1.4〜1.8倍と低めに留まっており、割安感という点では3社の中で最も投資妙味があると見る投資家も多い。</p>
+    </div>
+
+    <!-- INSIGHT BOX -->
+    <div class="insight-box">
+      <div class="insight-label">INVESTOR'S INSIGHT — 長期投資家として見るべき3点</div>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>ROEの「質」を見る：</strong>3社はいずれもROE13〜17%水準だが、伊藤忠は非資源ビジネスの積み上げによる安定型、三菱商事は規模と多角化による安定型、丸紅は財務改善後の回復型——背景が異なる。</span>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>PBRと自社株買いの関係：</strong>PBRが低い（＝株価が純資産より割安）企業の自社株買いは、残存株主にとってより有利。三菱商事・丸紅の低PBRは「自社株買い価値が高い」ことを示す。</span>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>配当の「累進性」を確認：</strong>減益でも配当を維持・増額するコミットメントがあるか。商社各社は累進配当方針を採用しており、長期保有の安心材料になる。ただし利益の急落時は要注意。</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="philosophy-wrap">
+      <div class="phil-card">
+        <div class="phil-spine itc"></div>
+        <div class="phil-body">
+          <div class="phil-label">伊藤忠商事 — 資本配分哲学</div>
+          <div class="phil-title">「高ROEを維持しながら成長投資を優先する」</div>
+          <p class="phil-text">非資源・川下ビジネスへの継続投資でROEを15%超に保ちつつ、安定増配と機動的な自社株買いを組み合わせる。大型の自社株買いより、ROIの高い事業投資を優先する合理主義的配分。</p>
+        </div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-spine mc"></div>
+        <div class="phil-body">
+          <div class="phil-label">三菱商事 — 資本配分哲学</div>
+          <div class="phil-title">「大規模な総還元で株主と利益を分け合う」</div>
+          <p class="phil-text">業界最大の純利益を背景に、累進配当＋大型自社株買いを並走させる「総還元型」。低PBRで自社株を買い消却することで、株式価値の向上と収益性の改善を同時に狙う。</p>
+        </div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-spine maru"></div>
+        <div class="phil-body">
+          <div class="phil-label">丸紅 — 資本配分哲学</div>
+          <div class="phil-title">「財務体力を取り戻してから、思い切り返す」</div>
+          <p class="phil-text">2016年危機の教訓から財務健全性を最優先として再建を果たし、2020年代は積極的な株主還元フェーズへ移行。配当増配と自社株買いの両立で、ROE改善を株主に還元する。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- REFERENCES -->
+<div class="references-wrap">
+  <div class="references-inner">
+    <div class="ref-title">REFERENCES &amp; SOURCES</div>
+    <div class="ref-group">
+      <div class="ref-group-label">IR・有価証券報告書</div>
+      <span class="ref-item">伊藤忠商事 IR情報 — <a href="https://www.itochu.co.jp/ja/ir/" target="_blank" rel="noopener">itochu.co.jp/ir</a></span>
+      <span class="ref-item">三菱商事 IR情報 — <a href="https://www.mitsubishicorp.com/jp/ja/ir/" target="_blank" rel="noopener">mitsubishicorp.com/ir</a></span>
+      <span class="ref-item">丸紅 IR情報 — <a href="https://www.marubeni.com/jp/ir/" target="_blank" rel="noopener">marubeni.com/ir</a></span>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-label">参考資料</div>
+      <span class="ref-item">IRバンク — 各社財務データ比較 <a href="https://irbank.net/" target="_blank" rel="noopener">irbank.net</a></span>
+      <span class="ref-item">バークシャー・ハサウェイ 2020年プレスリリース（5商社株取得公表）</span>
+      <span class="ref-item">東証「資本コストや株価を意識した経営の実現に向けた対応について」（2023年）</span>
+    </div>
+    <p class="ref-disclaimer">※本記事の数値・ランキングは著者の独自分析に基づく参考値です。投資判断の際は各社IR・有価証券報告書など一次情報をご確認ください。</p>
+  </div>
+</div>
+
+<!-- BACK LINK -->
+<div class="back-link-wrap">
+  <a class="back-link" href="../">← 論考の棚に戻る</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+
+</body>
+</html>

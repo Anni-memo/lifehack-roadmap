@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta name="description" content="業種の構造を知ることで、企業が見えやすくなる。東証プライムを業種ごとに整理した、投資家のための静かな地図。情報通信・製造・金融・消費・インフラ業種の分析棚。"/>
@@ -256,6 +264,7 @@ const INDUSTRIES = [
     earns: "月額課金・システム保守・ソフトウェアライセンスで稼ぐ",
     moatPoint: "顧客業務への深い埋め込みと、スイッチングコストの蓄積",
     question: "スイッチングコストとネットワーク効果はどこに宿るか",
+    desc: "SaaS・通信インフラ・ITサービス・メディアを含む広義の情報産業。スイッチングコストやネットワーク効果によるmoatが見られる業種。",
     companies: ["NTT", "KDDI", "ソフトバンク", "NTTデータ", "富士通"],
     ready: true,
     path: "it-telecom/"
@@ -268,8 +277,9 @@ const INDUSTRIES = [
     earns: "産業用部品・半導体・精密機器の設計・製造・販売で稼ぐ",
     moatPoint: "グローバルニッチにおける技術蓄積と、参入に時間のかかる製造ノウハウ",
     question: "グローバルニッチの参入障壁はどこから来るか",
+    desc: "半導体・産業機器・家電・センサーなどを含む日本の製造業の中核。グローバルニッチ企業が多く、B2Bの参入障壁が高い業種が多い。",
     companies: ["ソニー", "キーエンス", "日立", "信越化学", "オムロン"],
-    ready: false,
+    ready: true,
     path: "electronics/"
   },
   {
@@ -281,7 +291,7 @@ const INDUSTRIES = [
     moatPoint: "長期保守関係と技術ノウハウの蓄積、顧客との共同開発による深い関係",
     question: "顧客との長期関係が価格転嫁力をどう支えるか",
     companies: ["ファナック", "小松製作所", "DMG森精機", "ダイキン"],
-    ready: false,
+    ready: true,
     path: "machinery/"
   },
   {
@@ -293,7 +303,7 @@ const INDUSTRIES = [
     moatPoint: "特殊用途素材の製造技術と、顧客との共同開発による切替えにくさ",
     question: "特殊素材の参入障壁と汎用品の罠をどう見分けるか",
     companies: ["信越化学", "旭化成", "三菱ケミカル", "日本ペイント"],
-    ready: false,
+    ready: true,
     path: "chemicals/"
   },
   {
@@ -305,7 +315,7 @@ const INDUSTRIES = [
     moatPoint: "特許権と承認取得にかかる期間・費用が生む参入障壁",
     question: "特許の崖とパイプラインの持続性をどう評価するか",
     companies: ["武田薬品", "エーザイ", "第一三共", "中外製薬"],
-    ready: false,
+    ready: true,
     path: "pharma/"
   },
   {
@@ -317,7 +327,7 @@ const INDUSTRIES = [
     moatPoint: "立地の希少性と、長年の開発ノウハウに基づく用地取得力",
     question: "立地の希少性と賃料改定力をどう見るか",
     companies: ["三井不動産", "住友不動産", "三菱地所", "東急不動産"],
-    ready: false,
+    ready: true,
     path: "real-estate/"
   },
   {
@@ -329,7 +339,7 @@ const INDUSTRIES = [
     moatPoint: "業界ネットワークと、情報・物流・資本を組み合わせる独自の位置づけ",
     question: "情報・ネットワーク・資本の組み合わせがmoatになるか",
     companies: ["三菱商事", "伊藤忠商事", "三井物産", "住友商事"],
-    ready: false,
+    ready: true,
     path: "wholesale/"
   },
   {
@@ -341,7 +351,7 @@ const INDUSTRIES = [
     moatPoint: "ブランド認知・立地の優位・規模による仕入れ力の組み合わせ",
     question: "ロケーションとPBが価格支配力をどう作るか",
     companies: ["ファーストリテイリング", "セブン&アイ", "イオン", "MonotaRO"],
-    ready: false,
+    ready: true,
     path: "retail/"
   },
   {
@@ -353,7 +363,7 @@ const INDUSTRIES = [
     moatPoint: "プラットフォームのネットワーク効果と、蓄積されたデータの優位",
     question: "スイッチングコストはどのサービス層に宿るか",
     companies: ["リクルート", "電通", "パーソルHD", "サイバーエージェント"],
-    ready: false,
+    ready: true,
     path: "services/"
   },
   {
@@ -365,7 +375,7 @@ const INDUSTRIES = [
     moatPoint: "低コスト預金基盤と、長期にわたって築かれた顧客関係の厚み",
     question: "低コスト預金と信用コストの循環をどう読むか",
     companies: ["三菱UFJ", "三井住友FG", "みずほFG", "ゆうちょ銀行"],
-    ready: false,
+    ready: true,
     path: "banking/"
   },
   {
@@ -377,7 +387,7 @@ const INDUSTRIES = [
     moatPoint: "フロート（保険料の運用余力）と、ブランド・販売網の規模",
     question: "フロートの運用力と保険引受規律をどう見るか",
     companies: ["東京海上HD", "第一生命", "MS&ADインシュアランス"],
-    ready: false,
+    ready: true,
     path: "insurance/"
   },
   {
@@ -389,7 +399,7 @@ const INDUSTRIES = [
     moatPoint: "ブランド・垂直統合のサプライチェーンと、広範な販売網",
     question: "EVシフトと垂直統合の間でmoatはどこに残るか",
     companies: ["トヨタ", "ホンダ", "デンソー", "アイシン"],
-    ready: false,
+    ready: true,
     path: "automotive/"
   },
   {
@@ -401,7 +411,7 @@ const INDUSTRIES = [
     moatPoint: "施工実績と技術力の蓄積、顧客との長期的な信頼関係",
     question: "受注残と技術蓄積が参入障壁になるか",
     companies: ["大林組", "鹿島建設", "清水建設", "大和ハウス"],
-    ready: false,
+    ready: true,
     path: "construction/"
   },
   {
@@ -413,7 +423,7 @@ const INDUSTRIES = [
     moatPoint: "ブランドの認知と、長年かけて築いた流通チャネルの優位",
     question: "ブランドと流通網が価格支配力をどう作るか",
     companies: ["日清食品", "明治HD", "キッコーマン", "味の素"],
-    ready: false,
+    ready: true,
     path: "food/"
   }
 ];

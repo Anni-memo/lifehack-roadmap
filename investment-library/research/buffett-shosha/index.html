@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="バフェットが日本の商社株を買った理由｜論考の棚"/>
+<meta property="og:description" content="2020年8月、バークシャーが5大商社株を取得。なぜ今、なぜ商社株だったのか。低PBR・高FCFイールド・累進配当・エネルギー多角化——4つの理由を長期投資家の視点で解剖する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>バフェットが日本の商社株を買った理由｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --buf:#2a3050;--buf2:#3a4472;--buf3:#4a5890;/* バフェット = バークシャー紺 */
+  --buf-light:#dde4f0;
+  --shosha:#6b3e10;--shosha2:#9a5c18;--shosha3:#c47a24;
+  --green:#2a4a1a;--green2:#3d6828;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(74,88,144,.4);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{
+  background:linear-gradient(165deg,#04060e 0%,#080c1a 40%,#0e1428 70%,#060810 100%);
+  color:var(--parch);padding:64px 24px 52px;position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(74,88,144,.6);
+}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 65% 45% at 50% 0%,rgba(74,88,144,.18) 0%,transparent 62%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(100,120,200,.5),transparent);}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(160,180,230,.4);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(140,165,220,.65);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.2vw,2.8rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:14px;}
+.hero-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(.82rem,2vw,.96rem);color:rgba(200,215,240,.7);line-height:1.9;margin-bottom:28px;}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(160,180,220,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(74,88,144,.5);color:rgba(160,185,235,.85);letter-spacing:.08em;}
+
+/* SUMMARY */
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:780px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--buf2);letter-spacing:.22em;margin-bottom:16px;opacity:.75;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--buf2);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+
+/* ARTICLE */
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:780px;margin:0 auto;padding:52px 0 80px;}
+
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--parch4);}
+.section-title span{font-family:var(--mono);font-size:.5rem;color:var(--buf2);letter-spacing:.18em;display:block;margin-bottom:6px;opacity:.75;}
+.article-body{font-size:.88rem;color:var(--ink2);line-height:2;margin-bottom:40px;font-weight:300;}
+.article-body p{margin-bottom:1.2em;}
+.article-body strong{color:var(--ink);font-weight:600;}
+
+/* CALLOUT */
+.callout{background:rgba(42,48,80,.06);border-left:3px solid var(--buf2);padding:16px 20px;margin:28px 0;font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--ink2);line-height:1.9;}
+.callout cite{display:block;margin-top:8px;font-family:var(--mono);font-size:.46rem;color:var(--buf2);letter-spacing:.1em;font-style:normal;opacity:.75;}
+
+/* タイムライン */
+.timeline{display:flex;flex-direction:column;gap:0;margin-bottom:48px;position:relative;}
+.timeline::before{content:'';position:absolute;left:56px;top:20px;bottom:20px;width:1px;background:var(--parch4);}
+.tl-item{display:flex;gap:0;align-items:flex-start;position:relative;}
+.tl-date{font-family:var(--mono);font-size:.5rem;color:var(--buf2);letter-spacing:.06em;width:56px;flex-shrink:0;padding-top:16px;text-align:right;padding-right:14px;line-height:1.4;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--buf3);border:2px solid var(--parch);flex-shrink:0;margin-top:20px;position:relative;z-index:1;}
+.tl-content{padding:12px 0 12px 14px;flex:1;}
+.tl-title{font-family:var(--serif);font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.tl-text{font-size:.76rem;color:var(--ink2);line-height:1.8;}
+
+/* 4つの理由カード */
+.reasons-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px;}
+@media(max-width:580px){.reasons-grid{grid-template-columns:1fr;}}
+.reason-card{border:1px solid var(--parch4);overflow:hidden;}
+.reason-num{font-family:var(--mono);font-size:.48rem;color:var(--buf3);letter-spacing:.16em;padding:12px 16px 0;opacity:.7;}
+.reason-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);padding:4px 16px 12px;border-bottom:2px solid var(--buf3);}
+.reason-body{padding:14px 16px;font-size:.76rem;color:var(--ink2);line-height:1.85;}
+.reason-badge{display:inline-block;font-family:var(--mono);font-size:.42rem;padding:2px 8px;background:rgba(42,48,80,.08);border:1px solid rgba(74,88,144,.2);color:var(--buf2);letter-spacing:.08em;margin-top:8px;}
+
+/* ポートフォリオ比率推移テーブル */
+.holding-table-wrap{margin-bottom:48px;overflow-x:auto;}
+.holding-table{width:100%;border-collapse:collapse;font-size:.78rem;}
+.holding-table th{background:var(--buf);color:var(--parch4);font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;padding:10px 12px;text-align:left;font-weight:400;}
+.holding-table td{padding:10px 12px;border-bottom:1px solid var(--parch4);color:var(--ink2);line-height:1.6;}
+.holding-table tr:nth-child(even) td{background:var(--parch2);}
+.holding-table .company{font-weight:600;color:var(--ink);}
+.holding-table .pct{color:var(--buf2);font-family:var(--mono);font-weight:600;}
+
+/* バフェット原則ボックス */
+.principle-wrap{display:flex;flex-direction:column;gap:10px;margin-bottom:48px;}
+.principle-item{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.principle-icon{font-size:1rem;flex-shrink:0;margin-top:2px;}
+.principle-body{}
+.principle-title{font-family:var(--serif);font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.principle-text{font-size:.76rem;color:var(--ink2);line-height:1.8;}
+
+/* INSIGHT BOX */
+.insight-box{background:rgba(42,48,80,.05);border:1px solid rgba(74,88,144,.2);padding:20px 24px;margin:32px 0;}
+.insight-label{font-family:var(--mono);font-size:.48rem;color:var(--buf2);letter-spacing:.2em;margin-bottom:12px;}
+.insight-list{display:flex;flex-direction:column;gap:8px;}
+.insight-item{display:flex;align-items:flex-start;gap:10px;font-size:.8rem;color:var(--ink2);line-height:1.75;}
+.insight-icon{color:var(--buf3);flex-shrink:0;margin-top:2px;}
+
+/* REFERENCES */
+.references-wrap{background:var(--parch2);border-top:1px solid var(--parch4);padding:0 24px;}
+.references-inner{max-width:780px;margin:0 auto;padding:40px 0;}
+.ref-title{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.22em;margin-bottom:20px;opacity:.6;}
+.ref-group{margin-bottom:20px;}
+.ref-group-label{font-family:var(--mono);font-size:.44rem;color:var(--gold);letter-spacing:.14em;margin-bottom:8px;opacity:.7;}
+.ref-item{display:block;font-size:.74rem;color:var(--ink3);margin-bottom:4px;}
+.ref-item a{color:var(--buf2);text-decoration:none;}.ref-item a:hover{text-decoration:underline;}
+.ref-disclaimer{font-size:.7rem;color:var(--ink3);font-style:italic;margin-top:12px;opacity:.65;line-height:1.8;}
+
+/* BACK LINK */
+.back-link-wrap{padding:36px 24px;text-align:center;border-top:1px solid var(--parch4);}
+.back-link{font-family:var(--mono);font-size:.58rem;color:var(--gold);text-decoration:none;letter-spacing:.12em;border-bottom:1px solid rgba(139,105,20,.3);padding-bottom:2px;transition:color .2s;}.back-link:hover{color:var(--gold2)}
+
+/* FOOTER */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(74,88,144,.25);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">Essay 05 — バフェットと日本の商社株</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">RESEARCH SHELF · ESSAY 05</div>
+    <div class="hero-label">投資哲学 / BUFFETT &amp; JAPAN</div>
+    <h1 class="hero-title">バフェットが日本の<br>商社株を買った理由</h1>
+    <p class="hero-subtitle">
+      2020年8月30日——バークシャー・ハサウェイが5大商社株の各5%超取得を公表した。<br>
+      なぜ今、なぜ日本、なぜ商社株だったのか。4つの理由を解剖する。
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.27</span>
+      <span class="hero-tag">バフェット</span>
+      <span class="hero-tag">商社</span>
+      <span class="hero-tag">投資哲学</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">SUMMARY — この記事の要点</div>
+    <p class="summary-text">
+      バフェットが商社株を選んだ理由は4点に集約される：
+      <strong>①低PBR（1倍未満）で実質割安、②高いFCFイールドと累進配当、③エネルギー・資源・食料へのグローバル分散、④信頼できる経営陣</strong>。
+      「バフェットが買った」という事実は単なるお墨付きではなく、彼の投資哲学の本質——「稼ぐ力を持つ企業を割安に買い、長く持つ」——が日本の商社に当てはまった、という意味を持つ。
+    </p>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div class="article-wrap">
+  <div class="article-inner">
+
+    <!-- タイムライン -->
+    <div class="section-title">
+      <span>TIMELINE</span>
+      バフェット×商社株 年表
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2019.07</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">バフェット89歳の誕生日に買い集めを開始</div>
+          <p class="tl-text">2019年7月4日（バフェット89歳の誕生日）から東証で市場買付けを開始。約12ヶ月かけて5社を秘密裏に取得。円建て社債を低金利で発行し、そのまま円建て商社株を購入するyen-balancedストラテジーを構築した。当時PBRは0.5〜0.8倍。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2020.08</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">バフェット90歳の誕生日に公表</div>
+          <p class="tl-text">2020年8月30日（バフェット90歳の誕生日当日）、バークシャーが伊藤忠・三菱・三井・住友・丸紅の各5%超取得を公表。初回取得コストは5社合計で約62.5億ドル（当時約6,600億円）。世界中のメディアが報道し、商社株は急騰した。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2023.04</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">来日・持分を7〜8%超に引き上げ</div>
+          <p class="tl-text">バフェットが来日し、岸田首相とも面会。5大商社の会長・社長とも個別に会談し、「保有比率を9.9%まで引き上げる可能性がある」と発言。商社各社の経営者への強い信頼を表明した。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2024〜</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">保有継続・追加取得が続く</div>
+          <p class="tl-text">商社各社が積極的な自社株買いを実施する中、保有比率は実質的に上昇。バークシャーの日本株ポートフォリオにおける商社5社の位置づけは不動となった。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4つの理由 -->
+    <div class="section-title">
+      <span>SECTION 01</span>
+      4つの「なぜ商社株だったのか」
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <div class="reason-num">REASON 01</div>
+        <div class="reason-title">低PBRという「安全域」</div>
+        <div class="reason-body">
+          2019〜2020年当時、5大商社のPBRは0.5〜0.8倍。純資産より株価が低い状態——つまりバフェットが重視する「安全域（マージン・オブ・セーフティ）」が内在していた。
+          「本来の価値より安い価格で買う」という原則に完全に合致していた。
+          <span class="reason-badge">MARGIN OF SAFETY</span>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">REASON 02</div>
+        <div class="reason-title">高いFCFイールドと累進配当</div>
+        <div class="reason-body">
+          商社各社は毎年数千億円規模のFCFを生み出し、その多くを配当・自社株買いで還元していた。FCFイールド（株式時価総額に対するFCFの比率）は米国の優良株を大きく上回る水準。
+          さらに累進配当（減益でも増配を維持）のコミットメントが、長期保有の安心感を与えた。
+          <span class="reason-badge">FCF YIELD</span>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">REASON 03</div>
+        <div class="reason-title">エネルギー・資源・食料への分散</div>
+        <div class="reason-body">
+          バークシャーは2020年以降、エネルギー関連事業（オクシデンタル・ペトロリアム等）への投資を増やしている。商社はエネルギー・鉱物資源・農産物・食料へのグローバルな権益を持つ「多角化コングロマリット」。
+          単一セクターではなく、世界経済全体に分散した投資効果が得られる。
+          <span class="reason-badge">GLOBAL DIVERSIFICATION</span>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">REASON 04</div>
+        <div class="reason-title">信頼できる経営陣とガバナンス</div>
+        <div class="reason-body">
+          バフェットは「私が理解できる事業を、信頼できる人たちが、フェアな価格で経営している」と繰り返す。
+          商社各社は数百年の歴史を持ち（三菱商事は1870年代創業）、透明性の高いIR・誠実な株主対応を続けてきた。
+          「経営者を信頼できるか」という基準をクリアしていた。
+          <span class="reason-badge">TRUSTWORTHY MANAGEMENT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- バークシャーの保有比率推移 -->
+    <div class="section-title">
+      <span>SECTION 02</span>
+      バークシャーの5商社保有比率（参考）
+    </div>
+    <div class="holding-table-wrap">
+      <table class="holding-table">
+        <thead>
+          <tr>
+            <th>商社</th>
+            <th>2020年8月（公表時）</th>
+            <th>2023年4月（来日時）</th>
+            <th>現在（目安）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="company">伊藤忠商事（8001）</td>
+            <td class="pct">約5.0%</td>
+            <td class="pct">約7.4%</td>
+            <td class="pct">約10.1%</td>
+          </tr>
+          <tr>
+            <td class="company">三菱商事（8058）</td>
+            <td class="pct">約5.0%</td>
+            <td class="pct">約8.3%</td>
+            <td class="pct">約10.2%超</td>
+          </tr>
+          <tr>
+            <td class="company">三井物産（8031）</td>
+            <td class="pct">約5.0%</td>
+            <td class="pct">約7.4%</td>
+            <td class="pct">約10%超</td>
+          </tr>
+          <tr>
+            <td class="company">住友商事（8053）</td>
+            <td class="pct">約5.0%</td>
+            <td class="pct">約7.4%</td>
+            <td class="pct">約10%超</td>
+          </tr>
+          <tr>
+            <td class="company">丸紅（8002）</td>
+            <td class="pct">約5.0%</td>
+            <td class="pct">約7.4%</td>
+            <td class="pct">約9.8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.7rem;color:var(--ink3);font-style:italic;margin-top:-36px;margin-bottom:40px;">※各社の自社株買いにより、バークシャー保有株数が一定でも保有比率は実質上昇する。公表値は各社大量保有報告書・IRをご参照ください。</p>
+
+    <!-- バフェットの投資原則との対応 -->
+    <div class="section-title">
+      <span>SECTION 03</span>
+      バフェット哲学と商社株の対応関係
+    </div>
+    <div class="principle-wrap">
+      <div class="principle-item">
+        <div class="principle-icon">🏰</div>
+        <div class="principle-body">
+          <div class="principle-title">「堀（moat）のある事業」—— 商社の場合</div>
+          <p class="principle-text">伝統的なmoat（ブランド・特許・ネットワーク効果）とは異なるが、商社のmoatは「数十年かけて構築したグローバルなトレードネットワーク・情報・信用力」。新参者が数年で模倣できるものではなく、参入障壁は非常に高い。</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="principle-icon">💰</div>
+        <div class="principle-body">
+          <div class="principle-title">「分かるビジネスしか買わない」—— バフェットの商社理解</div>
+          <p class="principle-text">バフェットは「私は商社ビジネスを完全に理解しているとは言えないが、彼らが何を所有し、どう稼いでいるかは分かる」と述べている。コングロマリット的な多角化企業を理解する上で、保有資産と収益源を丁寧に分析したことがうかがえる。</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="principle-icon">📈</div>
+        <div class="principle-body">
+          <div class="principle-title">「永続保有（永遠に売らない）」—— 売却しない理由</div>
+          <p class="principle-text">バフェットは商社株について「売る気はない」と明言している。FCFが継続的に生み出され、累進配当で株主に還元され続ける限り、保有し続けることが合理的——これはコカ・コーラやアメックスに対する姿勢と同じだ。</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="principle-icon">🌐</div>
+        <div class="principle-body">
+          <div class="principle-title">「円建て社債でヘッジしながら円安恩恵も享受」——巧みな通貨戦略</div>
+          <p class="principle-text">バークシャーは円建て社債（低金利）を発行して日本円を調達し、そのまま円建て資産（商社株）を購入。円安が進めば円建て借入のドル換算コストが低下し、商社の輸出競争力も向上する——巧みな通貨マッチング戦略だ。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      「年を経るにつれ、これらの企業への賞賛は一貫して高まっている。私たちは彼らの資本配分、経営陣、投資家への姿勢を高く評価している。」
+      <cite>— ウォーレン・バフェット（2024年度 バークシャー株主向け書簡 要約・著者訳）</cite>
+    </div>
+
+    <!-- 長期投資家へのインサイト -->
+    <div class="insight-box">
+      <div class="insight-label">INVESTOR'S INSIGHT — バフェットから学ぶ視点</div>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>「誰が買ったか」より「なぜ買ったか」を読む：</strong>バフェットのお墨付きを理由に買うのではなく、彼が何を評価したのか（低PBR・FCFイールド・累進配当・経営への信頼）を理解することが重要。</span>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>PBR1倍の意味：</strong>当時の商社株PBR0.5〜0.8倍は「清算価値より安く売られている」状態。今のPBRが1.5倍超に上昇した現在、「同じ割安」はもうない——ただし稼ぐ力は増している。</span>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>円建て社債の妙：</strong>低金利で円を借りて円建て資産を持つ戦略は、個人投資家が真似するのは難しい。ただし「通貨リスクをヘッジした上で投資する」という発想は、外国株投資の際に参考になる。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- まとめ -->
+    <div class="section-title">
+      <span>SECTION 04</span>
+      長期投資家として商社株を見るときの問い
+    </div>
+    <div class="article-body">
+      <p>バフェットが商社株を買ったストーリーは「割安な稼ぎ手を見つけて、長く持ち続ける」というシンプルな原則の実践だった。問題は、2020年時点の割安さは既に消えている点だ。</p>
+      <p><strong>では今の商社株は買う価値があるか？</strong></p>
+      <p>それは「現在のPBR・FCFイールド・配当利回りが、他の投資選択肢と比べてどうか」という問いに置き換えられる。バフェットが「9.9%まで持ち増やす可能性がある」と言ったのは、依然としてその稼ぐ力と経営を評価しているからだ。</p>
+      <p>しかし個別銘柄への投資は、自分のリスク許容度・投資期間・ポートフォリオ全体のバランスを踏まえた判断が不可欠だ。<strong>「バフェットが買ったから」という理由だけで買うのは、バフェット哲学の正反対</strong>にある行為であることを忘れないようにしたい。</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- REFERENCES -->
+<div class="references-wrap">
+  <div class="references-inner">
+    <div class="ref-title">REFERENCES &amp; SOURCES</div>
+    <div class="ref-group">
+      <div class="ref-group-label">バークシャー・ハサウェイ</div>
+      <span class="ref-item">バークシャー・ハサウェイ プレスリリース（2020年8月30日）日本商社株取得公表</span>
+      <span class="ref-item">バークシャー・ハサウェイ 株主への手紙（2020年・2023年）— <a href="https://www.berkshirehathaway.com/letters/letters.html" target="_blank" rel="noopener">berkshirehathaway.com</a></span>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-label">各社IR・大量保有報告書</div>
+      <span class="ref-item">伊藤忠商事 IR — <a href="https://www.itochu.co.jp/ja/ir/" target="_blank" rel="noopener">itochu.co.jp/ir</a></span>
+      <span class="ref-item">三菱商事 IR — <a href="https://www.mitsubishicorp.com/jp/ja/ir/" target="_blank" rel="noopener">mitsubishicorp.com/ir</a></span>
+      <span class="ref-item">丸紅 IR — <a href="https://www.marubeni.com/jp/ir/" target="_blank" rel="noopener">marubeni.com/ir</a></span>
+      <span class="ref-item">三井物産 IR — <a href="https://www.mitsui.com/jp/ja/ir/" target="_blank" rel="noopener">mitsui.com/ir</a></span>
+      <span class="ref-item">住友商事 IR — <a href="https://www.sumitomocorp.com/ja/japan/ir" target="_blank" rel="noopener">sumitomocorp.com/ir</a></span>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-label">参考</div>
+      <span class="ref-item">CNBC バフェットインタビュー（2020年・2023年）</span>
+      <span class="ref-item">IRバンク — <a href="https://irbank.net/" target="_blank" rel="noopener">irbank.net</a></span>
+    </div>
+    <p class="ref-disclaimer">※本記事のバフェット発言は著者が趣旨を要約・翻訳したものです。正確な発言は原文インタビューをご確認ください。本記事は特定銘柄の投資推奨ではありません。</p>
+  </div>
+</div>
+
+<!-- BACK LINK -->
+<div class="back-link-wrap">
+  <a class="back-link" href="../">← 論考の棚に戻る</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+
+</body>
+</html>

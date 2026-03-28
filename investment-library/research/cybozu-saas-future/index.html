@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="kintoneは生き残るか——AIエージェント時代のmoat精査｜論考の棚"/>
+<meta property="og:description" content="Claude Code・Devin・SaaSpocalypse——ノーコードは本当に死んだのか。月次解約率0.92%・日本SMBのAI活用率16%・kintone AIラボ。3シナリオで「存在意義の変容」を解剖する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>kintoneは生き残るか｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --fire:#8a2000;--fire2:#b83000;--fire3:#d84000;--fire4:#f06030;
+  --safe:#1a5a2a;--safe2:#2a7a3a;--safe3:#3a9a4a;
+  --warn:#7a6000;--warn2:#aa8800;
+  --cyb:#0a1e50;--cyb2:#1a3478;--cyb3:#2a4a9a;--cyb4:#4a6ab8;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,48,0,.3);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(165deg,#0e0400 0%,#1c0800 40%,#280c04 70%,#100400 100%);
+  color:var(--parch);padding:72px 24px 56px;position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(216,64,0,.5);
+}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 65% 50% at 50% 0%,rgba(184,48,0,.18) 0%,transparent 65%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(240,96,48,.5),transparent);}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(230,160,120,.4);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(230,120,80,.7);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3.2rem);font-weight:700;color:var(--parch);line-height:1.1;margin-bottom:14px;}
+.hero-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(.82rem,2vw,1rem);color:rgba(235,200,170,.72);line-height:1.9;margin-bottom:32px;}
+.hero-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(220,160,120,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(216,64,0,.4);color:rgba(240,130,90,.85);letter-spacing:.08em;}
+
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:800px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--fire2);letter-spacing:.22em;margin-bottom:16px;opacity:.75;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--fire2);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:800px;margin:0 auto;padding:52px 0 80px;}
+
+.section-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--parch4);}
+.section-title span{font-family:var(--mono);font-size:.5rem;color:var(--fire2);letter-spacing:.18em;display:block;margin-bottom:6px;opacity:.75;}
+.article-body{font-size:.88rem;color:var(--ink2);line-height:2.1;margin-bottom:44px;font-weight:300;}
+.article-body p{margin-bottom:1.2em;}
+.article-body strong{color:var(--ink);font-weight:600;}
+
+/* CALLOUT */
+.callout{background:rgba(138,32,0,.05);border-left:3px solid var(--fire2);padding:18px 22px;margin:28px 0;font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--ink2);line-height:2;}
+.callout cite{display:block;margin-top:8px;font-family:var(--mono);font-size:.46rem;color:var(--fire2);letter-spacing:.1em;font-style:normal;opacity:.7;}
+.callout.safe{background:rgba(26,90,42,.05);border-left-color:var(--safe2);}
+.callout.safe cite{color:var(--safe2);}
+
+/* 対比グリッド */
+.versus-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:48px;background:var(--parch4);}
+@media(max-width:580px){.versus-grid{grid-template-columns:1fr;}}
+.versus-card{padding:22px 20px;background:var(--parch2);}
+.versus-card.threat{background:rgba(138,32,0,.05);}
+.versus-card.defense{background:rgba(26,90,42,.05);}
+.versus-header{font-family:var(--mono);font-size:.48rem;letter-spacing:.14em;margin-bottom:12px;}
+.versus-card.threat .versus-header{color:var(--fire2);}
+.versus-card.defense .versus-header{color:var(--safe2);}
+.versus-title{font-family:var(--serif);font-size:.98rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.versus-items{display:flex;flex-direction:column;gap:7px;}
+.versus-item{font-size:.76rem;color:var(--ink2);line-height:1.75;padding:6px 10px;}
+.versus-card.threat .versus-item{background:rgba(138,32,0,.04);border-left:2px solid var(--fire3);}
+.versus-card.defense .versus-item{background:rgba(26,90,42,.04);border-left:2px solid var(--safe2);}
+
+/* moat崩壊マトリクステーブル */
+.matrix-table-wrap{overflow-x:auto;margin-bottom:48px;}
+.matrix-table{width:100%;border-collapse:collapse;font-size:.76rem;}
+.matrix-table th{background:var(--ink);color:rgba(220,210,190,.8);font-family:var(--mono);font-size:.44rem;padding:10px 12px;font-weight:400;letter-spacing:.08em;white-space:nowrap;}
+.matrix-table td{padding:10px 12px;border-bottom:1px solid var(--parch4);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.matrix-table tr:nth-child(even) td{background:var(--parch2);}
+.badge-strong{display:inline-block;background:rgba(26,90,42,.12);color:var(--safe);border:1px solid rgba(42,122,58,.3);font-family:var(--mono);font-size:.42rem;padding:2px 8px;letter-spacing:.06em;}
+.badge-mid{display:inline-block;background:rgba(122,96,0,.1);color:var(--warn);border:1px solid rgba(170,136,0,.3);font-family:var(--mono);font-size:.42rem;padding:2px 8px;letter-spacing:.06em;}
+.badge-weak{display:inline-block;background:rgba(138,32,0,.1);color:var(--fire2);border:1px solid rgba(184,48,0,.3);font-family:var(--mono);font-size:.42rem;padding:2px 8px;letter-spacing:.06em;}
+.badge-low{display:inline-block;background:rgba(26,90,42,.12);color:var(--safe);border:1px solid rgba(42,122,58,.3);font-family:var(--mono);font-size:.42rem;padding:2px 8px;letter-spacing:.06em;}
+.badge-mid-risk{display:inline-block;background:rgba(122,96,0,.1);color:var(--warn);border:1px solid rgba(170,136,0,.3);font-family:var(--mono);font-size:.42rem;padding:2px 8px;letter-spacing:.06em;}
+.badge-high{display:inline-block;background:rgba(138,32,0,.1);color:var(--fire2);border:1px solid rgba(184,48,0,.3);font-family:var(--mono);font-size:.42rem;padding:2px 8px;letter-spacing:.06em;}
+
+/* シナリオカード */
+.scenario-wrap{display:flex;flex-direction:column;gap:14px;margin-bottom:48px;}
+.scenario-card{overflow:hidden;border:1px solid var(--parch4);}
+.scenario-head{padding:16px 20px;display:flex;align-items:center;gap:14px;}
+.scenario-head.dead{background:rgba(138,32,0,.08);border-bottom:2px solid var(--fire2);}
+.scenario-head.change{background:rgba(42,74,154,.08);border-bottom:2px solid var(--cyb3);}
+.scenario-head.grow{background:rgba(26,90,42,.08);border-bottom:2px solid var(--safe2);}
+.scenario-prob{font-family:var(--mono);font-size:1.4rem;font-weight:700;flex-shrink:0;width:56px;text-align:center;}
+.scenario-head.dead .scenario-prob{color:var(--fire2);}
+.scenario-head.change .scenario-prob{color:var(--cyb3);}
+.scenario-head.grow .scenario-prob{color:var(--safe2);}
+.scenario-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);}
+.scenario-subtitle{font-family:var(--mono);font-size:.44rem;letter-spacing:.1em;margin-top:3px;}
+.scenario-head.dead .scenario-subtitle{color:var(--fire2);}
+.scenario-head.change .scenario-subtitle{color:var(--cyb3);}
+.scenario-head.grow .scenario-subtitle{color:var(--safe2);}
+.scenario-body{padding:18px 20px;background:var(--parch);font-size:.78rem;color:var(--ink2);line-height:1.85;}
+.scenario-body p{margin-bottom:.8em;}
+.scenario-body strong{color:var(--ink);}
+
+/* 比較テーブル: AI vs kintone */
+.ai-comp-wrap{overflow-x:auto;margin-bottom:48px;}
+.ai-comp-table{width:100%;border-collapse:collapse;font-size:.76rem;}
+.ai-comp-table th{background:var(--ink2);color:rgba(220,210,190,.8);font-family:var(--mono);font-size:.44rem;padding:10px 12px;font-weight:400;letter-spacing:.08em;}
+.ai-comp-table td{padding:10px 12px;border-bottom:1px solid var(--parch4);color:var(--ink2);line-height:1.65;vertical-align:top;}
+.ai-comp-table tr:nth-child(even) td{background:var(--parch2);}
+.ai-comp-table .cyb-row td{background:rgba(10,30,80,.05)!important;color:var(--cyb2);}
+.ai-comp-table .danger-col{color:var(--fire2);font-weight:600;}
+.ai-comp-table .safe-col{color:var(--safe);font-weight:600;}
+
+/* INSIGHT BOX */
+.insight-box{background:rgba(138,32,0,.04);border:1px solid rgba(184,48,0,.2);padding:22px 26px;margin:32px 0;}
+.insight-box.safe{background:rgba(26,90,42,.04);border-color:rgba(42,122,58,.2);}
+.insight-label{font-family:var(--mono);font-size:.48rem;letter-spacing:.2em;margin-bottom:14px;}
+.insight-box .insight-label{color:var(--fire2);}
+.insight-box.safe .insight-label{color:var(--safe2);}
+.insight-list{display:flex;flex-direction:column;gap:10px;}
+.insight-item{display:flex;align-items:flex-start;gap:10px;font-size:.8rem;color:var(--ink2);line-height:1.85;}
+.insight-icon{flex-shrink:0;margin-top:2px;}
+.insight-box .insight-icon{color:var(--fire3);}
+.insight-box.safe .insight-icon{color:var(--safe2);}
+
+/* 製品判定カード */
+.product-verdict-wrap{display:flex;flex-direction:column;gap:2px;margin-bottom:48px;background:var(--parch4);}
+.pv-card{display:flex;align-items:stretch;background:var(--parch2);}
+.pv-spine{width:6px;flex-shrink:0;}
+.pv-spine.grow{background:var(--safe2);}
+.pv-spine.change{background:var(--cyb3);}
+.pv-spine.shrink{background:var(--warn2);}
+.pv-spine.risk{background:var(--fire2);}
+.pv-body{padding:16px 20px;flex:1;}
+.pv-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pv-product{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);}
+.pv-verdict{font-family:var(--mono);font-size:.44rem;padding:3px 10px;letter-spacing:.08em;}
+.pv-verdict.grow{background:rgba(26,90,42,.1);color:var(--safe2);border:1px solid rgba(42,122,58,.3);}
+.pv-verdict.change{background:rgba(42,74,154,.1);color:var(--cyb3);border:1px solid rgba(74,106,184,.3);}
+.pv-verdict.shrink{background:rgba(122,96,0,.1);color:var(--warn2);border:1px solid rgba(170,136,0,.3);}
+.pv-verdict.risk{background:rgba(138,32,0,.1);color:var(--fire2);border:1px solid rgba(184,48,0,.3);}
+.pv-text{font-size:.76rem;color:var(--ink2);line-height:1.8;}
+
+/* REFERENCES */
+.references-wrap{background:var(--parch2);border-top:1px solid var(--parch4);padding:0 24px;}
+.references-inner{max-width:800px;margin:0 auto;padding:40px 0;}
+.ref-title{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.22em;margin-bottom:22px;opacity:.6;}
+.ref-group{margin-bottom:20px;}
+.ref-group-label{font-family:var(--mono);font-size:.44rem;color:var(--gold);letter-spacing:.14em;margin-bottom:8px;opacity:.7;}
+.ref-item{display:block;font-size:.74rem;color:var(--ink3);margin-bottom:5px;}
+.ref-item a{color:var(--fire2);text-decoration:none;}.ref-item a:hover{text-decoration:underline;}
+.ref-disclaimer{font-size:.7rem;color:var(--ink3);font-style:italic;margin-top:14px;opacity:.65;line-height:1.8;}
+
+/* NAV */
+.article-nav{display:flex;justify-content:space-between;align-items:center;padding:28px 24px;border-top:1px solid var(--parch4);max-width:800px;margin:0 auto;}
+.back-link{font-family:var(--mono);font-size:.56rem;color:var(--gold);text-decoration:none;letter-spacing:.12em;border-bottom:1px solid rgba(139,105,20,.3);padding-bottom:2px;}.back-link:hover{color:var(--gold2)}
+.prev-link{font-family:var(--mono);font-size:.56rem;color:var(--cyb3);text-decoration:none;letter-spacing:.1em;border-bottom:1px solid rgba(42,74,154,.3);padding-bottom:2px;}.prev-link:hover{color:var(--cyb2)}
+.next-link{font-family:var(--mono);font-size:.56rem;color:var(--fire2);text-decoration:none;letter-spacing:.1em;border-bottom:1px solid rgba(184,48,0,.3);padding-bottom:2px;}.next-link:hover{color:var(--fire3)}
+
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(216,64,0,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">Essay 09 — kintoneは生き残るか</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">RESEARCH SHELF · ESSAY 09 · サイボウズ連続考察②</div>
+    <div class="hero-label">AIエージェント / SaaS死 / moat精査</div>
+    <h1 class="hero-title">kintoneは生き残るか</h1>
+    <p class="hero-subtitle">
+      Claude Code・Devin・SaaSpocalypse——ノーコードは本当に死んだのか。<br>
+      月次解約率0.92%・日本SMBのAI活用率16%・kintone AIラボ。<br>
+      moatが崩れる場所・残る場所・強化される場所を3シナリオで解剖する。
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.28</span>
+      <span class="hero-tag">AIエージェント</span>
+      <span class="hero-tag">SaaS死</span>
+      <span class="hero-tag">moat精査</span>
+      <span class="hero-tag">kintone</span>
+    </div>
+  </div>
+</div>
+
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">SUMMARY — この記事の要点</div>
+    <p class="summary-text">
+      「ノーコードはAIに殺される」という言説は半分正しく、半分間違っている。
+      <strong>Claude Code・DevinはITエンジニア向けのツールであり、kintoneのターゲット（日本のSMB・非エンジニア現場）とはほぼ重ならない</strong>——これがGartnerを含む主要機関の共通見解だ。
+      しかしkintoneの「ノーコードで作る」という価値命題は変容を迫られている。
+      真の問いは「ノーコードが死ぬか」ではなく、<strong>「kintoneが"データと業務ルールの器"として再定義できるか」</strong>だ。
+      月次解約率0.92%というスイッチングコストの強さは確かだが、Microsoftの無差別爆撃・Anthropicのエンタープライズ参入という二正面からの圧力は本物だ。
+    </p>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="article-inner">
+
+    <!-- SECTION 01 -->
+    <div class="section-title">
+      <span>SECTION 01</span>
+      「ノーコードの死」——何が正しく、何が誇張か
+    </div>
+    <div class="article-body">
+      <p>2025〜2026年にかけて「No-code is dead」という言説が広がった。AIコーディングエージェント（Claude Code・GitHub Copilot・Devin・Cursor）が業務アプリを自然言語で生成できるなら、kintoneのような「ドラッグ&ドロップでアプリを作る」ツールは不要になるのでは——という論理だ。</p>
+      <p>しかしGartnerの評価は真逆だ。<strong>「生成AIはローコードを代替しない。AIとローコードプラットフォームは融合・強化の方向に向かっている」</strong>と明言し、2029年までにミッションクリティカルアプリの80%がLCAP（ローコード・アプリケーション・プラットフォーム）で構築されると予測している。ローコード市場は2029年に582億ドル（年平均成長率14.1%）に達する見通しだ。</p>
+      <p>Bainも同様に「AIエージェントが侵食しやすいSaaS」と「守られるSaaS」を分類しており、<strong>kintoneのような「顧客業務プロセスに深く組み込まれたプラットフォーム」は守られる側に分類</strong>される。</p>
+    </div>
+
+    <div class="callout safe">
+      「Generative AI is not replacing low-code, but rather, AI and low-code platforms are converging.」<br>
+      ——生成AIはローコードを置き換えるのではなく、両者は融合・強化の方向に進んでいる。
+      <cite>— Gartner Senior Director Analyst（2025年）</cite>
+    </div>
+
+    <!-- SECTION 02 -->
+    <div class="section-title">
+      <span>SECTION 02</span>
+      Claude Code vs kintone——ターゲットはそもそも違う
+    </div>
+    <div class="ai-comp-wrap">
+      <table class="ai-comp-table">
+        <thead>
+          <tr>
+            <th>比較軸</th>
+            <th>AIコーディングエージェント（Claude Code・Devin等）</th>
+            <th>kintone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>主要ユーザー</td>
+            <td class="danger-col">ITエンジニア（プログラミング経験者）</td>
+            <td class="safe-col">非エンジニア・現場担当者（利用者の82%）</td>
+          </tr>
+          <tr>
+            <td>必要スキル</td>
+            <td class="danger-col">ターミナル操作・Git・プロンプト設計・デプロイ知識</td>
+            <td class="safe-col">ドラッグ&ドロップ・日本語UI・IT知識不要</td>
+          </tr>
+          <tr>
+            <td>保守・ガバナンス</td>
+            <td class="danger-col">生成コードの管理・バージョン管理・セキュリティ審査が必要</td>
+            <td class="safe-col">SaaS側が担保。更新・セキュリティパッチ自動適用</td>
+          </tr>
+          <tr>
+            <td>価格</td>
+            <td>Claude Code月$20〜＋インフラコスト＋開発時間</td>
+            <td>月額従量（kintoneは月1,100〜3,000円/人）</td>
+          </tr>
+          <tr>
+            <td>日本SMB実用性</td>
+            <td class="danger-col">日本SMBのAI実際活用率は16%（2025年）。技術的障壁が高い</td>
+            <td class="safe-col">申し込みから最短当日で業務アプリが動く</td>
+          </tr>
+          <tr class="cyb-row">
+            <td>結論</td>
+            <td colspan="2">両者はほぼ異なる顧客層を対象としており、直接的な代替関係にはない。ただし大企業IT部門が内製化を進める領域では競合リスクが存在する。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="article-body">
+      <p><strong>「AIエージェントが業務アプリを作る時代になれば、kintoneは不要」という論理の致命的な欠陥は、「誰がAIエージェントを使いこなすのか」という問いを無視している点だ。</strong></p>
+      <p>日本の中小企業のAI実際活用率はわずか16%（OECD・楽天調査、2025年）。「技術的障壁が課題」と答えたSMEは34%に上る。Claude Codeを使うためにはターミナルを開き、Gitを操作し、デプロイインフラを管理する必要がある。これができる人材が「ITシステム担当がいない中小企業の現場」に何人いるか——現実的な話として、2028年以前にAIエージェントがkintoneのターゲット層を代替することは困難だ。</p>
+    </div>
+
+    <!-- SECTION 03 -->
+    <div class="section-title">
+      <span>SECTION 03</span>
+      moat強度マトリクス——崩れる場所・残る場所
+    </div>
+    <div class="matrix-table-wrap">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>moat</th>
+            <th>現在の強度</th>
+            <th>AIリスク（2026〜）</th>
+            <th>変化の方向</th>
+            <th>結論</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ノーコード参入障壁</strong></td>
+            <td><span class="badge-mid">中</span></td>
+            <td><span class="badge-mid-risk">中〜高</span></td>
+            <td>差別化軸が変質</td>
+            <td>「使いやすさ」→「業務組み込み深度」へ軸シフト。AI統合で変質するが消滅はしない</td>
+          </tr>
+          <tr>
+            <td><strong>パートナーエコシステム</strong></td>
+            <td><span class="badge-strong">強（500社/400連携）</span></td>
+            <td><span class="badge-low">低〜中</span></td>
+            <td>AI活用支援需要で変容</td>
+            <td>短期は強力。AI工数削減でSI収益圧縮リスクあり。ただし「AIラボ設定支援」需要も生まれる</td>
+          </tr>
+          <tr>
+            <td><strong>スイッチングコスト</strong></td>
+            <td><span class="badge-strong">最強（解約率0.92%）</span></td>
+            <td><span class="badge-low">低</span></td>
+            <td>さらに強化</td>
+            <td>20%値上げ後も解約率維持。全社規模で業務フローに組み込まれると移行コストは天文学的。AIも変えられない</td>
+          </tr>
+          <tr>
+            <td><strong>ブランド・文化</strong></td>
+            <td><span class="badge-mid">中</span></td>
+            <td><span class="badge-low">低</span></td>
+            <td>維持</td>
+            <td>AIが侵食できない無形資産。採用・営業・信頼の三位一体で機能し続ける</td>
+          </tr>
+          <tr>
+            <td><strong>日本語×SMBローカライズ</strong></td>
+            <td><span class="badge-strong">強</span></td>
+            <td><span class="badge-low">低〜中</span></td>
+            <td>短期は堅固</td>
+            <td>〜2028年は強固。AIリテラシー向上で中長期は緩やかに低下。kintone AIラボが対抗策</td>
+          </tr>
+          <tr>
+            <td><strong>データ資産（潜在）</strong></td>
+            <td><span class="badge-mid">育ちつつある</span></td>
+            <td><span class="badge-low">低（強化）</span></td>
+            <td>AI時代に価値上昇</td>
+            <td>39,000社の業務データはRAG基盤として価値増大。「顧客データをAI学習に使わない」設計が規制時代の差別化に</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 04 -->
+    <div class="section-title">
+      <span>SECTION 04</span>
+      脅威と守りの構造——2つの正面
+    </div>
+    <div class="versus-grid">
+      <div class="versus-card threat">
+        <div class="versus-header">THREAT — 本物の脅威</div>
+        <div class="versus-title">moatが崩れ得る場所</div>
+        <div class="versus-items">
+          <div class="versus-item"><strong>Microsoft Power Apps無料化圧力：</strong>M365環境に既に入っている大企業がPower Appsを使い始めると、kintoneの大企業シェア拡大路線と直接衝突する。</div>
+          <div class="versus-item"><strong>Anthropic Claude Coworkの登場：</strong>2026年1月発表のエンタープライズ向けAIエージェントは「業務ワークフローを自律実行」。アプリを作って管理するkintoneの上位代替を目指す。</div>
+          <div class="versus-item"><strong>大企業IT部門の内製化：</strong>DevinやClaude Codeで全社業務アプリを内製する動きが大企業で始まった場合、kintoneのエンタープライズ拡大路線が裏目に出るリスク。</div>
+          <div class="versus-item"><strong>シート数課金モデルの構造的圧迫：</strong>AIエージェントが複数人分の作業をこなせば、kintoneのシート契約数が減少し、課金モデルの根幹を揺るがす。</div>
+        </div>
+      </div>
+      <div class="versus-card defense">
+        <div class="versus-header">DEFENSE — 守りが効く場所</div>
+        <div class="versus-title">AIが侵食できない場所</div>
+        <div class="versus-items">
+          <div class="versus-item"><strong>SMBの技術的障壁：</strong>日本SMBのAI実活用率16%・技術障壁34%。AIエージェントを「現場のおじさん」が使いこなすまであと5〜8年はかかる。</div>
+          <div class="versus-item"><strong>業務フローへの深い組み込み：</strong>月次解約率0.92%。全社規模でkintoneに積み上がった業務アプリは、AIに移行するコストが乗り換えコストを大幅に上回る。</div>
+          <div class="versus-item"><strong>日本語・日本の商習慣：</strong>稟議・請求書フロー・日本型ワークフローはグローバルAIが最も不得意とする領域。ここはkintoneの優位が長く続く。</div>
+          <div class="versus-item"><strong>データ主権設計：</strong>「顧客データをAI学習に使わない」という設計はプライバシー規制強化時代の差別化。欧州・日本市場で評価される。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 05 -->
+    <div class="section-title">
+      <span>SECTION 05</span>
+      製品ごとの生存判定——kintone・Garoon・Officeはどうなるか
+    </div>
+    <div class="product-verdict-wrap">
+      <div class="pv-card">
+        <div class="pv-spine change"></div>
+        <div class="pv-body">
+          <div class="pv-meta">
+            <span class="pv-product">kintone</span>
+            <span class="pv-verdict change">変容・強化（条件付き強気）</span>
+          </div>
+          <p class="pv-text">AI時代に「ノーコードアプリ作成ツール」から「AIエージェントの実行基盤・業務コンテキストデータベース」へと進化する可能性が高い。MCPサーバ対応・Zapier MCP連携はその第一歩。kintone AIラボの「日本語プロンプトでアプリ自動生成」が実用化されれば、ユーザーはより深くプラットフォームに依存する——AI統合がスイッチングコストをさらに高める逆説的構造。条件は「AI機能の開発速度を保てるか」。</p>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-spine shrink"></div>
+        <div class="pv-body">
+          <div class="pv-meta">
+            <span class="pv-product">Garoon</span>
+            <span class="pv-verdict shrink">漸進的縮小（クラウド移行で延命）</span>
+          </div>
+          <p class="pv-text">パッケージ版サポートを2033年に終了すると発表済み。Microsoft Teams + Copilotのエコシステムに大企業市場で侵食される。クラウド版への移行コストを会社が負担しながら、Microsoftに押されるという「撤退コスト」を抱えた製品。AI機能（校正・要約）追加で延命しつつ、kintoneへのアップセル経路として機能させることが最善策。長期では縮小を前提にした戦略が現実的。</p>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-spine risk"></div>
+        <div class="pv-body">
+          <div class="pv-meta">
+            <span class="pv-product">サイボウズOffice</span>
+            <span class="pv-verdict risk">防衛戦（市場縮小・競合圧迫）</span>
+          </div>
+          <p class="pv-text">Microsoft 365・Google Workspaceの低価格化とAI統合で代替圧力が強まる。「汎用的なグループウェア機能」はAIに最も代替されやすいカテゴリだ。ただしグループウェア市場シェア国内2位（12.86%）という存在感は健在で、IT部門のない中小企業への「日本語サポートと使いやすさ」での差別化は続く。AI機能（ヘルプAI・要約AI）のβ版提供で防衛し、kintoneへの移行経路として位置づける戦略が現実的。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 06 -->
+    <div class="section-title">
+      <span>SECTION 06</span>
+      3シナリオ——kintoneはどこへ向かうか
+    </div>
+    <div class="scenario-wrap">
+      <div class="scenario-card">
+        <div class="scenario-head dead">
+          <div class="scenario-prob">15%</div>
+          <div>
+            <div class="scenario-title">シナリオ①　消滅</div>
+            <div class="scenario-subtitle">EXTINCTION — ノーコード市場がAIに飲み込まれる</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <p><strong>前提条件：</strong>MicrosoftがCopilot + Power Appsを実質無料化。Anthropic Claude Coworkが中小企業向け業務フロー自動化を月$10以下で提供。Gartner予測の「2030年までにノーコードプラットフォームの35%がAIに代替」が現実化する。</p>
+          <p><strong>なぜ低確率か：</strong>「作れる」技術が普及しても、kintoneに39,000社分積み上がった業務ルール・プロセスの「文脈」は即座に移行できない。月次解約率0.92%が示すスイッチングコストは、AIが数年で解消できるものではない。日本のSMBが自力でAIエージェントを運用する能力を持つには時間がかかる。</p>
+        </div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-head change">
+          <div class="scenario-prob">55%</div>
+          <div>
+            <div class="scenario-title">シナリオ②　変容（最も蓋然性が高い）</div>
+            <div class="scenario-subtitle">TRANSFORMATION — AIエージェントの実行基盤へ</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <p><strong>内容：</strong>kintoneは「ノーコードアプリ作成ツール」から「AIエージェントが安全に業務を実行するためのデータ・ルール管理基盤」へと自己変革する。MCPサーバ対応により、Claude・GPT・Grokなど外部AIエージェントがkintoneのデータを参照・更新できるエコシステムが形成される。</p>
+          <p><strong>具体的な変容：</strong>kintone AIラボ（2025年8月ベータ）が「日本語でアプリを作る」体験を提供。業務プロセスの「定義場所」としてkintoneが機能し、AIはそのルールに従って自律実行する。認証・権限管理・監査ログというエンタープライズAI導入の難関部分をkintoneが担う。</p>
+          <p><strong>結果：</strong>ARPAが上昇し（すでに+27%/年）、中規模〜大企業での全社導入が進む。売上は年率15〜25%成長を維持。2028年目標330億円はこのシナリオで達成可能。</p>
+        </div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-head grow">
+          <div class="scenario-prob">30%</div>
+          <div>
+            <div class="scenario-title">シナリオ③　強化</div>
+            <div class="scenario-subtitle">STRENGTHENING — データ主権時代の業務インフラへ</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <p><strong>前提条件：</strong>AI規制（個人情報保護法改正・GDPR強化）が進み、「顧客データをAI学習に使わない」という設計が採用の決め手になる。39,000社分の業務データが「日本企業固有の業務語彙・商習慣」のRAG基盤として最大の競争優位になる。</p>
+          <p><strong>根拠：</strong>グローバルAIが苦手とする「稟議・請求書フロー・日本型ワークフロー」はkintoneの独壇場。落合陽一が「環境構築が人間の主仕事になる」と述べる通り、kintoneは「AI実行環境を設計・維持する場所」として価値が強化される。東南アジア展開（+36%）が加速すれば、アジア版「業務データ主権プラットフォーム」としての地位も視野に入る。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box safe">
+      <div class="insight-label">CONCLUSION — 長期投資家へのメッセージ</div>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>「ノーコードの死」はkintoneの死ではない：</strong>ターゲット層・スイッチングコスト・日本語対応という3つの事実が、少なくとも2028年まではmoatを守る。Gartnerも「AIとローコードは共存・融合」と明言している。</span>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>真の問いは「AI統合の速度」：</strong>kintone AIラボ・MCPサーバ対応が競合より早く実用化されれば、AIはkintoneのmoatを侵食するのではなく強化する。青野社長の「AIは脅威ではなく、kintoneをAIの安全な実行基盤に進化させる」という宣言が実行されるかどうかが鍵。</span>
+        </div>
+        <div class="insight-item">
+          <span class="insight-icon">◆</span>
+          <span><strong>監視すべき指標：</strong>①月次解約率（0.92%を維持できているか）、②ARPA前年比（+27%が続くか）、③東南アジア成長率（+36%が継続するか）、④kintone AIラボの一般提供タイミング。</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="references-wrap">
+  <div class="references-inner">
+    <div class="ref-title">REFERENCES &amp; SOURCES</div>
+    <div class="ref-group">
+      <div class="ref-group-label">AI・ノーコード分析</div>
+      <span class="ref-item">Gartner: Why AI Won't Replace the Need for Low-Code Application Platforms — <a href="https://www.gartner.com/en/documents/7033498" target="_blank" rel="noopener">gartner.com</a></span>
+      <span class="ref-item">Bain: Will Agentic AI Disrupt SaaS? — <a href="https://www.bain.com/insights/will-agentic-ai-disrupt-saas-technology-report-2025/" target="_blank" rel="noopener">bain.com</a></span>
+      <span class="ref-item">The New Stack: No Code Is Dead — <a href="https://thenewstack.io/no-code-is-dead/" target="_blank" rel="noopener">thenewstack.io</a></span>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-label">サイボウズ公式・決算</div>
+      <span class="ref-item">kintone AIラボ公式 — <a href="https://kintone.cybozu.co.jp/feature/kintone-ai-labo/" target="_blank" rel="noopener">cybozu.co.jp</a></span>
+      <span class="ref-item">mynavi：サイボウズ2025年度通期決算 — <a href="https://news.mynavi.jp/techplus/article/20260225-4165084/" target="_blank" rel="noopener">mynavi.jp</a></span>
+      <span class="ref-item">日経：青野社長「AIは脅威にあらず」— <a href="https://www.nikkei.com/article/DGXZQOUC25A1J0V20C26A2000000/" target="_blank" rel="noopener">nikkei.com</a></span>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-label">日本SMB・市場データ</div>
+      <span class="ref-item">OECD: AI Adoption by SMEs Report 2025 — <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/12/ai-adoption-by-small-and-medium-sized-enterprises_9c48eae6/426399c1-en.pdf" target="_blank" rel="noopener">oecd.org</a></span>
+      <span class="ref-item">GMO Research: Generative AI Adoption in Japan 2025 — <a href="https://gmo-research.ai/en/resources/studies/2025-study-gen-AI-jp" target="_blank" rel="noopener">gmo-research.ai</a></span>
+    </div>
+    <p class="ref-disclaimer">※本記事の分析・シナリオは著者の独自見解です。投資判断の際は各社IR・一次情報をご確認ください。</p>
+  </div>
+</div>
+
+<div class="article-nav">
+  <a class="prev-link" href="../cybozu-moat/">← Essay 08 サイボウズ moat解剖</a>
+  <a class="back-link" href="../">論考の棚</a>
+  <a class="next-link" href="../cybozu-digital-nature/">Essay 10 デジタルネイチャーとサイボウズ →</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="日本ペイントHD｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="日本ペイントHD（4612）のmoat分析。塗料国内首位・アジア展開。Wuthelam統合でアジア市場を制圧した塗料最大手の競争構造を読む。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>日本ペイントHD — moat分析｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;--accent:#081828;--accent2:#102030;--accent3:#183848;--accent4:#6090c0;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--accent) 45%,var(--accent2) 100%);color:var(--parch);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,255,255,.05) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent4),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(96,144,192,.3);color:var(--accent4);letter-spacing:.1em;}
+.hero-verdict{margin-top:28px;position:relative;font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);color:var(--parch3);font-style:italic;line-height:1.9;max-width:540px;margin-left:auto;margin-right:auto;}
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.3em;}.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;align-items:center;}.moat-dot{width:10px;height:10px;border-radius:50%;}.moat-dot.on{background:var(--green3);}.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span><a class="nav-back" href="../">企業分析</a><span class="nav-sep">/</span><span class="nav-current">日本ペイントHD</span></nav>
+<div class="hero">
+  <div class="hero-code">TSE · 4612 · 化学</div>
+  <div class="hero-name">日本ペイントHD</div>
+  <div class="hero-name-en">NIPPON PAINT HOLDINGS CO., LTD.</div>
+  <div class="hero-tags">
+    <span class="hero-tag">塗料国内首位</span>
+    <span class="hero-tag">アジア展開</span>
+    <span class="hero-tag">Wuthelam統合</span>
+    <span class="hero-tag">自動車・建築塗料</span>
+  </div>
+  <p class="hero-verdict">日本最大の塗料メーカー。Wuthelam Groupとの統合でアジア市場を制圧し、<br>自動車・建築・重防食という多用途展開でブランドと規模の両輪を持つ。</p>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">日本ペイントHDとは何をしている会社か</h2>
+    <div class="section-body">
+      <p>日本ペイントホールディングスは、1881年創業という長い歴史を持つ日本の塗料最大手だ。自動車用塗料・建築用塗料・重防食塗料・工業用塗料など幅広い用途で製品を提供し、国内市場での強固なブランドを土台に、近年はアジア市場での急速な拡大を実現してきた。</p>
+      <p>同社のビジネス構造を語るうえで欠かせないのが、シンガポール・Wuthelam Groupとの関係だ。2021年にはWuthelam傘下のNipsea Groupと統合し、実質的にWuthelam主導の経営体制へ移行した。この統合により、中国・東南アジアを中心とするアジア全域での塗料事業が飛躍的に拡大。アジアの成長市場への露出が大幅に高まった。</p>
+      <p>塗料という製品は一般に差別化が難しいように見えるが、自動車メーカーとの取引では「承認品」という仕組みが機能する。自動車塗料は車体の色・光沢・耐候性を決定する重要部材であり、塗料メーカーは自動車メーカーの開発段階から参加し、独自の色調・調合レシピを共同開発する。この「承認品」として採用されると、モデルチェンジまで数年にわたり安定した供給関係が続く構造だ。建築用途でも、施工業者とのパートナーシップや調色サービスが継続的な取引関係を生む。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">競争優位の構造を見る</h2>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">日本ペイントブランドとアジア市場での認知度・技術蓄積</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">塗料はネットワーク効果が弱い。販売チャネルの広がりは強みだが構造的優位ではない</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">2/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">自動車メーカーへの承認品・調色サービスが切り替えコストを高める</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（トールロード）</div>
+          <div class="moat-sub">建物・自動車のメンテナンス・補修需要が継続的な塗料消費を生む</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">アジア全域の製造・流通網はWuthelam統合で一気に構築され、競合参入の壁となる</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">原材料の購買規模と製造効率化。ただし石油由来原料のコスト転嫁が課題</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="moat-radar-wrap" style="margin-top:24px;background:var(--parch);border:1px solid var(--parch4);padding:20px 24px;">
+      <div style="font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.14em;margin-bottom:12px;opacity:.75;">MOAT RADAR</div>
+      <div style="position:relative;max-width:320px;margin:0 auto;height:280px;">
+        <canvas id="moatRadar"></canvas>
+      </div>
+    </div>
+    <div class="callout">
+      <p class="callout-text">日本ペイントのモートはブランドとアジア市場での先行ポジションにある。塗料は一般的に特許で守ることが難しい商品だが、自動車メーカーへの承認品（色見本・調色）や長年の技術サポートがスイッチングコストを生む。Wuthelam統合による規模拡大がアジアでの収益基盤を固めた。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">数字で見る日本ペイントHD</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">REVENUE</div>
+        <div class="metric-value">1.5兆</div>
+        <div class="metric-unit">円超（概算）</div>
+        <div class="metric-note">アジア事業含む連結売上高</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">OP MARGIN</div>
+        <div class="metric-value">8〜10</div>
+        <div class="metric-unit">% 概算</div>
+        <div class="metric-note">原材料コストで変動</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ASIA SHARE</div>
+        <div class="metric-value">上位</div>
+        <div class="metric-unit">アジアシェア</div>
+        <div class="metric-note">中国・東南アジアで展開</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">10%+</div>
+        <div class="metric-unit">概算</div>
+        <div class="metric-note">Wuthelam統合後に改善</div>
+      </div>
+    </div>
+    <p style="font-size:.62rem;color:var(--ink3);margin-top:12px;font-family:var(--mono);">※概算値・参考値。投資判断の根拠にしないこと。必ず一次情報をご確認ください。</p>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">KEY RISKS</div>
+    <h2 class="section-title">見ておくべきリスク</h2>
+    <div class="section-body">
+      <p>最大のリスクは原材料コストの変動だ。塗料の主原料は石油化学製品（樹脂・溶剤・顔料）であり、原油価格・ナフサ価格の上昇が製造コストを直撃する。価格転嫁に遅れが生じると、短期的な利益率の悪化を招く。原材料調達のヘッジ戦略と価格改定の機動性が収益安定の鍵となる。</p>
+      <p>第二にWuthelam統合後のガバナンスリスクがある。Wuthelam Groupは日本ペイントHDの筆頭株主となっており、オーナー企業色が強まった。経営の透明性・少数株主との利益相反・シンガポールのオーナー意向が戦略に与える影響は、長期投資家として注視すべき点だ。</p>
+      <p>第三に自動車生産台数との連動リスクがある。自動車用塗料は売上の相当部分を占めるが、EV化に伴う自動車生産構造の変化（製造工程の変化）や、自動車メーカーの生産台数変動が需要に直結する。EVと内燃機関車で塗料の仕様・採用プロセスが変わる可能性も無視できない。</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="section">
+    <div class="section-label">IR RESOURCES</div>
+    <h2 class="section-title">一次情報へのリンク</h2>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=4612" target="_blank" rel="noopener">
+        <span class="ir-tag">IR TOP</span>
+        <div><div class="ir-name">日経会社情報 — 日本ペイントHD（4612）</div><div class="ir-note">決算情報・業績データ</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.nipponpaint-holdings.com/ir/" target="_blank" rel="noopener">
+        <span class="ir-tag">IR PAGE</span>
+        <div><div class="ir-name">日本ペイントHD 公式IRページ</div><div class="ir-note">有価証券報告書・決算説明資料</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.traders.co.jp/domestic_stocks/invest_tool/fundamental/fundamental_main.asp?code=4612" target="_blank" rel="noopener">
+        <span class="ir-tag">FINANCE</span>
+        <div><div class="ir-name">トレーダーズウェブ — 財務データ（4612）</div><div class="ir-note">売上・営業利益・ROE等の推移</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED PAGES</div>
+    <div class="related-links">
+      <a class="related-link" href="../shinEtsu/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">信越化学工業 (4063)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../asahi-kasei/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">旭化成 (3407)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../mitsubishi-chem/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">三菱ケミカルG (4188)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../fujifilm/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">富士フイルムHD (4901)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../shinEtsu/">
+        <span class="related-tag">4063</span>
+        <span class="related-title">信越化学工業</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../asahi-kasei/">
+        <span class="related-tag">3407</span>
+        <span class="related-title">旭化成</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../../industries/chemicals/">
+        <span class="related-tag">SECTOR</span>
+        <span class="related-title">化学セクターを歩く</span>
+        <span class="related-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a>
+</footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});
+// Moat Radar Chart
+(function(){
+  var items = document.querySelectorAll('.moat-item');
+  if (!items.length) return;
+  var labels = [], data = [];
+  items.forEach(function(item){
+    var nameEl = item.querySelector('.moat-name');
+    var numEl = item.querySelector('.moat-score-num');
+    if (!nameEl || !numEl) return;
+    var name = nameEl.textContent.trim().replace('（toll road）','').replace('（Toll Road）','');
+    var scoreText = numEl.textContent.trim();
+    var score = parseInt(scoreText.split('/')[0]) || 0;
+    labels.push(name);
+    data.push(score);
+  });
+  if (!labels.length) return;
+  var canvas = document.getElementById('moatRadar');
+  if (!canvas) return;
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        backgroundColor: 'rgba(90,138,58,0.15)',
+        borderColor: 'rgba(90,138,58,0.7)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(90,138,58,0.9)',
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          min: 0,
+          max: 5,
+          ticks: { stepSize: 1, display: false },
+          grid: { color: 'rgba(139,105,20,0.2)' },
+          angleLines: { color: 'rgba(139,105,20,0.2)' },
+          pointLabels: { font: { family: "'DM Mono', monospace", size: 10 }, color: '#4a3520' }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: function(ctx){ return ctx.parsed.r + '/5'; } } }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

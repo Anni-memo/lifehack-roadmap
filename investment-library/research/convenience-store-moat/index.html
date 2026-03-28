@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="コンビニエコシステムのmoat解剖｜論考の棚"/>
+<meta property="og:description" content="セブン・ローソン・ファミマ——3社のmoatを強さ順に解剖する。POS・金融・PB・物流という4つの軸で、なぜセブンが断トツなのかを長期投資家の視点で読む。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>コンビニエコシステムのmoat解剖｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --rust:#8b3a1a;--rust2:#c05020;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;
+  --blue:#1a2a4a;--blue2:#2a3d6a;--blue3:#3a5a8a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+  /* コンビニカラー */
+  --seven:#006834;--seven2:#00a040;
+  --lawson:#00479d;--lawson2:#0060c8;
+  --famima:#007b40;--famima2:#00a050;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(165deg,#04090e 0%,#080f18 30%,#0c150a 60%,#081208 100%);
+  color:var(--parch);padding:64px 24px 52px;
+  position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(0,104,52,.5);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 45% at 50% 0%,rgba(0,104,52,.1) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 10% 100%,rgba(0,60,26,.08) 0%,transparent 50%);
+}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,160,64,.5),transparent);}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(100,180,120,.55);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(80,180,100,.7);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{
+  font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.8rem);
+  font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:14px;
+}
+.hero-subtitle{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(.82rem,2vw,.96rem);
+  color:rgba(200,220,205,.7);line-height:1.9;margin-bottom:28px;
+}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(100,180,120,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(0,104,52,.45);color:rgba(100,200,130,.8);letter-spacing:.08em;}
+.hero-tag.gold{border-color:rgba(184,144,10,.45);color:var(--gold3);}
+
+/* ── SUMMARY BOX ── */
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:780px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--gold2);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+
+/* ── RANKING TABLE ── */
+.rank-table-wrap{background:var(--parch2);border-bottom:2px solid var(--parch4);padding:0 24px;}
+.rank-table-inner{max-width:780px;margin:0 auto;padding:32px 0;}
+.rank-table-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.rank-table{width:100%;border-collapse:collapse;}
+.rank-table th{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.12em;padding:8px 12px;border-bottom:2px solid var(--parch4);text-align:left;background:var(--parch3);}
+.rank-table td{padding:10px 12px;border-bottom:1px solid var(--parch3);font-size:.78rem;color:var(--ink2);vertical-align:middle;}
+.rank-table tr:hover td{background:var(--parch3);}
+.rank-num{font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--ink);text-align:center;width:36px;}
+.rank-num.gold{color:var(--gold2);}
+.rank-company{font-family:var(--serif);font-weight:700;font-size:.92rem;color:var(--ink);}
+.rank-country{font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.06em;}
+.rank-role{font-size:.72rem;color:var(--ink3);}
+.moat-bar{display:flex;align-items:center;gap:6px;}
+.moat-dots{display:flex;gap:3px;}
+.moat-dot{width:8px;height:8px;border-radius:50%;background:var(--parch4);}
+.moat-dot.filled{background:var(--gold2);}
+.moat-dot.filled.green{background:#2a8a40;}
+.moat-dot.filled.blue{background:var(--lawson);}
+
+/* ── ARTICLE BODY ── */
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:780px;margin:0 auto;padding:56px 0 80px;}
+
+/* ── RANK CARD ── */
+.rank-card{margin-bottom:56px;border-left:3px solid var(--parch4);padding-left:0;}
+.rank-card.rank-1{border-left-color:var(--seven);}
+.rank-card.rank-2{border-left-color:var(--lawson);}
+.rank-card.rank-3{border-left-color:#2a7a50;}
+
+.rank-card-header{
+  display:flex;align-items:flex-start;gap:16px;
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-left:none;padding:22px 24px;
+}
+.rank-badge{font-family:var(--mono);font-size:1.15rem;font-weight:700;min-width:44px;text-align:center;flex-shrink:0;padding-top:2px;}
+.rank-1 .rank-badge{color:var(--seven);}
+.rank-2 .rank-badge{color:var(--lawson);}
+.rank-3 .rank-badge{color:#2a7a50;}
+
+.rank-head-body{flex:1;}
+.rank-company-name{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.rank-company-sub{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.08em;margin-bottom:8px;}
+.rank-moat-line{display:flex;align-items:center;gap:10px;}
+.rank-moat-label{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.14em;opacity:.7;}
+.rank-moat-dots{display:flex;gap:4px;}
+.rank-moat-dot{width:10px;height:10px;border-radius:50%;background:var(--parch4);border:1px solid var(--parch3);}
+.rank-1 .rank-moat-dot.on{background:var(--seven);border-color:#005028;}
+.rank-2 .rank-moat-dot.on{background:var(--lawson);border-color:#003580;}
+.rank-3 .rank-moat-dot.on{background:#2a7a50;border-color:#1a5a38;}
+
+.rank-card-body{
+  background:var(--parch);border:1px solid var(--parch4);border-top:none;border-left:none;
+  padding:24px 24px 24px 84px;
+}
+.rank-headline{
+  font-family:var(--serif);font-size:1.0rem;font-weight:600;color:var(--ink);
+  margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--parch4);
+  font-style:italic;
+}
+.rank-text{font-size:.83rem;color:var(--ink2);line-height:2.05;font-weight:300;}
+.rank-text strong{color:var(--ink);font-weight:600;}
+.rank-text em{color:var(--gold2);font-style:normal;font-weight:600;}
+
+/* ── MOAT AXES ── */
+.moat-axes{margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+@media(max-width:560px){.moat-axes{grid-template-columns:1fr;}}
+.moat-axis{background:var(--parch2);border-left:2px solid var(--parch4);padding:10px 12px;}
+.rank-1 .moat-axis{border-left-color:var(--seven);}
+.rank-2 .moat-axis{border-left-color:var(--lawson);}
+.rank-3 .moat-axis{border-left-color:#2a7a50;}
+.moat-axis-label{font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.1em;margin-bottom:4px;opacity:.7;}
+.moat-axis-bar{height:4px;background:var(--parch4);border-radius:2px;margin-bottom:4px;overflow:hidden;}
+.moat-axis-fill{height:100%;border-radius:2px;}
+.rank-1 .moat-axis-fill{background:var(--seven);}
+.rank-2 .moat-axis-fill{background:var(--lawson);}
+.rank-3 .moat-axis-fill{background:#2a7a50;}
+.moat-axis-note{font-size:.72rem;color:var(--ink3);line-height:1.6;}
+
+.rank-key-points{margin-top:18px;display:flex;flex-direction:column;gap:6px;}
+.key-point{display:flex;align-items:flex-start;gap:10px;background:var(--parch2);border-left:2px solid var(--parch4);padding:8px 12px;font-size:.75rem;color:var(--ink3);line-height:1.7;}
+.rank-1 .key-point{border-left-color:var(--seven);}
+.rank-2 .key-point{border-left-color:var(--lawson);}
+.rank-3 .key-point{border-left-color:#2a7a50;}
+.key-point-icon{flex-shrink:0;font-size:.8rem;margin-top:1px;}
+.key-point strong{color:var(--ink);font-weight:600;}
+
+/* ── DIVIDER ── */
+.article-divider{display:flex;align-items:center;gap:16px;margin:0 0 48px;font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.2em;opacity:.4;}
+.article-divider::before,.article-divider::after{content:'';flex:1;height:1px;background:var(--parch4);}
+
+/* ── ECOSYSTEM SECTION ── */
+.ecosystem-wrap{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  border:1px solid rgba(0,104,52,.2);
+  padding:28px 28px;margin-bottom:48px;
+}
+.ecosystem-label{font-family:var(--mono);font-size:.5rem;color:rgba(100,200,130,.7);letter-spacing:.22em;margin-bottom:14px;}
+.ecosystem-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--parch);margin-bottom:14px;line-height:1.4;}
+.ecosystem-text{font-family:var(--serif);font-size:.86rem;color:var(--parch3);line-height:2.1;font-weight:300;}
+.ecosystem-text strong{color:var(--parch);font-weight:500;}
+.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px;}
+@media(max-width:560px){.ecosystem-grid{grid-template-columns:1fr;}}
+.eco-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:14px 16px;}
+.eco-card-label{font-family:var(--mono);font-size:.42rem;color:rgba(180,200,185,.5);letter-spacing:.12em;margin-bottom:6px;}
+.eco-card-name{font-family:var(--serif);font-size:.88rem;color:var(--parch);font-weight:600;margin-bottom:4px;}
+.eco-card-desc{font-size:.72rem;color:rgba(200,210,200,.6);line-height:1.6;}
+
+/* ── CLOSING NOTE ── */
+.closing-note{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);border:1px solid rgba(184,144,10,.2);padding:28px 28px;margin-top:0;}
+.closing-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:14px;opacity:.75;}
+.closing-text{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:2.1;font-weight:300;}
+.closing-text strong{color:var(--parch);font-weight:500;}
+
+/* ── REFERENCES ── */
+.references-wrap{margin-top:48px;border:1px solid var(--parch4);background:var(--parch2);}
+.references-header{padding:16px 24px;border-bottom:1px solid var(--parch4);display:flex;align-items:center;gap:12px;}
+.references-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;opacity:.7;}
+.references-note{font-family:var(--mono);font-size:.46rem;color:var(--ink3);letter-spacing:.04em;opacity:.6;}
+.references-body{padding:20px 24px;}
+.ref-group{margin-bottom:20px;}.ref-group:last-child{margin-bottom:0;}
+.ref-group-title{font-family:var(--mono);font-size:.46rem;color:var(--ink3);letter-spacing:.14em;margin-bottom:10px;opacity:.6;padding-bottom:5px;border-bottom:1px solid var(--parch4);}
+.ref-list{display:flex;flex-direction:column;gap:6px;}
+.ref-item{display:flex;align-items:flex-start;gap:10px;font-size:.73rem;color:var(--ink2);line-height:1.6;}
+.ref-num{font-family:var(--mono);font-size:.46rem;color:var(--gold);min-width:20px;flex-shrink:0;padding-top:2px;opacity:.7;}
+.ref-item a{color:var(--blue3);text-decoration:none;word-break:break-all;}
+.ref-item a:hover{color:var(--blue2);text-decoration:underline;}
+.ref-disclaimer{margin-top:16px;padding:10px 14px;background:var(--parch3);border-left:3px solid var(--parch4);font-family:var(--mono);font-size:.44rem;color:var(--ink3);line-height:1.8;letter-spacing:.03em;opacity:.75;}
+
+/* ── BACK LINK ── */
+.back-link-wrap{margin-top:48px;text-align:center;}
+.back-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(184,144,10,.35);font-family:var(--mono);font-size:.56rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;transition:all .2s;}
+.back-link:hover{background:rgba(184,144,10,.08);border-color:var(--gold2);}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}
+.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">コンビニエコシステムのmoat解剖</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">THE RESEARCH SHELF · ESSAY 02</div>
+    <div class="hero-label">CONVENIENCE STORE ECOSYSTEM · MOAT ANALYSIS</div>
+    <h1 class="hero-title">コンビニエコシステムのmoat解剖</h1>
+    <p class="hero-subtitle">
+      セブン・ローソン・ファミマ——<br>
+      POS・金融・PB・物流という4軸で3社の競争優位を強さ順に読む
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.27</span>
+      <span class="hero-tag">コンビニ</span>
+      <span class="hero-tag">moat分析</span>
+      <span class="hero-tag gold">エコシステム</span>
+    </div>
+  </div>
+</div>
+
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">PREMISE — この記事の前提</div>
+    <p class="summary-text">
+      日本のコンビニ市場は約10兆円規模。セブン・ローソン・ファミマの3社で国内シェアの約90%を占める寡占構造だ。<br><br>
+      本稿では、3社を単なる「小売業」として見るのではなく、<strong>POS・金融・PB・物流という4つのmoat軸</strong>で分解し、
+      なぜセブンが断トツの首位なのかを長期投資家の視点で読み解く。
+      「店舗数が多いから強い」という表層ではなく、<strong>稼ぐ構造の深さ</strong>に注目する。
+    </p>
+  </div>
+</div>
+
+<!-- ── RANKING TABLE ── -->
+<div class="rank-table-wrap">
+  <div class="rank-table-inner">
+    <div class="rank-table-label">RANKING OVERVIEW</div>
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th style="width:40px;text-align:center;">順位</th>
+          <th>企業</th>
+          <th>親会社・連携</th>
+          <th style="width:130px;">moat強度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank-num gold">1</td>
+          <td><div class="rank-company">セブン-イレブン・ジャパン</div><div class="rank-country">JP · セブン&amp;アイHD傘下</div></td>
+          <td class="rank-role">日販・PB・金融・海外で全軸トップ</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled green"></div><div class="moat-dot filled green"></div><div class="moat-dot filled green"></div><div class="moat-dot filled green"></div><div class="moat-dot filled green"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">2</td>
+          <td><div class="rank-company">ローソン</div><div class="rank-country">JP · 三菱商事（完全子会社）</div></td>
+          <td class="rank-role">商社統合・銀行・健康フォーマット</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled blue"></div><div class="moat-dot filled blue"></div><div class="moat-dot filled blue"></div><div class="moat-dot filled blue"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+        <tr>
+          <td class="rank-num">3</td>
+          <td><div class="rank-company">ファミリーマート</div><div class="rank-country">JP · 伊藤忠商事傘下</div></td>
+          <td class="rank-role">店舗数・dポイント・海外展開</td>
+          <td><div class="moat-bar"><div class="moat-dots"><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot filled"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── ARTICLE BODY ── -->
+<div class="article-wrap">
+<div class="article-inner">
+
+  <!-- 1位 セブン -->
+  <div class="rank-card rank-1">
+    <div class="rank-card-header">
+      <div class="rank-badge">#1</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">セブン-イレブン・ジャパン</div>
+        <div class="rank-company-sub">JP · セブン&amp;アイ・ホールディングス傘下 · 約21,700店</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「日販・PB・金融・海外」——4軸全てで競合を引き離す唯一の存在</div>
+      <p class="rank-text">
+        セブンのmoatが断トツである理由は、<strong>「強みが一点集中ではなく全軸に広がっている」</strong>点だ。<br><br>
+        まず<em>日販（1店舗あたりの1日の売上）</em>は業界平均を約2〜3割上回る水準を長年維持している。
+        これはPOSデータによる発注精度の高さ、セブンプレミアムというPBの強さ、そして立地戦略の緻密さが合わさった結果だ。<br><br>
+        <strong>セブンプレミアム</strong>はPB売上が年間1兆円を超え、独自の製造委託先との関係で
+        品質と利益率を両立させている。「安かろう悪かろう」ではなく「同じ価格でNBより美味しい」
+        という認知を確立した点が決定的な差だ。<br><br>
+        さらに<strong>7銀行（旧セブン銀行）</strong>というATM事業が約2.7万台の設置で
+        金融インフラとしての地位を確立し、コンビニの外に出ても収益を生む構造を作った。
+      </p>
+      <div class="moat-axes">
+        <div class="moat-axis">
+          <div class="moat-axis-label">POS · データ分析</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:95%"></div></div>
+          <div class="moat-axis-note">業界最高水準の発注精度。廃棄ロス低減と欠品防止を両立</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">プライベートブランド（PB）</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:95%"></div></div>
+          <div class="moat-axis-note">セブンプレミアム売上1兆円超。NB代替を実現した唯一のコンビニPB</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">金融サービス</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:90%"></div></div>
+          <div class="moat-axis-note">7銀行ATM約2.7万台。コンビニ外の金融インフラとして独立収益</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">海外展開</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:85%"></div></div>
+          <div class="moat-axis-note">7‑Eleven Inc（米国）を傘下に持ち、グローバルブランドを保有</div>
+        </div>
+      </div>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>日販の差が全て：</strong>1店舗あたりの売上が高いということは、同じFC手数料率でも本部収益が大きいことを意味する。日販の差がmoatの差に直結する。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>セブンプレミアムの粘着性：</strong>一度PBに慣れた顧客はセブンを選び続ける。ブランドロイヤルティが来店頻度を上げるサイクル。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>7銀行という独立資産：</strong>コンビニ事業が苦境でも7銀行のATM手数料は安定収益。事業ポートフォリオとしての耐久性が高い。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 2位 ローソン -->
+  <div class="rank-card rank-2">
+    <div class="rank-card-header">
+      <div class="rank-badge">#2</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">ローソン</div>
+        <div class="rank-company-sub">JP · 三菱商事完全子会社（2024年上場廃止）· 約14,600店</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「三菱商事との完全統合」——サプライチェーンの上流まで支配する新しいmoat</div>
+      <p class="rank-text">
+        2024年にKDDIとともに三菱商事がTOBを完了し、ローソンは上場廃止・完全子会社化された。
+        これはローソンのmoat構造を根本的に変えた出来事だ。<br><br>
+        三菱商事グループの<strong>食品卸・物流・海外ネットワーク</strong>がローソンのサプライチェーンと
+        垂直統合されることで、単なる「コンビニ会社」から
+        「商社の流通インフラを持ったコンビニ」へと進化する可能性がある。<br><br>
+        また<strong>ローソン銀行</strong>の存在も見逃せない。7銀行ほどの規模感はないが、
+        独自の銀行ライセンスを持つことで金融サービスの自由度が高い。
+        健康志向の<em>「ナチュラルローソン」</em>など差別化フォーマットへの展開力も、
+        セブンにはない独自性だ。
+      </p>
+      <div class="moat-axes">
+        <div class="moat-axis">
+          <div class="moat-axis-label">親会社連携（三菱商事）</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:90%"></div></div>
+          <div class="moat-axis-note">食品卸・物流・海外ネットワークとの垂直統合が進行中</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">金融サービス</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:70%"></div></div>
+          <div class="moat-axis-note">ローソン銀行。独自ライセンスで金融サービス展開の柔軟性あり</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">フォーマット差別化</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:75%"></div></div>
+          <div class="moat-axis-note">ナチュラルローソン・ローソンストア100で異なる顧客層にリーチ</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">POS · PB</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:65%"></div></div>
+          <div class="moat-axis-note">PB「ローソンセレクト」はあるが、セブンプレミアムとの差は大きい</div>
+        </div>
+      </div>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>非上場化の意味：</strong>短期的な株主圧力から解放され、三菱商事との中長期的な統合投資が加速する可能性がある。moatの強化が進む可能性は3社中最も高い。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>KDDIとのデータ連携：</strong>通信データ×購買データの掛け合わせはローソン独自の資産になりうる。Pontaとauの顧客基盤との統合が鍵。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 3位 ファミマ -->
+  <div class="rank-card rank-3">
+    <div class="rank-card-header">
+      <div class="rank-badge">#3</div>
+      <div class="rank-head-body">
+        <div class="rank-company-name">ファミリーマート</div>
+        <div class="rank-company-sub">JP · 伊藤忠商事傘下（非上場）· 約16,400店</div>
+        <div class="rank-moat-line">
+          <span class="rank-moat-label">MOAT</span>
+          <div class="rank-moat-dots">
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot on"></div>
+            <div class="rank-moat-dot"></div>
+            <div class="rank-moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card-body">
+      <div class="rank-headline">「店舗数2位・伊藤忠連携」——moatの柱はあるが日販の差が課題</div>
+      <p class="rank-text">
+        ファミマは国内店舗数でローソンを上回る約16,400店を持つが、
+        moatの質ではセブンに大きく劣る。最大の課題は<em>日販の低さ</em>だ。
+        店舗数が多くても1店あたりの収益力が低ければ、FC加盟店の収益が圧迫され
+        長期的な店舗品質の維持が難しくなる。<br><br>
+        ポイント戦略では2022年にTポイントからdポイントへ移行したが、
+        dポイントはNTTドコモの資産であり、<strong>データの所有権はファミマ外にある</strong>という構造上の弱点がある。
+        伊藤忠との連携によるアパレル（ITOCHU Fashion System）・食品調達の強化は
+        独自の差別化につながる可能性があるが、まだ発展途上だ。
+      </p>
+      <div class="moat-axes">
+        <div class="moat-axis">
+          <div class="moat-axis-label">店舗数・立地</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:80%"></div></div>
+          <div class="moat-axis-note">国内約16,400店。数は多いが日販の低さが収益性を圧迫</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">ポイント・データ</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:50%"></div></div>
+          <div class="moat-axis-note">dポイントはDoCoMo資産。顧客データの「所有」ができていない点が弱点</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">親会社連携（伊藤忠）</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:65%"></div></div>
+          <div class="moat-axis-note">繊維・食品・流通との連携余地はある。具体的な差別化はまだ途上</div>
+        </div>
+        <div class="moat-axis">
+          <div class="moat-axis-label">海外展開</div>
+          <div class="moat-axis-bar"><div class="moat-axis-fill" style="width:60%"></div></div>
+          <div class="moat-axis-note">アジア中心に展開。台湾・タイ・中国など。ブランド認知はある</div>
+        </div>
+      </div>
+      <div class="rank-key-points">
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>日販改善が最大の鍵：</strong>ファミマがmoat順位を上げるには、日販をいかに引き上げるかが全て。PBの強化とデジタル施策の内製化が問われる。</div></div>
+        <div class="key-point"><div class="key-point-icon">◆</div><div><strong>伊藤忠との統合深化に期待：</strong>非上場化後のローソン（三菱商事）と同様の「商社×コンビニ」の垂直統合が進めば、moat強化の余地は大きい。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- エコシステム -->
+  <div class="ecosystem-wrap">
+    <div class="ecosystem-label">ECOSYSTEM VIEW — コンビニを支える周辺プレイヤー</div>
+    <div class="ecosystem-title">コンビニのmoatはチェーン単体では語れない</div>
+    <p class="ecosystem-text">
+      コンビニ3社の競争優位は、それぞれの<strong>親会社・物流・金融・データパートナー</strong>との関係性で決まる。
+      TSMCエコシステムと同様に、コンビニの周辺にも「恩恵を受け続けるプレイヤー」が存在する。
+    </p>
+    <div class="ecosystem-grid">
+      <div class="eco-card">
+        <div class="eco-card-label">LOGISTICS · 物流</div>
+        <div class="eco-card-name">日本アクセス / 三菱食品</div>
+        <div class="eco-card-desc">セブン系・ローソン系の食品卸。コンビニの店舗数が増えるほど取扱量が増える構造</div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-card-label">FINANCIAL · 金融</div>
+        <div class="eco-card-name">7銀行 / ローソン銀行</div>
+        <div class="eco-card-desc">コンビニATMで金融インフラを担う。利用者の来店頻度と連動した安定収益モデル</div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-card-label">DATA · ポイント</div>
+        <div class="eco-card-name">Ponta（KKR/三菱商事）/ nanaco</div>
+        <div class="eco-card-desc">購買データを持つポイント事業者。データの「所有者」がどこかで収益構造が変わる</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING NOTE -->
+  <div class="closing-note">
+    <div class="closing-label">INVESTOR'S NOTE — この記事の結論</div>
+    <p class="closing-text">
+      コンビニ3社のmoatを一言で整理すると：<br><br>
+      <strong>セブンは「全軸で勝つ構造」を持つ唯一の企業</strong>。日販・PB・金融・海外の全てで競合を上回っている。
+      長期投資家として見るなら、セブン&amp;アイHD全体の構造（イトーヨーカ堂問題含む）を理解しながら
+      コンビニ事業単体の強さを切り出す視点が必要だ。<br><br>
+      <strong>ローソンは「今後のmoat強化余地が最も大きい」</strong>。三菱商事による完全統合後の垂直統合が
+      どこまで進むかが、中長期的な評価軸になる。上場廃止で直接投資はできないが、
+      三菱商事株を通じた間接的なエクスポージャーとして考える価値がある。<br><br>
+      <strong>ファミマは「伊藤忠株の文脈で読む」</strong>のが正しい。コンビニ単体のmoatでは劣位だが、
+      伊藤忠の資本配分哲学と統合戦略の行方が評価の鍵になる。
+    </p>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="references-wrap">
+    <div class="references-header">
+      <span class="references-label">REFERENCES &amp; SOURCES</span>
+      <span class="references-note">— 参考・引用文献 / このランキングと分析は著者の独自見解です</span>
+    </div>
+    <div class="references-body">
+      <div class="ref-group">
+        <div class="ref-group-title">各社 公式 IR（Investor Relations）</div>
+        <div class="ref-list">
+          <div class="ref-item"><span class="ref-num">[1]</span><div><strong>セブン&amp;アイ・ホールディングス</strong> — IR情報<br><a href="https://www.7andi.com/ir/" target="_blank" rel="noopener">https://www.7andi.com/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[2]</span><div><strong>三菱商事（ローソン親会社）</strong> — 投資家情報<br><a href="https://www.mitsubishicorp.com/jp/ja/ir/" target="_blank" rel="noopener">https://www.mitsubishicorp.com/jp/ja/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[3]</span><div><strong>伊藤忠商事（ファミマ親会社）</strong> — IR・株主情報<br><a href="https://www.itochu.co.jp/ja/ir/" target="_blank" rel="noopener">https://www.itochu.co.jp/ja/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[4]</span><div><strong>セブン銀行</strong> — IR情報<br><a href="https://www.sevenbank.co.jp/corp/ir/" target="_blank" rel="noopener">https://www.sevenbank.co.jp/corp/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[5]</span><div><strong>ローソン銀行</strong> — 会社情報<br><a href="https://www.lawsonbank.jp/company/" target="_blank" rel="noopener">https://www.lawsonbank.jp/company/</a></div></div>
+        </div>
+      </div>
+      <div class="ref-group">
+        <div class="ref-group-title">業界データ・統計</div>
+        <div class="ref-list">
+          <div class="ref-item"><span class="ref-num">[6]</span><div><strong>日本フランチャイズチェーン協会</strong> — コンビニエンスストア統計データ<br><a href="https://www.jfa-fc.or.jp/particle/320.html" target="_blank" rel="noopener">https://www.jfa-fc.or.jp/particle/320.html</a></div></div>
+          <div class="ref-item"><span class="ref-num">[7]</span><div><strong>経済産業省</strong> — 商業動態統計（コンビニ売上データ）<br><a href="https://www.meti.go.jp/statistics/tyo/syoudou/" target="_blank" rel="noopener">https://www.meti.go.jp/statistics/tyo/syoudou/</a></div></div>
+        </div>
+      </div>
+      <div class="ref-disclaimer">
+        本記事のランキング・moat評価は著者の独自分析・見解であり、投資勧誘を目的とするものではありません。
+        投資判断はご自身の責任において行ってください。各数値・事実の出典は上記IRおよび各社公開資料に基づきます。
+        著作権は各出典に帰属します。
+      </div>
+    </div>
+  </div>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="../">← 論考の棚に戻る</a>
+  </div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+
+</body>
+</html>

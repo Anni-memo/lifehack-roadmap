@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="機械を歩く｜業種から歩く棚｜投資と思考の書斎"/>
+<meta property="og:description" content="機械業を、企業名の一覧ではなく、構造と問いから見るためのページ。顧客との長期関係・価格転嫁力・受注残の観点から整理する。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>機械を歩く｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --sec:#3a6a8a;--sec2:#4a8aaa;--sec3:#6aaacc;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,#0a1018 50%,#0c1820 100%);color:var(--parch);padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(58,106,138,.12) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--sec3);letter-spacing:.28em;margin-bottom:12px;opacity:.75;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.9rem,5vw,3rem);font-weight:700;line-height:1.15;color:var(--parch);text-shadow:0 2px 24px rgba(58,106,138,.2);position:relative;margin-bottom:8px;}
+.hero-title em{font-style:italic;color:var(--sec3);display:block;font-size:.45em;letter-spacing:.08em;margin-top:8px;font-weight:400;}
+.hero-lead{font-family:var(--jp);font-size:clamp(.84rem,2vw,.98rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:560px;margin:20px auto 0;}
+.hero-code{font-family:var(--mono);font-size:.58rem;color:rgba(106,170,204,.6);letter-spacing:.2em;margin-top:20px;position:relative;}
+.container{max-width:760px;margin:0 auto;padding:56px 24px 0;}
+.section{margin-bottom:60px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:20px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.question-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px;}
+.question-item{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(58,106,138,.4);}
+.question-mark{font-family:var(--mono);font-size:.58rem;color:var(--sec2);flex-shrink:0;margin-top:2px;letter-spacing:.04em;}
+.question-text{font-family:var(--jp);font-size:.87rem;color:var(--ink2);line-height:1.7;font-weight:400;}
+.callout{border-left:3px solid var(--sec2);padding:18px 22px;margin:32px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.9;font-weight:500;}
+.company-list{display:flex;flex-direction:column;gap:2px;}
+.company-item{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.25);text-decoration:none;color:inherit;}
+.company-item.coming{opacity:.55;cursor:default;}
+.company-code{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:52px;}
+.company-name{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);flex:1;}
+.company-note{font-size:.72rem;color:var(--ink3);font-weight:300;line-height:1.5;}
+.company-badge{font-family:var(--mono);font-size:.46rem;color:var(--parch4);background:rgba(26,18,8,.35);padding:2px 7px;flex-shrink:0;letter-spacing:.08em;}
+.tools-grid{display:grid;grid-template-columns:1fr;gap:2px;}
+@media(min-width:600px){.tools-grid{grid-template-columns:1fr 1fr;}}
+.tool-link{display:flex;align-items:center;gap:12px;padding:18px 20px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.tool-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.tool-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:64px;}
+.tool-name{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.tool-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;margin-top:60px;}
+.further-inner{max-width:760px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">業種から歩く棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">機械</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">INDUSTRY SHELF · SEC-35</div>
+  <div class="hero-ornament">MACHINERY · PRECISION · LONG-TERM RELATIONSHIP</div>
+  <h1 class="hero-title">機械を歩く<em>A quiet map of the sector</em></h1>
+  <p class="hero-lead">
+    顧客との長期関係が価格転嫁力をどう支えるか。<br>
+    受注残と保守サービスが収益の安定性を作る構造を問いから整理する。
+  </p>
+  <div class="hero-code">東証プライム · 機械 · SEC-35</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">WHAT THIS SHELF IS FOR</div>
+    <h2 class="section-title">この棚の使い方</h2>
+    <div class="section-body">
+      <p>機械業は、工作機械・建設機械・農業機械・空調機器・ロボットなど、非常に広い範囲をカバーします。一見すると「製造業」として同質に見えますが、稼ぎ方の構造は企業によって大きく異なります。</p>
+      <p>この業種で注目すべきは、「アフターサービス・保守の収益」です。機械そのものは景気に連動しますが、販売後の保守・消耗品・アップグレードからの収益は安定しやすい。このストック収益が積み上がっているほど、企業の収益基盤は強固になります。</p>
+      <p>また、特定の顧客産業（自動車・半導体・建設）への依存度と、グローバルでの競争力も重要な視点です。顧客産業の景気サイクルと機械メーカーの業績の連動性を理解することが分析の基本です。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">WHERE THE MOAT LIVES</div>
+    <h2 class="section-title">機械業のモートはどこに宿るか</h2>
+    <div class="section-body">
+      <p>機械業のモートは、製品の性能だけでなく、顧客との長期的な関係性の深さに宿ることが多いです。</p>
+    </div>
+    <ul class="question-list">
+      <li class="question-item">
+        <span class="question-mark">Q01</span>
+        <span class="question-text">アフターサービス・保守の収益比率はどの程度か——販売後のストック収益が高いほど、景気変動への耐性が高まる</span>
+      </li>
+      <li class="question-item">
+        <span class="question-mark">Q02</span>
+        <span class="question-text">受注残は積み上がっているか——受注残の規模と質は、今後の収益の視界を示す先行指標となる</span>
+      </li>
+      <li class="question-item">
+        <span class="question-mark">Q03</span>
+        <span class="question-text">顧客の生産ラインに深く組み込まれているか——設備の入れ替えが困難になるほど、顧客の継続率は高まる</span>
+      </li>
+      <li class="question-item">
+        <span class="question-mark">Q04</span>
+        <span class="question-text">価格転嫁力はあるか——原材料・エネルギーコストの上昇を顧客に転嫁できる交渉力があるか</span>
+      </li>
+      <li class="question-item">
+        <span class="question-mark">Q05</span>
+        <span class="question-text">グローバル競争での優位はどこにあるか——中国・韓国メーカーとの差別化要素が明確かどうか</span>
+      </li>
+    </ul>
+    <div class="callout">
+      <div class="callout-text">「機械業の本質的な競争優位は、製品の精度や信頼性だけでなく、顧客の問題を解決する能力の蓄積にある。長年の取引を通じて積み上がった『顧客の生産現場への理解』こそが、最も模倣しにくいモートである。」</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">COMPANIES IN THIS SHELF</div>
+    <h2 class="section-title">主要企業への入口</h2>
+    <div class="section-body">
+      <p>機械業を代表する企業たちは、それぞれ異なる顧客産業に向けた異なる製品群を持っています。まず各社の主力製品と顧客構造を確認してから分析を深めてください。</p>
+    </div>
+    <div class="company-list">
+      <a class="company-item" href="../../companies/komatsu/" style="text-decoration:none;color:inherit;">
+        <span class="company-code">6301</span>
+        <div>
+          <div class="company-name">小松製作所（コマツ）</div>
+          <div class="company-note">建設・鉱山機械世界2位。コムトラックスIoTでスイッチングコスト強化。スマート建機・無人化でDX先行。</div>
+        </div>
+        <span class="company-badge">分析済み →</span>
+      </a>
+      <a class="company-item" href="../../companies/daikin/" style="text-decoration:none;color:inherit;">
+        <span class="company-code">6367</span>
+        <div>
+          <div class="company-name">ダイキン工業</div>
+          <div class="company-note">空調機器世界首位。冷媒技術の無形資産5/5。海外比率85%超のグローバルチャンピオン。</div>
+        </div>
+        <span class="company-badge">分析済み →</span>
+      </a>
+      <a class="company-item" href="../../companies/dmgmori/" style="text-decoration:none;color:inherit;">
+        <span class="company-code">6141</span>
+        <div>
+          <div class="company-name">DMG森精機</div>
+          <div class="company-note">工作機械世界最大。日独統合で技術と販売網を融合。スイッチングコスト5/5のFA設備を供給。</div>
+        </div>
+        <span class="company-badge">分析済み →</span>
+      </a>
+      <a class="company-item" href="../../companies/smc/" style="text-decoration:none;color:inherit;">
+        <span class="company-code">6273</span>
+        <div>
+          <div class="company-name">SMC</div>
+          <div class="company-note">空気圧機器世界首位・営業利益率25%超。キーエンスに近いニッチトップ構造。効率的規模5/5。</div>
+        </div>
+        <span class="company-badge">分析済み →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">ANALYSIS TOOLS</div>
+    <h2 class="section-title">分析の視点へ進む</h2>
+    <div class="section-body">
+      <p>企業を個別に見るとき、この業種で特に役立つ考え方の道具を整理しました。</p>
+    </div>
+    <div class="tools-grid">
+      <a class="tool-link" href="../moat/">
+        <span class="tool-tag">MOAT</span>
+        <span class="tool-name">モートをどう見るか</span>
+        <span class="tool-arrow">→</span>
+      </a>
+      <a class="tool-link" href="../fcf/">
+        <span class="tool-tag">FCF</span>
+        <span class="tool-name">FCFとは何か</span>
+        <span class="tool-arrow">→</span>
+      </a>
+      <a class="tool-link" href="../analysis-template/">
+        <span class="tool-tag">TEMPLATE</span>
+        <span class="tool-name">企業分析テンプレート</span>
+        <span class="tool-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">業種の地形を把握したら、次は個別企業の分析へと進む。モートの概念を理解したうえで、FCFの流れを読み、テンプレートで構造を整理する——この順番で読むと、地図が精度を増す。</p>
+    <div class="further-links">
+      <a class="further-link" href="../moat/">
+        <span class="further-link-tag">MOAT</span>
+        <span class="further-link-title">モートをどう見るか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../fcf/">
+        <span class="further-link-tag">FCF</span>
+        <span class="further-link-title">FCFとは何か</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../analysis-template/">
+        <span class="further-link-tag">TEMPLATE</span>
+        <span class="further-link-title">企業分析テンプレート</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp;
+  <a href="../">業種から歩く棚へ戻る</a>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+const btn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => { btn.classList.toggle('visible', window.scrollY > 300); });
+</script>
+</body>
+</html>

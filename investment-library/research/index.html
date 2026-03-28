@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="論考の棚｜投資と思考の書斎"/>
+<meta property="og:description" content="長期投資家の視点で書かれた深い分析記事のアーカイブ。moat・FCF・資本配分の軸で企業と産業を解剖する、書斎の奥の棚。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>論考の棚｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --rust:#8b3a1a;--rust2:#c05020;
+  --green:#2a4a1a;--green2:#3d6828;
+  --blue:#1a2a4a;--blue2:#2a3d6a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(170deg,#080604 0%,#120d05 35%,#1c1408 65%,#0e0b04 100%);
+  color:var(--parch);padding:72px 24px 56px;text-align:center;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(184,144,10,.2);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 10%,rgba(184,144,10,.07) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 30% at 20% 80%,rgba(139,105,20,.05) 0%,transparent 55%),
+    radial-gradient(ellipse 40% 30% at 80% 80%,rgba(139,105,20,.05) 0%,transparent 55%);
+}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-eyebrow{font-family:var(--mono);font-size:.56rem;color:var(--gold3);letter-spacing:.45em;margin-bottom:20px;opacity:.6;position:relative;}
+.hero-title{
+  font-family:var(--serif);font-size:clamp(2.2rem,6vw,3.6rem);
+  font-weight:700;color:var(--parch);line-height:1.1;
+  letter-spacing:.04em;margin-bottom:10px;position:relative;
+  text-shadow:0 2px 30px rgba(184,144,10,.15);
+}
+.hero-title em{display:block;font-size:.42em;font-style:normal;font-family:var(--mono);color:var(--gold3);letter-spacing:.3em;margin-top:12px;opacity:.75;}
+.hero-rule{display:flex;align-items:center;gap:14px;justify-content:center;margin:28px auto;max-width:260px;position:relative;}
+.hero-rule-line{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(212,170,34,.35));}
+.hero-rule-line.r{background:linear-gradient(to left,transparent,rgba(212,170,34,.35));}
+.hero-rule-gem{color:var(--gold3);font-size:.6rem;opacity:.7;}
+.hero-desc{font-family:var(--serif);font-style:italic;font-size:clamp(.84rem,2vw,.96rem);color:var(--parch3);line-height:2;max-width:520px;margin:0 auto;position:relative;opacity:.88;}
+
+/* ── CONCEPT ── */
+.concept{background:var(--ink2);border-bottom:1px solid rgba(184,144,10,.15);padding:0 24px;}
+.concept-inner{max-width:860px;margin:0 auto;padding:28px 0;display:flex;align-items:flex-start;gap:20px;}
+.concept-icon{font-size:1.6rem;flex-shrink:0;margin-top:2px;opacity:.8;}
+.concept-body{flex:1;}
+.concept-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:8px;opacity:.75;}
+.concept-text{font-size:.82rem;color:var(--parch3);line-height:2;font-weight:300;}
+.concept-text strong{color:var(--parch);font-weight:500;}
+
+/* ── TAG FILTER ── */
+.filter-bar{background:var(--parch2);border-bottom:1px solid var(--parch4);padding:16px 24px;}
+.filter-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.filter-label{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.14em;opacity:.6;white-space:nowrap;}
+.tag-pill{
+  font-family:var(--mono);font-size:.46rem;padding:4px 12px;
+  border:1px solid var(--parch4);background:var(--parch);color:var(--ink3);
+  letter-spacing:.08em;cursor:default;border-radius:1px;
+}
+.tag-pill.moat{border-color:rgba(61,104,40,.4);color:var(--green2);background:rgba(61,104,40,.06);}
+.tag-pill.sector{border-color:rgba(42,61,106,.4);color:var(--blue2);background:rgba(42,61,106,.06);}
+.tag-pill.ecosystem{border-color:rgba(139,105,20,.4);color:var(--gold);background:rgba(139,105,20,.06);}
+
+/* ── MAIN LAYOUT ── */
+.main{max-width:860px;margin:0 auto;padding:52px 24px 80px;}
+
+/* ── SECTION HEADER ── */
+.section-header{display:flex;align-items:baseline;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--parch4);}
+.section-year{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);}
+.section-count{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.1em;opacity:.6;}
+
+/* ── ARTICLE CARDS (book-like) ── */
+.book-shelf{display:flex;flex-direction:column;gap:2px;margin-bottom:56px;}
+
+.book-card{
+  display:flex;align-items:stretch;
+  background:var(--parch2);border:1px solid var(--parch4);
+  text-decoration:none;color:inherit;
+  transition:all .22s;position:relative;
+  overflow:hidden;
+}
+.book-card:hover{background:var(--parch3);border-color:var(--gold2);transform:translateX(4px);box-shadow:var(--shadow);}
+.book-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,var(--gold) 0%,var(--gold2) 100%);
+}
+
+/* Spine (left color bar) */
+.book-card.tag-semiconductor::before{background:linear-gradient(180deg,#2a6a8a 0%,#1a4a6a 100%);}
+.book-card.tag-moat::before{background:linear-gradient(180deg,var(--green2) 0%,var(--green) 100%);}
+.book-card.tag-macro::before{background:linear-gradient(180deg,var(--rust) 0%,var(--rust2) 100%);}
+
+.book-num{
+  font-family:var(--mono);font-size:.6rem;color:var(--gold);
+  padding:20px 16px 20px 20px;min-width:52px;
+  display:flex;align-items:center;justify-content:center;
+  border-right:1px solid var(--parch3);opacity:.7;letter-spacing:.06em;
+  flex-shrink:0;
+}
+.book-body{padding:20px 22px;flex:1;}
+.book-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.book-date{font-family:var(--mono);font-size:.5rem;color:var(--ink3);letter-spacing:.06em;opacity:.65;}
+.book-tag{font-family:var(--mono);font-size:.44rem;padding:2px 8px;border:1px solid rgba(139,105,20,.3);color:var(--gold);letter-spacing:.08em;}
+.book-tag.blue{border-color:rgba(42,61,106,.35);color:var(--blue2);}
+.book-tag.green{border-color:rgba(61,104,40,.35);color:var(--green2);}
+.book-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.35;margin-bottom:6px;}
+.book-subtitle{font-size:.72rem;color:var(--ink3);line-height:1.75;font-weight:300;font-style:italic;}
+.book-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px;}
+.book-keyword{font-family:var(--mono);font-size:.42rem;padding:2px 7px;background:var(--parch3);color:var(--ink3);border:1px solid var(--parch4);letter-spacing:.06em;}
+.book-arrow{
+  display:flex;align-items:center;padding:0 20px;
+  font-family:var(--mono);font-size:.75rem;color:var(--gold3);
+  opacity:.45;flex-shrink:0;transition:opacity .2s;
+}
+.book-card:hover .book-arrow{opacity:.9;}
+
+/* ── EMPTY / COMING SOON ── */
+.shelf-empty{
+  padding:48px 32px;border:1px dashed var(--parch4);text-align:center;
+  margin-bottom:56px;
+}
+.shelf-empty-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:10px;opacity:.55;}
+.shelf-empty-text{font-size:.82rem;color:var(--ink3);font-style:italic;line-height:2;}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}
+.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">論考の棚</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-eyebrow">THE RESEARCH SHELF</div>
+  <h1 class="hero-title">
+    論考の棚
+    <em>Essays for Long-Term Investors</em>
+  </h1>
+  <div class="hero-rule">
+    <span class="hero-rule-line"></span>
+    <span class="hero-rule-gem">◆</span>
+    <span class="hero-rule-line r"></span>
+  </div>
+  <p class="hero-desc">
+    速報でも感想でもなく、長期投資家として残しておきたい<br>
+    「考え抜いた記事」だけを置く棚。<br>
+    moat・FCF・資本配分の軸で企業と産業を解剖する。
+  </p>
+</div>
+
+<!-- ── CONCEPT ── -->
+<div class="concept">
+  <div class="concept-inner">
+    <div class="concept-icon">📚</div>
+    <div class="concept-body">
+      <div class="concept-label">ABOUT THIS SHELF</div>
+      <p class="concept-text">
+        この棚には、<strong>時間が経っても読み返せる記事</strong>だけを置きます。<br>
+        ニュースは流れる。でも「判断基準を深める論考」は資産になる。<br>
+        1記事1テーマ、丁寧に書いたものだけを、ここに積み上げていきます。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ── TAG FILTER ── -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">TAG —</span>
+    <span class="tag-pill moat">moat分析</span>
+    <span class="tag-pill sector">半導体</span>
+    <span class="tag-pill ecosystem">エコシステム</span>
+    <span class="tag-pill sector">小売</span>
+    <span class="tag-pill sector">外食</span>
+    <span class="tag-pill sector">商社</span>
+    <span class="tag-pill sector">SaaS</span>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+  <div class="section-header">
+    <span class="section-year">2026年</span>
+    <span class="section-count">12 ESSAYS</span>
+  </div>
+
+  <div class="book-shelf">
+
+    <!-- Article 01 -->
+    <a class="book-card tag-semiconductor" href="tsmc-ecosystem-moat/">
+      <div class="book-num">01</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.26</span>
+          <span class="book-tag blue">半導体</span>
+          <span class="book-tag green">moat分析</span>
+          <span class="book-tag">エコシステム</span>
+        </div>
+        <div class="book-title">TSMCエコシステムのmoat解剖</div>
+        <div class="book-subtitle">ASML・KLA・TELから信越化学・アドバンテストまで——先端半導体を支える9社の競争優位を強さ順に読む</div>
+        <div class="book-tags">
+          <span class="book-keyword">ASML</span>
+          <span class="book-keyword">KLA</span>
+          <span class="book-keyword">東京エレクトロン</span>
+          <span class="book-keyword">信越化学</span>
+          <span class="book-keyword">Applied Materials</span>
+          <span class="book-keyword">SUMCO</span>
+          <span class="book-keyword">SCREEN</span>
+          <span class="book-keyword">JSR</span>
+          <span class="book-keyword">アドバンテスト</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 02 -->
+    <a class="book-card" href="convenience-store-moat/">
+      <div class="book-num">02</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.27</span>
+          <span class="book-tag green">moat分析</span>
+          <span class="book-tag">エコシステム</span>
+          <span class="book-tag">小売</span>
+        </div>
+        <div class="book-title">コンビニエコシステムのmoat解剖</div>
+        <div class="book-subtitle">セブン・ローソン・ファミマ——POS・金融・PB・物流という4軸で3社の競争優位を強さ順に読む</div>
+        <div class="book-tags">
+          <span class="book-keyword">セブン-イレブン</span>
+          <span class="book-keyword">ローソン</span>
+          <span class="book-keyword">ファミリーマート</span>
+          <span class="book-keyword">セブン銀行</span>
+          <span class="book-keyword">三菱商事</span>
+          <span class="book-keyword">伊藤忠</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+  </div>
+
+    <!-- Article 04 -->
+    <a class="book-card" href="sogo-shosha-capital/">
+      <div class="book-num">04</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.27</span>
+          <span class="book-tag">商社</span>
+          <span class="book-tag">資本配分</span>
+        </div>
+        <div class="book-title">商社株の資本配分哲学</div>
+        <div class="book-subtitle">伊藤忠・三菱商事・丸紅——ROE・FCF・自社株買い・配当という4軸で3社の哲学の違いを解剖する</div>
+        <div class="book-tags">
+          <span class="book-keyword">伊藤忠商事</span>
+          <span class="book-keyword">三菱商事</span>
+          <span class="book-keyword">丸紅</span>
+          <span class="book-keyword">ROE</span>
+          <span class="book-keyword">累進配当</span>
+          <span class="book-keyword">自社株買い</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 05 -->
+    <a class="book-card" href="buffett-shosha/">
+      <div class="book-num">05</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.27</span>
+          <span class="book-tag">投資哲学</span>
+          <span class="book-tag">商社</span>
+        </div>
+        <div class="book-title">バフェットが日本の商社株を買った理由</div>
+        <div class="book-subtitle">低PBR・高FCFイールド・累進配当・エネルギー分散——4つの理由と円建て社債戦略の巧みさを解剖する</div>
+        <div class="book-tags">
+          <span class="book-keyword">バフェット</span>
+          <span class="book-keyword">バークシャー</span>
+          <span class="book-keyword">5大商社</span>
+          <span class="book-keyword">低PBR</span>
+          <span class="book-keyword">FCFイールド</span>
+          <span class="book-keyword">円建て社債</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 03 -->
+    <a class="book-card" href="ohsho-moat/">
+      <div class="book-num">03</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.27</span>
+          <span class="book-tag green">moat分析</span>
+          <span class="book-tag">外食</span>
+          <span class="book-tag gold">株主優待</span>
+        </div>
+        <div class="book-title">餃子の王将 moat解剖</div>
+        <div class="book-subtitle">現場調理・産地管理・直営75%・価格帯独占——5大moatと株主優待×ぎょうざ倶楽部の活用術を外食チェーン比較とともに読む</div>
+        <div class="book-tags">
+          <span class="book-keyword">王将フードサービス</span>
+          <span class="book-keyword">9936</span>
+          <span class="book-keyword">ぎょうざ倶楽部</span>
+          <span class="book-keyword">サイゼリヤ</span>
+          <span class="book-keyword">現場調理</span>
+          <span class="book-keyword">大阪王将</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 06 -->
+    <a class="book-card" href="buyback-anatomy/">
+      <div class="book-num">06</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.27</span>
+          <span class="book-tag">資本配分</span>
+          <span class="book-tag">投資哲学</span>
+        </div>
+        <div class="book-title">自社株買いの解剖</div>
+        <div class="book-subtitle">「自社株買い＝良いこと」は本当か。FCF・タイミング・経営の意図という3軸で良し悪しを見分ける。</div>
+        <div class="book-tags">
+          <span class="book-keyword">自社株買い</span>
+          <span class="book-keyword">株主還元</span>
+          <span class="book-keyword">FCF</span>
+          <span class="book-keyword">バリュートラップ</span>
+          <span class="book-keyword">資本配分</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 07 -->
+    <a class="book-card" href="cheap-vs-good/">
+      <div class="book-num">07</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.27</span>
+          <span class="book-tag">投資哲学</span>
+          <span class="book-tag">長期複利</span>
+        </div>
+        <div class="book-title">「安い株」と「良い株」は違う</div>
+        <div class="book-subtitle">PERが低い株が割安とは限らない。バリュートラップの罠と長期複利が教える本当の答え。</div>
+        <div class="book-tags">
+          <span class="book-keyword">PER</span>
+          <span class="book-keyword">バリュートラップ</span>
+          <span class="book-keyword">ROE</span>
+          <span class="book-keyword">長期複利</span>
+          <span class="book-keyword">moat</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 08 -->
+    <a class="book-card tag-saas" href="cybozu-moat/">
+      <div class="book-num">08</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.28</span>
+          <span class="book-tag green">moat分析</span>
+          <span class="book-tag">SaaS</span>
+          <span class="book-tag">経営哲学</span>
+        </div>
+        <div class="book-title">サイボウズ moat解剖</div>
+        <div class="book-subtitle">kintone・Garoon・サイボウズOffice——450社パートナーエコシステム・解約率1%未満・東証プライム46%導入。PER12.7倍に沈んだ今、長期投資家として何を見るか。</div>
+        <div class="book-tags">
+          <span class="book-keyword">kintone</span>
+          <span class="book-keyword">4776</span>
+          <span class="book-keyword">ノーコード</span>
+          <span class="book-keyword">青野慶久</span>
+          <span class="book-keyword">パートナーエコシステム</span>
+          <span class="book-keyword">SaaS</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 09 -->
+    <a class="book-card tag-saas" href="cybozu-saas-future/">
+      <div class="book-num">09</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.28</span>
+          <span class="book-tag" style="background:rgba(184,48,0,.12);color:#b83000;border-color:rgba(184,48,0,.3);">AIリスク</span>
+          <span class="book-tag">SaaS</span>
+          <span class="book-tag">ノーコード</span>
+        </div>
+        <div class="book-title">kintoneは生き残るか</div>
+        <div class="book-subtitle">Claude CodeやDevinがノーコードを代替する「SaaSの死」論——実際のmoat強度マトリクスと3シナリオ（消滅15%・変容55%・強化30%）で冷静に検証する。</div>
+        <div class="book-tags">
+          <span class="book-keyword">AIエージェント</span>
+          <span class="book-keyword">ノーコード崩壊</span>
+          <span class="book-keyword">kintone</span>
+          <span class="book-keyword">SaaSの死</span>
+          <span class="book-keyword">生存シナリオ</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 10 -->
+    <a class="book-card tag-saas" href="cybozu-digital-nature/">
+      <div class="book-num">10</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.28</span>
+          <span class="book-tag" style="background:rgba(74,26,138,.12);color:#4a1a8a;border-color:rgba(74,26,138,.3);">哲学・未来論</span>
+          <span class="book-tag">SaaS</span>
+          <span class="book-tag">AI戦略</span>
+        </div>
+        <div class="book-title">デジタルネイチャーとサイボウズ</div>
+        <div class="book-subtitle">落合陽一×イーロンマスク×青野慶久の思想的対位法——3人の未来観が交差する点に、サイボウズの生存戦略の核心が宿る。デジタルネイチャー時代の製品運命と4シナリオ。</div>
+        <div class="book-tags">
+          <span class="book-keyword">落合陽一</span>
+          <span class="book-keyword">イーロンマスク</span>
+          <span class="book-keyword">青野慶久</span>
+          <span class="book-keyword">デジタルネイチャー</span>
+          <span class="book-keyword">AI戦略</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+    <!-- Article 11 -->
+    <a class="book-card tag-saas" href="cybozu-investment/">
+      <div class="book-num">11</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.28</span>
+          <span class="book-tag" style="background:rgba(106,16,16,.12);color:#6a1010;border-color:rgba(106,16,16,.3);">構造リスク</span>
+          <span class="book-tag">SaaS</span>
+          <span class="book-tag">コスト分析</span>
+        </div>
+        <div class="book-title">AIエージェントはチームを殺すか</div>
+        <div class="book-subtitle">販管費58%を占める人件費はAIで圧縮されるか。「チームワークあふれる社会」という理念は、AIが一人で仕事を完結させる時代に有効か。職種別解剖と理念の未来。</div>
+        <div class="book-tags">
+          <span class="book-keyword">人件費</span>
+          <span class="book-keyword">AIエージェント</span>
+          <span class="book-keyword">チームワーク</span>
+          <span class="book-keyword">一人会社</span>
+          <span class="book-keyword">コスト構造</span>
+          <span class="book-keyword">企業理念</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+  </div><!-- /book-shelf -->
+
+    <!-- Article 12 -->
+    <a class="book-card tag-saas" href="cybozu-verdict/">
+      <div class="book-num">12</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-date">2026.03.28</span>
+          <span class="book-tag" style="background:rgba(154,110,0,.12);color:#6a4a00;border-color:rgba(154,110,0,.3);">最終判断</span>
+          <span class="book-tag">SaaS</span>
+          <span class="book-tag">バリュエーション</span>
+        </div>
+        <div class="book-title">投資判断：サイボウズを買うか、売るか</div>
+        <div class="book-subtitle">4論考の総括——moat・AIリスク・哲学・コスト構造を統合。PSR1.5〜2倍の割安水準・条件付き買い判断・10項目チェックリスト・3シナリオ適正株価を提示する最終章。</div>
+        <div class="book-tags">
+          <span class="book-keyword">投資判断</span>
+          <span class="book-keyword">バリュエーション</span>
+          <span class="book-keyword">4776</span>
+          <span class="book-keyword">PSR</span>
+          <span class="book-keyword">カタリスト</span>
+          <span class="book-keyword">総括</span>
+        </div>
+      </div>
+      <div class="book-arrow">→</div>
+    </a>
+
+  </div><!-- /book-shelf -->
+
+  <!-- Coming Soon -->
+  <div class="shelf-empty">
+    <div class="shelf-empty-label">THE NEXT ESSAY IS BEING WRITTEN</div>
+    <p class="shelf-empty-text">次の論考を準備中です。<br>長期投資家として残す価値のある記事を、少しずつ積み上げていきます。</p>
+  </div>
+
+  <!-- サイボウズシリーズ案内 -->
+  <div style="max-width:860px;margin:0 auto 48px;padding:0 24px;">
+    <div style="border:1px solid #d8d0c0;padding:24px 28px;background:#fff;">
+      <div style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.14em;color:#5a5248;margin-bottom:8px;">SERIES · サイボウズ（4776）完全解剖</div>
+      <p style="font-size:.88rem;color:#5a5248;line-height:1.7;">Essay 08〜11はサイボウズ連続分析シリーズです。moat解剖→AIリスク→哲学的対位法→人件費・理念の順に読むと理解が深まります。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../">Library Top</a>
+    <a href="../companies/">企業分析</a>
+    <a href="../horizons/">思考を広げる棚</a>
+    <a href="../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+
+</body>
+</html>

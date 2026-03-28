@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デジタルネイチャーとサイボウズ — 落合陽一×イーロンマスク×青野慶久の思想的対位法 | 投資ライブラリ</title>
+<meta name="description" content="落合陽一のデジタルネイチャー論、イーロンマスクのAI戦略、青野慶久の「100人100通り」哲学——3人の思想がサイボウズの未来にどう交差するかを解剖する。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<style>
+:root{
+  --ink:#1a1610;
+  --parch:#f5f0e8;
+  --parch2:#ede8dc;
+  --gold:#8b6914;
+  --rust:#7a3419;
+  --green:#2a5c3f;
+  --blue:#1a3a5c;
+  --muted:#5a5248;
+  /* デジタルネイチャー固有カラー */
+  --dn:#1a0a3a;    /* 深紫：デジタルネイチャー */
+  --dn2:#2d1060;
+  --dn3:#4a1a8a;
+  --musk:#0a2a1a;  /* 深緑：マスク */
+  --musk2:#0f4a2a;
+  --aono:#1a2a50;  /* 深青：青野 */
+  --aono2:#1a3a78;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--parch);color:var(--ink);font-family:'Noto Serif JP',serif;font-size:17px;line-height:1.9;}
+a{color:var(--dn2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* ── NAV ── */
+nav{background:var(--ink);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.nav-brand{color:#e8e0d0;font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.08em;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{color:#b0a898;font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.06em;}
+.nav-links a:hover{color:#e8e0d0;text-decoration:none;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(160deg,var(--dn) 0%,var(--dn2) 40%,#2a0a5a 70%,#0a0a2a 100%);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(160,80,255,0.12) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(80,160,255,0.08) 0%,transparent 50%);pointer-events:none;}
+.hero-eyebrow{display:inline-block;background:rgba(160,80,255,0.2);border:1px solid rgba(160,80,255,0.4);color:#c8a0ff;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;padding:5px 14px;border-radius:2px;margin-bottom:20px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:600;color:#f0e8ff;line-height:1.2;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:#c8a0ff;}
+.hero-sub{color:#c0b0d8;font-size:1rem;max-width:640px;margin:0 auto 32px;line-height:1.7;}
+.hero-meta{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.hero-meta span{font-family:'DM Mono',monospace;font-size:.72rem;color:#9080b0;letter-spacing:.06em;}
+
+/* ── LAYOUT ── */
+.container{max-width:860px;margin:0 auto;padding:0 24px;}
+
+/* ── SUMMARY ── */
+.summary-wrap{background:var(--parch2);border-top:3px solid var(--dn3);padding:40px 0;}
+.summary-inner{max-width:860px;margin:0 auto;padding:0 24px;}
+.summary-inner h2{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.14em;color:var(--dn3);margin-bottom:16px;}
+.summary-text{font-size:.97rem;color:var(--muted);line-height:1.85;}
+.key-questions{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.kq-item{background:#fff;border-left:3px solid var(--dn3);padding:12px 16px;font-size:.9rem;color:var(--ink);}
+
+/* ── SECTION HEADERS ── */
+.section{padding:64px 0;}
+.section-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.16em;color:var(--muted);margin-bottom:8px;}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:600;color:var(--ink);margin-bottom:24px;line-height:1.3;}
+.section h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--ink);margin:32px 0 12px;}
+.section p{margin-bottom:16px;font-size:.97rem;}
+
+/* ── THINKER CARDS ── */
+.thinker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid #d8d0c0;margin:32px 0;}
+.thinker-card{padding:28px 24px;border-right:1px solid #d8d0c0;}
+.thinker-card:last-child{border-right:none;}
+.thinker-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;padding:3px 10px;border-radius:2px;margin-bottom:12px;}
+.badge-dn{background:rgba(74,26,138,0.12);color:var(--dn3);border:1px solid rgba(74,26,138,0.3);}
+.badge-musk{background:rgba(15,74,42,0.12);color:var(--musk2);border:1px solid rgba(15,74,42,0.3);}
+.badge-aono{background:rgba(26,58,120,0.12);color:var(--aono2);border:1px solid rgba(26,58,120,0.3);}
+.thinker-card h3{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:600;margin:0 0 8px;color:var(--ink);}
+.thinker-card .role{font-size:.8rem;color:var(--muted);margin-bottom:12px;}
+.thinker-card p{font-size:.88rem;color:var(--muted);line-height:1.7;margin:0;}
+
+/* ── QUOTE BLOCKS ── */
+.quote-block{margin:32px 0;padding:28px 32px;position:relative;}
+.quote-dn{background:linear-gradient(135deg,rgba(74,26,138,0.06) 0%,rgba(26,10,58,0.04) 100%);border-left:4px solid var(--dn3);}
+.quote-musk{background:linear-gradient(135deg,rgba(15,74,42,0.06) 0%,rgba(10,42,26,0.04) 100%);border-left:4px solid var(--musk2);}
+.quote-aono{background:linear-gradient(135deg,rgba(26,58,120,0.06) 0%,rgba(26,42,80,0.04) 100%);border-left:4px solid var(--aono2);}
+.quote-block blockquote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;line-height:1.6;color:var(--ink);margin-bottom:12px;}
+.quote-source{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:.06em;}
+
+/* ── AXIS TABLE (3×n comparison) ── */
+.axis-table{width:100%;border-collapse:collapse;margin:32px 0;font-size:.88rem;}
+.axis-table thead th{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;padding:10px 14px;text-align:left;border-bottom:2px solid var(--ink);}
+.th-dn{color:var(--dn3);}
+.th-musk{color:var(--musk2);}
+.th-aono{color:var(--aono2);}
+.axis-table tbody tr{border-bottom:1px solid #d8d0c0;}
+.axis-table tbody tr:hover{background:#faf7f0;}
+.axis-table td{padding:12px 14px;vertical-align:top;line-height:1.6;}
+.axis-table td:first-child{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);letter-spacing:.06em;white-space:nowrap;}
+
+/* ── DIGITAL NATURE DIAGRAM ── */
+.dn-diagram{background:linear-gradient(160deg,var(--dn) 0%,#1a0a3a 100%);border-radius:4px;padding:40px 32px;margin:32px 0;color:#f0e8ff;}
+.dn-diagram h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#c8a0ff;margin-bottom:24px;text-align:center;}
+.dn-layers{display:flex;flex-direction:column;gap:0;max-width:540px;margin:0 auto;}
+.dn-layer{padding:14px 20px;text-align:center;font-size:.88rem;}
+.layer-1{background:rgba(160,80,255,0.3);border:1px solid rgba(160,80,255,0.5);}
+.layer-2{background:rgba(120,60,200,0.25);border:1px solid rgba(120,60,200,0.4);border-top:none;}
+.layer-3{background:rgba(80,40,160,0.2);border:1px solid rgba(80,40,160,0.35);border-top:none;}
+.layer-4{background:rgba(40,20,100,0.25);border:1px solid rgba(40,20,100,0.4);border-top:none;}
+.layer-label{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:#c8a0ff;display:block;margin-bottom:4px;}
+.layer-desc{color:#d8ccf0;line-height:1.5;}
+
+/* ── SCENARIO MAP ── */
+.scenario-map{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0;}
+.scenario-card{padding:24px;border-radius:3px;}
+.sc-integrate{background:linear-gradient(135deg,rgba(42,92,63,0.08),rgba(26,58,40,0.04));border:1px solid rgba(42,92,63,0.3);}
+.sc-compete{background:linear-gradient(135deg,rgba(122,52,25,0.08),rgba(90,30,10,0.04));border:1px solid rgba(122,52,25,0.3);}
+.sc-niche{background:linear-gradient(135deg,rgba(26,58,120,0.08),rgba(26,42,80,0.04));border:1px solid rgba(26,58,120,0.3);}
+.sc-disrupt{background:linear-gradient(135deg,rgba(74,26,138,0.08),rgba(50,10,80,0.04));border:1px solid rgba(74,26,138,0.3);}
+.scenario-card h4{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.08em;margin-bottom:8px;}
+.sc-integrate h4{color:var(--green);}
+.sc-compete h4{color:var(--rust);}
+.sc-niche h4{color:var(--aono2);}
+.sc-disrupt h4{color:var(--dn3);}
+.scenario-card p{font-size:.87rem;color:var(--muted);line-height:1.6;margin:0;}
+
+/* ── PRODUCT FATE TABLE ── */
+.fate-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.88rem;}
+.fate-table thead th{background:var(--ink);color:#e8e0d0;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;padding:10px 14px;text-align:left;}
+.fate-table tbody tr{border-bottom:1px solid #d8d0c0;}
+.fate-table tbody tr:hover{background:#faf7f0;}
+.fate-table td{padding:11px 14px;vertical-align:top;line-height:1.5;}
+.fate-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:.68rem;padding:2px 8px;border-radius:2px;white-space:nowrap;}
+.fate-evolve{background:#e8f5ee;color:#1a5a2a;}
+.fate-niche{background:#e8eef8;color:#1a3a78;}
+.fate-risk{background:#fdf0e8;color:#7a3419;}
+.fate-new{background:#f0e8ff;color:#4a1a8a;}
+
+/* ── TENSION MAP ── */
+.tension-wrap{background:var(--parch2);border-radius:4px;padding:32px;margin:32px 0;}
+.tension-wrap h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:20px;}
+.tension-row{display:grid;grid-template-columns:1fr 40px 1fr;gap:8px;align-items:center;margin-bottom:12px;}
+.tension-left{background:rgba(74,26,138,0.08);border:1px solid rgba(74,26,138,0.2);padding:10px 14px;font-size:.88rem;border-radius:2px;}
+.tension-vs{text-align:center;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);}
+.tension-right{background:rgba(26,58,120,0.08);border:1px solid rgba(26,58,120,0.2);padding:10px 14px;font-size:.88rem;border-radius:2px;}
+
+/* ── INSIGHT BOX ── */
+.insight-box{background:var(--ink);color:#e8e0d0;padding:32px 36px;margin:32px 0;border-radius:3px;}
+.insight-box .insight-label{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.14em;color:#9080b0;margin-bottom:12px;}
+.insight-box p{font-size:.97rem;line-height:1.8;color:#d8d0f0;}
+.insight-box strong{color:#c8a0ff;}
+
+/* ── INVESTMENT SIGNAL ── */
+.signal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:24px 0;}
+.signal-card{padding:20px;border-radius:3px;text-align:center;}
+.sig-bull{background:#e8f5ee;border:1px solid rgba(42,92,63,0.3);}
+.sig-bear{background:#fdf0e8;border:1px solid rgba(122,52,25,0.3);}
+.sig-watch{background:#f0e8ff;border:1px solid rgba(74,26,138,0.3);}
+.signal-card .sig-icon{font-size:1.4rem;margin-bottom:8px;}
+.signal-card h4{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;margin-bottom:6px;}
+.sig-bull h4{color:var(--green);}
+.sig-bear h4{color:var(--rust);}
+.sig-watch h4{color:var(--dn3);}
+.signal-card p{font-size:.82rem;color:var(--muted);line-height:1.5;margin:0;}
+
+/* ── CURATOR'S VOICE ── */
+.curator{background:linear-gradient(135deg,var(--dn) 0%,#0a0a2a 100%);color:#f0e8ff;padding:48px 40px;margin:0;}
+.curator-inner{max-width:860px;margin:0 auto;}
+.curator-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:#9080b0;margin-bottom:16px;}
+.curator h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#c8a0ff;margin-bottom:20px;font-style:italic;}
+.curator p{font-size:.97rem;line-height:1.9;color:#d0c8e8;margin-bottom:14px;}
+.curator strong{color:#e8e0ff;}
+
+/* ── REFERENCES ── */
+.references{padding:48px 0;border-top:1px solid #d8d0c0;}
+.references h3{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.14em;color:var(--muted);margin-bottom:16px;}
+.ref-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ref-list li{font-size:.82rem;color:var(--muted);padding-left:16px;position:relative;line-height:1.6;}
+.ref-list li::before{content:'—';position:absolute;left:0;color:#b0a898;}
+
+/* ── BACK LINK ── */
+.back-link{padding:32px 0;text-align:center;}
+.back-link a{font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.1em;color:var(--muted);border:1px solid #c8c0b0;padding:10px 24px;border-radius:2px;transition:all .2s;}
+.back-link a:hover{background:var(--ink);color:#e8e0d0;border-color:var(--ink);text-decoration:none;}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--ink);color:#5a5248;padding:32px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;}
+.site-footer a{color:#7a7068;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid #d8d0c0;margin:0;}
+
+@media(max-width:640px){
+  .thinker-grid{grid-template-columns:1fr;}
+  .thinker-card{border-right:none;border-bottom:1px solid #d8d0c0;}
+  .thinker-card:last-child{border-bottom:none;}
+  .scenario-map{grid-template-columns:1fr;}
+  .tension-row{grid-template-columns:1fr;gap:4px;}
+  .tension-vs{text-align:left;}
+  nav{padding:12px 16px;}
+  .hero{padding:48px 16px 40px;}
+  .section{padding:40px 0;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">INVESTMENT LIBRARY</span>
+  <div class="nav-links">
+    <a href="../../">← Research</a>
+    <a href="../../../">Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">ESSAY 10 · CYBOZU SERIES · DIGITAL PHILOSOPHY</div>
+  <h1>デジタルネイチャーと<br><em>サイボウズ</em></h1>
+  <p class="hero-sub">落合陽一 × イーロンマスク × 青野慶久の思想的対位法——3人の未来観が交差する点に、サイボウズの生存戦略の核心が宿る。</p>
+  <div class="hero-meta">
+    <span>2026-03-28 公開</span>
+    <span>読了 約17分</span>
+    <span>哲学・戦略・未来論</span>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <h2>THIS ESSAY IN BRIEF</h2>
+    <p class="summary-text">
+      AIエージェントの台頭は、テクノロジー企業の「思想」を試している。コードを書けるAI、組織を動かすAI——これらが現実になるとき、企業の存在意義はソフトウェアの機能ではなく、その企業が何のために存在するかという哲学に収斂する。落合陽一の「デジタルネイチャー」論、イーロンマスクの「物理世界を制す者がAIを制す」戦略、青野慶久の「100人100通りの働き方」哲学——3つの思想がサイボウズの未来にどう交差するかを解剖する。
+    </p>
+    <div class="key-questions">
+      <div class="kq-item">落合陽一はサイボウズをどう評価しているか？</div>
+      <div class="kq-item">マスクの戦略はSaaS企業に何を意味するか？</div>
+      <div class="kq-item">青野哲学はAI時代に有効か？</div>
+      <div class="kq-item">3思想の交差点に何が生まれるか？</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: 3人の思想家 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 01</div>
+    <h2>3人の思想家とその核心命題</h2>
+    <p>
+      未来を語る人間は無数にいる。だが「未来を語りながら現在を変えている」人間は稀だ。落合陽一・イーロンマスク・青野慶久——この3人は、それぞれ異なる座標から、テクノロジーと人間の関係を再定義しようとしている。
+    </p>
+
+    <div class="thinker-grid">
+      <div class="thinker-card">
+        <span class="thinker-badge badge-dn">DIGITAL NATURE</span>
+        <h3>落合陽一</h3>
+        <p class="role">メディアアーティスト・研究者・実業家（1987年生）</p>
+        <p>「デジタルネイチャー」——自然とデジタルの境界が消え、コンピューターが「第2の自然」になる世界を予言。「魔法のような21世紀」では人間とAIが共に存在し、仕事の性質そのものが変容する。2026年現在、AIエージェント時代を最も早く予見した日本人知識人の一人。</p>
+      </div>
+      <div class="thinker-card">
+        <span class="thinker-badge badge-musk">PHYSICAL SUPREMACY</span>
+        <h3>イーロンマスク</h3>
+        <p class="role">Tesla / SpaceX / xAI / X 創業者（1971年生）</p>
+        <p>「物理世界の制御こそがAIの制御」——デジタルが物理を支配する時代、エネルギー・輸送・製造の物理インフラを握る者がAIの実装力を持つ。Grokの急速な進化、Tesla Botの開発、xAIのスーパーコンピューター建設——すべてが「物理×AI」の統合戦略。</p>
+      </div>
+      <div class="thinker-card">
+        <span class="thinker-badge badge-aono">HUMAN-CENTRIC</span>
+        <h3>青野慶久</h3>
+        <p class="role">サイボウズ株式会社 代表取締役社長（1971年生）</p>
+        <p>「100人100通りの働き方」——画一的な働き方を拒絶し、個人の多様性を組織の力に変える。「チームワークあふれる社会を作る」というビジョンは、AI時代においても「人間の協働」を中心に置く。育児・多様性・副業推進などの先進的人事制度は日本企業の異端であり続けた。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 2: 落合陽一のデジタルネイチャー論 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 02</div>
+    <h2>落合陽一のデジタルネイチャー論——「道具」が「自然」になるとき</h2>
+
+    <p>
+      落合陽一の「デジタルネイチャー」は、単なる技術予測ではない。それは人間の認識論そのものへの問いかけだ。自然とはもともと人間が制御できないものだった。火は燃え、川は氾濫し、疫病は蔓延した。やがて人間はそれらを制御し始めた——農業、治水、医学。そして今、デジタルが「自然」になろうとしている。
+    </p>
+
+    <div class="quote-block quote-dn">
+      <blockquote>「20世紀は人間がコンピューターに合わせる時代だった。21世紀はコンピューターが人間に合わせる時代だ。その先には、コンピューターと人間の区別がなくなる世界がある。」</blockquote>
+      <span class="quote-source">落合陽一『デジタルネイチャー』（2018年）の概念を要約</span>
+    </div>
+
+    <h3>デジタルネイチャーの4層構造</h3>
+    <p>落合の思想を構造化すると、4つの層として理解できる：</p>
+
+    <div class="dn-diagram">
+      <h3>デジタルネイチャー：4つの層</h3>
+      <div class="dn-layers">
+        <div class="dn-layer layer-1">
+          <span class="layer-label">LAYER 4：BEING（存在）</span>
+          <span class="layer-desc">人間とAIが共に「存在」する世界——道具と使用者の区別が消滅</span>
+        </div>
+        <div class="dn-layer layer-2">
+          <span class="layer-label">LAYER 3：AUGMENTATION（拡張）</span>
+          <span class="layer-desc">人間の知覚・認知・身体がデジタルによって拡張される段階</span>
+        </div>
+        <div class="dn-layer layer-3">
+          <span class="layer-label">LAYER 2：AUTOMATION（自動化）</span>
+          <span class="layer-desc">反復的・定型的タスクがAIに移譲される——現在進行中</span>
+        </div>
+        <div class="dn-layer layer-4">
+          <span class="layer-label">LAYER 1：DIGITIZATION（デジタル化）</span>
+          <span class="layer-desc">アナログ情報のデジタル変換——20世紀後半に完成</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>AIエージェント時代における落合の核心的予言</h3>
+    <p>
+      落合が繰り返し強調するのは「仕事の性質変化」だ。2026年のAIエージェント時代において、彼の予言は実現しつつある。Claude CodeやCursorがコードを書き、Devinがソフトウェアエンジニアの仕事を代替し始めた。これは「仕事の消滅」ではなく「仕事の再定義」だと落合は言う。
+    </p>
+
+    <div class="quote-block quote-dn">
+      <blockquote>「AIが得意なのは最適化だ。人間が得意なのは意味付けだ。AIが最適化を担い、人間が意味を生む——その役割分担が明確になるとき、仕事は豊かになる。」</blockquote>
+      <span class="quote-source">落合陽一の複数の講演・著作からの概念整理</span>
+    </div>
+
+    <h3>落合はサイボウズをどう見るか</h3>
+    <p>
+      落合は「個の多様性」と「デジタルの可能性」を重ねて語る。サイボウズの「100人100通り」哲学は、落合的な意味での「人間の多様性をデジタルが支援する」実例だ。ただし落合は同時に厳しい問いも投げかける——「その多様性をAIが直接管理できるなら、中間のソフトウェアは要らないのではないか」。
+    </p>
+    <p>
+      この問いに答えられるかどうかが、サイボウズのAI時代の生存を左右する。落合の視座では、サイボウズは「LAYER 2（自動化）」から「LAYER 3（拡張）」へ進化できるかどうかの分岐点に立っている。
+    </p>
+
+    <div class="quote-block quote-dn">
+      <blockquote>「道具を作る会社から、人間の能力を拡張するインフラを作る会社へ——そこに巨大な機会がある。」</blockquote>
+      <span class="quote-source">落合陽一が示すSaaS企業の進化論的方向性</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 3: マスクのAI戦略 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 03</div>
+    <h2>イーロンマスクのAI戦略——物理世界を制す者がデジタルを制す</h2>
+
+    <p>
+      マスクをシリコンバレーの通常のテック起業家と分けるのは「物理世界への執着」だ。ソフトウェアは無限に複製できる。だがロケットは、電気自動車は、人型ロボットは、エネルギーは——物理制約の中で戦う。マスクはこの非対称性を武器にする。
+    </p>
+
+    <div class="quote-block quote-musk">
+      <blockquote>「AIの究極の制約は物理世界だ。どれほど賢いAIも、電力なしには動かず、データセンターなしには思考できず、ロボットなしには物を動かせない。その物理インフラを持つ者が、AI時代の覇権を握る。」</blockquote>
+      <span class="quote-source">マスクの複数のインタビューと戦略発言から構成</span>
+    </div>
+
+    <h3>マスクの5つのAI戦略軸</h3>
+    <p>マスクのAI戦略は5つの軸で理解できる：</p>
+
+    <table class="axis-table">
+      <thead>
+        <tr>
+          <th>軸</th>
+          <th>具体的展開</th>
+          <th>SaaS企業への示唆</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>① エネルギー支配</td>
+          <td>Tesla Megapack・太陽光で独自電力網。xAIスーパーコンピューターは自前エネルギー</td>
+          <td>クラウドコスト依存のSaaSは電力コスト上昇リスクを外部委託</td>
+        </tr>
+        <tr>
+          <td>② データ垂直統合</td>
+          <td>Tesla車の走行データ（1兆マイル超）でGrok/自動運転を強化</td>
+          <td>サイボウズの業務データ（SMB300万社）が同様の垂直統合の核になりうる</td>
+        </tr>
+        <tr>
+          <td>③ 物理×デジタル融合</td>
+          <td>Tesla Bot（Optimus）でAIを物理世界に展開。工場・物流・家庭を標的</td>
+          <td>「純デジタルSaaS」は物理世界への展開がないと差別化が困難になる</td>
+        </tr>
+        <tr>
+          <td>④ モデル開放戦略</td>
+          <td>Grok一部オープンソース化でエコシステム構築。完全クローズのOpenAIと差別化</td>
+          <td>サイボウズのOSS戦略（kintone Plugin、Cybozu OSS）と方向性が共鳴</td>
+        </tr>
+        <tr>
+          <td>⑤ X（旧Twitter）の情報支配</td>
+          <td>テキスト・音声・動画の全メディアを統合。AIトレーニングデータとして活用</td>
+          <td>業務コミュニケーション（Garoon・kintone）のデータ価値が同様に重要に</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>マスク戦略がSaaS企業に突きつける問い</h3>
+    <p>
+      マスクの戦略を見ると、SaaS企業の未来像が浮かび上がる。AIエージェントの台頭でソフトウェアの「機能」は急速にコモディティ化する。差別化の源泉は「機能」から「データ」へ、「データ」から「物理世界との統合」へシフトする。
+    </p>
+
+    <div class="insight-box">
+      <div class="insight-label">MUSK INSIGHT FOR CYBOZU</div>
+      <p>マスクが示す最重要教訓は「<strong>データの垂直統合</strong>」だ。Teslaの競争優位の核心は車ではなく、1兆マイルの走行データだ。サイボウズにとって、300万社のSMBが日々生成する業務データ——承認フロー、コミュニケーションパターン、プロジェクト管理データ——は、AIモデルのトレーニングに使える宝の山だ。この資産をAIに統合できるかどうかが、マスク型の視点では最重要な問いになる。</p>
+    </div>
+
+    <h3>マスクとサイボウズ：戦略的距離の計測</h3>
+    <p>
+      しかしマスクとサイボウズには根本的な哲学的距離がある。マスクは「テクノロジーが人類を救う」というユートピア的テック観を持つ。青野は「テクノロジーは手段であり、目的は人間の働き方の多様性にある」と言う。この距離は単なる経営スタイルの違いではない——AIへの投資判断、データ活用の倫理、エコシステム構築の方法論に直接影響する。
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 4: 青野哲学 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 04</div>
+    <h2>青野慶久の哲学——「100人100通り」はAI時代に有効か</h2>
+
+    <p>
+      青野慶久は日本の経営者の中でも独特の存在だ。選択的夫婦別姓の推進、育児休暇の前例なき推奨、副業・兼業の積極的許容——これらは単なる「従業員福利の改善」ではなく、「画一性への反抗」という思想的背景を持つ。
+    </p>
+
+    <div class="quote-block quote-aono">
+      <blockquote>「会社は社員のためにあるのではなく、社員は会社のためにあるのでもない。良い仕事は良い環境から生まれる。良い環境とは多様性を認める環境だ。」</blockquote>
+      <span class="quote-source">青野慶久の複数のインタビューと著書『チームのことだけ、考えた。』から</span>
+    </div>
+
+    <h3>青野哲学の3つの柱</h3>
+
+    <div class="thinker-grid">
+      <div class="thinker-card">
+        <span class="thinker-badge badge-aono">PILLAR 01</span>
+        <h3>多様性の内部化</h3>
+        <p class="role">「100人100通りの働き方」制度</p>
+        <p>育児・介護・副業・留学・完全在宅——働き方を個人単位で設計する。日本企業では異例の2000年代からの取り組み。これは単なる制度ではなく、「組織とは何か」という問いへの答えだ。</p>
+      </div>
+      <div class="thinker-card">
+        <span class="thinker-badge badge-aono">PILLAR 02</span>
+        <h3>透明経営</h3>
+        <p class="role">情報公開・全社員参加型の意思決定</p>
+        <p>財務情報の社内全公開、全社員参加の経営方針決定プロセス。「情報格差が権力格差を生む」という問題意識から来る。AIエージェント時代では「情報透明性」が組織信頼の核になる。</p>
+      </div>
+      <div class="thinker-card">
+        <span class="thinker-badge badge-aono">PILLAR 03</span>
+        <h3>社会変革志向</h3>
+        <p class="role">企業を超えた社会実装</p>
+        <p>選択的夫婦別姓の法廷闘争、自民党への政策提言。「会社の利益だけでなく社会を変える」という志向は、青野の経営を他の日本人経営者と根本的に区別する。</p>
+      </div>
+    </div>
+
+    <h3>AI時代における青野哲学の検証</h3>
+    <p>
+      青野の哲学はAI時代において3つの側面で検証される：
+    </p>
+
+    <p>
+      <strong>強化される側面：</strong>AIが定型業務を代替すると、人間に残る仕事は「創造性」と「対人関係」だ。多様なバックグラウンドを持つチームは、こうした高次のタスクで優位性を発揮する。「100人100通り」が生む多様性は、AI補完的な組織能力として価値が上がる。
+    </p>
+    <p>
+      <strong>試される側面：</strong>AIエージェントが個人の業務を直接最適化できるとき、「組織が多様性を管理する」必要性は薄れる。各自がAIと1対1で働けるなら、サイボウズが提供する「チームコラボレーション」の価値は何か——この問いは青野哲学の核心を突く。
+    </p>
+    <p>
+      <strong>超えるべき側面：</strong>「チームワーク」という概念そのものがAIの登場で再定義される。人間×人間のチームワークから、人間×AIエージェントのチームワークへ——青野のビジョンをここまで拡張できるかどうかが問われている。
+    </p>
+
+    <div class="quote-block quote-aono">
+      <blockquote>「技術は変わる。でも人間が誰かと一緒に何かを作りたいという欲求は変わらない。その欲求をどう支援するかが、私たちの仕事だ。」</blockquote>
+      <span class="quote-source">青野慶久の思想的立場を反映した発言（概念的引用）</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 5: 3思想の対比表 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 05</div>
+    <h2>3思想の対位法——交差点と緊張</h2>
+
+    <p>
+      3人の思想は単純に「誰が正しいか」という問いで比較できない。それぞれ異なる軸で世界を見ており、その交差点と緊張関係こそが、サイボウズの戦略的選択肢を照らし出す。
+    </p>
+
+    <table class="axis-table">
+      <thead>
+        <tr>
+          <th>軸</th>
+          <th class="th-dn">落合陽一（デジタルネイチャー）</th>
+          <th class="th-musk">マスク（物理×AI支配）</th>
+          <th class="th-aono">青野（人間中心）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AIの役割</td>
+          <td>自然の一部として共存</td>
+          <td>物理世界の制御手段</td>
+          <td>人間協働の支援ツール</td>
+        </tr>
+        <tr>
+          <td>仕事の未来</td>
+          <td>意味付けと創造が人間の仕事</td>
+          <td>肉体労働はロボットへ、知識労働はAIへ</td>
+          <td>多様な人間が協働する形は残る</td>
+        </tr>
+        <tr>
+          <td>組織の形</td>
+          <td>流動的・プロジェクト型</td>
+          <td>極端に効率化された少人数組織</td>
+          <td>多様性を内包する柔軟な組織</td>
+        </tr>
+        <tr>
+          <td>データ観</td>
+          <td>自然の一部として循環するデータ</td>
+          <td>競争優位の核心的資産</td>
+          <td>透明性と信頼の基盤</td>
+        </tr>
+        <tr>
+          <td>日本企業観</td>
+          <td>「魔法のような技術」を作れる潜在力あり</td>
+          <td>動き遅い・変化に弱い（批判的）</td>
+          <td>正しい方向へ変革できる（楽観的）</td>
+        </tr>
+        <tr>
+          <td>SaaSの未来</td>
+          <td>インターフェース層は陳腐化、文脈理解層が重要に</td>
+          <td>物理統合なきSaaSは長期的に弱い</td>
+          <td>人間の協働を支援するSaaSには価値がある</td>
+        </tr>
+        <tr>
+          <td>サイボウズへの評価</td>
+          <td>拡張の方向性次第で化ける可能性</td>
+          <td>データ資産の活用次第（中立）</td>
+          <td>哲学的に正しい方向に進んでいる</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3思想の緊張関係</h3>
+    <div class="tension-wrap">
+      <h3>緊張の地図：思想的衝突点</h3>
+      <div class="tension-row">
+        <div class="tension-left">落合：コンピューターと人間の境界が消える</div>
+        <div class="tension-vs">VS</div>
+        <div class="tension-right">青野：人間の多様性こそが価値の源泉</div>
+      </div>
+      <div class="tension-row">
+        <div class="tension-left">マスク：効率化で組織を極小化</div>
+        <div class="tension-vs">VS</div>
+        <div class="tension-right">青野：多様な組織が強い組織</div>
+      </div>
+      <div class="tension-row">
+        <div class="tension-left">マスク：データは競争優位の武器</div>
+        <div class="tension-vs">VS</div>
+        <div class="tension-right">青野：データは透明性と信頼の道具</div>
+      </div>
+      <div class="tension-row">
+        <div class="tension-left">落合：インターフェース層の陳腐化</div>
+        <div class="tension-vs">VS</div>
+        <div class="tension-right">マスク：物理×デジタル統合でインターフェース消滅</div>
+      </div>
+    </div>
+
+    <h3>3思想の交差点：サイボウズの機会</h3>
+    <p>
+      しかし3人が一致する点もある。それがサイボウズの最大の機会だ：
+    </p>
+    <p>
+      <strong>一致点①：人間は「意味付け」と「関係性」を求め続ける。</strong>落合は「AIが最適化を担い人間が意味を生む」と言い、マスクも「創造性は人間に残る」と認め、青野は「人間の協働欲求は不変」と主張する。この一致点は、「業務の意味付けと人間関係の支援」というサイボウズのコアバリューが長期的に有効であることを示唆する。
+    </p>
+    <p>
+      <strong>一致点②：AIとの共存は不可避であり、その設計が差別化になる。</strong>3人全員が「AIを拒絶する」選択肢を否定する。問題はAIをどう設計するかだ。サイボウズが「人間の協働を支援するAI」の設計で独自のポジションを取れるなら、3思想すべてに整合する戦略になる。
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 6: デジタルネイチャー×サイボウズの製品マトリクス -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 06</div>
+    <h2>デジタルネイチャー時代のサイボウズ製品運命</h2>
+
+    <p>
+      3思想の交差点から見たとき、サイボウズの各製品はどのような命運をたどるか。製品ごとに「デジタルネイチャー適合性」「マスク型データ価値」「青野型ヒューマンバリュー」の3軸で評価する。
+    </p>
+
+    <table class="fate-table">
+      <thead>
+        <tr>
+          <th>製品</th>
+          <th>デジタルネイチャー適合性</th>
+          <th>データ資産価値</th>
+          <th>ヒューマンバリュー</th>
+          <th>総合運命</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>kintone</strong></td>
+          <td>中：ノーコードはAI代替リスクあり、但し文脈設計能力は残る</td>
+          <td>高：SMBの業務フローデータは希少</td>
+          <td>高：「現場の人間が作る」哲学と合致</td>
+          <td><span class="fate-badge fate-evolve">進化・変容</span></td>
+        </tr>
+        <tr>
+          <td><strong>Garoon</strong></td>
+          <td>低：グループウェア機能はAI直接代替の対象</td>
+          <td>中：コミュニケーションデータは有価値</td>
+          <td>中：スケジュール管理の人間的価値は低下</td>
+          <td><span class="fate-badge fate-niche">ニッチ維持</span></td>
+        </tr>
+        <tr>
+          <td><strong>kintone AI Agent連携</strong>（開発中）</td>
+          <td>高：業務フロー×AIエージェントの最前線</td>
+          <td>最高：AIトレーニングデータとして最高品質</td>
+          <td>高：人間の業務設計能力を拡張</td>
+          <td><span class="fate-badge fate-new">新たな核</span></td>
+        </tr>
+        <tr>
+          <td><strong>Cybozu Office</strong></td>
+          <td>最低：機能がAI標準機能に完全包含されつつある</td>
+          <td>低：汎用的すぎてデータ差別化困難</td>
+          <td>中：慣れ親しんだUXの価値は残る</td>
+          <td><span class="fate-badge fate-risk">防衛戦</span></td>
+        </tr>
+        <tr>
+          <td><strong>kintone海外展開</strong></td>
+          <td>中：ノーコードの海外競合は強力</td>
+          <td>高：グローバルSMBデータは希少</td>
+          <td>中：文化的障壁をどう超えるか</td>
+          <td><span class="fate-badge fate-evolve">チャレンジ継続</span></td>
+        </tr>
+        <tr>
+          <td><strong>Garoon AI機能拡張</strong></td>
+          <td>中：AIがスケジュール最適化を担うことで価値向上</td>
+          <td>中：組織内コミュニケーションパターンのデータ</td>
+          <td>高：人間間の調整コスト削減に直結</td>
+          <td><span class="fate-badge fate-niche">段階的強化</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      この分析から見えるのは、サイボウズの未来は「kintone AI Agent連携」という新たな核を中心に組み替えられる可能性だ。既存製品の防衛線を維持しながら、「AIエージェントの業務組み込みのための標準インフラ」としてのポジションを取れるかどうかが、3思想すべてに対する回答になる。
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 7: 4つのシナリオ -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 07</div>
+    <h2>4つの未来シナリオ</h2>
+
+    <p>
+      3思想の交差点から、サイボウズの2030年代に向けた4つのシナリオを描く。
+    </p>
+
+    <div class="scenario-map">
+      <div class="scenario-card sc-integrate">
+        <h4>SCENARIO A：AIネイティブ統合（確率 30%）</h4>
+        <p>kintoneがAIエージェントの「業務理解レイヤー」として深化。Claude/GPTがkintone APIを通じてSMBの業務を直接執行。サイボウズは「AIの手足」としてのプラットフォームへ転換。データ価値が最大化し時価総額が現在の2〜3倍へ。</p>
+      </div>
+      <div class="scenario-card sc-compete">
+        <h4>SCENARIO B：防衛的現状維持（確率 35%）</h4>
+        <p>AI統合を中途半端に進め、既存顧客基盤の防衛に終始。kintoneは既存SMBに愛用されるが新規獲得が減速。海外は苦戦。2030年代に成長が鈍化し株価は低迷。最もリスクが高い「動いているように見えて止まっている」シナリオ。</p>
+      </div>
+      <div class="scenario-card sc-niche">
+        <h4>SCENARIO C：日本特化ニッチ強者（確率 25%）</h4>
+        <p>グローバル展開を縮小し、日本のSMBと自治体に深く特化。日本語・日本固有の業務慣行・規制対応で圧倒的シェアを維持。低成長だが安定した高収益モデル。「日本版ServiceNow」的な存在感。マスク型の視点では評価低いが落合・青野型では合理的。</p>
+      </div>
+      <div class="scenario-card sc-disrupt">
+        <h4>SCENARIO D：哲学的ピボット（確率 10%）</h4>
+        <p>「チームワーク支援」というコアを保ちながら、製品を大幅に転換。kintoneを廃止し「AIエージェントチーム管理プラットフォーム」として全面リニューアル。高リスク・高リターン。青野の哲学を最も大胆に体現するが、既存顧客基盤を失うリスク。</p>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">SYNTHESIS</div>
+      <p>3つの思想的視座から最も整合性が高いのは<strong>SCENARIO A</strong>だが、実現には「データ戦略の大胆な転換」が必要だ。現在のサイボウズはSCENARIO BとSCENARIO Cの中間にいる。SCENARIO Aへ移行するためには、青野的な「人間協働の哲学」を落合的な「デジタルネイチャーとの統合」へ拡張し、マスク的な「データの垂直統合」を実装する——三者の知恵を統合した経営が求められる。</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 8: 投資家への示唆 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 08</div>
+    <h2>投資家への示唆——哲学から読む株価</h2>
+
+    <p>
+      思想的分析を投資判断に接続する。3人の思想家の視座から見たサイボウズの「投資シグナル」を整理する。
+    </p>
+
+    <div class="signal-grid">
+      <div class="signal-card sig-bull">
+        <div class="sig-icon">▲</div>
+        <h4>BULL SIGNAL</h4>
+        <p>青野哲学の一貫性が顧客ロイヤルティを生む。「意味のある仕事」需要は増加。SMBのデジタル化は日本で10年続くトレンド。AI統合の方向性が正しければ非線形成長。</p>
+      </div>
+      <div class="signal-card sig-bear">
+        <div class="sig-icon">▼</div>
+        <h4>BEAR SIGNAL</h4>
+        <p>マスク的視点では「データ垂直統合」が不十分。落合的視点では「インターフェース陳腐化」のリスク。海外展開の成果が見えない。AI投資の財務的負担増加。</p>
+      </div>
+      <div class="signal-card sig-watch">
+        <div class="sig-icon">◆</div>
+        <h4>WATCH POINT</h4>
+        <p>kintone AI Agent連携の具体的進捗。データ活用戦略の明確化。海外ARRの成長率。AI関連R&D費用対効果。グローバルノーコード競合（Monday.com等）との差別化。</p>
+      </div>
+    </div>
+
+    <h3>長期投資家が問うべき3つの哲学的問い</h3>
+    <p>サイボウズへの長期投資判断は、最終的にこの3問に収斂する：</p>
+
+    <div class="key-questions" style="margin-top:16px;">
+      <div class="kq-item"><strong>問1（落合型）：</strong>サイボウズはAIを「自然の一部」として製品に内包できるか、それとも「外部ツールとの接続」で終わるか。</div>
+      <div class="kq-item"><strong>問2（マスク型）：</strong>SMB300万社の業務データを競争優位に変える具体的戦略があるか。データを持っているだけでは武器にならない。</div>
+      <div class="kq-item"><strong>問3（青野型）：</strong>「人間の協働」というビジョンを、AIエージェント時代に合わせて拡張・再定義できるか。2000年代のビジョンのままでは時代と乖離する。</div>
+    </div>
+
+    <p style="margin-top:24px;">
+      この3問に「Yes」と言える根拠が揃ったとき、サイボウズは現在の時価総額を超える価値創造をする企業として評価される。逆に、3問への答えが「No」や「不明」のまま推移するなら、競合との差別化は困難になる。次の記事（Essay 11）では、これらの問いに対してより直接的な投資判断を下す。
+    </p>
+  </div>
+</div>
+
+<!-- CURATOR'S VOICE -->
+<div class="curator">
+  <div class="curator-inner">
+    <div class="curator-label">CURATOR'S VOICE</div>
+    <h2>"思想の交差点に、投資機会は宿る"</h2>
+    <p>
+      落合陽一・イーロンマスク・青野慶久の3人を並べると、一つのことが浮かび上がる——それは「企業の哲学が、AI時代では経営戦略そのものになる」ということだ。
+    </p>
+    <p>
+      かつては「良い製品を作れば売れる」時代があった。次に「顧客体験が差別化になる」時代が来た。そして今、「企業が何のために存在するか」という問いが、製品の差別化を超えて、顧客・パートナー・優秀な人材を引き寄せる力になっている。
+    </p>
+    <p>
+      サイボウズの青野哲学は、この意味で時代と共鳴している。<strong>「100人100通りの働き方」は、AIが定型を担う世界で、人間の多様性がより輝く未来を示している。</strong>落合が言う「意味付けは人間の仕事」と、青野の「多様性が強さ」は、実は同じことを違う言葉で語っている。
+    </p>
+    <p>
+      マスクの「物理×データ支配」戦略は、サイボウズには直接適用できない。しかし「データ資産を競争優位に変える」という核心的教訓は、SMB300万社の業務データを持つサイボウズに取り込む価値がある。
+    </p>
+    <p>
+      <strong>3思想の交差点にある「AI×人間協働×データ」の設計図を、サイボウズが体現できるかどうか——それが長期投資判断の核心だ。</strong>Essay 11では、財務データとこの哲学的分析を統合した最終的な投資判断を行う。
+    </p>
+  </div>
+</div>
+
+<!-- REFERENCES -->
+<div class="references">
+  <div class="container">
+    <h3>REFERENCES & SOURCES</h3>
+    <ul class="ref-list">
+      <li>落合陽一『デジタルネイチャー——生態系を為す汎神化した計算機による侵食』（2018年、PLANETS）</li>
+      <li>落合陽一『魔法のような21世紀を生きる——ウォッチミーは世界を変える』（2022年）</li>
+      <li>青野慶久『チームのことだけ、考えた。——サイボウズはどのように「100人100通り」の会社になったか』（2015年、ダイヤモンド社）</li>
+      <li>青野慶久『会社というモンスターが、僕たちを不幸にしているのかもしれない。』（2018年、PHP研究所）</li>
+      <li>Elon Musk — xAI Colossus発表（2024年）、Tesla Bot Optimus技術説明会</li>
+      <li>サイボウズ株式会社 投資家説明会資料（2025年度）</li>
+      <li>Gartner「Magic Quadrant for Enterprise Low-Code Application Platforms」2024年版</li>
+      <li>Anthropic「Claude Code」リリースノート（2025-2026）</li>
+      <li>サイボウズ AI戦略発表（kintone AIエージェント連携ロードマップ、2025年）</li>
+      <li>『東洋経済オンライン』青野慶久インタビュー「AIエージェント時代の働き方」（2025年）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BACK LINK -->
+<div class="back-link">
+  <a href="../../">← 論考の棚に戻る</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© 2026 INVESTMENT LIBRARY · <a href="../../../">lifehack-roadmap</a></p>
+  <p style="margin-top:6px;">本コンテンツは情報提供のみを目的とし、投資推奨ではありません。</p>
+</footer>
+
+</body>
+</html>

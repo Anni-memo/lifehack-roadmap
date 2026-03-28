@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="第一三共｜moat分析・FCF・企業研究｜投資と思考の書斎"/>
+<meta property="og:description" content="第一三共（4568）のmoat分析。エンハーツ（ADC）でがん治療に革命。AstraZenecaとの3兆円超の提携が証明する技術的優位。ADC世界リードポジションの長期投資視点。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>第一三共 — moat分析｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;--accent:#101018;--accent2:#181828;--accent3:#202038;--accent4:#8080d0;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--accent) 45%,var(--accent2) 100%);color:var(--parch);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--accent2);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,255,255,.05) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent4),transparent);}
+.hero-code{font-family:var(--mono);font-size:.6rem;color:var(--accent4);letter-spacing:.3em;margin-bottom:10px;opacity:.8;position:relative;}
+.hero-name{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-name-en{font-family:var(--mono);font-size:.65rem;color:var(--accent4);letter-spacing:.18em;margin-top:8px;opacity:.8;position:relative;}
+.hero-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px;position:relative;}
+.hero-tag{font-family:var(--mono);font-size:.5rem;padding:3px 10px;border:1px solid rgba(255,255,255,.2);color:var(--parch3);letter-spacing:.1em;}
+.hero-verdict{margin-top:28px;position:relative;font-family:var(--serif);font-size:clamp(.88rem,2vw,1rem);color:var(--parch3);font-style:italic;line-height:1.9;max-width:540px;margin-left:auto;margin-right:auto;}
+.container{max-width:820px;margin:0 auto;padding:48px 24px 0;}.section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.3em;}.section-body p:last-child{margin-bottom:0;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 56px;}
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}@media(min-width:600px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-label-wrap{flex:1;}.moat-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}.moat-sub{font-size:.7rem;color:var(--ink3);line-height:1.5;}
+.moat-score-wrap{display:flex;gap:3px;flex-shrink:0;align-items:center;}.moat-dot{width:10px;height:10px;border-radius:50%;}.moat-dot.on{background:var(--green3);}.moat-dot.off{background:var(--parch4);}
+.moat-score-num{font-family:var(--mono);font-size:.52rem;color:var(--green3);margin-left:6px;letter-spacing:.04em;}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:4px;}@media(min-width:600px){.metrics-grid{grid-template-columns:repeat(4,1fr);}}
+.metric-card{padding:18px 14px;background:var(--parch2);border:1px solid var(--parch4);text-align:center;}
+.metric-label{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;opacity:.8;}.metric-value{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;}
+.metric-unit{font-family:var(--mono);font-size:.5rem;color:var(--ink3);margin-top:4px;letter-spacing:.06em;}.metric-note{font-size:.65rem;color:var(--ink3);margin-top:4px;line-height:1.4;}
+.callout{border-left:3px solid var(--accent2);padding:18px 22px;margin:28px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:.98rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.ir-links{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+.ir-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.ir-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.ir-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:72px;}.ir-name{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink);flex:1;}.ir-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}.ir-note{font-size:.68rem;color:var(--ink3);margin-top:2px;font-weight:300;}
+.related{background:var(--ink2);padding:44px 24px;margin-top:60px;}.related-inner{max-width:820px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.8;}.related-links{display:flex;flex-direction:column;gap:2px;}
+.related-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s;}.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07);}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:72px;flex-shrink:0;}.related-title{font-family:var(--serif);font-size:.9rem;color:var(--parch);font-weight:500;flex:1;}.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span><a class="nav-back" href="../">企業分析</a><span class="nav-sep">/</span><span class="nav-current">第一三共</span></nav>
+
+<div class="hero">
+  <div class="hero-code">TSE · 4568 · 医薬品</div>
+  <div class="hero-name">第一三共</div>
+  <div class="hero-name-en">DAIICHI SANKYO CO., LTD.</div>
+  <div class="hero-tags">
+    <span class="hero-tag">エンハーツ（ADC）世界変革</span>
+    <span class="hero-tag">AstraZeneca提携</span>
+    <span class="hero-tag">がん治療薬</span>
+    <span class="hero-tag">ADC技術世界首位</span>
+  </div>
+  <p class="hero-verdict">「エンハーツ」というがん治療の革命的薬剤を持つ、今最も注目される製薬会社。<br>抗体薬物複合体（ADC）という新技術で世界をリード——AstraZenecaとの3兆円超の提携がその価値を証明した。</p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">COMPANY OVERVIEW</div>
+    <h2 class="section-title">企業概要——ADCという革命技術でがん治療を変える</h2>
+    <div class="section-body">
+      <p>第一三共は抗体薬物複合体（ADC＝Antibody Drug Conjugate）技術において世界のフロントランナーとなった企業だ。ADCとは、がん細胞に特異的に結合する抗体と、強力な抗がん剤をリンカー（連結分子）で結合させた薬剤で、「魔法の弾丸」とも呼ばれる。がん細胞だけを狙い撃ちにすることで従来の抗がん剤の副作用を大幅に低減しながら、強力な抗腫瘍効果を発揮する。</p>
+      <p>主力薬「エンハーツ」（トラスツズマブデルクステカン）は、乳がん・胃がん・肺がんにおいて画期的な臨床試験成績を示し、がん治療のパラダイムを書き換えつつある。英国AstraZenecaとのADC薬剤の共同開発・販売提携（最大約3.4兆円規模）は日本製薬史上最大規模であり、世界最大級の製薬会社がADC技術の価値を公式に認めたことを意味する。この提携によりエンハーツの世界展開が加速し、売上は急成長中だ。</p>
+      <p>ADCパイプラインの広がりも注目に値する。第一三共はエンハーツのほかに4〜5つのADC候補薬を開発中であり、乳がん・肺がん・卵巣がん・膀胱がんなど複数のがん種への展開を進めている。ADC製造は高度な技術が必要で参入障壁が高く、先行企業が技術・ノウハウ・製造インフラで後発を引き離す構造がある。AstraZenecaとの提携後、ファイザー・メルクなども独自のADC開発を強化しており、競争は激化しているが第一三共のリードは大きい。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">MOAT SCORECARD</div>
+    <h2 class="section-title">moatスコアカード</h2>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">無形資産</div>
+          <div class="moat-sub">ADC技術の世界リードポジションとエンハーツ特許群</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span>
+          <span class="moat-score-num">5/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-sub">製薬にネットワーク効果はない</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">1/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-sub">革新的がん治療薬の代替困難性</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">通行料（toll road）</div>
+          <div class="moat-sub">がん治療薬の長期投与と新適応症拡大</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-sub">AstraZeneca連携によるグローバル販売力</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">4/5</span>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-label-wrap">
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-sub">ADC製造技術の独自性</div>
+        </div>
+        <div class="moat-score-wrap">
+          <span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot on"></span><span class="moat-dot off"></span><span class="moat-dot off"></span>
+          <span class="moat-score-num">3/5</span>
+        </div>
+      </div>
+    </div>
+    <div class="moat-radar-wrap" style="margin-top:24px;background:var(--parch);border:1px solid var(--parch4);padding:20px 24px;">
+      <div style="font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.14em;margin-bottom:12px;opacity:.75;">MOAT RADAR</div>
+      <div style="position:relative;max-width:320px;margin:0 auto;height:280px;">
+        <canvas id="moatRadar"></canvas>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-text">第一三共のmoatはADC（抗体薬物複合体）技術の世界リードポジションに凝縮されている。エンハーツは「マジックバレット（魔法の弾丸）」と評され、がん細胞だけを狙い打ちにする次世代がん治療の代名詞となった。AstraZenecaとの3兆円超の提携がこの技術的優位の経済的価値を証明しており、ADCパイプラインの広がりが中長期の成長エンジンだ。</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY METRICS</div>
+    <h2 class="section-title">主要指標</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">売上高</div>
+        <div class="metric-value">1.5兆+</div>
+        <div class="metric-unit">円（急成長中）</div>
+        <div class="metric-note">エンハーツ牽引</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ROE</div>
+        <div class="metric-value">10〜20%</div>
+        <div class="metric-unit">改善中</div>
+        <div class="metric-note">エンハーツ収益化で上昇</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ADCパイプライン</div>
+        <div class="metric-value">5薬剤</div>
+        <div class="metric-unit">開発中</div>
+        <div class="metric-note">複数のがん種に展開</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">AZ提携規模</div>
+        <div class="metric-value">約3.4兆円</div>
+        <div class="metric-unit">最大規模</div>
+        <div class="metric-note">日本製薬史上最大</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">KEY RISKS</div>
+    <h2 class="section-title">主要リスク——長期投資家が注視すべき変数</h2>
+    <div class="section-body">
+      <p>最大のリスクはエンハーツへの売上集中だ。急成長中とはいえ、現時点では第一三共の業績の大部分がエンハーツの成否に依存しており、臨床試験の失敗・副作用問題・競合薬の台頭が直接的に業績を直撃するリスクがある。ADC分野ではファイザー（シージェン買収）・メルク・ロシュなどのグローバル大手も本格参入しており、技術競争の激化が続く。</p>
+      <p>AstraZenecaへの依存リスクも存在する。グローバル販売はAstraZenecaを通じた展開に大きく依存しており、両社の関係変化や提携条件の変更が収益構造を変える可能性がある。また、がん治療薬は特許切れ後もバイオシミラーよりは模倣困難だが、ADC技術自体が特許切れ後に一般化すれば競争環境は一変する。</p>
+      <p>製造リスクも見逃せない。ADCは抗体・リンカー・薬物の3要素を精密に結合させる高度な製造技術が必要で、品質管理が非常に難しい。製造トラブルや供給不足が発生した場合、販売計画の大幅な狂いにつながる。また、がん治療薬全般に言えることだが、新たな治療モダリティ（CAR-T療法等）の台頭が既存のADC薬剤を陳腐化させるリスクも中長期的に存在する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section">
+    <div class="section-label">IR RESOURCES</div>
+    <h2 class="section-title">IRリソース</h2>
+    <div class="ir-links">
+      <a class="ir-link" href="https://www.daiichisankyo.co.jp/ir/" target="_blank" rel="noopener">
+        <span class="ir-tag">公式IR</span>
+        <div><div class="ir-name">第一三共 投資家情報</div><div class="ir-note">決算説明資料・アニュアルレポート・パイプライン情報</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.daiichisankyo.co.jp/rd/pipeline/" target="_blank" rel="noopener">
+        <span class="ir-tag">パイプライン</span>
+        <div><div class="ir-name">研究開発パイプライン</div><div class="ir-note">ADC候補薬を含む開発中薬剤の一覧</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+      <a class="ir-link" href="https://www.nikkei.com/nkd/company/?scode=4568" target="_blank" rel="noopener">
+        <span class="ir-tag">日経</span>
+        <div><div class="ir-name">日経 株価・財務情報（4568）</div><div class="ir-note">株価チャート・財務ハイライト・アナリスト評価</div></div>
+        <span class="ir-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED COMPANIES &amp; PAGES</div>
+    <div class="related-links">
+      <a class="related-link" href="../takeda/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">武田薬品工業 (4502)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../chugai/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">中外製薬 (4519)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../eisai/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">エーザイ (4523)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../shionogi/">
+        <span class="related-tag">PEER</span>
+        <span class="related-title">塩野義製薬 (4507)</span>
+        <span class="related-arrow">→</span>
+      </a>
+      <a class="related-link" href="../takeda/"><span class="related-tag">4502</span><span class="related-title">武田薬品工業——日本最大の製薬・Shire買収・希少疾患</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../chugai/"><span class="related-tag">4519</span><span class="related-title">中外製薬——ロシュ傘下・バイオ抗体医薬・高ROE</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../eisai/"><span class="related-tag">4523</span><span class="related-title">エーザイ——アルツハイマー治療薬・レカネマブ・Biogen提携</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../shionogi/"><span class="related-tag">4507</span><span class="related-title">塩野義製薬——感染症特化・HIV治療薬・ゾコーバ</span><span class="related-arrow">→</span></a>
+      <a class="related-link" href="../../industries/pharma/"><span class="related-tag">INDUSTRY</span><span class="related-title">医薬品業を歩く——業種全体の構造と問い</span><span class="related-arrow">→</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="footer-title">投資と思考の書斎</div><a href="../../">書斎の入口へ戻る</a> &ensp;·&ensp; <a href="../">企業分析へ戻る</a></footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});
+// Moat Radar Chart
+(function(){
+  var items = document.querySelectorAll('.moat-item');
+  if (!items.length) return;
+  var labels = [], data = [];
+  items.forEach(function(item){
+    var nameEl = item.querySelector('.moat-name');
+    var numEl = item.querySelector('.moat-score-num');
+    if (!nameEl || !numEl) return;
+    var name = nameEl.textContent.trim().replace('（toll road）','').replace('（Toll Road）','');
+    var scoreText = numEl.textContent.trim();
+    var score = parseInt(scoreText.split('/')[0]) || 0;
+    labels.push(name);
+    data.push(score);
+  });
+  if (!labels.length) return;
+  var canvas = document.getElementById('moatRadar');
+  if (!canvas) return;
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        backgroundColor: 'rgba(90,138,58,0.15)',
+        borderColor: 'rgba(90,138,58,0.7)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(90,138,58,0.9)',
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          min: 0,
+          max: 5,
+          ticks: { stepSize: 1, display: false },
+          grid: { color: 'rgba(139,105,20,0.2)' },
+          angleLines: { color: 'rgba(139,105,20,0.2)' },
+          pointLabels: { font: { family: "'DM Mono', monospace", size: 10 }, color: '#4a3520' }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: function(ctx){ return ctx.parsed.r + '/5'; } } }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

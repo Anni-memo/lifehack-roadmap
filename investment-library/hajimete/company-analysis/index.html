@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="企業分析入門｜長期投資と思考のライブラリ"/>
+<meta property="og:description" content="moat・FCF・経営者の質——長期投資家として企業を読むための3つの視点と実践ガイド。69社の分析ライブラリへの入口。"/>
+<title>企業分析入門｜長期投資と思考のライブラリ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;--green4:#7ab05a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,#0a160a 45%,#0e1a0a 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid rgba(90,138,58,.5);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(90,138,58,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green4),transparent);}
+.hero-ornament{font-family:var(--serif);font-size:.9rem;color:var(--green4);letter-spacing:.35em;margin-bottom:14px;opacity:.8;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:700;color:var(--parch);position:relative;line-height:1.1;}
+.hero-sub{font-size:.86rem;color:var(--parch3);font-weight:300;margin-top:16px;line-height:1.9;position:relative;}
+.hero-stats{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:22px;position:relative;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--mono);font-size:1.4rem;color:var(--green4);font-weight:500;}
+.hero-stat-label{font-family:var(--mono);font-size:.44rem;color:var(--parch4);letter-spacing:.12em;margin-top:3px;opacity:.7;}
+.container{max-width:800px;margin:0 auto;padding:52px 24px 0;}
+.section{margin-bottom:60px;}
+.sec-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.2em;margin-bottom:10px;opacity:.75;}
+.sec-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--parch4);}
+.body-text{font-size:.88rem;color:var(--ink2);line-height:2.2;font-weight:300;}
+.body-text p{margin-bottom:1.3em;}.body-text p:last-child{margin-bottom:0;}
+.body-text strong{font-weight:600;color:var(--ink);}
+
+/* ── 3 Pillars ── */
+.pillar-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}
+@media(min-width:600px){.pillar-grid{grid-template-columns:repeat(3,1fr);}}
+.pillar-card{padding:24px 18px;border:1px solid;}
+.pillar-card.moat{background:rgba(42,74,26,.06);border-color:rgba(90,138,58,.3);border-top:3px solid var(--green3);}
+.pillar-card.fcf{background:rgba(139,105,20,.05);border-color:rgba(139,105,20,.25);border-top:3px solid var(--gold);}
+.pillar-card.mgmt{background:var(--parch2);border-color:var(--parch4);border-top:3px solid var(--ink3);}
+.pillar-icon{font-size:1.3rem;margin-bottom:10px;}
+.pillar-num{font-family:var(--mono);font-size:.44rem;letter-spacing:.15em;margin-bottom:6px;}
+.pillar-card.moat .pillar-num{color:var(--green3);}
+.pillar-card.fcf .pillar-num{color:var(--gold);}
+.pillar-card.mgmt .pillar-num{color:var(--ink3);}
+.pillar-name{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.pillar-desc{font-size:.75rem;color:var(--ink2);line-height:1.8;}
+.pillar-link{display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-family:var(--mono);font-size:.46rem;text-decoration:none;letter-spacing:.08em;transition:opacity .2s;}
+.pillar-card.moat .pillar-link{color:var(--green3);}
+.pillar-card.fcf .pillar-link{color:var(--gold);}
+.pillar-card.mgmt .pillar-link{color:var(--ink3);}
+.pillar-link:hover{opacity:.7;}
+
+/* ── moat types ── */
+.moat-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}
+@media(min-width:560px){.moat-grid{grid-template-columns:1fr 1fr;}}
+.moat-item{display:flex;gap:12px;align-items:flex-start;padding:16px 16px;background:var(--parch2);border:1px solid var(--parch4);}
+.moat-icon{font-size:1.1rem;flex-shrink:0;margin-top:2px;}
+.moat-name{font-family:var(--serif);font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.moat-desc{font-size:.74rem;color:var(--ink2);line-height:1.75;}
+.moat-ex{font-family:var(--mono);font-size:.44rem;color:var(--green3);letter-spacing:.08em;margin-top:6px;}
+
+/* ── Company grid (featured) ── */
+.company-grid{display:grid;grid-template-columns:1fr;gap:3px;margin-top:4px;}
+@media(min-width:560px){.company-grid{grid-template-columns:1fr 1fr;}}
+.company-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;color:inherit;transition:all .18s;}
+.company-item:hover{background:var(--parch3);border-color:var(--green3);transform:translateX(2px);}
+.company-ticker{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.1em;width:36px;flex-shrink:0;}
+.company-name{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.company-moat{font-family:var(--mono);font-size:.42rem;color:var(--green3);border:1px solid rgba(90,138,58,.3);padding:2px 6px;white-space:nowrap;}
+.company-arr{color:var(--green3);font-size:.8rem;opacity:.6;}
+
+/* ── CTA block ── */
+.cta-block{background:linear-gradient(135deg,#0a160a,#0e1a0a);border:1px solid rgba(90,138,58,.25);padding:28px 24px;text-align:center;margin-top:24px;}
+.cta-label{font-family:var(--mono);font-size:.48rem;color:var(--green4);letter-spacing:.18em;margin-bottom:12px;opacity:.8;}
+.cta-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--parch);margin-bottom:10px;}
+.cta-text{font-size:.8rem;color:var(--parch3);line-height:1.85;margin-bottom:18px;}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green2);color:var(--parch);font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;padding:10px 24px;text-decoration:none;transition:background .2s;}
+.cta-btn:hover{background:var(--green3);}
+
+/* ── Footer ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:32px 24px;margin-top:80px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.54rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.7;transition:opacity .2s;}.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.4;letter-spacing:.1em;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">初めての方へ</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">企業分析入門</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-ornament">◆ COMPANY ANALYSIS ◆</div>
+  <h1 class="hero-title">企業分析入門</h1>
+  <p class="hero-sub">moat・FCF・経営者の質——<br>長期投資家として企業を深く読む3つの視点。</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">69</div><div class="hero-stat-label">COMPANIES</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">14</div><div class="hero-stat-label">INDUSTRIES</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">MOAT TYPES</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="sec-label">ANALYSIS — 01</div>
+    <h2 class="sec-title">企業分析の3つの柱</h2>
+    <div class="pillar-grid">
+      <div class="pillar-card moat">
+        <div class="pillar-icon">🏰</div>
+        <div class="pillar-num">PILLAR 01 · moat</div>
+        <div class="pillar-name">競争優位性</div>
+        <div class="pillar-desc">なぜその企業は競合に勝ち続けるのか。ブランド・ネットワーク効果・スイッチングコスト・コスト優位・規制の壁——6つのタイプを採点する。</div>
+        <a class="pillar-link" href="../../moat/">moatを詳しく読む →</a>
+      </div>
+      <div class="pillar-card fcf">
+        <div class="pillar-icon">💰</div>
+        <div class="pillar-num">PILLAR 02 · FCF</div>
+        <div class="pillar-name">フリーキャッシュフロー</div>
+        <div class="pillar-desc">企業が実際に手元に残すお金。会計上の利益より正直だ。毎年安定して増えているかが、企業の本質的価値を測る最良の指標。</div>
+        <a class="pillar-link" href="../../fcf/">FCFを詳しく読む →</a>
+      </div>
+      <div class="pillar-card mgmt">
+        <div class="pillar-icon">🧭</div>
+        <div class="pillar-num">PILLAR 03 · 経営者</div>
+        <div class="pillar-name">経営者の質</div>
+        <div class="pillar-desc">稼いだFCFをどう使うか——この1点で長期リターンの大半が決まる。誠実か・合理的か・株主目線か。フィッシャーのScuttlebutt法で評価する。</div>
+        <a class="pillar-link" href="../../principles/">投資原則を読む →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">ANALYSIS — 02</div>
+    <h2 class="sec-title">moat（競争優位）の6タイプ</h2>
+    <div class="body-text" style="margin-bottom:16px;">
+      <p>バフェットは「経済的な堀（Economic Moat）」と呼ぶ。競合他社が何億円を投じても崩せない競争優位性だ。長期投資では、このmoatが時間とともに広がっているかを追い続ける。</p>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-item">
+        <span class="moat-icon">🌐</span>
+        <div>
+          <div class="moat-name">ネットワーク効果</div>
+          <div class="moat-desc">ユーザーが増えるほど価値が上がる。利用者が離れられない仕組みが生まれる。</div>
+          <div class="moat-ex">例：Visa / リクルート / メルカリ</div>
+        </div>
+      </div>
+      <div class="moat-item">
+        <span class="moat-icon">🔒</span>
+        <div>
+          <div class="moat-name">スイッチングコスト</div>
+          <div class="moat-desc">乗り換えにコスト・時間・リスクがかかりすぎて、顧客が離れられない。</div>
+          <div class="moat-ex">例：キーエンス / サイボウズ / SAP</div>
+        </div>
+      </div>
+      <div class="moat-item">
+        <span class="moat-icon">💎</span>
+        <div>
+          <div class="moat-name">無形資産・ブランド</div>
+          <div class="moat-desc">ブランド力・特許・ライセンスが価格決定力と顧客ロイヤルティを生む。</div>
+          <div class="moat-ex">例：コカコーラ / 信越化学 / 任天堂</div>
+        </div>
+      </div>
+      <div class="moat-item">
+        <span class="moat-icon">📉</span>
+        <div>
+          <div class="moat-name">コスト優位</div>
+          <div class="moat-desc">規模・技術・立地などにより、競合より低コストで同じものを提供できる。</div>
+          <div class="moat-ex">例：ニトリ / コストコ / アマゾン</div>
+        </div>
+      </div>
+      <div class="moat-item">
+        <span class="moat-icon">📍</span>
+        <div>
+          <div class="moat-name">効率的規模</div>
+          <div class="moat-desc">市場規模が限られ、新規参入しても採算が取れないため競合が入ってこない。</div>
+          <div class="moat-ex">例：地域独占インフラ / 特定規格品</div>
+        </div>
+      </div>
+      <div class="moat-item">
+        <span class="moat-icon">🏛️</span>
+        <div>
+          <div class="moat-name">規制・許認可の壁</div>
+          <div class="moat-desc">法規制・免許・許認可が新規参入を物理的に制限する。</div>
+          <div class="moat-ex">例：銀行・保険・電力・医薬品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">ANALYSIS — 03</div>
+    <h2 class="sec-title">注目企業から分析を始める</h2>
+    <div class="company-grid">
+      <a class="company-item" href="../../companies/keyence/"><span class="company-ticker">6861</span><span class="company-name">キーエンス</span><span class="company-moat">moat ◆◆◆◆◆</span><span class="company-arr">→</span></a>
+      <a class="company-item" href="../../companies/daiichi-sankyo/"><span class="company-ticker">4568</span><span class="company-name">第一三共</span><span class="company-moat">moat ◆◆◆◆◇</span><span class="company-arr">→</span></a>
+      <a class="company-item" href="../../companies/misho/"><span class="company-ticker">8058</span><span class="company-name">三菱商事</span><span class="company-moat">moat ◆◆◆◇◇</span><span class="company-arr">→</span></a>
+      <a class="company-item" href="../../companies/monotaro/"><span class="company-ticker">3064</span><span class="company-name">MonotaRO</span><span class="company-moat">moat ◆◆◆◆◇</span><span class="company-arr">→</span></a>
+      <a class="company-item" href="../../companies/shin-etsu/"><span class="company-ticker">4063</span><span class="company-name">信越化学工業</span><span class="company-moat">moat ◆◆◆◆◆</span><span class="company-arr">→</span></a>
+      <a class="company-item" href="../../companies/nitori/"><span class="company-ticker">9843</span><span class="company-name">ニトリHD</span><span class="company-moat">moat ◆◆◆◇◇</span><span class="company-arr">→</span></a>
+    </div>
+    <div class="cta-block">
+      <div class="cta-label">FULL LIBRARY — 全69社</div>
+      <div class="cta-title">14業種・69社の分析を読む</div>
+      <div class="cta-text">検索・業種フィルター・moatスコア順で<br>自分の興味ある企業を探せます。</div>
+      <a class="cta-btn" href="../../companies/">全69社の企業分析を見る →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">初めての方へ</a>
+    <a href="../../moat/">Moat</a>
+    <a href="../../fcf/">FCF</a>
+    <a href="../../companies/">企業分析</a>
+  </nav>
+  <div class="footer-copy">© 2026 投資と思考の書斎</div>
+</footer>
+</body>
+</html>

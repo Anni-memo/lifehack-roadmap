@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="「安い株」と「良い株」は違う｜論考の棚"/>
+<meta property="og:description" content="PERが低い株が割安とは限らない。バリュートラップの罠、「良い企業を適正価格で」という哲学、長期複利の力——長期投資家が本当に理解すべき株の選び方を論じる。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>「安い株」と「良い株」は違う｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --wine:#5a1a2a;--wine2:#7a2a3a;--wine3:#a03a4a;
+  --green:#2a4a1a;--green2:#3d6828;
+  --blue:#1a2a4a;--blue2:#2a3d6a;--blue3:#3a5a8a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(90,26,42,.4);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{
+  background:linear-gradient(165deg,#0c0608 0%,#180c10 40%,#200e14 70%,#120608 100%);
+  color:var(--parch);padding:64px 24px 52px;position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(90,26,42,.6);
+}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(90,26,42,.14) 0%,transparent 60%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(160,58,74,.5),transparent);}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(200,140,155,.5);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(190,120,135,.65);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.8rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:14px;}
+.hero-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(.82rem,2vw,.96rem);color:rgba(220,185,190,.7);line-height:1.9;margin-bottom:28px;}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(190,140,150,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(90,26,42,.4);color:rgba(200,140,150,.85);letter-spacing:.08em;}
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:780px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--wine2);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:780px;margin:0 auto;padding:52px 0 80px;}
+/* 比較ボックス */
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:48px;border:1px solid var(--parch4);}
+@media(max-width:560px){.compare-wrap{grid-template-columns:1fr;}}
+.compare-col{padding:22px;}
+.compare-col.left{border-right:1px solid var(--parch4);background:rgba(90,26,42,.04);}
+.compare-col.right{background:rgba(42,74,26,.04);}
+.compare-head{font-family:var(--mono);font-size:.5rem;letter-spacing:.14em;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid;}
+.compare-col.left .compare-head{color:var(--wine2);border-color:var(--wine2);}
+.compare-col.right .compare-head{color:var(--green2);border-color:var(--green2);}
+.compare-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:12px;}
+.compare-items{display:flex;flex-direction:column;gap:6px;}
+.compare-item{font-size:.78rem;color:var(--ink2);line-height:1.7;padding:6px 10px;border-left:2px solid;}
+.compare-col.left .compare-item{border-color:var(--wine2);background:rgba(90,26,42,.03);}
+.compare-col.right .compare-item{border-color:var(--green2);background:rgba(42,74,26,.03);}
+/* エッセイ */
+.essay-section{margin-bottom:48px;}
+.essay-num{font-family:var(--mono);font-size:.5rem;color:var(--wine2);letter-spacing:.25em;margin-bottom:8px;opacity:.75;}
+.essay-heading{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--parch4);}
+.essay-heading span{color:var(--wine2);}
+.essay-text{font-size:.86rem;color:var(--ink2);line-height:2.2;font-weight:300;}
+.essay-text strong{color:var(--ink);font-weight:600;}
+.essay-text em{color:var(--wine2);font-style:normal;font-weight:600;}
+.callout{margin:20px 0;padding:18px 22px;background:var(--parch2);border-left:3px solid var(--wine2);}
+.callout-text{font-family:var(--serif);font-size:.94rem;color:var(--ink);line-height:2;font-style:italic;}
+.callout-text strong{font-style:normal;font-weight:700;}
+/* 複利シミュレーション */
+.sim-wrap{background:var(--parch2);border:1px solid var(--parch4);padding:22px 24px;margin:20px 0;}
+.sim-label{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.18em;margin-bottom:14px;opacity:.7;}
+.sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+@media(max-width:560px){.sim-grid{grid-template-columns:1fr;}}
+.sim-card{background:var(--parch3);padding:14px;text-align:center;border:1px solid var(--parch4);}
+.sim-card-label{font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.1em;margin-bottom:6px;opacity:.7;}
+.sim-val-small{font-family:var(--mono);font-size:.8rem;color:var(--ink3);margin-bottom:2px;}
+.sim-val{font-family:var(--mono);font-size:1.2rem;font-weight:700;margin-bottom:4px;}
+.sim-card.good .sim-val{color:var(--green2);}
+.sim-card.mid .sim-val{color:var(--gold2);}
+.sim-card.base .sim-val{color:var(--ink3);}
+.sim-desc{font-size:.68rem;color:var(--ink3);line-height:1.5;}
+.article-divider{display:flex;align-items:center;gap:16px;margin:0 0 44px;font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.2em;opacity:.4;}
+.article-divider::before,.article-divider::after{content:'';flex:1;height:1px;background:var(--parch4);}
+.closing-note{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);border:1px solid rgba(184,144,10,.2);padding:28px;}
+.closing-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:14px;opacity:.75;}
+.closing-text{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:2.1;font-weight:300;}
+.closing-text strong{color:var(--parch);font-weight:500;}
+.back-link-wrap{margin-top:48px;text-align:center;}
+.back-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(184,144,10,.35);font-family:var(--mono);font-size:.56rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;transition:all .2s;}
+.back-link:hover{background:rgba(184,144,10,.08);border-color:var(--gold2);}
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}
+.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">「安い株」と「良い株」は違う</span>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">THE RESEARCH SHELF · ESSAY 07</div>
+    <div class="hero-label">INVESTMENT PHILOSOPHY · VALUE VS QUALITY</div>
+    <h1 class="hero-title">「安い株」と「良い株」は違う</h1>
+    <p class="hero-subtitle">
+      PERが低い株が割安とは限らない——<br>
+      バリュートラップの罠と、長期複利が教えてくれる本当の答え
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.27</span>
+      <span class="hero-tag">投資哲学</span>
+      <span class="hero-tag">バリュー</span>
+      <span class="hero-tag">長期複利</span>
+    </div>
+  </div>
+</div>
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">PREMISE — この記事の前提</div>
+    <p class="summary-text">
+      「PERが低い＝割安」「PBRが1倍以下＝お得」という理解は、半分だけ正しい。<br><br>
+      本稿では、<strong>「安い株」と「良い株」の根本的な違い</strong>を整理する。
+      長期投資で本当に複利が働くのは、「安いだけの株」ではなく「良い企業を適正な価格で買った株」だ。
+      この違いを腹落ちさせることが、長期投資の入口になる。
+    </p>
+  </div>
+</div>
+<div class="article-wrap">
+<div class="article-inner">
+
+  <!-- 比較 -->
+  <div class="compare-wrap">
+    <div class="compare-col left">
+      <div class="compare-head">CHEAP STOCK · 「安い株」の特徴</div>
+      <div class="compare-title">指標は安いが、理由がある</div>
+      <div class="compare-items">
+        <div class="compare-item">PERが低い、PBRが低い</div>
+        <div class="compare-item">業績が停滞・悪化中</div>
+        <div class="compare-item">競争優位（moat）が弱い</div>
+        <div class="compare-item">市場が「成長を織り込まない」と判断</div>
+        <div class="compare-item">10年後も同じかそれ以下の利益</div>
+        <div class="compare-item">→ 安いのには理由がある</div>
+      </div>
+    </div>
+    <div class="compare-col right">
+      <div class="compare-head">GOOD STOCK · 「良い株」の特徴</div>
+      <div class="compare-title">高く見えても、長期で正当化される</div>
+      <div class="compare-items">
+        <div class="compare-item">PERは高めに見える場合もある</div>
+        <div class="compare-item">FCFが毎年積み上がっている</div>
+        <div class="compare-item">moatが強く、競合が入れない</div>
+        <div class="compare-item">10年後に利益が2〜3倍になっている</div>
+        <div class="compare-item">配当・自社株買いを継続できる</div>
+        <div class="compare-item">→ 「割高」に見えても複利で正当化</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="essay-section">
+    <div class="essay-num">01 / 04</div>
+    <h2 class="essay-heading"><span>バリュートラップ——</span>「安さ」が罠になるとき</h2>
+    <p class="essay-text">
+      株式投資を始めた人が最初にハマりやすい罠がバリュートラップだ。
+      「PERが5倍なんて激安だ！」と買ったが、5年後も10年後もPERが5倍のまま——なぜか。<br><br>
+      それは<em>市場がその企業の成長を評価していないから</em>だ。
+      利益が増えない企業の株価は理論上も上がらない。
+      PERが低いのは「割安」ではなく、「成長が期待されていない」という市場の評価を反映しているに過ぎない。<br><br>
+      典型的なバリュートラップの特徴：競争優位を持たない業界の中で戦っている、
+      利益は出ているが成長しない、資本を再投資しても利益率が上がらない。
+      こういう企業に「安いから」と飛びつくのは、<strong>「安いには理由がある」</strong>という事実を無視した行為だ。
+    </p>
+    <div class="callout">
+      <p class="callout-text">
+        「<strong>凡庸な企業を素晴らしい価格で買うより、素晴らしい企業を凡庸な価格で買う方がずっと良い。</strong>」<br>
+        <span style="font-size:.72rem;opacity:.7;display:block;margin-top:8px;">— ウォーレン・バフェット（1989年 バークシャー・ハサウェイ 株主への手紙より）</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="essay-section">
+    <div class="essay-num">02 / 04</div>
+    <h2 class="essay-heading"><span>複利が教える</span>「良い企業」の定義</h2>
+    <p class="essay-text">
+      長期投資で資産が複利で増えるには、企業の利益自体が複利で増え続けることが必要だ。
+      そのためには、<em>再投資した資本が高いリターンを生み続ける構造</em>——つまりmoatが必要になる。<br><br>
+      ROE（自己資本利益率）が高く安定している企業は、内部留保を再投資するたびに
+      利益が増えるサイクルを持っている。このサイクルが10年・20年と続くとき、
+      株価のリターンは驚異的な数字になる。
+    </p>
+    <div class="sim-wrap">
+      <div class="sim-label">COMPOUND SIMULATION — 100万円を投資して20年後（配当再投資なし・単純試算）</div>
+      <div class="sim-grid">
+        <div class="sim-card base">
+          <div class="sim-card-label">停滞企業（年+2%）</div>
+          <div class="sim-val-small">業績停滞・低PER株</div>
+          <div class="sim-val">148万円</div>
+          <div class="sim-desc">20年で+48%。インフレを考えると実質ほぼ横ばい</div>
+        </div>
+        <div class="sim-card mid">
+          <div class="sim-card-label">平均的企業（年+7%）</div>
+          <div class="sim-val-small">市場平均程度</div>
+          <div class="sim-val">387万円</div>
+          <div class="sim-desc">20年で約4倍。市場平均のインデックス投資に近い</div>
+        </div>
+        <div class="sim-card good">
+          <div class="sim-card-label">moat強い企業（年+15%）</div>
+          <div class="sim-val-small">強いFCF・高ROE</div>
+          <div class="sim-val">1,637万円</div>
+          <div class="sim-desc">20年で約16倍。複利の力が最大限に機能する</div>
+        </div>
+      </div>
+    </div>
+    <p class="essay-text">
+      この差は「利回りの違い」ではなく<strong>「事業の質の違い」</strong>が生み出す。
+      年+15%という数字は夢ではなく、moatの強い企業が長期で達成してきた実績に近い。
+      重要なのは「安く買う」ことより「質の高い企業を選ぶ」ことだ。
+    </p>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="essay-section">
+    <div class="essay-num">03 / 04</div>
+    <h2 class="essay-heading"><span>では「安さ」は</span>まったく関係ないのか</h2>
+    <p class="essay-text">
+      いや、関係する。ただし<em>前提として「良い企業」であることが必要</em>だ。<br><br>
+      良い企業を「適正価格以下」で買えるのが理想だ。
+      しかし良い企業はめったに大きく割安にはならない。
+      市場もその質を知っているからだ。<br><br>
+      だから長期投資家が取れる現実的な戦略は3つだ。<br><br>
+      <strong>① 良い企業が市場全体の暴落に引きずられて下落した局面で買う</strong>（2020年コロナショック、2022年金利急騰など）<br>
+      <strong>② 良い企業でも「一時的な悪材料」で売られたときに買う</strong>（リコールや訴訟など本業と無関係な悪材料）<br>
+      <strong>③ 「適正価格」と判断できる水準なら、割安でなくても買う</strong>（モメンタムを追わず、長期視点で割高でないと判断できるなら）<br><br>
+      大切なのは、安さを「企業の質」より優先しないことだ。
+    </p>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="essay-section">
+    <div class="essay-num">04 / 04</div>
+    <h2 class="essay-heading"><span>「良い企業」を見分ける</span>実用的な3指標</h2>
+    <p class="essay-text">
+      <strong>① ROE（自己資本利益率）が高く安定しているか</strong><br>
+      10〜15%以上を長年維持している企業は、再投資効率が高い。
+      レバレッジ（借金）で上げているROEは要注意——借金ゼロで高ROEが本物だ。<br><br>
+      <strong>② FCF（フリーキャッシュフロー）が利益とともに増えているか</strong><br>
+      利益は会計上の数字だが、FCFは実際に手元に来るキャッシュだ。
+      FCFが毎年着実に増えている企業は、利益の質が高い。<br><br>
+      <strong>③ 10年後も同じビジネスをしていると想像できるか</strong><br>
+      バフェットが「10年後に買い増したいか」を問うのはこのためだ。
+      技術変化・規制・競合の出現によって価値が消えるリスクを常に意識する。
+    </p>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <div class="closing-note">
+    <div class="closing-label">INVESTOR'S NOTE — この記事の結論</div>
+    <p class="closing-text">
+      「安い株を探す」という思考から「良い企業を探す」という思考へ——
+      この転換が長期投資家への第一歩だ。<br><br>
+      PERが低いことは「割安」のシグナルではなく、「市場がその企業の成長に期待していない」シグナルかもしれない。
+      まず「この企業は10年後も稼ぎ続けられるか」を問い、その答えがYesなら
+      価格を検討する——この順番が正しい。<br><br>
+      <strong>「適正価格の良い企業」は「安価な凡庸企業」より、長期で必ず勝つ。</strong>
+      複利がそれを証明している。
+    </p>
+  </div>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="../">← 論考の棚に戻る</a>
+  </div>
+</div>
+</div>
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+</body>
+</html>

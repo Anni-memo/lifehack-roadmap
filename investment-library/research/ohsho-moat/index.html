@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="餃子の王将 moat解剖｜論考の棚"/>
+<meta property="og:description" content="「安くてうまい」はなぜ成立するのか。現場調理・産地管理・直営75%・価格帯独占——王将フードサービスの5大moatを外食チェーン比較と株主優待活用術とともに読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>餃子の王将 moat解剖｜論考の棚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --rust:#8b3a1a;--rust2:#c05020;--rust3:#e06030;
+  --green:#2a4a1a;--green2:#3d6828;
+  --blue:#1a2a4a;--blue2:#2a3d6a;--blue3:#3a5a8a;
+  /* 王将カラー：赤系 */
+  --ohsho:#c0281a;--ohsho2:#e03a20;--ohsho3:#f05a38;
+  --ohsho-dark:#7a1208;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(192,40,26,.3);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(165deg,#1a0404 0%,#2a0808 35%,#3a1008 65%,#200806 100%);
+  color:var(--parch);padding:64px 24px 52px;
+  position:relative;overflow:hidden;
+  border-bottom:3px solid rgba(192,40,26,.6);
+}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 65% 45% at 50% 0%,rgba(192,40,26,.15) 0%,transparent 60%),
+             radial-gradient(ellipse 40% 30% at 90% 100%,rgba(139,58,26,.1) 0%,transparent 50%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,58,32,.6),transparent);}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-breadcrumb{font-family:var(--mono);font-size:.5rem;color:rgba(220,150,120,.55);letter-spacing:.18em;margin-bottom:20px;}
+.hero-label{font-family:var(--mono);font-size:.52rem;color:rgba(220,120,90,.7);letter-spacing:.28em;margin-bottom:14px;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.8rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:14px;}
+.hero-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(.82rem,2vw,.96rem);color:rgba(230,200,180,.7);line-height:1.9;margin-bottom:28px;}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-date{font-family:var(--mono);font-size:.52rem;color:rgba(220,150,120,.6);letter-spacing:.08em;}
+.hero-tag{font-family:var(--mono);font-size:.44rem;padding:3px 10px;border:1px solid rgba(192,40,26,.45);color:rgba(230,150,120,.85);letter-spacing:.08em;}
+.hero-tag.gold{border-color:rgba(184,144,10,.45);color:var(--gold3);}
+
+/* ── SUMMARY ── */
+.summary-wrap{background:var(--parch);border-bottom:1px solid var(--parch4);padding:0 24px;}
+.summary-inner{max-width:780px;margin:0 auto;padding:36px 0;}
+.summary-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.summary-text{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.02rem);color:var(--ink2);line-height:2.1;font-weight:300;border-left:3px solid var(--ohsho);padding-left:18px;}
+.summary-text strong{color:var(--ink);font-weight:600;}
+
+/* ── KEY METRICS ── */
+.metrics-wrap{background:var(--parch2);border-bottom:2px solid var(--parch4);padding:0 24px;}
+.metrics-inner{max-width:780px;margin:0 auto;padding:28px 0;}
+.metrics-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+@media(max-width:600px){.metrics-grid{grid-template-columns:repeat(2,1fr);}}
+.metric-card{background:var(--parch3);border:1px solid var(--parch4);padding:14px 16px;text-align:center;}
+.metric-val{font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--ohsho);margin-bottom:4px;}
+.metric-label{font-family:var(--mono);font-size:.42rem;color:var(--ink3);letter-spacing:.1em;opacity:.7;}
+
+/* ── COMPARISON TABLE ── */
+.comp-wrap{background:var(--parch2);border-bottom:2px solid var(--parch4);padding:0 24px;}
+.comp-inner{max-width:780px;margin:0 auto;padding:32px 0;}
+.comp-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:16px;opacity:.7;}
+.comp-table{width:100%;border-collapse:collapse;font-size:.76rem;}
+.comp-table th{font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.1em;padding:8px 10px;border-bottom:2px solid var(--parch4);text-align:left;background:var(--parch3);}
+.comp-table td{padding:10px 10px;border-bottom:1px solid var(--parch3);color:var(--ink2);vertical-align:middle;}
+.comp-table tr.ohsho-row td{background:rgba(192,40,26,.04);font-weight:500;}
+.comp-table tr:hover td{background:var(--parch3);}
+.comp-name{font-weight:700;color:var(--ink);}
+.comp-highlight{color:var(--ohsho);font-weight:700;}
+.rating{display:flex;gap:2px;}
+.r-dot{width:7px;height:7px;border-radius:50%;background:var(--parch4);}
+.r-dot.on{background:var(--ohsho);}
+.r-dot.on.blue{background:var(--blue2);}
+.r-dot.on.green{background:var(--green2);}
+
+/* ── ARTICLE BODY ── */
+.article-wrap{padding:0 24px;}
+.article-inner{max-width:780px;margin:0 auto;padding:56px 0 80px;}
+
+/* ── MOAT SECTION ── */
+.moat-section{margin-bottom:52px;border-left:3px solid var(--ohsho);padding-left:0;}
+.moat-section-header{background:var(--parch2);border:1px solid var(--parch4);border-left:none;padding:18px 22px;display:flex;align-items:flex-start;gap:14px;}
+.moat-num{font-family:var(--mono);font-size:1.0rem;font-weight:700;color:var(--ohsho);min-width:40px;flex-shrink:0;}
+.moat-title-wrap{flex:1;}
+.moat-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.moat-subtitle{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.08em;opacity:.7;}
+.moat-strength{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.moat-strength-label{font-family:var(--mono);font-size:.44rem;color:var(--gold);letter-spacing:.14em;opacity:.7;}
+.moat-dots{display:flex;gap:4px;}
+.moat-dot{width:9px;height:9px;border-radius:50%;background:var(--parch4);border:1px solid var(--parch3);}
+.moat-dot.on{background:var(--ohsho);border-color:var(--ohsho-dark);}
+.moat-body{background:var(--parch);border:1px solid var(--parch4);border-top:none;border-left:none;padding:22px 22px 22px 76px;}
+@media(max-width:560px){.moat-body{padding:18px;}}
+.moat-text{font-size:.84rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.moat-text strong{color:var(--ink);font-weight:600;}
+.moat-text em{color:var(--ohsho);font-style:normal;font-weight:600;}
+.moat-points{margin-top:14px;display:flex;flex-direction:column;gap:5px;}
+.moat-point{display:flex;align-items:flex-start;gap:8px;background:var(--parch2);border-left:2px solid var(--ohsho);padding:7px 11px;font-size:.74rem;color:var(--ink3);line-height:1.7;}
+.moat-point strong{color:var(--ink);font-weight:600;}
+
+/* ── DIVIDER ── */
+.article-divider{display:flex;align-items:center;gap:16px;margin:0 0 44px;font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.2em;opacity:.4;}
+.article-divider::before,.article-divider::after{content:'';flex:1;height:1px;background:var(--parch4);}
+
+/* ── OTOKU GUIDE ── */
+.otoku-wrap{
+  background:linear-gradient(135deg,#1a0a04 0%,#2a1008 100%);
+  border:1px solid rgba(192,40,26,.25);
+  padding:28px 28px;margin-bottom:48px;
+}
+.otoku-label{font-family:var(--mono);font-size:.5rem;color:rgba(230,160,120,.7);letter-spacing:.22em;margin-bottom:10px;}
+.otoku-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--parch);margin-bottom:18px;line-height:1.4;}
+.otoku-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px;}
+@media(max-width:560px){.otoku-grid{grid-template-columns:1fr;}}
+.otoku-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:14px 16px;}
+.otoku-card.ok{border-color:rgba(80,180,80,.25);}
+.otoku-card.ng{border-color:rgba(180,60,60,.25);}
+.otoku-card-badge{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;margin-bottom:8px;display:inline-block;padding:2px 8px;}
+.badge-ok{background:rgba(80,180,80,.15);color:rgba(120,220,120,.9);}
+.badge-ng{background:rgba(180,60,60,.15);color:rgba(220,120,120,.9);}
+.otoku-card-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--parch);margin-bottom:6px;}
+.otoku-card-desc{font-size:.74rem;color:rgba(210,190,170,.65);line-height:1.7;}
+.otoku-calc{background:rgba(255,255,255,.04);border:1px solid rgba(192,40,26,.2);padding:18px 20px;margin-top:4px;}
+.otoku-calc-title{font-family:var(--mono);font-size:.48rem;color:rgba(230,160,120,.7);letter-spacing:.14em;margin-bottom:12px;}
+.calc-table{width:100%;border-collapse:collapse;}
+.calc-table th{font-family:var(--mono);font-size:.44rem;color:rgba(180,150,120,.6);letter-spacing:.1em;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;}
+.calc-table td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.05);font-size:.76rem;color:rgba(220,200,180,.8);}
+.calc-table td.highlight{color:rgba(240,200,100,.9);font-weight:600;font-family:var(--mono);}
+.calc-table tr:last-child td{border-bottom:none;}
+.otoku-best{margin-top:14px;background:rgba(192,40,26,.12);border:1px solid rgba(192,40,26,.3);padding:12px 16px;font-family:var(--mono);font-size:.52rem;color:rgba(240,180,140,.85);letter-spacing:.06em;line-height:1.8;}
+
+/* ── CURATOR'S VOICE ── */
+.voice-wrap{
+  border:1px solid var(--parch4);
+  background:var(--parch2);
+  margin-bottom:48px;
+}
+.voice-header{padding:14px 22px;border-bottom:1px solid var(--parch4);display:flex;align-items:center;gap:10px;}
+.voice-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;opacity:.7;}
+.voice-sublabel{font-family:var(--mono);font-size:.44rem;color:var(--ink3);opacity:.55;letter-spacing:.06em;}
+.voice-body{padding:22px 24px;}
+.voice-text{font-family:var(--serif);font-size:.9rem;color:var(--ink2);line-height:2.3;font-weight:300;font-style:italic;}
+.voice-text strong{font-style:normal;font-weight:600;color:var(--ink);}
+.voice-text em{font-style:normal;color:var(--ohsho);font-weight:600;}
+
+/* ── CLOSING NOTE ── */
+.closing-note{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);border:1px solid rgba(184,144,10,.2);padding:28px 28px;margin-top:0;}
+.closing-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:14px;opacity:.75;}
+.closing-text{font-family:var(--serif);font-size:.88rem;color:var(--parch3);line-height:2.1;font-weight:300;}
+.closing-text strong{color:var(--parch);font-weight:500;}
+
+/* ── REFERENCES ── */
+.references-wrap{margin-top:48px;border:1px solid var(--parch4);background:var(--parch2);}
+.references-header{padding:16px 24px;border-bottom:1px solid var(--parch4);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.references-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;opacity:.7;}
+.references-note{font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.04em;opacity:.55;}
+.references-body{padding:20px 24px;}
+.ref-group{margin-bottom:18px;}.ref-group:last-child{margin-bottom:0;}
+.ref-group-title{font-family:var(--mono);font-size:.44rem;color:var(--ink3);letter-spacing:.14em;margin-bottom:8px;opacity:.6;padding-bottom:4px;border-bottom:1px solid var(--parch4);}
+.ref-list{display:flex;flex-direction:column;gap:5px;}
+.ref-item{display:flex;align-items:flex-start;gap:8px;font-size:.72rem;color:var(--ink2);line-height:1.6;}
+.ref-num{font-family:var(--mono);font-size:.44rem;color:var(--gold);min-width:20px;flex-shrink:0;padding-top:2px;opacity:.7;}
+.ref-item a{color:var(--blue3);text-decoration:none;word-break:break-all;}
+.ref-item a:hover{color:var(--blue2);text-decoration:underline;}
+.ref-disclaimer{margin-top:14px;padding:10px 14px;background:var(--parch3);border-left:3px solid var(--parch4);font-family:var(--mono);font-size:.43rem;color:var(--ink3);line-height:1.8;letter-spacing:.03em;opacity:.75;}
+
+/* ── BACK LINK ── */
+.back-link-wrap{margin-top:48px;text-align:center;}
+.back-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(184,144,10,.35);font-family:var(--mono);font-size:.56rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;transition:all .2s;}
+.back-link:hover{background:rgba(184,144,10,.08);border-color:var(--gold2);}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--ink);color:var(--parch4);text-align:center;padding:36px 24px;border-top:1px solid rgba(184,144,10,.2);}
+.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.footer-nav a{font-family:var(--mono);font-size:.55rem;color:var(--gold3);text-decoration:none;letter-spacing:.1em;opacity:.65;transition:opacity .2s;}
+.footer-nav a:hover{opacity:1}
+.footer-copy{font-family:var(--mono);font-size:.46rem;color:var(--parch4);opacity:.35;letter-spacing:.12em;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">← Library Top</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">論考の棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">餃子の王将 moat解剖</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">THE RESEARCH SHELF · ESSAY 03</div>
+    <div class="hero-label">FOOD SERVICE · MOAT ANALYSIS · PERSONAL ESSAY</div>
+    <h1 class="hero-title">餃子の王将 moat解剖</h1>
+    <p class="hero-subtitle">
+      「安くてうまい」はなぜ成立するのか——<br>
+      現場調理・産地管理・直営75%・価格帯独占という5つの構造で読む
+    </p>
+    <div class="hero-meta">
+      <span class="hero-date">2026.03.27</span>
+      <span class="hero-tag">外食</span>
+      <span class="hero-tag">moat分析</span>
+      <span class="hero-tag gold">株主優待</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <div class="summary-label">PREMISE — この記事の前提</div>
+    <p class="summary-text">
+      王将フードサービス（9936・東証プライム）は、外食業界のなかでも<strong>「真似しにくい稼ぐ構造」</strong>を持つ稀有な企業だ。<br><br>
+      餃子1人前264円から始まる価格帯でありながら、営業利益率は約10%。
+      4年連続の増収増益・38ヶ月連続月次売上過去最高を記録した。<br><br>
+      本稿では、長期投資家の視点でそのmoatを解剖するとともに、
+      <strong>株主優待×ぎょうざ倶楽部の最適活用術</strong>と、
+      実際に通い続けた者だからこそわかる<strong>「食の体験価値」</strong>を合わせて記録する。
+    </p>
+  </div>
+</div>
+
+<!-- KEY METRICS -->
+<div class="metrics-wrap">
+  <div class="metrics-inner">
+    <div class="metrics-label">KEY METRICS — 2025年3月期実績</div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val">1,110億</div>
+        <div class="metric-label">売上高（過去最高）</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">9.8%</div>
+        <div class="metric-label">営業利益率</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">76.2%</div>
+        <div class="metric-label">株主資本比率</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">+331億</div>
+        <div class="metric-label">実質ネットキャッシュ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="comp-wrap">
+  <div class="comp-inner">
+    <div class="comp-label">外食チェーン比較 — 王将の立ち位置</div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>チェーン</th>
+          <th>客単価目安</th>
+          <th>現場調理</th>
+          <th>直営比率</th>
+          <th>営業利益率</th>
+          <th style="width:100px;">moat強度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ohsho-row">
+          <td><div class="comp-name">餃子の王将</div><div style="font-family:var(--mono);font-size:.44rem;color:var(--ohsho);opacity:.8;">9936</div></td>
+          <td class="comp-highlight">700〜1,000円</td>
+          <td class="comp-highlight">◎ 炒め・焼き</td>
+          <td class="comp-highlight">約75%</td>
+          <td class="comp-highlight">約9.8%</td>
+          <td><div class="rating"><div class="r-dot on"></div><div class="r-dot on"></div><div class="r-dot on"></div><div class="r-dot on"></div><div class="r-dot on"></div></div></td>
+        </tr>
+        <tr>
+          <td><div class="comp-name">サイゼリヤ</div><div style="font-family:var(--mono);font-size:.44rem;color:var(--ink3);opacity:.7;">7581</div></td>
+          <td>700〜900円</td>
+          <td>△ 加熱中心</td>
+          <td>約90%超</td>
+          <td>約6〜8%</td>
+          <td><div class="rating"><div class="r-dot on green"></div><div class="r-dot on green"></div><div class="r-dot on green"></div><div class="r-dot on green"></div><div class="r-dot"></div></div></td>
+        </tr>
+        <tr>
+          <td><div class="comp-name">日本マクドナルド</div><div style="font-family:var(--mono);font-size:.44rem;color:var(--ink3);opacity:.7;">2702</div></td>
+          <td>600〜800円</td>
+          <td>× 組み立て</td>
+          <td>約30%</td>
+          <td>約5〜7%</td>
+          <td><div class="rating"><div class="r-dot on blue"></div><div class="r-dot on blue"></div><div class="r-dot on blue"></div><div class="r-dot on blue"></div><div class="r-dot"></div></div></td>
+        </tr>
+        <tr>
+          <td><div class="comp-name">すき家（ゼンショーHD）</div><div style="font-family:var(--mono);font-size:.44rem;color:var(--ink3);opacity:.7;">7550</div></td>
+          <td>500〜700円</td>
+          <td>× 加熱</td>
+          <td>約95%超</td>
+          <td>約4〜6%</td>
+          <td><div class="rating"><div class="r-dot on blue"></div><div class="r-dot on blue"></div><div class="r-dot on blue"></div><div class="r-dot"></div><div class="r-dot"></div></div></td>
+        </tr>
+        <tr>
+          <td><div class="comp-name">大阪王将（イートアンドHD）</div><div style="font-family:var(--mono);font-size:.44rem;color:var(--ink3);opacity:.7;">2882</div></td>
+          <td>700〜1,000円</td>
+          <td>○ 一部現場</td>
+          <td>FC多め</td>
+          <td>食品製造が主軸</td>
+          <td><div class="rating"><div class="r-dot on"></div><div class="r-dot on"></div><div class="r-dot on"></div><div class="r-dot"></div><div class="r-dot"></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-family:var(--mono);font-size:.44rem;color:var(--ink3);margin-top:10px;opacity:.6;">
+      ※ 営業利益率・直営比率は各社公開情報をもとにした概算。moat強度は著者の独自評価。
+    </p>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+<div class="article-inner">
+
+  <!-- MOAT 1 -->
+  <div class="moat-section">
+    <div class="moat-section-header">
+      <div class="moat-num">01</div>
+      <div class="moat-title-wrap">
+        <div class="moat-title">現場調理＋毎日配送の垂直統合</div>
+        <div class="moat-subtitle">DAILY DELIVERY · ON-SITE COOKING · NO CENTRAL KITCHEN</div>
+        <div class="moat-strength">
+          <span class="moat-strength-label">MOAT</span>
+          <div class="moat-dots">
+            <div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moat-body">
+      <p class="moat-text">
+        これが王将最大の参入障壁だ。餃子の餡と皮は自社工場（久御山・九州・札幌）で毎日製造し、<em>冷凍せず当日配送</em>する。
+        各店舗では翌朝に受け取り、その日のうちに現場で焼く・炒める。<br><br>
+        セントラルキッチンで大量製造して温めるだけの競合とは、オペレーション構造が根本的に異なる。
+        実は2000年代初頭に<strong>セントラルキッチン化を試みて顧客離れが起きた失敗</strong>がある。
+        その教訓がこの哲学を「変えられない戦略」として固定化している。
+        同業他社がコストを理由に便利な方向へ動くほど、王将の差別性は相対的に上がる構図だ。
+      </p>
+      <div class="moat-points">
+        <div class="moat-point"><strong>毎日配送のコスト：</strong>物流コストは高いが、それが「鮮度の証明」として顧客の信頼に転換される。</div>
+        <div class="moat-point"><strong>失敗から固定された戦略：</strong>セントラルキッチン撤回の歴史が、現在の方針を変えにくくしている。守りに強いmoatの典型例。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- MOAT 2 -->
+  <div class="moat-section">
+    <div class="moat-section-header">
+      <div class="moat-num">02</div>
+      <div class="moat-title-wrap">
+        <div class="moat-title">産地直接管理の国産食材調達</div>
+        <div class="moat-subtitle">DOMESTIC INGREDIENTS · DIRECT SOURCING · TRACEABILITY</div>
+        <div class="moat-strength">
+          <span class="moat-strength-label">MOAT</span>
+          <div class="moat-dots">
+            <div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moat-body">
+      <p class="moat-text">
+        にんにくは<em>青森県産限定</em>——収穫後越冬させた甘みの深いものを選定し、使用直前に皮むき・すりおろしを行う。
+        豚肉は国産生肉をブロック購入し、工場で直前加工。キャベツは産地と契約し品種選定まで関与する。
+        全食材にトレーサビリティ（産地報告書）を取得し、自社社員が仕入れ先工場・産地に直接赴いて衛生監査を実施する。<br><br>
+        自社工場はISO9001・FSSC22000を取得。<strong>「安さのために品質を下げる」のではなく、
+        スケールによる調達力で品質と安さを同時に成立させている</strong>のが王将の核心だ。
+      </p>
+      <div class="moat-points">
+        <div class="moat-point"><strong>産地限定という制約の強み：</strong>「青森産にんにく限定」は制約ではなく、品質の担保として機能するシグナリングだ。</div>
+        <div class="moat-point"><strong>スケール×こだわりの両立：</strong>国内728店舗の購買力があるから、産地管理しながらも低価格が実現できる。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- MOAT 3 -->
+  <div class="moat-section">
+    <div class="moat-section-header">
+      <div class="moat-num">03</div>
+      <div class="moat-title-wrap">
+        <div class="moat-title">直営75%がもたらすブランド統制力</div>
+        <div class="moat-subtitle">75% COMPANY-OWNED · QUALITY CONTROL · BRAND INTEGRITY</div>
+        <div class="moat-strength">
+          <span class="moat-strength-label">MOAT</span>
+          <div class="moat-dots">
+            <div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moat-body">
+      <p class="moat-text">
+        外食大手の多くはFC加盟店を増やしてロイヤリティ収入を得る「軽い資産モデル」を選ぶ。
+        王将は逆に<em>直営比率75.7%</em>という重い構造を選択している。<br><br>
+        これにより品質・調理基準の均一管理が可能になり、値上げ判断やメニュー変更を全店即時実行できる。
+        「王将調理道場」「王将大学」による本社主導の人材育成も直営比率の高さがあってこそ機能する。<br><br>
+        さらに各店舗の店長が考案する<strong>「ご当地メニュー」を許容</strong>することで、
+        標準化と地域密着を両立している。これは大手チェーンでは珍しい運営哲学だ。
+      </p>
+      <div class="moat-points">
+        <div class="moat-point"><strong>値上げの実行力：</strong>2度の価格改定を全店で即時実行できたのは、直営比率の高さが理由の一つ。FC主体では加盟店との交渉が必要になる。</div>
+        <div class="moat-point"><strong>ご当地メニューの逆説：</strong>本社が許容する「自由」が、地域の顧客を地元の王将に縛り付ける粘着力になる。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- MOAT 4 -->
+  <div class="moat-section">
+    <div class="moat-section-header">
+      <div class="moat-num">04</div>
+      <div class="moat-title-wrap">
+        <div class="moat-title">価格帯の独占ポジション</div>
+        <div class="moat-subtitle">PRICE POSITIONING · MIDDLE MARKET · CATEGORY OWNERSHIP</div>
+        <div class="moat-strength">
+          <span class="moat-strength-label">MOAT</span>
+          <div class="moat-dots">
+            <div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moat-body">
+      <p class="moat-text">
+        餃子1人前264円〜、客単価700〜1,000円という価格帯は、
+        牛丼より高く、ファミレスより安い。そして<em>メニューが圧倒的に豊富</em>だ。
+        中華料理という幅広いカテゴリで、一人でも家族でも使える「万能な価格帯」を国内728店舗で占有している。<br><br>
+        値上げ後も客数が増え続けた事実が、価格弾力性の低さ——つまり<strong>「多少値上がりしても通い続ける顧客基盤」</strong>の存在を証明している。
+        これは長期投資家にとって最も重要なシグナルの一つだ。
+      </p>
+      <div class="moat-points">
+        <div class="moat-point"><strong>38ヶ月連続月次最高：</strong>値上げしても客が増える＝需要の価格非弾力性。これをデータで示し続けている企業は外食業界でも稀少だ。</div>
+        <div class="moat-point"><strong>競合が少ない中間帯：</strong>マクドナルドはもっと安い。ガストはもっと高い。その中間で「中華を本格的に食える」業態は王将だけが大規模に占有している。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- MOAT 5 -->
+  <div class="moat-section">
+    <div class="moat-section-header">
+      <div class="moat-num">05</div>
+      <div class="moat-title-wrap">
+        <div class="moat-title">強固な財務体質（実質無借金）</div>
+        <div class="moat-subtitle">NET CASH +¥33.1B · EQUITY RATIO 76.2% · ROE 13%</div>
+        <div class="moat-strength">
+          <span class="moat-strength-label">MOAT</span>
+          <div class="moat-dots">
+            <div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot on"></div><div class="moat-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moat-body">
+      <p class="moat-text">
+        現金381億円に対し有利子負債50億円。<em>実質ネットキャッシュ+331億円</em>で事実上の無借金経営だ。
+        株主資本比率76.2%・ROE13%という数字は、財務の安全性と資本効率を高い水準で両立している。<br><br>
+        外食業界は食材費・人件費・家賃という3大コストに常にさらされる「薄利多売の世界」だ。
+        その中で営業利益率約10%を維持しながら無借金でいられるのは、
+        <strong>「稼ぐ力」と「守る体力」を同時に持つ</strong>ことを意味する。不況にも金利上昇にも動じにくい財務構造は、長期保有の安心感につながる。
+      </p>
+      <div class="moat-points">
+        <div class="moat-point"><strong>ROE13%×無借金：</strong>借金ゼロでROE13%を出しているのは資産の質が高い証拠。レバレッジに頼らない真の収益力だ。</div>
+        <div class="moat-point"><strong>外食業界の利益率比較：</strong>サイゼリヤ6〜8%、マクドナルド国内単体5〜7%と比べても王将の約10%は際立つ。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- 株主優待 × ぎょうざ倶楽部 活用ガイド -->
+  <div class="otoku-wrap">
+    <div class="otoku-label">SHAREHOLDER GUIDE — 株主優待 × ぎょうざ倶楽部 活用術</div>
+    <div class="otoku-title">「プラチナ10% ＋ 株主優待券（500円券）」が最強コンボ</div>
+
+    <div class="otoku-grid">
+      <div class="otoku-card ok">
+        <div class="otoku-card-badge badge-ok">✓ 併用OK</div>
+        <div class="otoku-card-title">株主優待券（500円券）<br>× ぎょうざ倶楽部会員割引</div>
+        <div class="otoku-card-desc">
+          公式の2026大感謝祭注意書きに「他の割引券との併用不可。ただし<strong>ぎょうざ倶楽部会員割引・お食事券・株主ご優待券は除く</strong>」と明記。会社が同一会計での併用を前提とした扱いをしている。
+        </div>
+      </div>
+      <div class="otoku-card ng">
+        <div class="otoku-card-badge badge-ng">✗ 実務上 NG</div>
+        <div class="otoku-card-title">株主優待カード（5%引き）<br>× ぎょうざ倶楽部カード</div>
+        <div class="otoku-card-desc">
+          株主優待カードの券面案内に「<strong>ぎょうざ倶楽部カードとの併用はできません</strong>」と記載あり。公式サイトに明記はないが、実務上は併用不可として扱うのが安全。
+        </div>
+      </div>
+    </div>
+
+    <div class="otoku-calc">
+      <div class="otoku-calc-title">SIMULATION — プラチナ会員10%引き ＋ 株主優待券（500円）でいくら得か</div>
+      <table class="calc-table">
+        <thead>
+          <tr>
+            <th>会計金額</th>
+            <th>10%引き後</th>
+            <th>500円券使用後（支払額）</th>
+            <th>総節約額</th>
+            <th>実質割引率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1,500円</td>
+            <td>1,350円</td>
+            <td class="highlight">850円</td>
+            <td class="highlight">650円お得</td>
+            <td>43.3%引き</td>
+          </tr>
+          <tr>
+            <td>2,000円</td>
+            <td>1,800円</td>
+            <td class="highlight">1,300円</td>
+            <td class="highlight">700円お得</td>
+            <td>35.0%引き</td>
+          </tr>
+          <tr>
+            <td>3,000円</td>
+            <td>2,700円</td>
+            <td class="highlight">2,200円</td>
+            <td class="highlight">800円お得</td>
+            <td>26.7%引き</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="otoku-best">
+      ★ BEST USE — 少額会計ほど割引率が高い。1,500円の会計でプラチナ＋優待券を使うと実質43%引き。<br>
+      ぎょうざ倶楽部のシルバー（5%）から始め、来店回数を積み上げてゴールド（7%）・プラチナ（10%）を目指すのが長期的な最適解。<br>
+      ※ 優待券は100株以上保有の株主に年間4枚（2,000円分）が基本。保有株数に応じて枚数増加。
+    </div>
+  </div>
+
+  <div class="article-divider">· · ·</div>
+
+  <!-- CURATOR'S VOICE -->
+  <div class="voice-wrap">
+    <div class="voice-header">
+      <span class="voice-label">CURATOR'S VOICE</span>
+      <span class="voice-sublabel">— 数字では語れない、食の体験として</span>
+    </div>
+    <div class="voice-body">
+      <p class="voice-text">
+        「安くてうまい」という言葉は王将のために存在する、と思っている。<br><br>
+
+        餃子を2人前注文すると1皿無料になるキャンペーン、ジャストサイズのラインナップ——
+        <em>値段の割に量がある</em>という感覚は、単純な量の話ではなく
+        「この値段でこれだけ満足できるのか」という体験の密度の問題だ。<br><br>
+
+        スーパーやコンビニで売っている冷凍餃子をレンジで温めたものは、
+        それはそれで旨味を感じる。だが<strong>塩味が前に出てくる</strong>。
+        食べ終わった後、喉が乾く、あの感覚。<br><br>
+
+        王将の餃子は違う。<em>素材の旨味と、作り手の上手さが前に出る</em>。
+        にんにくの香りは主張しすぎず、豚肉の脂は甘く、皮は焼き色がついた面だけがパリッとして
+        反対面はもちっとしている。あれはパウチをレンチンしただけでは絶対に出ない食感だ。<br><br>
+
+        食べ終わった後の満足度が高い。腹が満ちるだけでなく、<strong>「いいものを食べた」という感覚</strong>が残る。
+        外食として、食事として、本当に格別だと思う。<br><br>
+
+        投資対象として見る前に、一顧客として何度も通いたいと思わせる店——
+        それが長期投資家にとって最も信頼できる「買いのシグナル」だと私は考えている。
+      </p>
+    </div>
+  </div>
+
+  <!-- CLOSING NOTE -->
+  <div class="closing-note">
+    <div class="closing-label">INVESTOR'S NOTE — この記事の結論</div>
+    <p class="closing-text">
+      王将フードサービスのmoatは「一点突破」ではなく<strong>「複数の強みが掛け算になっている」</strong>点が本質だ。
+      現場調理という哲学・産地管理という信頼・直営75%という統制力・価格帯の独占・実質無借金の財務——
+      これらは個別に見れば模倣できそうでも、組み合わさって「王将らしさ」になっている。<br><br>
+
+      リスクは人件費の継続上昇と国内出店余地の縮小だ。
+      2025年春闘での賃上げ率8.2%は重く、現場調理モデルの維持コストは上がり続ける。
+      ただし値上げ後も客数が増え続けた実績が、<strong>コスト転嫁力の高さ</strong>を証明している。<br><br>
+
+      PER20倍・PBR2.7倍は割安ではないが、4年連続増収増益という実績と
+      実質無借金という財務の質を考えると、長期保有の対象として十分に検討価値がある。
+      何より——<strong>通うたびに「また来たい」と思わせる企業に、長期の投資家は優しい。</strong>
+    </p>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="references-wrap">
+    <div class="references-header">
+      <span class="references-label">REFERENCES &amp; SOURCES</span>
+      <span class="references-note">— 参考・引用文献 / ランキング・分析は著者の独自見解</span>
+    </div>
+    <div class="references-body">
+      <div class="ref-group">
+        <div class="ref-group-title">王将フードサービス 公式</div>
+        <div class="ref-list">
+          <div class="ref-item"><span class="ref-num">[1]</span><div><strong>王将フードサービス</strong> — IR・投資家向け情報<br><a href="https://ir.ohsho.co.jp/ir/" target="_blank" rel="noopener">https://ir.ohsho.co.jp/ir/</a></div></div>
+          <div class="ref-item"><span class="ref-num">[2]</span><div><strong>王将フードサービス</strong> — 強み（こだわり）ページ<br><a href="https://ir.ohsho.co.jp/ir/investor/strength.html" target="_blank" rel="noopener">https://ir.ohsho.co.jp/ir/investor/strength.html</a></div></div>
+          <div class="ref-item"><span class="ref-num">[3]</span><div><strong>王将フードサービス</strong> — 店舗展開状況<br><a href="https://ir.ohsho.co.jp/company/outline/store.html" target="_blank" rel="noopener">https://ir.ohsho.co.jp/company/outline/store.html</a></div></div>
+        </div>
+      </div>
+      <div class="ref-group">
+        <div class="ref-group-title">財務データ・業界分析</div>
+        <div class="ref-list">
+          <div class="ref-item"><span class="ref-num">[4]</span><div><strong>IRバンク</strong> — 王将フードサービス 財務・配当情報（9936）<br><a href="https://irbank.net/E03193" target="_blank" rel="noopener">https://irbank.net/E03193</a></div></div>
+          <div class="ref-item"><span class="ref-num">[5]</span><div><strong>日本フランチャイズチェーン協会</strong> — 外食産業統計データ<br><a href="https://www.jfa-fc.or.jp/particle/320.html" target="_blank" rel="noopener">https://www.jfa-fc.or.jp/particle/320.html</a></div></div>
+          <div class="ref-item"><span class="ref-num">[6]</span><div><strong>経済産業省</strong> — 商業動態統計（外食産業）<br><a href="https://www.meti.go.jp/statistics/tyo/syoudou/" target="_blank" rel="noopener">https://www.meti.go.jp/statistics/tyo/syoudou/</a></div></div>
+        </div>
+      </div>
+      <div class="ref-disclaimer">
+        本記事のランキング・moat評価・CURATOR'S VOICEは著者の独自分析・個人的見解であり、投資勧誘を目的とするものではありません。
+        投資判断はご自身の責任において行ってください。株主優待・ぎょうざ倶楽部の情報は変更される場合があります。必ず最新の公式情報をご確認ください。
+      </div>
+    </div>
+  </div>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="../">← 論考の棚に戻る</a>
+  </div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="../../">Library Top</a>
+    <a href="../">論考の棚</a>
+    <a href="../../companies/">企業分析</a>
+    <a href="../../news/">News Curation</a>
+  </div>
+  <div class="footer-copy">© 2026 投資と思考の書斎 · The Research Shelf</div>
+</footer>
+
+</body>
+</html>

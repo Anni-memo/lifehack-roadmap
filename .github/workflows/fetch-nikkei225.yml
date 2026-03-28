@@ -1,0 +1,49 @@
+name: Fetch Nikkei 225 Data
+
+on:
+  # 毎日 20:30 JST（11:30 UTC）に実行 ─ 東証終値確定後
+  schedule:
+    - cron: "30 11 * * 1-5"   # 平日のみ
+
+  # 手動実行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch Nikkei 225 data
+        env:
+          JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
+        run: python scripts/fetch_nikkei225.py
+
+      - name: Check if data changed
+        id: diff
+        run: |
+          git diff --quiet investment-library/data/nikkei225.json \
+            && echo "changed=false" >> $GITHUB_OUTPUT \
+            || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit & push updated data
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add investment-library/data/nikkei225.json
+          git commit -m "data: 日経225データ更新 $(date +'%Y-%m-%d')"
+          git push
