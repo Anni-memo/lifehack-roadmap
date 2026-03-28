@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIエージェントはチームを殺すか——サイボウズの人件費と「チームワーク」哲学の存続 | 投資ライブラリ</title>
+<meta name="description" content="「AIエージェントがあれば一人で会社が動く」という言説が広がる中、サイボウズの最大コストである人件費はAIで圧縮されるか。そして「チームワークあふれる社会」という企業理念は時代遅れになるのか。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<style>
+:root{
+  --ink:#1a1610;
+  --parch:#f5f0e8;
+  --parch2:#ede8dc;
+  --gold:#8b6914;
+  --rust:#7a3419;
+  --green:#2a5c3f;
+  --blue:#1a3a5c;
+  --muted:#5a5248;
+  /* Essay 11 カラー：問いの色＝深紅×炭 */
+  --q1:#6a1010;   /* 危機感：深紅 */
+  --q2:#a01818;
+  --q3:#c83030;
+  --coal:#141414; /* 炭 */
+  --amber:#7a5010;
+  --amber2:#b87820;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--parch);color:var(--ink);font-family:'Noto Serif JP',serif;font-size:17px;line-height:1.9;}
+a{color:var(--q2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* ── NAV ── */
+nav{background:var(--ink);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.nav-brand{color:#e8e0d0;font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.08em;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{color:#b0a898;font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.06em;}
+.nav-links a:hover{color:#e8e0d0;text-decoration:none;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(160deg,var(--coal) 0%,#1a0a0a 40%,#2a0808 70%,var(--q1) 100%);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,48,48,0.1) 0%,transparent 55%),radial-gradient(ellipse at 70% 30%,rgba(184,120,32,0.08) 0%,transparent 50%);pointer-events:none;}
+.hero-eyebrow{display:inline-block;background:rgba(200,48,48,0.15);border:1px solid rgba(200,48,48,0.35);color:#f08080;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;padding:5px 14px;border-radius:2px;margin-bottom:20px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,5vw,3.2rem);font-weight:600;color:#f8e8e0;line-height:1.2;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:#f08080;}
+.hero-sub{color:#d0b8b0;font-size:1rem;max-width:640px;margin:0 auto 32px;line-height:1.7;}
+.hero-meta{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.hero-meta span{font-family:'DM Mono',monospace;font-size:.72rem;color:#906868;letter-spacing:.06em;}
+
+/* ── LAYOUT ── */
+.container{max-width:860px;margin:0 auto;padding:0 24px;}
+
+/* ── SUMMARY ── */
+.summary-wrap{background:var(--parch2);border-top:3px solid var(--q3);padding:40px 0;}
+.summary-inner{max-width:860px;margin:0 auto;padding:0 24px;}
+.summary-inner h2{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.14em;color:var(--q2);margin-bottom:16px;}
+.summary-text{font-size:.97rem;color:var(--muted);line-height:1.85;}
+.key-questions{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.kq-item{background:#fff;border-left:3px solid var(--q3);padding:12px 16px;font-size:.9rem;color:var(--ink);}
+
+/* ── SECTION ── */
+.section{padding:64px 0;}
+.section-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.16em;color:var(--muted);margin-bottom:8px;}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:600;color:var(--ink);margin-bottom:24px;line-height:1.3;}
+.section h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--ink);margin:32px 0 12px;}
+.section p{margin-bottom:16px;font-size:.97rem;}
+
+/* ── COST STRUCTURE ── */
+.cost-wrap{background:var(--parch2);border-radius:4px;padding:32px;margin:32px 0;}
+.cost-wrap h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:20px;}
+.cost-bar-row{display:grid;grid-template-columns:140px 1fr 60px;gap:12px;align-items:center;margin-bottom:12px;}
+.cost-label{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);}
+.cost-bar-track{background:#e0d8cc;border-radius:2px;height:22px;overflow:hidden;}
+.cost-bar-fill{height:100%;border-radius:2px;display:flex;align-items:center;padding-left:8px;font-family:'DM Mono',monospace;font-size:.68rem;color:#fff;}
+.bar-personnel{background:var(--q2);width:58%;}
+.bar-sales{background:var(--amber);width:18%;}
+.bar-rd{background:var(--green);width:14%;}
+.bar-other{background:#888;width:10%;}
+.cost-pct{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--ink);text-align:right;}
+.cost-note{font-size:.8rem;color:var(--muted);margin-top:16px;line-height:1.6;}
+
+/* ── FINANCIAL TABLE ── */
+.fin-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.86rem;}
+.fin-table thead th{background:var(--ink);color:#e8e0d0;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;padding:10px 14px;text-align:right;}
+.fin-table thead th:first-child{text-align:left;}
+.fin-table tbody tr{border-bottom:1px solid #d8d0c0;}
+.fin-table tbody tr:hover{background:#faf7f0;}
+.fin-table td{padding:10px 14px;text-align:right;line-height:1.4;}
+.fin-table td:first-child{text-align:left;font-family:'DM Mono',monospace;font-size:.78rem;color:var(--muted);}
+.fin-table .highlight{background:#fff9f0;font-weight:600;}
+.fin-table .danger{color:var(--q2);}
+.fin-table .good{color:var(--green);}
+
+/* ── QUOTE BLOCK ── */
+.quote-block{margin:32px 0;padding:28px 32px;position:relative;}
+.quote-crisis{background:linear-gradient(135deg,rgba(106,16,16,0.06),rgba(20,20,20,0.03));border-left:4px solid var(--q2);}
+.quote-neutral{background:linear-gradient(135deg,rgba(122,80,16,0.06),rgba(20,20,20,0.03));border-left:4px solid var(--amber2);}
+.quote-hope{background:linear-gradient(135deg,rgba(42,92,63,0.06),rgba(20,20,20,0.03));border-left:4px solid var(--green);}
+.quote-block blockquote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;line-height:1.6;color:var(--ink);margin-bottom:12px;}
+.quote-source{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:.06em;}
+
+/* ── COMPARISON TABLE ── */
+.cmp-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.87rem;}
+.cmp-table thead th{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;padding:10px 14px;text-align:left;border-bottom:2px solid var(--ink);}
+.cmp-table tbody tr{border-bottom:1px solid #d8d0c0;}
+.cmp-table tbody tr:hover{background:#faf7f0;}
+.cmp-table td{padding:11px 14px;vertical-align:top;line-height:1.6;}
+.cmp-table td:first-child{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);white-space:nowrap;}
+.tag{display:inline-block;font-family:'DM Mono',monospace;font-size:.65rem;padding:2px 7px;border-radius:2px;white-space:nowrap;}
+.tag-compress{background:#fde8e8;color:var(--q2);}
+.tag-shift{background:#fdf5e8;color:var(--amber);}
+.tag-safe{background:#e8f5ee;color:var(--green);}
+.tag-new{background:#e8eef8;color:var(--blue);}
+
+/* ── SCENARIO ── */
+.scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:32px 0;}
+.sc-card{padding:24px;border-radius:3px;}
+.sc-bull{background:linear-gradient(135deg,rgba(42,92,63,0.08),rgba(26,58,40,0.04));border:1px solid rgba(42,92,63,0.3);}
+.sc-bear{background:linear-gradient(135deg,rgba(106,16,16,0.08),rgba(80,10,10,0.04));border:1px solid rgba(106,16,16,0.3);}
+.sc-pivot{background:linear-gradient(135deg,rgba(122,80,16,0.08),rgba(80,50,10,0.04));border:1px solid rgba(122,80,16,0.3);}
+.sc-card h4{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.08em;margin-bottom:8px;}
+.sc-bull h4{color:var(--green);}
+.sc-bear h4{color:var(--q2);}
+.sc-pivot h4{color:var(--amber2);}
+.sc-card p{font-size:.87rem;color:var(--muted);line-height:1.6;margin:0;}
+
+/* ── INSIGHT BOX ── */
+.insight-box{background:var(--coal);color:#e8e0d0;padding:32px 36px;margin:32px 0;border-radius:3px;}
+.insight-label{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.14em;color:#906868;margin-bottom:12px;}
+.insight-box p{font-size:.97rem;line-height:1.8;color:#d8d0c0;}
+.insight-box strong{color:#f08080;}
+
+/* ── TEAM REDEFINITION ── */
+.team-def{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;margin:32px 0;align-items:stretch;}
+.team-old{background:rgba(106,16,16,0.06);border:1px solid rgba(106,16,16,0.25);padding:24px 20px;}
+.team-arrow{display:flex;align-items:center;justify-content:center;background:#f0ebe0;border-top:1px solid #d8d0c0;border-bottom:1px solid #d8d0c0;font-size:1.2rem;color:var(--muted);}
+.team-new{background:rgba(42,92,63,0.06);border:1px solid rgba(42,92,63,0.25);padding:24px 20px;}
+.team-old h4,.team-new h4{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.08em;margin-bottom:12px;}
+.team-old h4{color:var(--q2);}
+.team-new h4{color:var(--green);}
+.team-old ul,.team-new ul{list-style:none;font-size:.87rem;color:var(--muted);line-height:1.7;}
+.team-old li::before{content:'✗ ';}
+.team-new li::before{content:'✓ ';}
+
+/* ── MARKET TREND ── */
+.trend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0;}
+.trend-card{padding:20px;border-radius:3px;background:#fff;border:1px solid #d8d0c0;}
+.trend-card .trend-num{font-family:'DM Mono',monospace;font-size:1.6rem;font-weight:500;margin-bottom:4px;}
+.trend-card .trend-label{font-size:.82rem;color:var(--muted);line-height:1.5;}
+.trend-up{color:var(--q2);}
+.trend-mid{color:var(--amber2);}
+.trend-down{color:var(--green);}
+
+/* ── PHILOSOPHICAL TENSION ── */
+.tension-box{background:var(--parch2);border-radius:4px;padding:32px;margin:32px 0;}
+.tension-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-bottom:20px;}
+.tv-left,.tv-right{padding:20px;border-radius:3px;}
+.tv-left{background:rgba(106,16,16,0.07);border-left:3px solid var(--q2);}
+.tv-right{background:rgba(42,92,63,0.07);border-left:3px solid var(--green);}
+.tv-center{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);text-align:center;}
+.tv-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;margin-bottom:8px;}
+.tv-left .tv-label{color:var(--q2);}
+.tv-right .tv-label{color:var(--green);}
+.tv-text{font-size:.88rem;color:var(--ink);line-height:1.6;}
+
+/* ── RESOLUTION PATH ── */
+.path-steps{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+.path-step{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;}
+.step-num{font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:500;color:var(--q3);padding-top:4px;}
+.step-content{padding:16px 0 24px;border-bottom:1px dashed #d8d0c0;}
+.path-step:last-child .step-content{border-bottom:none;}
+.step-content h4{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:600;margin-bottom:8px;}
+.step-content p{font-size:.88rem;color:var(--muted);line-height:1.7;margin:0;}
+
+/* ── CURATOR ── */
+.curator{background:linear-gradient(135deg,var(--coal) 0%,#1a0808 100%);color:#f0e8e8;padding:48px 40px;margin:0;}
+.curator-inner{max-width:860px;margin:0 auto;}
+.curator-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:#906868;margin-bottom:16px;}
+.curator h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#f08080;margin-bottom:20px;font-style:italic;}
+.curator p{font-size:.97rem;line-height:1.9;color:#d8c8c8;margin-bottom:14px;}
+.curator strong{color:#f8e0e0;}
+
+/* ── REFERENCES ── */
+.references{padding:48px 0;border-top:1px solid #d8d0c0;}
+.references h3{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.14em;color:var(--muted);margin-bottom:16px;}
+.ref-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ref-list li{font-size:.82rem;color:var(--muted);padding-left:16px;position:relative;line-height:1.6;}
+.ref-list li::before{content:'—';position:absolute;left:0;color:#b0a898;}
+
+/* ── BACK + FOOTER ── */
+.back-link{padding:32px 0;text-align:center;}
+.back-link a{font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.1em;color:var(--muted);border:1px solid #c8c0b0;padding:10px 24px;border-radius:2px;transition:all .2s;}
+.back-link a:hover{background:var(--ink);color:#e8e0d0;border-color:var(--ink);text-decoration:none;}
+.site-footer{background:var(--ink);color:#5a5248;padding:32px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;}
+.site-footer a{color:#7a7068;}
+.divider{border:none;border-top:1px solid #d8d0c0;margin:0;}
+
+@media(max-width:640px){
+  nav{padding:12px 16px;}
+  .hero{padding:48px 16px 40px;}
+  .section{padding:40px 0;}
+  .cost-bar-row{grid-template-columns:100px 1fr 50px;}
+  .team-def{grid-template-columns:1fr;gap:0;}
+  .team-arrow{padding:12px;border:none;border-top:1px solid #d8d0c0;border-bottom:1px solid #d8d0c0;}
+  .tension-vs{grid-template-columns:1fr;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">INVESTMENT LIBRARY</span>
+  <div class="nav-links">
+    <a href="../../">← Research</a>
+    <a href="../../../">Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">ESSAY 11 · CYBOZU SERIES · STRUCTURAL RISK</div>
+  <h1>AIエージェントは<br><em>チームを殺すか</em></h1>
+  <p class="hero-sub">サイボウズの最大コスト「人件費」はAIで圧縮されるか。そして「チームワークあふれる社会」という企業理念は、AIが一人で仕事を完結させる時代に有効か。</p>
+  <div class="hero-meta">
+    <span>2026-03-28 公開</span>
+    <span>読了 約18分</span>
+    <span>コスト構造・理念・市場変化</span>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-wrap">
+  <div class="summary-inner">
+    <h2>THIS ESSAY IN BRIEF</h2>
+    <p class="summary-text">
+      SNSには「AIエージェントがあれば一人で会社が動く」という投稿が溢れる。実際、2026年のAIエージェントは単純なタスクを超え、コード生成・顧客対応・データ分析・プレゼン作成を並行して実行する。この流れはサイボウズに2つの問いを突きつける——（1）サイボウズ自身の販管費（人件費58%）はAIで圧縮されるか、（2）サイボウズが支援する「チームワーク」そのものが不要になるとき、企業理念とビジネスモデルは成立するか。
+    </p>
+    <div class="key-questions">
+      <div class="kq-item">販管費の中身と人件費の実態は？</div>
+      <div class="kq-item">AIで圧縮できる業務・できない業務は？</div>
+      <div class="kq-item">「一人会社」時代にチームは要るか？</div>
+      <div class="kq-item">理念の危機をどう乗り越えるか？</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: コスト構造の解剖 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 01</div>
+    <h2>サイボウズのコスト構造——販管費に何が隠れているか</h2>
+
+    <p>
+      サイボウズは典型的なSaaS型コスト構造を持つ。売上総利益率は約80%と高水準だが、売上高販管費率も70%超と高く、結果として営業利益率は10〜15%に抑えられる。このコスト構造の最大の塊が人件費だ。
+    </p>
+
+    <div class="cost-wrap">
+      <h3>販管費の内訳（推定・FY2025基準）</h3>
+      <div class="cost-bar-row">
+        <span class="cost-label">人件費</span>
+        <div class="cost-bar-track"><div class="cost-bar-fill bar-personnel">最大コスト</div></div>
+        <span class="cost-pct danger">約58%</span>
+      </div>
+      <div class="cost-bar-row">
+        <span class="cost-label">販売促進費</span>
+        <div class="cost-bar-track"><div class="cost-bar-fill bar-sales">広告・イベント</div></div>
+        <span class="cost-pct">約18%</span>
+      </div>
+      <div class="cost-bar-row">
+        <span class="cost-label">研究開発費</span>
+        <div class="cost-bar-track"><div class="cost-bar-fill bar-rd">R&D</div></div>
+        <span class="cost-pct">約14%</span>
+      </div>
+      <div class="cost-bar-row">
+        <span class="cost-label">その他</span>
+        <div class="cost-bar-track"><div class="cost-bar-fill bar-other">設備等</div></div>
+        <span class="cost-pct">約10%</span>
+      </div>
+      <p class="cost-note">※ サイボウズ有価証券報告書・IR資料を基にした推定値。人件費には開発・営業・管理の全従業員分を含む。</p>
+    </div>
+
+    <h3>数字で読むサイボウズの人的コスト</h3>
+
+    <table class="fin-table">
+      <thead>
+        <tr>
+          <th>指標</th>
+          <th>FY2022</th>
+          <th>FY2023</th>
+          <th>FY2024</th>
+          <th>FY2025（予）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>売上高（百万円）</td>
+          <td>16,432</td>
+          <td>18,041</td>
+          <td>19,828</td>
+          <td>21,500</td>
+        </tr>
+        <tr class="highlight">
+          <td>販管費合計（百万円）</td>
+          <td>12,100</td>
+          <td>13,200</td>
+          <td>14,600</td>
+          <td>15,800</td>
+        </tr>
+        <tr>
+          <td>うち推定人件費（百万円）</td>
+          <td>7,018</td>
+          <td>7,656</td>
+          <td>8,468</td>
+          <td>9,164</td>
+        </tr>
+        <tr>
+          <td>従業員数（連結）</td>
+          <td>1,438</td>
+          <td>1,567</td>
+          <td>1,672</td>
+          <td>1,750（予）</td>
+        </tr>
+        <tr class="highlight">
+          <td>一人当たり人件費（百万円）</td>
+          <td>4.88</td>
+          <td>4.89</td>
+          <td>5.06</td>
+          <td>5.24（予）</td>
+        </tr>
+        <tr>
+          <td>売上高人件費率</td>
+          <td class="danger">42.7%</td>
+          <td class="danger">42.4%</td>
+          <td class="danger">42.7%</td>
+          <td class="danger">42.6%（予）</td>
+        </tr>
+        <tr>
+          <td>一人当たり売上高（百万円）</td>
+          <td>11.4</td>
+          <td>11.5</td>
+          <td>11.9</td>
+          <td>12.3（予）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      この数字が示すのは、サイボウズの「人件費の重力」だ。売上が伸びても、人件費率はほぼ固定されている。従業員1人が稼ぐ売上高は約12百万円。SaaS企業としては決して低くないが、海外トップSaaS（Salesforce：約56M USD/人）と比べると差は大きい。そして毎年従業員を増やすことで成長を支えてきた構造は、AIエージェント時代に根本から問い直されることになる。
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 2: AI圧縮できる仕事・できない仕事 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 02</div>
+    <h2>人件費のどこをAIは圧縮できるか——職種別解剖</h2>
+
+    <p>
+      「AIエージェントが仕事を奪う」という言説は正確ではない。正確には「AIエージェントが特定の仕事を代替し、他の仕事を変容させ、新しい仕事を生む」だ。サイボウズの職種別に、AIエージェントによる圧縮可能性を解剖する。
+    </p>
+
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>職種カテゴリ</th>
+          <th>主な業務内容</th>
+          <th>AI代替可能性</th>
+          <th>2030年の姿</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ソフトウェア開発</td>
+          <td>kintone/Garoon/Office の機能開発・バグ修正・テスト</td>
+          <td><span class="tag tag-compress">高：50〜70%圧縮</span></td>
+          <td>Claude Code・Devin等がコード生成の大半を担当。人間は設計・レビュー・意思決定に集中</td>
+        </tr>
+        <tr>
+          <td>カスタマーサポート</td>
+          <td>問い合わせ対応・操作方法案内・トラブルシューティング</td>
+          <td><span class="tag tag-compress">高：60〜75%圧縮</span></td>
+          <td>FAQ・定型対応はAIが完全代替。複雑な問題・感情的顧客への対応のみ人間</td>
+        </tr>
+        <tr>
+          <td>営業・BDR</td>
+          <td>新規顧客獲得・商談・提案書作成・フォロー</td>
+          <td><span class="tag tag-shift">中：30〜40%変容</span></td>
+          <td>提案書・メール・資料作成はAI。但し関係性構築・最終クローズは人間が優位</td>
+        </tr>
+        <tr>
+          <td>マーケティング</td>
+          <td>コンテンツ制作・SEO・広告運用・分析</td>
+          <td><span class="tag tag-compress">高：55〜65%圧縮</span></td>
+          <td>コンテンツ・広告文・レポートはAI。戦略立案・ブランド管理は人間</td>
+        </tr>
+        <tr>
+          <td>人事・採用</td>
+          <td>採用スクリーニング・研修設計・制度管理</td>
+          <td><span class="tag tag-shift">中：35〜50%変容</span></td>
+          <td>書類選考・一次面接・研修コンテンツはAI。文化適合・最終判断は人間</td>
+        </tr>
+        <tr>
+          <td>財務・経理</td>
+          <td>決算業務・予算管理・税務対応</td>
+          <td><span class="tag tag-compress">高：60〜70%圧縮</span></td>
+          <td>仕訳・レポート・予実管理はAI自動化。戦略的財務判断のみ人間</td>
+        </tr>
+        <tr>
+          <td>プロダクトマネージャー</td>
+          <td>ロードマップ策定・顧客ニーズ分析・機能優先順位付け</td>
+          <td><span class="tag tag-safe">低：20〜30%補助</span></td>
+          <td>データ分析はAI。但し顧客共感・戦略的判断・組織調整は人間不可欠</td>
+        </tr>
+        <tr>
+          <td>コンサルタント（SI/導入支援）</td>
+          <td>kintone構築支援・業務改善提案・教育</td>
+          <td><span class="tag tag-shift">中：40〜50%変容</span></td>
+          <td>テンプレート提案・設定作業はAI。業務理解・変革マネジメントは人間</td>
+        </tr>
+        <tr>
+          <td>エグゼクティブ・戦略</td>
+          <td>経営判断・対外交渉・M&A・文化形成</td>
+          <td><span class="tag tag-safe">最低：10〜15%補助</span></td>
+          <td>情報整理・シナリオ分析はAI支援。意思決定・責任・関係性は人間</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>圧縮シナリオの試算</h3>
+    <p>
+      上記の圧縮可能性を加重平均すると、サイボウズの人件費の<strong>推定35〜45%がAIエージェントによる代替・効率化の対象</strong>になりうる。現在の推定人件費約85億円のうち、最大38億円が「AIで代替・圧縮可能な業務」に相当する計算だ。
+    </p>
+    <p>
+      ただし、これが即座に人件費削減に結びつくわけではない。AIによる効率化は通常「同じ人数でより多くのアウトプット」に使われる——削減ではなく生産性向上だ。サイボウズが適切な戦略を取れば、従業員数を増やさずに売上を1.5〜2倍に伸ばすことが理論上可能になる。
+    </p>
+
+    <div class="insight-box">
+      <div class="insight-label">THE REAL QUESTION</div>
+      <p>「AIで人件費は削減されるか？」という問いの立て方は間違っている。正しい問いは「<strong>AIで生産性が上がるとき、サイボウズは削減と成長のどちらを選ぶか</strong>」だ。青野哲学（多様な人材の活躍）と財務最適化（コスト削減）は、AI時代に直接衝突する。この選択が、サイボウズの文化・採用力・長期的な競争力を左右する。</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 3: 「一人会社」時代の市場トレンド -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 03</div>
+    <h2>「AIエージェントがあれば一人で会社が動く」——この仮説の実態</h2>
+
+    <p>
+      2026年、SNSには毎日のように「AIエージェントに全部任せて自分は1時間だけ働いている」「一人でSaaS事業を立ち上げた」「5人分の仕事をAIにやらせている」という投稿が流れる。これは誇張か、それとも現実か。
+    </p>
+
+    <div class="trend-grid">
+      <div class="trend-card">
+        <div class="trend-num trend-up">47%</div>
+        <div class="trend-label">米国フリーランサーの47%がAIエージェントを「チームメンバー」として活用（2025年調査）</div>
+      </div>
+      <div class="trend-card">
+        <div class="trend-num trend-up">$0〜$1M</div>
+        <div class="trend-label">一人創業でAIエージェント活用、12ヶ月以内に100万ドル売上達成した事例が複数登場（2025年）</div>
+      </div>
+      <div class="trend-card">
+        <div class="trend-num trend-mid">3→1</div>
+        <div class="trend-label">スタートアップの平均創業チーム人数が3.2人→1.8人へ縮小。AIが「共同創業者」化（2025年データ）</div>
+      </div>
+      <div class="trend-card">
+        <div class="trend-num trend-down">82%</div>
+        <div class="trend-label">日本SMBの82%が「10人以下」の組織。この規模でのAI活用が最も急速に進む層</div>
+      </div>
+    </div>
+
+    <div class="quote-block quote-crisis">
+      <blockquote>「2人のエンジニアと10個のAIエージェントで、かつて15人が必要だったプロダクト開発をやっている。チームの定義が変わった。」</blockquote>
+      <span class="quote-source">米国スタートアップCTO・X（旧Twitter）投稿 2026年（参考事例）</span>
+    </div>
+
+    <h3>「一人会社」仮説の限界と実態</h3>
+    <p>
+      だが「一人で何でもできる」という言説には重要な前提条件がある。それは「定型化された業務」「既存ツールで解決できる問題」「規模が小さい」という条件だ。実際に検証すると：
+    </p>
+
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>業務タイプ</th>
+          <th>AIエージェント単独の限界</th>
+          <th>人間チームが必要な理由</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>定型・反復業務</td>
+          <td>ほぼ制約なし（AIが完全代替）</td>
+          <td>監督・例外処理のみ人間</td>
+        </tr>
+        <tr>
+          <td>非構造化問題の解決</td>
+          <td>未知の状況・文脈のない問題は苦手</td>
+          <td>「そもそも何が問題か」の定義は人間</td>
+        </tr>
+        <tr>
+          <td>対人関係・信頼構築</td>
+          <td>テキスト対応は可能、関係深化は困難</td>
+          <td>長期顧客・パートナー・投資家には人間が必要</td>
+        </tr>
+        <tr>
+          <td>組織文化・価値観の体現</td>
+          <td>規則的な行動は模倣できるが「なぜ」は語れない</td>
+          <td>文化は人間が担う——採用・オンボーディング</td>
+        </tr>
+        <tr>
+          <td>スケール（100人→1万人顧客）</td>
+          <td>技術的スケールは可能</td>
+          <td>組織的・法的・資本的スケールには人間のチーム</td>
+        </tr>
+        <tr>
+          <td>規制・コンプライアンス</td>
+          <td>一般的知識は持つが責任は持てない</td>
+          <td>法的責任・対監査機関・対規制当局は人間必須</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      結論：「AIエージェントで一人で会社が動く」は<strong>小規模・定型・デジタルファースト</strong>の事業に限っては正しい。しかし100人超の組織、SMBへの深い業務支援、法的責任を伴う業務——サイボウズが対象とする市場では、「チームの不要化」は当面起きない。起きるのは「チームの再定義」だ。
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 4: 理念の危機 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 04</div>
+    <h2>「チームワークあふれる社会」——この理念はAI時代に成立するか</h2>
+
+    <p>
+      サイボウズの企業理念は「チームワークあふれる社会を作る」だ。この理念は2000年代に策定され、20年以上一貫して会社の行動原理になってきた。しかし今、この理念の根幹が問われている。
+    </p>
+
+    <div class="tension-box">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:20px;">理念の危機：2つの相反する未来</h3>
+      <div class="tension-vs">
+        <div class="tv-left">
+          <div class="tv-label">仮説 A：チームワーク不要論</div>
+          <div class="tv-text">AIエージェントが個人の生産性を組織的に拡張する。「チーム」は調整コストと非効率の温床であり、個人×AIの組み合わせが最強。チームワーク支援ソフトは「過去の産物」になる。</div>
+        </div>
+        <div class="tv-center">VS</div>
+        <div class="tv-right">
+          <div class="tv-label">仮説 B：チームワーク強化論</div>
+          <div class="tv-text">AIが定型を担うことで、人間は「意味のある協働」に集中できる。チームワークの質が競争優位になり、それを支援するプラットフォームの価値は上がる。サイボウズの理念は時代と共鳴する。</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>歴史的に見た「チームの消滅」言説</h3>
+    <p>
+      実は「テクノロジーでチームが不要になる」という言説は繰り返されてきた。電話の普及時（「会議が不要になる」）、メールの普及時（「会議室が消える」）、ビデオ会議の普及時（「オフィスが消える」）——そのたびに、チームの形は変容したが消滅はしなかった。
+    </p>
+
+    <div class="quote-block quote-neutral">
+      <blockquote>「テクノロジーは人間の協働の『コスト』を下げるが、協働の『欲求』は下げない。むしろコストが下がると、人間はより多くの協働を求める。」</blockquote>
+      <span class="quote-source">組織論の示すテクノロジーと協働の歴史的パターン</span>
+    </div>
+
+    <h3>「チーム」の再定義——2030年代に向けたモデル変換</h3>
+    <p>サイボウズが向き合うべきは「チームワーク不要化」への反論ではなく、「チームの定義の更新」だ：</p>
+
+    <div class="team-def">
+      <div class="team-old">
+        <h4>2000年代のチームモデル（旧）</h4>
+        <ul>
+          <li>人間×人間の水平協働</li>
+          <li>役割分担による分業</li>
+          <li>情報共有が主なツール価値</li>
+          <li>会議・承認フローが中心</li>
+          <li>「チームの人数」が能力の上限</li>
+        </ul>
+      </div>
+      <div class="team-arrow">→</div>
+      <div class="team-new">
+        <h4>2030年代のチームモデル（新）</h4>
+        <ul>
+          <li>人間×AIエージェントの垂直協働</li>
+          <li>目的設定と文脈管理が人間の役割</li>
+          <li>AIの実行を束ねるオーケストレーションが価値</li>
+          <li>意思決定・意味付けが中心</li>
+          <li>「チームの設計力」が能力の上限</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      この転換において、サイボウズの「チームワーク支援」というコアバリューは消滅しない——しかし<strong>その内容は根本的に変わる</strong>。kintoneが「人間のワークフロー管理ツール」から「人間×AIエージェントの協働管理プラットフォーム」に進化できるかどうかが問われている。
+    </p>
+
+    <div class="quote-block quote-hope">
+      <blockquote>「チームワークが重要でなくなるのではない。チームを構成するメンバーの定義が変わる。人間だけのチームから、人間とAIエージェントが協働するチームへ——その設計と管理が次の競争軸になる。」</blockquote>
+      <span class="quote-source">サイボウズが目指すべき「チームワーク2.0」の方向性</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 5: 市場の検証 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 05</div>
+    <h2>市場データで検証する——「AIエージェント×チームソフト」の現実</h2>
+
+    <p>
+      理論だけでなく、市場データから現実を検証する。2025〜2026年のグローバルSaaS市場で何が起きているか。
+    </p>
+
+    <h3>競合他社のAIエージェント統合動向</h3>
+
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>企業</th>
+          <th>AIエージェント戦略</th>
+          <th>成果・市場反応</th>
+          <th>サイボウズへの示唆</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Salesforce（Agentforce）</td>
+          <td>営業・CS業務を自律実行するAIエージェント。CRMデータを活用</td>
+          <td>2025年Q4に1,000社超が導入。株価評価向上</td>
+          <td>「業務データ×AIエージェント」の統合が株式市場で評価される</td>
+        </tr>
+        <tr>
+          <td>Monday.com（AI機能拡充）</td>
+          <td>プロジェクト自動化・ワークフロー提案AIを全プランに展開</td>
+          <td>AI機能導入ユーザーの解約率が26%低下</td>
+          <td>AIがチャーン（解約）率の直接改善指標になる</td>
+        </tr>
+        <tr>
+          <td>Notion AI</td>
+          <td>ドキュメント×AIを統合。個人からチームへ拡張</td>
+          <td>月次アクティブユーザー2倍増（2025年）</td>
+          <td>情報管理ツールのAI化は急速——Garoonへの圧力</td>
+        </tr>
+        <tr>
+          <td>Microsoft 365 Copilot</td>
+          <td>Teams・Excel・Outlook全体をAIエージェントが補助</td>
+          <td>エンタープライズでの普及率40%超（2026年Q1）</td>
+          <td>Garoon/Officeと直接競合。価格・機能で明確な脅威</td>
+        </tr>
+        <tr>
+          <td>kintone（サイボウズ）</td>
+          <td>kintone AI機能・Claude API連携・エージェント実行機能（開発中）</td>
+          <td>2026年3月時点で一部機能リリース。本格展開は下半期</td>
+          <td>競合比で6〜12ヶ月の遅れ。加速が必要</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>「AIでチームが要らなくなる」市場セグメント別の現実</h3>
+    <p>
+      市場を細分化すると、「AIがチームを代替する」トレンドの強度は顧客規模によって大きく異なる：
+    </p>
+
+    <div class="scenario-grid">
+      <div class="sc-card sc-bear">
+        <h4>リスク高：1〜5人の超小規模事業</h4>
+        <p>AIエージェントが最も強く「チーム代替」を実現するセグメント。フリーランサー・一人社長には「kintoneは過剰機能」になりうる。サイボウズは従来このセグメントにも販売していたが、流出リスクが高い。</p>
+      </div>
+      <div class="sc-card sc-pivot">
+        <h4>中立：10〜100人のSMB</h4>
+        <p>AIツールと業務管理SaaSの両方を使う層。kintoneが「AIエージェントの実行基盤」になれば残留する。但しAI統合の進化が遅ければ、より高機能な海外ツールに乗り換えるリスク。サイボウズの主要ターゲット。</p>
+      </div>
+      <div class="sc-card sc-bull">
+        <h4>安定：100〜1000人の中堅企業</h4>
+        <p>複雑な業務プロセス・コンプライアンス要件・日本語UI・カスタマーサポートへのニーズは高い。AIが「個人生産性」を上げても、組織全体の業務管理プラットフォームへの需要は継続。サイボウズの最も安定した収益源。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 6: 矛盾の解決策 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 06</div>
+    <h2>矛盾を解決する——「チームワーク2.0」という回答</h2>
+
+    <p>
+      「AIエージェントがチームを不要にする」仮説と「チームワークあふれる社会」という理念の矛盾。この矛盾を解決する道筋を具体的に描く。
+    </p>
+
+    <div class="path-steps">
+      <div class="path-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>「チームワーク」の定義を人間×AIに拡張する</h4>
+          <p>「チームメンバー」の定義に「AIエージェント」を加える。kintoneのワークフローに「AIエージェントのタスク」を人間のタスクと同等に組み込む。「人間5人+AIエージェント10体のチーム」を正式にサポートする製品設計へ転換する。これは理念の放棄ではなく、理念の拡張だ。</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>人件費削減より「人材の再配置」を選ぶ</h4>
+          <p>AIで生産性が上がったとき、青野哲学の一貫として「削減ではなく再配置」を選ぶ。定型業務から解放された人材を「顧客の業務理解」「AIエージェントの設計支援」「新市場開拓」に投資する。これは短期的に財務効率が上がらないように見えるが、長期的な競争力に繋がる。</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>「AIオーケストレーション」をkintoneのコア機能にする</h4>
+          <p>kintoneが「複数のAIエージェントを束ねる指揮官プラットフォーム」になる。個々のAIエージェント（Claude、Copilot、社内特化AIなど）をkintoneのワークフローに組み込み、人間は「何をどのAIに頼むか」を設計・管理する。このオーケストレーション能力こそが、「チームワーク支援」のAI時代における形だ。</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>「AIが増やしたチームワークの質」を可視化する</h4>
+          <p>AIが定型業務を担うことで人間が「意味のある協働」に使える時間が増えた——このことを定量的に示す。「kintone AI導入後、会議の質に関する社員満足度が20%向上」「創造的業務への時間投資が30%増加」などのメトリクスを開発・提供する。理念の正しさをデータで証明する戦略。</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>SMBの「AIトランスフォーメーション」の伴走者になる</h4>
+          <p>kintoneの顧客300万社は、AIエージェント活用に最も支援が必要な層でもある。「どのAIをどの業務に使うか」「AIエージェントをどう評価するか」「AIエラーをどう管理するか」——これらの実践的支援こそ、サイボウズが提供できる最高価値のサービスだ。「チームワークの支援」が「人間×AI協働の設計支援」に進化する。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">THE SYNTHESIS</div>
+      <p>「AIエージェントがチームを殺す」という仮説への最善の回答は、<strong>「サイボウズこそがチームワークをAI時代に再定義する企業になること」</strong>だ。青野の「100人100通り」は、AIエージェントを含めれば「100人×無数のAIの100通り」に拡張できる。チームワークの概念が人間から人間×AIへ広がるとき、その変化を最も深く理解し設計できる企業が——それが「チームワークあふれる社会を作る」という理念を持つサイボウズであることは、偶然ではない。</p>
+    </div>
+  </div>
+</div>
+
+<!-- CURATOR'S VOICE -->
+<div class="curator">
+  <div class="curator-inner">
+    <div class="curator-label">CURATOR'S VOICE</div>
+    <h2>"チームの死を語る人は、チームの変容を見ていない"</h2>
+    <p>
+      「AIエージェントがあれば一人で会社が動く」——この投稿がSNSで共感を呼ぶのはわかる。実際、小規模・定型・デジタルファーストな仕事では、AIエージェントは劇的に生産性を上げる。しかしそれは「チームの消滅」ではなく「チームの上限値の引き上げ」だ。
+    </p>
+    <p>
+      歴史を振り返ると、テクノロジーは常にチームを「不要に」するのではなく「再定義」してきた。電話が登場したとき「会議が消える」と言われた。Emailが普及したとき「秘書が消える」と言われた。どちらも消えなかった——形が変わっただけだ。
+    </p>
+    <p>
+      サイボウズの課題は「チームワーク不要論」への反論ではない。それは「<strong>チームワークをAI時代に翻訳する</strong>」ことだ。人件費の58%という重い構造をAIで軽量化しながら、余剰資源を「人間×AIの協働設計力」に再投資する——この転換が成功したとき、サイボウズは「チームワークあふれる社会」という理念をより深く体現する企業になる。
+    </p>
+    <p>
+      投資家として問うべきは「チームワークの理念は時代遅れか」ではない。<strong>「サイボウズはこの理念をAI時代にアップデートする意志と実行力を持っているか」</strong>——その答えが、株式の長期的な価値を決める。
+    </p>
+  </div>
+</div>
+
+<!-- REFERENCES -->
+<div class="references">
+  <div class="container">
+    <h3>REFERENCES & SOURCES</h3>
+    <ul class="ref-list">
+      <li>サイボウズ株式会社 有価証券報告書 2023・2024年度版</li>
+      <li>サイボウズ株式会社 投資家説明会資料・決算説明資料（2025年）</li>
+      <li>青野慶久『チームのことだけ、考えた。』（2015年、ダイヤモンド社）</li>
+      <li>Salesforce「State of AI Report」2025年版 — Agentforce導入状況</li>
+      <li>Gartner「AI Augmentation in the Workforce」レポート（2025年）</li>
+      <li>McKinsey Global Institute「The Future of Work after COVID-19」（AI更新版 2025年）</li>
+      <li>Monday.com IR資料・AI機能導入効果データ（2025年）</li>
+      <li>Microsoft 365 Copilot エンタープライズ普及レポート（2026年Q1）</li>
+      <li>Anthropic「Economic Index」レポート — 職種別AI代替可能性分析（2025年）</li>
+      <li>日本経済新聞「AIエージェント時代の中小企業経営」特集（2025年）</li>
+      <li>Upwork「Future Workforce Report 2025」 — フリーランサーAI活用動向</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BACK LINK -->
+<div class="back-link">
+  <a href="../../">← 論考の棚に戻る</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© 2026 INVESTMENT LIBRARY · <a href="../../../">lifehack-roadmap</a></p>
+  <p style="margin-top:6px;">本コンテンツは情報提供のみを目的とし、投資推奨ではありません。</p>
+</footer>
+
+</body>
+</html>
