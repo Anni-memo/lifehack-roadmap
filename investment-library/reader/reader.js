@@ -692,8 +692,11 @@
     menu.innerHTML =
       '<div class="share-menu-title">共有先を選ぶ</div>' +
       '<a href="https://line.me/R/share?text=' + encoded + '" target="_blank" rel="noopener">LINE</a>' +
-      '<a href="mailto:?body=' + encoded + '" target="_blank">メール</a>' +
+      '<a href="https://wa.me/?text=' + encoded + '" target="_blank" rel="noopener">WhatsApp</a>' +
+      '<a href="https://t.me/share/url?text=' + encoded + '" target="_blank" rel="noopener">Telegram</a>' +
       '<a href="https://twitter.com/intent/tweet?text=' + encoded + '" target="_blank" rel="noopener">X (Twitter)</a>' +
+      '<a href="https://www.facebook.com/sharer/sharer.php?quote=' + encoded + '" target="_blank" rel="noopener">Facebook</a>' +
+      '<a href="mailto:?subject=' + encodeURIComponent('読書ノート — 投資と思考の書斎') + '&body=' + encoded + '" target="_blank">メール</a>' +
       '<button id="share-menu-copy">クリップボードにコピー</button>' +
       '<button id="share-menu-close">閉じる</button>';
     app.appendChild(menu);

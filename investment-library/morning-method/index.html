@@ -868,7 +868,7 @@ function nextStep(){
   if(currentStep < STEP_COUNT - 1){
     currentStep++;
     renderStep();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    scrollToActiveStep();
   }
 }
 
@@ -876,7 +876,18 @@ function prevStep(){
   if(currentStep > 0){
     currentStep--;
     renderStep();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    scrollToActiveStep();
+  }
+}
+
+function scrollToActiveStep(){
+  var card = document.getElementById('step-' + currentStep);
+  if(card){
+    setTimeout(function(){
+      var rect = card.getBoundingClientRect();
+      var offset = window.pageYOffset + rect.top - 60;
+      window.scrollTo({top: Math.max(0, offset), behavior: 'smooth'});
+    }, 50);
   }
 }
 
