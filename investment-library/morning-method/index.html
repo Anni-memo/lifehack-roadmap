@@ -187,6 +187,80 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .stepper{gap:3px;}
   .step-dot{width:30px;height:30px;font-size:.46rem;}
 }
+
+/* ── STRETCH VIDEO ── */
+.stretch-video-section{
+  margin:20px 0;padding:24px;
+  background:linear-gradient(135deg,var(--parch) 0%,var(--parch2) 100%);
+  border:1px solid var(--parch4);border-radius:4px;
+  box-shadow:0 2px 16px rgba(26,18,8,.1);
+}
+.stretch-video-header{
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.stretch-video-icon{font-size:1.4rem;}
+.stretch-video-title{
+  font-family:var(--jp);font-size:.88rem;font-weight:600;
+  color:var(--ink2);letter-spacing:.04em;
+}
+.stretch-video-wrapper{
+  position:relative;width:100%;max-width:480px;margin:0 auto;
+  border-radius:8px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(26,18,8,.2);
+  aspect-ratio:auto;background:#000;
+}
+.stretch-video{
+  width:100%;display:block;border-radius:8px;
+}
+.stretch-video-overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;cursor:pointer;
+  background:rgba(26,18,8,.35);transition:background .3s;
+  border-radius:8px;
+}
+.stretch-video-overlay:hover{background:rgba(26,18,8,.2);}
+.stretch-play-btn{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(184,144,10,.85);color:var(--parch);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;padding-left:4px;
+  box-shadow:0 4px 20px rgba(184,144,10,.4);
+  transition:transform .2s;
+}
+.stretch-video-overlay:hover .stretch-play-btn{transform:scale(1.08);}
+.stretch-play-text{
+  font-family:var(--jp);font-size:.72rem;color:var(--parch);
+  margin-top:10px;letter-spacing:.06em;opacity:.9;
+}
+.stretch-video-controls{
+  display:flex;align-items:center;gap:10px;margin-top:14px;
+  justify-content:center;flex-wrap:wrap;
+}
+.stretch-ctrl-btn{
+  font-family:var(--jp);font-size:.72rem;
+  padding:6px 16px;border:1px solid var(--gold2);
+  background:var(--gold);color:var(--parch);
+  border-radius:3px;cursor:pointer;transition:all .2s;
+}
+.stretch-ctrl-btn:hover{background:var(--gold2);}
+.stretch-ctrl-btn.secondary{
+  background:transparent;color:var(--ink3);border-color:var(--parch4);
+}
+.stretch-ctrl-btn.secondary:hover{background:var(--parch3);}
+.stretch-loop-label{
+  font-family:var(--jp);font-size:.68rem;color:var(--ink3);
+  display:flex;align-items:center;gap:4px;cursor:pointer;
+}
+.stretch-loop-label input{cursor:pointer;}
+.stretch-video-note{
+  font-family:var(--jp);font-size:.68rem;color:var(--gold2);
+  text-align:center;margin-top:12px;font-style:italic;
+}
+@media(max-width:600px){
+  .stretch-video-wrapper{max-width:100%;}
+  .stretch-video-controls{gap:6px;}
+  .stretch-ctrl-btn{padding:5px 12px;font-size:.66rem;}
+}
 </style>
 </head>
 <body>
@@ -329,10 +403,39 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div class="step-name-en">EXERCISE &middot; 20 MINUTES</div>
     <div class="step-desc">
       体を動かして血流を促し、脳を覚醒させます。<br>
-      激しい運動でなくても大丈夫。ストレッチ、ヨガ、ウォーキングなど<br>
-      自分に合った方法で、体と心を目覚めさせましょう。
+      激しい運動でなくても大丈夫。ストレッチガイドと一緒に、<br>
+      体と心を目覚めさせましょう。
     </div>
-    <div class="step-hint">
+
+    <!-- ストレッチ動画セクション -->
+    <div class="stretch-video-section">
+      <div class="stretch-video-header">
+        <span class="stretch-video-icon">🧘‍♀️</span>
+        <span class="stretch-video-title">ストレッチガイドと一緒に</span>
+      </div>
+      <div class="stretch-video-wrapper">
+        <video id="stretchVideo" class="stretch-video" playsinline preload="metadata" poster="">
+          <source src="videos/stretch-guide-01.mp4" type="video/mp4">
+        </video>
+        <div class="stretch-video-overlay" id="videoOverlay" onclick="playStretchVideo()">
+          <div class="stretch-play-btn">▶</div>
+          <div class="stretch-play-text">タップしてスタート</div>
+        </div>
+      </div>
+      <div class="stretch-video-controls">
+        <button class="stretch-ctrl-btn" onclick="playStretchVideo()" id="videoPlayBtn">▶ 再生</button>
+        <button class="stretch-ctrl-btn" onclick="pauseStretchVideo()" id="videoPauseBtn" style="display:none">⏸ 一時停止</button>
+        <button class="stretch-ctrl-btn secondary" onclick="restartStretchVideo()">⟲ 最初から</button>
+        <label class="stretch-loop-label">
+          <input type="checkbox" id="videoLoop" onchange="toggleLoop()"> リピート
+        </label>
+      </div>
+      <div class="stretch-video-note">
+        528Hz音楽を流しながらストレッチすると、より深いリラックス効果が得られます。
+      </div>
+    </div>
+
+    <div class="step-hint" style="margin-top:20px;">
       おすすめの運動メニュー：<br><br>
       <strong>軽めのコース（10分）：</strong><br>
       ・ 首回し、肩回し、腕のストレッチ（2分）<br>
@@ -468,6 +571,50 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <script src="../shared.js"></script>
 <script src="../ai-assistant.js"></script>
 <script>
+// ══════════════════════════════════════
+// Stretch Video Controls
+// ══════════════════════════════════════
+function playStretchVideo(){
+  const v=document.getElementById('stretchVideo');
+  const o=document.getElementById('videoOverlay');
+  if(!v)return;
+  v.play();
+  if(o)o.style.display='none';
+  document.getElementById('videoPlayBtn').style.display='none';
+  document.getElementById('videoPauseBtn').style.display='';
+}
+function pauseStretchVideo(){
+  const v=document.getElementById('stretchVideo');
+  if(!v)return;
+  v.pause();
+  document.getElementById('videoPlayBtn').style.display='';
+  document.getElementById('videoPauseBtn').style.display='none';
+}
+function restartStretchVideo(){
+  const v=document.getElementById('stretchVideo');
+  if(!v)return;
+  v.currentTime=0;
+  playStretchVideo();
+}
+function toggleLoop(){
+  const v=document.getElementById('stretchVideo');
+  const cb=document.getElementById('videoLoop');
+  if(v&&cb)v.loop=cb.checked;
+}
+(function(){
+  const v=document.getElementById('stretchVideo');
+  if(v){
+    v.addEventListener('ended',function(){
+      if(!v.loop){
+        document.getElementById('videoPlayBtn').style.display='';
+        document.getElementById('videoPauseBtn').style.display='none';
+        const o=document.getElementById('videoOverlay');
+        if(o){o.style.display='flex';}
+      }
+    });
+  }
+})();
+
 // ══════════════════════════════════════
 // Morning Method — SAVERS App Logic
 // ══════════════════════════════════════
