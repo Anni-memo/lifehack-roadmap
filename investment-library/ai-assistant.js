@@ -197,7 +197,25 @@ function initAssistant(){
   var widget = document.createElement('div');
   widget.id = 'ai-assistant-widget';
   widget.innerHTML =
-    '<button class="ai-fab" id="aiFab" title="書斎の案内人">\uD83D\uDCDA</button>' +
+    '<button class="ai-fab" id="aiFab" title="書斎の案内人">' +
+      '<svg class="ai-fab-icon" viewBox="0 0 64 64" width="34" height="34" xmlns="http://www.w3.org/2000/svg">' +
+        '<circle cx="32" cy="22" r="12" fill="#f5ede0"/>' +
+        '<ellipse cx="32" cy="19" rx="8" ry="7" fill="#f5ede0"/>' +
+        '<circle cx="28" cy="20" r="1.5" fill="#1a1208"/>' +
+        '<circle cx="36" cy="20" r="1.5" fill="#1a1208"/>' +
+        '<path d="M28 25 Q32 28 36 25" stroke="#1a1208" stroke-width="0.8" fill="none"/>' +
+        '<path d="M24 27 Q28 32 32 28 Q36 32 40 27" stroke="#f5ede0" stroke-width="1.5" fill="none" opacity="0.9"/>' +
+        '<path d="M22 28 Q20 32 22 34 L26 30 Z" fill="#f5ede0" opacity="0.7"/>' +
+        '<path d="M42 28 Q44 32 42 34 L38 30 Z" fill="#f5ede0" opacity="0.7"/>' +
+        '<rect x="22" y="8" rx="4" ry="2" width="20" height="14" fill="#1a1208" opacity="0.85"/>' +
+        '<rect x="24" y="6" rx="2" ry="1" width="16" height="4" fill="#1a1208"/>' +
+        '<rect x="24" y="32" width="16" height="22" rx="2" fill="#1a1208"/>' +
+        '<rect x="28" y="32" width="8" height="10" rx="1" fill="#f5ede0" opacity="0.15"/>' +
+        '<path d="M30 34 L30 40 M34 34 L34 40" stroke="#d4aa22" stroke-width="0.8"/>' +
+        '<rect x="31" y="36" width="2" height="2" rx="1" fill="#d4aa22"/>' +
+      '</svg>' +
+      '<span class="ai-fab-label">書斎の案内人</span>' +
+    '</button>' +
     '<div class="ai-chat-window" id="aiChatWindow">' +
       '<div class="ai-chat-header">' +
         '<span class="ai-chat-title">\uD83D\uDCDA 書斎の案内人</span>' +
@@ -325,8 +343,10 @@ function initAssistant(){
 function getAssistantCSS(){
   return '' +
   '#ai-assistant-widget{position:fixed;bottom:72px;right:16px;z-index:9000;font-family:"Noto Serif JP","Cormorant Garamond",serif;}' +
-  '.ai-fab{position:fixed;bottom:72px;right:16px;z-index:9001;width:52px;height:52px;border-radius:50%;background:#1a1208;border:2px solid rgba(184,144,10,.4);color:#d4aa22;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(26,18,8,.4);transition:all .3s;}' +
-  '.ai-fab:hover{background:#2d2010;border-color:#d4aa22;transform:scale(1.1);}' +
+  '.ai-fab{position:fixed;bottom:72px;right:16px;z-index:9001;padding:8px 14px;border-radius:24px;background:linear-gradient(135deg,#1a1208 0%,#2d2010 100%);border:1.5px solid rgba(184,144,10,.35);color:#d4aa22;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 24px rgba(26,18,8,.45),0 0 12px rgba(184,144,10,.08);transition:all .3s;}' +
+  '.ai-fab:hover{background:linear-gradient(135deg,#2d2010 0%,#3a2a18 100%);border-color:#d4aa22;transform:translateY(-2px);box-shadow:0 6px 28px rgba(26,18,8,.5),0 0 16px rgba(184,144,10,.15);}' +
+  '.ai-fab-icon{flex-shrink:0;}' +
+  '.ai-fab-label{font-family:"Noto Serif JP",serif;font-size:.6rem;color:#d4aa22;letter-spacing:.06em;white-space:nowrap;opacity:.9;}' +
   '.ai-fab.hidden{opacity:0;pointer-events:none;transform:scale(0.5);}' +
   '.ai-chat-window{position:fixed;bottom:72px;right:16px;width:360px;max-width:calc(100vw - 32px);height:480px;max-height:calc(100vh - 120px);background:#f5ede0;border:1px solid #dfc9a8;box-shadow:0 8px 48px rgba(26,18,8,.35);display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(20px) scale(0.95);transition:all .3s;}' +
   '.ai-chat-window.open{opacity:1;pointer-events:all;transform:translateY(0) scale(1);}' +
