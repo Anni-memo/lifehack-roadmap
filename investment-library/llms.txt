@@ -44,6 +44,14 @@
 - /human/fomo/ — FOMO（取り残される恐怖）
 - /human/loss-aversion/ — 損失回避バイアス
 
+### 人物録（People）
+- /people/ — 人物録｜今をつくる人々（トップ）
+- /people/tanaka-kei/ — 田中渓｜投資・習慣・身体をつなぐ実践者
+- /people/bnf/ — BNF｜公開資料から辿る個人投資家の輪郭
+- /people/inamori-kazuo/ — 稲盛和夫｜利他と規律で三つの企業を築いた経営者
+- /people/taleb/ — ナシーム・タレブ｜不確実性を味方にする思想家
+- /people/seneca/ — セネカ｜時間を最大の資産と見なした哲学者
+
 ### ガイド
 - /hajimete/ — この書斎の歩き方（初めての方へ）
 

@@ -235,7 +235,9 @@ body::before{
   font-family:var(--mono);font-size:.5rem;color:var(--gold);
   letter-spacing:.22em;margin-bottom:24px;opacity:.7;text-align:center;
 }
-.site-nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.site-nav-group-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.18em;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,144,10,.12);opacity:.7;}
+.site-nav-group-label:first-of-type{margin-top:0;}
+.site-nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:8px;}
 @media(max-width:700px){.site-nav-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:420px){.site-nav-grid{grid-template-columns:1fr;}}
 .site-nav-card{
@@ -772,104 +774,114 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 <div class="site-nav">
   <div class="site-nav-inner">
     <div class="site-nav-label">EXPLORE THE LIBRARY — 書斎を探索する</div>
+
+    <!-- ── 投資を学ぶ ── -->
+    <div class="site-nav-group-label">INVESTMENT — 投資を学ぶ</div>
     <div class="site-nav-grid">
       <a class="site-nav-card" href="hajimete/">
         <div class="site-nav-icon">📐</div>
-        <div class="site-nav-num">01</div>
         <div class="site-nav-name">はじめの棚</div>
-        <div class="site-nav-desc">最初の一冊 · この書斎の土台。バフェット・マンガー・フィッシャーの思想から判断基準を育てる。</div>
+        <div class="site-nav-desc">バフェット・マンガー・フィッシャーの思想から判断基準を育てる。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
       <a class="site-nav-card" href="moat/">
         <div class="site-nav-icon">🔍</div>
-        <div class="site-nav-num">02</div>
         <div class="site-nav-name">概念の棚</div>
-        <div class="site-nav-desc">競争優位の見方 · 財務の読み方。moatスコアカード・レーダーチャート・FCFチャートで企業の本質を読む。</div>
+        <div class="site-nav-desc">moat・FCF・スコアカード。企業の本質を読む道具。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
       <a class="site-nav-card" href="industries/">
         <div class="site-nav-icon">📊</div>
-        <div class="site-nav-num">03</div>
-        <div class="site-nav-name">業種から歩く棚</div>
-        <div class="site-nav-desc">業種の構造を知る · 競争優位の在り処。14業種の分析棚。</div>
+        <div class="site-nav-name">業種から歩く</div>
+        <div class="site-nav-desc">14業種の構造を知る。競争優位の在り処。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
+    </div>
+
+    <!-- ── 読む・調べる ── -->
+    <div class="site-nav-group-label">RESEARCH — 読む・調べる</div>
+    <div class="site-nav-grid">
       <a class="site-nav-card" href="hajimete/memo/">
         <div class="site-nav-icon">🧠</div>
-        <div class="site-nav-num">04</div>
         <div class="site-nav-name">銘柄メモ</div>
-        <div class="site-nav-desc">長期投資家による銘柄ごとの思考の記録。moat・FCF・経営者の質を言語化するアーカイブ。</div>
+        <div class="site-nav-desc">銘柄ごとの思考の記録。moat・FCF・経営者の質を言語化。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
       <a class="site-nav-card" href="research/" style="border-top-color:var(--blue2);">
         <div class="site-nav-icon">📚</div>
-        <div class="site-nav-num">05</div>
         <div class="site-nav-name">論考の棚</div>
-        <div class="site-nav-desc">時間が経っても読み返せる「考え抜いた記事」だけを置く棚。moat・FCF・資本配分の軸で企業を解剖する。</div>
+        <div class="site-nav-desc">時間が経っても読み返せる「考え抜いた記事」だけを置く棚。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
       <a class="site-nav-card" href="news/" style="border-top-color:var(--rust);">
         <div class="site-nav-icon">📰</div>
-        <div class="site-nav-num">06</div>
         <div class="site-nav-name">ニュース記事</div>
-        <div class="site-nav-desc">日経新聞を長期投資家の視点で読み解く毎日の投資日記。moat・FCF・資本配分の軸でキュレーション。</div>
+        <div class="site-nav-desc">日経新聞を長期投資家の視点で読み解く。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
-      <a class="site-nav-card" href="morning-method/" style="border-top-color:var(--green2);">
-        <div class="site-nav-icon">&#9728;</div>
-        <div class="site-nav-num">07</div>
-        <div class="site-nav-name">モーニングメソッド</div>
-        <div class="site-nav-desc">ハル・エルロッドのSAVERS。瞑想・アファメーション・視覚化・運動・読書・ジャーナリングで朝を変える。</div>
-        <div class="site-nav-arrow">実践する →</div>
-      </a>
-      <a class="site-nav-card" href="smart-home/" style="border-top-color:var(--gold3);">
-        <div class="site-nav-icon">&#127969;</div>
-        <div class="site-nav-num">08</div>
-        <div class="site-nav-name">パーソナルホーム</div>
-        <div class="site-nav-desc">時間帯に応じた投資格言・記事推薦・ジャーナリング。あなたの一日をサポートする。</div>
-        <div class="site-nav-arrow">開く →</div>
-      </a>
-      <a class="site-nav-card" href="learning/" style="border-top-color:var(--gold3);">
-        <div class="site-nav-icon">&#127891;</div>
-        <div class="site-nav-num">09</div>
-        <div class="site-nav-name">まなびの時間</div>
-        <div class="site-nav-desc">投資用語クイズ・算数チャレンジ・読解チャレンジ。楽しみながら知識を深める学習コーナー。</div>
-        <div class="site-nav-arrow">学ぶ →</div>
-      </a>
+    </div>
+
+    <!-- ── 教養を深める ── -->
+    <div class="site-nav-group-label">CULTURE — 教養を深める</div>
+    <div class="site-nav-grid">
       <a class="site-nav-card" href="classics/" style="border-top-color:#6b5b8a;">
         <div class="site-nav-icon">&#128220;</div>
-        <div class="site-nav-num">10</div>
         <div class="site-nav-name">教養と人間理解</div>
-        <div class="site-nav-desc">論語・夜と霧・福澤諭吉・渋沢栄一——古典と先人の知恵から、投資判断の背景にある人間理解を深める。</div>
+        <div class="site-nav-desc">論語・夜と霧・福澤諭吉・渋沢栄一。古典と先人の知恵。</div>
         <div class="site-nav-arrow">読む →</div>
-      </a>
-      <a class="site-nav-card" href="morning-practice/" style="border-top-color:var(--gold3);">
-        <div class="site-nav-icon">&#127749;</div>
-        <div class="site-nav-num">11</div>
-        <div class="site-nav-name">朝の実践室</div>
-        <div class="site-nav-desc">アファメーション・ブレインプログラミング・ミッションステートメント。朝に整え、一日の土台をつくる。</div>
-        <div class="site-nav-arrow">実践する →</div>
       </a>
       <a class="site-nav-card" href="life-shelf/" style="border-top-color:#6b5b8a;">
         <div class="site-nav-icon">&#128218;</div>
-        <div class="site-nav-num">12</div>
         <div class="site-nav-name">人生の書架</div>
-        <div class="site-nav-desc">原則と古典、偉人と経営者。7つの習慣・自省録・藤田晋。判断基準を育てる静かな読書。</div>
+        <div class="site-nav-desc">7つの習慣・自省録・藤田晋。判断基準を育てる静かな読書。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
-      <a class="site-nav-card" href="night-reading/" style="border-top-color:#4a3a5a;">
-        <div class="site-nav-icon">&#127769;</div>
-        <div class="site-nav-num">13</div>
-        <div class="site-nav-name">夜の読書室</div>
-        <div class="site-nav-desc">就寝前のひとときに、静かに読む場所。勉強ではなく、ただほどける読書。夜の一冊シリーズ。</div>
+      <a class="site-nav-card" href="people/" style="border-top-color:#5a9a78;">
+        <div class="site-nav-icon">&#128100;</div>
+        <div class="site-nav-name">人物録</div>
+        <div class="site-nav-desc">品位と知的誠実さで選んだ現代の実践者たち。文脈別に読む。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
       <a class="site-nav-card" href="book-guide/" style="border-top-color:var(--gold2);">
         <div class="site-nav-icon">&#128279;</div>
-        <div class="site-nav-num">14</div>
         <div class="site-nav-name">読む・聴く案内室</div>
-        <div class="site-nav-desc">書斎で紹介する書籍のAmazon・Kindle・Audibleリンクを集約。自分に合った読み方を。</div>
+        <div class="site-nav-desc">書籍のAmazon・Kindle・Audibleリンクを集約。</div>
         <div class="site-nav-arrow">探す →</div>
+      </a>
+    </div>
+
+    <!-- ── 実践する ── -->
+    <div class="site-nav-group-label">PRACTICE — 実践する</div>
+    <div class="site-nav-grid">
+      <a class="site-nav-card" href="morning-method/" style="border-top-color:var(--green2);">
+        <div class="site-nav-icon">&#9728;</div>
+        <div class="site-nav-name">モーニングメソッド</div>
+        <div class="site-nav-desc">ハル・エルロッドのSAVERS。朝の1時間を変える。</div>
+        <div class="site-nav-arrow">実践する →</div>
+      </a>
+      <a class="site-nav-card" href="morning-practice/" style="border-top-color:var(--gold3);">
+        <div class="site-nav-icon">&#127749;</div>
+        <div class="site-nav-name">朝の実践室</div>
+        <div class="site-nav-desc">アファメーション・ミッションステートメント。朝に整える。</div>
+        <div class="site-nav-arrow">実践する →</div>
+      </a>
+      <a class="site-nav-card" href="night-reading/" style="border-top-color:#4a3a5a;">
+        <div class="site-nav-icon">&#127769;</div>
+        <div class="site-nav-name">夜の読書室</div>
+        <div class="site-nav-desc">勉強ではなく、ただほどける読書。夜の一冊シリーズ。</div>
+        <div class="site-nav-arrow">読む →</div>
+      </a>
+      <a class="site-nav-card" href="smart-home/" style="border-top-color:var(--gold3);">
+        <div class="site-nav-icon">&#127969;</div>
+        <div class="site-nav-name">パーソナルホーム</div>
+        <div class="site-nav-desc">時間帯に応じた格言・記事推薦・ジャーナリング。</div>
+        <div class="site-nav-arrow">開く →</div>
+      </a>
+      <a class="site-nav-card" href="learning/" style="border-top-color:var(--gold3);">
+        <div class="site-nav-icon">&#127891;</div>
+        <div class="site-nav-name">まなびの時間</div>
+        <div class="site-nav-desc">クイズ・算数・読解チャレンジ。楽しみながら学ぶ。</div>
+        <div class="site-nav-arrow">学ぶ →</div>
       </a>
     </div>
   </div>
@@ -895,6 +907,18 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
   <div class="new-articles-inner">
     <div class="new-articles-label">NEW ARTICLES — 最近追加された記事</div>
     <div class="new-articles-grid">
+      <a class="new-article-card" href="people/tanaka-kei/">
+        <div class="new-article-shelf">人物録</div>
+        <div class="new-article-title">田中渓｜投資・習慣・身体をつなぐ実践者</div>
+      </a>
+      <a class="new-article-card" href="people/bnf/">
+        <div class="new-article-shelf">人物録</div>
+        <div class="new-article-title">BNF｜公開資料から辿る個人投資家の輪郭</div>
+      </a>
+      <a class="new-article-card" href="people/inamori-kazuo/">
+        <div class="new-article-shelf">人物録</div>
+        <div class="new-article-title">稲盛和夫｜利他と規律の経営者</div>
+      </a>
       <a class="new-article-card" href="hajimete/stock-basics/">
         <div class="new-article-shelf">はじめの棚</div>
         <div class="new-article-title">株式投資とは何か：はじめの一歩</div>
@@ -1694,6 +1718,18 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
 <!-- ══════════════ FOOTER ══════════════ -->
 
+<!-- ── MORNING NEWSLETTER TEASER ── -->
+<div style="background:linear-gradient(135deg,#1a1208 0%,#2d2010 100%);padding:36px 24px;border-top:1px solid rgba(184,144,10,.15);border-bottom:1px solid rgba(184,144,10,.15);">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:.52rem;color:#d4aa22;letter-spacing:.2em;margin-bottom:12px;opacity:.7;">MORNING DELIVERY</div>
+    <h3 style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:1.2rem;font-weight:700;color:#f5ede0;margin-bottom:10px;">朝の書斎便</h3>
+    <p style="font-size:.78rem;color:#dfc9a8;line-height:2;margin-bottom:16px;font-weight:300;">
+      毎朝6:30、書斎から一節をお届けします。人物録・投資原則・哲学者の問い。朝の実践を始める合図として。
+    </p>
+    <p style="font-family:'DM Mono',monospace;font-size:.58rem;color:#8b6914;letter-spacing:.1em;">COMING SOON</p>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="footer-title">投資と思考の書斎</div>
   <div>
@@ -1710,6 +1746,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
     <a href="morning-method/">モーニングメソッド</a> ·
     <a href="morning-practice/">朝の実践室</a> ·
     <a href="life-shelf/">人生の書架</a> ·
+    <a href="people/">人物録</a> ·
     <a href="night-reading/">夜の読書室</a> ·
     <a href="book-guide/">読む・聴く案内室</a> ·
     <a href="smart-home/">パーソナルホーム</a> ·
@@ -1934,7 +1971,13 @@ var SEARCH_DATA = [
   {title:"な��分散投資が必要なのか",url:"principles/diversification/",desc:"バフェットの集中投資、マンガーの少数精鋭、最適解",cat:"DIVERSIFICATION"},
   {title:"FOMO（取り残される恐怖）を超える",url:"human/fomo/",desc:"投資家を惑わすFOMOの正体とマンガー流の克服法",cat:"FOMO"},
   {title:"損失回避バイアス",url:"human/loss-aversion/",desc:"カーネマンが発見した損失回避の心理と克服法",cat:"LOSS AVERSION"},
-  {title:"モーニングメソッド実践",url:"morning-method/",desc:"SAVERSで朝の1時間を最高の投資にする。瞑想・アファメーション・運動・読書・ジャーナリング",cat:"MORNING METHOD"}
+  {title:"モーニングメソッド実践",url:"morning-method/",desc:"SAVERSで朝の1時間を最高の投資にする。瞑想・アファメーション・運動・読書・ジャーナリング",cat:"MORNING METHOD"},
+  {title:"人物録｜今をつくる人々",url:"people/",desc:"品位と知的誠実さで選んだ現代の実践者たち",cat:"PEOPLE"},
+  {title:"田中渓｜投資・習慣・身体をつなぐ実践者",url:"people/tanaka-kei/",desc:"ゴールドマン・サックス17年、朝3:45起床、月間400km",cat:"TANAKA KEI"},
+  {title:"BNF｜公開資料から辿る個人投資家の輪郭",url:"people/bnf/",desc:"ジェイコム誤発注事件、限られた資料、沈黙の人物録",cat:"BNF"},
+  {title:"稲盛和夫｜利他と規律で三つの企業を築いた経営者",url:"people/inamori-kazuo/",desc:"京セラ・KDDI・JAL。人間として何が正しいかを判断基準に",cat:"INAMORI"},
+  {title:"ナシーム・タレブ｜不確実性を味方にする思想家",url:"people/taleb/",desc:"ブラック・スワン、反脆弱性、身銭を切れ",cat:"TALEB"},
+  {title:"セネカ｜時間を最大の資産と見なした哲学者",url:"people/seneca/",desc:"人生は短いのではない。我々が短くしているのだ",cat:"SENECA"}
 ];
 
 (function(){

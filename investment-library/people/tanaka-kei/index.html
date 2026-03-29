@@ -82,8 +82,57 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:700;line-height:1.25;color:var(--parch);position:relative;margin-bottom:18px;}
 .hero-oneliner{font-family:var(--jp);font-size:clamp(.82rem,2vw,.95rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:560px;margin:0 auto;}
 
+/* ── INTRO 2-COL ── */
+.intro-2col{max-width:960px;margin:0 auto;padding:48px 24px 12px;display:grid;grid-template-columns:1fr;gap:36px;}
+@media(min-width:768px){.intro-2col{grid-template-columns:1fr 340px;gap:40px;}}
+.intro-left{}
+.intro-right{order:-1;}
+@media(min-width:768px){.intro-right{order:0;}}
+
+/* ── VIDEO CARD ── */
+.video-card{background:var(--ink);border:1px solid rgba(90,154,120,.15);overflow:hidden;}
+.video-card-label{font-family:var(--mono);font-size:.48rem;color:var(--accent3);letter-spacing:.16em;padding:14px 16px 0;opacity:.8;}
+.video-thumb{position:relative;width:100%;aspect-ratio:16/9;cursor:pointer;overflow:hidden;background:#0a1210;}
+.video-thumb img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s;}
+.video-thumb:hover img{opacity:1;}
+.video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.video-play-btn{width:52px;height:52px;background:rgba(26,18,8,.7);border:1px solid rgba(90,154,120,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.video-thumb:hover .video-play-btn{background:rgba(26,18,8,.85);border-color:var(--accent3);}
+.video-play-icon{width:0;height:0;border-left:16px solid var(--gold3);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:3px;}
+.video-card-body{padding:14px 16px 16px;}
+.video-card-title{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--parch);margin-bottom:6px;line-height:1.4;}
+.video-card-desc{font-size:.72rem;color:var(--parch4);line-height:1.7;margin-bottom:12px;font-weight:300;}
+.video-card-actions{display:flex;gap:6px;flex-wrap:wrap;}
+.video-btn{font-family:var(--mono);font-size:.6rem;padding:6px 14px;text-decoration:none;letter-spacing:.06em;transition:all .15s;cursor:pointer;border:none;}
+.video-btn-primary{background:rgba(90,154,120,.15);color:var(--accent3);border:1px solid rgba(90,154,120,.25);}
+.video-btn-primary:hover{background:rgba(90,154,120,.25);border-color:var(--accent3);}
+.video-btn-secondary{background:transparent;color:var(--parch4);border:1px solid rgba(223,201,168,.15);}
+.video-btn-secondary:hover{border-color:var(--parch4);color:var(--parch);}
+
+/* ── VIDEO CARD X LINK ── */
+.video-card-x{padding:0 16px 14px;}
+.video-card-x-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.6rem;color:var(--parch4);text-decoration:none;letter-spacing:.06em;padding:5px 0;transition:color .15s;opacity:.7;}
+.video-card-x-link:hover{color:var(--gold3);opacity:1;}
+.video-card-x-icon{font-weight:700;font-size:.7rem;}
+
+/* ── VIDEO CARD RELATED ── */
+.video-card-related{padding:0 16px 16px;}
+.video-card-related-link{display:block;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(90,154,120,.12);text-decoration:none;transition:all .18s;}
+.video-card-related-link:hover{background:rgba(90,154,120,.06);border-color:rgba(90,154,120,.25);}
+.video-card-related-label{font-family:var(--mono);font-size:.42rem;color:var(--parch4);letter-spacing:.14em;margin-bottom:5px;opacity:.5;}
+.video-card-related-title{font-family:var(--serif);font-size:.76rem;font-weight:600;color:var(--parch3);line-height:1.3;margin-bottom:3px;}
+.video-card-related-desc{font-size:.62rem;color:var(--parch4);line-height:1.5;opacity:.6;font-weight:300;}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;z-index:9999;background:rgba(10,18,16,.92);display:none;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.active{display:flex;}
+.modal-content{width:100%;max-width:900px;position:relative;}
+.modal-close{position:absolute;top:-40px;right:0;font-family:var(--mono);font-size:.7rem;color:var(--parch4);cursor:pointer;background:none;border:1px solid rgba(223,201,168,.2);padding:6px 14px;letter-spacing:.08em;transition:all .15s;}
+.modal-close:hover{color:var(--parch);border-color:var(--parch4);}
+.modal-video{width:100%;aspect-ratio:16/9;border:none;}
+
 /* ── ARTICLE ── */
-.article{max-width:700px;margin:0 auto;padding:52px 24px 12px;}
+.article{max-width:700px;margin:0 auto;padding:40px 24px 12px;}
 .article-section{margin-bottom:52px;}
 .section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
 .section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
@@ -197,11 +246,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </p>
 </div>
 
-<!-- ── ARTICLE ── -->
-<main class="article">
+<!-- ── INTRO 2-COL ── -->
+<div class="intro-2col">
 
-  <!-- §1 一行要約 + この人は何者か -->
-  <div class="article-section">
+  <!-- LEFT: intro text -->
+  <div class="intro-left">
     <div class="section-label">01 · WHO IS KEI TANAKA</div>
     <h2 class="section-title">この人は何者か</h2>
     <div class="section-body">
@@ -214,8 +263,58 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       <p>
         上智大学理工学部物理学科を学科首席で卒業し、大学院に進学後、ゴールドマン・サックスへ。入社直後のリーマンショックで、ボーナスゼロ、大幅減給、在籍部署の9割が人員削減されるどん底を経験している。その環境の中で生き残り、やがて日本の投資部門を率いる立場にまで上がった。
       </p>
+      <p>
+        しかし、この人は最初からエリートだったわけではない。中学受験に失敗し、自身が語るところの「マイルドヤンキー」時代を過ごしている。その時期に心の支えとなったのが深夜ラジオだった。高校時代、ソニーのWalkmanは必ず「ラジオ機能付きモデル」を選び、授業中に袖の中でイヤホンを忍ばせて聴き続けた。<strong>「声ひとつで人を救える」</strong>——この原体験が、後のラジオパーソナリティとしての活動の根にある。
+      </p>
     </div>
   </div>
+
+  <!-- RIGHT: video card -->
+  <div class="intro-right">
+    <div class="video-card">
+      <div class="video-card-label">FIRST WATCH</div>
+      <div class="video-thumb" onclick="openModal()">
+        <img src="https://img.youtube.com/vi/pv_ytEic2Ls/hqdefault.jpg" alt="田中渓 動画サムネイル" loading="lazy"/>
+        <div class="video-play">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </div>
+      </div>
+      <div class="video-card-body">
+        <div class="video-card-title">投資・習慣・身体をつなぐ輪郭が見える動画</div>
+        <div class="video-card-desc">この人物を理解する入口として、最初に見るならこの一本。</div>
+        <div class="video-card-actions">
+          <button class="video-btn video-btn-primary" onclick="openModal()">動画を見る</button>
+          <a class="video-btn video-btn-secondary" href="https://www.youtube.com/watch?v=pv_ytEic2Ls" target="_blank" rel="noopener">YouTubeで開く</a>
+        </div>
+      </div>
+      <div class="video-card-x">
+        <a class="video-card-x-link" href="https://x.com/KeiTanaka_Radio" target="_blank" rel="noopener">
+          <span class="video-card-x-icon">X</span>
+          <span>@KeiTanaka_Radio</span>
+        </a>
+      </div>
+      <div class="video-card-related">
+        <a class="video-card-related-link" href="../../morning-practice/">
+          <div class="video-card-related-label">RELATED IN THIS LIBRARY</div>
+          <div class="video-card-related-title">朝の実践室</div>
+          <div class="video-card-related-desc">投資家の朝を設計する方法論を、この書斎でも扱っています。</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="videoModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">CLOSE</button>
+    <iframe class="modal-video" id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
 
   <hr class="divider"/>
 
@@ -239,7 +338,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       </div>
 
       <p>
-        2024年にゴールドマン・サックスを退社し、少数精鋭の投資会社で不動産投資の責任者を務めながら、ラジオパーソナリティ、著述家としても活動を広げている。キャリアの第二章が、さらに多面的な形で始まっている。
+        もう一つ注目すべきは、本人が自分を「凡人」と規定していることだ。ゴールドマン・サックスで天才的な同僚に囲まれる中で、田中渓が選んだのは自分もそうなろうとすることではなく、<strong>天才の手法を観察し、分解し、自分用にカスタマイズする</strong>こと。凡人だからこそ論理的に分解できる——この逆転の発想が、この人の知的態度の核にある。
+      </p>
+      <p>
+        2024年にゴールドマン・サックスを退社し、少数精鋭の投資会社で不動産投資の責任者を務めながら、ラジオパーソナリティ、著述家としても活動を広げている。座右の銘は「座右の銘がないこと」。目標を事前に固定せず、流れの中で最善を選び続ける——この「フリーフロー」の姿勢が、キャリアの第二章をさらに多面的なものにしている。
       </p>
     </div>
   </div>
@@ -266,8 +368,16 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       <p>
         リーマンショック直後の荒廃した環境で生き残った経験が、この人の判断の土台にある。部署の9割がいなくなる状況で、残る側に立つ——そのために必要だったのは、能力だけではなく、状況を冷静に読み、自分がやるべきことに集中する規律だった。
       </p>
+
+      <div class="pull-quote">
+        <div class="pull-quote-text">
+          お金を運用しないことは、無数にある選択肢の中から、あえて100%「日本円」に全力投資しているのと同じ。
+        </div>
+        <div class="pull-quote-source">『億までの人 億からの人』より</div>
+      </div>
+
       <p>
-        PIVOT出演時に語った「5つの掟」にも、その規律が凝縮されている。特定の手法やノウハウではなく、<strong>判断のための生活設計</strong>が、田中渓の核にある。
+        著書で語られる「お金→経験値→人脈」の循環サイクルも、この人の判断構造を表している。お金を守るのではなく、経験に変え、経験を人脈に変え、人脈がさらに大きな判断を可能にする。PIVOT出演時に語った「5つの掟」にも、この循環の規律が凝縮されている。特定の手法やノウハウではなく、<strong>判断のための生活設計</strong>が、田中渓の核にある。
       </p>
     </div>
   </div>
@@ -284,19 +394,38 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <div class="habit-box-label">DAILY ROUTINE</div>
         <div class="habit-box-title">朝3:45の設計</div>
         <div class="habit-box-body">
-          365日、朝3時45分起床。子どもが3歳のとき、「誰にも迷惑をかけない時間はここしかない」と決めた。6年以上、一日も欠かしていない。毎朝25kmのランニング、60kmの自転車、7,000mのスイムのいずれかをこなしてから一日が始まる。
+          365日、朝3時45分起床。子どもが3歳のとき、「誰にも迷惑をかけない時間はここしかない」と決めた。6年以上、一日も欠かしていない。毎朝25kmのランニング、60kmの自転車、9,000mのスイムのいずれかをこなしてから一日が始まる。最初から25kmではなかった。「1km、15分からスタートした」と本人は語っている。
         </div>
       </div>
 
       <p>
-        この習慣は、単なるストイシズムではない。投資家としての判断力を維持するための<strong>身体インフラ</strong>だ。身体が安定していなければ、判断は揺れる。睡眠・運動・食事の管理が、投資判断の精度に直結している——田中渓の生き方はその信念の実装だ。
+        田中渓がこの習慣で特に重視しているのは、<strong>意志力に頼らないこと</strong>だ。毎晩寝る前に、翌朝着るウェア一式、飲むサプリ、すべてを準備する。「何も考えずに行動に移せるよう、言い訳を作れない環境を前もって整えておく」——これを本人は「環境のデザイン」と呼んでいる。習慣化とは、気合いの問題ではなく設計の問題だという確信がそこにある。
+      </p>
+
+      <div class="pull-quote">
+        <div class="pull-quote-text">
+          脳をオートパイロットにする。習慣化は、環境のデザイン。時間こそが人類最大の資本。
+        </div>
+        <div class="pull-quote-source">Xポスト／PIVOT出演時の発言より</div>
+      </div>
+
+      <p>
+        この「オートパイロット」は運動だけに留まらない。ランニング中にニュースやポッドキャストを聴き、大量のインプットを身体の動きと同時に処理する。AI活用にも積極的で、音声入力とAIを組み合わせることで、5枚分のアイデアを2分で整理するという。田中渓にとって、身体を動かす時間は「休息」ではなく、<strong>思考の処理装置</strong>として機能している。
       </p>
       <p>
-        発信の領域では、InterFMの番組「Beyond K-point」が月曜朝5:10から放送されている。テーマは「Designing wealth, defining life」。人との出会い、習慣の重要性、時間の使い方、お金の哲学を語る番組で、Apple Podcastビジネスカテゴリ1位、総合5位を獲得した。Cross FMの「Lifestyle Blueprint」も水曜深夜に放送中。
+        この人が整え方の順番として語るのが、<strong>「カネ→カラダ→ココロ」</strong>だ。まず経済的な基盤を整え、次に身体を整え、その上で心の余裕が生まれる。逆順では成り立たないという確信が、この人の生活設計の骨格にある。
       </p>
       <p>
-        音楽への感性も、この人の一面だ。DJとしてのミックス音源「DJ K's Mix Side 1」を制作するなど、音声メディアを単なる情報発信ではなく、感性の表現として捉えている。投資・身体・音楽——一見離れた領域が、一人の人間の中で自然に交差している。
+        もう一つ興味深いのは、<strong>「9割のルーティンに1割の非日常を組み込む」</strong>という方法論だ。日常を極限まで効率化した上で、残りの1割に意図的な逸脱を入れる。予期せぬ出会いと発見は、この余白から生まれるという。
       </p>
+
+      <div class="invest-connect">
+        <div class="invest-connect-label">VOICE &amp; MEDIA</div>
+        <div class="invest-connect-title">ラジオと音楽——感性の表現として</div>
+        <div class="invest-connect-body">
+          InterFMの番組「Beyond K-point」は月曜朝5:10放送。テーマは「Designing wealth, defining life」。Apple Podcastビジネスカテゴリ1位、総合5位を獲得した。Cross FMの「Lifestyle Blueprint」も水曜深夜に放送中。DJとしてのミックス音源「DJ K's Mix Side 1」も制作しており、音声メディアを単なる情報発信ではなく、感性の表現として捉えている。少年時代に「声ひとつで人を救える」と感じたあのラジオ体験が、今も根にある。
+        </div>
+      </div>
     </div>
   </div>
 
@@ -345,25 +474,35 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
     <div class="related-people">
       <div class="related-people-grid">
+        <a class="related-person" href="../bnf/">
+          <div class="related-person-tag">PEOPLE</div>
+          <div class="related-person-name">BNF</div>
+          <div class="related-person-desc">限られた公開資料から辿る個人投資家の輪郭</div>
+        </a>
+        <a class="related-person" href="../inamori-kazuo/">
+          <div class="related-person-tag">LEADERSHIP</div>
+          <div class="related-person-name">稲盛和夫</div>
+          <div class="related-person-desc">利他と規律で三つの企業を築いた経営者</div>
+        </a>
+        <a class="related-person" href="../taleb/">
+          <div class="related-person-tag">WISDOM</div>
+          <div class="related-person-name">ナシーム・タレブ</div>
+          <div class="related-person-desc">不確実性を味方にする思想家</div>
+        </a>
+        <a class="related-person" href="../seneca/">
+          <div class="related-person-tag">STOICISM</div>
+          <div class="related-person-name">セネカ</div>
+          <div class="related-person-desc">時間を最大の資産と見なした哲学者</div>
+        </a>
+        <a class="related-person" href="../../life-shelf/marcus-aurelius/">
+          <div class="related-person-tag">PHILOSOPHY</div>
+          <div class="related-person-name">マルクス・アウレリウス</div>
+          <div class="related-person-desc">内省を技術にした哲人皇帝</div>
+        </a>
         <a class="related-person" href="../../life-shelf/fujita-susumu/">
           <div class="related-person-tag">BIOGRAPHY</div>
           <div class="related-person-name">藤田晋</div>
           <div class="related-person-desc">逆境の中で投資を続けた経営者</div>
-        </a>
-        <a class="related-person" href="../../horizons/ochiai-yoichi/">
-          <div class="related-person-tag">THINKER</div>
-          <div class="related-person-name">落合陽一</div>
-          <div class="related-person-desc">思考の抽象化と長期視座</div>
-        </a>
-        <a class="related-person" href="../../principles/">
-          <div class="related-person-tag">PRINCIPLES</div>
-          <div class="related-person-name">投資原則</div>
-          <div class="related-person-desc">判断基準を育てるための思考法</div>
-        </a>
-        <a class="related-person" href="../../morning-practice/">
-          <div class="related-person-tag">PRACTICE</div>
-          <div class="related-person-name">朝の実践</div>
-          <div class="related-person-desc">習慣と身体を資産にする方法論</div>
         </a>
       </div>
     </div>
@@ -430,6 +569,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <span class="next-link-tag">PRINCIPLES</span>
         <span class="next-link-title">私の投資原則</span>
       </a>
+      <a class="next-link" href="../seneca/">
+        <span class="next-link-tag">WISDOM</span>
+        <span class="next-link-title">セネカ｜時間を最大の資産と見なした哲学者</span>
+      </a>
     </div>
   </div>
 </div>
@@ -451,8 +594,31 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
 
 <script>
+// Scroll top
 window.addEventListener('scroll',()=>{
   document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+
+// Video modal
+function openModal(){
+  const m=document.getElementById('videoModal');
+  const f=document.getElementById('modalIframe');
+  f.src='https://www.youtube.com/embed/pv_ytEic2Ls?autoplay=1&rel=0';
+  m.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  const m=document.getElementById('videoModal');
+  const f=document.getElementById('modalIframe');
+  f.src='';
+  m.classList.remove('active');
+  document.body.style.overflow='';
+}
+document.getElementById('videoModal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeModal();
 });
 </script>
 <script src="../../shared.js"></script>
