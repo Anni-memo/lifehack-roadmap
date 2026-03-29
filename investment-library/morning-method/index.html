@@ -260,7 +260,62 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .stretch-video-wrapper{max-width:100%;}
   .stretch-video-controls{gap:6px;}
   .stretch-ctrl-btn{padding:5px 12px;font-size:.66rem;}
+  .shelves-grid{grid-template-columns:1fr;}
 }
+
+/* ── READING SHELVES ── */
+.reading-shelves{
+  margin:24px 0 16px;padding:20px;
+  background:linear-gradient(135deg,var(--parch) 0%,var(--parch2) 100%);
+  border:1px solid var(--parch4);border-radius:4px;
+  box-shadow:0 2px 12px rgba(26,18,8,.08);
+}
+.shelves-header{
+  display:flex;align-items:center;gap:8px;margin-bottom:16px;
+}
+.shelves-icon{font-size:1.2rem;}
+.shelves-title{
+  font-family:var(--jp);font-size:.82rem;font-weight:600;
+  color:var(--ink2);letter-spacing:.04em;
+}
+.shelves-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:10px;margin-bottom:16px;
+}
+.shelf-card{
+  display:block;padding:14px 12px;
+  background:var(--parch2);border:1px solid var(--parch4);
+  border-left:3px solid var(--gold2);border-radius:3px;
+  text-decoration:none;color:var(--ink);
+  transition:all .2s;
+}
+.shelf-card:hover{
+  border-left-color:var(--gold3);
+  box-shadow:0 2px 12px rgba(184,144,10,.15);
+  transform:translateY(-1px);
+}
+.shelf-number{
+  font-family:var(--mono);font-size:.44rem;
+  color:var(--gold2);letter-spacing:.12em;margin-bottom:4px;
+}
+.shelf-name{
+  font-family:var(--jp);font-size:.76rem;font-weight:600;
+  color:var(--ink);margin-bottom:3px;
+}
+.shelf-desc{
+  font-family:var(--jp);font-size:.62rem;
+  color:var(--ink3);line-height:1.4;
+}
+.shelves-more{
+  text-align:center;font-family:var(--jp);font-size:.66rem;
+  padding-top:8px;border-top:1px solid var(--parch4);
+}
+.shelves-more a{
+  color:var(--gold);text-decoration:none;
+  transition:color .2s;
+}
+.shelves-more a:hover{color:var(--gold3);text-decoration:underline;}
+.shelves-more-sep{color:var(--parch4);margin:0 8px;}
 </style>
 </head>
 <body>
@@ -469,16 +524,60 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div class="step-name-en">READING &middot; 20 MINUTES</div>
     <div class="step-desc">
       知識は複利で効く——マンガーの教え通り、毎朝の読書が<br>
-      あなたの判断基準を育てます。投資ライブラリの記事を読んでみましょう。
+      あなたの判断基準を育てます。書架から一冊を選んで、静かに読みましょう。
     </div>
     <div class="step-hint">
       マンガーは「読書は最も確かな自己投資だ」と言いました。<br>
       バフェットは毎日500ページ読むことで知られています。<br>
       毎朝20分の読書を習慣にすれば、年間120時間以上の学びになります。
     </div>
-    <div style="font-family:var(--mono);font-size:.5rem;color:var(--gold2);letter-spacing:.12em;margin-bottom:10px;">RECOMMENDED ARTICLES</div>
+
+    <!-- 今朝のおすすめ -->
+    <div style="font-family:var(--mono);font-size:.5rem;color:var(--gold2);letter-spacing:.12em;margin-bottom:10px;">TODAY'S PICKS — 今朝のおすすめ</div>
     <div class="rec-articles" id="recArticles">
       <!-- JSで動的に挿入 -->
+    </div>
+
+    <!-- 書架ナビゲーション -->
+    <div class="reading-shelves">
+      <div class="shelves-header">
+        <span class="shelves-icon">📚</span>
+        <span class="shelves-title">もっと探す — 書斎の5つの棚</span>
+      </div>
+      <div class="shelves-grid">
+        <a href="../hajimete/" class="shelf-card">
+          <div class="shelf-number">棚 01</div>
+          <div class="shelf-name">はじめの棚</div>
+          <div class="shelf-desc">投資の第一歩を踏み出す</div>
+        </a>
+        <a href="../moat/" class="shelf-card">
+          <div class="shelf-number">棚 02</div>
+          <div class="shelf-name">概念の棚</div>
+          <div class="shelf-desc">競争優位と財務の読み方</div>
+        </a>
+        <a href="../industries/" class="shelf-card">
+          <div class="shelf-number">棚 03</div>
+          <div class="shelf-name">業種から歩く棚</div>
+          <div class="shelf-desc">14業種・69社の構造を知る</div>
+        </a>
+        <a href="../principles/" class="shelf-card">
+          <div class="shelf-number">棚 04</div>
+          <div class="shelf-name">投資原則の棚</div>
+          <div class="shelf-desc">バフェット・マンガーの知恵</div>
+        </a>
+        <a href="../horizons/" class="shelf-card">
+          <div class="shelf-number">棚 05</div>
+          <div class="shelf-name">思考を広げる棚</div>
+          <div class="shelf-desc">哲学・文明・人間理解</div>
+        </a>
+      </div>
+      <div class="shelves-more">
+        <a href="../reading-routes/">おすすめ読書ルートを見る →</a>
+        <span class="shelves-more-sep">|</span>
+        <a href="../glossary/">用語集で調べる →</a>
+        <span class="shelves-more-sep">|</span>
+        <a href="../learning/">クイズに挑戦する →</a>
+      </div>
     </div>
     <div class="timer-container">
       <div class="timer-display" id="timer-4">20:00</div>
