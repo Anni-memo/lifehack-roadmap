@@ -753,26 +753,10 @@ body {
 [data-writing="vertical"] #nav-prev { left: auto; right: 0; border-radius: 8px 0 0 8px; border-right: none; border-left: 1px solid var(--border); }
 [data-writing="vertical"] #nav-next { right: auto; left: 0; border-radius: 0 8px 8px 0; border-left: none; border-right: 1px solid var(--border); }
 
-/* ---------- Desktop Spread Mode (>900px, horizontal only) ---------- */
+/* ---------- Desktop ---------- */
 @media (min-width: 901px) {
-  :root { --page-max: 1200px; }
-
+  :root { --page-max: 780px; }
   #page-container { padding: 16px 32px; }
-
-  #page-content {
-    column-count: 2;
-    column-width: auto;
-    column-gap: 4rem;
-    column-rule: 1px solid var(--border);
-  }
-
-  /* No spread in vertical mode */
-  [data-writing="vertical"] #page-content {
-    column-count: unset;
-    column-gap: 0;
-    column-rule: none;
-  }
-
   .nav-arrow { width: 56px; height: 100px; font-size: 32px; }
 }
 

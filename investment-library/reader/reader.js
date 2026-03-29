@@ -18,7 +18,7 @@
   var touchStartX = 0;
   var touchStartY = 0;
   var isTransitioning = false;
-  var writingMode = 'horizontal'; // 'horizontal' or 'vertical'
+  var writingMode = 'vertical'; // 'horizontal' or 'vertical' (default: vertical)
   var viewMode = 'paged'; // 'paged' or 'scroll'
 
   /* ---------- DOM refs ---------- */
@@ -438,15 +438,20 @@
       }
     }
 
-    // Writing mode
+    // Writing mode (default: vertical)
     var savedWriting = localStorage.getItem('reader-writingMode');
-    if (savedWriting === 'vertical') {
+    if (savedWriting === 'horizontal') {
+      writingMode = 'horizontal';
+      app.removeAttribute('data-writing');
+      document.documentElement.removeAttribute('data-writing');
+    } else {
       writingMode = 'vertical';
       app.setAttribute('data-writing', 'vertical');
-      var wbtns = document.querySelectorAll('.writing-btn');
-      for (var i = 0; i < wbtns.length; i++) {
-        wbtns[i].classList.toggle('active', wbtns[i].getAttribute('data-writing') === 'vertical');
-      }
+      document.documentElement.setAttribute('data-writing', 'vertical');
+    }
+    var wbtns = document.querySelectorAll('.writing-btn');
+    for (var i = 0; i < wbtns.length; i++) {
+      wbtns[i].classList.toggle('active', wbtns[i].getAttribute('data-writing') === writingMode);
     }
 
     // View mode
