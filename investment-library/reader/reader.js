@@ -61,6 +61,7 @@
     fetchBookData();
     bindEvents();
     showSwipeHint();
+    showReadingTime();
   }
 
   /* ---------- URL Parsing ---------- */
@@ -560,6 +561,166 @@
     return -1;
   }
 
+  /* ---------- Reading Time ---------- */
+  function showReadingTime() {
+    var el = document.getElementById('reading-time');
+    if (!el || !book) return;
+    // Estimate: ~500 chars/min for Japanese
+    var totalChars = 0;
+    var counted = 0;
+    var promises = [];
+    for (var i = 0; i < chapters.length; i++) {
+      promises.push(fetch('../data/books/' + chapters[i].file).then(function(r){ return r.text(); }));
+    }
+    Promise.all(promises).then(function(htmls) {
+      for (var i = 0; i < htmls.length; i++) {
+        var tmp = document.createElement('div');
+        tmp.innerHTML = htmls[i];
+        totalChars += (tmp.textContent || '').replace(/\s/g, '').length;
+      }
+      var mins = Math.max(1, Math.round(totalChars / 500));
+      el.textContent = '読了目安 ' + mins + '分';
+      el.classList.add('visible');
+    });
+  }
+
+  /* ---------- Notes (Reading Clippings) ---------- */
+  var notesPanel = document.getElementById('notes-panel');
+  var notesList = document.getElementById('notes-list');
+  var notesEmpty = document.getElementById('notes-empty');
+  var notesOverlay = document.getElementById('notes-overlay');
+  var selectionPopup = document.getElementById('selection-popup');
+
+  function getNotesKey() { return 'reader-notes-' + slug; }
+
+  function loadNotes() {
+    try {
+      var raw = localStorage.getItem(getNotesKey());
+      return raw ? JSON.parse(raw) : [];
+    } catch(e) { return []; }
+  }
+
+  function saveNotes(notes) {
+    try { localStorage.setItem(getNotesKey(), JSON.stringify(notes)); } catch(e) {}
+  }
+
+  function addNote(text) {
+    if (!text || !text.trim()) return;
+    var notes = loadNotes();
+    notes.push({
+      text: text.trim(),
+      chapter: chapters[currentChapterIndex] ? chapters[currentChapterIndex].title : '',
+      date: new Date().toISOString().slice(0,10)
+    });
+    saveNotes(notes);
+    renderNotes();
+    showToast('保存しました');
+  }
+
+  function deleteNote(index) {
+    var notes = loadNotes();
+    notes.splice(index, 1);
+    saveNotes(notes);
+    renderNotes();
+  }
+
+  function renderNotes() {
+    var notes = loadNotes();
+    notesList.innerHTML = '';
+    notesEmpty.style.display = notes.length === 0 ? 'block' : 'none';
+
+    for (var i = 0; i < notes.length; i++) {
+      var li = document.createElement('li');
+      li.innerHTML =
+        '<div class="note-text">' + escapeHTML(notes[i].text) + '</div>' +
+        '<div class="note-meta">' + escapeHTML(notes[i].chapter) + ' · ' + notes[i].date + '</div>' +
+        '<div class="note-actions">' +
+          '<button data-action="copy" data-index="' + i + '" title="コピー">&#128203;</button>' +
+          '<button data-action="share" data-index="' + i + '" title="共有">&#8599;</button>' +
+          '<button data-action="delete" data-index="' + i + '" title="削除">&#10005;</button>' +
+        '</div>';
+      notesList.appendChild(li);
+    }
+  }
+
+  function getAllNotesText() {
+    var notes = loadNotes();
+    if (notes.length === 0) return '';
+    var lines = ['【読書ノート】' + (book ? book.title : ''), ''];
+    for (var i = 0; i < notes.length; i++) {
+      lines.push('▸ ' + notes[i].text);
+      lines.push('  (' + notes[i].chapter + ' · ' + notes[i].date + ')');
+      lines.push('');
+    }
+    lines.push('#投資と思考の書斎');
+    return lines.join('\n');
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast('コピーしました');
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('コピーしました');
+    }
+  }
+
+  function shareText(text) {
+    if (navigator.share) {
+      navigator.share({ text: text }).catch(function(){});
+    } else {
+      copyToClipboard(text);
+    }
+  }
+
+  function showToast(msg) {
+    var existing = document.querySelector('.reader-toast');
+    if (existing) existing.remove();
+    var t = document.createElement('div');
+    t.className = 'reader-toast';
+    t.textContent = msg;
+    app.appendChild(t);
+    setTimeout(function() { if (t.parentNode) t.remove(); }, 2200);
+  }
+
+  function openNotes() {
+    renderNotes();
+    notesPanel.classList.add('open');
+    notesOverlay.classList.add('active');
+  }
+
+  function closeNotes() {
+    notesPanel.classList.remove('open');
+    notesOverlay.classList.remove('active');
+  }
+
+  /* Selection popup positioning */
+  function showSelectionPopup() {
+    var sel = window.getSelection();
+    if (!sel || sel.isCollapsed || !sel.toString().trim()) {
+      selectionPopup.classList.remove('visible');
+      return;
+    }
+    var range = sel.getRangeAt(0);
+    var rect = range.getBoundingClientRect();
+    selectionPopup.style.top = (rect.top - 40) + 'px';
+    selectionPopup.style.left = Math.max(8, Math.min(window.innerWidth - 200, rect.left + rect.width / 2 - 80)) + 'px';
+    selectionPopup.classList.add('visible');
+  }
+
+  function hideSelectionPopup() {
+    selectionPopup.classList.remove('visible');
+  }
+
   /* ---------- Event Binding ---------- */
   function bindEvents() {
     // Footer navigation buttons
@@ -581,6 +742,66 @@
     // Settings
     settingsToggle.addEventListener('click', function () { toggleSettings(); });
     settingsOverlay.addEventListener('click', function () { closeSettings(); });
+
+    // Notes panel
+    document.getElementById('notes-toggle').addEventListener('click', function() {
+      if (notesPanel.classList.contains('open')) { closeNotes(); }
+      else { closeTOC(); closeSettings(); openNotes(); }
+    });
+    document.getElementById('notes-close').addEventListener('click', function() { closeNotes(); });
+    notesOverlay.addEventListener('click', function() { closeNotes(); });
+
+    // Notes actions
+    document.getElementById('notes-copy-all').addEventListener('click', function() {
+      var text = getAllNotesText();
+      if (text) copyToClipboard(text);
+    });
+    document.getElementById('notes-share-all').addEventListener('click', function() {
+      var text = getAllNotesText();
+      if (text) shareText(text);
+    });
+    document.getElementById('notes-clear').addEventListener('click', function() {
+      if (loadNotes().length > 0) {
+        saveNotes([]);
+        renderNotes();
+        showToast('削除しました');
+      }
+    });
+
+    // Notes list delegation
+    notesList.addEventListener('click', function(e) {
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      var action = btn.getAttribute('data-action');
+      var idx = parseInt(btn.getAttribute('data-index'), 10);
+      var notes = loadNotes();
+      if (action === 'copy' && notes[idx]) copyToClipboard(notes[idx].text);
+      if (action === 'share' && notes[idx]) shareText(notes[idx].text);
+      if (action === 'delete') deleteNote(idx);
+    });
+
+    // Selection popup
+    document.addEventListener('mouseup', function() { setTimeout(showSelectionPopup, 50); });
+    document.addEventListener('touchend', function() { setTimeout(showSelectionPopup, 200); });
+    document.addEventListener('mousedown', function(e) {
+      if (!selectionPopup.contains(e.target)) hideSelectionPopup();
+    });
+
+    document.getElementById('save-selection').addEventListener('click', function() {
+      var sel = window.getSelection();
+      if (sel) { addNote(sel.toString()); sel.removeAllRanges(); }
+      hideSelectionPopup();
+    });
+    document.getElementById('copy-selection').addEventListener('click', function() {
+      var sel = window.getSelection();
+      if (sel) copyToClipboard(sel.toString());
+      hideSelectionPopup();
+    });
+    document.getElementById('share-selection').addEventListener('click', function() {
+      var sel = window.getSelection();
+      if (sel) shareText(sel.toString());
+      hideSelectionPopup();
+    });
 
     // Theme buttons
     var themeBtns = document.querySelectorAll('.theme-btn');

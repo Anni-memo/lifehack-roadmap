@@ -24,6 +24,7 @@
     <div id="book-title"></div>
     <div id="chapter-title"></div>
     <div class="header-right">
+      <button id="notes-toggle" title="読書ノート">&#128278;</button>
       <button id="settings-toggle" title="設定">&#9881;</button>
       <a id="close-reader" href="../classics/" title="閉じる">&#10005;</a>
     </div>
@@ -98,6 +99,32 @@
     </div>
     <button id="next-page" title="次のページ">&#8250;</button>
   </footer>
+
+  <!-- Reading Time Badge -->
+  <div id="reading-time"></div>
+
+  <!-- Text Selection Popup -->
+  <div id="selection-popup">
+    <button id="save-selection" title="読書ノートに保存">&#128278; 保存</button>
+    <button id="copy-selection" title="コピー">&#128203; コピー</button>
+    <button id="share-selection" title="共有">&#8599; 共有</button>
+  </div>
+
+  <!-- Notes Panel -->
+  <nav id="notes-panel">
+    <div class="notes-header">
+      <span>読書ノート</span>
+      <button id="notes-close">&#10005;</button>
+    </div>
+    <div id="notes-empty" class="notes-empty">保存したメモはまだありません。<br>テキストを選択して「保存」してください。</div>
+    <ul id="notes-list"></ul>
+    <div class="notes-actions">
+      <button id="notes-copy-all">すべてコピー</button>
+      <button id="notes-share-all">すべて共有</button>
+      <button id="notes-clear">すべて削除</button>
+    </div>
+  </nav>
+  <div id="notes-overlay"></div>
 
   <!-- Loading -->
   <div id="reader-loading">
