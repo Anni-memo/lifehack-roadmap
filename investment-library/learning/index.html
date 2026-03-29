@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="まなびの時間。投資用語クイズ・算数チャレンジ・読解チャレンジの3つのモードで楽しく学べる。"/>
+<meta property="og:title" content="まなびの時間｜投資と思考の書斎"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/learning/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/learning/"/>
+<title>まなびの時間｜投資と思考の書斎</title>
+<link rel="stylesheet" href="../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--green:#2a4a1a;--green2:#3d6828;--rust:#8b3a1a;--rust2:#c05020;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 50%,#2a1c0a 100%);color:var(--parch);padding:48px 24px 36px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;margin-bottom:12px;}
+.hero-sub{font-size:.84rem;color:var(--parch3);font-weight:300;line-height:1.95;position:relative;max-width:560px;margin:0 auto;}
+
+/* タブ */
+.tabs{max-width:800px;margin:0 auto;padding:20px 24px 0;display:flex;gap:4px;}
+.tab{flex:1;padding:12px 8px;text-align:center;font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--ink3);background:var(--parch2);border:1px solid var(--parch4);border-bottom:none;cursor:pointer;transition:all .2s;}
+.tab.active{background:var(--parch);color:var(--ink);border-color:var(--gold3);border-top:3px solid var(--gold3);}
+.tab:hover:not(.active){color:var(--gold2);}
+
+.tab-content{max-width:800px;margin:0 auto;padding:0 24px 40px;background:var(--parch);border:1px solid var(--parch4);border-top:none;min-height:400px;}
+.tab-panel{display:none;padding:24px 0;}
+.tab-panel.active{display:block;}
+
+/* スコア表示 */
+.score-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--parch2);border:1px solid var(--parch4);margin-bottom:20px;}
+.score-label{font-family:var(--mono);font-size:.58rem;color:var(--gold);letter-spacing:.12em;}
+.score-val{font-family:var(--mono);font-size:1.1rem;color:var(--gold3);font-weight:700;}
+.streak-val{font-family:var(--mono);font-size:.72rem;color:var(--gold2);}
+
+/* クイズ共通 */
+.q-card{background:var(--parch2);border:1px solid var(--parch4);padding:24px;margin-bottom:16px;}
+.q-num{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;}
+.q-text{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:16px;line-height:1.6;}
+.q-opts{display:flex;flex-direction:column;gap:6px;}
+.q-opt{padding:10px 16px;background:var(--parch);border:1px solid var(--parch4);cursor:pointer;font-size:.82rem;transition:all .15s;text-align:left;color:var(--ink);}
+.q-opt:hover:not(.disabled){border-color:var(--gold3);background:var(--parch3);}
+.q-opt.correct{background:var(--green);color:#f5ede0;border-color:var(--green2);}
+.q-opt.wrong{background:var(--rust);color:#f5ede0;border-color:var(--rust2);}
+.q-opt.disabled{cursor:default;opacity:.7;}
+.q-feedback{margin-top:12px;font-size:.82rem;line-height:1.6;color:var(--ink3);font-style:italic;}
+.q-feedback.correct-fb{color:var(--green2);}
+.q-feedback.wrong-fb{color:var(--rust2);}
+
+/* 難易度選択 */
+.difficulty{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.diff-btn{padding:8px 20px;background:var(--parch2);border:1px solid var(--parch4);cursor:pointer;font-family:var(--serif);font-size:.82rem;transition:all .2s;color:var(--ink);}
+.diff-btn.active{background:var(--ink);color:var(--gold4);border-color:var(--ink);}
+.diff-btn:hover:not(.active){border-color:var(--gold3);}
+
+/* 完了画面 */
+.result-screen{text-align:center;padding:40px 20px;}
+.result-stars{font-size:2.5rem;margin-bottom:16px;}
+.result-score{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.result-msg{font-size:.88rem;color:var(--ink3);margin-bottom:24px;line-height:1.7;}
+.result-btn{display:inline-block;padding:12px 28px;background:var(--ink);color:var(--gold3);border:none;cursor:pointer;font-family:var(--serif);font-size:.88rem;font-weight:600;transition:all .2s;text-decoration:none;}
+.result-btn:hover{background:var(--gold2);color:var(--ink);}
+
+/* 算数の入力 */
+.math-input{width:120px;padding:10px 14px;font-family:var(--mono);font-size:1rem;text-align:center;background:var(--parch);border:1px solid var(--parch4);color:var(--ink);outline:none;margin-right:8px;}
+.math-input:focus{border-color:var(--gold2);}
+.math-submit{padding:10px 20px;background:var(--ink);color:var(--gold3);border:none;cursor:pointer;font-family:var(--serif);font-size:.82rem;transition:all .2s;}
+.math-submit:hover{background:var(--gold2);color:var(--ink);}
+.math-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+
+/* 過去スコア */
+.past-scores{margin-top:20px;padding:16px;background:var(--parch2);border:1px solid var(--parch4);}
+.past-scores-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.12em;margin-bottom:8px;}
+.past-score-item{font-size:.76rem;color:var(--ink3);padding:4px 0;border-bottom:1px solid var(--parch4);}
+
+/* 読解チャレンジ引用 */
+.passage{background:var(--parch2);border-left:4px solid var(--gold3);padding:16px 20px;margin-bottom:16px;font-size:.84rem;line-height:1.8;color:var(--ink2);font-style:italic;}
+
+.section-label{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.18em;margin-bottom:12px;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;}
+
+/* ダークモード追加 */
+[data-theme="dark"] .tab{background:#221a0e;border-color:#3a2a18;color:#b0a088;}
+[data-theme="dark"] .tab.active{background:#1a1208;color:#e8dcc8;border-color:#d4aa22;}
+[data-theme="dark"] .tab-content{background:#1a1208;border-color:#3a2a18;}
+[data-theme="dark"] .q-card{background:#221a0e;border-color:#3a2a18;}
+[data-theme="dark"] .q-opt{background:#1a1208;border-color:#3a2a18;color:#e8dcc8;}
+[data-theme="dark"] .score-bar{background:#221a0e;border-color:#3a2a18;}
+[data-theme="dark"] .diff-btn{background:#221a0e;border-color:#3a2a18;color:#e8dcc8;}
+[data-theme="dark"] .math-input{background:#1a1208;border-color:#3a2a18;color:#e8dcc8;}
+[data-theme="dark"] .passage{background:#221a0e;border-color:#d4aa22;}
+[data-theme="dark"] .past-scores{background:#221a0e;border-color:#3a2a18;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-back" href="../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">まなびの時間</span>
+</nav>
+
+<div class="hero">
+  <h1 class="hero-title">まなびの時間</h1>
+  <p class="hero-sub">投資用語クイズ・算数チャレンジ・読解チャレンジ。<br>楽しみながら知識を深めましょう。</p>
+</div>
+
+<div class="tabs">
+  <div class="tab active" data-tab="quiz">投資用語クイズ</div>
+  <div class="tab" data-tab="math">算数チャレンジ</div>
+  <div class="tab" data-tab="reading">読解チャレンジ</div>
+</div>
+
+<div class="tab-content">
+  <div class="tab-panel active" id="panel-quiz"></div>
+  <div class="tab-panel" id="panel-math"></div>
+  <div class="tab-panel" id="panel-reading"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../">トップ</a> ·
+    <a href="../hajimete/">初めての方へ</a> ·
+    <a href="../smart-home/">パーソナルホーム</a> ·
+    <a href="../moat/">moat</a> ·
+    <a href="../glossary/">用語集</a> ·
+    <a href="../morning-method/">モーニングメソッド</a>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+<script src="../ai-assistant.js"></script>
+<script>
+(function(){
+'use strict';
+
+// ══════════════════════════════════════════
+// タブ切り替え
+// ══════════════════════════════════════════
+var tabs = document.querySelectorAll('.tab');
+tabs.forEach(function(tab){
+  tab.addEventListener('click', function(){
+    tabs.forEach(function(t){ t.classList.remove('active'); });
+    tab.classList.add('active');
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.getElementById('panel-' + tab.getAttribute('data-tab')).classList.add('active');
+  });
+});
+
+// ══════════════════════════════════════════
+// A. 投資用語クイズ
+// ══════════════════════════════════════════
+var VOCAB_QUIZ = [
+  {q:'PER（株価収益率）が15倍とはどういう意味？',opts:['株価が純資産の15倍','利益15年分の価格','配当利回り15%','売上の15倍'],ans:1,explain:'PER = 株価 / EPS。15倍は「今の利益が15年続けば株価を回収できる」という意味です。'},
+  {q:'moat（経済的堀）の例として正しくないのは？',opts:['ネットワーク効果','スイッチングコスト','社員の平均年齢','ブランド力'],ans:2,explain:'moatは競争優位性の源泉。社員の平均年齢は直接的なmoatではありません。'},
+  {q:'FCF（フリーキャッシュフロー）の計算式は？',opts:['売上 - 原価','営業CF - 設備投資','純利益 - 配当','総資産 - 負債'],ans:1,explain:'FCF = 営業キャッシュフロー - 資本的支出（設備投資）です。'},
+  {q:'安全マージンの概念を提唱したのは？',opts:['バフェット','マンガー','グレアム','フィッシャー'],ans:2,explain:'ベンジャミン・グレアムが「賢明なる投資家」で提唱しました。'},
+  {q:'72の法則で年利8%のとき資産が倍になる年数は？',opts:['7年','8年','9年','10年'],ans:2,explain:'72 / 8 = 9年。72の法則は複利計算の近似値を簡単に求められます。'},
+  {q:'損失回避バイアスの説明として正しいのは？',opts:['損を確定するのが得意','得の喜びより損の痛みが大きい','損失を無視する傾向','常に損切りする傾向'],ans:1,explain:'人は同額の利得よりも損失を約2倍大きく感じます（カーネマン＆トベルスキー）。'},
+  {q:'「他人が貪欲なときに恐れよ」は誰の言葉？',opts:['マンガー','グレアム','バフェット','フィッシャー'],ans:2,explain:'ウォーレン・バフェットの有名な格言です。逆張りの本質を表現しています。'},
+  {q:'能力の輪（Circle of Competence）とは？',opts:['友人関係の範囲','理解できるビジネスの範囲','投資額の上限','時間管理の概念'],ans:1,explain:'バフェットの原則。自分が理解できるビジネスにだけ投資することが重要です。'},
+  {q:'ミスター・マーケットの寓話の教訓は？',opts:['市場は常に正しい','市場の気分に振り回されるな','市場を予測せよ','毎日売買せよ'],ans:1,explain:'グレアムの寓話。市場は躁鬱の相手であり、提示された価格に従う必要はありません。'},
+  {q:'複利が効くための条件として最も重要なのは？',opts:['高い利率','短期売買','長い時間','大きな元本'],ans:2,explain:'複利は時間の長さが最大の武器。バフェットの資産の95%以上は65歳以降に形成されました。'},
+  {q:'ROEとは何の略？',opts:['Return on Earnings','Return on Equity','Rate of Exchange','Revenue of Enterprise'],ans:1,explain:'Return on Equity（自己資本利益率）。株主の資本をどれだけ効率よく使っているかを示します。'},
+  {q:'サンクコスト（埋没費用）で正しい行動は？',opts:['さらに投資して回収する','過去の投資額を考慮して判断','将来の見通しだけで判断','とにかく損切りする'],ans:2,explain:'既に支払ったコストは判断に影響させず、将来の価値だけで判断すべきです。'},
+  {q:'スイッチングコストが最も高いのは？',opts:['コンビニの変更','SaaSプラットフォーム','ファストフード','文房具メーカー'],ans:1,explain:'SaaSは技術的ロックインが発生し、データ移行・再学習のコストが非常に高くなります。'},
+  {q:'確証バイアスとは？',opts:['確実な情報だけを信じる','自分の信念を裏付ける情報だけを集める','確率を正しく計算できない','他人の意見を確認する習慣'],ans:1,explain:'自分に都合の良い情報だけを集め、反する情報を無視する傾向です。'},
+  {q:'バリュー投資の「内在価値」とは？',opts:['株価','時価総額','企業の本質的な価値','配当金の合計'],ans:2,explain:'内在価値は将来のキャッシュフローの割引現在価値で、市場価格とは異なります。'},
+  {q:'ネットワーク効果の例として最も適切なのは？',opts:['トヨタの工場','VISAの決済ネットワーク','任天堂のゲーム','ユニクロの店舗'],ans:1,explain:'VISAは加盟店が増えるほどカード保有者に便利になり、保有者が増えるほど加盟店にも有利になります。'},
+  {q:'PBRが1倍以下の意味は？',opts:['利益が出ていない','株価が解散価値を下回っている','配当がない','成長している'],ans:1,explain:'PBR = 株価 / BPS。1倍以下は「今すぐ会社を解散した方が株主に有利」という理論上の状態です。'},
+  {q:'フィッシャーが重視したのは？',opts:['配当利回り','企業の成長性','低PER','高配当'],ans:1,explain:'フィリップ・フィッシャーは成長株投資の父。企業の質と長期的な成長性を重視しました。'},
+  {q:'FOMO（取り残される恐怖）の対処法は？',opts:['すぐに市場に参入する','自分の投資基準を守る','全ての流行に投資する','他人の投資を真似る'],ans:1,explain:'FOMOに負けると高値掴みをしやすくなります。自分の判断基準を堅持することが重要です。'},
+  {q:'アンカリング効果とは？',opts:['船を停泊させる技術','最初の情報に引きずられること','安定した投資手法','固定費の分析方法'],ans:1,explain:'最初に見た数字（アンカー）が判断の基準になってしまう認知バイアスです。'}
+];
+
+var quizState = {questions:[], current:0, score:0, streak:0};
+
+function initQuiz(){
+  quizState.questions = shuffle(VOCAB_QUIZ).slice(0, 10);
+  quizState.current = 0;
+  quizState.score = 0;
+  quizState.streak = 0;
+  renderQuiz();
+}
+
+function renderQuiz(){
+  var panel = document.getElementById('panel-quiz');
+  if(quizState.current >= quizState.questions.length){
+    showQuizResult(panel);
+    return;
+  }
+  var q = quizState.questions[quizState.current];
+  var html = '<div class="score-bar">';
+  html += '<div><span class="score-label">SCORE</span> <span class="score-val">' + quizState.score + '/' + quizState.questions.length + '</span></div>';
+  html += '<div><span class="score-label">STREAK</span> <span class="streak-val">' + quizState.streak + '</span></div>';
+  html += '<div><span class="score-label">Q</span> <span class="streak-val">' + (quizState.current+1) + '/' + quizState.questions.length + '</span></div>';
+  html += '</div>';
+  html += '<div class="q-card">';
+  html += '<div class="q-num">QUESTION ' + (quizState.current+1) + '</div>';
+  html += '<div class="q-text">' + esc(q.q) + '</div>';
+  html += '<div class="q-opts">';
+  q.opts.forEach(function(opt, i){
+    html += '<button class="q-opt" data-idx="' + i + '">' + esc(opt) + '</button>';
+  });
+  html += '</div>';
+  html += '<div class="q-feedback" id="quizFeedback"></div>';
+  html += '</div>';
+  panel.innerHTML = html;
+
+  var opts = panel.querySelectorAll('.q-opt');
+  opts.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.classList.contains('disabled')) return;
+      opts.forEach(function(b){ b.classList.add('disabled'); });
+      var idx = parseInt(btn.getAttribute('data-idx'));
+      var fb = document.getElementById('quizFeedback');
+      if(idx === q.ans){
+        btn.classList.add('correct');
+        quizState.score++;
+        quizState.streak++;
+        fb.className = 'q-feedback correct-fb';
+        fb.textContent = '正解！ ' + q.explain;
+      } else {
+        btn.classList.add('wrong');
+        opts[q.ans].classList.add('correct');
+        quizState.streak = 0;
+        fb.className = 'q-feedback wrong-fb';
+        fb.textContent = '残念... ' + q.explain;
+      }
+      setTimeout(function(){
+        quizState.current++;
+        renderQuiz();
+      }, 2000);
+    });
+  });
+}
+
+function showQuizResult(panel){
+  var total = quizState.questions.length;
+  var score = quizState.score;
+  var pct = score / total;
+  var stars = pct >= 0.9 ? '&#9733;&#9733;&#9733;' : (pct >= 0.6 ? '&#9733;&#9733;&#9734;' : '&#9733;&#9734;&#9734;');
+  var msg = pct >= 0.9 ? '素晴らしい！投資用語をしっかり理解しています。' : (pct >= 0.6 ? 'よくできました。復習すればさらに伸びます。' : '用語集を読んでから再挑戦しましょう。');
+  var html = '<div class="result-screen">';
+  html += '<div class="result-stars">' + stars + '</div>';
+  html += '<div class="result-score">' + score + ' / ' + total + '</div>';
+  html += '<div class="result-msg">' + msg + '</div>';
+  html += '<button class="result-btn" id="quizRetry">もう一度挑戦する</button>';
+  html += '</div>';
+  // 過去スコア
+  saveScore('quiz', score, total);
+  html += renderPastScores('quiz');
+  panel.innerHTML = html;
+  document.getElementById('quizRetry').addEventListener('click', initQuiz);
+}
+
+// ══════════════════════════════════════════
+// B. 算数チャレンジ
+// ══════════════════════════════════════════
+var mathState = {difficulty:'easy', questions:[], current:0, score:0, streak:0};
+
+function initMath(diff){
+  mathState.difficulty = diff || 'easy';
+  mathState.questions = generateMathQuestions(mathState.difficulty, 10);
+  mathState.current = 0;
+  mathState.score = 0;
+  mathState.streak = 0;
+  renderMath();
+}
+
+function generateMathQuestions(diff, count){
+  var qs = [];
+  for(var i = 0; i < count; i++){
+    if(diff === 'easy') qs.push(genEasy());
+    else if(diff === 'medium') qs.push(genMedium());
+    else qs.push(genAdvanced());
+  }
+  return qs;
+}
+
+function genEasy(){
+  var isAdd = Math.random() > 0.5;
+  var a = randInt(10, 999);
+  var b = randInt(10, 999);
+  if(isAdd){
+    return {q: a + ' + ' + b + ' = ?', ans: a + b, explain: a + ' + ' + b + ' = ' + (a+b)};
+  } else {
+    if(a < b){ var t=a; a=b; b=t; }
+    return {q: a + ' - ' + b + ' = ?', ans: a - b, explain: a + ' - ' + b + ' = ' + (a-b)};
+  }
+}
+
+function genMedium(){
+  var isMul = Math.random() > 0.5;
+  if(isMul){
+    var a = randInt(2, 99);
+    var b = randInt(2, 99);
+    return {q: a + ' x ' + b + ' = ?', ans: a * b, explain: a + ' x ' + b + ' = ' + (a*b)};
+  } else {
+    var b2 = randInt(2, 30);
+    var ans2 = randInt(2, 50);
+    var a2 = b2 * ans2;
+    return {q: a2 + ' / ' + b2 + ' = ?', ans: ans2, explain: a2 + ' / ' + b2 + ' = ' + ans2};
+  }
+}
+
+function genAdvanced(){
+  var type = randInt(0, 4);
+  if(type === 0){
+    // 複利計算
+    var principal = [100, 200, 500, 1000][randInt(0,3)];
+    var rate = [3, 5, 7, 10][randInt(0,3)];
+    var years = [5, 10, 20][randInt(0,2)];
+    var result = Math.round(principal * Math.pow(1 + rate/100, years));
+    return {q: principal + '万円を年利' + rate + '%で' + years + '年運用すると約何万円？（1万円未満四捨五入）', ans: result, explain: principal + ' x (1+' + rate/100 + ')^' + years + ' = 約' + result + '万円。複利の力です。'};
+  } else if(type === 1){
+    // PER計算
+    var per = [10, 12, 15, 20, 25][randInt(0,4)];
+    var eps = [100, 200, 300, 500][randInt(0,3)];
+    var price = per * eps;
+    return {q: 'PER' + per + '倍の株、1株利益' + eps + '円のとき株価は？', ans: price, explain: 'PER x EPS = ' + per + ' x ' + eps + ' = ' + price + '円'};
+  } else if(type === 2){
+    // 72の法則
+    var r = [3, 4, 6, 8, 9, 12][randInt(0,5)];
+    var y = Math.round(72 / r);
+    return {q: '72の法則：年利' + r + '%で資産が倍になるのに約何年かかる？', ans: y, explain: '72 / ' + r + ' = ' + y + '年。72の法則は複利計算の近似です。'};
+  } else if(type === 3){
+    // 積立計算（概算）
+    var monthly = [1, 3, 5, 10][randInt(0,3)];
+    var yrs = [10, 20, 30][randInt(0,2)];
+    var rt = [5, 7][randInt(0,1)];
+    var monthlyAmt = monthly * 10000;
+    var months = yrs * 12;
+    var mr = rt / 100 / 12;
+    var total = Math.round(monthlyAmt * ((Math.pow(1+mr, months) - 1) / mr) / 10000);
+    return {q: '月' + monthly + '万円を' + yrs + '年積立（年利' + rt + '%）で約何万円？（1万円未満四捨五入）', ans: total, explain: '月' + monthly + '万円 x ' + yrs + '年（年利' + rt + '%）= 約' + total + '万円。複利と積立の効果です。'};
+  } else {
+    // 割合
+    var total3 = [100, 200, 500, 1000][randInt(0,3)];
+    var pct = [10, 15, 20, 25, 30][randInt(0,4)];
+    var ans3 = total3 * pct / 100;
+    return {q: total3 + '万円の' + pct + '%はいくら（万円）？', ans: ans3, explain: total3 + ' x ' + pct/100 + ' = ' + ans3 + '万円'};
+  }
+}
+
+function renderMath(){
+  var panel = document.getElementById('panel-math');
+  if(mathState.current >= mathState.questions.length){
+    showMathResult(panel);
+    return;
+  }
+  var q = mathState.questions[mathState.current];
+  var html = '<div class="difficulty">';
+  html += '<button class="diff-btn' + (mathState.difficulty==='easy' ? ' active' : '') + '" data-diff="easy">初級（足し算・引き算）</button>';
+  html += '<button class="diff-btn' + (mathState.difficulty==='medium' ? ' active' : '') + '" data-diff="medium">中級（掛け算・割り算）</button>';
+  html += '<button class="diff-btn' + (mathState.difficulty==='advanced' ? ' active' : '') + '" data-diff="advanced">上級（投資計算）</button>';
+  html += '</div>';
+  html += '<div class="score-bar">';
+  html += '<div><span class="score-label">SCORE</span> <span class="score-val">' + mathState.score + '/10</span></div>';
+  html += '<div><span class="score-label">STREAK</span> <span class="streak-val">' + mathState.streak + '</span></div>';
+  html += '<div><span class="score-label">Q</span> <span class="streak-val">' + (mathState.current+1) + '/10</span></div>';
+  html += '</div>';
+  html += '<div class="q-card">';
+  html += '<div class="q-num">QUESTION ' + (mathState.current+1) + '</div>';
+  html += '<div class="q-text">' + esc(q.q) + '</div>';
+  html += '<div class="math-row">';
+  html += '<input type="number" class="math-input" id="mathAnswer" placeholder="答え">';
+  html += '<button class="math-submit" id="mathSubmit">回答する</button>';
+  html += '</div>';
+  html += '<div class="q-feedback" id="mathFeedback"></div>';
+  html += '</div>';
+  panel.innerHTML = html;
+
+  // 難易度ボタン
+  panel.querySelectorAll('.diff-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      initMath(btn.getAttribute('data-diff'));
+    });
+  });
+
+  var input = document.getElementById('mathAnswer');
+  var submitBtn = document.getElementById('mathSubmit');
+  input.focus();
+
+  function checkAnswer(){
+    var userAns = parseInt(input.value);
+    if(isNaN(userAns)) return;
+    submitBtn.disabled = true;
+    input.disabled = true;
+    var fb = document.getElementById('mathFeedback');
+    // 許容範囲（上級の概算問題用：10%以内なら正解）
+    var correct = false;
+    if(mathState.difficulty === 'advanced'){
+      correct = Math.abs(userAns - q.ans) <= Math.max(q.ans * 0.1, 1);
+    } else {
+      correct = userAns === q.ans;
+    }
+    if(correct){
+      mathState.score++;
+      mathState.streak++;
+      fb.className = 'q-feedback correct-fb';
+      fb.textContent = '正解！ ' + q.explain;
+    } else {
+      mathState.streak = 0;
+      fb.className = 'q-feedback wrong-fb';
+      fb.textContent = '残念... 正解は ' + q.ans + '。' + q.explain;
+    }
+    setTimeout(function(){
+      mathState.current++;
+      renderMath();
+    }, 2200);
+  }
+
+  submitBtn.addEventListener('click', checkAnswer);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') checkAnswer(); });
+}
+
+function showMathResult(panel){
+  var score = mathState.score;
+  var pct = score / 10;
+  var stars = pct >= 0.9 ? '&#9733;&#9733;&#9733;' : (pct >= 0.6 ? '&#9733;&#9733;&#9734;' : '&#9733;&#9734;&#9734;');
+  var msg = pct >= 0.9 ? '完璧です！計算力が光っています。' : (pct >= 0.6 ? 'よくできました。上級に挑戦してみましょう。' : '練習を続ければ必ず上達します。');
+  var html = '<div class="result-screen">';
+  html += '<div class="result-stars">' + stars + '</div>';
+  html += '<div class="result-score">' + score + ' / 10</div>';
+  html += '<div class="result-msg">' + msg + '<br><span style="font-size:.76rem;color:var(--ink3);">難易度: ' + ({easy:'初級',medium:'中級',advanced:'上級'}[mathState.difficulty]) + '</span></div>';
+  html += '<button class="result-btn" id="mathRetry">もう一度挑戦する</button>';
+  html += '</div>';
+  saveScore('math_' + mathState.difficulty, score, 10);
+  html += renderPastScores('math_' + mathState.difficulty);
+  panel.innerHTML = html;
+  document.getElementById('mathRetry').addEventListener('click', function(){ initMath(mathState.difficulty); });
+}
+
+// ══════════════════════════════════════════
+// C. 読解チャレンジ
+// ══════════════════════════════════════════
+var READING_QUIZ = [
+  // 複利の力
+  {
+    passage: '「72の法則」とは、投資元本が2倍になるまでのおおよその年数を簡単に計算できる法則です。72を年利率で割ることで、元本が倍になる年数がわかります。例えば年利6%であれば、72 / 6 = 12年で元本が倍になります。バフェットの資産の95%以上は65歳以降に形成されました。これは複利が長い時間をかけて爆発的に効くことを示しています。',
+    article: '複利の力',
+    q: '72の法則で年利6%の場合、資産が倍になる年数は？',
+    opts: ['6年','10年','12年','18年'],
+    ans: 2,
+    explain: '72 / 6 = 12年です。72の法則は複利計算の近似値を素早く求められる便利な法則です。'
+  },
+  {
+    passage: '「72の法則」とは、投資元本が2倍になるまでのおおよその年数を簡単に計算できる法則です。72を年利率で割ることで、元本が倍になる年数がわかります。',
+    article: '複利の力',
+    q: 'バフェットの資産の95%以上が形成されたのはいつ以降？',
+    opts: ['30歳以降','45歳以降','55歳以降','65歳以降'],
+    ans: 3,
+    explain: 'バフェットの資産の95%以上は65歳以降に形成されました。複利は時間が経つほど加速します。'
+  },
+  {
+    passage: '複利とは「利益が利益を生む」仕組みです。元本だけでなく、過去に得た利益にも利息がつきます。アインシュタインはこれを「人類最大の発明」と呼んだとされています。',
+    article: '複利の力',
+    q: '複利の最大の特徴は？',
+    opts: ['元本が減らない','利益にも利息がつく','税金がかからない','リスクがない'],
+    ans: 1,
+    explain: '複利は「利益が利益を生む」連鎖です。単利と異なり、過去の利益にも利息がつくため、雪だるま式に増えていきます。'
+  },
+  // 安全マージン
+  {
+    passage: '安全マージン（Margin of Safety）とは、ベンジャミン・グレアムが提唱した概念です。企業の内在価値と市場価格の差を指し、この差が大きいほど投資家は守られます。例えば内在価値が1,000円の株を700円で買えば、300円分の安全マージンがあります。分析の誤りや予期しない悪材料に対する「緩衝材」として機能します。',
+    article: '安全マージンの哲学',
+    q: '安全マージンとはどういう概念？',
+    opts: ['株価の変動幅','企業の内在価値と市場価格の差','配当利回り','企業の成長率'],
+    ans: 1,
+    explain: '安全マージンは企業の内在価値と市場価格の差であり、投資家を守る「緩衝材」です。'
+  },
+  {
+    passage: 'グレアムは言いました。「安全マージンの概念を十分に理解できれば、あなたは健全な投資の大半を既に学んだことになる。」安全マージンは投資判断だけでなく、経営や人生設計にも応用できる普遍的な考え方です。',
+    article: '安全マージンの哲学',
+    q: 'グレアムが「健全な投資の大半を学んだことになる」と述べた概念は？',
+    opts: ['分散投資','テクニカル分析','安全マージン','配当再投資'],
+    ans: 2,
+    explain: 'グレアムは安全マージンを投資における最も重要な概念として位置づけました。'
+  },
+  {
+    passage: '安全マージンがあれば、たとえ分析が間違っていても大きな損失を避けられます。マンガーはこの考えを「余裕を持て」という言葉で表現しました。慎重さは臆病ではなく、知恵の表れです。',
+    article: '安全マージンの哲学',
+    q: 'マンガーが安全マージンの考えを表現した言葉は？',
+    opts: ['「逆から考えよ」','「余裕を持て」','「簡単な問題を解け」','「複利を信じよ」'],
+    ans: 1,
+    explain: 'マンガーは安全マージンの思想を「余裕を持て」という表現で実践しました。'
+  },
+  // ミスター・マーケット
+  {
+    passage: 'ベンジャミン・グレアムは「ミスター・マーケット」という寓話を用いて市場の本質を説明しました。ミスター・マーケットはあなたのビジネスパートナーで、毎日あなたの持ち分を買い取る価格、または売ってくれる価格を提示してきます。しかし彼は躁鬱病で、気分の良い日は高い価格を、気分の悪い日は安い価格を提示します。',
+    article: 'ミスター・マーケット',
+    q: 'ミスター・マーケットはどんな存在として描かれている？',
+    opts: ['常に合理的な投資家','躁鬱病のビジネスパートナー','政府の規制当局','銀行の審査官'],
+    ans: 1,
+    explain: 'ミスター・マーケットは躁鬱のビジネスパートナー。市場の感情に振り回されず、自分の判断基準で行動することが重要です。'
+  },
+  {
+    passage: 'ミスター・マーケットの教訓は、市場の提示する価格に従う義務はないということです。バフェットは言います。「市場はあなたに仕えるものであり、あなたを導くものではない。」自分の企業分析に基づいて、市場が安く売ってくれるときだけ買えばよいのです。',
+    article: 'ミスター・マーケット',
+    q: 'バフェットによれば、市場は投資家にとってどんな存在？',
+    opts: ['導くもの','仕えるもの','支配するもの','予測するもの'],
+    ans: 1,
+    explain: 'バフェットは「市場はあなたに仕えるものであり、導くものではない」と述べました。'
+  },
+  {
+    passage: 'ミスター・マーケットの気分は短期的には予測不能です。しかし長期的には、企業の本質的な価値が株価に反映されます。グレアムの有名な言葉「短期的には投票装置、長期的には計量器」がこれを表しています。',
+    article: 'ミスター・マーケット',
+    q: 'グレアムが言った「短期は投票装置、長期は___」？',
+    opts: ['温度計','天秤','計量器','時計'],
+    ans: 2,
+    explain: 'グレアムは「市場は短期的には投票装置だが、長期的には計量器だ」と述べました。長期では本質的価値が反映されます。'
+  }
+];
+
+var readState = {questions: READING_QUIZ, current:0, score:0, streak:0};
+
+function initReading(){
+  readState.current = 0;
+  readState.score = 0;
+  readState.streak = 0;
+  renderReading();
+}
+
+function renderReading(){
+  var panel = document.getElementById('panel-reading');
+  if(readState.current >= readState.questions.length){
+    showReadingResult(panel);
+    return;
+  }
+  var q = readState.questions[readState.current];
+  var html = '<div class="score-bar">';
+  html += '<div><span class="score-label">SCORE</span> <span class="score-val">' + readState.score + '/' + readState.questions.length + '</span></div>';
+  html += '<div><span class="score-label">STREAK</span> <span class="streak-val">' + readState.streak + '</span></div>';
+  html += '<div><span class="score-label">Q</span> <span class="streak-val">' + (readState.current+1) + '/' + readState.questions.length + '</span></div>';
+  html += '</div>';
+  html += '<div class="section-label">FROM: ' + esc(q.article) + '</div>';
+  html += '<div class="passage">' + esc(q.passage) + '</div>';
+  html += '<div class="q-card">';
+  html += '<div class="q-num">QUESTION ' + (readState.current+1) + '</div>';
+  html += '<div class="q-text">' + esc(q.q) + '</div>';
+  html += '<div class="q-opts">';
+  q.opts.forEach(function(opt, i){
+    html += '<button class="q-opt" data-idx="' + i + '">' + esc(opt) + '</button>';
+  });
+  html += '</div>';
+  html += '<div class="q-feedback" id="readFeedback"></div>';
+  html += '</div>';
+  panel.innerHTML = html;
+
+  var opts = panel.querySelectorAll('.q-opt');
+  opts.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.classList.contains('disabled')) return;
+      opts.forEach(function(b){ b.classList.add('disabled'); });
+      var idx = parseInt(btn.getAttribute('data-idx'));
+      var fb = document.getElementById('readFeedback');
+      if(idx === q.ans){
+        btn.classList.add('correct');
+        readState.score++;
+        readState.streak++;
+        fb.className = 'q-feedback correct-fb';
+        fb.textContent = '正解！ ' + q.explain;
+      } else {
+        btn.classList.add('wrong');
+        opts[q.ans].classList.add('correct');
+        readState.streak = 0;
+        fb.className = 'q-feedback wrong-fb';
+        fb.textContent = '残念... ' + q.explain;
+      }
+      setTimeout(function(){
+        readState.current++;
+        renderReading();
+      }, 2200);
+    });
+  });
+}
+
+function showReadingResult(panel){
+  var total = readState.questions.length;
+  var score = readState.score;
+  var pct = score / total;
+  var stars = pct >= 0.9 ? '&#9733;&#9733;&#9733;' : (pct >= 0.6 ? '&#9733;&#9733;&#9734;' : '&#9733;&#9734;&#9734;');
+  var msg = pct >= 0.9 ? '深い読解力です！記事の本質を理解しています。' : (pct >= 0.6 ? '良い結果です。記事を読み直すとさらに理解が深まります。' : '記事を読んでから再挑戦してみましょう。');
+  var html = '<div class="result-screen">';
+  html += '<div class="result-stars">' + stars + '</div>';
+  html += '<div class="result-score">' + score + ' / ' + total + '</div>';
+  html += '<div class="result-msg">' + msg + '</div>';
+  html += '<button class="result-btn" id="readRetry">もう一度挑戦する</button>';
+  html += ' <a class="result-btn" href="../horizons/compound-interest/" style="margin-left:8px;">複利の力を読む</a>';
+  html += '</div>';
+  saveScore('reading', score, total);
+  html += renderPastScores('reading');
+  panel.innerHTML = html;
+  document.getElementById('readRetry').addEventListener('click', initReading);
+}
+
+// ══════════════════════════════════════════
+// 共通ユーティリティ
+// ══════════════════════════════════════════
+function shuffle(arr){
+  var a = arr.slice();
+  for(var i = a.length-1; i > 0; i--){
+    var j = Math.floor(Math.random()*(i+1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+function randInt(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function esc(s){
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function saveScore(type, score, total){
+  try {
+    var key = 'learning_scores_' + type;
+    var data = JSON.parse(localStorage.getItem(key) || '[]');
+    data.push({date: new Date().toISOString().slice(0,10), time: new Date().toTimeString().slice(0,5), score: score, total: total});
+    if(data.length > 20) data = data.slice(-20);
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch(e){}
+}
+
+function renderPastScores(type){
+  try {
+    var key = 'learning_scores_' + type;
+    var data = JSON.parse(localStorage.getItem(key) || '[]');
+    if(data.length === 0) return '';
+    var html = '<div class="past-scores">';
+    html += '<div class="past-scores-label">PAST SCORES --- 過去の記録</div>';
+    data.slice().reverse().slice(0, 10).forEach(function(d){
+      html += '<div class="past-score-item">' + d.date + ' ' + d.time + ' --- ' + d.score + '/' + d.total + '</div>';
+    });
+    html += '</div>';
+    return html;
+  } catch(e){ return ''; }
+}
+
+// ── 初期化 ──
+initQuiz();
+initMath('easy');
+initReading();
+
+})();
+</script>
+</body>
+</html>

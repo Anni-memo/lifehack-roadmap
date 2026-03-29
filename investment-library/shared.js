@@ -271,6 +271,8 @@ function spaNavigate(url, pushState){
       children.forEach(function(child){
         if(child.id === 'spa-music-player') return;
         if(child.id === 'spa-loader') return;
+        if(child.id === 'ai-assistant-widget') return;
+        if(child.id === 'ai-assistant-css') return;
         if(child.classList && child.classList.contains('dark-mode-toggle')) return;
         document.body.removeChild(child);
       });
@@ -312,7 +314,7 @@ function spaNavigate(url, pushState){
       var scripts = newBody.querySelectorAll('script');
       scripts.forEach(function(script){
         // shared.jsやYouTube APIはスキップ
-        if(script.src && (script.src.indexOf('shared.js') !== -1 || script.src.indexOf('youtube') !== -1 || script.src.indexOf('gtag') !== -1)) return;
+        if(script.src && (script.src.indexOf('shared.js') !== -1 || script.src.indexOf('ai-assistant.js') !== -1 || script.src.indexOf('youtube') !== -1 || script.src.indexOf('gtag') !== -1)) return;
         var s = document.createElement('script');
         if(script.src){
           s.src = script.src;

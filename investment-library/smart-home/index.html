@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="あなたの一日をサポートするパーソナルホームページ。時間帯に応じた投資格言・記事推薦・ジャーナリング。"/>
+<meta property="og:title" content="パーソナルホーム｜投資と思考の書斎"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/smart-home/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/smart-home/"/>
+<title>パーソナルホーム｜投資と思考の書斎</title>
+<link rel="stylesheet" href="../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 50%,#2a1c0a 100%);color:var(--parch);padding:48px 24px 40px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+
+.greeting{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:var(--parch);position:relative;margin-bottom:12px;}
+.date-display{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.12em;position:relative;margin-bottom:8px;}
+.streak-badge{display:inline-block;font-family:var(--mono);font-size:.62rem;color:var(--gold4);background:rgba(184,144,10,.15);border:1px solid rgba(184,144,10,.3);padding:4px 14px;border-radius:20px;position:relative;}
+
+.content{max-width:800px;margin:0 auto;padding:32px 24px;}
+
+/* 投資格言カード */
+.quote-card-smart{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--parch);padding:28px 24px;margin-bottom:28px;border-left:4px solid var(--gold3);position:relative;overflow:hidden;cursor:pointer;transition:all .3s;}
+.quote-card-smart:hover{background:linear-gradient(135deg,var(--ink2) 0%,#3a2510 100%)}
+.quote-card-smart::before{content:'\201C';position:absolute;top:-10px;left:12px;font-family:var(--serif);font-size:6rem;color:var(--gold3);opacity:.1;line-height:1;pointer-events:none;}
+.qcs-text{font-family:var(--serif);font-size:clamp(.95rem,2.5vw,1.15rem);font-style:italic;line-height:1.75;color:var(--parch);margin-bottom:10px;position:relative;}
+.qcs-author{font-family:var(--mono);font-size:.6rem;color:var(--gold3);letter-spacing:.08em;text-align:right;}
+.qcs-hint{font-size:.56rem;color:var(--parch4);text-align:center;margin-top:6px;opacity:.5;}
+
+/* セクションラベル */
+.section-label{font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.18em;margin-bottom:16px;text-transform:uppercase;}
+
+/* 記事カード */
+.article-cards{display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:32px;}
+.ac{display:block;padding:16px 20px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;color:inherit;transition:all .2s;}
+.ac:hover{background:var(--parch3);border-color:var(--gold3);transform:translateY(-1px);}
+.ac-cat{font-family:var(--mono);font-size:.48rem;color:var(--gold);letter-spacing:.12em;margin-bottom:4px;}
+.ac-title{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.ac-desc{font-size:.72rem;color:var(--ink3);line-height:1.6;}
+
+/* クイズカード */
+.quiz-card{background:var(--parch2);border:1px solid var(--parch4);padding:24px;margin-bottom:28px;}
+.quiz-q{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:16px;}
+.quiz-options{display:flex;flex-direction:column;gap:6px;}
+.quiz-opt{padding:10px 16px;background:var(--parch);border:1px solid var(--parch4);cursor:pointer;font-size:.82rem;transition:all .15s;text-align:left;}
+.quiz-opt:hover{border-color:var(--gold3);background:var(--parch3);}
+.quiz-opt.correct{background:#2a4a1a;color:#f5ede0;border-color:#3d6828;}
+.quiz-opt.wrong{background:#8b3a1a;color:#f5ede0;border-color:#c05020;}
+.quiz-result{font-family:var(--serif);font-size:.88rem;color:var(--gold2);margin-top:12px;font-style:italic;}
+
+/* ジャーナル */
+.journal{margin-bottom:28px;}
+.journal textarea{width:100%;min-height:140px;padding:16px;font-family:var(--jp);font-size:.82rem;background:var(--parch);border:1px solid var(--parch4);color:var(--ink);outline:none;resize:vertical;line-height:1.8;transition:border-color .2s;}
+.journal textarea:focus{border-color:var(--gold2);}
+.journal-actions{display:flex;gap:8px;margin-top:8px;}
+.journal-btn{padding:8px 18px;background:var(--ink);color:var(--gold3);border:none;cursor:pointer;font-family:var(--serif);font-size:.78rem;transition:all .2s;}
+.journal-btn:hover{background:var(--gold2);color:var(--ink);}
+.journal-saved{font-size:.68rem;color:var(--gold2);font-style:italic;margin-top:8px;display:none;}
+
+/* 目標設定 */
+.goal-input{width:100%;padding:12px 16px;font-family:var(--jp);font-size:.82rem;background:var(--parch);border:1px solid var(--parch4);color:var(--ink);outline:none;margin-bottom:8px;transition:border-color .2s;}
+.goal-input:focus{border-color:var(--gold2);}
+
+/* 読んだ記事履歴 */
+.history-section{margin-bottom:28px;}
+.history-item{font-size:.76rem;color:var(--ink3);padding:6px 0;border-bottom:1px solid var(--parch4);}
+.history-empty{font-size:.76rem;color:var(--ink3);font-style:italic;}
+
+/* リンクカード */
+.link-card{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--ink);color:var(--gold3);text-decoration:none;font-family:var(--serif);font-size:.82rem;font-weight:600;transition:all .2s;margin-bottom:8px;}
+.link-card:hover{background:var(--gold2);color:var(--ink);}
+
+/* 音楽おすすめ */
+.music-rec{background:linear-gradient(135deg,var(--ink2) 0%,#2a1c0a 100%);padding:20px 24px;margin-bottom:28px;display:flex;align-items:center;gap:16px;border:1px solid rgba(184,144,10,.2);}
+.music-rec-icon{font-size:2rem;}
+.music-rec-text{font-family:var(--serif);font-size:.88rem;color:var(--parch);line-height:1.6;}
+.music-rec-text small{display:block;font-size:.7rem;color:var(--parch4);margin-top:4px;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;}
+
+/* ダークモード追加 */
+[data-theme="dark"] .ac{background:#221a0e;border-color:#3a2a18;}
+[data-theme="dark"] .quiz-card{background:#221a0e;border-color:#3a2a18;}
+[data-theme="dark"] .quiz-opt{background:#1a1208;border-color:#3a2a18;color:#e8dcc8;}
+[data-theme="dark"] .journal textarea{background:#1a1208;border-color:#3a2a18;color:#e8dcc8;}
+[data-theme="dark"] .goal-input{background:#1a1208;border-color:#3a2a18;color:#e8dcc8;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-back" href="../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">パーソナルホーム</span>
+</nav>
+
+<div class="hero">
+  <div class="date-display" id="dateDisplay"></div>
+  <h1 class="greeting" id="greeting"></h1>
+  <div class="streak-badge" id="streakBadge"></div>
+</div>
+
+<div class="content" id="mainContent">
+  <!-- JSで時間帯別に動的生成 -->
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../">トップ</a> ·
+    <a href="../hajimete/">初めての方へ</a> ·
+    <a href="../moat/">moat</a> ·
+    <a href="../learning/">まなびの時間</a> ·
+    <a href="../glossary/">用語集</a> ·
+    <a href="../morning-method/">モーニングメソッド</a>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+<script src="../ai-assistant.js"></script>
+<script>
+(function(){
+'use strict';
+
+// ── 投資格言データ（20個以上） ──
+var QUOTES = [
+  {text:"素晴らしい企業を公正な価格で買うほうが、公正な企業を素晴らしい価格で買うよりはるかに良い。",author:"Charlie Munger"},
+  {text:"他人が貪欲なときに恐れ、他人が恐れているときに貪欲になれ。",author:"Warren Buffett"},
+  {text:"株式市場は、活動的な投資家から忍耐強い投資家へとお金を移す装置だ。",author:"Warren Buffett"},
+  {text:"逆から考えよ。常に逆から考えよ。問題を逆転させると、解決策が見えてくることが多い。",author:"Charlie Munger"},
+  {text:"リスクとは、自分が何をやっているかわからないときに生じる。",author:"Warren Buffett"},
+  {text:"投資で最も重要なのは、どれだけ多く知っているかではなく、知らないことを知っているかだ。",author:"Warren Buffett"},
+  {text:"読書は最も確かな自己投資だ。知識は複利で効いてくる。",author:"Charlie Munger"},
+  {text:"安全マージンの概念を十分に理解できれば、あなたは健全な投資の大半を既に学んだことになる。",author:"Benjamin Graham"},
+  {text:"投資は、最も賢いものが勝つゲームではない。最も忍耐強いものが勝つゲームだ。",author:"Warren Buffett"},
+  {text:"株を買うとき、あなたはそのビジネスのオーナーになる。5年後、10年後を考えよ。",author:"Charlie Munger"},
+  {text:"複利は世界の八番目の不思議だ。理解する者はそれを稼ぎ、理解しない者はそれを払う。",author:"Albert Einstein"},
+  {text:"保守的な投資家はよく眠れる。",author:"Philip Fisher"},
+  {text:"私たちが成功したのは、難しい問題を解こうとしたからではない。簡単な問題を見つけて、それだけを解いたからだ。",author:"Charlie Munger"},
+  {text:"素晴らしいビジネスを素晴らしい価格で買い、とても長い間それを持ち続ける。",author:"Warren Buffett"},
+  {text:"まずは損をしないこと。次に第一のルールを忘れないこと。",author:"Warren Buffett"},
+  {text:"一生に一度か二度しか訪れない素晴らしい機会がある。そのとき全力で賭けられる投資家だけが、大きな富を築く。",author:"Charlie Munger"},
+  {text:"市場が閉まっている時間のほうが、私にとっては市場が開いている時間より生産的だ。",author:"Warren Buffett"},
+  {text:"成長企業を見つける最良の方法は、すでに成長している企業を見つけることだ。",author:"Philip Fisher"},
+  {text:"賢明な投資とは、ビジネスのように投資することだ。そしてビジネスのように投資することこそが、最も知的なことだ。",author:"Benjamin Graham"},
+  {text:"インセンティブの力を決して過小評価してはいけない。",author:"Charlie Munger"},
+  {text:"株式市場は短期的には投票装置だが、長期的には計量器だ。",author:"Benjamin Graham"},
+  {text:"ゲームに参加し続けることが大切だ。最悪の暴落でも参加し続けた投資家が最も報われる。",author:"Warren Buffett"},
+  {text:"嫉妬は人間が持つ最も愚かな感情だ。嫉妬によって楽しくなることはない。",author:"Charlie Munger"},
+  {text:"もし経営者が誠実で能力があるなら、その企業の株は長い目で見て報われるだろう。",author:"Philip Fisher"}
+];
+
+// ── 記事データ（カテゴリー別） ──
+var ARTICLES = {
+  morning: [
+    {cat:'はじめの棚',title:'この書斎の歩き方',desc:'初めての方のためのガイド',url:'../hajimete/'},
+    {cat:'概念の棚',title:'moatをどう見るか',desc:'永続的競争優位性の6つの種類',url:'../moat/'},
+    {cat:'原則',title:'私の投資原則',desc:'長期投資の8つの基本原則',url:'../principles/'},
+    {cat:'はじめの棚',title:'株式投資とは何か',desc:'株式の仕組みと投資家の役割',url:'../hajimete/stock-basics/'},
+    {cat:'思考',title:'複利の力',desc:'なぜ長期投資家は時間を味方にできるのか',url:'../horizons/compound-interest/'}
+  ],
+  daytime: [
+    {cat:'概念の棚',title:'ネットワーク効果',desc:'VISA・Meta・Amazonの構造',url:'../moat/network-effects/'},
+    {cat:'概念の棚',title:'スイッチングコスト',desc:'顧客が離れない仕組み',url:'../moat/switching-costs/'},
+    {cat:'概念の棚',title:'ブランド力の経済学',desc:'コカ・コーラの100年',url:'../moat/brand-power/'},
+    {cat:'原則',title:'分散投資のバランス',desc:'集中と分散の最適解',url:'../principles/diversification/'},
+    {cat:'財務',title:'FCF入門',desc:'企業の真の稼ぐ力',url:'../fcf/intro/'},
+    {cat:'業種',title:'業種から歩く棚',desc:'14業種の構造分析',url:'../industries/'},
+    {cat:'思考',title:'メンタルモデル入門',desc:'マンガーの思考法',url:'../horizons/mental-models/'}
+  ],
+  evening: [
+    {cat:'思考',title:'バリュー投資の本質',desc:'内在価値とは何か',url:'../horizons/value-investing-essence/'},
+    {cat:'思考',title:'行動経済学と投資判断',desc:'6つの認知バイアス',url:'../horizons/behavioral-economics/'},
+    {cat:'思考',title:'安全マージンの哲学',desc:'なぜ余白が富を生むのか',url:'../horizons/safety-margin/'},
+    {cat:'思考',title:'投資を入口に文明を考える',desc:'投資家が歴史を学ぶ理由',url:'../horizons/civilization/'},
+    {cat:'思考',title:'歴史に学ぶバブルの構造',desc:'チューリップからビットコインまで',url:'../horizons/bubble-history/'}
+  ],
+  night: [
+    {cat:'哲学',title:'ニーチェと投資',desc:'逆張りの哲学',url:'../horizons/nietzsche/'},
+    {cat:'哲学',title:'禅と投資',desc:'何もしない勇気',url:'../horizons/zen/'},
+    {cat:'哲学',title:'ストア哲学と投資',desc:'コントロールできるものに集中する',url:'../horizons/stoicism/'},
+    {cat:'思考',title:'進化心理学と市場',desc:'なぜ人は群れるのか',url:'../horizons/evolutionary-psychology/'},
+    {cat:'思考',title:'お金の歴史',desc:'物々交換から仮想通貨まで',url:'../horizons/money-history/'}
+  ]
+};
+
+// ── 用語クイズ ──
+var QUIZ_DATA = [
+  {q:'PER（株価収益率）が15倍の場合、投資回収に何年かかる計算？',opts:['10年','15年','20年','25年'],ans:1},
+  {q:'moat（経済的堀）を持つ企業の特徴は？',opts:['売上が大きい','競合が真似できない優位性がある','社員数が多い','広告費が多い'],ans:1},
+  {q:'FCFの計算式として正しいのは？',opts:['売上 - 原価','営業CF - 設備投資','純利益 - 配当','総資産 - 負債'],ans:1},
+  {q:'「他人が貪欲なときに恐れよ」は誰の言葉？',opts:['グレアム','マンガー','バフェット','フィッシャー'],ans:2},
+  {q:'72の法則で、年利6%のとき資産が倍になる年数は？',opts:['6年','10年','12年','18年'],ans:2},
+  {q:'安全マージンの概念を提唱したのは？',opts:['バフェット','マンガー','グレアム','フィッシャー'],ans:2},
+  {q:'スイッチングコストが高い企業の例は？',opts:['コンビニ','SaaSプラットフォーム','ファストフード','アパレル'],ans:1},
+  {q:'損失回避バイアスとは？',opts:['損する前に売ること','得よりも損を大きく感じること','損を無視すること','損を計算すること'],ans:1}
+];
+
+// ── ユーティリティ ──
+function shuffle(arr){
+  var a = arr.slice();
+  for(var i = a.length-1; i > 0; i--){
+    var j = Math.floor(Math.random()*(i+1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+function getHour(){ return new Date().getHours(); }
+
+function getTimeSlot(){
+  var h = getHour();
+  if(h >= 5 && h < 9) return 'morning';
+  if(h >= 9 && h < 17) return 'daytime';
+  if(h >= 17 && h < 22) return 'evening';
+  return 'night';
+}
+
+function formatDate(){
+  var d = new Date();
+  var days = ['日','月','火','水','木','金','土'];
+  return d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日（' + days[d.getDay()] + '）';
+}
+
+// ── 連続訪問日数 ──
+function updateStreak(){
+  var today = new Date().toISOString().slice(0,10);
+  var lastVisit = localStorage.getItem('sh_last_visit');
+  var streak = parseInt(localStorage.getItem('sh_streak') || '0');
+  if(lastVisit === today){
+    // 今日既に訪問済み
+  } else {
+    var yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10);
+    if(lastVisit === yesterday){
+      streak++;
+    } else {
+      streak = 1;
+    }
+    localStorage.setItem('sh_last_visit', today);
+    localStorage.setItem('sh_streak', streak);
+  }
+  return streak;
+}
+
+// ── 読んだ記事の履歴 ──
+function getReadHistory(){
+  try {
+    var data = localStorage.getItem('sh_read_history');
+    return data ? JSON.parse(data) : [];
+  } catch(e){ return []; }
+}
+
+// ── メイン描画 ──
+function render(){
+  var slot = getTimeSlot();
+  var streak = updateStreak();
+  var quote = QUOTES[Math.floor(Math.random()*QUOTES.length)];
+
+  // ヘッダー
+  document.getElementById('dateDisplay').textContent = formatDate();
+  document.getElementById('streakBadge').textContent = '連続 ' + streak + ' 日目の訪問';
+
+  var greetings = {
+    morning: 'おはようございます。今日も静かに、深く。',
+    daytime: '学びの時間です。',
+    evening: '今日の振り返りの時間です。',
+    night: 'ゆっくりお休みください。明日また書斎でお会いしましょう。'
+  };
+  document.getElementById('greeting').textContent = greetings[slot];
+
+  var content = document.getElementById('mainContent');
+  var html = '';
+
+  // 投資格言（全時間帯共通）
+  html += '<div class="quote-card-smart" id="quoteCard">';
+  html += '<div class="qcs-text" id="quoteText">' + esc(quote.text) + '</div>';
+  html += '<div class="qcs-author" id="quoteAuthor">--- ' + esc(quote.author) + '</div>';
+  html += '<div class="qcs-hint">クリックで別の格言を表示</div>';
+  html += '</div>';
+
+  // 時間帯別コンテンツ
+  if(slot === 'morning'){
+    // 朝: モーニングメソッドへの誘導 + おすすめ記事3本
+    html += '<a class="link-card" href="../morning-method/">&#9728; モーニングメソッドを始める</a>';
+    html += '<div style="margin-bottom:24px"></div>';
+    html += '<div class="section-label">MORNING READING --- 朝のおすすめ記事</div>';
+    html += renderArticles(shuffle(ARTICLES.morning).slice(0,3));
+
+  } else if(slot === 'daytime'){
+    // 昼: 概念の棚からランダム + クイズ
+    html += '<div class="section-label">TODAY\'S READING --- 投資原則・概念の棚から</div>';
+    html += renderArticles(shuffle(ARTICLES.daytime).slice(0,3));
+    html += '<div class="section-label">QUICK QUIZ --- 用語クイズ</div>';
+    html += renderQuiz();
+    html += '<a class="link-card" href="../learning/">もっとクイズに挑戦する</a>';
+
+  } else if(slot === 'evening'){
+    // 夕方-夜: 思考を広げる記事 + ジャーナリング + 目標設定
+    html += '<div class="section-label">EVENING READING --- 思考を広げる</div>';
+    html += renderArticles(shuffle(ARTICLES.evening).slice(0,3));
+    html += '<div class="section-label">JOURNAL --- 今日の振り返り</div>';
+    html += renderJournal();
+    html += '<div class="section-label">TOMORROW\'S GOAL --- 明日の目標</div>';
+    html += renderGoal();
+
+  } else {
+    // 深夜: 軽い読み物 + 528Hz案内
+    html += '<div class="music-rec">';
+    html += '<div class="music-rec-icon">&#127925;</div>';
+    html += '<div class="music-rec-text">528Hzアンビエント音楽で心を落ち着けませんか？<br>左下の音符ボタンで再生できます。<small>528Hzは「愛の周波数」とも呼ばれ、リラクゼーション効果があるとされています。</small></div>';
+    html += '</div>';
+    html += '<div class="section-label">NIGHT READING --- 哲学の時間</div>';
+    html += renderArticles(shuffle(ARTICLES.night).slice(0,3));
+  }
+
+  // 今日読んだ記事（全時間帯共通）
+  html += '<div class="section-label">READ TODAY --- 今日読んだ記事</div>';
+  html += renderReadHistory();
+
+  content.innerHTML = html;
+
+  // イベント設定
+  setupQuoteClick();
+  if(slot === 'daytime') setupQuiz();
+  if(slot === 'evening'){ setupJournal(); setupGoal(); }
+}
+
+function esc(s){
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function renderArticles(list){
+  var html = '<div class="article-cards">';
+  list.forEach(function(a){
+    html += '<a class="ac" href="' + a.url + '">';
+    html += '<div class="ac-cat">' + a.cat + '</div>';
+    html += '<div class="ac-title">' + a.title + '</div>';
+    html += '<div class="ac-desc">' + a.desc + '</div>';
+    html += '</a>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function renderQuiz(){
+  var q = QUIZ_DATA[Math.floor(Math.random()*QUIZ_DATA.length)];
+  var html = '<div class="quiz-card" id="quizCard" data-ans="' + q.ans + '">';
+  html += '<div class="quiz-q">' + esc(q.q) + '</div>';
+  html += '<div class="quiz-options">';
+  q.opts.forEach(function(opt, i){
+    html += '<button class="quiz-opt" data-idx="' + i + '">' + esc(opt) + '</button>';
+  });
+  html += '</div>';
+  html += '<div class="quiz-result" id="quizResult"></div>';
+  html += '</div>';
+  return html;
+}
+
+function renderJournal(){
+  var today = new Date().toISOString().slice(0,10);
+  var saved = localStorage.getItem('sh_journal_' + today) || '';
+  var html = '<div class="journal">';
+  html += '<textarea id="journalText" placeholder="今日学んだこと、感じたこと、投資で気づいたことを書いてみましょう...">' + esc(saved) + '</textarea>';
+  html += '<div class="journal-actions"><button class="journal-btn" id="journalSave">保存する</button></div>';
+  html += '<div class="journal-saved" id="journalSaved">保存しました</div>';
+  html += '</div>';
+  return html;
+}
+
+function renderGoal(){
+  var tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0,10);
+  var saved = localStorage.getItem('sh_goal_' + tomorrow) || '';
+  var html = '<input type="text" class="goal-input" id="goalInput" placeholder="明日やりたいこと・読みたい記事・考えたいテーマ..." value="' + esc(saved) + '">';
+  html += '<button class="journal-btn" id="goalSave">目標を保存</button>';
+  html += '<div class="journal-saved" id="goalSaved">保存しました</div>';
+  return html;
+}
+
+function renderReadHistory(){
+  var history = getReadHistory();
+  var today = new Date().toISOString().slice(0,10);
+  var todayItems = history.filter(function(h){ return h.date === today; });
+  if(todayItems.length === 0){
+    return '<div class="history-section"><div class="history-empty">まだ記事を読んでいません。上のおすすめから始めてみましょう。</div></div>';
+  }
+  var html = '<div class="history-section">';
+  todayItems.forEach(function(h){
+    html += '<div class="history-item">' + esc(h.title) + ' <span style="color:var(--gold2);font-size:.6rem;">' + h.time + '</span></div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+// ── イベント設定 ──
+function setupQuoteClick(){
+  var card = document.getElementById('quoteCard');
+  if(!card) return;
+  card.addEventListener('click', function(){
+    var q = QUOTES[Math.floor(Math.random()*QUOTES.length)];
+    document.getElementById('quoteText').textContent = q.text;
+    document.getElementById('quoteAuthor').textContent = '--- ' + q.author;
+  });
+}
+
+function setupQuiz(){
+  var card = document.getElementById('quizCard');
+  if(!card) return;
+  var ans = parseInt(card.getAttribute('data-ans'));
+  var opts = card.querySelectorAll('.quiz-opt');
+  var answered = false;
+  opts.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(answered) return;
+      answered = true;
+      var idx = parseInt(btn.getAttribute('data-idx'));
+      if(idx === ans){
+        btn.classList.add('correct');
+        document.getElementById('quizResult').textContent = '正解です！';
+      } else {
+        btn.classList.add('wrong');
+        opts[ans].classList.add('correct');
+        document.getElementById('quizResult').textContent = '残念...正解は「' + opts[ans].textContent + '」でした。';
+      }
+    });
+  });
+}
+
+function setupJournal(){
+  var saveBtn = document.getElementById('journalSave');
+  if(!saveBtn) return;
+  saveBtn.addEventListener('click', function(){
+    var today = new Date().toISOString().slice(0,10);
+    var text = document.getElementById('journalText').value;
+    localStorage.setItem('sh_journal_' + today, text);
+    var msg = document.getElementById('journalSaved');
+    msg.style.display = 'block';
+    setTimeout(function(){ msg.style.display = 'none'; }, 2000);
+  });
+}
+
+function setupGoal(){
+  var saveBtn = document.getElementById('goalSave');
+  if(!saveBtn) return;
+  saveBtn.addEventListener('click', function(){
+    var tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0,10);
+    var text = document.getElementById('goalInput').value;
+    localStorage.setItem('sh_goal_' + tomorrow, text);
+    var msg = document.getElementById('goalSaved');
+    msg.style.display = 'block';
+    setTimeout(function(){ msg.style.display = 'none'; }, 2000);
+  });
+}
+
+// ── 初期化 ──
+render();
+
+})();
+</script>
+</body>
+</html>

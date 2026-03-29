@@ -405,4 +405,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- パーソナルホーム -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/smart-home/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- まなびの時間 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/learning/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

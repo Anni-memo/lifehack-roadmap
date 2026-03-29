@@ -164,5 +164,6 @@
 <div id="yt-player-container" style="display:none;"></div>
 <script>window.addEventListener('scroll',function(){document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);});(function(){var K='music_playing',V='t_8uSnwvUeQ',p=null,r=false;var b=document.getElementById('musicToggle');var s=localStorage.getItem(K)==='true';window.onYouTubeIframeAPIReady=function(){p=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:V,playerVars:{autoplay:0,loop:1,playlist:V},events:{onReady:function(e){r=true;e.target.setVolume(30);if(s){e.target.playVideo();b.classList.add('playing');}}}});};var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';document.head.appendChild(t);b.addEventListener('click',function(){if(!r)return;if(p.getPlayerState()===YT.PlayerState.PLAYING){p.pauseVideo();b.classList.remove('playing');localStorage.setItem(K,'false');}else{p.playVideo();b.classList.add('playing');localStorage.setItem(K,'true');}});})();</script>
 <script src="../../shared.js"></script>
+<script src="../../ai-assistant.js"></script>
 </body>
 </html>
