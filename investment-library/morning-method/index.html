@@ -743,6 +743,32 @@ function startTimer(step){
     timers[step] = {remaining: STEP_DURATIONS[step], running: false, interval: null};
   }
   timers[step].running = true;
+
+  // 瞑想ステップ（step 0）開始時に528Hz音楽を自動再生
+  if(step === 0){
+    try {
+      if(typeof musicPlayer !== 'undefined' && musicPlayer && typeof musicPlayer.getPlayerState === 'function'){
+        if(musicPlayer.getPlayerState() !== YT.PlayerState.PLAYING){
+          musicPlayer.playVideo();
+          var btn = document.getElementById('musicToggle');
+          if(btn) btn.classList.add('playing');
+          localStorage.setItem('music_playing', 'true');
+        }
+      } else if(typeof musicPlayerReady !== 'undefined' && !musicPlayerReady){
+        // プレーヤー準備中の場合、準備完了後に再生
+        var waitForPlayer = setInterval(function(){
+          if(typeof musicPlayer !== 'undefined' && musicPlayer && typeof musicPlayer.getPlayerState === 'function'){
+            clearInterval(waitForPlayer);
+            musicPlayer.playVideo();
+            var btn = document.getElementById('musicToggle');
+            if(btn) btn.classList.add('playing');
+            localStorage.setItem('music_playing', 'true');
+          }
+        }, 500);
+        setTimeout(function(){ clearInterval(waitForPlayer); }, 10000);
+      }
+    } catch(e){ /* 音楽再生に失敗しても瞑想タイマーは続行 */ }
+  }
   document.getElementById('timerStart-'+step).style.display='none';
   document.getElementById('timerPause-'+step).style.display='';
   timers[step].interval = setInterval(function(){
