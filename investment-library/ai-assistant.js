@@ -363,6 +363,7 @@ function initAssistant(){
       {label:'古典と人間理解',url:'classics/'},
       {label:'読む・聴く案内室',url:'book-guide/'},
       {label:'人生の書架',url:'life-shelf/'},
+      {label:'思考の案内人たち',url:'thinkers/'},
     ]},
     company:{msg:'どう調べますか？',items:[
       {label:'業種から歩く（14業種）',url:'industries/'},
