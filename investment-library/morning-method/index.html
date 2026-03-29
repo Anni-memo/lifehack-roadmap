@@ -769,6 +769,51 @@ function formatTime(secs){
   return m+':'+String(s).padStart(2,'0');
 }
 
+function startMeditationMusic(){
+  var btn = document.getElementById('musicToggle');
+
+  // 方法1: shared.jsのYouTubeプレーヤーが準備済みならそれを使う
+  if(typeof musicPlayer !== 'undefined' && musicPlayer && typeof musicPlayerReady !== 'undefined' && musicPlayerReady){
+    try {
+      if(musicPlayer.getPlayerState() !== YT.PlayerState.PLAYING){
+        musicPlayer.playVideo();
+        if(btn) btn.classList.add('playing');
+        localStorage.setItem('music_playing', 'true');
+      }
+      return;
+    } catch(e){}
+  }
+
+  // 方法2: YouTubeプレーヤー未準備 → 音符ボタンを直接クリックして
+  // ユーザージェスチャー文脈でプレーヤーを起動
+  if(btn && !btn.classList.contains('playing')){
+    btn.click();
+    return;
+  }
+
+  // 方法3: どちらもダメなら Web Audio API で528Hzトーンをフォールバック再生
+  try {
+    var AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if(!AudioCtx) return;
+    if(!window._meditationCtx){
+      window._meditationCtx = new AudioCtx();
+    }
+    var ctx = window._meditationCtx;
+    if(ctx.state === 'suspended') ctx.resume();
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sine';
+    osc.frequency.value = 528;
+    gain.gain.value = 0.08;
+    osc.start();
+    // 5分間（瞑想タイマー分）再生して自動停止
+    osc.stop(ctx.currentTime + 300);
+    window._meditationOsc = osc;
+  } catch(e){}
+}
+
 function startTimer(step){
   if(timers[step] && timers[step].running) return;
   if(!timers[step]){
@@ -778,28 +823,7 @@ function startTimer(step){
 
   // 瞑想ステップ（step 0）開始時に528Hz音楽を自動再生
   if(step === 0){
-    try {
-      if(typeof musicPlayer !== 'undefined' && musicPlayer && typeof musicPlayer.getPlayerState === 'function'){
-        if(musicPlayer.getPlayerState() !== YT.PlayerState.PLAYING){
-          musicPlayer.playVideo();
-          var btn = document.getElementById('musicToggle');
-          if(btn) btn.classList.add('playing');
-          localStorage.setItem('music_playing', 'true');
-        }
-      } else if(typeof musicPlayerReady !== 'undefined' && !musicPlayerReady){
-        // プレーヤー準備中の場合、準備完了後に再生
-        var waitForPlayer = setInterval(function(){
-          if(typeof musicPlayer !== 'undefined' && musicPlayer && typeof musicPlayer.getPlayerState === 'function'){
-            clearInterval(waitForPlayer);
-            musicPlayer.playVideo();
-            var btn = document.getElementById('musicToggle');
-            if(btn) btn.classList.add('playing');
-            localStorage.setItem('music_playing', 'true');
-          }
-        }, 500);
-        setTimeout(function(){ clearInterval(waitForPlayer); }, 10000);
-      }
-    } catch(e){ /* 音楽再生に失敗しても瞑想タイマーは続行 */ }
+    startMeditationMusic();
   }
   document.getElementById('timerStart-'+step).style.display='none';
   document.getElementById('timerPause-'+step).style.display='';
