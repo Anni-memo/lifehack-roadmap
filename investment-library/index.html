@@ -133,30 +133,84 @@ body::before{
   pointer-events:none;z-index:1000;opacity:.5;
 }
 
-/* ── HERO ── */
+/* ── HERO (Video Background) ── */
 .hero{
-  background:linear-gradient(170deg,#0c0805 0%,var(--ink) 30%,#1e1005 65%,var(--ink2) 100%);
+  background:#0c0805;
   color:var(--parch);
-  min-height:520px;
+  min-height:100vh;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   padding:80px 24px 60px;
   text-align:center;
   position:relative;overflow:hidden;
   border-bottom:1px solid rgba(184,144,10,.15);
 }
-.hero::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
+.hero-video-wrap{
+  position:absolute;inset:0;z-index:0;
+  overflow:hidden;
+}
+.hero-video{
+  position:absolute;
+  top:50%;left:50%;
+  min-width:100%;min-height:100%;
+  width:auto;height:auto;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1.5s ease;
+}
+.hero-video.loaded{opacity:1;}
+/* Dark overlay to keep text readable */
+.hero-video-overlay{
+  position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 75% 55% at 50% 15%,rgba(184,144,10,.1) 0%,transparent 65%),
-    radial-gradient(ellipse 50% 40% at 50% 100%,rgba(58,37,16,.6) 0%,transparent 55%);
+    linear-gradient(180deg,
+      rgba(10,8,4,.55) 0%,
+      rgba(10,8,4,.3) 30%,
+      rgba(10,8,4,.2) 50%,
+      rgba(10,8,4,.4) 75%,
+      rgba(10,8,4,.7) 100%
+    );
+  pointer-events:none;
+}
+/* Glass-like light streaks (水の光の揺らぎ) */
+.hero-video-overlay::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 20%,rgba(184,220,240,.06) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 50% at 30% 60%,rgba(184,220,240,.03) 0%,transparent 50%);
+  pointer-events:none;
+  animation:waterShimmer 8s ease-in-out infinite alternate;
+}
+@keyframes waterShimmer{
+  0%{opacity:.6;transform:translateY(0)}
+  100%{opacity:1;transform:translateY(-8px)}
+}
+/* Fallback gradient (動画読み込み前 / 非対応時) */
+.hero-video-fallback{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(170deg,#0c0805 0%,#1a1208 30%,#0e1a14 50%,#1e1005 75%,#0c0805 100%);
+  transition:opacity 1.5s ease;
+}
+.hero-video.loaded ~ .hero-video-overlay ~ .hero-video-fallback,
+.hero-video-wrap.video-ready .hero-video-fallback{
+  opacity:0;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(ellipse 75% 55% at 50% 15%,rgba(184,144,10,.06) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 40% at 50% 100%,rgba(58,37,16,.4) 0%,transparent 55%);
 }
 .hero::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;pointer-events:none;
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;pointer-events:none;z-index:2;
   background:linear-gradient(90deg,transparent 0%,var(--gold3) 30%,var(--gold4) 50%,var(--gold3) 70%,transparent 100%);
 }
+/* Hero content above video */
+.hero > *:not(.hero-video-wrap){position:relative;z-index:2;}
 .hero-ornament{
   font-family:var(--mono);font-size:.5rem;color:var(--gold3);
-  letter-spacing:.4em;margin-bottom:28px;opacity:.55;position:relative;
+  letter-spacing:.4em;margin-bottom:28px;opacity:.55;position:relative;z-index:2;
 }
 .hero-title{
   font-family:var(--serif);
@@ -238,6 +292,24 @@ body::before{
 .site-nav-group-label{font-family:var(--mono);font-size:.54rem;color:var(--gold3);letter-spacing:.18em;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(184,144,10,.12);opacity:.7;}
 .site-nav-group-label:first-of-type{margin-top:0;}
 .site-nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:8px;}
+/* ── Hero responsive ── */
+@media(max-width:768px){
+  .hero{min-height:85vh;padding:60px 20px 48px;}
+  .hero-video-overlay{
+    background:linear-gradient(180deg,
+      rgba(10,8,4,.65) 0%,
+      rgba(10,8,4,.4) 30%,
+      rgba(10,8,4,.3) 50%,
+      rgba(10,8,4,.5) 75%,
+      rgba(10,8,4,.8) 100%
+    );
+  }
+}
+/* データセーバー / 低速回線では動画を非表示 */
+@media(prefers-reduced-motion:reduce){
+  .hero-video{display:none;}
+  .hero-video-fallback{opacity:1 !important;}
+}
 @media(max-width:700px){.site-nav-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:420px){.site-nav-grid{grid-template-columns:1fr;}}
 .site-nav-card{
@@ -732,6 +804,17 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 <!-- ══════════════ HERO ══════════════ -->
 
 <div class="hero">
+  <!-- Video Background -->
+  <div class="hero-video-wrap">
+    <video class="hero-video" autoplay muted loop playsinline
+           poster="assets/hero-poster.jpg"
+           onloadeddata="this.classList.add('loaded');this.parentElement.classList.add('video-ready')">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+      <source src="assets/hero-video.webm" type="video/webm">
+    </video>
+    <div class="hero-video-overlay"></div>
+    <div class="hero-video-fallback"></div>
+  </div>
   <div class="hero-ornament">THE INVESTOR'S LIBRARY · 2026</div>
   <h1 class="hero-title">投資と思考の書斎</h1>
   <div class="hero-rule">
@@ -784,27 +867,75 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
 <!-- ══════════════ GUIDE: 書斎の案内人 ══════════════ -->
 
-<div style="background:var(--ink2);padding:36px 24px;border-bottom:1px solid rgba(184,144,10,.12);">
-  <div style="max-width:640px;margin:0 auto;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:10px;opacity:.6;">YOUR GUIDE</div>
-    <div style="font-family:'Cormorant Garamond','Noto Serif JP',serif;font-size:1.15rem;font-weight:600;color:var(--parch);margin-bottom:8px;">今日はどこから歩きますか？</div>
-    <p style="font-size:.76rem;color:var(--parch4);line-height:1.8;margin-bottom:20px;font-weight:300;">書斎の案内人が、あなたの今日の一歩をお手伝いします。</p>
+<style>
+.guide{background:var(--ink2);padding:40px 24px;border-bottom:1px solid rgba(184,144,10,.12);}
+.guide-inner{max-width:560px;margin:0 auto;text-align:center;}
+.guide-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.22em;margin-bottom:10px;opacity:.6;}
+.guide-q{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--parch);margin-bottom:6px;transition:opacity .3s;}
+.guide-sub{font-size:.72rem;color:var(--parch4);line-height:1.8;margin-bottom:20px;font-weight:300;}
+.guide-tree{display:flex;flex-direction:column;gap:4px;margin-bottom:16px;}
+.guide-btn{
+  font-family:var(--jp);font-size:.8rem;color:var(--parch3);
+  background:rgba(255,255,255,.03);border:1px solid rgba(184,144,10,.1);
+  padding:12px 18px;text-align:left;cursor:pointer;
+  transition:all .2s;text-decoration:none;display:block;font-weight:300;
+}
+.guide-btn:hover{border-color:rgba(212,170,34,.3);color:var(--gold3);background:rgba(255,255,255,.05);}
+.guide-btn-icon{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;margin-bottom:3px;display:block;}
+.guide-back{
+  font-family:var(--mono);font-size:.52rem;color:var(--parch4);
+  cursor:pointer;background:none;border:none;padding:6px 12px;
+  opacity:.5;transition:opacity .2s;letter-spacing:.06em;margin-bottom:12px;
+}
+.guide-back:hover{opacity:1;color:var(--gold3);}
+.guide-micro{margin-top:16px;padding-top:14px;border-top:1px solid rgba(184,144,10,.06);}
+.guide-micro-row{display:flex;gap:6px;justify-content:center;align-items:center;}
+.guide-micro input{
+  font-family:var(--jp);font-size:.72rem;color:var(--parch);
+  background:rgba(255,255,255,.03);border:1px solid rgba(184,144,10,.08);
+  padding:8px 12px;outline:none;width:220px;transition:border-color .2s;
+}
+.guide-micro input:focus{border-color:rgba(212,170,34,.3);}
+.guide-micro button{
+  background:none;border:1px solid rgba(184,144,10,.08);
+  color:var(--parch4);cursor:pointer;padding:7px 10px;font-size:.8rem;
+  transition:all .15s;opacity:.5;
+}
+.guide-micro button:hover{opacity:1;border-color:rgba(212,170,34,.3);color:var(--gold3);}
+</style>
 
-    <!-- テキスト入力（AI案内人） -->
-    <div style="position:relative;max-width:440px;margin:0 auto 20px;">
-      <input id="guideInput" type="text" placeholder="例：今朝3分で整えたい / 田中渓を読みたい" style="width:100%;padding:12px 80px 12px 16px;font-family:'Noto Serif JP',serif;font-size:.78rem;color:var(--parch);background:rgba(255,255,255,.04);border:1px solid rgba(184,144,10,.15);outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(212,170,34,.4)'" onblur="this.style.borderColor='rgba(184,144,10,.15)'"/>
-      <button id="micBtn" onclick="startVoiceGuide()" style="position:absolute;right:40px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--parch4);cursor:pointer;font-size:.95rem;padding:8px;opacity:.5;transition:all .2s;" onmouseover="this.style.opacity='.8'" onmouseout="if(!this.classList.contains('listening'))this.style.opacity='.5'" title="音声で案内人に話しかける">&#127908;</button>
-      <button onclick="handleGuideQuery()" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--gold3);cursor:pointer;font-size:1rem;padding:8px;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.6'" title="案内人に聞く">&#10148;</button>
+<div class="guide">
+  <div class="guide-inner">
+    <div class="guide-label">YOUR GUIDE</div>
+    <div class="guide-q" id="guideQuestion">今日はどこから歩きますか？</div>
+    <div class="guide-sub" id="guideSub">選んでください。案内人がお連れします。</div>
+
+    <div class="guide-tree" id="guideTree">
+      <div class="guide-btn" onclick="guideStep('morning')">
+        <span class="guide-btn-icon">MORNING</span>朝を整えたい
+      </div>
+      <div class="guide-btn" onclick="guideStep('invest')">
+        <span class="guide-btn-icon">INVESTMENT</span>投資を学びたい
+      </div>
+      <div class="guide-btn" onclick="guideStep('people')">
+        <span class="guide-btn-icon">PEOPLE</span>人物を読みたい
+      </div>
+      <div class="guide-btn" onclick="guideStep('culture')">
+        <span class="guide-btn-icon">CULTURE</span>教養を深めたい
+      </div>
+      <div class="guide-btn" onclick="guideStep('company')">
+        <span class="guide-btn-icon">ANALYSIS</span>企業を調べたい
+      </div>
     </div>
-    <div id="micStatus" style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--gold3);letter-spacing:.08em;margin-top:6px;min-height:1em;opacity:0;transition:opacity .3s;"></div>
 
-    <!-- クイック導線 -->
-    <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;">
-      <a href="morning-practice/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:var(--parch4);text-decoration:none;padding:7px 14px;border:1px solid rgba(184,144,10,.1);transition:all .15s;letter-spacing:.04em;" onmouseover="this.style.borderColor='rgba(212,170,34,.3)';this.style.color='#d4aa22'" onmouseout="this.style.borderColor='rgba(184,144,10,.1)';this.style.color='var(--parch4)'">3分で整える</a>
-      <a href="people/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:var(--parch4);text-decoration:none;padding:7px 14px;border:1px solid rgba(184,144,10,.1);transition:all .15s;letter-spacing:.04em;" onmouseover="this.style.borderColor='rgba(212,170,34,.3)';this.style.color='#d4aa22'" onmouseout="this.style.borderColor='rgba(184,144,10,.1)';this.style.color='var(--parch4)'">人物から読む</a>
-      <a href="news/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:var(--parch4);text-decoration:none;padding:7px 14px;border:1px solid rgba(184,144,10,.1);transition:all .15s;letter-spacing:.04em;" onmouseover="this.style.borderColor='rgba(212,170,34,.3)';this.style.color='#d4aa22'" onmouseout="this.style.borderColor='rgba(184,144,10,.1)';this.style.color='var(--parch4)'">ニュースから入る</a>
-      <a href="companies/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:var(--parch4);text-decoration:none;padding:7px 14px;border:1px solid rgba(184,144,10,.1);transition:all .15s;letter-spacing:.04em;" onmouseover="this.style.borderColor='rgba(212,170,34,.3)';this.style.color='#d4aa22'" onmouseout="this.style.borderColor='rgba(184,144,10,.1)';this.style.color='var(--parch4)'">企業分析へ</a>
-      <a href="book-guide/" style="font-family:'DM Mono',monospace;font-size:.58rem;color:var(--parch4);text-decoration:none;padding:7px 14px;border:1px solid rgba(184,144,10,.1);transition:all .15s;letter-spacing:.04em;" onmouseover="this.style.borderColor='rgba(212,170,34,.3)';this.style.color='#d4aa22'" onmouseout="this.style.borderColor='rgba(184,144,10,.1)';this.style.color='var(--parch4)'">今朝の一冊</a>
+    <!-- テキスト入力＋マイク（補助） -->
+    <div class="guide-micro">
+      <div class="guide-micro-row">
+        <input id="guideInput" type="text" placeholder="または、ここに入力..."/>
+        <button id="micBtn" onclick="startVoiceGuide()" title="音声入力">&#127908;</button>
+        <button onclick="handleGuideQuery()" title="送信">&#10148;</button>
+      </div>
+      <div id="micStatus" style="font-family:var(--mono);font-size:.46rem;color:var(--gold3);letter-spacing:.06em;margin-top:4px;min-height:.8em;opacity:0;transition:opacity .3s;"></div>
     </div>
   </div>
 </div>
@@ -1978,6 +2109,71 @@ var SEARCH_DATA = [
     if(!input.contains(e.target)&&!results.contains(e.target)){results.className='search-results';results.innerHTML='';}
   });
 })();
+
+// ── 書斎の案内人：ツリーナビゲーション ──
+var guideData={
+  morning:{q:'朝の過ごし方を選んでください。',sub:'',items:[
+    {label:'PRACTICE',text:'3分で整える',url:'morning-practice/'},
+    {label:'METHOD',text:'モーニングメソッドを学ぶ',url:'morning-method/'},
+    {label:'NIGHT',text:'夜の読書で休む',url:'night-reading/'},
+    {label:'HOME',text:'パーソナルホームを開く',url:'smart-home/'},
+  ]},
+  invest:{q:'何から学びますか？',sub:'',items:[
+    {label:'FIRST',text:'初めての方へ',url:'hajimete/'},
+    {label:'PRINCIPLES',text:'投資原則から',url:'principles/'},
+    {label:'MOAT',text:'moat（経済的堀）を理解する',url:'moat/'},
+    {label:'FCF',text:'FCF（フリーキャッシュフロー）を読む',url:'fcf/'},
+    {label:'MENTAL',text:'投資家の心理を知る',url:'human/'},
+  ]},
+  people:{q:'誰を読みますか？',sub:'',items:[
+    {label:'ALL',text:'人物録を開く',url:'people/'},
+    {label:'TANAKA',text:'田中渓｜投資・習慣・身体をつなぐ実践者',url:'people/tanaka-kei/'},
+    {label:'BNF',text:'BNF｜公開資料から辿る個人投資家',url:'people/bnf/'},
+    {label:'INAMORI',text:'稲盛和夫｜利他と規律の経営者',url:'people/inamori-kazuo/'},
+    {label:'TALEB',text:'タレブ｜不確実性を味方にする思想家',url:'people/taleb/'},
+    {label:'SENECA',text:'セネカ｜時間を資産と見なした哲学者',url:'people/seneca/'},
+    {label:'MARCUS',text:'マルクス・アウレリウス｜哲人皇帝',url:'life-shelf/marcus-aurelius/'},
+  ]},
+  culture:{q:'どの方向へ深めますか？',sub:'',items:[
+    {label:'HORIZONS',text:'思考を広げる棚',url:'horizons/'},
+    {label:'CLASSICS',text:'古典と人間理解',url:'classics/'},
+    {label:'BOOKS',text:'読む・聴く案内室',url:'book-guide/'},
+    {label:'ROUTES',text:'読書ルートを歩く',url:'reading-routes/'},
+    {label:'SHELF',text:'人生の書架',url:'life-shelf/'},
+  ]},
+  company:{q:'どう調べますか？',sub:'',items:[
+    {label:'INDUSTRY',text:'業種から歩く（14業種）',url:'industries/'},
+    {label:'COMPANY',text:'企業分析を読む（69社）',url:'companies/'},
+    {label:'MEMO',text:'銘柄メモを見る',url:'hajimete/memo/'},
+    {label:'RESEARCH',text:'論考の棚',url:'research/'},
+    {label:'NEWS',text:'ニュース記事',url:'news/'},
+  ]},
+};
+function guideStep(key){
+  var d=guideData[key];if(!d)return;
+  var q=document.getElementById('guideQuestion');
+  var s=document.getElementById('guideSub');
+  var t=document.getElementById('guideTree');
+  q.textContent=d.q;
+  s.textContent=d.sub;
+  var html='<button class="guide-back" onclick="guideReset()">&#8592; 戻る</button>';
+  d.items.forEach(function(item){
+    html+='<a class="guide-btn" href="'+item.url+'"><span class="guide-btn-icon">'+item.label+'</span>'+item.text+'</a>';
+  });
+  t.innerHTML=html;
+}
+function guideReset(){
+  var q=document.getElementById('guideQuestion');
+  var s=document.getElementById('guideSub');
+  var t=document.getElementById('guideTree');
+  q.textContent='今日はどこから歩きますか？';
+  s.textContent='選んでください。案内人がお連れします。';
+  t.innerHTML='<div class="guide-btn" onclick="guideStep(\'morning\')"><span class="guide-btn-icon">MORNING</span>朝を整えたい</div>'
+    +'<div class="guide-btn" onclick="guideStep(\'invest\')"><span class="guide-btn-icon">INVESTMENT</span>投資を学びたい</div>'
+    +'<div class="guide-btn" onclick="guideStep(\'people\')"><span class="guide-btn-icon">PEOPLE</span>人物を読みたい</div>'
+    +'<div class="guide-btn" onclick="guideStep(\'culture\')"><span class="guide-btn-icon">CULTURE</span>教養を深めたい</div>'
+    +'<div class="guide-btn" onclick="guideStep(\'company\')"><span class="guide-btn-icon">ANALYSIS</span>企業を調べたい</div>';
+}
 
 // ── 書斎の案内人：音声入力 ──
 var voiceRecognition=null;
