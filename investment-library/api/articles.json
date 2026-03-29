@@ -614,6 +614,134 @@
         "投資用語"
       ],
       "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "朝の実践室",
+      "url": "/investment-library/morning-practice/",
+      "description": "アファメーション・ブレインプログラミング・ミッションステートメント・指針・習慣形成。朝に整え、一日の土台をつくる。",
+      "category": "life-shelf",
+      "tags": ["朝", "アファメーション", "習慣", "実践"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "アファメーションの作り方",
+      "url": "/investment-library/morning-practice/affirmation/",
+      "description": "効果的なアファメーションの5つの原則と、自分だけの言葉を作るワークシート。",
+      "category": "life-shelf",
+      "tags": ["アファメーション", "朝", "実践"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "ブレインプログラミングとは何か",
+      "url": "/investment-library/morning-practice/brain-programming/",
+      "description": "RAS（網様体賦活系）の仕組みと、目標設定の科学的アプローチ。",
+      "category": "life-shelf",
+      "tags": ["RAS", "脳科学", "目標設定"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "ミッションステートメントの作り方",
+      "url": "/investment-library/morning-practice/mission-statement/",
+      "description": "7つの習慣の第2の習慣と接続するミッションステートメント作成ワークシート。",
+      "category": "life-shelf",
+      "tags": ["ミッションステートメント", "7つの習慣", "実践"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "指針を言語化する",
+      "url": "/investment-library/morning-practice/guiding-principles/",
+      "description": "投資・生活・人間関係の指針を言語化するワーク。迷ったときに立ち返る言葉を持つ。",
+      "category": "life-shelf",
+      "tags": ["指針", "投資原則", "実践"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "複利で伸びる1つの習慣の作り方",
+      "url": "/investment-library/morning-practice/atomic-habits/",
+      "description": "ジェームズ・クリア「Atomic Habits」のエッセンス。習慣の4つの法則と複利効果。",
+      "category": "life-shelf",
+      "tags": ["Atomic Habits", "習慣", "複利"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "人生の書架",
+      "url": "/investment-library/life-shelf/",
+      "description": "原則と古典、偉人と経営者の知恵を静かに読む場所。",
+      "category": "life-shelf",
+      "tags": ["原則", "古典", "伝記", "経営者"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "7つの習慣とミッションステートメント",
+      "url": "/investment-library/life-shelf/seven-habits/",
+      "description": "スティーブン・R・コヴィーの7つの習慣の概要と第2の習慣の深掘り。",
+      "category": "life-shelf",
+      "tags": ["7つの習慣", "コヴィー", "原則"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "自省録から何を学ぶか",
+      "url": "/investment-library/life-shelf/meditations/",
+      "description": "マルクス・アウレリウス『自省録』の核心的な教え5選と投資家としての応用。",
+      "category": "life-shelf",
+      "tags": ["自省録", "マルクス・アウレリウス", "ストア哲学"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "経営者伝記の入口",
+      "url": "/investment-library/life-shelf/ceo-biographies/",
+      "description": "藤田晋、孫正義、稲盛和夫、松下幸之助の推薦伝記リスト。",
+      "category": "life-shelf",
+      "tags": ["伝記", "経営者", "藤田晋", "稲盛和夫"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "藤田晋の経営者としての輪郭",
+      "url": "/investment-library/life-shelf/fujita-susumu/",
+      "description": "サイバーエージェント創業者・藤田晋の起業、逆境、成長の物語。",
+      "category": "life-shelf",
+      "tags": ["藤田晋", "サイバーエージェント", "伝記"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "マルクス・アウレリウス：哲人皇帝の内省",
+      "url": "/investment-library/life-shelf/marcus-aurelius/",
+      "description": "ローマ帝国最後の五賢帝の生涯と思想。自省録の名言と現代への示唆。",
+      "category": "life-shelf",
+      "tags": ["マルクス・アウレリウス", "ローマ帝国", "ストア哲学"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "夜の読書室",
+      "url": "/investment-library/night-reading/",
+      "description": "就寝前のひとときに、静かに読む場所。夜にほどく読書の入口。",
+      "category": "life-shelf",
+      "tags": ["夜", "読書", "リラックス"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "夜の一冊 vol.1「溶ける」",
+      "url": "/investment-library/night-reading/before-sleep/",
+      "description": "井川意高「溶ける」— 106億円をカジノで失った男の告白。夜だからこそ染みる一冊。",
+      "category": "life-shelf",
+      "tags": ["溶ける", "井川意高", "夜の一冊"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "静かにほどける漫画と読み物",
+      "url": "/investment-library/night-reading/manga-stories/",
+      "description": "ハンチョウ、インベスターZ、TREASURE。肩の力を抜いて楽しめる夜の読書。",
+      "category": "life-shelf",
+      "tags": ["漫画", "ハンチョウ", "インベスターZ"],
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "読む・聴く案内室",
+      "url": "/investment-library/book-guide/",
+      "description": "書斎で紹介する書籍のAmazon・Kindle・Audibleリンクを集約。",
+      "category": "life-shelf",
+      "tags": ["書籍", "Amazon", "Kindle", "Audible"],
+      "dateAdded": "2026-03-28"
     }
   ]
 }
