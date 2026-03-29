@@ -242,13 +242,9 @@
     var containerWidth = pageContainer.offsetWidth;
 
     if (writingMode === 'vertical') {
-      // Vertical: pages go right-to-left, so page 0 is rightmost (default position)
-      // We shift content to the LEFT to reveal earlier (rightward) pages
-      // scrollWidth - containerWidth = max offset, page 0 = max offset (start from right)
-      var maxOffset = pageContent.scrollWidth - containerWidth;
-      var offset = maxOffset - (page * containerWidth);
-      if (offset < 0) offset = 0;
-      pageContent.style.transform = 'translateX(-' + offset + 'px)';
+      // Vertical-rl: page 0 = right edge (no shift), page N = shift right to reveal left content
+      var offset = page * containerWidth;
+      pageContent.style.transform = 'translateX(' + offset + 'px)';
     } else {
       var offset = -page * containerWidth;
       pageContent.style.transform = 'translateX(' + offset + 'px)';

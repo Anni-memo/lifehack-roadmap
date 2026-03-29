@@ -719,18 +719,21 @@ body {
 /* ====================================================================
    VERTICAL TEXT MODE (tategaki)
    ==================================================================== */
+[data-writing="vertical"] #page-container {
+  direction: rtl;
+}
+
 [data-writing="vertical"] #page-content {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  direction: ltr;
   column-width: auto;
   column-count: unset;
   column-gap: 0;
   height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  /* In vertical mode, content flows right to left.
-     We paginate by shifting the scroll position horizontally. */
+  width: auto;
+  min-width: 100%;
+  overflow: hidden;
 }
 
 [data-writing="vertical"] #page-content p {
