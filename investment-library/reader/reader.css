@@ -1113,6 +1113,77 @@ body {
   100% { opacity: 0; }
 }
 
+/* ====================================================================
+   SHARE MENU (desktop fallback)
+   ==================================================================== */
+#share-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--panel-bg);
+  color: var(--panel-text);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 800;
+  box-shadow: 0 8px 40px rgba(0,0,0,.5);
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: shareIn 0.2s ease;
+}
+
+@keyframes shareIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.share-menu-title {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--accent3);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#share-menu a,
+#share-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(212,170,34,.15);
+  border-radius: 6px;
+  color: var(--panel-text);
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+#share-menu a:hover,
+#share-menu button:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+#share-menu-close {
+  margin-top: 4px;
+  background: none !important;
+  border-color: transparent !important;
+  color: rgba(212,200,176,.5) !important;
+  font-size: 0.7rem !important;
+}
+
+#share-menu-close:hover {
+  color: var(--panel-text) !important;
+}
+
 /* ---------- Print ---------- */
 @media print {
   #reader-header, #reader-footer, #toc-panel, #toc-overlay,

@@ -678,8 +678,33 @@
     if (navigator.share) {
       navigator.share({ text: text }).catch(function(){});
     } else {
-      copyToClipboard(text);
+      showShareMenu(text);
     }
+  }
+
+  function showShareMenu(text) {
+    var existing = document.getElementById('share-menu');
+    if (existing) existing.remove();
+
+    var encoded = encodeURIComponent(text);
+    var menu = document.createElement('div');
+    menu.id = 'share-menu';
+    menu.innerHTML =
+      '<div class="share-menu-title">共有先を選ぶ</div>' +
+      '<a href="https://line.me/R/share?text=' + encoded + '" target="_blank" rel="noopener">LINE</a>' +
+      '<a href="mailto:?body=' + encoded + '" target="_blank">メール</a>' +
+      '<a href="https://twitter.com/intent/tweet?text=' + encoded + '" target="_blank" rel="noopener">X (Twitter)</a>' +
+      '<button id="share-menu-copy">クリップボードにコピー</button>' +
+      '<button id="share-menu-close">閉じる</button>';
+    app.appendChild(menu);
+
+    document.getElementById('share-menu-copy').addEventListener('click', function() {
+      copyToClipboard(text);
+      menu.remove();
+    });
+    document.getElementById('share-menu-close').addEventListener('click', function() {
+      menu.remove();
+    });
   }
 
   function showToast(msg) {
