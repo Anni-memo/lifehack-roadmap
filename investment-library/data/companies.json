@@ -1,0 +1,4502 @@
+[
+  {
+    "slug": "aeon",
+    "name": "イオン",
+    "nameEn": "Aeon",
+    "code": "8267",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 3,
+      "cost": 4,
+      "intangible": 2
+    },
+    "verdict": "日本最大の小売グループ。GMS・SM・金融・不動産の複合体で地方経済の生活インフラ",
+    "overview": "総合スーパー・食品スーパーを中核に、ショッピングモール開発、金融サービスを展開。グループ300社超を擁する日本最大の流通グループ。",
+    "moatSummary": "圧倒的な店舗網とモール開発力で地域の生活インフラを独占。PB「トップバリュ」でコスト優位も確保。",
+    "fcfNote": "モール開発投資が重く、フリーCFは薄い傾向。"
+  },
+  {
+    "slug": "aisin",
+    "name": "アイシン",
+    "nameEn": "Aisin",
+    "code": "7259",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": true,
+    "moat": {
+      "brand": 2,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "トヨタ系最大の部品メーカー。AT・ブレーキで世界トップ級だがEV転換がリスク",
+    "overview": "トヨタグループの中核部品メーカー。オートマチックトランスミッション、ブレーキシステム等を製造し、世界トップクラスのシェアを持つ。",
+    "moatSummary": "AT技術で世界首位級。トヨタとの深い取引関係がスイッチングコストを生む。",
+    "fcfNote": "設備投資負担が大きく、FCFは変動しやすい。"
+  },
+  {
+    "slug": "ajinomoto",
+    "name": "味の素",
+    "nameEn": "Ajinomoto",
+    "code": "2802",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "アミノ酸技術で世界を制する食品・素材企業。半導体材料ABFも隠れた成長エンジン",
+    "overview": "うま味調味料で世界首位。アミノ酸技術を核に食品・ヘルスケア・電子材料へ多角展開。ABF（半導体絶縁材）は世界シェア100%近い。",
+    "moatSummary": "アミノ酸発酵技術は100年の蓄積。ABFは代替不可能な独占的ポジション。",
+    "fcfNote": "食品の安定CFに加え、高利益率の電子材料が貢献。"
+  },
+  {
+    "slug": "asahi-kasei",
+    "name": "旭化成",
+    "nameEn": "Asahi Kasei",
+    "code": "3407",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": true,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "素材・住宅・ヘルスケアの三本柱。多角化が安定性を生むが突出した強みに欠ける",
+    "overview": "ケミカル・繊維から住宅（ヘーベルハウス）、医薬・医療機器まで幅広く展開する総合化学メーカー。リチウムイオン電池セパレータでも世界大手。",
+    "moatSummary": "ヘーベルハウスのブランド力と、セパレータ技術が差別化要因。事業多角化がリスク分散に寄与。",
+    "fcfNote": "住宅事業の安定CFが素材事業の循環変動を緩和。"
+  },
+  {
+    "slug": "chugai",
+    "name": "中外製薬",
+    "nameEn": "Chugai Pharmaceutical",
+    "code": "4519",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "ロシュ傘下の創薬力No.1。抗体技術と中分子創薬で日本製薬の最高峰",
+    "overview": "スイス・ロシュグループの中核メンバー。バイオ医薬品に強く、抗体エンジニアリング技術で独自の創薬プラットフォームを構築。営業利益率は40%超。",
+    "moatSummary": "ロシュとの戦略的提携に加え、独自の抗体技術プラットフォームが参入障壁を形成。",
+    "fcfNote": "高利益率の医薬品事業で潤沢なFCFを創出。"
+  },
+  {
+    "slug": "concordia",
+    "name": "コンコルディアFG",
+    "nameEn": "Concordia Financial Group",
+    "code": "7186",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "横浜銀行を中核とする地銀最大手。神奈川という優良地盤が最大の資産",
+    "overview": "横浜銀行と東日本銀行を傘下に持つ地銀グループ最大手。神奈川県を主要地盤とし、首都圏の優良な顧客基盤を有する。",
+    "moatSummary": "人口・経済規模ともに恵まれた神奈川県地盤が最大の競争優位。",
+    "fcfNote": "金利上昇局面で利ざや改善が期待される。"
+  },
+  {
+    "slug": "cyberagent",
+    "name": "サイバーエージェント",
+    "nameEn": "CyberAgent",
+    "code": "4751",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 4,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "AbemaTVとゲームの二刀流。ネット広告基盤の上に独自メディアを構築",
+    "overview": "インターネット広告代理事業を祖業に、AbemaTV、ゲーム（Cygames）等を展開。AI事業にも積極投資。",
+    "moatSummary": "AbemaTVのコンテンツ投資とCygamesのIP力がネットワーク効果を生む。",
+    "fcfNote": "AbemaTV投資が重く、全社FCFは不安定。"
+  },
+  {
+    "slug": "cybozu",
+    "name": "サイボウズ",
+    "nameEn": "Cybozu",
+    "code": "4776",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 3,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "kintoneで中小企業DXの主役に。高いスイッチングコストがSaaS型収益を支える",
+    "overview": "グループウェア「サイボウズ Office」「kintone」を提供するSaaS企業。中小企業のDX需要を取り込み、クラウド売上比率が拡大中。",
+    "moatSummary": "業務プロセスに組み込まれたkintoneの高いスイッチングコストが解約を抑制。",
+    "fcfNote": "SaaSモデルで安定的なサブスクリプション収益を確保。"
+  },
+  {
+    "slug": "daiichi-life",
+    "name": "第一生命HD",
+    "nameEn": "Dai-ichi Life Holdings",
+    "code": "8750",
+    "industry": "insurance",
+    "industryName": "保険",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "国内生保2位。海外M&Aで成長を模索するも、国内低金利の逆風が続く",
+    "overview": "国内生保業界2位。米プロテクティブ等海外生保を買収し、グローバル展開を推進。資産運用力と営業職員チャネルが強み。",
+    "moatSummary": "130年超の歴史と営業職員ネットワークによるブランド力・顧客接点が参入障壁。",
+    "fcfNote": "保険料収入は安定的だが、運用環境に左右される。"
+  },
+  {
+    "slug": "daiichi-sankyo",
+    "name": "第一三共",
+    "nameEn": "Daiichi Sankyo",
+    "code": "4568",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "ADC技術エンハーツで世界の腫瘍学を変えた。パイプラインの厚みが将来価値を決める",
+    "overview": "抗体薬物複合体（ADC）エンハーツが世界的大型薬に成長。アストラゼネカとの提携で腫瘍領域のグローバルプレゼンスを確立。",
+    "moatSummary": "ADC技術プラットフォームDXdが他社に先行。エンハーツの適応拡大がパイプラインの核。",
+    "fcfNote": "エンハーツのロイヤリティ収入がFCFを押し上げ中。"
+  },
+  {
+    "slug": "daikin",
+    "name": "ダイキン工業",
+    "nameEn": "Daikin Industries",
+    "code": "6367",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "空調で世界首位。冷媒からインバータまで垂直統合した唯一無二の存在",
+    "overview": "業務用・家庭用空調機器で世界シェア首位。冷媒の自社生産からインバータ技術まで垂直統合。世界170カ国以上で事業展開。",
+    "moatSummary": "冷媒技術とインバータ制御の垂直統合が模倣困難な競争優位を形成。",
+    "fcfNote": "空調需要の構造成長で安定したFCF創出が続く。"
+  },
+  {
+    "slug": "daiwa-house",
+    "name": "大和ハウス工業",
+    "nameEn": "Daiwa House Industry",
+    "code": "1925",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "住宅から物流施設まで。「建てて持つ」ストック型ビジネスへの転換が進む",
+    "overview": "戸建住宅から商業施設、物流施設まで幅広く手がける総合建設・不動産企業。売上高は建設業界トップクラス。ストック型ビジネスを強化中。",
+    "moatSummary": "物流施設開発でのファーストムーバー優位と、住宅ブランド力が安定収益の源泉。",
+    "fcfNote": "不動産開発投資が大きく、FCFは年度により変動。"
+  },
+  {
+    "slug": "denso",
+    "name": "デンソー",
+    "nameEn": "Denso",
+    "code": "6902",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "トヨタ系の頭脳。車載半導体・電動化・ADASで自動車産業の進化を牽引",
+    "overview": "トヨタグループの中核サプライヤー。車載半導体、電動化部品、ADAS関連技術で世界トップクラス。売上高は自動車部品メーカーとして世界2位。",
+    "moatSummary": "車載半導体とセンサー技術の蓄積が高いスイッチングコストを生む。",
+    "fcfNote": "研究開発投資が重いが、規模効果で安定的にFCF創出。"
+  },
+  {
+    "slug": "dentsu",
+    "name": "電通グループ",
+    "nameEn": "Dentsu Group",
+    "code": "4324",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 4,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "日本広告業界の巨人。海外買収でグローバル化を図るも統合に課題",
+    "overview": "国内広告業界で圧倒的首位。海外はイージスグループ買収でグローバル展開。デジタルマーケティングへの転換を推進中。",
+    "moatSummary": "国内メディアとの深い関係性と、大型イベントの独占的取扱いが参入障壁。",
+    "fcfNote": "人件費中心のコスト構造で、本業CFは比較的安定。"
+  },
+  {
+    "slug": "dmgmori",
+    "name": "DMG森精機",
+    "nameEn": "DMG Mori",
+    "code": "6141",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 1,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "日独連合の工作機械メーカー。5軸加工機で世界をリードする精密加工の匠",
+    "overview": "ドイツDMG MORIと統合した工作機械メーカー。5軸加工機やターニングセンタで世界トップクラス。自動化・デジタル化を推進。",
+    "moatSummary": "5軸加工技術と日独の技術融合が模倣困難な差別化要因。",
+    "fcfNote": "景気循環の影響を受けやすく、FCFは変動的。"
+  },
+  {
+    "slug": "eisai",
+    "name": "エーザイ",
+    "nameEn": "Eisai",
+    "code": "4523",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "レカネマブでアルツハイマー治療の最前線に。成否が企業価値を左右する一点突破型",
+    "overview": "認知症領域に注力する製薬大手。バイオジェンと共同開発したアルツハイマー治療薬レカネマブが承認取得。神経領域とがん領域が二本柱。",
+    "moatSummary": "アルツハイマー病領域での先行投資とレカネマブの独占的ポジションが最大の資産。",
+    "fcfNote": "レカネマブの上市費用が先行し、FCFは回復途上。"
+  },
+  {
+    "slug": "fanuc",
+    "name": "ファナック",
+    "nameEn": "Fanuc",
+    "code": "6954",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 2,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "CNC・ロボットで世界支配。極めて高い利益率と参入障壁を持つ製造業の王者",
+    "overview": "CNC装置で世界シェア50%超、産業用ロボットでも世界首位級。営業利益率は25%超と極めて高い。山梨の自社工場で一貫生産。",
+    "moatSummary": "CNC装置の圧倒的シェアが生むスイッチングコストと、制御技術の特許群が鉄壁の参入障壁。",
+    "fcfNote": "高利益率・低設備投資で極めて潤沢なFCFを創出。"
+  },
+  {
+    "slug": "fastretailing",
+    "name": "ファーストリテイリング",
+    "nameEn": "Fast Retailing",
+    "code": "9983",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 5,
+      "intangible": 3
+    },
+    "verdict": "ユニクロで世界3位のアパレル。SPAモデルとLifeWearコンセプトで独自の地位を確立",
+    "overview": "ユニクロを核とするグローバルアパレル企業。SPA（製造小売）モデルで高品質・低価格を実現。海外売上比率が国内を上回る。",
+    "moatSummary": "圧倒的な調達規模によるコスト優位と、LifeWearブランドの世界的認知が強み。",
+    "fcfNote": "在庫効率の高さと店舗拡大で安定的にFCFを創出。"
+  },
+  {
+    "slug": "fujifilm",
+    "name": "富士フイルムHD",
+    "nameEn": "Fujifilm Holdings",
+    "code": "4901",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "写真フィルムからヘルスケア・素材へ。日本企業の構造転換の最高成功例",
+    "overview": "写真フィルムから医療機器・バイオCDMO・電子材料・化粧品へ転換した多角化企業。M&Aを活用した事業ポートフォリオ変革の成功例。",
+    "moatSummary": "フィルム技術から派生した素材・光学技術の蓄積と、バイオCDMO事業の成長が差別化要因。",
+    "fcfNote": "多角化事業のバランスで安定的なFCF創出を維持。"
+  },
+  {
+    "slug": "fujitsu",
+    "name": "富士通",
+    "nameEn": "Fujitsu",
+    "code": "6702",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "ITサービス国内首位。官公庁・金融向け基幹システムの更新需要が収益基盤",
+    "overview": "ITサービス国内最大手。官公庁・金融機関向けシステム開発が主力。Uvanceブランドでクラウド・DXサービスへの転換を推進。",
+    "moatSummary": "官公庁・金融の大型基幹システムにおける高いスイッチングコストが安定収益の源泉。",
+    "fcfNote": "ITサービスのストック型収益でFCFは安定的。"
+  },
+  {
+    "slug": "hitachi",
+    "name": "日立製作所",
+    "nameEn": "Hitachi",
+    "code": "6501",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "総合電機からDX・社会インフラ企業へ。Lumadaを軸にした変革が時価総額を押し上げた",
+    "overview": "送配電・鉄道・ITプラットフォーム「Lumada」を三本柱とする社会インフラ企業。事業再編で非中核事業を売却し、高収益体質へ転換。",
+    "moatSummary": "OT×ITの融合能力とLumadaプラットフォームが競合にない独自の価値を提供。",
+    "fcfNote": "事業再編後、FCFの質と安定性が大幅に改善。"
+  },
+  {
+    "slug": "honda",
+    "name": "本田技研工業",
+    "nameEn": "Honda Motor",
+    "code": "7267",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "二輪世界首位・四輪グローバル大手。エンジン技術の蓄積がEV時代に問われる",
+    "overview": "二輪車で世界シェア首位、四輪車でもグローバル大手。エンジン技術に定評があり、ジェットエンジン・ロボティクスにも展開。",
+    "moatSummary": "二輪のグローバルブランド力と、エンジン・パワートレイン技術の蓄積が最大の資産。",
+    "fcfNote": "二輪事業の高利益率がグループ全体のFCFを下支え。"
+  },
+  {
+    "slug": "hulic",
+    "name": "ヒューリック",
+    "nameEn": "Hulic",
+    "code": "3003",
+    "industry": "real-estate",
+    "industryName": "不動産",
+    "exists": true,
+    "moat": {
+      "brand": 2,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "都心好立地の建替ビジネスで高ROE。少数精鋭で不動産業界の利益率トップクラス",
+    "overview": "旧富士銀行の不動産管理会社が起源。東京都心の好立地ビルの建替・開発を得意とし、少数精鋭で高い資本効率を実現。",
+    "moatSummary": "都心一等地の保有物件ポートフォリオと、建替による価値向上ノウハウが強み。",
+    "fcfNote": "不動産売却益を含めFCFは高水準だが変動あり。"
+  },
+  {
+    "slug": "itochu",
+    "name": "伊藤忠商事",
+    "nameEn": "Itochu",
+    "code": "8001",
+    "industry": "wholesale",
+    "industryName": "商社・卸売",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "非資源に強い総合商社。生活消費関連のバリューチェーン構築力が独自の強み",
+    "overview": "非資源分野に強みを持つ総合商社。ファミリーマート等の生活消費関連事業を核に、繊維・食料・情報で独自のバリューチェーンを構築。",
+    "moatSummary": "川上から川下まで一気通貫のバリューチェーンと、非資源ポートフォリオの安定性。",
+    "fcfNote": "非資源中心で資源価格に左右されにくい安定的なFCF。"
+  },
+  {
+    "slug": "kajima",
+    "name": "鹿島建設",
+    "nameEn": "Kajima",
+    "code": "1812",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "スーパーゼネコンの一角。技術力と海外展開で差別化するが、建設業の宿命的低収益性は残る",
+    "overview": "スーパーゼネコン5社の一角。ダム・トンネル等の土木技術に強み。海外売上比率も高く、不動産開発事業も展開。",
+    "moatSummary": "大型土木の施工実績と技術力が参入障壁。海外展開でもリードする。",
+    "fcfNote": "大型工事の進捗でFCFは年度変動が大きい。"
+  },
+  {
+    "slug": "kddi",
+    "name": "KDDI",
+    "nameEn": "KDDI",
+    "code": "9433",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "au経済圏で通信を超えた生活プラットフォームを構築。安定配当の優良銘柄",
+    "overview": "携帯電話auブランドを展開する通信大手。金融・エネルギー等の「au経済圏」戦略で顧客囲い込みを推進。連続増配銘柄。",
+    "moatSummary": "通信インフラの寡占構造と、au経済圏の顧客囲い込みがスイッチングコストを形成。",
+    "fcfNote": "通信事業の安定CFで潤沢なFCFを継続的に創出。"
+  },
+  {
+    "slug": "keyence",
+    "name": "キーエンス",
+    "nameEn": "Keyence",
+    "code": "6861",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 1,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "ファブレス×直販で営業利益率55%。日本製造業の中で最も高い収益力を持つ異次元企業",
+    "overview": "FA用センサー・計測機器のファブレスメーカー。直販体制とコンサルティング営業で営業利益率55%超を実現。時価総額は日本トップクラス。",
+    "moatSummary": "直販×コンサル営業モデルと、製造現場への深い知見が模倣困難な参入障壁を形成。",
+    "fcfNote": "ファブレス×高利益率で極めて潤沢なFCFを創出。"
+  },
+  {
+    "slug": "kikkoman",
+    "name": "キッコーマン",
+    "nameEn": "Kikkoman",
+    "code": "2801",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "醤油で世界を制覇。海外売上比率7割超のグローバル調味料企業",
+    "overview": "醤油で国内シェア3割超、海外でも圧倒的なブランド力を持つ調味料メーカー。北米・欧州を中心に海外売上比率は7割を超える。",
+    "moatSummary": "「Kikkoman」ブランドは海外で醤油の代名詞。100年超の醸造技術が参入障壁。",
+    "fcfNote": "海外醤油事業の高利益率で安定的なFCF創出。"
+  },
+  {
+    "slug": "kirin",
+    "name": "キリンHD",
+    "nameEn": "Kirin Holdings",
+    "code": "2503",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "ビールから医薬・ヘルスサイエンスへ。発酵・バイオ技術を活かした事業転換を模索",
+    "overview": "ビール国内2位。協和キリンを通じた医薬事業、ファンケル買収によるヘルスサイエンス事業への多角化を推進。",
+    "moatSummary": "ビールブランド力に加え、発酵・バイオ技術の蓄積がヘルスケア転換の基盤。",
+    "fcfNote": "ビール事業の安定CFを新規事業投資に充当。"
+  },
+  {
+    "slug": "komatsu",
+    "name": "コマツ",
+    "nameEn": "Komatsu",
+    "code": "6301",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "建機世界2位。KOMTRAXによるIoT先駆者で、アフターサービスの囲い込みが強い",
+    "overview": "建設機械で世界シェア2位。遠隔監視システムKOMTRAXを先駆的に導入し、IoT×建機の分野をリード。鉱山機械も成長。",
+    "moatSummary": "KOMTRAXによるデータ囲い込みと、グローバルなサービス・部品網が競争優位。",
+    "fcfNote": "建機需要の循環変動があるが、アフターサービスがFCFを安定化。"
+  },
+  {
+    "slug": "kyocera",
+    "name": "京セラ",
+    "nameEn": "Kyocera",
+    "code": "6971",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "セラミック技術で多角展開。手堅い経営だが成長性に物足りなさも",
+    "overview": "ファインセラミックス技術を核に、電子部品・通信機器・太陽電池等を幅広く展開。稲盛哲学に基づくアメーバ経営で知られる。",
+    "moatSummary": "ファインセラミックス技術の蓄積と、多角化による安定性が強み。",
+    "fcfNote": "多角化事業で安定的だが突出した成長ドライバーに欠ける。"
+  },
+  {
+    "slug": "marubeni",
+    "name": "丸紅",
+    "nameEn": "Marubeni",
+    "code": "8002",
+    "industry": "wholesale",
+    "industryName": "商社・卸売",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 3,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "穀物・電力に強みを持つ総合商社。資源依存からの脱却で収益の安定化を図る",
+    "overview": "穀物取扱い世界大手、海外電力事業でも存在感を持つ総合商社。非資源分野の強化で収益の安定化を推進中。",
+    "moatSummary": "穀物・電力のグローバルネットワークが差別化要因。",
+    "fcfNote": "資源価格変動の影響を受けやすいがバランス改善中。"
+  },
+  {
+    "slug": "meiji",
+    "name": "明治HD",
+    "nameEn": "Meiji Holdings",
+    "code": "2269",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "チョコレート・乳製品で国内首位。ブランド力は盤石だが海外展開の遅れが課題",
+    "overview": "チョコレート・乳製品で国内首位の食品メーカー。「明治ブルガリアヨーグルト」等の強力ブランドを多数保有。医薬品事業も展開。",
+    "moatSummary": "消費者の圧倒的なブランド認知と、乳製品の調達・製造ネットワークが参入障壁。",
+    "fcfNote": "食品事業の安定CFで堅実なFCF創出。"
+  },
+  {
+    "slug": "misho",
+    "name": "三井松島HD",
+    "nameEn": "Mitsui Matsushima Holdings",
+    "code": "1518",
+    "industry": "mining",
+    "industryName": "鉱業",
+    "exists": true,
+    "moat": {
+      "brand": 1,
+      "switching": 1,
+      "network": 1,
+      "cost": 2,
+      "intangible": 1
+    },
+    "verdict": "石炭事業から生活関連事業へ転換中の旧鉱業会社。M&Aで事業多角化を推進",
+    "overview": "旧三井松島産業。石炭販売を祖業に、M&Aで生活関連事業への転換を推進。事業ポートフォリオの再構築途上にある。",
+    "moatSummary": "石炭の既存取引関係が一定の基盤だが、構造的な競争優位は限定的。",
+    "fcfNote": "石炭価格に左右されやすく、FCFの安定性に課題。"
+  },
+  {
+    "slug": "mitsubishi-chem",
+    "name": "三菱ケミカルグループ",
+    "nameEn": "Mitsubishi Chemical Group",
+    "code": "4188",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "日本最大の総合化学メーカー。規模は圧倒的だが事業再編の途上で収益性に課題",
+    "overview": "化学・医薬・素材を統合した日本最大の総合化学グループ。機能性素材・医薬品の高付加価値化を推進。事業ポートフォリオの再編中。",
+    "moatSummary": "素材分野の圧倒的な製品幅と、研究開発の蓄積が競争力の源泉。",
+    "fcfNote": "大規模設備投資が必要で、FCFは不安定な傾向。"
+  },
+  {
+    "slug": "mitsubishi-jisho",
+    "name": "三菱地所",
+    "nameEn": "Mitsubishi Estate",
+    "code": "8802",
+    "industry": "real-estate",
+    "industryName": "不動産",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "丸の内の地主。日本最高峰の不動産ポートフォリオを持つディベロッパー",
+    "overview": "丸の内エリアを中心としたオフィスビル賃貸が主力。商業施設・住宅開発・海外不動産にも展開する総合ディベロッパー。",
+    "moatSummary": "丸の内の圧倒的な立地優位性と、オフィスビルポートフォリオの質が参入障壁。",
+    "fcfNote": "賃貸収入で安定CFを確保しつつ、再開発投資を継続。"
+  },
+  {
+    "slug": "mitsui-bussan",
+    "name": "三井物産",
+    "nameEn": "Mitsui & Co.",
+    "code": "8031",
+    "industry": "wholesale",
+    "industryName": "商社・卸売",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 4,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "資源権益に強い総合商社。LNG・鉄鉱石の上流権益が収益の柱",
+    "overview": "LNG・鉄鉱石等の資源権益に強みを持つ総合商社。ヘルスケア・IT等の非資源分野も拡大。バフェット投資で注目度が上昇。",
+    "moatSummary": "長年の資源権益投資で築いた上流ポートフォリオと、グローバルネットワークが強み。",
+    "fcfNote": "資源価格に連動するが、高値局面では極めて潤沢なFCF。"
+  },
+  {
+    "slug": "mitsui-fudosan",
+    "name": "三井不動産",
+    "nameEn": "Mitsui Fudosan",
+    "code": "8801",
+    "industry": "real-estate",
+    "industryName": "不動産",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "日本最大の総合デベロッパー。ららぽーと・三井アウトレットの商業施設ネットワークも強力",
+    "overview": "オフィス・商業施設・住宅・ホテル・物流施設と不動産の全領域をカバーする業界最大手。ららぽーと等の商業施設運営にも強み。",
+    "moatSummary": "総合デベロッパーとしてのブランド力と、商業施設のネットワーク効果が強み。",
+    "fcfNote": "賃貸・運営収入の安定CFが開発投資の原資。"
+  },
+  {
+    "slug": "mizuho",
+    "name": "みずほFG",
+    "nameEn": "Mizuho Financial Group",
+    "code": "8411",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 3,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "メガバンク3番手。システム障害の教訓を経て、デジタル化で巻き返しを図る",
+    "overview": "3大メガバンクの一角。銀行・信託・証券の一体運営を推進。グローバルCIBと国内リテールが二本柱。",
+    "moatSummary": "メガバンクとしての規模とネットワーク、法人取引基盤が参入障壁。",
+    "fcfNote": "金利上昇で利ざや改善、資本効率の向上が進む。"
+  },
+  {
+    "slug": "monotaro",
+    "name": "MonotaRO",
+    "nameEn": "MonotaRO",
+    "code": "3064",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 4,
+      "intangible": 2
+    },
+    "verdict": "間接資材EC の独占的プレイヤー。ロングテール品揃えと利便性で中小企業を囲い込む",
+    "overview": "工場・現場向け間接資材のEC最大手。2000万点超の品揃えとワンプライスの明瞭な価格体系で中小企業の購買を効率化。",
+    "moatSummary": "圧倒的な品揃えと物流効率によるコスト優位が参入障壁を形成。",
+    "fcfNote": "EC事業の高い回転率で安定的なFCF創出。"
+  },
+  {
+    "slug": "msad",
+    "name": "MS&ADインシュアランスGHD",
+    "nameEn": "MS&AD Insurance Group",
+    "code": "8725",
+    "industry": "insurance",
+    "industryName": "保険",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "損保業界首位級。三井住友海上とあいおいの統合で規模のメリットを享受",
+    "overview": "三井住友海上火災とあいおいニッセイ同和損保を傘下に持つ損保グループ。国内損保トップクラスのシェアとアジア展開が特徴。",
+    "moatSummary": "損保業界の寡占構造と、代理店網・法人チャネルの規模が参入障壁。",
+    "fcfNote": "保険引受利益と資産運用益で安定的なCFを確保。"
+  },
+  {
+    "slug": "mufg",
+    "name": "三菱UFJ FG",
+    "nameEn": "Mitsubishi UFJ Financial Group",
+    "code": "8306",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "日本最大の金融グループ。メガバンクの中で最もグローバルな展開を持つ",
+    "overview": "国内最大のメガバンクグループ。銀行・信託・証券・カード等を包括。モルガン・スタンレーとの提携でグローバル投資銀行業務も展開。",
+    "moatSummary": "圧倒的な預金基盤と法人取引ネットワーク、グローバル展開力が三重の参入障壁。",
+    "fcfNote": "金利上昇で利ざや拡大、潤沢なCFを創出。"
+  },
+  {
+    "slug": "nidec",
+    "name": "ニデック",
+    "nameEn": "Nidec",
+    "code": "6594",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "小型モーター世界首位。M&Aの鬼・永守経営でEV用モーターに賭ける",
+    "overview": "精密小型モーターで世界シェア首位。HDD用モーターから車載・産業用に拡大。M&Aを活用した成長戦略が特徴。",
+    "moatSummary": "小型モーターの圧倒的な規模効果と、M&Aで獲得した技術の統合力が強み。",
+    "fcfNote": "積極的なM&Aで投資CFが大きく、ネットFCFは変動。"
+  },
+  {
+    "slug": "nippon-paint",
+    "name": "日本ペイントHD",
+    "nameEn": "Nippon Paint Holdings",
+    "code": "4612",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "アジア塗料No.1。ウットラムとの提携でアジア新興国市場を席巻",
+    "overview": "アジア最大の塗料メーカー。シンガポールのウットラムグループとの戦略的提携でアジア市場を急拡大。自動車用・建築用塗料が主力。",
+    "moatSummary": "アジアでのブランド力と販売網、ウットラムとの提携による成長力が競争優位。",
+    "fcfNote": "塗料事業の安定CFにアジア成長が上乗せ。"
+  },
+  {
+    "slug": "nissin",
+    "name": "日清食品HD",
+    "nameEn": "Nissin Foods Holdings",
+    "code": "2897",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "カップヌードルという世界的アイコン。即席麺のグローバルブランド力は食品業界随一",
+    "overview": "カップヌードルを世界に広めた即席麺のパイオニア。海外展開を積極化し、ブラジル・中国・米国等で事業拡大中。",
+    "moatSummary": "カップヌードルの圧倒的なブランド認知と、即席麺カテゴリーの創造者としての地位。",
+    "fcfNote": "即席麺の安定需要で堅実なFCF創出を維持。"
+  },
+  {
+    "slug": "nitori",
+    "name": "ニトリHD",
+    "nameEn": "Nitori Holdings",
+    "code": "9843",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 5,
+      "intangible": 3
+    },
+    "verdict": "家具のSPAモデルで36期連続増収増益。圧倒的なコスト優位が最大の武器",
+    "overview": "家具・インテリアのSPA企業。製造から物流・販売まで一貫体制で低価格・高品質を実現。国内600店超を展開。",
+    "moatSummary": "垂直統合型SPAモデルによる圧倒的なコスト優位性が参入障壁を形成。",
+    "fcfNote": "高い在庫回転率と利益率で安定的なFCF創出。"
+  },
+  {
+    "slug": "ntt",
+    "name": "日本電信電話",
+    "nameEn": "Nippon Telegraph and Telephone",
+    "code": "9432",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 5,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "日本の通信インフラの根幹。IOWN構想で次世代光通信の覇権を狙う",
+    "overview": "NTTドコモ・NTTデータ等を傘下に持つ日本最大の通信グループ。固定・移動通信、ITサービスを包括。IOWN構想で光技術の革新を推進。",
+    "moatSummary": "通信インフラの独占的地位と、グループの規模・範囲の経済が鉄壁の参入障壁。",
+    "fcfNote": "通信事業の安定CFで毎年1兆円超のFCFを創出。"
+  },
+  {
+    "slug": "nttdata",
+    "name": "NTTデータグループ",
+    "nameEn": "NTT Data Group",
+    "code": "9613",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "SIer最大手。官公庁・金融の大型案件に強く、海外M&Aでグローバル化を加速",
+    "overview": "国内最大のシステムインテグレーター。官公庁・金融向けの大型システム開発が主力。海外M&Aでグローバル展開を急拡大。",
+    "moatSummary": "官公庁・金融のミッションクリティカルシステムにおける高いスイッチングコスト。",
+    "fcfNote": "長期保守契約のストック型収益でFCFは安定基調。"
+  },
+  {
+    "slug": "obayashi",
+    "name": "大林組",
+    "nameEn": "Obayashi",
+    "code": "1802",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "スーパーゼネコンの一角。北米事業の成長と再エネ投資で新たな柱を構築中",
+    "overview": "スーパーゼネコン5社の一角。北米の建設事業と再生可能エネルギー事業に注力。技術力を活かした大型プロジェクトの実績が豊富。",
+    "moatSummary": "大型建設プロジェクトの施工実績と、北米事業の成長が差別化要因。",
+    "fcfNote": "大型工事の進捗次第でFCFの変動が大きい。"
+  },
+  {
+    "slug": "omron",
+    "name": "オムロン",
+    "nameEn": "Omron",
+    "code": "6645",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "FA制御機器で世界大手。センシング&コントロール技術で工場自動化を牽引",
+    "overview": "FA制御機器で世界大手。センサー・リレー・PLC等の制御機器を製造。血圧計等のヘルスケア事業も展開。",
+    "moatSummary": "センシング&コントロール技術の蓄積と、FA制御の顧客基盤が競争優位。",
+    "fcfNote": "FA機器の需要循環に影響を受けるがヘルスケアが安定化に寄与。"
+  },
+  {
+    "slug": "persol",
+    "name": "パーソルHD",
+    "nameEn": "Persol Holdings",
+    "code": "2181",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "人材業界2位。テンプスタッフとdodaで人材派遣・紹介の両輪を回す",
+    "overview": "テンプスタッフ（派遣）・doda（紹介）を核とする総合人材サービス大手。人材業界ではリクルートに次ぐ2位。DX人材領域を強化中。",
+    "moatSummary": "テンプスタッフ・dodaの二大ブランドと、求職者データベースの規模が強み。",
+    "fcfNote": "人材サービスの高い労働集約性でFCFマージンは限定的。"
+  },
+  {
+    "slug": "recruit",
+    "name": "リクルートHD",
+    "nameEn": "Recruit Holdings",
+    "code": "6098",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 4,
+      "network": 5,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "HRテックの世界的リーダー。Indeedを擁し、人材マッチングのプラットフォーマーとして君臨",
+    "overview": "Indeed・リクナビ・SUUMO等のマッチングプラットフォームを運営。HRテクノロジー事業が売上の過半を占めるグローバル企業に成長。",
+    "moatSummary": "Indeedの圧倒的なネットワーク効果と、国内メディアプラットフォームの支配的地位。",
+    "fcfNote": "プラットフォーム型ビジネスで高いFCFマージンを実現。"
+  },
+  {
+    "slug": "resona",
+    "name": "りそなHD",
+    "nameEn": "Resona Holdings",
+    "code": "8308",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "リテールに強い都銀グループ。信託併営の強みで中堅・中小企業取引に独自性",
+    "overview": "りそな銀行・埼玉りそな銀行を傘下に持つ金融グループ。信託銀行免許を活用した不動産・年金ビジネスに強み。リテール特化。",
+    "moatSummary": "信託併営の独自性と、首都圏・関西のリテール顧客基盤が差別化要因。",
+    "fcfNote": "金利上昇でリテール預貸ビジネスの収益性が改善。"
+  },
+  {
+    "slug": "seven-i",
+    "name": "セブン&アイHD",
+    "nameEn": "Seven & i Holdings",
+    "code": "3382",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 4,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "コンビニ世界最大手。セブン-イレブンのブランド力と物流網は日本小売の最強資産",
+    "overview": "セブン-イレブンを核とするコンビニ世界最大手。国内2万店超の店舗網と、高度な物流・商品開発力が強み。北米事業も展開。",
+    "moatSummary": "セブン-イレブンの圧倒的な店舗密度とブランド力、共同配送システムが鉄壁の参入障壁。",
+    "fcfNote": "コンビニのロイヤリティ収入で安定的に潤沢なFCFを創出。"
+  },
+  {
+    "slug": "shimizu",
+    "name": "清水建設",
+    "nameEn": "Shimizu",
+    "code": "1803",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "スーパーゼネコンの一角。建築に強みを持ち、LCV事業で非建設領域を拡大",
+    "overview": "スーパーゼネコン5社の一角。建築工事に強みを持ち、特に医薬・半導体工場等のクリーンルーム施工で高い技術力を持つ。",
+    "moatSummary": "クリーンルーム等の特殊建築技術と、大型施工実績が参入障壁。",
+    "fcfNote": "建設プロジェクトの進捗でFCFは変動。"
+  },
+  {
+    "slug": "shinEtsu",
+    "name": "信越化学工業",
+    "nameEn": "Shin-Etsu Chemical",
+    "code": "4063",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 1,
+      "cost": 5,
+      "intangible": 5
+    },
+    "verdict": "塩ビ・半導体シリコンウエハーで世界首位。日本の化学メーカーで最高の収益力",
+    "overview": "塩化ビニル樹脂と半導体シリコンウエハーで世界シェア首位。営業利益率30%超の高収益体質。堅実経営で知られる。",
+    "moatSummary": "シリコンウエハーと塩ビの圧倒的なコスト優位性と、技術的参入障壁が競争力の源泉。",
+    "fcfNote": "高利益率と効率的な設備投資で極めて潤沢なFCFを創出。"
+  },
+  {
+    "slug": "shionogi",
+    "name": "塩野義製薬",
+    "nameEn": "Shionogi",
+    "code": "4507",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "感染症創薬のスペシャリスト。ゾコーバ・HIV薬のロイヤリティで高利益率を維持",
+    "overview": "感染症領域に強みを持つ創薬型製薬企業。HIV治療薬のロイヤリティ収入が安定的な利益源。COVID-19治療薬ゾコーバも開発。",
+    "moatSummary": "感染症創薬の専門性とHIV薬ロイヤリティの安定収入が競争優位。",
+    "fcfNote": "ロイヤリティ収入中心で極めて高いFCFマージン。"
+  },
+  {
+    "slug": "smc",
+    "name": "SMC",
+    "nameEn": "SMC",
+    "code": "6273",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 1,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "空気圧機器で世界シェア4割。静かに世界を支配する隠れた優良企業",
+    "overview": "空気圧制御機器で世界シェア約40%の圧倒的首位。FA・半導体製造装置向けが主力。営業利益率30%超の高収益体質。",
+    "moatSummary": "空気圧機器の圧倒的シェアとカスタマイズ対応力、製品数75万点の網羅性が参入障壁。",
+    "fcfNote": "高利益率・低資本集約型で極めて潤沢なFCFを創出。"
+  },
+  {
+    "slug": "smfg",
+    "name": "三井住友FG",
+    "nameEn": "Sumitomo Mitsui Financial Group",
+    "code": "8316",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 4,
+      "cost": 4,
+      "intangible": 3
+    },
+    "verdict": "効率性で3メガバンク首位。コスト管理と戦略的投資のバランスが優れる",
+    "overview": "3大メガバンクの一角。効率性（OHR）で首位。SMBC日興証券、三井住友カード等を傘下に持ち、総合金融サービスを提供。",
+    "moatSummary": "メガバンクの規模の経済に加え、業界トップの効率性が持続的な競争優位を形成。",
+    "fcfNote": "コスト効率の高さで3メガ中最も安定的なFCFを創出。"
+  },
+  {
+    "slug": "softbank",
+    "name": "ソフトバンクグループ",
+    "nameEn": "SoftBank Group",
+    "code": "9984",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 4,
+      "cost": 1,
+      "intangible": 4
+    },
+    "verdict": "AI時代の投資帝国。ビジョンファンドの成否が企業価値の大半を左右するハイリスク企業",
+    "overview": "ビジョンファンドを通じたAI・テクノロジー投資会社。Arm Holdings、通信子会社ソフトバンク等を保有。孫正義の経営判断に依存。",
+    "moatSummary": "Arm保有とAI投資ネットワークが最大の資産。ただし単一経営者への依存リスクも大きい。",
+    "fcfNote": "投資会社のためFCFの概念が通常企業と異なり、変動が極めて大きい。"
+  },
+  {
+    "slug": "sompo",
+    "name": "SOMPOホールディングス",
+    "nameEn": "Sompo Holdings",
+    "code": "8630",
+    "industry": "insurance",
+    "industryName": "保険",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 3,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "損保大手3社の一角。介護事業への参入で独自路線を開拓",
+    "overview": "損害保険ジャパンを中核とする保険グループ。介護事業（SOMPOケア）に本格参入し、保険×介護の新しいビジネスモデルを構築中。",
+    "moatSummary": "損保の寡占構造に加え、介護事業との連携で独自のポジションを確立。",
+    "fcfNote": "保険引受利益と資産運用益で安定的なCFを確保。"
+  },
+  {
+    "slug": "sony",
+    "name": "ソニーグループ",
+    "nameEn": "Sony Group",
+    "code": "6758",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 4,
+      "network": 4,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "エンタメ・半導体・金融の複合体。CMOSセンサーとPlayStationのIPが収益の両輪",
+    "overview": "ゲーム・音楽・映画のエンタメ事業、CMOSイメージセンサー、金融事業を展開するグローバル複合企業。PlayStation・IP群が強力な資産。",
+    "moatSummary": "CMOSセンサーの技術的優位性と、エンタメIPの蓄積によるネットワーク効果が鉄壁の堀。",
+    "fcfNote": "エンタメのサブスクリプション収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "sumitomo-fudosan",
+    "name": "住友不動産",
+    "nameEn": "Sumitomo Realty & Development",
+    "code": "8830",
+    "industry": "real-estate",
+    "industryName": "不動産",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "オフィスビル賃貸で安定収益。新築マンション供給戸数でも業界トップクラス",
+    "overview": "東京都心のオフィスビル賃貸を中核に、マンション分譲、リフォーム事業を展開。保有ビル230棟超の都心オフィスポートフォリオが強み。",
+    "moatSummary": "都心オフィスの大規模ポートフォリオと、マンションの供給力が安定収益の源泉。",
+    "fcfNote": "オフィス賃貸の安定CFでFCFを着実に創出。"
+  },
+  {
+    "slug": "sumitomo-shoji",
+    "name": "住友商事",
+    "nameEn": "Sumitomo Corporation",
+    "code": "8053",
+    "industry": "wholesale",
+    "industryName": "商社・卸売",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "非資源・資源バランス型の総合商社。メディア・不動産など独自分野に強み",
+    "overview": "金属・輸送機・インフラ・メディア等を幅広く展開する総合商社。CATV（Jcom）や不動産（住友商事マテリアル）など独自の事業領域を持つ。",
+    "moatSummary": "Jcom等のメディア事業と不動産投資で独自のポートフォリオを構築。",
+    "fcfNote": "非資源・資源のバランスでFCFの安定性を確保。"
+  },
+  {
+    "slug": "taisei",
+    "name": "大成建設",
+    "nameEn": "Taisei",
+    "code": "1801",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "スーパーゼネコンの一角。土木のトンネル技術に定評があり、都市開発にも展開",
+    "overview": "スーパーゼネコン5社の一角。シールドトンネル工法等の土木技術に強み。新国立競技場の施工実績を持つ。都市開発事業も拡大。",
+    "moatSummary": "大型土木・トンネル技術の蓄積と、都市再開発のプロジェクト実績が参入障壁。",
+    "fcfNote": "大型プロジェクトの進捗でFCFは変動が大きい。"
+  },
+  {
+    "slug": "takeda",
+    "name": "武田薬品工業",
+    "nameEn": "Takeda Pharmaceutical",
+    "code": "4502",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": true,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 3,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "シャイアー買収で世界トップ10入り。消化器・希少疾患・血漿分画で独自のグローバルポジション",
+    "overview": "日本最大の製薬企業。シャイアー買収でグローバルメガファーマに。消化器・希少疾患・血漿分画・オンコロジー・神経科学が主要領域。",
+    "moatSummary": "希少疾患・血漿分画のグローバルネットワークと、パイプラインの厚みが参入障壁。",
+    "fcfNote": "シャイアー統合でCF改善が進むが、有利子負債削減が優先。"
+  },
+  {
+    "slug": "tokiomarine",
+    "name": "東京海上HD",
+    "nameEn": "Tokio Marine Holdings",
+    "code": "8766",
+    "industry": "insurance",
+    "industryName": "保険",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "日本の損保最大手にしてグローバル保険企業。海外特殊保険で高い収益力",
+    "overview": "国内損保最大手。海外保険事業（特殊保険）の利益貢献が過半を占めるグローバル保険グループ。ブランド力と引受力で業界をリード。",
+    "moatSummary": "海外特殊保険の引受専門性と、140年超の信頼ブランドが競争優位。",
+    "fcfNote": "保険料収入と運用益で安定的に潤沢なCFを確保。"
+  },
+  {
+    "slug": "tokyu-fudosan",
+    "name": "東急不動産HD",
+    "nameEn": "Tokyu Fudosan Holdings",
+    "code": "3289",
+    "industry": "real-estate",
+    "industryName": "不動産",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "東急沿線開発に強み。渋谷再開発とリゾート事業で独自ポジション",
+    "overview": "東急グループの不動産部門。渋谷エリアの再開発を推進し、オフィス・商業・リゾート・シニア事業を展開。東急沿線の開発に強み。",
+    "moatSummary": "東急沿線・渋谷エリアでの開発独占と、リゾート事業の蓄積が差別化要因。",
+    "fcfNote": "不動産賃貸収入で安定CFを確保しつつ再開発投資。"
+  },
+  {
+    "slug": "toyota",
+    "name": "トヨタ自動車",
+    "nameEn": "Toyota Motor",
+    "code": "7203",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": true,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 3,
+      "cost": 5,
+      "intangible": 5
+    },
+    "verdict": "世界最大の自動車メーカー。トヨタ生産方式とハイブリッド技術で圧倒的な競争力",
+    "overview": "世界最大の自動車メーカー。トヨタ生産方式（TPS）による圧倒的なコスト競争力とハイブリッド技術のリーダーシップ。全方位戦略でEV・水素にも対応。",
+    "moatSummary": "TPSによるコスト優位、ハイブリッド技術の蓄積、ブランド信頼性の三重の堀。",
+    "fcfNote": "自動車業界で最も安定的かつ潤沢なFCFを創出。"
+  },
+  {
+    "slug": "toyotaind",
+    "name": "豊田自動織機",
+    "nameEn": "Toyota Industries",
+    "code": "6201",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": true,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "フォークリフト世界首位。トヨタの源流企業として安定した事業基盤を持つ",
+    "overview": "フォークリフトで世界シェア首位。トヨタグループの源流企業として、物流機器・繊維機械・自動車部品を幅広く展開。",
+    "moatSummary": "フォークリフトの世界首位シェアと、トヨタグループの事業基盤が安定性の源泉。",
+    "fcfNote": "フォークリフト事業の安定CFに加え、トヨタ株の含み資産も保有。"
+  },
+  {
+    "slug": "mitsubishi-heavy",
+    "name": "三菱重工業",
+    "nameEn": "Mitsubishi Heavy Industries",
+    "code": "7011",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 2,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "防衛・宇宙・原子力で国策企業。ガスタービンと防衛需要の拡大が追い風",
+    "overview": "防衛・宇宙・エネルギー・航空機を手がける日本最大の重工メーカー。ガスタービンで世界大手。防衛費拡大の最大受益者。",
+    "moatSummary": "防衛・原子力の高い参入障壁と、ガスタービン技術の蓄積が鉄壁の競争優位。",
+    "fcfNote": "大型プロジェクトの進捗で変動するが、防衛需要拡大でCF改善傾向。"
+  },
+  {
+    "slug": "mitsubishi-elec",
+    "name": "三菱電機",
+    "nameEn": "Mitsubishi Electric",
+    "code": "6503",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "FA・ビル・空調・宇宙の多角化電機。収益改善余地が大きい名門企業",
+    "overview": "FA機器・ビルシステム・空調・人工衛星まで幅広く展開する総合電機メーカー。品質不正問題を経て、経営改革を推進中。",
+    "moatSummary": "FA機器とビルシステムの組込み顧客基盤が高いスイッチングコストを形成。",
+    "fcfNote": "事業構造改革で収益性改善が進み、FCFは回復基調。"
+  },
+  {
+    "slug": "mitsubishi-motors",
+    "name": "三菱自動車工業",
+    "nameEn": "Mitsubishi Motors",
+    "code": "7211",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 1,
+      "network": 2,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "日産・ルノーアライアンスの一員。PHEV技術と東南アジア市場が生命線",
+    "overview": "日産・ルノーアライアンスに参画する自動車メーカー。アウトランダーPHEVが看板車種。東南アジア市場に強みを持つ。",
+    "moatSummary": "PHEV技術の先行者優位と東南アジアでのブランド力がニッチな競争優位。",
+    "fcfNote": "販売台数の変動でFCFは不安定。"
+  },
+  {
+    "slug": "panasonic",
+    "name": "パナソニックHD",
+    "nameEn": "Panasonic Holdings",
+    "code": "6752",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "家電の名門がEV電池と空質空調で再成長を模索。テスラ向け電池が成長の鍵",
+    "overview": "家電・住宅設備からEV用電池・空質空調まで展開する総合電機メーカー。テスラ向け車載電池が成長ドライバー。事業会社制に移行。",
+    "moatSummary": "EV用円筒形電池の技術・生産力と、家電ブランドの消費者認知が強み。",
+    "fcfNote": "電池投資が重く、全社FCFは当面圧迫される見通し。"
+  },
+  {
+    "slug": "sharp",
+    "name": "シャープ",
+    "nameEn": "Sharp",
+    "code": "6753",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 1,
+      "network": 1,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "鴻海傘下の家電・ディスプレイメーカー。再建途上で収益力の回復が課題",
+    "overview": "液晶ディスプレイを祖業とする家電メーカー。2016年に鴻海精密工業の傘下入り。白物家電・ディスプレイ・通信機器を展開。",
+    "moatSummary": "AQUOSブランドの認知度はあるが、持続的な競争優位は限定的。",
+    "fcfNote": "構造改革の途上でFCFの安定性に課題が残る。"
+  },
+  {
+    "slug": "tdk",
+    "name": "TDK",
+    "nameEn": "TDK",
+    "code": "6762",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "電子部品のグローバル大手。リチウムイオン電池とセンサーで車載・スマホ向けに成長",
+    "overview": "磁性材料技術を核とする電子部品大手。積層セラミックコンデンサ、リチウムイオン電池（ATL）、センサーが主力。車載向けが拡大。",
+    "moatSummary": "磁性材料・電池技術の蓄積と、ATLによるスマホ電池の圧倒的シェアが強み。",
+    "fcfNote": "電池事業の拡大投資でFCFは抑制傾向。"
+  },
+  {
+    "slug": "murata",
+    "name": "村田製作所",
+    "nameEn": "Murata Manufacturing",
+    "code": "6981",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 1,
+      "cost": 4,
+      "intangible": 5
+    },
+    "verdict": "積層セラミックコンデンサ世界首位。受動部品の覇者としてスマホ・EV・5Gの全てに不可欠",
+    "overview": "積層セラミックコンデンサ（MLCC）で世界シェア40%超の電子部品大手。スマホ・EV・5G基地局向けに幅広く供給。技術的参入障壁が極めて高い。",
+    "moatSummary": "MLCC微細化技術の圧倒的優位性と、規模効果によるコスト競争力が鉄壁の参入障壁。",
+    "fcfNote": "高利益率で潤沢なFCFを創出し、設備投資も自己資金で賄う。"
+  },
+  {
+    "slug": "alps-alpine",
+    "name": "アルプスアルパイン",
+    "nameEn": "Alps Alpine",
+    "code": "6770",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "車載HMI・電子部品の中堅メーカー。統合効果の発現が収益改善の鍵",
+    "overview": "電子部品（アルプス電気）と車載情報機器（アルパイン）が統合。タッチパネル・センサー等の車載HMI部品に注力。",
+    "moatSummary": "車載HMI分野の技術蓄積と、スイッチ・センサーの顧客基盤が一定の参入障壁。",
+    "fcfNote": "車載市場の変動を受けやすく、FCFは不安定。"
+  },
+  {
+    "slug": "nintendo",
+    "name": "任天堂",
+    "nameEn": "Nintendo",
+    "code": "7974",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 4,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "マリオ・ゼルダ・ポケモンのIP帝国。ハード×ソフト一体戦略でゲーム業界の唯一無二",
+    "overview": "家庭用ゲーム機とソフトウェアの開発・販売で世界的企業。Switch・マリオ・ゼルダ等の強力IPを保有。任天堂IPのメディアミックスも拡大。",
+    "moatSummary": "マリオ・ゼルダ等の世界的IPと、ハード×ソフト一体のエコシステムが参入障壁。",
+    "fcfNote": "ソフト販売の高利益率で潤沢なFCFを創出。ハード切替期は変動。"
+  },
+  {
+    "slug": "bandai-namco",
+    "name": "バンダイナムコHD",
+    "nameEn": "Bandai Namco Holdings",
+    "code": "7832",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 3,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "ガンダム・パックマンのIP経営企業。玩具からゲーム・映像までIPを多面展開",
+    "overview": "ガンダム・ドラゴンボール等の強力IPを核に、玩具・ゲーム・アミューズメント・映像を展開。IP軸の多面的収益化モデルが特徴。",
+    "moatSummary": "保有IPの圧倒的な質と量、そしてIP多面展開のノウハウが最大の競争優位。",
+    "fcfNote": "デジタルゲーム・トイのIP収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "square-enix",
+    "name": "スクウェア・エニックスHD",
+    "nameEn": "Square Enix Holdings",
+    "code": "9684",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 3,
+      "cost": 1,
+      "intangible": 5
+    },
+    "verdict": "FF・ドラクエの老舗ゲーム企業。大型タイトル依存でヒットの波が大きい",
+    "overview": "ファイナルファンタジー・ドラゴンクエスト等の大型RPGフランチャイズを保有するゲーム会社。出版・アミューズメント事業も展開。",
+    "moatSummary": "FF・ドラクエのフランチャイズ価値は高いが、ヒット依存の不安定さも内包。",
+    "fcfNote": "大型タイトルの発売年に集中し、FCFの年度変動が大きい。"
+  },
+  {
+    "slug": "capcom",
+    "name": "カプコン",
+    "nameEn": "Capcom",
+    "code": "9697",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "モンハン・バイオ・ストVのIPメーカー。旧作リマスター戦略で安定収益化に成功",
+    "overview": "モンスターハンター・バイオハザード・ストリートファイター等のゲームIPを保有。自社開発エンジンRE ENGINEで高品質タイトルを量産。",
+    "moatSummary": "強力IPの蓄積と自社ゲームエンジンによる開発効率が持続的な競争優位。",
+    "fcfNote": "デジタル販売比率の上昇で利益率・FCFともに改善傾向。"
+  },
+  {
+    "slug": "jal",
+    "name": "日本航空",
+    "nameEn": "Japan Airlines",
+    "code": "9201",
+    "industry": "air",
+    "industryName": "空運",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 3,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "再建後の高収益航空会社。品質重視のフルサービスキャリアとして国際線に強み",
+    "overview": "国内2大航空の一角。2010年の経営破綻から再建し、高い財務規律を維持。国際線ネットワークとワンワールド加盟が強み。",
+    "moatSummary": "羽田発着枠と国際路線ネットワーク、ワンワールド提携が参入障壁。",
+    "fcfNote": "航空需要回復でFCF改善も、燃料費変動リスクは残る。"
+  },
+  {
+    "slug": "ana",
+    "name": "ANAホールディングス",
+    "nameEn": "ANA Holdings",
+    "code": "9202",
+    "industry": "air",
+    "industryName": "空運",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 3,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "国内最大の航空グループ。羽田の発着枠と貨物事業で国内線は圧倒的",
+    "overview": "国内最大の航空会社グループ。国内線シェア首位。スターアライアンス加盟。ピーチ・アビエーションでLCC市場にも参入。",
+    "moatSummary": "国内線の発着枠優位と、スターアライアンスのネットワーク効果が参入障壁。",
+    "fcfNote": "航空需要回復で改善も、設備投資負担が重くFCFは限定的。"
+  },
+  {
+    "slug": "jr-east",
+    "name": "JR東日本",
+    "nameEn": "East Japan Railway",
+    "code": "9020",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 5,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "首都圏の鉄道独占企業。駅ナカ・Suica経済圏で交通インフラを超えた価値を創造",
+    "overview": "首都圏を中心に鉄道事業を運営する日本最大の鉄道会社。新幹線・在来線の運行に加え、駅ナカ商業施設・Suica・不動産開発を展開。",
+    "moatSummary": "首都圏鉄道網の地域独占と、駅・沿線資産の不動産価値が鉄壁の参入障壁。",
+    "fcfNote": "鉄道運賃収入は安定的だが、設備更新投資が重い。"
+  },
+  {
+    "slug": "jr-central",
+    "name": "JR東海",
+    "nameEn": "Central Japan Railway",
+    "code": "9022",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 5,
+      "cost": 4,
+      "intangible": 5
+    },
+    "verdict": "東海道新幹線という最強の独占資産。リニア建設の巨額投資が財務を圧迫",
+    "overview": "東海道新幹線を独占運営。東京-名古屋-大阪間の旅客輸送が収益の柱。リニア中央新幹線の建設を推進中。",
+    "moatSummary": "東海道新幹線の完全独占という参入障壁は日本企業最強レベル。",
+    "fcfNote": "新幹線のCFは潤沢だが、リニア投資で当面FCFは大幅に圧迫。"
+  },
+  {
+    "slug": "jr-west",
+    "name": "JR西日本",
+    "nameEn": "West Japan Railway",
+    "code": "9021",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 5,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "関西・山陽の鉄道網を支配。インバウンド需要の回復で業績改善が進む",
+    "overview": "関西・中国地方を中心に鉄道事業を運営。山陽新幹線・北陸新幹線・在来線を運行。不動産開発・ホテル事業も展開。",
+    "moatSummary": "関西圏の鉄道インフラ独占と、駅周辺不動産の開発力が競争優位。",
+    "fcfNote": "コスト削減と需要回復でFCF改善傾向。"
+  },
+  {
+    "slug": "tepco",
+    "name": "東京電力HD",
+    "nameEn": "Tokyo Electric Power Company",
+    "code": "9501",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 1,
+      "switching": 4,
+      "network": 5,
+      "cost": 3,
+      "intangible": 1
+    },
+    "verdict": "首都圏の電力インフラを握るが、福島原発の賠償・廃炉負担が長期重荷",
+    "overview": "首都圏に電力を供給する日本最大の電力会社。福島第一原発事故の賠償・廃炉費用を負担。実質国有化状態が続く。",
+    "moatSummary": "首都圏の送配電網独占は強固だが、原発事故の負の遺産が企業価値を毀損。",
+    "fcfNote": "賠償・廃炉費用の負担でFCFは構造的に圧迫。"
+  },
+  {
+    "slug": "kansai-elec",
+    "name": "関西電力",
+    "nameEn": "Kansai Electric Power",
+    "code": "9503",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 5,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "関西圏の電力インフラ企業。原発再稼働で収益力が大幅回復",
+    "overview": "関西地方に電力を供給する大手電力会社。原発再稼働の進展で電力各社の中で収益力が最も回復。送配電・小売を一体運営。",
+    "moatSummary": "関西圏の送配電インフラ独占と、原発再稼働による低コスト電源が競争優位。",
+    "fcfNote": "原発再稼働で燃料費が大幅減、FCFが改善。"
+  },
+  {
+    "slug": "osaka-gas",
+    "name": "大阪ガス",
+    "nameEn": "Osaka Gas",
+    "code": "9532",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "関西圏の都市ガス大手。電力・海外LNG事業への展開で安定成長を維持",
+    "overview": "関西地方に都市ガスを供給する大手ガス会社。電力小売、海外上流（LNG）事業にも展開。エネルギー多角化を推進。",
+    "moatSummary": "関西圏のガスパイプライン網の独占的ポジションが安定収益の基盤。",
+    "fcfNote": "規制事業の安定CFに加え、海外LNG事業が収益を上乗せ。"
+  },
+  {
+    "slug": "tokyo-gas",
+    "name": "東京ガス",
+    "nameEn": "Tokyo Gas",
+    "code": "9531",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 5,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "首都圏の都市ガスインフラ企業。LNG基地の大規模投資で安定供給を維持",
+    "overview": "首都圏に都市ガスを供給する最大手。LNG基地運営と電力事業にも注力。不動産開発も手がける。",
+    "moatSummary": "首都圏の広大なガスパイプライン網が最大の参入障壁。",
+    "fcfNote": "ガス供給の安定CFで堅実にFCFを創出。"
+  },
+  {
+    "slug": "chubu-elec",
+    "name": "中部電力",
+    "nameEn": "Chubu Electric Power",
+    "code": "9502",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 5,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "中部圏の電力供給を担う。JERAを通じた火力発電効率化が収益改善の鍵",
+    "overview": "中部地方に電力を供給。東京電力との合弁JERA（火力発電）を運営。送配電分離後の新たな事業モデルを模索中。",
+    "moatSummary": "中部圏の送配電インフラ独占とJERAの規模効率が強み。",
+    "fcfNote": "JERA統合効果でFCF改善が進む。"
+  },
+  {
+    "slug": "nippon-steel",
+    "name": "日本製鉄",
+    "nameEn": "Nippon Steel",
+    "code": "5401",
+    "industry": "iron-steel",
+    "industryName": "鉄鋼",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "粗鋼生産世界4位。高級鋼材の技術力で差別化するが、中国の過剰生産が脅威",
+    "overview": "日本最大の鉄鋼メーカー。自動車用高張力鋼板等の高級鋼材に強み。USスチール買収でグローバル展開を加速。",
+    "moatSummary": "自動車用高級鋼材の技術的優位性と、顧客との長期関係が競争優位。",
+    "fcfNote": "鉄鋼市況に大きく左右され、FCFの変動が大きい。"
+  },
+  {
+    "slug": "jfe",
+    "name": "JFEホールディングス",
+    "nameEn": "JFE Holdings",
+    "code": "5411",
+    "industry": "iron-steel",
+    "industryName": "鉄鋼",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "鉄鋼国内2位。エンジニアリング事業で収益の安定化を図る",
+    "overview": "国内鉄鋼2位のJFEスチールを中核に、エンジニアリング・商社事業を展開。電磁鋼板等の高機能鋼材に注力。",
+    "moatSummary": "電磁鋼板等の高機能鋼材技術と、エンジニアリング事業の安定収益が強み。",
+    "fcfNote": "鉄鋼市況の影響を強く受け、FCFは大きく変動。"
+  },
+  {
+    "slug": "sumitomo-elec",
+    "name": "住友電気工業",
+    "nameEn": "Sumitomo Electric Industries",
+    "code": "5802",
+    "industry": "nonferrous",
+    "industryName": "非鉄金属",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "電線・ワイヤーハーネス世界大手。自動車向けとインフラ向けの両輪で安定成長",
+    "overview": "電線・光ファイバー・ワイヤーハーネスで世界大手。自動車向けワイヤーハーネスはグローバルシェア上位。超硬工具・半導体材料も展開。",
+    "moatSummary": "ワイヤーハーネスのグローバル供給網と、光通信・超硬工具の技術力が強み。",
+    "fcfNote": "自動車需要に連動するが、多角化で比較的安定したFCF。"
+  },
+  {
+    "slug": "furukawa-elec",
+    "name": "古河電気工業",
+    "nameEn": "Furukawa Electric",
+    "code": "5801",
+    "industry": "nonferrous",
+    "industryName": "非鉄金属",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "電線・光ファイバーの老舗。データセンター向け光ファイバー需要が追い風",
+    "overview": "電線・光ファイバーの大手メーカー。データセンター向け光ファイバーケーブルの需要拡大が成長ドライバー。自動車部品も展開。",
+    "moatSummary": "光ファイバー技術の蓄積とデータセンター向け需要の取り込みが成長の鍵。",
+    "fcfNote": "インフラ投資の波に左右されるがデータセンター需要が下支え。"
+  },
+  {
+    "slug": "bridgestone",
+    "name": "ブリヂストン",
+    "nameEn": "Bridgestone",
+    "code": "5108",
+    "industry": "rubber",
+    "industryName": "ゴム",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 3,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "タイヤ世界首位。プレミアムタイヤとソリューション事業で高付加価値化を推進",
+    "overview": "タイヤ売上高で世界首位。プレミアムタイヤに注力し、ソリューション（フリート管理等）事業を強化。グローバル生産体制を持つ。",
+    "moatSummary": "世界最大のタイヤブランド力と、グローバル生産・販売網の規模効果が参入障壁。",
+    "fcfNote": "プレミアム戦略で利益率改善、安定的にFCFを創出。"
+  },
+  {
+    "slug": "yokohama-rubber",
+    "name": "横浜ゴム",
+    "nameEn": "Yokohama Rubber",
+    "code": "5101",
+    "industry": "rubber",
+    "industryName": "ゴム",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "タイヤ国内3位。農機・建機用タイヤのM&AでニッチセグメントでシェアForce拡大",
+    "overview": "タイヤ国内3位。乗用車用に加え、オフハイウェイタイヤ（農機・建機用）の買収で事業拡大。ゴルフ用品のPRGRブランドも展開。",
+    "moatSummary": "オフハイウェイタイヤのニッチ市場での地位と、PRGR等の多角化が差別化。",
+    "fcfNote": "タイヤ需要は安定的だが、M&A投資でFCFは一時的に圧迫。"
+  },
+  {
+    "slug": "kao",
+    "name": "花王",
+    "nameEn": "Kao",
+    "code": "4452",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "日用品・化粧品の国内トップ。連続増配記録は日本企業最長クラス",
+    "overview": "日用品（洗剤・衛生用品）と化粧品で国内トップ。研究開発力を活かした素材技術にも強み。33期連続増配の実績。",
+    "moatSummary": "消費者の強いブランドロイヤルティと、界面科学技術の蓄積が持続的な競争優位。",
+    "fcfNote": "日用品の安定需要で毎年安定的にFCFを創出。"
+  },
+  {
+    "slug": "lion",
+    "name": "ライオン",
+    "nameEn": "Lion",
+    "code": "4912",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "歯磨き・洗剤の老舗日用品メーカー。アジア展開と口腔ケアが成長ドライバー",
+    "overview": "歯磨き粉・洗剤・医薬品を展開する日用品メーカー。クリニカ・キレイキレイ等のブランドを保有。東南アジア事業が拡大中。",
+    "moatSummary": "口腔ケアでの専門ブランド力とアジア市場での浸透が差別化。",
+    "fcfNote": "日用品の安定需要で堅実なFCF創出を維持。"
+  },
+  {
+    "slug": "unicharm",
+    "name": "ユニ・チャーム",
+    "nameEn": "Unicharm",
+    "code": "8113",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "紙おむつ・生理用品でアジア首位。新興国の人口増と所得向上が構造的追い風",
+    "overview": "ベビーケア・フェミニンケア・ペットケアでアジア首位級。アジア新興国での圧倒的なブランド力とシェアが成長エンジン。",
+    "moatSummary": "アジアでの先行者優位とブランド浸透度、そして生産・物流効率が参入障壁。",
+    "fcfNote": "アジア成長市場からの安定CFで潤沢なFCFを創出。"
+  },
+  {
+    "slug": "canon",
+    "name": "キヤノン",
+    "nameEn": "Canon",
+    "code": "7751",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "カメラ・複合機の世界大手。半導体露光装置と監視カメラで次の成長を狙う",
+    "overview": "カメラ・複合機で世界大手。半導体露光装置（ナノインプリント）、ネットワークカメラ、医療機器に事業を多角化。",
+    "moatSummary": "光学技術の蓄積と、複合機のストック型ビジネスモデルが安定収益の源泉。",
+    "fcfNote": "複合機の消耗品収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "ricoh",
+    "name": "リコー",
+    "nameEn": "Ricoh",
+    "code": "7752",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "OA機器大手がデジタルサービスへ転換中。ペーパーレス化への対応が急務",
+    "overview": "複合機・プリンターを主力とするOA機器メーカー。デジタルサービス企業への転換を推進。ITサービス・商業印刷が成長分野。",
+    "moatSummary": "複合機の既存顧客基盤とサービス契約が一定のスイッチングコストを形成。",
+    "fcfNote": "ハードウェアの収益性低下でFCF改善は緩やか。"
+  },
+  {
+    "slug": "brother",
+    "name": "ブラザー工業",
+    "nameEn": "Brother Industries",
+    "code": "6448",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "プリンター・ミシンのグローバルニッチ企業。消耗品ビジネスで安定収益",
+    "overview": "プリンター・複合機、産業用ミシン、工作機械を展開するグローバルメーカー。インクジェット複合機でニッチシェアを持つ。",
+    "moatSummary": "インクジェット複合機のコスト競争力と、消耗品のリカーリング収益が強み。",
+    "fcfNote": "消耗品売上の比率が高く、安定的なFCFを確保。"
+  },
+  {
+    "slug": "subaru",
+    "name": "SUBARU",
+    "nameEn": "Subaru",
+    "code": "7270",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 1,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "水平対向エンジンとAWDで北米市場に熱狂的ファン。ニッチ戦略の成功例",
+    "overview": "水平対向エンジン・シンメトリカルAWD・アイサイトを武器に北米市場で独自のポジションを確立。トヨタとの資本提携で電動化を推進。",
+    "moatSummary": "水平対向エンジン×AWDの独自技術と、北米での熱烈なブランドロイヤルティが強み。",
+    "fcfNote": "北米販売好調時は潤沢なFCFを創出。"
+  },
+  {
+    "slug": "mazda",
+    "name": "マツダ",
+    "nameEn": "Mazda",
+    "code": "7261",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 1,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "走りとデザインの独自路線。SKYACTIV技術で差別化するが規模の壁に直面",
+    "overview": "独自のSKYACTIV技術とデザイン哲学「魂動」で差別化する自動車メーカー。北米・欧州市場に注力。トヨタと提携関係。",
+    "moatSummary": "SKYACTIV技術と魂動デザインの独自性がブランド差別化要因。",
+    "fcfNote": "販売台数の変動でFCFは不安定な傾向。"
+  },
+  {
+    "slug": "suzuki",
+    "name": "スズキ",
+    "nameEn": "Suzuki Motor",
+    "code": "7269",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 5,
+      "intangible": 3
+    },
+    "verdict": "軽自動車とインド市場の二刀流。コスト競争力でアジア新興国を席巻",
+    "overview": "軽自動車で国内トップクラス。インド市場ではマルチスズキを通じてシェア40%超の圧倒的首位。小型車のコスト競争力が武器。",
+    "moatSummary": "インド市場の圧倒的シェアと、小型車製造のコスト効率が最大の競争優位。",
+    "fcfNote": "インド事業の高成長で安定的かつ成長するFCFを創出。"
+  },
+  {
+    "slug": "yamaha-motor",
+    "name": "ヤマハ発動機",
+    "nameEn": "Yamaha Motor",
+    "code": "7272",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "二輪車世界2位。マリン・ロボティクスの多角化で趣味性の高い製品群を展開",
+    "overview": "二輪車で世界2位。船外機・ボート等のマリン事業、産業用ロボット・ドローンにも展開。新興国二輪と先進国マリンが二本柱。",
+    "moatSummary": "二輪・マリンのブランド力と、多角化された事業ポートフォリオが安定性の源泉。",
+    "fcfNote": "二輪・マリンの安定需要で堅実なFCF創出。"
+  },
+  {
+    "slug": "nippon-express",
+    "name": "NIPPON EXPRESSホールディングス",
+    "nameEn": "Nippon Express Holdings",
+    "code": "9147",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 4,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "総合物流の国内最大手。グローバル物流ネットワークの拡充で成長を図る",
+    "overview": "国内最大の総合物流企業。陸・海・空の全モードをカバーし、国際フォワーディングにも強み。海外M&Aでグローバル展開を加速。",
+    "moatSummary": "全モードカバーの総合物流網と、国際フォワーディングのネットワークが参入障壁。",
+    "fcfNote": "物流事業の安定需要で堅実なFCFを創出。"
+  },
+  {
+    "slug": "yamato",
+    "name": "ヤマトHD",
+    "nameEn": "Yamato Holdings",
+    "code": "9064",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 5,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "宅急便の代名詞。EC拡大の恩恵を受けるも、ドライバー不足と料金適正化が課題",
+    "overview": "宅急便で国内シェア首位。EC拡大で取扱個数が増加する一方、人手不足と物流2024年問題への対応が経営課題。",
+    "moatSummary": "宅急便ネットワークの密度と、クロネコブランドの圧倒的認知が参入障壁。",
+    "fcfNote": "取扱個数増で売上成長もコスト上昇でFCFマージンは圧迫。"
+  },
+  {
+    "slug": "otsuka",
+    "name": "大塚HD",
+    "nameEn": "Otsuka Holdings",
+    "code": "4578",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "ポカリスエットとエビリファイの二面性。医薬と消費者製品の独特な組み合わせ",
+    "overview": "大塚製薬（医薬品・ポカリスエット）を中核とする持株会社。精神神経領域の医薬品と、消費者製品（ポカリ・カロリーメイト）の二本柱。",
+    "moatSummary": "精神神経領域の新薬パイプラインと、ポカリ等の消費者ブランドの二重の強み。",
+    "fcfNote": "消費者製品の安定CFが医薬品の研究開発投資を支える構造。"
+  },
+  {
+    "slug": "astellas",
+    "name": "アステラス製薬",
+    "nameEn": "Astellas Pharma",
+    "code": "4503",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "泌尿器・移植領域から次の柱を模索。PADCEV等の新薬が将来の収益を左右",
+    "overview": "泌尿器科・移植領域に強みを持つ製薬大手。がん領域のPADCEV（ADC薬）が新たな成長ドライバーとして期待される。",
+    "moatSummary": "泌尿器・移植領域の専門性と、ADC薬PADCEVの成長ポテンシャルが競争優位。",
+    "fcfNote": "既存薬の特許切れリスクがあり、FCFは過渡期。"
+  },
+  {
+    "slug": "ono-pharma",
+    "name": "小野薬品工業",
+    "nameEn": "Ono Pharmaceutical",
+    "code": "4528",
+    "industry": "pharma",
+    "industryName": "医薬品",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "オプジーボの生みの親。免疫チェックポイント阻害剤のパイオニアとしての地位を確立",
+    "overview": "がん免疫治療薬オプジーボを創出した創薬型製薬企業。免疫・腫瘍領域に注力し、創薬力は国内トップクラス。",
+    "moatSummary": "オプジーボの創出に象徴される免疫領域の創薬力と、特許群が最大の資産。",
+    "fcfNote": "オプジーボの安定的なロイヤリティ・売上でFCFは潤沢。"
+  },
+  {
+    "slug": "dai-nippon-printing",
+    "name": "大日本印刷",
+    "nameEn": "Dai Nippon Printing",
+    "code": "7912",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "印刷の枠を超えた総合加工メーカー。半導体フォトマスクと電子部品が成長分野",
+    "overview": "印刷技術を核に、パッケージ・ディスプレイ部材・半導体フォトマスク・情報セキュリティまで展開。印刷を超えた精密加工企業。",
+    "moatSummary": "微細加工技術の蓄積と半導体フォトマスクの高シェアが技術的参入障壁。",
+    "fcfNote": "印刷事業の安定CFに加え、高付加価値事業が利益率を押し上げ。"
+  },
+  {
+    "slug": "toppan",
+    "name": "TOPPANホールディングス",
+    "nameEn": "Toppan Holdings",
+    "code": "7911",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "印刷大手がDX・半導体材料に転換。フォトマスクブランクスで世界大手",
+    "overview": "印刷事業を祖業に、半導体フォトマスク・ディスプレイ関連材料・DXソリューションへ転換中。エレクトロニクス分野が成長ドライバー。",
+    "moatSummary": "印刷由来の微細加工技術と、フォトマスク事業の高い技術参入障壁が強み。",
+    "fcfNote": "構造転換の投資が続くが、エレクトロニクス事業がFCFを改善。"
+  },
+  {
+    "slug": "hoya",
+    "name": "HOYA",
+    "nameEn": "Hoya",
+    "code": "7741",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 1,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "半導体マスクブランクスと内視鏡で世界首位級。高利益率のニッチトップ企業",
+    "overview": "半導体用マスクブランクス・EUVマスク関連で世界トップシェア。眼鏡レンズ・内視鏡も展開。営業利益率30%超の高収益体質。",
+    "moatSummary": "EUVマスクブランクスの独占的地位と、精密光学技術の蓄積が鉄壁の参入障壁。",
+    "fcfNote": "高利益率事業の組み合わせで極めて潤沢なFCFを創出。"
+  },
+  {
+    "slug": "olympus",
+    "name": "オリンパス",
+    "nameEn": "Olympus",
+    "code": "7733",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "消化器内視鏡で世界シェア7割。医療機器専業への転換で高収益化が加速",
+    "overview": "消化器内視鏡で世界シェア約70%の圧倒的首位。カメラ事業を売却し、医療機器専業へ転換。治療機器分野の強化を推進。",
+    "moatSummary": "内視鏡の圧倒的シェアと、医師のトレーニング体系が最強レベルのスイッチングコスト。",
+    "fcfNote": "医療機器専業化で利益率改善、安定的にFCFを創出。"
+  },
+  {
+    "slug": "terumo",
+    "name": "テルモ",
+    "nameEn": "Terumo",
+    "code": "4543",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "カテーテルとシリンジで世界大手。心臓血管領域に特化した成長戦略",
+    "overview": "カテーテル・シリンジ等の医療機器メーカー。心臓血管カテーテルで世界大手。血液・細胞テクノロジー分野にも注力。",
+    "moatSummary": "心臓血管カテーテルの技術力と、医療現場への深い浸透が競争優位。",
+    "fcfNote": "医療機器の安定需要で着実にFCFを創出。"
+  },
+  {
+    "slug": "rakuten",
+    "name": "楽天グループ",
+    "nameEn": "Rakuten Group",
+    "code": "4755",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 4,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "EC・フィンテック・モバイルの楽天経済圏。携帯参入の巨額投資が財務を大きく圧迫中",
+    "overview": "EC「楽天市場」を核に、金融・モバイル・トラベル等のサービスを展開。楽天ポイントで顧客を囲い込む経済圏戦略。モバイル事業が大赤字。",
+    "moatSummary": "楽天ポイント経済圏のクロスセル効果とネットワーク効果が最大の資産。",
+    "fcfNote": "モバイル投資で巨額の赤字・資金流出が続き、FCFは大幅マイナス。"
+  },
+  {
+    "slug": "z-holdings",
+    "name": "LINEヤフー",
+    "nameEn": "LY Corporation",
+    "code": "4689",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 5,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "LINE×Yahoo!の国内最大プラットフォーム。ユーザー基盤は圧倒的だが収益化に課題",
+    "overview": "LINE・Yahoo! JAPAN・PayPayを統合した国内最大のネットプラットフォーム企業。メッセージング・検索・決済を一体運営。",
+    "moatSummary": "LINEの9000万ユーザーとYahoo!の検索・メディアが強力なネットワーク効果を形成。",
+    "fcfNote": "プラットフォーム収益は安定的だがモバイル投資との連結でFCFは圧迫。"
+  },
+  {
+    "slug": "renesas",
+    "name": "ルネサスエレクトロニクス",
+    "nameEn": "Renesas Electronics",
+    "code": "6723",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "車載マイコン世界首位。M&Aでアナログ半導体も強化し、車載半導体の総合力で勝負",
+    "overview": "車載マイコンで世界シェア首位。アナログ半導体の買収（Dialog、Intersil等）でポートフォリオを拡充。自動車のEV・ADAS化が追い風。",
+    "moatSummary": "車載マイコンの圧倒的シェアと、自動車メーカーとの長期供給関係が参入障壁。",
+    "fcfNote": "半導体サイクルの影響はあるが、車載需要の構造成長でFCF改善。"
+  },
+  {
+    "slug": "tokyo-electron",
+    "name": "東京エレクトロン",
+    "nameEn": "Tokyo Electron",
+    "code": "8035",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "半導体製造装置で世界3位。コータ/デベロッパとエッチング装置が収益の柱",
+    "overview": "半導体製造装置で世界シェア3位。コータ/デベロッパで世界首位、エッチング装置でも上位。最先端半導体の微細化に不可欠な存在。",
+    "moatSummary": "コータ/デベロッパの独占的地位と、顧客の製造プロセスへの深い組み込みが鉄壁の堀。",
+    "fcfNote": "半導体投資サイクルに連動するが、好況期は極めて潤沢なFCF。"
+  },
+  {
+    "slug": "advantest",
+    "name": "アドバンテスト",
+    "nameEn": "Advantest",
+    "code": "6857",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "半導体テスタで世界首位。AI半導体の複雑化でテスト需要が構造的に拡大",
+    "overview": "半導体テスト装置（テスタ）で世界シェア首位。AI向けGPU等の高性能半導体のテスト需要拡大が追い風。メモリテスタにも強み。",
+    "moatSummary": "テスタの技術的参入障壁と、半導体メーカーとの密接な開発連携が競争優位。",
+    "fcfNote": "AI半導体需要でテスタ好況が続き、FCFは高水準。"
+  },
+  {
+    "slug": "screen",
+    "name": "SCREENホールディングス",
+    "nameEn": "Screen Holdings",
+    "code": "7735",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 1,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "半導体洗浄装置で世界首位。微細化の進展で洗浄工程の重要性が増す",
+    "overview": "半導体用洗浄装置で世界シェア首位。枚葉式洗浄装置が主力。ディスプレイ製造装置・印刷機器も展開。",
+    "moatSummary": "洗浄技術の専門性と、半導体製造プロセスへの組み込みがスイッチングコストを形成。",
+    "fcfNote": "半導体投資サイクルに連動するが、洗浄装置需要は構造的に拡大。"
+  },
+  {
+    "slug": "rohm",
+    "name": "ローム",
+    "nameEn": "Rohm",
+    "code": "6963",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "SiCパワー半導体で世界先行。車載向け電動化の恩恵を受ける京都の半導体メーカー",
+    "overview": "SiC（炭化ケイ素）パワー半導体で世界先行するアナログ半導体メーカー。車載向けパワー半導体とLSIが主力。京都発の技術志向企業。",
+    "moatSummary": "SiCパワー半導体の先行投資と技術蓄積がEV時代の競争優位。",
+    "fcfNote": "SiC大型投資で当面FCFは圧迫されるが、将来の収穫期に期待。"
+  },
+  {
+    "slug": "td-holdings",
+    "name": "T&Dホールディングス",
+    "nameEn": "T&D Holdings",
+    "code": "8795",
+    "industry": "insurance",
+    "industryName": "保険",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "太陽生命・大同生命・T&Dフィナンシャル生命の3社体制。中小企業向けに強み",
+    "overview": "太陽生命・大同生命を中核とする生保グループ。中小企業経営者向け保険に強みを持つ大同生命が収益の柱。",
+    "moatSummary": "中小企業経営者向け保険の専門性と、税理士チャネルの独自販売網が差別化。",
+    "fcfNote": "生保の安定的な保険料収入でCFは比較的安定。"
+  },
+  {
+    "slug": "kubota",
+    "name": "クボタ",
+    "nameEn": "Kubota",
+    "code": "6326",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "小型農機・建機で世界首位級。食料・水インフラの課題解決企業として成長",
+    "overview": "小型農業機械・小型建設機械で世界トップクラスのシェア。水環境インフラ事業も展開。北米・アジアでの販売が拡大中。",
+    "moatSummary": "小型農機の圧倒的なディーラーネットワークと、ブランド信頼性が参入障壁。",
+    "fcfNote": "農機需要は比較的安定しており、堅実にFCFを創出。"
+  },
+  {
+    "slug": "yaskawa",
+    "name": "安川電機",
+    "nameEn": "Yaskawa Electric",
+    "code": "6506",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "ACサーボモータ世界首位。産業用ロボットでも世界大手の製造業自動化の牽引役",
+    "overview": "ACサーボモータ・インバータで世界トップシェア。産業用ロボットでも世界4大メーカーの一角。工場自動化の中核技術を提供。",
+    "moatSummary": "サーボモータの技術的優位性と、FA顧客基盤のスイッチングコストが競争優位。",
+    "fcfNote": "FA需要の循環変動を受けるが、自動化トレンドで中期的にFCF成長。"
+  },
+  {
+    "slug": "sekisui-house",
+    "name": "積水ハウス",
+    "nameEn": "Sekisui House",
+    "code": "1928",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "戸建住宅のトップブランド。米国住宅事業が新たな成長エンジンに",
+    "overview": "プレハブ住宅の最大手。高品質な戸建住宅「シャーウッド」「IS」シリーズで知られる。米国住宅事業を買収で拡大中。",
+    "moatSummary": "住宅ブランドの信頼性と、アフターサービス網による顧客囲い込みが競争優位。",
+    "fcfNote": "住宅・不動産の安定CFで堅実にFCFを創出。"
+  },
+  {
+    "slug": "sekisui-chem",
+    "name": "積水化学工業",
+    "nameEn": "Sekisui Chemical",
+    "code": "4204",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "住宅と高機能素材の二刀流。セキスイハイムとインフラ用配管材が収益の柱",
+    "overview": "ユニット住宅「セキスイハイム」と高機能プラスチック・配管材を展開する化学メーカー。住宅と素材のバランス型経営が特徴。",
+    "moatSummary": "ユニット住宅の工場生産技術と、高機能中間膜の世界シェアが差別化要因。",
+    "fcfNote": "住宅・素材のバランスで安定的なFCF創出。"
+  },
+  {
+    "slug": "asahi-group",
+    "name": "アサヒグループHD",
+    "nameEn": "Asahi Group Holdings",
+    "code": "2502",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "スーパードライで国内ビール首位。欧州・豪州買収でグローバルビール企業に成長",
+    "overview": "ビール国内首位「スーパードライ」を擁する。欧州（旧SABミラー）・豪州のビール事業買収でグローバル化。飲料・食品も展開。",
+    "moatSummary": "スーパードライのブランド力と、海外ビール事業のプレミアムポートフォリオが強み。",
+    "fcfNote": "ビール事業の安定CFで買収負債の返済とFCF確保を両立。"
+  },
+  {
+    "slug": "nec",
+    "name": "日本電気",
+    "nameEn": "NEC",
+    "code": "6701",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "ITサービスと5G基地局で復活。顔認証技術は世界トップレベル",
+    "overview": "ITサービス・通信インフラを主力とする電機メーカー。顔認証技術は世界最高精度。5G基地局でグローバルシェア獲得を狙う。",
+    "moatSummary": "官公庁ITシステムの高いスイッチングコストと、顔認証技術の世界的評価が強み。",
+    "fcfNote": "ITサービスの安定収益でFCF改善が進む。"
+  },
+  {
+    "slug": "toshiba",
+    "name": "東芝",
+    "nameEn": "Toshiba",
+    "code": "6502",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "日本産業技術の老舗がTOB で非公開化。社会インフラ・半導体・量子技術に注力",
+    "overview": "社会インフラ・エネルギー・半導体・デジタルを展開する総合電機メーカー。2023年にJIPによるTOBで上場廃止。再建途上。",
+    "moatSummary": "原子力・パワーエレクトロニクスの技術蓄積と、インフラ顧客基盤が残存する強み。",
+    "fcfNote": "事業再編途上でFCFの方向性は不透明。"
+  },
+  {
+    "slug": "ihi",
+    "name": "IHI",
+    "nameEn": "IHI",
+    "code": "7013",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "航空エンジン・ターボで世界大手。防衛・宇宙関連の需要拡大も追い風",
+    "overview": "航空エンジン部品・ターボチャージャー・橋梁・プラントを手がける重工メーカー。航空エンジンの保守・補修（MRO）が安定収益源。",
+    "moatSummary": "航空エンジン部品の技術蓄積とMRO事業のリカーリング収益が競争優位。",
+    "fcfNote": "航空エンジンMROの安定CFが設備投資をカバー。"
+  },
+  {
+    "slug": "kawasaki-heavy",
+    "name": "川崎重工業",
+    "nameEn": "Kawasaki Heavy Industries",
+    "code": "7012",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "二輪・航空・造船・ロボットの多角重工。水素関連技術で次世代のポジション確立を狙う",
+    "overview": "二輪車（Ninja等）・航空機部品・鉄道車両・産業用ロボット・船舶を幅広く展開する重工メーカー。水素関連事業にも注力。",
+    "moatSummary": "二輪ブランド力と重工技術の幅広い蓄積が多角化の基盤。",
+    "fcfNote": "多角化事業の組み合わせでFCFは変動するが分散効果あり。"
+  },
+  {
+    "slug": "kobe-steel",
+    "name": "神戸製鋼所",
+    "nameEn": "Kobe Steel",
+    "code": "5406",
+    "industry": "iron-steel",
+    "industryName": "鉄鋼",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 2,
+      "network": 1,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "鉄鋼・アルミ・機械の複合メーカー。自動車向けアルミ材が差別化ポイント",
+    "overview": "鉄鋼・アルミニウム・銅・機械を展開する素材メーカー。自動車軽量化向けアルミ材に強み。データ改ざん問題を経て信頼回復に取り組む。",
+    "moatSummary": "アルミ・銅の加工技術と、素材×機械の複合提案力が差別化要因。",
+    "fcfNote": "鉄鋼市況と設備投資の影響でFCFは変動が大きい。"
+  },
+  {
+    "slug": "sumitomo-chem",
+    "name": "住友化学",
+    "nameEn": "Sumitomo Chemical",
+    "code": "4005",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "農薬・医薬に強みを持つ総合化学。石化の低迷で業績変動が大きい",
+    "overview": "石油化学・エネルギー・情報電子・農薬・医薬品を展開する総合化学メーカー。農薬で世界大手。住友ファーマの業績悪化が課題。",
+    "moatSummary": "農薬のグローバル事業基盤と、素材技術の蓄積が一定の競争優位。",
+    "fcfNote": "石化の市況変動と医薬の減損リスクでFCFは不安定。"
+  },
+  {
+    "slug": "mitsui-chem",
+    "name": "三井化学",
+    "nameEn": "Mitsui Chemicals",
+    "code": "4183",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "機能性素材に強みを持つ総合化学。眼鏡レンズ材料で世界トップシェア",
+    "overview": "機能性素材・モビリティ・ヘルスケア・基盤素材の4セグメント。眼鏡レンズ用素材で世界首位。自動車・ICT向け高機能素材に注力。",
+    "moatSummary": "眼鏡レンズ材料の独占的ポジションと、機能性素材の技術力が差別化。",
+    "fcfNote": "機能性素材の高利益率が石化の変動を緩和し、FCFは改善傾向。"
+  },
+  {
+    "slug": "toray",
+    "name": "東レ",
+    "nameEn": "Toray Industries",
+    "code": "3402",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "炭素繊維で世界首位。航空機・EV向けの軽量化素材で構造的な需要拡大",
+    "overview": "炭素繊維で世界シェア首位。航空機（ボーイング向け）・自動車向けの軽量化素材が成長ドライバー。水処理膜・フィルムも世界大手。",
+    "moatSummary": "炭素繊維の技術的参入障壁と、ボーイングとの長期供給契約が鉄壁の競争優位。",
+    "fcfNote": "炭素繊維の長期契約で安定的なCFを確保しつつ成長投資。"
+  },
+  {
+    "slug": "nitto-denko",
+    "name": "日東電工",
+    "nameEn": "Nitto Denko",
+    "code": "6988",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 1,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "ニッチトップ戦略の機能性素材メーカー。偏光板・核酸医薬で独自ポジション",
+    "overview": "偏光板・粘着テープ・分離膜等の機能性素材に特化。グローバルニッチトップ戦略で高利益率を実現。核酸医薬CDMOも育成中。",
+    "moatSummary": "ニッチ市場での圧倒的シェアと、顧客プロセスへの深い組み込みが競争優位。",
+    "fcfNote": "高利益率の機能性素材で安定的にFCFを創出。"
+  },
+  {
+    "slug": "sumitomo-metal-mining",
+    "name": "住友金属鉱山",
+    "nameEn": "Sumitomo Metal Mining",
+    "code": "5713",
+    "industry": "nonferrous",
+    "industryName": "非鉄金属",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "金・銅・ニッケルの資源メジャー。EV向け電池材料が新たな成長軸",
+    "overview": "金・銅・ニッケルの鉱山開発から製錬まで一貫体制の非鉄金属メーカー。EV向けニッケル系正極材料の生産にも注力。",
+    "moatSummary": "鉱山権益の保有と製錬技術の蓄積が長期的な競争優位を形成。",
+    "fcfNote": "金属価格に大きく連動し、FCFの変動は大きい。"
+  },
+  {
+    "slug": "daiwa-securities",
+    "name": "大和証券グループ本社",
+    "nameEn": "Daiwa Securities Group",
+    "code": "8601",
+    "industry": "securities",
+    "industryName": "証券",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 3,
+      "cost": 2,
+      "intangible": 2
+    },
+    "verdict": "国内証券2位。リテール・ホールセールのバランス型経営で市場変動を乗り切る",
+    "overview": "国内証券業界2位。個人向けリテールと法人向けホールセール（投資銀行業務）をバランスよく展開。資産管理型ビジネスへ転換中。",
+    "moatSummary": "リテール顧客基盤と投資銀行の案件実績が一定の競争優位。",
+    "fcfNote": "市場環境に左右されやすく、FCFは大きく変動。"
+  },
+  {
+    "slug": "nomura",
+    "name": "野村ホールディングス",
+    "nameEn": "Nomura Holdings",
+    "code": "8604",
+    "industry": "securities",
+    "industryName": "証券",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 3,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "日本最大の証券グループ。グローバル投資銀行を目指すも海外の収益化が長年の課題",
+    "overview": "国内最大の証券会社。リテール・アセットマネジメント・ホールセールの3部門を展開。グローバルな投資銀行業務の拡大を推進。",
+    "moatSummary": "国内リテールの圧倒的なプレゼンスと、アジアでの投資銀行業務の実績が強み。",
+    "fcfNote": "市場環境への依存度が高く、FCFの安定性は限定的。"
+  },
+  {
+    "slug": "orix",
+    "name": "オリックス",
+    "nameEn": "Orix",
+    "code": "8591",
+    "industry": "other-finance",
+    "industryName": "その他金融",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "リースから多角化した金融・事業コングロマリット。ROEの高さが光る",
+    "overview": "リースを祖業に、不動産・PE投資・環境エネルギー・空港運営・保険まで多角展開。隣接領域への拡大で独自のポートフォリオを構築。",
+    "moatSummary": "事業の多角化と、異業種を横断する目利き力が模倣困難な競争優位。",
+    "fcfNote": "多様な事業からのCFで安定的にFCFを創出。"
+  },
+  {
+    "slug": "sbi",
+    "name": "SBIホールディングス",
+    "nameEn": "SBI Holdings",
+    "code": "8473",
+    "industry": "securities",
+    "industryName": "証券",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 4,
+      "cost": 4,
+      "intangible": 3
+    },
+    "verdict": "ネット証券首位からフィンテック帝国へ。手数料無料化で業界ルールを書き換える",
+    "overview": "SBI証券を中核にネット金融サービスを展開。証券・銀行・保険・暗号資産・地銀連携と多角化。手数料無料化で業界を主導。",
+    "moatSummary": "ネット証券の圧倒的なコスト優位性と、金融エコシステムのネットワーク効果。",
+    "fcfNote": "証券手数料無料化で収益構造転換中、FCFは過渡期。"
+  },
+  {
+    "slug": "nissan",
+    "name": "日産自動車",
+    "nameEn": "Nissan Motor",
+    "code": "7201",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "EV先駆者リーフの遺産を活かせるか。ルノーとの関係再構築とホンダ統合構想が焦点",
+    "overview": "日本3位の自動車メーカー。EV先駆者としてリーフを投入。ルノーとのアライアンス再構築中。ホンダとの経営統合協議が注目される。",
+    "moatSummary": "グローバルな生産拠点網とEV技術の蓄積が残存資産。",
+    "fcfNote": "業績低迷でFCFは不安定、構造改革の進展が鍵。"
+  },
+  {
+    "slug": "isuzu",
+    "name": "いすゞ自動車",
+    "nameEn": "Isuzu Motors",
+    "code": "7202",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "トラック・ディーゼルエンジンの専業メーカー。アジアの商用車需要が成長エンジン",
+    "overview": "中小型トラックで国内シェア首位。ディーゼルエンジン技術に強み。タイ等の東南アジアでピックアップトラックが高シェア。",
+    "moatSummary": "商用車のディーラーネットワークとディーゼル技術の蓄積が参入障壁。",
+    "fcfNote": "商用車需要の安定性でFCFは比較的堅実。"
+  },
+  {
+    "slug": "yamaha",
+    "name": "ヤマハ",
+    "nameEn": "Yamaha",
+    "code": "7951",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "楽器で世界首位。音・音楽の技術を軸にした独自のブランドエコシステム",
+    "overview": "ピアノ・ギター等の楽器で世界最大手。音響機器・音楽教室・半導体（音源IC）も展開。ブランドと技術の一体経営。",
+    "moatSummary": "楽器のグローバルブランド力と、音響技術の蓄積が模倣困難な参入障壁。",
+    "fcfNote": "楽器の安定需要と音響機器で堅実にFCFを創出。"
+  },
+  {
+    "slug": "casio",
+    "name": "カシオ計算機",
+    "nameEn": "Casio Computer",
+    "code": "6952",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "G-SHOCKと関数電卓で世界的ブランド。時計のプレミアム化が収益改善の鍵",
+    "overview": "G-SHOCKブランドの時計、関数電卓、電子辞書、楽器を展開。G-SHOCKのプレミアム化戦略で時計事業の利益率を向上中。",
+    "moatSummary": "G-SHOCKと関数電卓のグローバルブランド力が最大の競争優位。",
+    "fcfNote": "時計のプレミアム化で利益率改善、安定的なFCF。"
+  },
+  {
+    "slug": "seiko-epson",
+    "name": "セイコーエプソン",
+    "nameEn": "Seiko Epson",
+    "code": "6724",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "インクジェットプリンターの技術リーダー。大容量インクタンクモデルで新興国を開拓",
+    "overview": "インクジェットプリンター・プロジェクター・ロボットを展開。大容量インクタンクプリンターが新興国で高い支持を獲得。",
+    "moatSummary": "マイクロピエゾ技術の独自性と、大容量インクタンクの先行者優位が差別化。",
+    "fcfNote": "プリンター消耗品の安定収益でFCFは堅実。"
+  },
+  {
+    "slug": "yokogawa",
+    "name": "横河電機",
+    "nameEn": "Yokogawa Electric",
+    "code": "6841",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 5,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "プロセス制御で世界大手。プラント向けDCSの高いスイッチングコストが収益基盤",
+    "overview": "プロセス制御（DCS）・計測機器で世界大手。石油・化学・薬品プラント向け制御システムが主力。リカーリング比率の向上を推進。",
+    "moatSummary": "プラント制御システムの極めて高いスイッチングコストと、安全性認証が参入障壁。",
+    "fcfNote": "制御システムのメンテナンス収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "nsk",
+    "name": "日本精工",
+    "nameEn": "NSK",
+    "code": "6471",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "ベアリング世界3位。自動車・産業機械向けの精密軸受技術が強み",
+    "overview": "ベアリング（軸受）で世界シェア3位。自動車向け・産業機械向けが二本柱。電動パワーステアリングやボールねじも展開。",
+    "moatSummary": "ベアリングの精密加工技術と、グローバル供給体制が競争優位。",
+    "fcfNote": "自動車・産機の需要循環に連動するがベアリング需要は底堅い。"
+  },
+  {
+    "slug": "mitsubishi-gas-chem",
+    "name": "三菱ガス化学",
+    "nameEn": "Mitsubishi Gas Chemical",
+    "code": "4182",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "過酸化水素とBT樹脂の特殊化学メーカー。半導体向け高純度材料が成長分野",
+    "overview": "過酸化水素・メタノール等の基礎化学品と、半導体基板用BT樹脂等の機能化学品を展開。天然ガス化学にも強み。",
+    "moatSummary": "BT樹脂の高シェアと、過酸化水素の製造技術が技術的参入障壁。",
+    "fcfNote": "化学品市況に左右されるが、機能化学品が安定化に寄与。"
+  },
+  {
+    "slug": "oji",
+    "name": "王子ホールディングス",
+    "nameEn": "Oji Holdings",
+    "code": "3861",
+    "industry": "paper",
+    "industryName": "紙・パルプ",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "製紙業界国内首位。パッケージング・機能材への転換で脱紙依存を模索",
+    "overview": "製紙国内最大手。段ボール・パッケージング・衛生用品・機能材に事業転換を推進。森林資源の保有量はアジア最大級。",
+    "moatSummary": "圧倒的な森林資源保有とパッケージング事業の規模が参入障壁。",
+    "fcfNote": "紙需要減でも段ボール・パッケージングの安定CFが下支え。"
+  },
+  {
+    "slug": "inpex",
+    "name": "INPEX",
+    "nameEn": "Inpex",
+    "code": "1605",
+    "industry": "mining",
+    "industryName": "鉱業",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "日本最大の石油・ガス開発企業。イクシスLNGが収益の柱で資源価格に大きく連動",
+    "overview": "日本最大の石油・天然ガス開発企業（旧国際石油開発帝石）。豪州イクシスLNGプロジェクトが収益の中核。政府が筆頭株主。",
+    "moatSummary": "イクシスLNGの長期契約と、上流権益のポートフォリオが競争優位。",
+    "fcfNote": "原油・LNG価格に大きく連動し、好況期は潤沢なFCF。"
+  },
+  {
+    "slug": "eneos",
+    "name": "ENEOSホールディングス",
+    "nameEn": "Eneos Holdings",
+    "code": "5020",
+    "industry": "oil",
+    "industryName": "石油",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 3,
+      "cost": 4,
+      "intangible": 2
+    },
+    "verdict": "石油元売り国内最大手。燃料油の国内シェア5割超で圧倒的な規模",
+    "overview": "JXTGエネルギーを中核とする石油元売り最大手。国内燃料油シェア約5割。銅鉱山開発・金属事業にも展開。",
+    "moatSummary": "国内製油所・販売網の圧倒的規模と、鉱山権益がコスト優位を形成。",
+    "fcfNote": "原油価格変動の影響大だが、規模効果で安定的なCFベースを確保。"
+  },
+  {
+    "slug": "idemitsu",
+    "name": "出光興産",
+    "nameEn": "Idemitsu Kosan",
+    "code": "5019",
+    "industry": "oil",
+    "industryName": "石油",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "石油元売り2位。有機EL材料等の高機能素材で脱石油依存を加速",
+    "overview": "石油元売り国内2位。昭和シェルと統合し規模拡大。有機EL材料・リチウム固体電解質等の機能材料事業にも注力。",
+    "moatSummary": "製油所の規模効率と、有機EL材料の先行開発が差別化要因。",
+    "fcfNote": "石油市況に連動するが、機能材料の利益貢献が徐々に拡大。"
+  },
+  {
+    "slug": "agc",
+    "name": "AGC",
+    "nameEn": "AGC",
+    "code": "5201",
+    "industry": "glass",
+    "industryName": "ガラス・土石",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "ガラス世界最大手。EUV用フォトマスクブランクスと医薬CDMOが高成長分野",
+    "overview": "建築用・自動車用ガラスで世界最大手。電子材料（EUV関連）・化学品・ライフサイエンス（バイオCDMO）にも多角展開。",
+    "moatSummary": "ガラス製造の規模効果と、EUV用マスクブランクスの高い技術参入障壁が強み。",
+    "fcfNote": "ガラス事業の安定CFと高付加価値事業の成長で安定的なFCF。"
+  },
+  {
+    "slug": "toto",
+    "name": "TOTO",
+    "nameEn": "Toto",
+    "code": "5332",
+    "industry": "glass",
+    "industryName": "ガラス・土石",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "ウォシュレットで世界を変えた衛生陶器の王者。海外展開の加速が成長の鍵",
+    "overview": "衛生陶器・水回り設備で国内シェア首位。ウォシュレット（温水洗浄便座）を世界に普及。中国・アジアでの販売拡大に注力。",
+    "moatSummary": "ウォシュレットの圧倒的ブランド力と、セラミック技術の蓄積が参入障壁。",
+    "fcfNote": "住設需要の安定性でFCFは堅実に推移。"
+  },
+  {
+    "slug": "taiheiyo-cement",
+    "name": "太平洋セメント",
+    "nameEn": "Taiheiyo Cement",
+    "code": "5233",
+    "industry": "glass",
+    "industryName": "ガラス・土石",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 2,
+      "network": 3,
+      "cost": 4,
+      "intangible": 2
+    },
+    "verdict": "セメント国内最大手。インフラ更新需要と廃棄物処理でセメントの社会的価値を再定義",
+    "overview": "セメント国内シェア首位。米国・アジアにも展開。廃棄物のセメント原燃料化技術で環境ビジネスにも貢献。",
+    "moatSummary": "セメント工場の立地・物流インフラと、廃棄物処理ビジネスの独自性が参入障壁。",
+    "fcfNote": "インフラ投資の波に連動するが、セメント需要は底堅い。"
+  },
+  {
+    "slug": "nippon-express-group",
+    "name": "SGホールディングス",
+    "nameEn": "SG Holdings",
+    "code": "9143",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "佐川急便の持株会社。EC物流の拡大でヤマトと双璧の宅配大手",
+    "overview": "佐川急便を傘下に持つ物流大手。EC向け宅配が成長ドライバー。ロジスティクス事業の強化で総合物流企業への転換を推進。",
+    "moatSummary": "佐川急便の宅配ネットワークとブランド認知が参入障壁。",
+    "fcfNote": "宅配事業の安定需要で堅実にFCFを確保。"
+  },
+  {
+    "slug": "keio",
+    "name": "京王電鉄",
+    "nameEn": "Keio",
+    "code": "9008",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "新宿と多摩地域を結ぶ私鉄。沿線開発と不動産で安定的な収益を確保",
+    "overview": "新宿を起点に京王線・井の頭線を運営する大手私鉄。不動産・流通・レジャー事業も展開。沿線の住宅地開発に強み。",
+    "moatSummary": "新宿ターミナルの立地と沿線の住宅地価値が地域独占的な参入障壁。",
+    "fcfNote": "鉄道運賃と不動産の安定CFでFCFを堅実に創出。"
+  },
+  {
+    "slug": "odakyu",
+    "name": "小田急電鉄",
+    "nameEn": "Odakyu Electric Railway",
+    "code": "9007",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "新宿-箱根を結ぶロマンスカーの私鉄。下北沢再開発で沿線価値向上を推進",
+    "overview": "新宿から小田原・箱根方面を結ぶ大手私鉄。ロマンスカーブランドとMaaS戦略が特徴。不動産・ホテル・百貨店も展開。",
+    "moatSummary": "新宿ターミナルと箱根観光のアクセス独占が安定的な参入障壁。",
+    "fcfNote": "鉄道・不動産の安定CFで堅実なFCF確保。"
+  },
+  {
+    "slug": "tokyu",
+    "name": "東急",
+    "nameEn": "Tokyu",
+    "code": "9005",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "渋谷の開発主体にして沿線ブランド経営の頂点。鉄道×不動産の最強モデル",
+    "overview": "渋谷を起点に東横線・田園都市線等を運営する大手私鉄。渋谷再開発の中核企業。鉄道・不動産・生活サービスを一体展開。",
+    "moatSummary": "渋谷の開発権益と、東急沿線のブランド価値が圧倒的な参入障壁。",
+    "fcfNote": "不動産開発と鉄道のCFで安定的にFCFを創出。"
+  },
+  {
+    "slug": "tobu",
+    "name": "東武鉄道",
+    "nameEn": "Tobu Railway",
+    "code": "9001",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "関東最長の路線網を持つ私鉄。東京スカイツリーと日光観光が強み",
+    "overview": "池袋・浅草を起点に関東最長の路線網を持つ大手私鉄。東京スカイツリー運営、日光・鬼怒川観光が収益柱。不動産・流通も展開。",
+    "moatSummary": "広大な沿線ネットワークとスカイツリー・日光の観光資産が独自の強み。",
+    "fcfNote": "鉄道・観光の安定CFで堅実にFCF確保。"
+  },
+  {
+    "slug": "kintetsu",
+    "name": "近鉄グループHD",
+    "nameEn": "Kintetsu Group Holdings",
+    "code": "9041",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "日本最大の私鉄路線網。大阪-名古屋-伊勢志摩を結ぶ観光インフラ企業",
+    "overview": "日本最長の私鉄路線網を持つ。大阪・名古屋・伊勢志摩を結ぶ近畿日本鉄道が中核。ホテル・流通・不動産事業も展開。",
+    "moatSummary": "大阪-名古屋間の独占的な鉄道アクセスと、沿線観光資源が参入障壁。",
+    "fcfNote": "インバウンド回復と沿線開発でFCFは改善傾向。"
+  },
+  {
+    "slug": "hankyu-hanshin",
+    "name": "阪急阪神HD",
+    "nameEn": "Hankyu Hanshin Holdings",
+    "code": "9042",
+    "industry": "transport",
+    "industryName": "運輸",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "阪急・阪神の統合企業。梅田エリアの開発権益と宝塚歌劇のブランド力が光る",
+    "overview": "阪急電鉄・阪神電鉄を傘下に持つ。梅田エリアの不動産開発、宝塚歌劇、阪神タイガースなど文化資産も保有。",
+    "moatSummary": "梅田の不動産権益と、宝塚歌劇・阪神タイガースの文化的ブランドが独自資産。",
+    "fcfNote": "不動産と鉄道の安定CFで堅実なFCF。"
+  },
+  {
+    "slug": "ube",
+    "name": "UBE",
+    "nameEn": "UBE",
+    "code": "4208",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "ナイロン・医薬で特色ある化学メーカー。セメント分離後に機能化学特化を加速",
+    "overview": "ナイロン樹脂・カプロラクタム・ポリイミド等の機能化学品メーカー。セメント事業を分離し、機能化学品への集中を強化。",
+    "moatSummary": "ポリイミドフィルムの技術力とナイロン製造の効率性が差別化。",
+    "fcfNote": "機能化学品への集中でFCF改善が見込まれる。"
+  },
+  {
+    "slug": "tosoh",
+    "name": "東ソー",
+    "nameEn": "Tosoh",
+    "code": "4042",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 4,
+      "intangible": 3
+    },
+    "verdict": "塩ビ・苛性ソーダの大手。ジルコニアとバイオ診断薬で高付加価値化を推進",
+    "overview": "塩ビ・苛性ソーダのクロルアルカリ事業が基盤。ジルコニア（歯科材料等）と体外診断薬用カラムが高利益率の成長事業。",
+    "moatSummary": "ジルコニアの品質と体外診断薬用カラムの高シェアが技術的差別化。",
+    "fcfNote": "クロルアルカリの安定CFに高付加価値事業が上乗せ。"
+  },
+  {
+    "slug": "konica-minolta",
+    "name": "コニカミノルタ",
+    "nameEn": "Konica Minolta",
+    "code": "4902",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "複合機・ヘルスケアの中堅メーカー。構造改革途上で新たな成長軸を模索",
+    "overview": "複合機（オフィス向け）とヘルスケア（診断機器等）を二本柱とする精密機器メーカー。DX支援や産業用光学部品にも展開。",
+    "moatSummary": "複合機の顧客基盤と産業用光学技術の蓄積が一定の差別化要因。",
+    "fcfNote": "複合機市場の縮小で構造改革中、FCFは改善途上。"
+  },
+  {
+    "slug": "fuji-electric",
+    "name": "富士電機",
+    "nameEn": "Fuji Electric",
+    "code": "6504",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "パワー半導体と自販機の二刀流。EV・再エネ向けパワー半導体が成長ドライバー",
+    "overview": "パワー半導体・パワエレ機器・自動販売機を主力とする電機メーカー。IGBTモジュール等のパワー半導体でEV・再エネ向け需要が拡大。",
+    "moatSummary": "パワー半導体の技術力と、自販機のトップシェアが二重の収益基盤。",
+    "fcfNote": "パワー半導体投資が先行するが、中期的にFCF拡大を期待。"
+  },
+  {
+    "slug": "shiseido",
+    "name": "資生堂",
+    "nameEn": "Shiseido",
+    "code": "4911",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "アジア最大の化粧品企業。プレステージブランドの強化で高利益率化を追求",
+    "overview": "日本最大の化粧品メーカー。SHISEIDO・クレ・ド・ポー等のプレステージブランドが主力。中国・トラベルリテール市場に注力。",
+    "moatSummary": "150年の歴史が育んだブランド力と、アジアでのプレステージポジションが参入障壁。",
+    "fcfNote": "ブランド投資が重いが、プレステージの高利益率でFCF改善傾向。"
+  },
+  {
+    "slug": "koei-tecmo",
+    "name": "コーエーテクモHD",
+    "nameEn": "Koei Tecmo Holdings",
+    "code": "3635",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "歴史シミュレーションの老舗。信長の野望・無双シリーズで独自ニッチを確立",
+    "overview": "「信長の野望」「三國無双」等のゲームIPを保有。シミュレーション・アクションゲームのニッチ市場で高い利益率を維持。",
+    "moatSummary": "歴史シミュレーション分野の独占的ポジションと、IP蓄積が差別化。",
+    "fcfNote": "デジタル販売比率の上昇で利益率・FCFともに高水準。"
+  },
+  {
+    "slug": "nexon",
+    "name": "ネクソン",
+    "nameEn": "Nexon",
+    "code": "3659",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 4,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "オンラインゲームのグローバル企業。メイプルストーリーとFIFA Onlineの長寿IPが収益の柱",
+    "overview": "韓国発のオンラインゲーム企業（東証上場）。メイプルストーリー・アラド戦記等の長寿タイトルが安定収益源。中国・韓国市場が主力。",
+    "moatSummary": "長寿オンラインゲームIPのネットワーク効果と、ライブサービス運営力が強み。",
+    "fcfNote": "オンラインゲームのリカーリング収益で高いFCFマージンを実現。"
+  },
+  {
+    "slug": "trend-micro",
+    "name": "トレンドマイクロ",
+    "nameEn": "Trend Micro",
+    "code": "4704",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 4,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "サイバーセキュリティの日本代表企業。法人向けエンドポイント防御で世界大手",
+    "overview": "サイバーセキュリティのグローバル大手。法人向けエンドポイントセキュリティ・クラウドセキュリティが主力。XDRプラットフォームを推進。",
+    "moatSummary": "セキュリティ製品のスイッチングコストの高さと、脅威情報データベースの蓄積が強み。",
+    "fcfNote": "SaaSモデルのリカーリング収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "obic",
+    "name": "オービック",
+    "nameEn": "Obic",
+    "code": "4684",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 5,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "中堅企業向けERPで圧倒的な利益率。直販×自社開発の日本版SAPとして君臨",
+    "overview": "中堅企業向けERP「OBIC7」を展開するITベンダー。自社開発・直販モデルで営業利益率60%超という驚異的な収益性を実現。",
+    "moatSummary": "ERPの極めて高いスイッチングコストと、直販モデルによる顧客密着が鉄壁の堀。",
+    "fcfNote": "高利益率×低設備投資で極めて潤沢なFCFを創出。"
+  },
+  {
+    "slug": "nomura-research",
+    "name": "野村総合研究所",
+    "nameEn": "Nomura Research Institute",
+    "code": "4307",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "金融ITの最強SI。野村証券・セブン銀行等の基幹システムで高い参入障壁",
+    "overview": "金融機関向けITシステムに圧倒的な強みを持つSIer。コンサルティングからシステム運用まで一気通貫。営業利益率は15%超。",
+    "moatSummary": "金融機関の基幹システムにおける極めて高いスイッチングコストが最強の堀。",
+    "fcfNote": "ストック型のシステム運用収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "internet-initiative",
+    "name": "インターネットイニシアティブ",
+    "nameEn": "Internet Initiative Japan",
+    "code": "3774",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "日本のインターネット黎明期からの老舗ISP。法人向けクラウド・セキュリティで安定成長",
+    "overview": "日本初の商用ISPとして設立。法人向けネットワーク・クラウド・セキュリティサービスを提供。MVNO（IIJmio）も展開。",
+    "moatSummary": "法人向けネットワーク基盤のスイッチングコストと、技術的信頼性が差別化。",
+    "fcfNote": "法人向けサービスの安定的なストック収益でFCFを確保。"
+  },
+  {
+    "slug": "scsk",
+    "name": "SCSK",
+    "nameEn": "SCSK",
+    "code": "9719",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "住友商事系のSIer。製造業・流通向けシステムと働き方改革先進企業として評価",
+    "overview": "住友商事系のSIer。製造業・流通・金融向けシステム開発と、ITインフラサービスを展開。働き方改革の先進企業としても知られる。",
+    "moatSummary": "住友商事グループとの取引基盤と、業務系システムの知見が安定収益の源泉。",
+    "fcfNote": "SI・ITサービスの安定収益で堅実にFCFを創出。"
+  },
+  {
+    "slug": "nri",
+    "name": "日本オラクル",
+    "nameEn": "Oracle Corporation Japan",
+    "code": "4716",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 5,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "Oracle製品の国内独占販売代理。データベース市場の高いスイッチングコストが強み",
+    "overview": "米Oracle製品の国内販売・サポートを担う。データベース・クラウドサービスを法人向けに提供。親会社のクラウド戦略に連動。",
+    "moatSummary": "Oracle DBの圧倒的なスイッチングコストと、クラウド移行需要が安定基盤。",
+    "fcfNote": "ライセンス・サポートのストック収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "hitachi-construction",
+    "name": "日立建機",
+    "nameEn": "Hitachi Construction Machinery",
+    "code": "6305",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "油圧ショベルで世界大手。日立グループからの独立でグローバル成長を加速",
+    "overview": "油圧ショベルで世界シェア上位の建設機械メーカー。マイニング（鉱山機械）事業も展開。伊藤忠との提携でグローバル販売を強化。",
+    "moatSummary": "油圧技術の蓄積と、アフターサービスのグローバル網が競争優位。",
+    "fcfNote": "建機市場のサイクルに連動するが、アフターが安定化に寄与。"
+  },
+  {
+    "slug": "miura",
+    "name": "三浦工業",
+    "nameEn": "Miura",
+    "code": "6005",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "小型貫流ボイラーで国内シェア5割。メンテナンスのオンラインモニタリングが囲い込みの鍵",
+    "overview": "小型貫流ボイラーで国内シェア約50%の圧倒的首位。遠隔監視システム「ZMP」でメンテナンスを効率化。水処理・食品機械も展開。",
+    "moatSummary": "オンラインモニタリングによる顧客囲い込みとメンテナンスの安定収益が強み。",
+    "fcfNote": "メンテナンスのリカーリング収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "amada",
+    "name": "アマダ",
+    "nameEn": "Amada",
+    "code": "6113",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "板金加工機で世界首位級。レーザー加工機の技術力で高い利益率を維持",
+    "overview": "板金加工機（レーザー・プレス・ベンディング）で世界トップクラス。自社開発のレーザー発振器を搭載した加工機が競争力の源泉。",
+    "moatSummary": "板金加工機のフルライン展開と、レーザー発振器の自社開発技術が差別化。",
+    "fcfNote": "工作機械の需要循環はあるが、比較的安定したFCF。"
+  },
+  {
+    "slug": "makita",
+    "name": "マキタ",
+    "nameEn": "Makita",
+    "code": "6586",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "電動工具で世界2位。充電式工具のプラットフォーム戦略でプロユーザーを囲い込む",
+    "overview": "電動工具で世界シェア2位。充電式（コードレス）工具のラインナップが圧倒的。バッテリー共通化でプラットフォーム効果を発揮。",
+    "moatSummary": "充電式プラットフォーム（バッテリー共通化）によるロックイン効果が最大の強み。",
+    "fcfNote": "電動工具の安定需要とグローバル展開で堅実なFCF。"
+  },
+  {
+    "slug": "disco",
+    "name": "ディスコ",
+    "nameEn": "Disco",
+    "code": "6146",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 5,
+      "network": 1,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "半導体ダイシング・グラインディングで世界シェア8割。精密加工の超ニッチトップ",
+    "overview": "半導体ウエハーの切断（ダイシング）・研削（グラインディング）装置で世界シェア約80%。独自の「Will会計」制度で知られる。",
+    "moatSummary": "ダイシング技術の圧倒的な精度と、半導体プロセスへの深い組み込みが鉄壁の堀。",
+    "fcfNote": "半導体投資サイクルに連動するが、高シェアで潤沢なFCF。"
+  },
+  {
+    "slug": "nabtesco",
+    "name": "ナブテスコ",
+    "nameEn": "Nabtesco",
+    "code": "6268",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 1,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "精密減速機で世界シェア6割。産業ロボットの関節を支える隠れた巨人",
+    "overview": "精密減速機で世界シェア約60%。産業用ロボット・鉄道ドア・航空機器にも展開。モーション制御のキーコンポーネントメーカー。",
+    "moatSummary": "精密減速機の圧倒的な品質とシェアが、産業ロボット市場への参入障壁。",
+    "fcfNote": "ロボット需要の成長でFCFは中期的に拡大基調。"
+  },
+  {
+    "slug": "sumitomo-rubber",
+    "name": "住友ゴム工業",
+    "nameEn": "Sumitomo Rubber Industries",
+    "code": "5110",
+    "industry": "rubber",
+    "industryName": "ゴム",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "ダンロップ・ファルケンブランドのタイヤメーカー。スポーツ用品も展開する多角化企業",
+    "overview": "タイヤ（ダンロップ・ファルケン）で国内3位。ゴルフ・テニス等のスポーツ用品も展開。タイヤのプレミアム化を推進中。",
+    "moatSummary": "ダンロップブランドの認知度と、スポーツ用品との多角化が差別化。",
+    "fcfNote": "タイヤの安定需要で堅実なFCFだが原材料価格の影響あり。"
+  },
+  {
+    "slug": "teijin",
+    "name": "帝人",
+    "nameEn": "Teijin",
+    "code": "3401",
+    "industry": "textiles",
+    "industryName": "繊維",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "アラミド繊維とヘルスケアの二刀流。機能素材への集中で収益力向上を目指す",
+    "overview": "アラミド繊維で世界大手。ヘルスケア（在宅医療・医薬）と機能素材（炭素繊維・アラミド）が二本柱。IT事業も展開。",
+    "moatSummary": "アラミド繊維の技術的参入障壁と、在宅医療のストック収益が差別化。",
+    "fcfNote": "在宅医療の安定CFが素材事業の変動を緩和。"
+  },
+  {
+    "slug": "nippon-yusen",
+    "name": "日本郵船",
+    "nameEn": "Nippon Yusen",
+    "code": "9101",
+    "industry": "shipping",
+    "industryName": "海運",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "海運最大手。コンテナ船ONE統合後は不定期船・物流に注力する総合物流企業",
+    "overview": "海運国内最大手。コンテナ船はONE（3社統合）に移管。自動車船・LNG船・ドライバルクの不定期船と、総合物流事業を展開。",
+    "moatSummary": "グローバルな船隊と物流ネットワーク、自動車船の高シェアが競争優位。",
+    "fcfNote": "海運市況で大きく変動するが、好況時は莫大なFCF。"
+  },
+  {
+    "slug": "mitsui-osk",
+    "name": "商船三井",
+    "nameEn": "Mitsui O.S.K. Lines",
+    "code": "9104",
+    "industry": "shipping",
+    "industryName": "海運",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "LNG船保有数世界最大級。海洋事業の強化で海運市況への依存を低減",
+    "overview": "LNG船・鉄鉱石船・自動車船等を運航する海運大手。LNG船保有数は世界最大級。不動産・フェリー事業にも多角化。",
+    "moatSummary": "LNG船の長期契約と大規模船隊が安定収益の基盤。",
+    "fcfNote": "LNG長期契約で安定CF確保。市況好転時はさらに上振れ。"
+  },
+  {
+    "slug": "kawasaki-kisen",
+    "name": "川崎汽船",
+    "nameEn": "Kawasaki Kisen Kaisha",
+    "code": "9107",
+    "industry": "shipping",
+    "industryName": "海運",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 2,
+      "network": 3,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "海運3社の中でコンテナ（ONE）の利益貢献比率が最も高い",
+    "overview": "コンテナ船ONE、自動車船、ドライバルク船を運航する海運大手。ONE統合でコンテナ船の効率化を実現。",
+    "moatSummary": "ONEのコンテナ船ネットワークと、自動車船のシェアが一定の競争優位。",
+    "fcfNote": "海運市況への感応度が高く、FCFの変動は最も大きい。"
+  },
+  {
+    "slug": "mitsubishi-warehouse",
+    "name": "三菱倉庫",
+    "nameEn": "Mitsubishi Logistics",
+    "code": "9301",
+    "industry": "warehouse",
+    "industryName": "倉庫",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "三菱グループの倉庫・物流会社。都心の不動産ポートフォリオも保有する隠れた資産株",
+    "overview": "三菱グループの倉庫・物流会社。港湾地区の倉庫・不動産を保有。3PL・国際物流サービスも展開。",
+    "moatSummary": "三菱グループとの取引基盤と、港湾エリアの倉庫・不動産が安定資産。",
+    "fcfNote": "倉庫・不動産の安定CFで堅実なFCF。"
+  },
+  {
+    "slug": "marui",
+    "name": "丸井グループ",
+    "nameEn": "Marui Group",
+    "code": "8252",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "エポスカードのフィンテック企業に変貌。小売から金融への転換が成功",
+    "overview": "小売事業（マルイ・モディ）とフィンテック事業（エポスカード）を展開。金融収益が利益の柱に成長。D2C支援にも注力。",
+    "moatSummary": "エポスカードの会員基盤と、商業施設でのクロスセルが収益モデルの核。",
+    "fcfNote": "金融事業のストック収益で安定的にFCFを創出。"
+  },
+  {
+    "slug": "isetan-mitsukoshi",
+    "name": "三越伊勢丹HD",
+    "nameEn": "Isetan Mitsukoshi Holdings",
+    "code": "3099",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 1,
+      "intangible": 4
+    },
+    "verdict": "百貨店の頂点ブランド。外商・富裕層ビジネスとインバウンドが回復の牽引役",
+    "overview": "三越・伊勢丹の二大ブランドを擁する百貨店最大手。新宿伊勢丹と日本橋三越が旗艦店。外商・富裕層ビジネスに注力。",
+    "moatSummary": "伊勢丹・三越の圧倒的なブランド力と、外商顧客基盤が百貨店業界随一の参入障壁。",
+    "fcfNote": "インバウンドと富裕層消費の回復でFCF改善傾向。"
+  },
+  {
+    "slug": "takashimaya",
+    "name": "高島屋",
+    "nameEn": "Takashimaya",
+    "code": "8233",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 1,
+      "intangible": 3
+    },
+    "verdict": "老舗百貨店の代表格。日本橋・大阪・シンガポール等の旗艦店が資産価値",
+    "overview": "創業1831年の老舗百貨店。日本橋本店・大阪店等の旗艦店を運営。海外はシンガポール・ベトナムに展開。不動産事業も成長。",
+    "moatSummary": "老舗ブランドの信頼性と、旗艦店の不動産価値が安定収益の基盤。",
+    "fcfNote": "百貨店の安定CFと不動産収入でFCFを確保。"
+  },
+  {
+    "slug": "pan-pacific",
+    "name": "パン・パシフィックIHD",
+    "nameEn": "Pan Pacific International Holdings",
+    "code": "7532",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 3,
+      "cost": 5,
+      "intangible": 3
+    },
+    "verdict": "ドン・キホーテの運営企業。圧縮陳列と深夜営業でインバウンドの聖地に",
+    "overview": "ドン・キホーテ・ユニー（アピタ・ピアゴ）を運営するディスカウントストア大手。圧縮陳列と深夜営業の独自モデルでインバウンド消費も取り込む。",
+    "moatSummary": "圧縮陳列の独自ノウハウとコスト競争力、インバウンド集客力が差別化。",
+    "fcfNote": "ディスカウント業態の高い在庫回転率で安定的にFCF創出。"
+  },
+  {
+    "slug": "shimano",
+    "name": "シマノ",
+    "nameEn": "Shimano",
+    "code": "7309",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 4,
+      "network": 3,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "自転車部品で世界シェア8割。釣具でも世界大手の「趣味のプラットフォーマー」",
+    "overview": "自転車部品で世界シェア約80%の圧倒的首位。釣具（リール等）でも世界大手。高い技術力とブランド力でプレミアム市場を支配。",
+    "moatSummary": "自転車部品のデファクトスタンダード化と、コンポーネント間の互換性が鉄壁の堀。",
+    "fcfNote": "高利益率×低資本集約型で極めて潤沢なFCFを創出。"
+  },
+  {
+    "slug": "nichirei",
+    "name": "ニチレイ",
+    "nameEn": "Nichirei",
+    "code": "2871",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "冷凍食品と低温物流の二刀流。コールドチェーンのインフラ企業",
+    "overview": "冷凍食品と低温物流（低温倉庫・配送）の二本柱。冷凍食品の本格調理品に強みを持ち、低温物流では国内最大手。",
+    "moatSummary": "低温物流インフラの規模と、冷凍食品のブランド力が一体的な参入障壁。",
+    "fcfNote": "冷凍食品・低温物流の安定需要で堅実にFCF創出。"
+  },
+  {
+    "slug": "maruha-nichiro",
+    "name": "マルハニチロ",
+    "nameEn": "Maruha Nichiro",
+    "code": "1333",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 2,
+      "network": 3,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "水産・冷凍食品の最大手。漁業権と冷凍食品ブランドの二重の資産",
+    "overview": "水産大手と冷凍食品メーカーが統合。水産物のグローバル調達網と冷凍食品（あけぼの等）のブランド力を持つ。",
+    "moatSummary": "水産調達のグローバルネットワークと冷凍食品ブランドが差別化。",
+    "fcfNote": "水産・食品の安定需要で堅実なFCF。"
+  },
+  {
+    "slug": "nippon-ham",
+    "name": "日本ハム",
+    "nameEn": "Nippon Ham",
+    "code": "2282",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "食肉加工品で国内首位。タンパク質需要の構造的成長が追い風",
+    "overview": "ハム・ソーセージ・食肉で国内首位。食肉のグローバル調達とブランド力が強み。プロ野球球団（日本ハムファイターズ）も保有。",
+    "moatSummary": "食肉のグローバル調達力と加工品ブランドの認知度が競争優位。",
+    "fcfNote": "食肉事業の安定需要で堅実なFCF確保。"
+  },
+  {
+    "slug": "yakult",
+    "name": "ヤクルト本社",
+    "nameEn": "Yakult Honsha",
+    "code": "2267",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 3,
+      "network": 4,
+      "cost": 3,
+      "intangible": 5
+    },
+    "verdict": "乳酸菌シロタ株で世界40カ国に展開。ヤクルトレディの訪問販売モデルが独自の堀",
+    "overview": "乳酸菌飲料「Yakult」を世界40カ国以上で販売。ヤクルトレディによる訪問販売モデルが独自。医薬品・化粧品事業も展開。",
+    "moatSummary": "シロタ株の科学的エビデンスとヤクルトレディの販売ネットワークが模倣困難な堀。",
+    "fcfNote": "グローバルな乳酸菌飲料の安定需要で潤沢なFCF。"
+  },
+  {
+    "slug": "sapporo",
+    "name": "サッポロHD",
+    "nameEn": "Sapporo Holdings",
+    "code": "2501",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "ビール4社の一角。不動産（恵比寿ガーデンプレイス等）の含み益が隠れた企業価値",
+    "overview": "ビール国内4位。サッポロビール・ポッカサッポロ等を展開。恵比寿ガーデンプレイスなどの不動産事業が利益貢献。",
+    "moatSummary": "サッポロビールのブランド力と、恵比寿エリアの不動産価値が二重の資産。",
+    "fcfNote": "ビール事業の安定CFと不動産収入でFCFを確保。"
+  },
+  {
+    "slug": "nikon",
+    "name": "ニコン",
+    "nameEn": "Nikon",
+    "code": "7731",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 1,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "カメラと半導体露光装置の二刀流。FPD露光装置に強みを持つ光学技術の名門",
+    "overview": "カメラ・半導体/FPD露光装置・顕微鏡を展開する光学メーカー。FPD露光装置では世界トップシェア。光学技術の名門企業。",
+    "moatSummary": "光学技術の深い蓄積とFPD露光装置の高シェアが技術的差別化。",
+    "fcfNote": "半導体・FPD投資サイクルに連動するがカメラ事業が安定化に寄与。"
+  },
+  {
+    "slug": "konami",
+    "name": "コナミグループ",
+    "nameEn": "Konami Group",
+    "code": "9766",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 3,
+      "cost": 2,
+      "intangible": 5
+    },
+    "verdict": "遊戯王・パワプロ・eFootball のIPホルダー。ゲーム×スポーツ施設の独自モデル",
+    "overview": "遊戯王・パワプロ・メタルギア等のゲームIPを保有。スポーツクラブ・カジノ機器事業も展開。IP経営とリアル施設の組み合わせが特徴。",
+    "moatSummary": "遊戯王等のIPの持続的な収益力と、スポーツ施設の安定基盤が差別化。",
+    "fcfNote": "デジタルゲームのリカーリング収益でFCFは安定的。"
+  },
+  {
+    "slug": "taiyo-yuden",
+    "name": "太陽誘電",
+    "nameEn": "Taiyo Yuden",
+    "code": "6976",
+    "industry": "electronics",
+    "industryName": "電機・精密",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "積層セラミックコンデンサの2番手。高品質MLCCで車載・通信向け需要を取り込む",
+    "overview": "積層セラミックコンデンサ（MLCC）世界2位。高容量・高信頼性のMLCCに強み。車載・5G通信向けが成長ドライバー。",
+    "moatSummary": "MLCC微細化技術と品質の高さが村田に次ぐ競争力の源泉。",
+    "fcfNote": "電子部品需要サイクルに連動するが、車載成長で安定化。"
+  },
+  {
+    "slug": "sumitomo-heavy",
+    "name": "住友重機械工業",
+    "nameEn": "Sumitomo Heavy Industries",
+    "code": "6302",
+    "industry": "machinery",
+    "industryName": "機械",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "射出成形機と減速機に強みを持つ中堅重工メーカー。ニッチ領域で堅実経営",
+    "overview": "射出成形機・減速機・加速器等を製造する重工メーカー。全電動射出成形機で世界トップクラス。医療・半導体向け装置も展開。",
+    "moatSummary": "全電動射出成形機の技術力と、ニッチ分野での高シェアが差別化。",
+    "fcfNote": "機械受注の循環変動はあるが、ニッチトップで比較的安定。"
+  },
+  {
+    "slug": "jgc",
+    "name": "日揮HD",
+    "nameEn": "JGC Holdings",
+    "code": "1963",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 4
+    },
+    "verdict": "石油・ガスプラントのEPC大手。エネルギートランジション関連にも展開",
+    "overview": "石油精製・LNG等のエネルギープラント建設（EPC）で世界大手。国内最大のエンジニアリング会社。脱炭素関連事業にも注力。",
+    "moatSummary": "大型EPC案件の実績と技術ノウハウの蓄積が参入障壁。",
+    "fcfNote": "大型受注の進捗でFCFは変動するがバックログで一定の可視性。"
+  },
+  {
+    "slug": "haseko",
+    "name": "長谷工コーポレーション",
+    "nameEn": "Haseko",
+    "code": "1808",
+    "industry": "construction",
+    "industryName": "建設",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 3,
+      "cost": 4,
+      "intangible": 3
+    },
+    "verdict": "マンション建設で国内シェア1位。設計・施工・管理の一貫体制が最大の強み",
+    "overview": "マンション建設で国内シェア首位。設計・施工からアフターサービス・管理までの一貫体制が強み。ストック型ビジネスも拡大。",
+    "moatSummary": "マンション建設の圧倒的シェアと、管理事業のストック収益が安定基盤。",
+    "fcfNote": "マンション需要は堅調で、管理収入も含め安定的にFCFを確保。"
+  },
+  {
+    "slug": "nitto-kogyo",
+    "name": "日本特殊陶業",
+    "nameEn": "Niterra",
+    "code": "5334",
+    "industry": "glass",
+    "industryName": "ガラス・土石",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "スパークプラグ世界首位。半導体パッケージ基板でEV・AI時代の成長を取り込む",
+    "overview": "スパークプラグで世界シェア首位（旧日本特殊陶業、現Niterra）。セラミック技術を活かし、半導体パッケージ基板に注力。",
+    "moatSummary": "スパークプラグの独占的シェアとセラミック技術の半導体応用が成長の鍵。",
+    "fcfNote": "スパークプラグの安定CFに半導体関連の成長が上乗せ。"
+  },
+  {
+    "slug": "koito",
+    "name": "小糸製作所",
+    "nameEn": "Koito Manufacturing",
+    "code": "7276",
+    "industry": "automotive",
+    "industryName": "自動車",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "自動車用照明で世界首位。LEDヘッドランプの普及が高付加価値化の追い風",
+    "overview": "自動車用照明機器で世界シェア首位。LEDヘッドランプ・ADBランプ等の先進照明技術をリード。トヨタ向けが主力。",
+    "moatSummary": "照明技術の蓄積と自動車メーカーとの共同開発関係が高いスイッチングコスト。",
+    "fcfNote": "LEDランプの高付加価値化で利益率改善、安定的なFCF。"
+  },
+  {
+    "slug": "ryohin-keikaku",
+    "name": "良品計画",
+    "nameEn": "Ryohin Keikaku",
+    "code": "7453",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "無印良品ブランドで世界展開。シンプル×高品質の哲学が共感を呼ぶグローバルSPA",
+    "overview": "無印良品ブランドで衣食住の生活雑貨を展開するSPA企業。国内外に1,000店超を出店。中国・東南アジアでの展開を加速中。",
+    "moatSummary": "「無印良品」のブランド哲学と、商品開発力が模倣困難な差別化要因。",
+    "fcfNote": "SPAモデルの効率性で安定的にFCFを創出。"
+  },
+  {
+    "slug": "zozo",
+    "name": "ZOZO",
+    "nameEn": "ZOZO",
+    "code": "3092",
+    "industry": "retail",
+    "industryName": "小売",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 4,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "ファッションEC「ZOZOTOWN」の運営企業。アパレルECプラットフォーマーとして独自の地位",
+    "overview": "ファッションEC「ZOZOTOWN」を運営。アパレルブランドのオンライン販売プラットフォームとして国内首位。ZOZOSUITやZOZOCOSME等も展開。",
+    "moatSummary": "ZOZOTOWNのネットワーク効果とファッションEC市場の支配的地位が参入障壁。",
+    "fcfNote": "EC手数料の安定収益で高いFCFマージンを維持。"
+  },
+  {
+    "slug": "benesse",
+    "name": "ベネッセHD",
+    "nameEn": "Benesse Holdings",
+    "code": "9783",
+    "industry": "services",
+    "industryName": "サービス",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 3,
+      "network": 2,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "進研ゼミ・こどもちゃれんじの教育大手。デジタル化と介護事業で事業転換中",
+    "overview": "「進研ゼミ」「こどもちゃれんじ」で知られる教育大手。通信教育のデジタル化と介護事業の成長を推進中。MBOで非公開化。",
+    "moatSummary": "進研ゼミの会員基盤とブランド認知が教育分野での参入障壁。",
+    "fcfNote": "教育サブスクリプションの安定収益でFCFを確保。"
+  },
+  {
+    "slug": "otsuka-corp",
+    "name": "大塚商会",
+    "nameEn": "Otsuka Corporation",
+    "code": "4768",
+    "industry": "it-telecom",
+    "industryName": "情報通信",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "中小企業向けIT商社の最大手。たのめーる×システム導入でワンストップサービス",
+    "overview": "中小企業向けにIT機器・ソフトウェアの販売からシステム構築・保守まで一括提供。「たのめーる」のオフィス用品通販も展開。",
+    "moatSummary": "中小企業の基幹システムへの深い組み込みと、ワンストップサービスが囲い込み。",
+    "fcfNote": "リカーリング型の保守・サービス収益で安定的にFCF創出。"
+  },
+  {
+    "slug": "suntory-bev",
+    "name": "サントリーBF",
+    "nameEn": "Suntory Beverage & Food",
+    "code": "2587",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 5,
+      "switching": 2,
+      "network": 3,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "サントリーグループの上場飲料子会社。BOSSコーヒー・伊右衛門のブランド力が武器",
+    "overview": "サントリーグループの飲料・食品事業を担う上場子会社。BOSS・伊右衛門・天然水等の強力ブランドを保有。海外飲料事業も拡大中。",
+    "moatSummary": "サントリーブランドの信頼性と、飲料カテゴリーの幅広いポートフォリオが強み。",
+    "fcfNote": "飲料事業の安定需要で堅実にFCFを創出。"
+  },
+  {
+    "slug": "toyo-suisan",
+    "name": "東洋水産",
+    "nameEn": "Toyo Suisan",
+    "code": "2875",
+    "industry": "food",
+    "industryName": "食品",
+    "exists": false,
+    "moat": {
+      "brand": 4,
+      "switching": 2,
+      "network": 2,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "マルちゃんブランドで北米即席麺市場を席巻。海外売上比率の拡大が成長エンジン",
+    "overview": "「マルちゃん」ブランドの即席麺・冷凍食品メーカー。北米市場では即席麺シェア首位級。水産事業（冷凍すり身等）も展開。",
+    "moatSummary": "北米での「Maruchan」ブランドの圧倒的シェアが最大の競争優位。",
+    "fcfNote": "北米即席麺の安定需要で潤沢なFCF。"
+  },
+  {
+    "slug": "rengo",
+    "name": "レンゴー",
+    "nameEn": "Rengo",
+    "code": "3941",
+    "industry": "paper",
+    "industryName": "紙・パルプ",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "段ボール業界の国内首位。EC拡大でパッケージング需要が構造的に成長",
+    "overview": "段ボール・パッケージング業界の国内最大手。段ボール原紙から加工まで一貫生産。EC拡大に伴う包装需要の構造的成長が追い風。",
+    "moatSummary": "段ボールの一貫生産体制と物流ネットワークの規模が参入障壁。",
+    "fcfNote": "EC成長による段ボール需要で安定的にFCFを確保。"
+  },
+  {
+    "slug": "daicel",
+    "name": "ダイセル",
+    "nameEn": "Daicel",
+    "code": "4202",
+    "industry": "chemicals",
+    "industryName": "化学",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 3,
+      "network": 1,
+      "cost": 3,
+      "intangible": 4
+    },
+    "verdict": "酢酸セルロースとエアバッグ用インフレータで世界首位。ニッチトップの化学メーカー",
+    "overview": "酢酸セルロース（たばこフィルター等）とエアバッグ用インフレータで世界シェア首位。有機合成技術を核に特殊化学品を展開。",
+    "moatSummary": "エアバッグインフレータの独占的シェアと、酢酸セルロース技術が参入障壁。",
+    "fcfNote": "エアバッグ需要の安定成長でFCFは堅実。"
+  },
+  {
+    "slug": "kyushu-elec",
+    "name": "九州電力",
+    "nameEn": "Kyushu Electric Power",
+    "code": "9508",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 5,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "原発再稼働が最も進んだ電力会社。コスト競争力でリード",
+    "overview": "九州地方に電力を供給する大手電力会社。玄海・川内原発の再稼働が進み、電力会社の中でコスト競争力が最も高い。",
+    "moatSummary": "九州圏の送配電独占と原発再稼働によるコスト優位が競争力。",
+    "fcfNote": "原発稼働で燃料費大幅減、安定的にFCFを創出。"
+  },
+  {
+    "slug": "j-power",
+    "name": "電源開発",
+    "nameEn": "J-Power",
+    "code": "9513",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 4,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "卸電力の大手。大間原発と石炭火力のCCS・アンモニア混焼が注目テーマ",
+    "overview": "卸電力事業者として全国に発電設備を保有。水力・石炭火力が中心。大間原発建設とカーボンニュートラルへの対応が経営課題。",
+    "moatSummary": "大規模水力発電所と全国の発電インフラが安定的な収益基盤。",
+    "fcfNote": "卸電力の安定収入で堅実なFCF確保。"
+  },
+  {
+    "slug": "fukuoka-financial",
+    "name": "ふくおかFG",
+    "nameEn": "Fukuoka Financial Group",
+    "code": "8354",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 3
+    },
+    "verdict": "九州最大の地銀グループ。デジタルバンク「みんなの銀行」で先進的取組み",
+    "overview": "福岡銀行を中核とする九州最大の地銀グループ。デジタルバンク「みんなの銀行」を日本初のデジタルバンクとして設立。",
+    "moatSummary": "九州の優良な経済圏における地盤と、デジタルバンクの先行者優位が差別化。",
+    "fcfNote": "金利上昇で利ざや改善、地銀の中でFCFは安定的。"
+  },
+  {
+    "slug": "chiba-bank",
+    "name": "千葉銀行",
+    "nameEn": "Chiba Bank",
+    "code": "8331",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 3,
+      "network": 3,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "首都圏地銀の雄。千葉県の人口・経済力が最大の資産",
+    "overview": "千葉県を地盤とする地方銀行の大手。首都圏の優良な顧客基盤を持ち、個人・法人向けの総合金融サービスを提供。",
+    "moatSummary": "千葉県という首都圏の成長地盤と、地域密着の顧客関係が参入障壁。",
+    "fcfNote": "金利上昇環境で利ざや改善、安定的にFCFを確保。"
+  },
+  {
+    "slug": "ms-ci",
+    "name": "ミスミグループ本社",
+    "nameEn": "Misumi Group",
+    "code": "9962",
+    "industry": "wholesale",
+    "industryName": "商社・卸売",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 3,
+      "cost": 4,
+      "intangible": 4
+    },
+    "verdict": "FA部品のEC企業。確実短納期モデルで製造業の購買インフラを構築",
+    "overview": "FA・金型用部品のEC最大手。確実短納期の自社ブランド品と他社品を合わせ3000万点超を取り扱い。meviy（AI見積）も成長中。",
+    "moatSummary": "確実短納期の物流システムとmeviyのAI見積が模倣困難な競争優位。",
+    "fcfNote": "EC×製造業の安定需要で堅実にFCFを創出。"
+  },
+  {
+    "slug": "smtrust",
+    "name": "三井住友トラストHD",
+    "nameEn": "Sumitomo Mitsui Trust Holdings",
+    "code": "8309",
+    "industry": "banking",
+    "industryName": "銀行",
+    "exists": false,
+    "moat": {
+      "brand": 3,
+      "switching": 4,
+      "network": 3,
+      "cost": 2,
+      "intangible": 3
+    },
+    "verdict": "信託銀行の最大手。資産管理・不動産・年金で独自のポジションを確立",
+    "overview": "日本最大の信託銀行グループ。資産管理・運用、不動産、年金管理が主力。信託機能を活かした独自のビジネスモデルを持つ。",
+    "moatSummary": "信託機能の専門性と、年金・不動産関連の顧客基盤が差別化要因。",
+    "fcfNote": "信託報酬の安定収益で堅実にFCFを確保。"
+  },
+  {
+    "slug": "toho-gas",
+    "name": "東邦ガス",
+    "nameEn": "Toho Gas",
+    "code": "9533",
+    "industry": "utilities",
+    "industryName": "電力・ガス",
+    "exists": false,
+    "moat": {
+      "brand": 2,
+      "switching": 4,
+      "network": 4,
+      "cost": 3,
+      "intangible": 2
+    },
+    "verdict": "中部圏の都市ガス大手。安定したガス供給と電力参入で地域エネルギー企業に",
+    "overview": "愛知・三重・岐阜に都市ガスを供給する中部地方のガス会社。電力小売にも参入し、地域の総合エネルギー企業を目指す。",
+    "moatSummary": "中部圏のガスパイプライン網の独占的ポジションが安定基盤。",
+    "fcfNote": "ガス供給の安定需要で堅実にFCFを確保。"
+  }
+]
