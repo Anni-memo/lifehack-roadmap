@@ -19,6 +19,7 @@
   var touchStartY = 0;
   var isTransitioning = false;
   var writingMode = 'horizontal'; // 'horizontal' or 'vertical'
+  var viewMode = 'paged'; // 'paged' or 'scroll'
 
   /* ---------- DOM refs ---------- */
   var app = document.getElementById('reader-app');
@@ -123,6 +124,12 @@
 
   /* ---------- Check Saved Progress ---------- */
   function checkSavedProgress() {
+    // Scroll mode: load all chapters at once
+    if (viewMode === 'scroll') {
+      loadAllChaptersForScroll();
+      return;
+    }
+
     var saved = loadProgress();
     var params = new URLSearchParams(window.location.search);
     var requestedChapter = params.get('chapter');
@@ -305,11 +312,81 @@
       btns[i].classList.toggle('active', btns[i].getAttribute('data-writing') === mode);
     }
 
-    // Repaginate
-    setTimeout(function () {
-      paginate();
-      goToPage(0);
-    }, 100);
+    // Repaginate (only in paged mode)
+    if (viewMode === 'paged') {
+      setTimeout(function () {
+        paginate();
+        goToPage(0);
+      }, 100);
+    }
+  }
+
+  /* ---------- View Mode ---------- */
+  function setViewMode(mode) {
+    viewMode = mode;
+    document.documentElement.setAttribute('data-view', mode);
+    app.setAttribute('data-view', mode);
+    try { localStorage.setItem('reader-viewMode', mode); } catch (e) { /* */ }
+
+    var btns = document.querySelectorAll('.view-btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-view') === mode);
+    }
+
+    if (mode === 'scroll') {
+      loadAllChaptersForScroll();
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+      document.documentElement.style.height = 'auto';
+      document.body.style.height = 'auto';
+    } else {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.height = '100%';
+      document.body.style.height = '100%';
+      loadChapter(currentChapterIndex, 0);
+    }
+  }
+
+  function loadAllChaptersForScroll() {
+    showLoading();
+    var promises = [];
+    for (var i = 0; i < chapters.length; i++) {
+      promises.push(fetch('../data/books/' + chapters[i].file).then(function (r) { return r.text(); }));
+    }
+
+    Promise.all(promises).then(function (htmls) {
+      var combined = '';
+      for (var i = 0; i < htmls.length; i++) {
+        if (i > 0) {
+          combined += '<div class="scroll-chapter-divider"></div>';
+        }
+        combined += htmls[i];
+      }
+      pageContent.innerHTML = combined;
+      pageContent.style.transform = 'none';
+      hideLoading();
+      initScrollProgress();
+    }).catch(function () {
+      pageContent.innerHTML = '<div class="reader-error"><h2>読み込みエラー</h2></div>';
+      hideLoading();
+    });
+  }
+
+  function initScrollProgress() {
+    var fill = document.getElementById('scroll-progress-fill');
+    if (!fill) return;
+
+    function updateScrollBar() {
+      if (viewMode !== 'scroll') return;
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      fill.style.width = pct.toFixed(1) + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollBar, { passive: true });
+    updateScrollBar();
   }
 
   /* ---------- localStorage ---------- */
@@ -366,9 +443,25 @@
     if (savedWriting === 'vertical') {
       writingMode = 'vertical';
       app.setAttribute('data-writing', 'vertical');
-      var btns = document.querySelectorAll('.writing-btn');
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].classList.toggle('active', btns[i].getAttribute('data-writing') === 'vertical');
+      var wbtns = document.querySelectorAll('.writing-btn');
+      for (var i = 0; i < wbtns.length; i++) {
+        wbtns[i].classList.toggle('active', wbtns[i].getAttribute('data-writing') === 'vertical');
+      }
+    }
+
+    // View mode
+    var savedView = localStorage.getItem('reader-viewMode');
+    if (savedView === 'scroll') {
+      viewMode = 'scroll';
+      document.documentElement.setAttribute('data-view', 'scroll');
+      app.setAttribute('data-view', 'scroll');
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+      document.documentElement.style.height = 'auto';
+      document.body.style.height = 'auto';
+      var vbtns = document.querySelectorAll('.view-btn');
+      for (var i = 0; i < vbtns.length; i++) {
+        vbtns[i].classList.toggle('active', vbtns[i].getAttribute('data-view') === 'scroll');
       }
     }
   }
@@ -497,6 +590,14 @@
     for (var i = 0; i < writingBtns.length; i++) {
       writingBtns[i].addEventListener('click', function () {
         setWritingMode(this.getAttribute('data-writing'));
+      });
+    }
+
+    // View mode buttons
+    var viewBtns = document.querySelectorAll('.view-btn');
+    for (var i = 0; i < viewBtns.length; i++) {
+      viewBtns[i].addEventListener('click', function () {
+        setViewMode(this.getAttribute('data-view'));
       });
     }
 

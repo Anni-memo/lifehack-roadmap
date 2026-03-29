@@ -296,9 +296,9 @@ body {
   text-transform: uppercase;
 }
 
-.theme-buttons, .writing-buttons { display: flex; gap: 6px; }
+.theme-buttons, .writing-buttons, .view-buttons { display: flex; gap: 6px; }
 
-.theme-btn, .writing-btn {
+.theme-btn, .writing-btn, .view-btn {
   flex: 1;
   padding: 6px 0;
   border: 1px solid var(--border);
@@ -311,12 +311,12 @@ body {
   transition: all 0.2s;
 }
 
-.theme-btn:hover, .writing-btn:hover {
+.theme-btn:hover, .writing-btn:hover, .view-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
 
-.theme-btn.active, .writing-btn.active {
+.theme-btn.active, .writing-btn.active, .view-btn.active {
   border-color: var(--accent);
   background: var(--accent);
   color: var(--bg);
@@ -794,6 +794,112 @@ body {
   #prev-page, #next-page { width: 32px; height: 28px; font-size: 18px; }
 
   .nav-arrow { width: 36px; height: 64px; font-size: 22px; }
+}
+
+/* ====================================================================
+   SCROLL MODE
+   ==================================================================== */
+[data-view="scroll"] {
+  height: auto;
+  min-height: 100vh;
+}
+
+[data-view="scroll"] #reader-app {
+  height: auto;
+  min-height: 100vh;
+}
+
+[data-view="scroll"] #reader-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+[data-view="scroll"] #reader-viewport {
+  flex: none;
+  overflow: visible;
+}
+
+[data-view="scroll"] #page-container {
+  height: auto;
+  overflow: visible;
+  max-width: 680px;
+  padding: 32px 24px 80px;
+}
+
+[data-view="scroll"] #page-content {
+  column-width: unset !important;
+  column-count: unset !important;
+  column-gap: unset !important;
+  column-rule: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+[data-view="scroll"] .tap-zone,
+[data-view="scroll"] .nav-arrow,
+[data-view="scroll"] #reader-footer {
+  display: none !important;
+}
+
+[data-view="scroll"] html,
+[data-view="scroll"] body {
+  height: auto;
+  overflow: auto;
+}
+
+/* Scroll mode: chapter dividers */
+[data-view="scroll"] .scroll-chapter-divider {
+  text-align: center;
+  padding: 40px 0 24px;
+  margin: 40px 0 0;
+  border-top: 1px solid var(--border);
+}
+
+[data-view="scroll"] .scroll-chapter-divider .chapter-num {
+  margin-top: 0;
+}
+
+/* Scroll progress indicator (fixed at top) */
+#scroll-progress {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  z-index: 99;
+  pointer-events: none;
+  display: none;
+}
+
+[data-view="scroll"] #scroll-progress {
+  display: block;
+}
+
+#scroll-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
+  transition: width 0.1s linear;
+}
+
+/* Scroll mode vertical text */
+[data-view="scroll"][data-writing="vertical"] #page-container {
+  direction: ltr;
+  max-width: none;
+  padding: 32px;
+}
+
+[data-view="scroll"][data-writing="vertical"] #page-content {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  max-height: 80vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ---------- Print ---------- */
