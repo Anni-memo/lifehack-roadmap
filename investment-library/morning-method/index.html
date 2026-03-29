@@ -332,6 +332,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </div>
 </div>
 
+<!-- ── 朝の執事 ── -->
+<div id="morningButler" style="max-width:560px;margin:24px auto;padding:0 24px;">
+  <div style="background:linear-gradient(135deg,#0a1210 0%,#1a2a22 100%);border:1px solid rgba(90,154,120,.15);padding:20px;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:.46rem;color:#5a9a78;letter-spacing:.2em;margin-bottom:8px;opacity:.7;">MORNING BUTLER · AI</div>
+    <div id="butlerGreeting" style="font-family:'Noto Serif JP',serif;font-size:.85rem;color:#f5ede0;line-height:1.8;margin-bottom:14px;font-weight:300;"></div>
+    <div id="butlerOptions" style="display:flex;flex-direction:column;gap:4px;"></div>
+  </div>
+</div>
+
 <!-- ══════════════ PROGRESS ══════════════ -->
 <div class="progress-section">
   <div class="progress-inner">
@@ -1135,6 +1144,52 @@ initAffirmation();
 initJournal();
 initRecommendedArticles();
 renderCalendar();
+</script>
+
+<script>
+(function(){
+  var h=new Date().getHours();
+  var el=document.getElementById('butlerGreeting');
+  var opts=document.getElementById('butlerOptions');
+  if(!el||!opts)return;
+
+  // 時間帯で挨拶を変える
+  var greetings;
+  if(h>=4&&h<10){
+    greetings=['お帰りなさいませ。今朝はどのくらい時間が取れそうですか。','おはようございます。今朝の実践を始めましょう。'];
+  }else if(h>=10&&h<17){
+    greetings=['こんにちは。今からでも、少し整える時間を作れます。','午後のひととき、朝の方法論を学んでみませんか。'];
+  }else{
+    greetings=['こんばんは。明日の朝の準備として、メソッドを確認しておきましょう。','夜のひととき。明日の朝が少し良くなる読書の時間です。'];
+  }
+  el.textContent=greetings[Math.floor(Math.random()*greetings.length)];
+
+  // 選択肢
+  var items=[
+    {label:'3分で整える',desc:'アファメーションと深呼吸だけ',id:'3min'},
+    {label:'5分で実践する',desc:'SAVERSのうち2つを選んで',id:'5min'},
+    {label:'10分でフルコース',desc:'6つのステップを一通り',id:'10min'},
+    {label:'メソッドを学ぶ',desc:'SAVERSの仕組みを理解する',id:'learn'},
+  ];
+  items.forEach(function(item){
+    var btn=document.createElement('div');
+    btn.style.cssText='padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(90,154,120,.1);cursor:pointer;text-align:left;transition:all .15s;';
+    btn.innerHTML='<div style="font-family:\'Noto Serif JP\',serif;font-size:.78rem;color:#f5ede0;font-weight:400;">'+item.label+'</div><div style="font-size:.65rem;color:#dfc9a8;opacity:.7;margin-top:2px;">'+item.desc+'</div>';
+    btn.onmouseover=function(){this.style.borderColor='rgba(90,154,120,.3)';};
+    btn.onmouseout=function(){this.style.borderColor='rgba(90,154,120,.1)';};
+    btn.onclick=function(){
+      if(item.id==='learn'){
+        // ページ内のSAVERS解説にスクロール
+        var target=document.querySelector('h2')||document.querySelector('.section-title');
+        if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+      }else{
+        // 朝の実践室に飛ばす
+        window.location.href='../morning-practice/';
+      }
+    };
+    opts.appendChild(btn);
+  });
+})();
 </script>
 
 </body>

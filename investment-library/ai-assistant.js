@@ -156,6 +156,36 @@ function makeLink(title, relUrl){
   return '<a href="' + base + relUrl + '" class="ai-chat-link">' + title + '</a>';
 }
 
+function getGreeting(){
+  var h=new Date().getHours();
+  var greetings;
+  if(h>=4 && h<10){
+    greetings=[
+      'おはようございます。書斎の案内人です。\n今朝はどこから歩きますか。',
+      'おはようございます。静かな朝ですね。\nどこへご案内しましょう。',
+      'おはようございます。\n朝の実践から始めますか、それとも読書からですか。'
+    ];
+  }else if(h>=10 && h<17){
+    greetings=[
+      'こんにちは。書斎の案内人です。\nどこへご案内しましょうか。',
+      'こんにちは。\n今日はどんなことに興味がありますか。',
+      'こんにちは。\n急がなくて大丈夫です。入口を一つ選べば十分です。'
+    ];
+  }else{
+    greetings=[
+      'こんばんは。書斎の案内人です。\n夜の読書にいらっしゃいましたか。',
+      'こんばんは。静かな夜ですね。\nゆっくり歩いていってください。',
+      'こんばんは。\n今日一日の振り返りに、何か読みますか。'
+    ];
+  }
+  return greetings[Math.floor(Math.random()*greetings.length)];
+}
+
+function getFollowup(){
+  var followups=['他にもご案内できます。','まだお手伝いできることがあります。','他にも歩きたい場所はありますか。'];
+  return followups[Math.floor(Math.random()*followups.length)];
+}
+
 function shuffleArray(arr){
   var a = arr.slice();
   for(var i = a.length - 1; i > 0; i--){
@@ -253,7 +283,7 @@ function initAssistant(){
       if(messages.children.length === 0){
         loadHistory();
         if(messages.children.length === 0){
-          addBotMessage('こんにちは。書斎の案内人です。\nどこへご案内しましょうか？');
+          addBotMessage(getGreeting());
           showGuideTree('root');
         }
       }
@@ -288,7 +318,7 @@ function initAssistant(){
       var response = matchInput(text);
       addBotMessage(response);
       // 回答後にツリーを再表示
-      addBotMessage('他にもご案内できます。');
+      addBotMessage(getFollowup());
       showGuideTree('root');
     }, 600 + Math.random() * 400);
   }
