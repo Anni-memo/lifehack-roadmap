@@ -216,6 +216,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </p>
 </div>
 
+<!-- ── 人物録の語り部 ── -->
+<div style="max-width:560px;margin:20px auto;padding:0 24px;">
+  <div style="background:linear-gradient(135deg,#0a0a0e 0%,#2a2a3a 100%);border:1px solid rgba(106,106,122,.12);padding:18px 20px;">
+    <div style="font-family:'DM Mono',monospace;font-size:.44rem;color:#6a6a7a;letter-spacing:.18em;margin-bottom:6px;opacity:.6;">NARRATOR · AI</div>
+    <div id="narratorMsg" style="font-family:'Noto Serif JP',serif;font-size:.82rem;color:#f5ede0;line-height:1.8;margin-bottom:12px;font-weight:300;"></div>
+    <div id="narratorOptions" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+  </div>
+</div>
+
 <!-- ── INTRO 2-COL ── -->
 <div class="intro-2col">
 
@@ -556,6 +565,34 @@ document.getElementById('videoModal').addEventListener('click',function(e){
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape') closeModal();
 });
+</script>
+<script>
+(function(){
+  var msg=document.getElementById('narratorMsg');
+  var opts=document.getElementById('narratorOptions');
+  if(!msg||!opts)return;
+  msg.textContent='この人物は、多くを語りません。限られた資料から、何を読みますか。';
+  var items=[
+    {label:'この人の核を知りたい',action:function(){
+      msg.textContent='BNFの核は「反応速度」と「沈黙」です。市場の異変に即座に動ける構えと、有名であることを資産に変えなかった選択。この二つが、この人物の輪郭を作っています。';
+      showFollow();
+    }},
+    {label:'最初に見るべき資料は？',action:function(){
+      msg.textContent='ページ上部の資料映像をまずご覧ください。テレビ東京の番組映像で、BNFが素顔でメディアに出た数少ない記録です。';
+      showFollow();
+    }},
+    {label:'なぜ情報が少ないのか',action:function(){
+      msg.textContent='本人が選んだ沈黙です。著書もSNSもなく、2009年以降メディア露出が途絶えています。情報の少なさ自体が、この人物の輪郭の一部になっています。';
+      showFollow();
+    }},
+    {label:'記事を読む',action:function(){
+      var s=document.querySelector('.intro-2col')||document.querySelector('.article');if(s)s.scrollIntoView({behavior:'smooth'});
+    }},
+  ];
+  function render(list){opts.innerHTML='';list.forEach(function(item){var btn=document.createElement('div');btn.style.cssText='padding:7px 12px;font-family:"Noto Serif JP",serif;font-size:.72rem;color:#dfc9a8;background:rgba(255,255,255,.03);border:1px solid rgba(106,106,122,.08);cursor:pointer;transition:all .15s;';btn.textContent=item.label;btn.onmouseover=function(){this.style.borderColor='rgba(106,106,122,.3)';this.style.color='#d4aa22';};btn.onmouseout=function(){this.style.borderColor='rgba(106,106,122,.08)';this.style.color='#dfc9a8';};btn.onclick=item.action;opts.appendChild(btn);});}
+  function showFollow(){setTimeout(function(){render([{label:'他にも聞きたい',action:function(){msg.textContent='この人物は、多くを語りません。限られた資料から、何を読みますか。';render(items);}},{label:'記事を読む',action:function(){var s=document.querySelector('.intro-2col')||document.querySelector('.article');if(s)s.scrollIntoView({behavior:'smooth'});}}]);},300);}
+  render(items);
+})();
 </script>
 <script src="../../shared.js"></script>
 <script src="../../ai-assistant.js"></script>

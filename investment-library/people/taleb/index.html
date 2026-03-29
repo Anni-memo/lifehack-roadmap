@@ -216,6 +216,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </p>
 </div>
 
+<!-- ── 人物録の語り部 ── -->
+<div style="max-width:560px;margin:20px auto;padding:0 24px;">
+  <div style="background:linear-gradient(135deg,#0a0e12 0%,#2a3848 100%);border:1px solid rgba(106,138,160,.12);padding:18px 20px;">
+    <div style="font-family:'DM Mono',monospace;font-size:.44rem;color:#6a8aa0;letter-spacing:.18em;margin-bottom:6px;opacity:.6;">NARRATOR · AI</div>
+    <div id="narratorMsg" style="font-family:'Noto Serif JP',serif;font-size:.82rem;color:#f5ede0;line-height:1.8;margin-bottom:12px;font-weight:300;"></div>
+    <div id="narratorOptions" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+  </div>
+</div>
+
 <!-- -- INTRO 2-COL -- -->
 <div class="intro-2col">
   <div class="intro-left">
@@ -555,5 +564,58 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=docum
 <script src="../../shared.js"></script>
 <script src="../../ai-assistant.js"></script>
 <script src="../../presence.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById('narratorMsg');
+  var opts=document.getElementById('narratorOptions');
+  if(!msg||!opts)return;
+
+  var initial='タレブは挑発的ですが、思想の核心は明確です。どこから読みますか。';
+  msg.textContent=initial;
+
+  var items=[
+    {label:'この人の核を知りたい',action:function(){
+      msg.textContent='タレブの核は「反脆弱性」です。壊れないことではなく、混乱から恩恵を受けるシステムを設計すること。投資判断の根本を変える思想です。';
+      showFollow();
+    }},
+    {label:'最初に読むべきは？',action:function(){
+      msg.textContent='「ブラック・スワン」から始めるのが王道ですが、実践的なのは「反脆弱性」です。ページ上部の動画（Talks at Google）も良い入口です。';
+      showFollow();
+    }},
+    {label:'投資にどう使える？',action:function(){
+      msg.textContent='バーベル戦略が最も直接的です。極端に安全な資産と極端にリスクの高い資産を組み合わせ、中間のリスクを避ける。これがタレブ的な投資設計です。';
+      showFollow();
+    }},
+    {label:'記事を読む',action:function(){
+      var section=document.querySelector('.intro-2col')||document.querySelector('.article');
+      if(section)section.scrollIntoView({behavior:'smooth'});
+    }},
+  ];
+
+  function render(list){
+    opts.innerHTML='';
+    list.forEach(function(item){
+      var btn=document.createElement('div');
+      btn.style.cssText='padding:7px 12px;font-family:"Noto Serif JP",serif;font-size:.72rem;color:#dfc9a8;background:rgba(255,255,255,.03);border:1px solid rgba(106,138,160,.08);cursor:pointer;transition:all .15s;';
+      btn.textContent=item.label;
+      btn.onmouseover=function(){this.style.borderColor='rgba(106,138,160,.3)';this.style.color='#6a8aa0';};
+      btn.onmouseout=function(){this.style.borderColor='rgba(106,138,160,.08)';this.style.color='#dfc9a8';};
+      btn.onclick=item.action;
+      opts.appendChild(btn);
+    });
+  }
+
+  function showFollow(){
+    setTimeout(function(){
+      render([
+        {label:'他にも聞きたい',action:function(){msg.textContent=initial;render(items);}},
+        {label:'記事を読む',action:function(){var s=document.querySelector('.intro-2col')||document.querySelector('.article');if(s)s.scrollIntoView({behavior:'smooth'});}},
+      ]);
+    },300);
+  }
+
+  render(items);
+})();
+</script>
 </body>
 </html>

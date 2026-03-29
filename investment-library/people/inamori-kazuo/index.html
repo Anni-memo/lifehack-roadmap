@@ -221,6 +221,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </p>
 </div>
 
+<!-- ── 人物録の語り部 ── -->
+<div style="max-width:560px;margin:20px auto;padding:0 24px;">
+  <div style="background:linear-gradient(135deg,#1a1208 0%,#3a2848 100%);border:1px solid rgba(138,106,154,.12);padding:18px 20px;">
+    <div style="font-family:'DM Mono',monospace;font-size:.44rem;color:#a87ec8;letter-spacing:.18em;margin-bottom:6px;opacity:.6;">NARRATOR · AI</div>
+    <div id="narratorMsg" style="font-family:'Noto Serif JP',serif;font-size:.82rem;color:#f5ede0;line-height:1.8;margin-bottom:12px;font-weight:300;"></div>
+    <div id="narratorOptions" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+  </div>
+</div>
+
 <!-- ── INTRO 2-COL ── -->
 <div class="intro-2col">
 
@@ -538,5 +547,58 @@ document.addEventListener('keydown',function(e){
 <script src="../../shared.js"></script>
 <script src="../../ai-assistant.js"></script>
 <script src="../../presence.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById('narratorMsg');
+  var opts=document.getElementById('narratorOptions');
+  if(!msg||!opts)return;
+
+  var initial='稲盛和夫さんのページへようこそ。利他と規律の経営者です。';
+  msg.textContent=initial;
+
+  var items=[
+    {label:'この人の核を知りたい',action:function(){
+      msg.textContent='稲盛の核は「人間として何が正しいか」という判断基準です。京セラ・KDDI・JAL、三つの企業すべてがこの一点から始まっています。';
+      showFollow();
+    }},
+    {label:'JAL再建について',action:function(){
+      msg.textContent='78歳で無報酬で会長に就任し、2年半で再上場させました。導入したのは京セラフィロソフィとアメーバ経営。技術ではなく哲学で企業を変えた稀有な事例です。';
+      showFollow();
+    }},
+    {label:'似ている人物は？',action:function(){
+      msg.textContent='渋沢栄一が近いかもしれません。倫理と実業の両立という点で通じます。思考の案内人たちで渋沢栄一のレンズも体験できます。';
+      showFollow();
+    }},
+    {label:'記事を読む',action:function(){
+      var section=document.querySelector('.intro-2col')||document.querySelector('.article');
+      if(section)section.scrollIntoView({behavior:'smooth'});
+    }},
+  ];
+
+  function render(list){
+    opts.innerHTML='';
+    list.forEach(function(item){
+      var btn=document.createElement('div');
+      btn.style.cssText='padding:7px 12px;font-family:"Noto Serif JP",serif;font-size:.72rem;color:#dfc9a8;background:rgba(255,255,255,.03);border:1px solid rgba(138,106,154,.08);cursor:pointer;transition:all .15s;';
+      btn.textContent=item.label;
+      btn.onmouseover=function(){this.style.borderColor='rgba(168,126,200,.3)';this.style.color='#a87ec8';};
+      btn.onmouseout=function(){this.style.borderColor='rgba(138,106,154,.08)';this.style.color='#dfc9a8';};
+      btn.onclick=item.action;
+      opts.appendChild(btn);
+    });
+  }
+
+  function showFollow(){
+    setTimeout(function(){
+      render([
+        {label:'他にも聞きたい',action:function(){msg.textContent=initial;render(items);}},
+        {label:'記事を読む',action:function(){var s=document.querySelector('.intro-2col')||document.querySelector('.article');if(s)s.scrollIntoView({behavior:'smooth'});}},
+      ]);
+    },300);
+  }
+
+  render(items);
+})();
+</script>
 </body>
 </html>

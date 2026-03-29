@@ -246,6 +246,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </p>
 </div>
 
+<!-- ── 人物録の語り部 ── -->
+<div style="max-width:560px;margin:20px auto;padding:0 24px;">
+  <div style="background:linear-gradient(135deg,#1a1208 0%,#2d2010 100%);border:1px solid rgba(184,144,10,.12);padding:18px 20px;">
+    <div style="font-family:'DM Mono',monospace;font-size:.44rem;color:#d4aa22;letter-spacing:.18em;margin-bottom:6px;opacity:.6;">NARRATOR · AI</div>
+    <div id="narratorMsg" style="font-family:'Noto Serif JP',serif;font-size:.82rem;color:#f5ede0;line-height:1.8;margin-bottom:12px;font-weight:300;"></div>
+    <div id="narratorOptions" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+  </div>
+</div>
+
 <!-- ── INTRO 2-COL ── -->
 <div class="intro-2col">
 
@@ -624,5 +633,62 @@ document.addEventListener('keydown',function(e){
 <script src="../../shared.js"></script>
 <script src="../../ai-assistant.js"></script>
 <script src="../../presence.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById('narratorMsg');
+  var opts=document.getElementById('narratorOptions');
+  if(!msg||!opts)return;
+
+  var h=new Date().getHours();
+  var greetings;
+  if(h>=4&&h<10) greetings=['おはようございます。田中渓さんのページへようこそ。','朝にこのページを開いたのは、良い選択かもしれません。'];
+  else if(h>=10&&h<17) greetings=['こんにちは。田中渓さんについて、どこから読みましょうか。','この人物を、どの角度から見ますか。'];
+  else greetings=['こんばんは。投資と習慣を一つの思想として生きる人の記録です。','夜にこのページを読むのも、また良い時間です。'];
+  msg.textContent=greetings[Math.floor(Math.random()*greetings.length)];
+
+  var items=[
+    {label:'この人の核を知りたい',action:function(){
+      msg.textContent='田中渓の核は「環境のデザイン」です。意志力ではなく、仕組みで判断と習慣を整える。投資も身体管理も、同じ原理で動いています。';
+      showFollow();
+    }},
+    {label:'最初に1本だけ見るなら？',action:function(){
+      msg.textContent='PIVOTの「5つの掟」をおすすめします。投資・習慣・身体が一つにつながる輪郭が、この1本で見えます。ページ上部の動画カードからどうぞ。';
+      showFollow();
+    }},
+    {label:'似ている人物は？',action:function(){
+      msg.textContent='稲盛和夫さんが近いかもしれません。「判断のための生活設計」という点で通じるものがあります。ただし田中渓さんは投資家、稲盛さんは経営者。視座は違います。';
+      showFollow();
+    }},
+    {label:'記事を読む',action:function(){
+      var section=document.querySelector('.intro-2col')||document.querySelector('.article');
+      if(section)section.scrollIntoView({behavior:'smooth'});
+    }},
+  ];
+
+  function render(list){
+    opts.innerHTML='';
+    list.forEach(function(item){
+      var btn=document.createElement('div');
+      btn.style.cssText='padding:7px 12px;font-family:"Noto Serif JP",serif;font-size:.72rem;color:#dfc9a8;background:rgba(255,255,255,.03);border:1px solid rgba(184,144,10,.08);cursor:pointer;transition:all .15s;';
+      btn.textContent=item.label;
+      btn.onmouseover=function(){this.style.borderColor='rgba(212,170,34,.3)';this.style.color='#d4aa22';};
+      btn.onmouseout=function(){this.style.borderColor='rgba(184,144,10,.08)';this.style.color='#dfc9a8';};
+      btn.onclick=item.action;
+      opts.appendChild(btn);
+    });
+  }
+
+  function showFollow(){
+    setTimeout(function(){
+      render([
+        {label:'他にも聞きたい',action:function(){msg.textContent=greetings[Math.floor(Math.random()*greetings.length)];render(items);}},
+        {label:'記事を読む',action:function(){var s=document.querySelector('.intro-2col')||document.querySelector('.article');if(s)s.scrollIntoView({behavior:'smooth'});}},
+      ]);
+    },300);
+  }
+
+  render(items);
+})();
+</script>
 </body>
 </html>
