@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="投資用語集。PER・PBR・FCF・moat・バリュー投資など50語以上を簡潔に定義し、関連記事へのリンク付き。検索フィルター機能搭載。"/>
+<meta property="og:title" content="用語集（グロッサリー）｜投資と思考の書斎"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/glossary/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/glossary/"/>
+<title>用語集（グロッサリー）｜投資と思考の書斎</title>
+<link rel="stylesheet" href="../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);}.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 50%,#2a1c0a 100%);color:var(--parch);padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.08) 0%,transparent 70%);}.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;margin-bottom:16px;}.hero-sub{font-size:.84rem;color:var(--parch3);font-weight:300;line-height:1.95;position:relative;max-width:560px;margin:0 auto;}
+.search-wrap{max-width:800px;margin:0 auto;padding:24px 24px 0;}.search-input{width:100%;padding:12px 16px;font-family:var(--jp);font-size:.82rem;background:var(--parch);border:1px solid var(--parch4);color:var(--ink);outline:none;transition:border-color .2s;}.search-input:focus{border-color:var(--gold2);}.search-input::placeholder{color:var(--ink3);opacity:.6;}
+.glossary{max-width:800px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-direction:column;gap:2px;}
+.term{display:block;padding:14px 18px;background:var(--parch2);border:1px solid var(--parch4);text-decoration:none;color:inherit;transition:all .18s;}.term:hover{border-color:var(--gold3);background:var(--parch3);}.term.hidden{display:none;}
+.term-name{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:2px;}.term-sub{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.08em;margin-bottom:6px;}.term-desc{font-size:.78rem;color:var(--ink3);line-height:1.7;font-weight:300;}
+.count{max-width:800px;margin:0 auto;padding:8px 24px;font-family:var(--mono);font-size:.54rem;color:var(--gold);letter-spacing:.08em;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}.music-toggle:hover{opacity:1;border-color:var(--gold2);}.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-back" href="../">書斎の入口</a><span class="nav-sep">/</span><span class="nav-current">用語集</span></nav>
+<div class="hero"><h1 class="hero-title">用語集（グロッサリー）</h1><p class="hero-sub">投資と思考の書斎で使われる主要な用語を<br>簡潔に定義し、関連記事へのリンクを添えて。</p></div>
+<div class="search-wrap"><input type="text" class="search-input" id="glossarySearch" placeholder="用語を検索（例：PER、moat、損失回避）"></div>
+<div class="count" id="termCount">54 語</div>
+<div class="glossary" id="glossaryList">
+<a class="term" href="../hajimete/index-investing/" data-search="アクティブ運用 銘柄選定による市場平均超過を狙う運用手法 ファンドマネージャーが銘柄を選定して運用する。">
+<div class="term-name">アクティブ運用</div>
+<div class="term-sub">銘柄選定による市場平均超過を狙う運用手法</div>
+<div class="term-desc">ファンドマネージャーが銘柄を選定して運用する。</div>
+</a>
+<a class="term" href="../human/anchoring/" data-search="アンカリング 最初の情報に引きずられる認知バイアス 最初に提示された数字が判断の基準になる現象。">
+<div class="term-name">アンカリング</div>
+<div class="term-sub">最初の情報に引きずられる認知バイアス</div>
+<div class="term-desc">最初に提示された数字が判断の基準になる現象。</div>
+</a>
+<a class="term" href="../hajimete/returns/" data-search="インカムゲイン 配当・利息などの保有収益 株式の配当金や債券の利息など、保有から得る収益。">
+<div class="term-name">インカムゲイン</div>
+<div class="term-sub">配当・利息などの保有収益</div>
+<div class="term-desc">株式の配当金や債券の利息など、保有から得る収益。</div>
+</a>
+<a class="term" href="../hajimete/index-investing/" data-search="インデックス投資 市場指数に連動するパッシブ運用 市場全体に分散投資する手法。低コストが特徴。">
+<div class="term-name">インデックス投資</div>
+<div class="term-sub">市場指数に連動するパッシブ運用</div>
+<div class="term-desc">市場全体に分散投資する手法。低コストが特徴。</div>
+</a>
+<a class="term" href="../fcf/" data-search="オーナーズアーニング バフェットが定義した企業の真の稼ぎ FCFに近い概念。企業がオーナーに還元できる利益。">
+<div class="term-name">オーナーズアーニング</div>
+<div class="term-sub">バフェットが定義した企業の真の稼ぎ</div>
+<div class="term-desc">FCFに近い概念。企業がオーナーに還元できる利益。</div>
+</a>
+<a class="term" href="../fcf/" data-search="キャッシュフロー計算書 現金の流れを示す財務諸表 営業CF・投資CF・財務CFの3区分で表示。">
+<div class="term-name">キャッシュフロー計算書</div>
+<div class="term-sub">現金の流れを示す財務諸表</div>
+<div class="term-desc">営業CF・投資CF・財務CFの3区分で表示。</div>
+</a>
+<a class="term" href="../hajimete/returns/" data-search="キャピタルゲイン 売買差益 株式等を売却して得る利益。">
+<div class="term-name">キャピタルゲイン</div>
+<div class="term-sub">売買差益</div>
+<div class="term-desc">株式等を売却して得る利益。</div>
+</a>
+<a class="term" href="../horizons/value-investing-essence/" data-search="グレアム ベンジャミン・グレアム バリュー投資の父。安全マージンの提唱者。">
+<div class="term-name">グレアム</div>
+<div class="term-sub">ベンジャミン・グレアム</div>
+<div class="term-desc">バリュー投資の父。安全マージンの提唱者。</div>
+</a>
+<a class="term" href="../human/sunk-cost/" data-search="サンクコスト 埋没費用 既に支払い済みで回収不能な費用。判断に影響すべきでない。">
+<div class="term-name">サンクコスト</div>
+<div class="term-sub">埋没費用</div>
+<div class="term-desc">既に支払い済みで回収不能な費用。判断に影響すべきでない。</div>
+</a>
+<a class="term" href="../moat/switching-costs/" data-search="スイッチングコスト 乗り換えにかかるコスト 顧客が他社に移行する際の金銭的・心理的負担。">
+<div class="term-name">スイッチングコスト</div>
+<div class="term-sub">乗り換えにかかるコスト</div>
+<div class="term-desc">顧客が他社に移行する際の金銭的・心理的負担。</div>
+</a>
+<a class="term" href="../horizons/stoicism/" data-search="ストア哲学 古代ギリシャ・ローマの哲学 コントロールできるものに集中する思考法。">
+<div class="term-name">ストア哲学</div>
+<div class="term-sub">古代ギリシャ・ローマの哲学</div>
+<div class="term-desc">コントロールできるものに集中する思考法。</div>
+</a>
+<a class="term" href="../industries/japan-sectors/" data-search="ディフェンシブ銘柄 景気に左右されにくい銘柄 食品・医薬品・インフラなど安定需要の業種。">
+<div class="term-name">ディフェンシブ銘柄</div>
+<div class="term-sub">景気に左右されにくい銘柄</div>
+<div class="term-desc">食品・医薬品・インフラなど安定需要の業種。</div>
+</a>
+<a class="term" href="../hajimete/returns/" data-search="トータルリターン 配当+値上がり益の合計 インカムゲインとキャピタルゲインの合計。">
+<div class="term-name">トータルリターン</div>
+<div class="term-sub">配当+値上がり益の合計</div>
+<div class="term-desc">インカムゲインとキャピタルゲインの合計。</div>
+</a>
+<a class="term" href="../hajimete/index-investing/" data-search="ドルコスト平均法 定額積立投資 一定金額を定期的に投資し、取得単価を平準化する手法。">
+<div class="term-name">ドルコスト平均法</div>
+<div class="term-sub">定額積立投資</div>
+<div class="term-desc">一定金額を定期的に投資し、取得単価を平準化する手法。</div>
+</a>
+<a class="term" href="../moat/network-effects/" data-search="ネットワーク効果 利用者増加で価値が高まる現象 ユーザーが増えるほどサービスの価値が向上するmoat。">
+<div class="term-name">ネットワーク効果</div>
+<div class="term-sub">利用者増加で価値が高まる現象</div>
+<div class="term-desc">ユーザーが増えるほどサービスの価値が向上するmoat。</div>
+</a>
+<a class="term" href="../principles/" data-search="バフェット ウォーレン・バフェット 世界最大の投資家。バークシャー・ハサウェイのCEO。">
+<div class="term-name">バフェット</div>
+<div class="term-sub">ウォーレン・バフェット</div>
+<div class="term-desc">世界最大の投資家。バークシャー・ハサウェイのCEO。</div>
+</a>
+<a class="term" href="../horizons/value-investing-essence/" data-search="バリュー投資 内在価値より安い株を買う戦略 グレアム・バフェット・マンガーの投資哲学の中核。">
+<div class="term-name">バリュー投資</div>
+<div class="term-sub">内在価値より安い株を買う戦略</div>
+<div class="term-desc">グレアム・バフェット・マンガーの投資哲学の中核。</div>
+</a>
+<a class="term" href="../hajimete/index-investing/" data-search="パッシブ運用 市場指数に連動する運用手法 インデックスファンドによる低コスト分散投資。">
+<div class="term-name">パッシブ運用</div>
+<div class="term-sub">市場指数に連動する運用手法</div>
+<div class="term-desc">インデックスファンドによる低コスト分散投資。</div>
+</a>
+<a class="term" href="../principles/" data-search="フィッシャー フィリップ・フィッシャー 成長株投資の先駆者。定性分析を重視。">
+<div class="term-name">フィッシャー</div>
+<div class="term-sub">フィリップ・フィッシャー</div>
+<div class="term-desc">成長株投資の先駆者。定性分析を重視。</div>
+</a>
+<a class="term" href="../moat/brand-power/" data-search="ブランド力 企業の無形資産としてのブランド 価格プレミアムを維持できるmoatの一種。">
+<div class="term-name">ブランド力</div>
+<div class="term-sub">企業の無形資産としてのブランド</div>
+<div class="term-desc">価格プレミアムを維持できるmoatの一種。</div>
+</a>
+<a class="term" href="../human/overconfidence-bias/" data-search="ベースレート 統計的な基準確率 個別判断の前に参照すべき一般的な成功/失敗率。">
+<div class="term-name">ベースレート</div>
+<div class="term-sub">統計的な基準確率</div>
+<div class="term-desc">個別判断の前に参照すべき一般的な成功/失敗率。</div>
+</a>
+<a class="term" href="../horizons/mental-models/" data-search="マンガー チャーリー・マンガー バフェットのパートナー。メンタルモデルの提唱者。">
+<div class="term-name">マンガー</div>
+<div class="term-sub">チャーリー・マンガー</div>
+<div class="term-desc">バフェットのパートナー。メンタルモデルの提唱者。</div>
+</a>
+<a class="term" href="../principles/mr-market/" data-search="ミスター・マーケット グレアムの寓話的人物 市場の気分を擬人化した概念。感情的に振り回されない投資の比喩。">
+<div class="term-name">ミスター・マーケット</div>
+<div class="term-sub">グレアムの寓話的人物</div>
+<div class="term-desc">市場の気分を擬人化した概念。感情的に振り回されない投資の比喩。</div>
+</a>
+<a class="term" href="../horizons/mental-models/" data-search="メンタルモデル 思考の枠組み・フレームワーク 複数の学問分野から集めた思考の道具箱。マンガーが提唱。">
+<div class="term-name">メンタルモデル</div>
+<div class="term-sub">思考の枠組み・フレームワーク</div>
+<div class="term-desc">複数の学問分野から集めた思考の道具箱。マンガーが提唱。</div>
+</a>
+<a class="term" href="../horizons/value-investing-essence/" data-search="リスクプレミアム リスクに対する追加リターン リスクのある資産が無リスク資産より高いリターンを提供する部分。">
+<div class="term-name">リスクプレミアム</div>
+<div class="term-sub">リスクに対する追加リターン</div>
+<div class="term-desc">リスクのある資産が無リスク資産より高いリターンを提供する部分。</div>
+</a>
+<a class="term" href="../horizons/value-investing-essence/" data-search="内在価値 Intrinsic Value 企業の本質的な価値。将来のFCFの現在価値の合計。">
+<div class="term-name">内在価値</div>
+<div class="term-sub">Intrinsic Value</div>
+<div class="term-desc">企業の本質的な価値。将来のFCFの現在価値の合計。</div>
+</a>
+<a class="term" href="../principles/diversification/" data-search="分散投資 リスク分散のためにポートフォリオを多様化 集中リスクを避け、安定したリターンを目指す。">
+<div class="term-name">分散投資</div>
+<div class="term-sub">リスク分散のためにポートフォリオを多様化</div>
+<div class="term-desc">集中リスクを避け、安定したリターンを目指す。</div>
+</a>
+<a class="term" href="../fcf/" data-search="営業キャッシュフロー 本業で稼いだ現金 事業活動から得たキャッシュの流れ。">
+<div class="term-name">営業キャッシュフロー</div>
+<div class="term-sub">本業で稼いだ現金</div>
+<div class="term-desc">事業活動から得たキャッシュの流れ。</div>
+</a>
+<a class="term" href="../horizons/safety-margin/" data-search="安全マージン Margin of Safety 内在価値と市場価格の差。グレアムが提唱した概念。">
+<div class="term-name">安全マージン</div>
+<div class="term-sub">Margin of Safety</div>
+<div class="term-desc">内在価値と市場価格の差。グレアムが提唱した概念。</div>
+</a>
+<a class="term" href="../principles/stop-loss/" data-search="損切り ストップロス 損失を確定させて撤退する投資判断。">
+<div class="term-name">損切り</div>
+<div class="term-sub">ストップロス</div>
+<div class="term-desc">損失を確定させて撤退する投資判断。</div>
+</a>
+<a class="term" href="../human/loss-aversion/" data-search="損失回避 損失を過大評価する心理傾向 同額の利益より損失の方が約2倍強く感じる。">
+<div class="term-name">損失回避</div>
+<div class="term-sub">損失を過大評価する心理傾向</div>
+<div class="term-desc">同額の利益より損失の方が約2倍強く感じる。</div>
+</a>
+<a class="term" href="../hajimete/stock-basics/" data-search="時価総額 株価×発行済株式数 企業の市場での評価額。">
+<div class="term-name">時価総額</div>
+<div class="term-sub">株価×発行済株式数</div>
+<div class="term-desc">企業の市場での評価額。</div>
+</a>
+<a class="term" href="../fcf/" data-search="有利子負債 利息の支払いを伴う借入金 企業の財務リスクを測る指標の一つ。">
+<div class="term-name">有利子負債</div>
+<div class="term-sub">利息の支払いを伴う借入金</div>
+<div class="term-desc">企業の財務リスクを測る指標の一つ。</div>
+</a>
+<a class="term" href="../hajimete/per-pbr/" data-search="株式益利回り PERの逆数 1÷PERで算出。債券利回りとの比較に使用。">
+<div class="term-name">株式益利回り</div>
+<div class="term-sub">PERの逆数</div>
+<div class="term-desc">1÷PERで算出。債券利回りとの比較に使用。</div>
+</a>
+<a class="term" href="../moat/intangible-assets/" data-search="無形資産 Intangible Assets 特許・ブランド・ライセンスなど物理形態のない資産。">
+<div class="term-name">無形資産</div>
+<div class="term-sub">Intangible Assets</div>
+<div class="term-desc">特許・ブランド・ライセンスなど物理形態のない資産。</div>
+</a>
+<a class="term" href="../human/confirmation-bias/" data-search="確証バイアス 自分の信念を支持する情報を優先する傾向 反証を無視し、都合の良い情報ばかり集める認知の偏り。">
+<div class="term-name">確証バイアス</div>
+<div class="term-sub">自分の信念を支持する情報を優先する傾向</div>
+<div class="term-desc">反証を無視し、都合の良い情報ばかり集める認知の偏り。</div>
+</a>
+<a class="term" href="../principles/circle-of-competence/" data-search="能力の輪 Circle of Competence 自分が本当に理解している領域。バフェットの投資原則。">
+<div class="term-name">能力の輪</div>
+<div class="term-sub">Circle of Competence</div>
+<div class="term-desc">自分が本当に理解している領域。バフェットの投資原則。</div>
+</a>
+<a class="term" href="../fcf/" data-search="自己資本比率 総資産に占める自己資本の割合 財務の安全性を測る基本指標。">
+<div class="term-name">自己資本比率</div>
+<div class="term-sub">総資産に占める自己資本の割合</div>
+<div class="term-desc">財務の安全性を測る基本指標。</div>
+</a>
+<a class="term" href="../horizons/compound-interest/" data-search="複利 Compound Interest 利益が利益を生む指数関数的な成長。長期投資の核心。">
+<div class="term-name">複利</div>
+<div class="term-sub">Compound Interest</div>
+<div class="term-desc">利益が利益を生む指数関数的な成長。長期投資の核心。</div>
+</a>
+<a class="term" href="../moat/economies-of-scale/" data-search="規模の経済 Economies of Scale 規模拡大によるコスト低減効果。">
+<div class="term-name">規模の経済</div>
+<div class="term-sub">Economies of Scale</div>
+<div class="term-desc">規模拡大によるコスト低減効果。</div>
+</a>
+<a class="term" href="../fcf/" data-search="設備投資 CapEx 事業継続・拡大のための固定資産への投資。">
+<div class="term-name">設備投資</div>
+<div class="term-sub">CapEx</div>
+<div class="term-desc">事業継続・拡大のための固定資産への投資。</div>
+</a>
+<a class="term" href="../human/overconfidence-bias/" data-search="過信バイアス 自分の能力を過大評価する傾向 ダニング=クルーガー効果。投資では過度なリスクテイクを招く。">
+<div class="term-name">過信バイアス</div>
+<div class="term-sub">自分の能力を過大評価する傾向</div>
+<div class="term-desc">ダニング=クルーガー効果。投資では過度なリスクテイクを招く。</div>
+</a>
+<a class="term" href="../hajimete/returns/" data-search="配当利回り 配当金÷株価×100 投資額に対する配当の割合。">
+<div class="term-name">配当利回り</div>
+<div class="term-sub">配当金÷株価×100</div>
+<div class="term-desc">投資額に対する配当の割合。</div>
+</a>
+<a class="term" href="../principles/long-term-math/" data-search="72の法則 資産倍増の目安計算 72÷年率リターン=資産が2倍になる年数。">
+<div class="term-name">72の法則</div>
+<div class="term-sub">資産倍増の目安計算</div>
+<div class="term-desc">72÷年率リターン=資産が2倍になる年数。</div>
+</a>
+<a class="term" href="../hajimete/per-pbr/" data-search="EPS 1株当たり純利益 純利益を発行済み株式数で割ったもの。PERの算出に使用。">
+<div class="term-name">EPS</div>
+<div class="term-sub">1株当たり純利益</div>
+<div class="term-desc">純利益を発行済み株式数で割ったもの。PERの算出に使用。</div>
+</a>
+<a class="term" href="../fcf/" data-search="FCF フリーキャッシュフロー 営業CFから設備投資を引いた自由に使えるキャッシュ。">
+<div class="term-name">FCF</div>
+<div class="term-sub">フリーキャッシュフロー</div>
+<div class="term-desc">営業CFから設備投資を引いた自由に使えるキャッシュ。</div>
+</a>
+<a class="term" href="../human/fomo/" data-search="FOMO Fear of Missing Out 乗り遅れることへの恐怖。投資では高値掴みの原因。">
+<div class="term-name">FOMO</div>
+<div class="term-sub">Fear of Missing Out</div>
+<div class="term-desc">乗り遅れることへの恐怖。投資では高値掴みの原因。</div>
+</a>
+<a class="term" href="../moat/" data-search="moat 経済的堀・競争優位性 企業が競合から自社を守る永続的な優位性。">
+<div class="term-name">moat</div>
+<div class="term-sub">経済的堀・競争優位性</div>
+<div class="term-desc">企業が競合から自社を守る永続的な優位性。</div>
+</a>
+<a class="term" href="../hajimete/index-investing/" data-search="NISA 少額投資非課税制度 投資で得た利益が非課税になる日本の制度。">
+<div class="term-name">NISA</div>
+<div class="term-sub">少額投資非課税制度</div>
+<div class="term-desc">投資で得た利益が非課税になる日本の制度。</div>
+</a>
+<a class="term" href="../hajimete/per-pbr/" data-search="PBR 株価純資産倍率 株価を1株当たり純資産で割った指標。帳簿価値との比較。">
+<div class="term-name">PBR</div>
+<div class="term-sub">株価純資産倍率</div>
+<div class="term-desc">株価を1株当たり純資産で割った指標。帳簿価値との比較。</div>
+</a>
+<a class="term" href="../hajimete/per-pbr/" data-search="PER 株価収益率 株価を1株当たり純利益で割った指標。株価が利益の何倍かを示す。">
+<div class="term-name">PER</div>
+<div class="term-sub">株価収益率</div>
+<div class="term-desc">株価を1株当たり純利益で割った指標。株価が利益の何倍かを示す。</div>
+</a>
+<a class="term" href="../hajimete/per-pbr/" data-search="ROE 自己資本利益率 純利益を自己資本で割った指標。株主資本の効率性を測る。">
+<div class="term-name">ROE</div>
+<div class="term-sub">自己資本利益率</div>
+<div class="term-desc">純利益を自己資本で割った指標。株主資本の効率性を測る。</div>
+</a>
+<a class="term" href="../hajimete/index-investing/" data-search="S&P500 米国大型株500社の株価指数 世界で最も参照される株式指数。">
+<div class="term-name">S&P500</div>
+<div class="term-sub">米国大型株500社の株価指数</div>
+<div class="term-desc">世界で最も参照される株式指数。</div>
+</a>
+<a class="term" href="../hajimete/index-investing/" data-search="TOPIX 東証株価指数 東証プライム市場全銘柄の時価総額加重平均指数。">
+<div class="term-name">TOPIX</div>
+<div class="term-sub">東証株価指数</div>
+<div class="term-desc">東証プライム市場全銘柄の時価総額加重平均指数。</div>
+</a>
+</div>
+<footer class="footer"><div class="footer-title">投資と思考の書斎</div><div><a href="../">書斎の入口</a> &middot; <a href="../hajimete/">初めての方へ</a> &middot; <a href="../principles/">投資原則</a> &middot; <a href="../industries/">業種から歩く</a> &middot; <a href="../horizons/">思考を広げる</a></div><div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div><div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div></footer>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+<button class="music-toggle" id="musicToggle" title="528Hz">&#127925;</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+// Glossary search filter
+(function(){
+  var input = document.getElementById('glossarySearch');
+  var terms = document.querySelectorAll('.term');
+  var countEl = document.getElementById('termCount');
+  input.addEventListener('input', function(){
+    var q = this.value.toLowerCase();
+    var visible = 0;
+    terms.forEach(function(t){
+      var data = (t.getAttribute('data-search') || '').toLowerCase();
+      if(!q || data.indexOf(q) !== -1){
+        t.classList.remove('hidden');
+        visible++;
+      } else {
+        t.classList.add('hidden');
+      }
+    });
+    countEl.textContent = visible + ' / 54 語';
+  });
+})();
+window.addEventListener('scroll',function(){document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);});
+(function(){var S='music_playing',V='t_8uSnwvUeQ',p=null,r=false;var b=document.getElementById('musicToggle');var s=localStorage.getItem(S)==='true';window.onYouTubeIframeAPIReady=function(){p=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:V,playerVars:{autoplay:0,loop:1,playlist:V},events:{onReady:function(e){r=true;e.target.setVolume(30);if(s){e.target.playVideo();b.classList.add('playing');}}}});};var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';document.head.appendChild(t);b.addEventListener('click',function(){if(!r)return;if(p.getPlayerState()===YT.PlayerState.PLAYING){p.pauseVideo();b.classList.remove('playing');localStorage.setItem(S,'false');}else{p.playVideo();b.classList.add('playing');localStorage.setItem(S,'true');}});})();
+</script>
+<script src="../shared.js"></script>
+</body>
+</html>

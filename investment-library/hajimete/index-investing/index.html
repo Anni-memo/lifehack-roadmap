@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="インデックス投資の基礎を解説。なぜ市場全体を買うのか。S&P500・TOPIX・全世界株式の特徴と、パッシブ投資が多くの投資家にとって合理的な選択である理由。"/>
+<meta property="og:title" content="インデックス投資入門：なぜ市場全体を買うのか｜投資と思考の書斎"/>
+<meta property="og:description" content="パッシブ投資の基礎。S&P500・TOPIX・全世界株式の特徴と、なぜ多くのプロが市場平均に勝てないのか。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/hajimete/index-investing/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/hajimete/index-investing/"/>
+<title>インデックス投資入門｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "インデックス投資入門：なぜ市場全体を買うのか",
+  "description": "パッシブ投資の基礎。S&P500・TOPIX・全世界株式の特徴と、インデックス投資が合理的な理由。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja"
+}
+</script>
+<link rel="stylesheet" href="../../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#2a1c0a 100%);color:var(--parch);padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.5rem,4.5vw,2.6rem);font-weight:700;line-height:1.25;color:var(--parch);text-shadow:0 2px 24px rgba(180,130,20,.12);position:relative;margin-bottom:20px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">はじめの棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">インデックス投資入門</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">はじめの棚 — PASSIVE INVESTING</div>
+  <h1 class="hero-title">インデックス投資入門<br>なぜ市場全体を買うのか</h1>
+  <p class="hero-lead">
+    個別株を選ぶのではなく、市場全体に投資する。<br>
+    シンプルだが、多くのプロが長期で勝てない理由がここにある。
+  </p>
+</div>
+
+<main class="article">
+
+  <div class="article-section">
+    <div class="section-label">WHAT IS INDEX INVESTING</div>
+    <h2 class="section-title">インデックス投資とは何か</h2>
+    <div class="section-body">
+      <p>インデックス投資とは、特定の市場指数（インデックス）に連動するファンドを通じて、市場全体に分散投資する手法である。</p>
+      <p>個別の銘柄を選ぶのではなく、「日本株全体」「米国株全体」「世界株全体」をまるごと買う。これがインデックス投資の基本的な考え方だ。</p>
+      <p>代表的なインデックスには以下のようなものがある。</p>
+      <ul>
+        <li>S&P500 — 米国の大型株500社で構成。世界で最も参照される株価指数</li>
+        <li>TOPIX — 東証プライム市場の全銘柄で構成。日本株全体の動きを反映</li>
+        <li>日経225 — 日本の代表的な225社で構成。知名度が高いが偏りもある</li>
+        <li>MSCI ACWI — 先進国＋新興国の約3,000銘柄。全世界株式の代表</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">WHY INDEX WORKS</div>
+    <h2 class="section-title">なぜインデックス投資は機能するのか</h2>
+    <div class="section-body">
+      <p>インデックス投資が合理的である理由は、3つの事実に基づいている。</p>
+      <p><strong>1. 多くのアクティブファンドが市場平均に勝てない。</strong></p>
+      <p>SPIVAレポートによれば、15年以上の長期で見ると、米国のアクティブファンドの約90%がS&P500に負けている。日本でも同様の傾向が確認されている。プロでも市場を継続的に上回ることは極めて難しい。</p>
+      <p><strong>2. コストが低い。</strong></p>
+      <p>インデックスファンドの信託報酬は年0.1%前後。アクティブファンドの1〜2%と比べて圧倒的に低い。長期で複利が効くと、この差は巨大な金額になる。</p>
+      <p><strong>3. 分散が自動的にできる。</strong></p>
+      <p>1本のファンドで数百〜数千の企業に分散投資できる。個別株の集中リスクを避けながら、市場全体の成長を享受できる。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">バフェットは遺言で妻に「資産の90%をS&P500のインデックスファンドに投入せよ」と指示している。最も優れた個別株投資家が、一般投資家にはインデックスを勧める——この事実は重い。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">PRACTICAL GUIDE</div>
+    <h2 class="section-title">実践：何を買えばいいのか</h2>
+    <div class="section-body">
+      <p>日本の投資家がインデックス投資を始める場合、主な選択肢は以下のとおりである。</p>
+      <ul>
+        <li>eMAXIS Slim 全世界株式（オール・カントリー） — 全世界に分散。迷ったらこれ一本</li>
+        <li>eMAXIS Slim 米国株式（S&P500） — 米国市場に集中投資したい場合</li>
+        <li>SBI・V・全世界株式 — 低コストで全世界に分散</li>
+        <li>楽天・全米株式 — 米国の中小型株も含む広範な分散</li>
+      </ul>
+      <p>新NISAの「つみたて投資枠」を活用すれば、非課税で長期の積立投資ができる。毎月一定額を自動で積み立てる「ドルコスト平均法」と組み合わせることで、タイミングを気にする必要もなくなる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">LIMITATIONS</div>
+    <h2 class="section-title">インデックス投資の限界</h2>
+    <div class="section-body">
+      <p>インデックス投資は万能ではない。いくつかの限界を知っておくことが重要だ。</p>
+      <ul>
+        <li>市場全体が下がれば、インデックスも下がる。暴落時の含み損に耐える精神力が必要</li>
+        <li>市場平均以上のリターンは原理的に得られない</li>
+        <li>時価総額加重平均のため、割高な大型株のウェイトが大きくなりやすい</li>
+        <li>個別企業への理解が深まりにくい</li>
+      </ul>
+      <p>それでも、長期的な資産形成の「土台」としてインデックス投資は極めて有効である。個別株投資を学ぶこの書斎と並行して、インデックスの積立を続けることは矛盾しない。むしろ、両方を持つことで判断に余裕が生まれる。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">インデックス投資は「市場を信じる」行為である。<br>個別株投資は「自分の分析を信じる」行為である。<br>どちらが正しいかではなく、どちらの前提で行動しているかを自覚することが大切だ。</p>
+    </div>
+  </div>
+
+</main>
+
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">関連する記事</div>
+    <p class="further-reason">インデックス投資の基礎を知ったら、次はリターンの構造と分散投資の原則へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../returns/">
+        <span class="further-link-tag">はじめ</span>
+        <span class="further-link-title">配当とキャピタルゲイン：投資のリターンを理解する</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../principles/diversification/">
+        <span class="further-link-tag">投資原則</span>
+        <span class="further-link-title">なぜ分散投資が必要なのか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../horizons/compound-interest/">
+        <span class="further-link-tag">思考</span>
+        <span class="further-link-title">複利の力：なぜ長期投資家は時間を味方にできるのか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../../principles/long-term-math/">
+        <span class="further-link-tag">投資原則</span>
+        <span class="further-link-title">長期投資の数学：なぜ時間が最大の武器なのか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口</a> ·
+    <a href="../../hajimete/">初めての方へ</a> ·
+    <a href="../../principles/">投資原則</a> ·
+    <a href="../../industries/">業種から歩く</a> ·
+    <a href="../../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">&#127925;</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);});
+(function(){var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;var btn=document.getElementById('musicToggle');var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';window.onYouTubeIframeAPIReady=function(){player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});};var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);btn.addEventListener('click',function(){if(!playerReady)return;if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}});})();
+</script>
+<script src="../../shared.js"></script>
+</body>
+</html>

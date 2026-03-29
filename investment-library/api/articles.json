@@ -11,7 +11,11 @@
       "url": "/investment-library/principles/",
       "description": "永続的競争優位性・資本配分・財務の健全性・経営者の質——長期投資において重視している8つの基本原則。",
       "category": "principles",
-      "tags": ["投資原則", "バリュー投資", "長期投資"],
+      "tags": [
+        "投資原則",
+        "バリュー投資",
+        "長期投資"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -19,7 +23,11 @@
       "url": "/investment-library/moat/",
       "description": "長期投資で最も重要な概念「moat（堀）」を6つの種類と実務的な視点で解説。ネットワーク効果・スイッチングコスト・コスト優位。",
       "category": "concepts",
-      "tags": ["moat", "競争優位性", "企業分析"],
+      "tags": [
+        "moat",
+        "競争優位性",
+        "企業分析"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -27,7 +35,11 @@
       "url": "/investment-library/fcf/",
       "description": "フリーキャッシュフロー（FCF）の意味・計算方法・投資での使い方を解説。会計利益ではわからない企業の実力を読む。",
       "category": "concepts",
-      "tags": ["FCF", "財務分析", "企業分析"],
+      "tags": [
+        "FCF",
+        "財務分析",
+        "企業分析"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -35,7 +47,11 @@
       "url": "/investment-library/analysis-template/",
       "description": "moat・FCF・経営者の質を統合した企業分析テンプレート。長期投資の判断基準を実践に落とし込む。",
       "category": "tools",
-      "tags": ["企業分析", "テンプレート", "実践"],
+      "tags": [
+        "企業分析",
+        "テンプレート",
+        "実践"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -43,7 +59,10 @@
       "url": "/investment-library/hajimete/",
       "description": "初めてこの書斎を訪れた方のためのガイド。どこから読み始め、どう歩いていくかを案内する。",
       "category": "guide",
-      "tags": ["初めて", "ガイド"],
+      "tags": [
+        "初めて",
+        "ガイド"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -51,7 +70,10 @@
       "url": "/investment-library/industries/",
       "description": "業種の構造を知ると企業の見え方が変わる。14業種の構造・moat・FCF特性を俯瞰する。",
       "category": "industries",
-      "tags": ["業種分析", "セクター"],
+      "tags": [
+        "業種分析",
+        "セクター"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -59,7 +81,11 @@
       "url": "/investment-library/industries/it-telecom/",
       "description": "情報通信業のビジネスモデル・moatの源泉・FCF特性を解説。SaaS・プラットフォーム・通信キャリアの違い。",
       "category": "industries",
-      "tags": ["情報通信業", "SaaS", "IT"],
+      "tags": [
+        "情報通信業",
+        "SaaS",
+        "IT"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -67,7 +93,11 @@
       "url": "/investment-library/industries/cybozu-kintone/",
       "description": "サイボウズのKintoneを題材に、SaaS企業のmoat・スイッチングコスト・ARR成長を分析する。",
       "category": "industries",
-      "tags": ["サイボウズ", "Kintone", "SaaS"],
+      "tags": [
+        "サイボウズ",
+        "Kintone",
+        "SaaS"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -75,7 +105,11 @@
       "url": "/investment-library/horizons/civilization/",
       "description": "投資の先にある文明の大きな流れ。なぜ投資家は歴史を学ぶべきなのか。",
       "category": "horizons",
-      "tags": ["文明", "歴史", "思考"],
+      "tags": [
+        "文明",
+        "歴史",
+        "思考"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -83,7 +117,10 @@
       "url": "/investment-library/horizons/capitalism/",
       "description": "資本主義の本質を歴史的に考える。アダム・スミスからマンガーまで、資本と自由の関係を辿る。",
       "category": "horizons",
-      "tags": ["資本主義", "経済思想"],
+      "tags": [
+        "資本主義",
+        "経済思想"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -91,7 +128,11 @@
       "url": "/investment-library/horizons/compound-interest/",
       "description": "バフェットの「雪だるま」の本質。利益が利益を生む連鎖と、複利が効く3つの条件。",
       "category": "horizons",
-      "tags": ["複利", "長期投資", "資産形成"],
+      "tags": [
+        "複利",
+        "長期投資",
+        "資産形成"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -99,7 +140,11 @@
       "url": "/investment-library/horizons/value-investing-essence/",
       "description": "ミスター・マーケット、安全マージン、グレアムからバフェットへのバリュー投資の進化。",
       "category": "horizons",
-      "tags": ["バリュー投資", "内在価値", "安全マージン"],
+      "tags": [
+        "バリュー投資",
+        "内在価値",
+        "安全マージン"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -107,7 +152,11 @@
       "url": "/investment-library/horizons/behavioral-economics/",
       "description": "行動経済学が明かす6つの認知バイアスと、マンガーの「反転」という処方箋。",
       "category": "horizons",
-      "tags": ["行動経済学", "認知バイアス", "投資心理"],
+      "tags": [
+        "行動経済学",
+        "認知バイアス",
+        "投資心理"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -115,7 +164,10 @@
       "url": "/investment-library/horizons/money-history/",
       "description": "物々交換から仮想通貨まで、貨幣の進化を辿ることで資本主義の本質を理解する。",
       "category": "horizons",
-      "tags": ["お金の歴史", "貨幣"],
+      "tags": [
+        "お金の歴史",
+        "貨幣"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -123,7 +175,10 @@
       "url": "/investment-library/horizons/ochiai-yoichi/",
       "description": "落合陽一の思考法を投資家の視点から読み解く。テクノロジーと社会変革の交差点。",
       "category": "horizons",
-      "tags": ["落合陽一", "テクノロジー"],
+      "tags": [
+        "落合陽一",
+        "テクノロジー"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -131,7 +186,11 @@
       "url": "/investment-library/human/fomo/",
       "description": "投資家を惑わすFOMOの正体と、マンガー流の克服法。焦りが最悪の意思決定を生む仕組み。",
       "category": "human",
-      "tags": ["FOMO", "投資心理", "行動バイアス"],
+      "tags": [
+        "FOMO",
+        "投資心理",
+        "行動バイアス"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -139,7 +198,11 @@
       "url": "/investment-library/human/loss-aversion/",
       "description": "カーネマンが発見した損失回避の心理。投資における非合理的な判断を理解し、克服する方法。",
       "category": "human",
-      "tags": ["損失回避", "行動経済学", "投資心理"],
+      "tags": [
+        "損失回避",
+        "行動経済学",
+        "投資心理"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -147,7 +210,11 @@
       "url": "/investment-library/horizons/safety-margin/",
       "description": "グレアムの安全マージン概念を投資・経営・人生設計に応用する。マンガーの「余裕を持て」の思想。",
       "category": "horizons",
-      "tags": ["安全マージン", "グレアム", "リスク管理"],
+      "tags": [
+        "安全マージン",
+        "グレアム",
+        "リスク管理"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -155,7 +222,11 @@
       "url": "/investment-library/fcf/intro/",
       "description": "FCFとは何か。営業CF−設備投資で見る企業の実力。なぜ営業利益よりFCFが重要なのか。FCF利回りの見方。",
       "category": "concepts",
-      "tags": ["FCF", "フリーキャッシュフロー", "初心者向け"],
+      "tags": [
+        "FCF",
+        "フリーキャッシュフロー",
+        "初心者向け"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -163,7 +234,11 @@
       "url": "/investment-library/horizons/mental-models/",
       "description": "マンガーのメンタルモデルとは。反転・複利・機会費用・インセンティブ・能力の輪の5つを解説。",
       "category": "horizons",
-      "tags": ["メンタルモデル", "マンガー", "思考法"],
+      "tags": [
+        "メンタルモデル",
+        "マンガー",
+        "思考法"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -171,7 +246,11 @@
       "url": "/investment-library/principles/diversification/",
       "description": "バフェットの集中投資、マンガーの少数精鋭、一般投資家にとっての最適解を考える。",
       "category": "principles",
-      "tags": ["分散投資", "集中投資", "ポートフォリオ"],
+      "tags": [
+        "分散投資",
+        "集中投資",
+        "ポートフォリオ"
+      ],
       "dateAdded": "2026-03-28"
     },
     {
@@ -179,7 +258,11 @@
       "url": "/investment-library/industries/japan-sectors/",
       "description": "日本株14業種の概要マップ。景気循環型vsディフェンシブ、各業種のFCF特性を俯瞰する。",
       "category": "industries",
-      "tags": ["日本株", "セクター", "業種分析"],
+      "tags": [
+        "日本株",
+        "セクター",
+        "業種分析"
+      ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     },
@@ -188,7 +271,11 @@
       "url": "/investment-library/hajimete/stock-basics/",
       "description": "株式の仕組み・なぜ企業は株を発行するか・投資家の役割を根本から解説する。",
       "category": "hajimete",
-      "tags": ["株式投資", "投資入門", "はじめて"],
+      "tags": [
+        "株式投資",
+        "投資入門",
+        "はじめて"
+      ],
       "difficulty": "beginner",
       "dateAdded": "2026-03-28"
     },
@@ -197,7 +284,11 @@
       "url": "/investment-library/hajimete/returns/",
       "description": "2つのリターンの違い・税制・再投資の力を解説する。",
       "category": "hajimete",
-      "tags": ["配当", "キャピタルゲイン", "投資リターン"],
+      "tags": [
+        "配当",
+        "キャピタルゲイン",
+        "投資リターン"
+      ],
       "difficulty": "beginner",
       "dateAdded": "2026-03-28"
     },
@@ -206,7 +297,13 @@
       "url": "/investment-library/moat/network-effects/",
       "description": "直接的・間接的・データの3種類のネットワーク効果を実例で解説。VISA・Meta・Amazonの構造。",
       "category": "concepts",
-      "tags": ["ネットワーク効果", "moat", "競争優位性", "VISA", "Meta"],
+      "tags": [
+        "ネットワーク効果",
+        "moat",
+        "競争優位性",
+        "VISA",
+        "Meta"
+      ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     },
@@ -215,7 +312,12 @@
       "url": "/investment-library/moat/switching-costs/",
       "description": "契約的・技術的・心理的ロックインの3種類を解説。moatの強度を見極める方法。",
       "category": "concepts",
-      "tags": ["スイッチングコスト", "moat", "ロックイン", "競争優位性"],
+      "tags": [
+        "スイッチングコスト",
+        "moat",
+        "ロックイン",
+        "競争優位性"
+      ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     },
@@ -224,7 +326,12 @@
       "url": "/investment-library/moat/brand-power/",
       "description": "ブランドの無形資産価値を経済学的に分析。コカ・コーラ、Apple、エルメスの事例。",
       "category": "concepts",
-      "tags": ["ブランド", "moat", "無形資産", "コカ・コーラ"],
+      "tags": [
+        "ブランド",
+        "moat",
+        "無形資産",
+        "コカ・コーラ"
+      ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     },
@@ -233,7 +340,12 @@
       "url": "/investment-library/horizons/nietzsche/",
       "description": "ニーチェの思想と逆張り投資の共通点。群衆心理への抵抗と独自の判断基準。",
       "category": "horizons",
-      "tags": ["ニーチェ", "逆張り", "哲学", "群衆心理"],
+      "tags": [
+        "ニーチェ",
+        "逆張り",
+        "哲学",
+        "群衆心理"
+      ],
       "difficulty": "advanced",
       "dateAdded": "2026-03-28"
     },
@@ -242,7 +354,12 @@
       "url": "/investment-library/horizons/zen/",
       "description": "禅の忍耐と長期投資の共通点。マンガーの「座って待て」を東洋思想で読み解く。",
       "category": "horizons",
-      "tags": ["禅", "忍耐", "長期投資", "東洋思想"],
+      "tags": [
+        "禅",
+        "忍耐",
+        "長期投資",
+        "東洋思想"
+      ],
       "difficulty": "advanced",
       "dateAdded": "2026-03-28"
     },
@@ -251,7 +368,12 @@
       "url": "/investment-library/horizons/bubble-history/",
       "description": "過去400年のバブル分析。チューリップバブルからリーマンショック、暗号資産まで共通構造を読み解く。",
       "category": "horizons",
-      "tags": ["バブル", "金融史", "チューリップ", "リーマンショック"],
+      "tags": [
+        "バブル",
+        "金融史",
+        "チューリップ",
+        "リーマンショック"
+      ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     },
@@ -260,7 +382,11 @@
       "url": "/investment-library/human/anchoring/",
       "description": "アンカリング効果が投資判断を歪めるメカニズムと対策を解説。",
       "category": "human",
-      "tags": ["アンカリング", "認知バイアス", "投資心理"],
+      "tags": [
+        "アンカリング",
+        "認知バイアス",
+        "投資心理"
+      ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     },
@@ -269,7 +395,11 @@
       "url": "/investment-library/human/sunk-cost/",
       "description": "サンクコストの罠と合理的な撤退判断。損切りできない心理の構造を解説。",
       "category": "human",
-      "tags": ["サンクコスト", "損切り", "認知バイアス"],
+      "tags": [
+        "サンクコスト",
+        "損切り",
+        "認知バイアス"
+      ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     },
@@ -278,7 +408,11 @@
       "url": "/investment-library/principles/circle-of-competence/",
       "description": "バフェットの能力の輪。自分が理解できるビジネスにだけ投資する原則。",
       "category": "principles",
-      "tags": ["能力の輪", "バフェット", "自己認識"],
+      "tags": [
+        "能力の輪",
+        "バフェット",
+        "自己認識"
+      ],
       "difficulty": "beginner",
       "dateAdded": "2026-03-28"
     },
@@ -287,8 +421,157 @@
       "url": "/investment-library/principles/mr-market/",
       "description": "グレアムのミスター・マーケットの寓話と、市場の感情に振り回されない投資法。",
       "category": "principles",
-      "tags": ["ミスター・マーケット", "グレアム", "投資原則"],
+      "tags": [
+        "ミスター・マーケット",
+        "グレアム",
+        "投資原則"
+      ],
       "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "インデックス投資入門：なぜ市場全体を買うのか",
+      "url": "/investment-library/hajimete/index-investing/",
+      "description": "パッシブ投資の基礎。S&P500・TOPIX・全世界株式の特徴と、インデックス投資が合理的な理由。",
+      "category": "hajimete",
+      "tags": [
+        "インデックス投資",
+        "パッシブ",
+        "S&P500"
+      ],
+      "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "PERとPBR：株価の割安・割高を測る",
+      "url": "/investment-library/hajimete/per-pbr/",
+      "description": "株価指標の基本。PERとPBRの意味・計算方法・使い方を実例で解説。",
+      "category": "hajimete",
+      "tags": [
+        "PER",
+        "PBR",
+        "株価指標"
+      ],
+      "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "規模の経済：大きいことの優位性",
+      "url": "/investment-library/moat/economies-of-scale/",
+      "description": "規模の経済がもたらす競争優位性。コストリーダーシップの構造と規模のデメリット。",
+      "category": "concepts",
+      "tags": [
+        "規模の経済",
+        "moat",
+        "コスト優位"
+      ],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "無形資産：特許・ライセンス・規制の壁",
+      "url": "/investment-library/moat/intangible-assets/",
+      "description": "特許・ライセンス・規制認可がもたらす参入障壁。製薬・金融・通信業界の実例。",
+      "category": "concepts",
+      "tags": [
+        "無形資産",
+        "特許",
+        "規制",
+        "moat"
+      ],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "ストア哲学と投資：コントロールできるものに集中する",
+      "url": "/investment-library/horizons/stoicism/",
+      "description": "エピクテトス・マルクスアウレリウスのストア哲学と投資の共通点。",
+      "category": "horizons",
+      "tags": [
+        "ストア哲学",
+        "エピクテトス",
+        "投資哲学"
+      ],
+      "difficulty": "advanced",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "進化心理学と市場：なぜ人は群れるのか",
+      "url": "/investment-library/horizons/evolutionary-psychology/",
+      "description": "進化心理学の視点から投資行動を分析。生存本能と群集心理の関係。",
+      "category": "horizons",
+      "tags": [
+        "進化心理学",
+        "群集心理",
+        "行動ファイナンス"
+      ],
+      "difficulty": "advanced",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "テクノロジーと文明：イノベーションが変える投資の未来",
+      "url": "/investment-library/horizons/technology-civilization/",
+      "description": "AI・量子コンピュータ・エネルギー革命が投資の未来をどう変えるか。",
+      "category": "horizons",
+      "tags": [
+        "テクノロジー",
+        "AI",
+        "エネルギー",
+        "文明"
+      ],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "確証バイアス：自分に都合の良い情報だけを集める脳",
+      "url": "/investment-library/human/confirmation-bias/",
+      "description": "確証バイアスが投資判断を歪めるメカニズムと対策。",
+      "category": "human",
+      "tags": [
+        "確証バイアス",
+        "認知バイアス",
+        "投資心理"
+      ],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "過信バイアス：自分は平均以上だと思い込む罠",
+      "url": "/investment-library/human/overconfidence-bias/",
+      "description": "ダニング＝クルーガー効果と投資における過信の3つの形態。",
+      "category": "human",
+      "tags": [
+        "過信バイアス",
+        "ダニング＝クルーガー",
+        "投資心理"
+      ],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "長期投資の数学：なぜ時間が最大の武器なのか",
+      "url": "/investment-library/principles/long-term-math/",
+      "description": "72の法則・複利の力・時間軸がリターンに与える圧倒的な影響。",
+      "category": "principles",
+      "tags": [
+        "複利",
+        "72の法則",
+        "長期投資"
+      ],
+      "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "損切りの技術：いつ撤退すべきか",
+      "url": "/investment-library/principles/stop-loss/",
+      "description": "ルールベースの損切り技術。感情との戦い方と損切りの基準設定。",
+      "category": "principles",
+      "tags": [
+        "損切り",
+        "ストップロス",
+        "リスク管理"
+      ],
+      "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
     }
   ]

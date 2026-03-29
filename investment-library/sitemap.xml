@@ -305,4 +305,96 @@
     <priority>0.5</priority>
   </url>
 
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/hajimete/index-investing/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/hajimete/per-pbr/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/moat/economies-of-scale/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/moat/intangible-assets/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/horizons/stoicism/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/horizons/evolutionary-psychology/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/horizons/technology-civilization/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/human/confirmation-bias/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/human/overconfidence-bias/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/principles/long-term-math/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/principles/stop-loss/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/reading-routes/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/glossary/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
