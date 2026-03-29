@@ -573,6 +573,21 @@
       ],
       "difficulty": "intermediate",
       "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "モーニングメソッド実践：SAVERSで朝の1時間を最高の投資にする",
+      "url": "/investment-library/morning-method/",
+      "description": "ハル・エルロッドの6つの実践（SAVERS）をインタラクティブに体験。瞑想・アファメーション・視覚化・運動・読書・ジャーナリングで朝を変える。",
+      "category": "practice",
+      "tags": [
+        "モーニングメソッド",
+        "SAVERS",
+        "習慣",
+        "瞑想",
+        "ジャーナリング"
+      ],
+      "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
     }
   ]
 }

@@ -815,6 +815,13 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
         <div class="site-nav-desc">日経新聞を長期投資家の視点で読み解く毎日の投資日記。moat・FCF・資本配分の軸でキュレーション。</div>
         <div class="site-nav-arrow">読む →</div>
       </a>
+      <a class="site-nav-card" href="morning-method/" style="border-top-color:var(--green2);">
+        <div class="site-nav-icon">&#9728;</div>
+        <div class="site-nav-num">07</div>
+        <div class="site-nav-name">モーニングメソッド</div>
+        <div class="site-nav-desc">ハル・エルロッドのSAVERS。瞑想・アファメーション・視覚化・運動・読書・ジャーナリングで朝を変える。</div>
+        <div class="site-nav-arrow">実践する →</div>
+      </a>
     </div>
   </div>
 </div>
@@ -1650,6 +1657,7 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
     <a href="human/">人間理解</a> ·
     <a href="reading-routes/">読書ルート</a> ·
     <a href="glossary/">用語集</a> ·
+    <a href="morning-method/">モーニングメソッド</a> ·
     <a href="api/articles.json">API</a> ·
     <a href="llms.txt">llms.txt</a>
   </div>
@@ -1659,9 +1667,6 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 </footer>
 
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
-<div id="yt-player-container" style="display:none;"></div>
-
 <!-- ══════════════ DATA & LOGIC ══════════════ -->
 
 <script>
@@ -1846,22 +1851,6 @@ window.addEventListener('scroll',()=>{
   document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
 });
 
-// ── MUSIC TOGGLE ──
-(function(){
-  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
-  var btn=document.getElementById('musicToggle');
-  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
-  window.onYouTubeIframeAPIReady=function(){
-    player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});
-  };
-  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
-  btn.addEventListener('click',function(){
-    if(!playerReady)return;
-    if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}
-    else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}
-  });
-})();
-
 // ── INIT ──
 renderQuotes();
 
@@ -1888,7 +1877,8 @@ var SEARCH_DATA = [
   {title:"マンガーの思考法：メンタルモデル入門",url:"horizons/mental-models/",desc:"反転・複利・機会費用・インセンティブ・能力の輪",cat:"MENTAL MODELS"},
   {title:"な��分散投資が必要なのか",url:"principles/diversification/",desc:"バフェットの集中投資、マンガーの少数精鋭、最適解",cat:"DIVERSIFICATION"},
   {title:"FOMO（取り残される恐怖）を超える",url:"human/fomo/",desc:"投資家を惑わすFOMOの正体とマンガー流の克服法",cat:"FOMO"},
-  {title:"損失回避バイアス",url:"human/loss-aversion/",desc:"カーネマンが発見した損失回避の心理と克服法",cat:"LOSS AVERSION"}
+  {title:"損失回避バイアス",url:"human/loss-aversion/",desc:"カーネマンが発見した損失回避の心理と克服法",cat:"LOSS AVERSION"},
+  {title:"モーニングメソッド実践",url:"morning-method/",desc:"SAVERSで朝の1時間を最高の投資にする。瞑想・アファメーション・運動・読書・ジャーナリング",cat:"MORNING METHOD"}
 ];
 
 (function(){

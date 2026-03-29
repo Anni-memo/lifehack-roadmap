@@ -439,54 +439,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
 
 <!-- ── MUSIC TOGGLE ── -->
-<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">🎵</button>
-<div id="yt-player-container" style="display:none;"></div>
-
 <script>
 window.addEventListener('scroll',()=>{
   document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
 });
 
-(function(){
-  var STORAGE_KEY='music_playing';
-  var VIDEO_ID='t_8uSnwvUeQ';
-  var player=null;
-  var playerReady=false;
-  var btn=document.getElementById('musicToggle');
-  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
 
-  window.onYouTubeIframeAPIReady=function(){
-    player=new YT.Player('yt-player-container',{
-      height:'1',width:'1',
-      videoId:VIDEO_ID,
-      playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},
-      events:{
-        onReady:function(e){
-          playerReady=true;
-          e.target.setVolume(30);
-          if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}
-        }
-      }
-    });
-  };
-
-  var tag=document.createElement('script');
-  tag.src='https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
-
-  btn.addEventListener('click',function(){
-    if(!playerReady)return;
-    if(player.getPlayerState()===YT.PlayerState.PLAYING){
-      player.pauseVideo();
-      btn.classList.remove('playing');
-      localStorage.setItem(STORAGE_KEY,'false');
-    } else {
-      player.playVideo();
-      btn.classList.add('playing');
-      localStorage.setItem(STORAGE_KEY,'true');
-    }
-  });
-})();
 </script>
 <script src="../../shared.js"></script>
 </body>

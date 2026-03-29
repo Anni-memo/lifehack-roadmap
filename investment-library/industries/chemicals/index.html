@@ -81,6 +81,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .scroll-top.visible{opacity:1;pointer-events:all}
 .scroll-top:hover{background:var(--gold2);color:var(--ink)}
 </style>
+<link rel="stylesheet" href="../../shared.css"/>
 </head>
 <body>
 <nav class="nav">
@@ -230,5 +231,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 </footer>
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>const btn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>300);});</script>
+<script src="../../shared.js"></script>
 </body>
 </html>
