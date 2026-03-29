@@ -249,12 +249,12 @@ function initAssistant(){
     chatWindow.classList.toggle('open');
     fab.classList.toggle('hidden');
     if(chatWindow.classList.contains('open')){
-      input.focus();
-      // 初回メッセージ
+      // 初回：ツリーメニューを表示
       if(messages.children.length === 0){
         loadHistory();
         if(messages.children.length === 0){
-          addBotMessage('こんにちは。書斎の案内人です。\n投資用語の解説やおすすめの記事をご案内します。何でもお聞きください。');
+          addBotMessage('こんにちは。書斎の案内人です。\nどこへご案内しましょうか？');
+          showGuideTree('root');
         }
       }
     }
@@ -287,8 +287,100 @@ function initAssistant(){
       if(typing.parentNode) typing.parentNode.removeChild(typing);
       var response = matchInput(text);
       addBotMessage(response);
+      // 回答後にツリーを再表示
+      addBotMessage('他にもご案内できます。');
+      showGuideTree('root');
     }, 600 + Math.random() * 400);
   }
+
+  // ── ツリーナビデータ ──
+  var treeData={
+    root:{items:[
+      {label:'朝を整えたい',next:'morning'},
+      {label:'投資を学びたい',next:'invest'},
+      {label:'人物を読みたい',next:'people'},
+      {label:'教養を深めたい',next:'culture'},
+      {label:'企業を調べたい',next:'company'},
+      {label:'用語を調べたい',next:'terms'},
+    ]},
+    morning:{msg:'朝の過ごし方を選んでください。',items:[
+      {label:'3分で整える',url:'morning-practice/'},
+      {label:'モーニングメソッドを学ぶ',url:'morning-method/'},
+      {label:'夜の読書で休む',url:'night-reading/'},
+      {label:'パーソナルホームを開く',url:'smart-home/'},
+    ]},
+    invest:{msg:'何から学びますか？',items:[
+      {label:'初めての方へ',url:'hajimete/'},
+      {label:'投資原則',url:'principles/'},
+      {label:'moat（経済的堀）',url:'moat/'},
+      {label:'FCF（キャッシュフロー）',url:'fcf/'},
+      {label:'投資家の心理',url:'human/'},
+      {label:'読書ルート',url:'reading-routes/'},
+    ]},
+    people:{msg:'誰を読みますか？',items:[
+      {label:'人物録を開く',url:'people/'},
+      {label:'田中渓',url:'people/tanaka-kei/'},
+      {label:'BNF',url:'people/bnf/'},
+      {label:'稲盛和夫',url:'people/inamori-kazuo/'},
+      {label:'タレブ',url:'people/taleb/'},
+      {label:'セネカ',url:'people/seneca/'},
+      {label:'マルクス・アウレリウス',url:'life-shelf/marcus-aurelius/'},
+      {label:'藤田晋',url:'life-shelf/fujita-susumu/'},
+      {label:'落合陽一',url:'horizons/ochiai-yoichi/'},
+    ]},
+    culture:{msg:'どの方向へ深めますか？',items:[
+      {label:'思考を広げる棚',url:'horizons/'},
+      {label:'古典と人間理解',url:'classics/'},
+      {label:'読む・聴く案内室',url:'book-guide/'},
+      {label:'人生の書架',url:'life-shelf/'},
+    ]},
+    company:{msg:'どう調べますか？',items:[
+      {label:'業種から歩く（14業種）',url:'industries/'},
+      {label:'企業分析（69社）',url:'companies/'},
+      {label:'銘柄メモ',url:'hajimete/memo/'},
+      {label:'論考の棚',url:'research/'},
+      {label:'ニュース記事',url:'news/'},
+    ]},
+    terms:{msg:'用語を入力するか、用語集を開いてください。',items:[
+      {label:'用語集を開く',url:'glossary/'},
+    ]},
+  };
+
+  function showGuideTree(key){
+    var d=treeData[key];if(!d)return;
+    var div=document.createElement('div');
+    div.className='ai-msg ai-msg-bot ai-tree-menu';
+    var html='';
+    if(d.msg)html+='<div style="font-size:.75rem;color:#4a3520;margin-bottom:8px;">'+d.msg+'</div>';
+    d.items.forEach(function(item){
+      if(item.url){
+        html+='<a href="'+getBaseHref()+item.url+'" class="ai-tree-btn">'+item.label+'</a>';
+      }else if(item.next){
+        html+='<div class="ai-tree-btn" onclick="window._guideTreeClick(\''+item.next+'\')">'+item.label+'</div>';
+      }
+    });
+    if(key!=='root'){
+      html+='<div class="ai-tree-back" onclick="window._guideTreeClick(\'root\')">\u2190 最初に戻る</div>';
+    }
+    // テキスト入力切替
+    html+='<div class="ai-tree-switch" onclick="window._guideShowInput()">キーボードで入力する</div>';
+    div.innerHTML=html;
+    messages.appendChild(div);
+    messages.scrollTop=messages.scrollHeight;
+  }
+
+  // グローバルに公開（onclick用）
+  window._guideTreeClick=function(key){
+    var d=treeData[key];
+    if(d&&d.msg) addBotMessage(d.msg);
+    else if(key==='root') addBotMessage('どこへご案内しましょうか？');
+    showGuideTree(key);
+  };
+  window._guideShowInput=function(){
+    var wrap=document.querySelector('.ai-chat-input-wrap');
+    if(wrap)wrap.style.display='flex';
+    input.focus();
+  };
 
   function addUserMessage(text){
     var div = document.createElement('div');
@@ -360,7 +452,7 @@ function getAssistantCSS(){
   '.ai-msg-bot{align-self:flex-start;background:#efe4d0;color:#1a1208;border:1px solid #dfc9a8;border-bottom-left-radius:0;}' +
   '.ai-chat-link{display:inline-block;color:#8b6914;text-decoration:none;font-weight:600;padding:2px 0;border-bottom:1px solid rgba(139,105,20,.3);transition:all .2s;}' +
   '.ai-chat-link:hover{color:#b8900a;border-color:#b8900a;}' +
-  '.ai-chat-input-wrap{display:flex;border-top:1px solid #dfc9a8;background:#efe4d0;}' +
+  '.ai-chat-input-wrap{display:none;border-top:1px solid #dfc9a8;background:#efe4d0;}' +
   '.ai-chat-input{flex:1;padding:12px 14px;border:none;background:transparent;font-family:inherit;font-size:.8rem;color:#1a1208;outline:none;}' +
   '.ai-chat-input::placeholder{color:#4a3520;opacity:.6;}' +
   '.ai-chat-send{padding:12px 18px;background:#1a1208;color:#d4aa22;border:none;cursor:pointer;font-family:inherit;font-size:.78rem;font-weight:600;letter-spacing:.06em;transition:background .2s;}' +
@@ -377,6 +469,16 @@ function getAssistantCSS(){
   '[data-theme="dark"] .ai-chat-input{color:#e8dcc8;}' +
   '[data-theme="dark"] .ai-chat-input::placeholder{color:#b0a088;}' +
   '[data-theme="dark"] .ai-chat-link{color:#d4aa22;}' +
+  '.ai-tree-menu{padding:8px !important;display:flex;flex-direction:column;gap:3px;}' +
+  '.ai-tree-btn{display:block;padding:9px 12px;font-size:.76rem;color:#1a1208;background:#f5ede0;border:1px solid #dfc9a8;cursor:pointer;text-decoration:none;transition:all .15s;text-align:left;font-family:inherit;line-height:1.4;}' +
+  '.ai-tree-btn:hover{border-color:#d4aa22;color:#8b6914;background:#efe4d0;}' +
+  '.ai-tree-back{font-size:.62rem;color:#4a3520;cursor:pointer;padding:6px 8px;opacity:.6;transition:opacity .15s;text-align:center;margin-top:4px;}' +
+  '.ai-tree-back:hover{opacity:1;color:#8b6914;}' +
+  '.ai-tree-switch{font-size:.56rem;color:#8b6914;cursor:pointer;padding:4px 8px;opacity:.5;transition:opacity .15s;text-align:center;margin-top:2px;}' +
+  '.ai-tree-switch:hover{opacity:1;}' +
+  '[data-theme="dark"] .ai-tree-btn{background:#221a0e;color:#e8dcc8;border-color:#3a2a18;}' +
+  '[data-theme="dark"] .ai-tree-btn:hover{border-color:#d4aa22;color:#d4aa22;}' +
+  '[data-theme="dark"] .ai-tree-back{color:#b0a088;}' +
   '@media(max-width:420px){.ai-chat-window{width:calc(100vw - 16px);right:8px;bottom:64px;height:calc(100vh - 100px);}.ai-fab{right:12px;bottom:64px;}}';
 }
 
