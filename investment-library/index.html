@@ -792,9 +792,11 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
 
     <!-- テキスト入力（AI案内人） -->
     <div style="position:relative;max-width:440px;margin:0 auto 20px;">
-      <input id="guideInput" type="text" placeholder="例：今朝3分で整えたい / 田中渓を読みたい / moatとは？" style="width:100%;padding:12px 44px 12px 16px;font-family:'Noto Serif JP',serif;font-size:.78rem;color:var(--parch);background:rgba(255,255,255,.04);border:1px solid rgba(184,144,10,.15);outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(212,170,34,.4)'" onblur="this.style.borderColor='rgba(184,144,10,.15)'"/>
+      <input id="guideInput" type="text" placeholder="例：今朝3分で整えたい / 田中渓を読みたい" style="width:100%;padding:12px 80px 12px 16px;font-family:'Noto Serif JP',serif;font-size:.78rem;color:var(--parch);background:rgba(255,255,255,.04);border:1px solid rgba(184,144,10,.15);outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(212,170,34,.4)'" onblur="this.style.borderColor='rgba(184,144,10,.15)'"/>
+      <button id="micBtn" onclick="startVoiceGuide()" style="position:absolute;right:40px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--parch4);cursor:pointer;font-size:.95rem;padding:8px;opacity:.5;transition:all .2s;" onmouseover="this.style.opacity='.8'" onmouseout="if(!this.classList.contains('listening'))this.style.opacity='.5'" title="音声で案内人に話しかける">&#127908;</button>
       <button onclick="handleGuideQuery()" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--gold3);cursor:pointer;font-size:1rem;padding:8px;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.6'" title="案内人に聞く">&#10148;</button>
     </div>
+    <div id="micStatus" style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--gold3);letter-spacing:.08em;margin-top:6px;min-height:1em;opacity:0;transition:opacity .3s;"></div>
 
     <!-- クイック導線 -->
     <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;">
@@ -1976,6 +1978,67 @@ var SEARCH_DATA = [
     if(!input.contains(e.target)&&!results.contains(e.target)){results.className='search-results';results.innerHTML='';}
   });
 })();
+
+// ── 書斎の案内人：音声入力 ──
+var voiceRecognition=null;
+function startVoiceGuide(){
+  var btn=document.getElementById('micBtn');
+  var status=document.getElementById('micStatus');
+  var input=document.getElementById('guideInput');
+  // 既にリスニング中なら停止
+  if(btn.classList.contains('listening')){
+    if(voiceRecognition)voiceRecognition.stop();
+    return;
+  }
+  // Web Speech API対応チェック
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){
+    status.textContent='お使いのブラウザは音声入力に対応していません。テキストで入力してください。';
+    status.style.opacity='1';
+    setTimeout(function(){status.style.opacity='0';},4000);
+    return;
+  }
+  voiceRecognition=new SR();
+  voiceRecognition.lang='ja-JP';
+  voiceRecognition.continuous=false;
+  voiceRecognition.interimResults=true;
+  // 開始
+  btn.classList.add('listening');
+  btn.style.opacity='1';
+  btn.style.color='#d4aa22';
+  status.textContent='聴いています...';
+  status.style.opacity='1';
+  voiceRecognition.onresult=function(e){
+    var transcript='';
+    for(var i=e.resultIndex;i<e.results.length;i++){
+      transcript+=e.results[i][0].transcript;
+    }
+    input.value=transcript;
+    if(e.results[e.results.length-1].isFinal){
+      status.textContent='「'+transcript+'」';
+      setTimeout(function(){handleGuideQuery();},600);
+    }
+  };
+  voiceRecognition.onerror=function(e){
+    btn.classList.remove('listening');
+    btn.style.opacity='.5';
+    btn.style.color='var(--parch4)';
+    if(e.error==='not-allowed'){
+      status.textContent='マイクの使用が許可されていません。ブラウザの設定を確認してください。';
+    }else{
+      status.textContent='音声認識エラー：'+e.error;
+    }
+    status.style.opacity='1';
+    setTimeout(function(){status.style.opacity='0';},4000);
+  };
+  voiceRecognition.onend=function(){
+    btn.classList.remove('listening');
+    btn.style.opacity='.5';
+    btn.style.color='var(--parch4)';
+    setTimeout(function(){status.style.opacity='0';},3000);
+  };
+  voiceRecognition.start();
+}
 
 // ── 書斎の案内人 ──
 function handleGuideQuery(){
