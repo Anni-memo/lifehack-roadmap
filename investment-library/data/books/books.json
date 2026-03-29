@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "analects",
+    "title": "論語から何を学ぶか",
+    "author": "投資と思考の書斎",
+    "shelf": "教養と人間理解",
+    "chapters": [
+      { "id": "ch1", "title": "論語とは何か", "file": "analects-ch1.html" },
+      { "id": "ch2", "title": "なぜ二千五百年読み継がれるのか", "file": "analects-ch2.html" },
+      { "id": "ch3", "title": "投資家・経営者への示唆", "file": "analects-ch3.html" },
+      { "id": "ch4", "title": "どこを読むと本質が見えるか", "file": "analects-ch4.html" }
+    ]
+  },
+  {
+    "slug": "night-and-fog",
+    "title": "夜と霧が教えるもの",
+    "author": "投資と思考の書斎",
+    "shelf": "教養と人間理解",
+    "chapters": [
+      { "id": "ch1", "title": "この本は何を扱っているのか", "file": "night-and-fog-ch1.html" },
+      { "id": "ch2", "title": "なぜ読み継がれるのか", "file": "night-and-fog-ch2.html" },
+      { "id": "ch3", "title": "投資家への示唆", "file": "night-and-fog-ch3.html" },
+      { "id": "ch4", "title": "どこを読むと本質が見えるか", "file": "night-and-fog-ch4.html" }
+    ]
+  },
+  {
+    "slug": "fukuzawa",
+    "title": "福澤諭吉とは何者だったか",
+    "author": "投資と思考の書斎",
+    "shelf": "教養と人間理解",
+    "chapters": [
+      { "id": "ch1", "title": "福澤諭吉とは何者か", "file": "fukuzawa-ch1.html" },
+      { "id": "ch2", "title": "なぜ今も語り継がれるのか", "file": "fukuzawa-ch2.html" },
+      { "id": "ch3", "title": "投資家への示唆", "file": "fukuzawa-ch3.html" },
+      { "id": "ch4", "title": "どこを読むと本質が見えるか", "file": "fukuzawa-ch4.html" }
+    ]
+  },
+  {
+    "slug": "shibusawa",
+    "title": "渋沢栄一の資本主義観",
+    "author": "投資と思考の書斎",
+    "shelf": "教養と人間理解",
+    "chapters": [
+      { "id": "ch1", "title": "渋沢栄一とは何者か", "file": "shibusawa-ch1.html" },
+      { "id": "ch2", "title": "なぜ今も語り継がれるのか", "file": "shibusawa-ch2.html" },
+      { "id": "ch3", "title": "投資家・経営者への示唆", "file": "shibusawa-ch3.html" },
+      { "id": "ch4", "title": "どこを読むと本質が見えるか", "file": "shibusawa-ch4.html" }
+    ]
+  },
+  {
+    "slug": "seven-habits",
+    "title": "7つの習慣はなぜ読み継がれるのか",
+    "author": "投資と思考の書斎",
+    "shelf": "教養と人間理解",
+    "chapters": [
+      { "id": "ch1", "title": "この本は何を扱っているか", "file": "seven-habits-ch1.html" },
+      { "id": "ch2", "title": "なぜ読み継がれるのか", "file": "seven-habits-ch2.html" },
+      { "id": "ch3", "title": "投資家への示唆", "file": "seven-habits-ch3.html" },
+      { "id": "ch4", "title": "どこを読むと本質が見えるか", "file": "seven-habits-ch4.html" }
+    ]
+  }
+]
