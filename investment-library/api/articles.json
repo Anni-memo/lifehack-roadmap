@@ -180,6 +180,115 @@
       "description": "日本株14業種の概要マップ。景気循環型vsディフェンシブ、各業種のFCF特性を俯瞰する。",
       "category": "industries",
       "tags": ["日本株", "セクター", "業種分析"],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "株式投資とは何か：はじめの一歩",
+      "url": "/investment-library/hajimete/stock-basics/",
+      "description": "株式の仕組み・なぜ企業は株を発行するか・投資家の役割を根本から解説する。",
+      "category": "hajimete",
+      "tags": ["株式投資", "投資入門", "はじめて"],
+      "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "配当とキャピタルゲイン：投資のリターンを理解する",
+      "url": "/investment-library/hajimete/returns/",
+      "description": "2つのリターンの違い・税制・再投資の力を解説する。",
+      "category": "hajimete",
+      "tags": ["配当", "キャピタルゲイン", "投資リターン"],
+      "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "ネットワーク効果：なぜ強者はより強くなるのか",
+      "url": "/investment-library/moat/network-effects/",
+      "description": "直接的・間接的・データの3種類のネットワーク効果を実例で解説。VISA・Meta・Amazonの構造。",
+      "category": "concepts",
+      "tags": ["ネットワーク効果", "moat", "競争優位性", "VISA", "Meta"],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "スイッチングコスト：顧客が離れない仕組み",
+      "url": "/investment-library/moat/switching-costs/",
+      "description": "契約的・技術的・心理的ロックインの3種類を解説。moatの強度を見極める方法。",
+      "category": "concepts",
+      "tags": ["スイッチングコスト", "moat", "ロックイン", "競争優位性"],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "ブランド力の経済学：なぜコカ・コーラは100年売れ続けるのか",
+      "url": "/investment-library/moat/brand-power/",
+      "description": "ブランドの無形資産価値を経済学的に分析。コカ・コーラ、Apple、エルメスの事例。",
+      "category": "concepts",
+      "tags": ["ブランド", "moat", "無形資産", "コカ・コーラ"],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "ニーチェと投資：逆張りの哲学",
+      "url": "/investment-library/horizons/nietzsche/",
+      "description": "ニーチェの思想と逆張り投資の共通点。群衆心理への抵抗と独自の判断基準。",
+      "category": "horizons",
+      "tags": ["ニーチェ", "逆張り", "哲学", "群衆心理"],
+      "difficulty": "advanced",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "禅と投資：何もしない勇気",
+      "url": "/investment-library/horizons/zen/",
+      "description": "禅の忍耐と長期投資の共通点。マンガーの「座って待て」を東洋思想で読み解く。",
+      "category": "horizons",
+      "tags": ["禅", "忍耐", "長期投資", "東洋思想"],
+      "difficulty": "advanced",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "歴史に学ぶバブルの構造：チューリップからビットコインまで",
+      "url": "/investment-library/horizons/bubble-history/",
+      "description": "過去400年のバブル分析。チューリップバブルからリーマンショック、暗号資産まで共通構造を読み解く。",
+      "category": "horizons",
+      "tags": ["バブル", "金融史", "チューリップ", "リーマンショック"],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "アンカリング効果：最初の数字に縛られる脳",
+      "url": "/investment-library/human/anchoring/",
+      "description": "アンカリング効果が投資判断を歪めるメカニズムと対策を解説。",
+      "category": "human",
+      "tags": ["アンカリング", "認知バイアス", "投資心理"],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "サンクコスト：もったいないが判断を狂わせる",
+      "url": "/investment-library/human/sunk-cost/",
+      "description": "サンクコストの罠と合理的な撤退判断。損切りできない心理の構造を解説。",
+      "category": "human",
+      "tags": ["サンクコスト", "損切り", "認知バイアス"],
+      "difficulty": "intermediate",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "能力の輪：知らないものには投資しない",
+      "url": "/investment-library/principles/circle-of-competence/",
+      "description": "バフェットの能力の輪。自分が理解できるビジネスにだけ投資する原則。",
+      "category": "principles",
+      "tags": ["能力の輪", "バフェット", "自己認識"],
+      "difficulty": "beginner",
+      "dateAdded": "2026-03-28"
+    },
+    {
+      "title": "ミスター・マーケット：市場の気分に振り回されない",
+      "url": "/investment-library/principles/mr-market/",
+      "description": "グレアムのミスター・マーケットの寓話と、市場の感情に振り回されない投資法。",
+      "category": "principles",
+      "tags": ["ミスター・マーケット", "グレアム", "投資原則"],
+      "difficulty": "beginner",
       "dateAdded": "2026-03-28"
     }
   ]

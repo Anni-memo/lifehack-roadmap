@@ -819,6 +819,90 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
   </div>
 </div>
 
+<!-- ══════════════ NEW ARTICLES HIGHLIGHT ══════════════ -->
+
+<style>
+.new-articles{background:linear-gradient(135deg,var(--ink2) 0%,#2a1c0a 100%);padding:36px 24px;border-bottom:1px solid rgba(184,144,10,.2);}
+.new-articles-inner{max-width:860px;margin:0 auto;}
+.new-articles-label{font-family:var(--mono);font-size:.52rem;color:var(--gold3);letter-spacing:.2em;margin-bottom:16px;opacity:.8;}
+.new-articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+@media(max-width:700px){.new-articles-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.new-articles-grid{grid-template-columns:1fr;}}
+.new-article-card{display:block;padding:16px 18px;background:rgba(245,237,224,.06);border:1px solid rgba(184,144,10,.15);text-decoration:none;transition:all .2s;}
+.new-article-card:hover{background:rgba(184,144,10,.1);border-color:rgba(184,144,10,.4);transform:translateY(-2px);}
+.new-article-shelf{font-family:var(--mono);font-size:.44rem;color:var(--gold3);letter-spacing:.12em;margin-bottom:6px;opacity:.7;}
+.new-article-title{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--parch);line-height:1.4;margin-bottom:4px;}
+.new-article-desc{font-size:.66rem;color:var(--parch4);line-height:1.6;}
+</style>
+
+<div class="new-articles">
+  <div class="new-articles-inner">
+    <div class="new-articles-label">NEW ARTICLES — 最近追加された記事</div>
+    <div class="new-articles-grid">
+      <a class="new-article-card" href="hajimete/stock-basics/">
+        <div class="new-article-shelf">はじめの棚</div>
+        <div class="new-article-title">株式投資とは何か：はじめの一歩</div>
+        <div class="new-article-desc">株式の仕組みと投資家の役割</div>
+      </a>
+      <a class="new-article-card" href="hajimete/returns/">
+        <div class="new-article-shelf">はじめの棚</div>
+        <div class="new-article-title">配当とキャピタルゲイン</div>
+        <div class="new-article-desc">2つのリターンの仕組みと再投資の力</div>
+      </a>
+      <a class="new-article-card" href="moat/network-effects/">
+        <div class="new-article-shelf">概念の棚</div>
+        <div class="new-article-title">ネットワーク効果</div>
+        <div class="new-article-desc">VISA・Meta・Amazonの構造</div>
+      </a>
+      <a class="new-article-card" href="moat/switching-costs/">
+        <div class="new-article-shelf">概念の棚</div>
+        <div class="new-article-title">スイッチングコスト</div>
+        <div class="new-article-desc">顧客が離れない3つのロックイン</div>
+      </a>
+      <a class="new-article-card" href="moat/brand-power/">
+        <div class="new-article-shelf">概念の棚</div>
+        <div class="new-article-title">ブランド力の経済学</div>
+        <div class="new-article-desc">コカ・コーラが100年売れる理由</div>
+      </a>
+      <a class="new-article-card" href="horizons/bubble-history/">
+        <div class="new-article-shelf">思考を広げる</div>
+        <div class="new-article-title">歴史に学ぶバブルの構造</div>
+        <div class="new-article-desc">400年のバブル史から共通パターンを</div>
+      </a>
+      <a class="new-article-card" href="horizons/nietzsche/">
+        <div class="new-article-shelf">思考を広げる</div>
+        <div class="new-article-title">ニーチェと投資：逆張りの哲学</div>
+        <div class="new-article-desc">群衆心理への抵抗と独自の判断基準</div>
+      </a>
+      <a class="new-article-card" href="horizons/zen/">
+        <div class="new-article-shelf">思考を広げる</div>
+        <div class="new-article-title">禅と投資：何もしない勇気</div>
+        <div class="new-article-desc">忍耐と長期保有の東洋哲学</div>
+      </a>
+      <a class="new-article-card" href="principles/mr-market/">
+        <div class="new-article-shelf">投資原則</div>
+        <div class="new-article-title">ミスター・マーケット</div>
+        <div class="new-article-desc">市場の気分に振り回されない</div>
+      </a>
+      <a class="new-article-card" href="principles/circle-of-competence/">
+        <div class="new-article-shelf">投資原則</div>
+        <div class="new-article-title">能力の輪</div>
+        <div class="new-article-desc">知らないものには投資しない</div>
+      </a>
+      <a class="new-article-card" href="human/anchoring/">
+        <div class="new-article-shelf">人間理解</div>
+        <div class="new-article-title">アンカリング効果</div>
+        <div class="new-article-desc">最初の数字に縛られる脳</div>
+      </a>
+      <a class="new-article-card" href="human/sunk-cost/">
+        <div class="new-article-shelf">人間理解</div>
+        <div class="new-article-title">サンクコスト</div>
+        <div class="new-article-desc">もったいないが判断を狂わせる</div>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- ══════════════ INDUSTRY NAVIGATOR ══════════════ -->
 
 <div class="industry-nav">
@@ -1523,6 +1607,18 @@ a.shelf-item:hover{background:var(--parch3);border-color:var(--gold3);}
       <a class="horizons-item" href="horizons/cooperation/">
         <div class="horizons-item-label">HUMAN NATURE</div>
         <div class="horizons-item-title">人類はなぜ協力できたのか</div>
+      </a>
+      <a class="horizons-item" href="horizons/nietzsche/">
+        <div class="horizons-item-label">PHILOSOPHY</div>
+        <div class="horizons-item-title">ニーチェと投資：逆張りの哲学</div>
+      </a>
+      <a class="horizons-item" href="horizons/zen/">
+        <div class="horizons-item-label">ZEN &amp; PATIENCE</div>
+        <div class="horizons-item-title">禅と投資：何もしない勇気</div>
+      </a>
+      <a class="horizons-item" href="horizons/bubble-history/">
+        <div class="horizons-item-label">FINANCIAL HISTORY</div>
+        <div class="horizons-item-title">歴史に学ぶバブルの構造</div>
       </a>
     </div>
     <p class="horizons-more">

@@ -193,6 +193,102 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- 株式投資とは何か -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/hajimete/stock-basics/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 配当とキャピタルゲイン -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/hajimete/returns/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ネットワーク効果 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/moat/network-effects/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- スイッチングコスト -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/moat/switching-costs/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ブランド力の経済学 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/moat/brand-power/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ニーチェと投資 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/horizons/nietzsche/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 禅と投資 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/horizons/zen/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 歴史に学ぶバブルの構造 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/horizons/bubble-history/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- アンカリング効果 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/human/anchoring/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- サンクコスト -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/human/sunk-cost/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 能力の輪 -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/principles/circle-of-competence/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ミスター・マーケット -->
+  <url>
+    <loc>https://anni-memo.github.io/investment-library/principles/mr-market/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- API -->
   <url>
     <loc>https://anni-memo.github.io/investment-library/api/articles.json</loc>

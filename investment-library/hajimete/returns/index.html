@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="配当とキャピタルゲインという2つのリターンの仕組み、税制の違い、再投資の力を解説。投資のリターンを正しく理解することが、長期投資家の第一歩となる。"/>
+<meta property="og:title" content="配当とキャピタルゲイン：投資のリターンを理解する｜投資と思考の書斎"/>
+<meta property="og:description" content="2つのリターンの違い・税制・再投資の力を解説する。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/hajimete/returns/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/hajimete/returns/"/>
+<title>配当とキャピタルゲイン：投資のリターンを理解する｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "配当とキャピタルゲイン：投資のリターンを理解する",
+  "description": "2つのリターンの違い・税制・再投資の力を解説する。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "配当"}, {"@type": "Thing", "name": "キャピタルゲイン"}, {"@type": "Thing", "name": "投資リターン"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "はじめの棚", "item": "https://anni-memo.github.io/investment-library/hajimete/"},
+    {"@type": "ListItem", "position": 3, "name": "配当とキャピタルゲイン"}
+  ]}
+}
+</script>
+<link rel="stylesheet" href="../../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;--parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;--gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;--serif:'Cormorant Garamond','Noto Serif JP',serif;--jp:'Noto Serif JP','Cormorant Garamond',serif;--mono:'DM Mono',monospace;--shadow:0 4px 24px rgba(26,18,8,.18);}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--ink);scroll-behavior:smooth}body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}.nav-back:hover{color:var(--gold4)}.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#2a1c0a 100%);color:var(--parch);padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:14px;opacity:.65;position:relative;}.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:700;line-height:1.25;color:var(--parch);text-shadow:0 2px 20px rgba(212,170,34,.15);position:relative;margin-bottom:18px;}.hero-lead{font-size:.88rem;color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:540px;margin:0 auto;}
+.article{max-width:680px;margin:0 auto;padding:56px 24px 12px;}.article-section{margin-bottom:56px;}.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}.section-body p{margin-bottom:1.4em;}.section-body p:last-child{margin-bottom:0;}.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.86rem;color:var(--ink3);line-height:1.8;}.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2);}.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}.further-inner{max-width:700px;margin:0 auto;}.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}.further-links{display:flex;flex-direction:column;gap:2px;}.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}.scroll-top.visible{opacity:1;pointer-events:all}.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}.music-toggle:hover{opacity:1;border-color:var(--gold2);}.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a><span class="nav-sep">/</span>
+  <a class="nav-back" href="../">はじめの棚</a><span class="nav-sep">/</span>
+  <span class="nav-current">配当とキャピタルゲイン</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">SHELF 01 — はじめの一歩</div>
+  <h1 class="hero-title">配当とキャピタルゲイン<br>投資のリターンを理解する</h1>
+  <p class="hero-lead">投資のリターンには二つの道がある。<br>その違いを知ることが、自分の投資スタイルを見つける出発点になる。</p>
+</div>
+
+<main class="article">
+
+  <div class="article-section">
+    <div class="section-label">TWO PATHS OF RETURN</div>
+    <h2 class="section-title">投資リターンの2つの形</h2>
+    <div class="section-body">
+      <p>株式投資から得られるリターンは、大きく二つに分けられる。</p>
+      <ul>
+        <li>キャピタルゲイン — 株価の値上がりによる利益。1,000円で買った株が1,500円になれば、500円のキャピタルゲイン</li>
+        <li>インカムゲイン（配当）— 企業が利益の一部を株主に還元する現金。定期的に受け取れる</li>
+      </ul>
+      <p>どちらも投資リターンの正当な形であり、どちらが「優れている」というものではない。重要なのは、それぞれの仕組みを理解し、自分の投資目的に合った選択をすることである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">DIVIDENDS</div>
+    <h2 class="section-title">配当という「果実」を受け取る</h2>
+    <div class="section-body">
+      <p>配当とは、企業が稼いだ利益の一部を株主に現金で還元するものである。日本では年1〜2回の頻度で支払われることが多い。</p>
+      <p>配当を重視する投資には、いくつかの利点がある。</p>
+      <ul>
+        <li>定期的な現金収入が得られる — 株を売らなくてもリターンを享受できる</li>
+        <li>企業の健全性の指標になる — 安定的に配当を出せる企業は、安定的に利益を出している証拠</li>
+        <li>下落相場でもリターンがある — 株価が下がっても配当は受け取れる（減配しない限り）</li>
+      </ul>
+      <p>ただし、配当を出す企業が必ずしも良い企業とは限らない。成長の機会があるのに配当で株主に返してしまう企業は、資本配分が非効率かもしれない。バフェットが率いるバークシャー・ハサウェイは、利益をすべて事業に再投資し、長年にわたり無配当だった。それでも株主は莫大なリターンを得た。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">CAPITAL GAINS</div>
+    <h2 class="section-title">キャピタルゲインという「成長の果実」</h2>
+    <div class="section-body">
+      <p>キャピタルゲインは、企業の成長に伴う株価の上昇から得られるリターンである。企業が利益を再投資し、事業を拡大し、より多くの価値を生み出すことで、株価は長期的に上昇する。</p>
+      <p>キャピタルゲインの最大の利点は、税金の繰延べ効果である。配当は受け取るたびに課税されるが、キャピタルゲインは株を売却するまで課税されない。その間、含み益が複利で成長し続ける。</p>
+      <p>バフェットがこの仕組みを深く理解していたからこそ、無配当のバークシャー・ハサウェイは株主に最大のリターンを提供できた。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">配当は「今日の果実」、キャピタルゲインは「明日の木の大きさ」である。<br>どちらを選ぶかは、あなたの時間軸と目的による。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">TAX CONSIDERATIONS</div>
+    <h2 class="section-title">税制を知ることは、リターンを知ること</h2>
+    <div class="section-body">
+      <p>日本における株式投資の税制（2026年現在）を理解しておくことは重要である。</p>
+      <ul>
+        <li>配当所得 — 上場株式の配当には20.315%の源泉徴収（所得税15.315%＋住民税5%）が課される</li>
+        <li>キャピタルゲイン — 売却益にも同率20.315%が課される。ただし、売却しなければ課税されない</li>
+        <li>NISA制度 — 一定の枠内であれば、配当もキャピタルゲインも非課税になる</li>
+      </ul>
+      <p>税金は確実にリターンを減少させる。だからこそ、NISAの活用や長期保有（売却を遅らせることで課税を繰延べる）は、合理的な戦略である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">THE POWER OF REINVESTMENT</div>
+    <h2 class="section-title">再投資の力：配当再投資という第三の選択</h2>
+    <div class="section-body">
+      <p>配当を受け取ったら、それを使うか、再投資するか。この選択が長期リターンに大きな差を生む。</p>
+      <p>配当再投資とは、受け取った配当金で同じ株を追加購入することである。これにより、保有株数が増え、次回の配当額も増える。この繰り返しが複利効果を生む。</p>
+      <p>たとえば配当利回り3%の株を20年間保有し、配当を全額再投資した場合、配当だけで投資額の約80%の追加リターンが得られる計算になる。株価の値上がりと合わせれば、その効果はさらに大きい。</p>
+      <p>これが、バフェットが「雪だるま」と呼ぶ複利の力の具体的な姿である。小さな雪の玉が、時間と共に巨大な雪だるまに成長する。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">長期投資のリターンの半分以上は、配当再投資から生まれる。<br>時間を味方につけることが、最も確実な投資戦略である。</p>
+    </div>
+  </div>
+
+</main>
+
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">関連する記事</div>
+    <p class="further-reason">リターンの仕組みを理解したら、複利の力と企業分析の世界へ歩こう。</p>
+    <div class="further-links">
+      <a class="further-link" href="../stock-basics/">
+        <span class="further-link-tag">はじめの棚</span>
+        <span class="further-link-title">株式投資とは何か：はじめの一歩</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../horizons/compound-interest/">
+        <span class="further-link-tag">思考を広げる</span>
+        <span class="further-link-title">複利の力：なぜ長期投資家は時間を味方にできるのか</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../fcf/intro/">
+        <span class="further-link-tag">概念</span>
+        <span class="further-link-title">フリーキャッシュフロー入門</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../principles/diversification/">
+        <span class="further-link-tag">投資原則</span>
+        <span class="further-link-title">なぜ分散投資が必要なのか</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../../">書斎の入口</a> &middot; <a href="../../hajimete/">初めての方へ</a> &middot; <a href="../../principles/">投資原則</a> &middot; <a href="../../industries/">業種から歩く</a> &middot; <a href="../../horizons/">思考を広げる</a></div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">&#127925;</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);});
+(function(){var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;var btn=document.getElementById('musicToggle');var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';window.onYouTubeIframeAPIReady=function(){player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});};var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);btn.addEventListener('click',function(){if(!playerReady)return;if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}});})();
+</script>
+<script src="../../shared.js"></script>
+</body>
+</html>

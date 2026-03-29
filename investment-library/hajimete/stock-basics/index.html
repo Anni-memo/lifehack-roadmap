@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="株式投資とは何か。なぜ企業は株を発行するのか。投資家の役割とは。株式の仕組みを根本から理解し、長期投資の第一歩を踏み出す。"/>
+<meta property="og:title" content="株式投資とは何か：はじめの一歩｜投資と思考の書斎"/>
+<meta property="og:description" content="株式の仕組み・なぜ企業は株を発行するか・投資家の役割を根本から解説する。"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://anni-memo.github.io/investment-library/hajimete/stock-basics/"/>
+<meta property="og:image" content="https://anni-memo.github.io/investment-library/og-image.png"/>
+<meta property="og:image:alt" content="投資と思考の書斎"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://anni-memo.github.io/investment-library/hajimete/stock-basics/"/>
+<title>株式投資とは何か：はじめの一歩｜投資と思考の書斎</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "株式投資とは何か：はじめの一歩",
+  "description": "株式の仕組み・なぜ企業は株を発行するか・投資家の役割を根本から解説する。",
+  "author": {"@type": "Person", "name": "anni_memo"},
+  "publisher": {"@type": "Organization", "name": "投資と思考の書斎", "url": "https://anni-memo.github.io/investment-library/"},
+  "datePublished": "2026-03-28",
+  "inLanguage": "ja",
+  "about": [{"@type": "Thing", "name": "株式投資"}, {"@type": "Thing", "name": "投資入門"}],
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "書斎の入口", "item": "https://anni-memo.github.io/investment-library/"},
+    {"@type": "ListItem", "position": 2, "name": "はじめの棚", "item": "https://anni-memo.github.io/investment-library/hajimete/"},
+    {"@type": "ListItem", "position": 3, "name": "株式投資とは何か"}
+  ]}
+}
+</script>
+<link rel="stylesheet" href="../../shared.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 45%,#2a1c0a 100%);color:var(--parch);padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(184,144,10,.1) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:14px;opacity:.65;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:700;line-height:1.25;color:var(--parch);text-shadow:0 2px 20px rgba(212,170,34,.15);position:relative;margin-bottom:18px;}
+.hero-lead{font-size:.88rem;color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:540px;margin:0 auto;}
+.article{max-width:680px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:56px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.88rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.86rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+.music-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:.75;}
+.music-toggle:hover{opacity:1;border-color:var(--gold2);}
+.music-toggle.playing{border-color:var(--gold2);color:var(--gold4);opacity:1;box-shadow:0 0 12px rgba(212,170,34,.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-back" href="../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">はじめの棚</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">株式投資とは何か</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-shelf">SHELF 01 — はじめの一歩</div>
+  <h1 class="hero-title">株式投資とは何か<br>はじめの一歩</h1>
+  <p class="hero-lead">
+    株式とは、企業の一部を所有することである。<br>
+    その根本を理解することが、すべての投資判断の出発点になる。
+  </p>
+</div>
+
+<main class="article">
+
+  <div class="article-section">
+    <div class="section-label">THE FOUNDATION</div>
+    <h2 class="section-title">株式とは「企業の所有権」である</h2>
+    <div class="section-body">
+      <p>株式を買うとは、その企業の一部を所有することを意味する。1株を買えば、あなたはその企業のオーナーの一人になる。</p>
+      <p>これは単なる比喩ではない。法的にも経済的にも、株主は企業の所有者である。企業が生み出す利益の一部を受け取る権利があり、株主総会で議決権を行使する権利がある。</p>
+      <p>バフェットは繰り返しこう言う。「株を買うとき、あなたはそのビジネスのオーナーになる。紙切れを買っているのではない」。この認識が、短期的な値動きに振り回されない長期投資の土台になる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">WHY COMPANIES ISSUE STOCKS</div>
+    <h2 class="section-title">なぜ企業は株を発行するのか</h2>
+    <div class="section-body">
+      <p>企業が成長するには資金が必要である。新しい工場を建てる、研究開発に投資する、海外に進出する。こうした活動には莫大なお金がかかる。</p>
+      <p>資金調達の手段は大きく二つある。</p>
+      <ul>
+        <li>借入（銀行融資・社債）— 返済義務がある。利息を払い続けなければならない</li>
+        <li>株式の発行（エクイティ）— 返済義務がない。その代わり、企業の所有権の一部を手放す</li>
+      </ul>
+      <p>株式を発行すれば、企業は返済のプレッシャーなく資金を得られる。一方、投資家は企業の成長に伴うリターンを期待して資金を提供する。</p>
+      <p>この仕組みが、資本主義の根幹をなす「リスクとリターンの交換」である。投資家がリスクを引き受け、企業が成長の機会を得る。その結果として、経済全体が発展する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">THE STOCK MARKET</div>
+    <h2 class="section-title">株式市場という「取引の場」</h2>
+    <div class="section-body">
+      <p>企業が最初に株式を発行する場を「一次市場（IPO）」と呼ぶ。投資家が日々売買しているのは「二次市場」である。東京証券取引所、ニューヨーク証券取引所がこれにあたる。</p>
+      <p>二次市場の存在は、投資家にとって極めて重要である。なぜなら、いつでも株式を売却して現金化できるという「流動性」を提供するからだ。この流動性がなければ、誰も長期間資金を拘束されるリスクを負いたがらない。</p>
+      <p>しかしここに罠がある。二次市場では毎日価格が変動する。この日々の変動は、企業の本質的な価値とはほとんど関係がない場合が多い。グレアムが「ミスター・マーケット」という寓話で教えたのは、まさにこの点である。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">株式市場は、企業の価値を正確に反映する装置ではない。<br>短期的には人気投票、長期的には計量器である。<br>— ベンジャミン・グレアム</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">THE INVESTOR'S ROLE</div>
+    <h2 class="section-title">投資家の役割とは何か</h2>
+    <div class="section-body">
+      <p>投資家とは、本質的には「資本の配分者」である。</p>
+      <p>社会にはさまざまな企業があり、それぞれが異なる事業を営んでいる。投資家は、どの企業に資本を配分するかを判断する。優れた事業を営み、誠実な経営者がいる企業に資本を提供する。そうでない企業からは資本を引き上げる。</p>
+      <p>この資本配分の集合が、経済全体の資源配分を決定する。優れた投資家が増えれば、社会全体の資源配分が効率的になる。</p>
+      <p>だからこそ、投資家には責任がある。単に「儲かりそうだから買う」のではなく、その企業が社会にどのような価値を提供しているかを理解した上で投資する。これが長期投資家の姿勢である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="article-section">
+    <div class="section-label">SPECULATION VS INVESTMENT</div>
+    <h2 class="section-title">投資と投機の違い</h2>
+    <div class="section-body">
+      <p>グレアムは「投資」と「投機」を明確に区別した。</p>
+      <ul>
+        <li>投資 — 徹底的な分析に基づき、元本の安全性と適切なリターンを約束するもの</li>
+        <li>投機 — これらの基準を満たさないすべての行為</li>
+      </ul>
+      <p>株式を買ったからといって、自動的に「投資家」になるわけではない。明日株価が上がるかどうかを予測して売買するのは投機であり、企業の事業価値を分析して長期保有するのが投資である。</p>
+      <p>この書斎が扱うのは、投資である。企業の競争優位性（moat）を見極め、財務の健全性を確認し、適正な価格で買い、長期間保有する。それが、マンガーとバフェットが実践し続けた手法であり、この書斎の中心思想である。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">投機は悪ではない。しかし、投機を投資だと勘違いしている状態が最も危険である。<br>— ベンジャミン・グレアム『賢明なる投資家』</p>
+    </div>
+  </div>
+
+</main>
+
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">関連する記事</div>
+    <p class="further-reason">株式の基本を理解したら、次はリターンの構造と、企業を見る目を育てよう。</p>
+    <div class="further-links">
+      <a class="further-link" href="../returns/">
+        <span class="further-link-tag">はじめの棚</span>
+        <span class="further-link-title">配当とキャピタルゲイン：投資のリターンを理解する</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../moat/">
+        <span class="further-link-tag">概念</span>
+        <span class="further-link-title">永続的競争優位性（moat）をどう見るか</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../principles/mr-market/">
+        <span class="further-link-tag">投資原則</span>
+        <span class="further-link-title">ミスター・マーケット：市場の気分に振り回されない</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../horizons/compound-interest/">
+        <span class="further-link-tag">思考を広げる</span>
+        <span class="further-link-title">複利の力：なぜ長期投資家は時間を味方にできるのか</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../">書斎の入口</a> &middot;
+    <a href="../../hajimete/">初めての方へ</a> &middot;
+    <a href="../../principles/">投資原則</a> &middot;
+    <a href="../../industries/">業種から歩く</a> &middot;
+    <a href="../../horizons/">思考を広げる</a>
+  </div>
+  <div style="margin-top:6px;font-size:.62rem;color:rgba(223,201,168,.5);">人とAIが共に使える、無料の知の図書館。</div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+<button class="music-toggle" id="musicToggle" title="528Hz アンビエント音楽">&#127925;</button>
+<div id="yt-player-container" style="display:none;"></div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);});
+(function(){
+  var STORAGE_KEY='music_playing',VIDEO_ID='t_8uSnwvUeQ',player=null,playerReady=false;
+  var btn=document.getElementById('musicToggle');
+  var shouldPlay=localStorage.getItem(STORAGE_KEY)==='true';
+  window.onYouTubeIframeAPIReady=function(){player=new YT.Player('yt-player-container',{height:'1',width:'1',videoId:VIDEO_ID,playerVars:{autoplay:0,loop:1,playlist:VIDEO_ID},events:{onReady:function(e){playerReady=true;e.target.setVolume(30);if(shouldPlay){e.target.playVideo();btn.classList.add('playing');}}}});};
+  var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  btn.addEventListener('click',function(){if(!playerReady)return;if(player.getPlayerState()===YT.PlayerState.PLAYING){player.pauseVideo();btn.classList.remove('playing');localStorage.setItem(STORAGE_KEY,'false');}else{player.playVideo();btn.classList.add('playing');localStorage.setItem(STORAGE_KEY,'true');}});
+})();
+</script>
+<script src="../../shared.js"></script>
+</body>
+</html>

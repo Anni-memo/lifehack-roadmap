@@ -269,6 +269,89 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     </div>
   </div>
 
+  <!-- ── 印刷用 分析記入シート ── -->
+  <style>
+  .print-sheet{background:var(--parch);border:2px solid var(--ink3);padding:28px 26px;margin-bottom:24px;page-break-inside:avoid;}
+  .print-sheet-title{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:6px;border-bottom:2px solid var(--ink);padding-bottom:6px;}
+  .print-sheet-sub{font-family:var(--mono);font-size:.52rem;color:var(--ink3);letter-spacing:.1em;margin-bottom:18px;}
+  .print-row{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start;}
+  .print-label{font-family:var(--mono);font-size:.6rem;color:var(--green2);width:120px;flex-shrink:0;padding-top:4px;letter-spacing:.06em;}
+  .print-input{flex:1;border-bottom:1px solid var(--parch4);min-height:28px;font-size:.78rem;color:var(--ink3);}
+  .print-input.tall{min-height:56px;}
+  .print-section{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--ink);margin:22px 0 12px;padding-top:10px;border-top:1px solid var(--parch4);}
+  .print-score-row{display:flex;gap:8px;align-items:center;margin-bottom:10px;}
+  .print-score-label{font-size:.72rem;color:var(--ink2);width:120px;flex-shrink:0;}
+  .print-score-boxes{display:flex;gap:4px;}
+  .print-score-box{width:24px;height:24px;border:1px solid var(--ink3);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.55rem;color:var(--ink3);}
+  @media print{
+    .print-sheet{border:2px solid #000;break-inside:avoid;}
+    .nav,.hero,.intro-block,.template-block,.scoring-block,.summary,.related-section,.further,.footer,.scroll-top,.music-toggle,#yt-player-container{display:none !important;}
+    .print-sheet{display:block !important;}
+    body{background:#fff !important;color:#000 !important;}
+    .article{max-width:100%;padding:0 20px;}
+  }
+  </style>
+
+  <div class="section-header" style="margin-top:32px">
+    <span class="section-num">WORKSHEET</span>
+    <h2 class="section-title">分析記入シート（印刷用）</h2>
+  </div>
+
+  <div class="print-sheet">
+    <div class="print-sheet-title">企業分析ワークシート</div>
+    <div class="print-sheet-sub">印刷して手書きで記入できます。Ctrl+P（Cmd+P）で印刷してください。</div>
+
+    <div class="print-row"><div class="print-label">企業名</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">証券コード</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">業種</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">分析日</div><div class="print-input"></div></div>
+
+    <div class="print-section">AXIS 01 — moat（競争優位性）</div>
+    <div class="print-row"><div class="print-label">moatの種類</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">持続性の根拠</div><div class="print-input tall"></div></div>
+    <div class="print-row"><div class="print-label">最大のリスク</div><div class="print-input tall"></div></div>
+
+    <div class="print-section">AXIS 02 — 経営者の質</div>
+    <div class="print-row"><div class="print-label">経営者名</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">誠実さの評価</div><div class="print-input tall"></div></div>
+    <div class="print-row"><div class="print-label">長期志向か</div><div class="print-input"></div></div>
+
+    <div class="print-section">AXIS 03 — 財務の健全性</div>
+    <div class="print-row"><div class="print-label">FCF（直近3年）</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">営業利益率</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">ROIC</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">自己資本比率</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">有利子負債</div><div class="print-input"></div></div>
+
+    <div class="print-section">AXIS 04 — 資本配分</div>
+    <div class="print-row"><div class="print-label">配当方針</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">自社株買い</div><div class="print-input"></div></div>
+    <div class="print-row"><div class="print-label">M&amp;A実績</div><div class="print-input tall"></div></div>
+
+    <div class="print-section">総合評価</div>
+    <div class="print-score-row">
+      <div class="print-score-label">moat</div>
+      <div class="print-score-boxes"><div class="print-score-box">1</div><div class="print-score-box">2</div><div class="print-score-box">3</div><div class="print-score-box">4</div><div class="print-score-box">5</div></div>
+    </div>
+    <div class="print-score-row">
+      <div class="print-score-label">経営者の質</div>
+      <div class="print-score-boxes"><div class="print-score-box">1</div><div class="print-score-box">2</div><div class="print-score-box">3</div><div class="print-score-box">4</div><div class="print-score-box">5</div></div>
+    </div>
+    <div class="print-score-row">
+      <div class="print-score-label">財務健全性</div>
+      <div class="print-score-boxes"><div class="print-score-box">1</div><div class="print-score-box">2</div><div class="print-score-box">3</div><div class="print-score-box">4</div><div class="print-score-box">5</div></div>
+    </div>
+    <div class="print-score-row">
+      <div class="print-score-label">資本配分</div>
+      <div class="print-score-boxes"><div class="print-score-box">1</div><div class="print-score-box">2</div><div class="print-score-box">3</div><div class="print-score-box">4</div><div class="print-score-box">5</div></div>
+    </div>
+
+    <div class="print-section">投資判断メモ</div>
+    <div class="print-row"><div class="print-label">買いの理由</div><div class="print-input tall"></div></div>
+    <div class="print-row"><div class="print-label">見送りの理由</div><div class="print-input tall"></div></div>
+    <div class="print-row"><div class="print-label">適正株価の目安</div><div class="print-input"></div></div>
+  </div>
+
   <div class="related-section">
     <div class="related-header">関連記事</div>
     <div class="related-list">
