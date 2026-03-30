@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="堂島米市場と先物の原型｜投資と思考の書斎"/>
+<meta property="og:description" content="1730年公認。シカゴより120年早い世界初の先物市場。ローソク足チャートの起源。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>堂島米市場と先物の原型｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(60,100,160,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative;}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(60,100,160,.15);position:relative;margin-bottom:14px;}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">金融史の書庫</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">堂島米市場と先物の原型</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 05 &middot; FINANCIAL HISTORY</div>
+  <div class="hero-ornament">Dojima Rice Exchange &mdash; The World's First Futures Market</div>
+  <h1 class="hero-title">堂島米市場と先物の原型</h1>
+  <p class="hero-lead">
+    1730年、大阪に公認された世界初の先物取引市場。デリバティブとテクニカル分析の源流がここにある。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 堂島米市場とは -->
+  <div class="article-section">
+    <div class="section-label">WHAT HAPPENED</div>
+    <h2 class="section-title">堂島米市場とは</h2>
+    <div class="section-body">
+      <p>堂島米会所は、1697年に大阪・堂島に開設された米の取引市場である。1730年、幕府によって正式に「帳合米取引（ちょうあいまいとりひき）」が公認された。</p>
+      <p>これは、現物の米を直接やり取りせず、将来の一定期日に米を受け渡す契約を売買するものだった。つまり、先物取引である。</p>
+      <p>シカゴ商品取引所（CBOT）が穀物の先物取引を開始したのは1848年。堂島はそれよりおよそ120年も早い。世界で最初に組織化された先物市場として、金融史に確かな足跡を残している。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 帳合米取引の仕組み -->
+  <div class="article-section">
+    <div class="section-label">MECHANISM</div>
+    <h2 class="section-title">帳合米取引 -- 先物取引の仕組み</h2>
+    <div class="section-body">
+      <p>堂島の米取引には2種類あった。</p>
+      <ul>
+        <li><strong>正米取引（しょうまいとりひき）</strong> -- 現物の米を実際に売買する取引。現代のスポット取引に相当する</li>
+        <li><strong>帳合米取引</strong> -- 帳簿上の差金決済による取引。現代の先物取引・デリバティブに相当する</li>
+      </ul>
+      <p>帳合米取引では、一定の期限（通常は年3回の決済期）までに反対売買を行い、差額を精算する。現物の米が動くことはなく、価格変動の差額だけが受け渡される。</p>
+      <p>この仕組みは、現代のデリバティブ取引と本質的に同じである。証拠金の概念も存在し、取引参加者は一定の保証金（敷銀）を預け入れる必要があった。</p>
+
+      <div class="callout">
+        <p class="callout-text">現物を動かさず、価格の差額だけを決済する。この概念を江戸時代の日本人が独自に発明していたことは、金融史における注目すべき事実である。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜ大阪で生まれたか -->
+  <div class="article-section">
+    <div class="section-label">WHY OSAKA</div>
+    <h2 class="section-title">なぜ大阪で生まれたか -- 天下の台所</h2>
+    <div class="section-body">
+      <p>堂島米市場が大阪で誕生したことは偶然ではない。大阪は「天下の台所」と呼ばれ、全国の物資が集まる流通の中心地だった。</p>
+      <p>各藩は大阪に「蔵屋敷」を構え、年貢米を保管・販売していた。全国から米が集まり、その価格が形成される場所として、大阪は最適だった。</p>
+      <ul>
+        <li>全国の米が物理的に集まる物流拠点</li>
+        <li>銀貨経済による柔軟な決済インフラ</li>
+        <li>豊かな商人文化と高度な金融技術</li>
+        <li>両替商による信用供与の仕組み</li>
+      </ul>
+      <p>堂島の米価格は全国の米の価格指標（ベンチマーク）となり、各地の取引に影響を与えた。現代の原油先物がWTI価格を基準とするのと同じ構造が、すでに江戸時代に存在していた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- シカゴより120年早い先駆性 -->
+  <div class="article-section">
+    <div class="section-label">GLOBAL SIGNIFICANCE</div>
+    <h2 class="section-title">シカゴ商品取引所より120年早い先駆性</h2>
+    <div class="section-body">
+      <p>先物取引というと、多くの人はシカゴを思い浮かべる。しかし歴史的事実として、組織化された先物市場は日本が世界に先駆けて実現した。</p>
+      <p>堂島米会所（1730年公認）とシカゴ商品取引所（1848年設立）を比較すると、両者には共通する構造がある。</p>
+      <ul>
+        <li>農産物の価格変動リスクを管理するニーズ</li>
+        <li>標準化された契約条件</li>
+        <li>証拠金制度による信用リスクの管理</li>
+        <li>差金決済の仕組み</li>
+      </ul>
+      <p>ただし、堂島の先物取引はシカゴの影響を受けたものではなく、完全に独自の発展を遂げた点が重要である。異なる文化圏で同じ金融イノベーションが独立に生まれたことは、先物取引が人間の経済活動における普遍的なニーズに応えるものであることを示している。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ローソク足チャートの起源 -->
+  <div class="article-section">
+    <div class="section-label">CANDLESTICK ORIGINS</div>
+    <h2 class="section-title">ローソク足チャートの起源 -- 本間宗久</h2>
+    <div class="section-body">
+      <p>堂島米市場は、もう一つの金融イノベーションを生んだ。テクニカル分析の原型である。</p>
+      <p>出羽国（現在の山形県）の米商人・本間宗久（1724-1803）は、堂島での米相場の分析を通じて、価格の動きを視覚的に記録する手法を開発したとされる。これが「ローソク足チャート」の起源である。</p>
+      <p>ローソク足は、一定期間の始値・終値・高値・安値を一つの図形で表現する。現在、世界中のトレーダーが日常的に使うこのチャート形式は、18世紀の日本の米相場から生まれた。</p>
+      <p>本間宗久に帰属される「酒田五法」は、ローソク足のパターンに基づく相場分析の体系である。これが1990年代にスティーブ・ニソンによって英語圏に紹介され、世界標準のチャート分析手法となった。</p>
+
+      <div class="callout">
+        <p class="callout-text">世界中のトレーダーが毎日目にするローソク足チャート。その起源が江戸時代の日本にあることは、日本の金融史が世界の金融技術に与えた最も直接的な貢献である。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 今に残っているもの -->
+  <div class="article-section">
+    <div class="section-label">LEGACY</div>
+    <h2 class="section-title">今に残っているもの -- デリバティブの本質</h2>
+    <div class="section-body">
+      <p>堂島米市場は1939年に閉鎖された。しかし、そこで生まれた金融の原理は現代に受け継がれている。</p>
+      <ul>
+        <li>先物取引の概念は、現代のデリバティブ市場（年間取引額は世界GDPの数倍に達する）の基盤である</li>
+        <li>ローソク足チャートは、世界中の金融市場で標準的な分析ツールとして使われている</li>
+        <li>証拠金制度と差金決済の仕組みは、現代の先物・オプション取引にそのまま引き継がれている</li>
+        <li>価格発見機能（多数の参加者の売買によって適正価格が形成される仕組み）は、すべての取引所の根幹である</li>
+      </ul>
+      <p>デリバティブの本質は「リスクの移転」にある。価格変動のリスクを、それを引き受けたくない者から、引き受けてもよい者へと移す。堂島の米商人たちは、この本質を経験的に理解し、実践していた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家にとっての意味 -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味</h2>
+    <div class="section-body">
+      <p>堂島米市場の歴史から、投資家は以下のことを学べる。</p>
+      <ul>
+        <li>デリバティブは「投機の道具」ではなく、本来は「リスク管理の手段」として生まれた</li>
+        <li>市場は情報を集約し、価格を発見する機能を持つ。この機能は300年前から変わっていない</li>
+        <li>テクニカル分析の起源を知ることで、チャートが「何を表現しているか」をより深く理解できる</li>
+        <li>金融イノベーションは西洋の専売特許ではない。必要があるところに、革新は自然に生まれる</li>
+      </ul>
+      <p>先物・オプションを使う投資家も、使わない投資家も、デリバティブが「なぜ存在するのか」を理解しておくことには意味がある。それは、市場の構造そのものを理解することにつながるからだ。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">堂島から広がる市場と金融の歴史を、さらに深く。</p>
+    <div class="further-links">
+      <a class="further-link" href="../../equity/">
+        <span class="further-link-tag">EQUITY</span>
+        <span class="further-link-title">株式とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../edo-sankasei/">
+        <span class="further-link-tag">EDO</span>
+        <span class="further-link-title">江戸の三貨制度</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>&emsp;&middot;
+    <a href="../../">思考を広げる棚</a>&emsp;&middot;
+    <a href="../">金融史の書庫</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

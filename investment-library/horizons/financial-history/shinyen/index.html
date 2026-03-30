@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="戦後の新円切替と金融緊急措置｜金融史の書庫｜投資と思考の書斎"/>
+<meta property="og:description" content="1946年、預金封鎖と新円切替。国家が個人の資産を一夜にして凍結した歴史的事実と、その構造的教訓。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>戦後の新円切替と金融緊急措置｜金融史の書庫｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0a0e14 45%,#0e1420 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(40,80,140,.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(40,80,140,.15);position:relative;margin-bottom:8px;}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:20px;opacity:.8;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'---';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:100px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">金融史の書庫</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">戦後の新円切替と金融緊急措置</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-shelf">FINANCIAL HISTORY</div>
+  <div class="hero-ornament">1946 : DEPOSIT FREEZE : CURRENCY RESET</div>
+  <h1 class="hero-title">戦後の新円切替と金融緊急措置</h1>
+  <p class="hero-sub">The Postwar Currency Reset</p>
+  <p class="hero-lead">
+    1946年、国民の預金が凍結され、旧紙幣が無効化された。<br>国家が個人の資産を一夜にして奪いうるという、日本人が経験した歴史的事実。
+  </p>
+</div>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <!-- 何が起きたか -->
+  <div class="article-section">
+    <div class="section-label">WHAT HAPPENED</div>
+    <h2 class="section-title">敗戦と超インフレ --- 1945-46年</h2>
+    <div class="section-body">
+      <p>1945年8月15日、日本は敗戦を迎えた。経済は壊滅状態にあった。</p>
+      <p>戦時中に膨大な軍事費を賄うため、政府は日本銀行に国債を引き受けさせ、紙幣を大量に発行していた。戦争終結時、市中に流通する通貨量は戦前の4倍以上に膨張していた。</p>
+      <p>一方で、生産設備は破壊され、物資は極端に不足していた。お金はあるのに買うものがない。古典的なインフレの構造だ。</p>
+      <p>1945年から1946年にかけて、物価は年率300%を超えるペースで上昇した。国民の貯蓄は、数字の上では残っていても、実質的な購買力は急速に失われていった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 金融緊急措置令 -->
+  <div class="article-section">
+    <div class="section-label">THE MEASURE</div>
+    <h2 class="section-title">金融緊急措置令 --- 1946年2月</h2>
+    <div class="section-body">
+      <p>1946年2月16日夕方、政府は突然「金融緊急措置令」と「日本銀行券預入令」を発令した。翌2月17日から施行という、事実上の奇襲だった。</p>
+      <p>その内容は衝撃的なものだった。</p>
+      <ul>
+        <li><strong>旧紙幣の無効化</strong> --- 現行の日本銀行券（旧円）は期限付きで無効とされ、新しい紙幣（新円）に切り替えられた</li>
+        <li><strong>預金封鎖</strong> --- すべての金融機関の預金が封鎖され、引き出しに厳しい制限が設けられた</li>
+        <li><strong>引き出し制限</strong> --- 世帯主は月額300円、家族は1人100円までしか引き出せなかった</li>
+      </ul>
+      <p>国民は自分のお金を自由に使えなくなった。文字通り一夜にして。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 預金封鎖の実態 -->
+  <div class="article-section">
+    <div class="section-label">REALITY</div>
+    <h2 class="section-title">預金封鎖の実態</h2>
+    <div class="section-body">
+      <p>預金封鎖の目的は表向き「インフレの抑制」だった。市中の過剰な通貨を回収し、物価上昇を食い止めるという論理だ。</p>
+      <p>しかし、もうひとつの隠された目的があった。それが「財産税」の課税基盤の把握だ。</p>
+      <p>預金を封鎖することで、国民の金融資産を正確に捕捉できる。封鎖された預金口座の残高が、そのまま課税対象の把握に使われた。</p>
+      <p>預金封鎖の期間中、物価は引き続き上昇した。月300円の引き出し制限は、インフレが進むにつれて実質的にさらに厳しくなった。封鎖期間は当初3ヶ月とされたが、段階的に延長され、完全な解除は1954年まで続いた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 財産税 -->
+  <div class="article-section">
+    <div class="section-label">PROPERTY TAX</div>
+    <h2 class="section-title">財産税の課税 --- 最高税率90%</h2>
+    <div class="section-body">
+      <p>1946年11月、「財産税法」が施行された。預金封鎖で捕捉した国民の資産に対して、累進税率で課税するものだった。</p>
+      <ul>
+        <li>課税対象：個人の全財産（預金、不動産、有価証券、貴金属、美術品など）</li>
+        <li>税率：10万円超の資産に対して25%から始まり、最高税率は90%</li>
+        <li>1,500万円を超える資産には90%の税率が適用された</li>
+      </ul>
+      <p>これは事実上の資産没収だった。</p>
+      <p>政府の戦時債務（国債）を、国民の資産で清算したのだ。戦争のツケを、預金封鎖と財産税という形で国民に転嫁した。</p>
+
+      <div class="callout">
+        <p class="callout-text">国債は「国の借金」と言われるが、返済するのは国民だ。<br>1946年の日本は、それを最も直接的な形で証明した。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜこの措置が必要だったか -->
+  <div class="article-section">
+    <div class="section-label">WHY IT WAS NECESSARY</div>
+    <h2 class="section-title">なぜこの措置が必要だったか</h2>
+    <div class="section-body">
+      <p>戦後の日本政府には、選択肢がほとんどなかった。</p>
+      <p>戦時中に積み上がった膨大な国債と軍需補償の債務。生産力の壊滅。占領下という政治的制約。これらが同時に存在する中で、財政を再建する方法は限られていた。</p>
+      <ul>
+        <li><strong>増税による財政再建</strong> --- 経済が壊滅状態の中で通常の増税は不可能だった</li>
+        <li><strong>ハイパーインフレによる債務の実質的消滅</strong> --- これは統制不能になるリスクがあった</li>
+        <li><strong>預金封鎖＋財産税</strong> --- 強制的に資産を再配分し、財政を清算する直接的な手段</li>
+      </ul>
+      <p>政府は三番目の選択肢を取った。極端な措置だったが、ハイパーインフレの暴走を防ぎ、財政基盤を作り直すためには、避けられない判断だったとも言える。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 今に残っているもの -->
+  <div class="article-section">
+    <div class="section-label">LEGACY</div>
+    <h2 class="section-title">今に残っているもの --- 資産分散の歴史的根拠</h2>
+    <div class="section-body">
+      <p>新円切替と預金封鎖は、日本の金融史における最も劇的な出来事のひとつだ。この経験は、複数の構造的教訓を残している。</p>
+      <ul>
+        <li>国内の金融資産だけに依存する危険性 --- 預金封鎖は国内の金融機関に預けた資産のみを対象とした</li>
+        <li>不動産・実物資産の相対的な強さ --- 預金は封鎖されたが、土地や建物は直接凍結できなかった</li>
+        <li>マイナンバー制度との関連 --- 資産の捕捉は、現代においても税制・社会保障の基盤として進められている</li>
+        <li>国債残高の意味 --- 日本の国債残高がGDP比250%を超える現在、「最終的に誰が負担するのか」という問いは消えていない</li>
+      </ul>
+      <p>「あんなことは二度と起きない」と断言できる根拠は、実はどこにもない。</p>
+
+      <div class="callout">
+        <p class="callout-text">預金封鎖は80年前の出来事だ。しかし「国家は法的に個人の資産にアクセスできる」という構造は変わっていない。<br>資産を複数の形態・地域に分散させる理由は、歴史の中にある。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家にとっての意味 -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味</h2>
+    <div class="section-body">
+      <p>新円切替の歴史が投資家に教えることは、一つの明確な事実だ。</p>
+      <p><strong>国家は、非常時には個人の資産を凍結できる。</strong></p>
+      <ul>
+        <li>銀行預金は、法的には銀行への「貸付金」だ。銀行が破綻すれば、預金保険の範囲（1,000万円＋利息）を超える部分は保護されない</li>
+        <li>資産クラスの分散（預金・株式・不動産・金・外貨）は、特定のリスクへの集中を避ける基本原則</li>
+        <li>地理的分散（国内と海外）は、一国の制度リスクに対するヘッジとなる</li>
+        <li>現在の日本の財政状況（GDP比250%超の国債残高）は、1945年当時とは条件が異なるが、財政の持続可能性という問いは依然として残っている</li>
+      </ul>
+      <p>歴史を知ることは、最悪のシナリオを想定する力を与える。そしてその想定が、資産配分の合理的な根拠になる。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">預金封鎖の歴史を踏まえて、日本銀行の構造と高度成長期の金融へと理解を広げるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../boj/">
+        <span class="further-link-tag">BOJ</span>
+        <span class="further-link-title">日本銀行はなぜ必要だったのか</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../high-growth/">
+        <span class="further-link-tag">HIGH GROWTH</span>
+        <span class="further-link-title">高度成長と間接金融</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>&emsp;&middot;
+    <a href="../../">思考を広げる棚</a>&emsp;&middot;
+    <a href="../">金融史の書庫</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYPK32EB6B');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="金融史の書庫｜お金・信用・国家・市場の長い時間を歩く｜投資と思考の書斎"/>
+<meta property="og:description" content="メソポタミアの穀物貸付から堂島米市場、リーマン・ショック、AI革命まで。7000年の金融史を構造で理解するデジタル博物館。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>金融史の書庫｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --blue:#1a2a4a;--blue2:#2a3d6a;--blue3:#4a6a9a;
+  --rust:#8b3a1a;--rust2:#c05020;
+  --green:#2a4a1a;--green2:#3d6828;--green3:#5a8a3a;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav a{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}.nav a:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-cur{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,var(--blue) 100%);color:var(--parch);padding:64px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 10%,rgba(72,136,208,.08) 0%,transparent 60%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,6vw,3.2rem);font-weight:700;color:var(--parch);position:relative;margin-bottom:8px;line-height:1.1}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto 28px;font-weight:300}
+.hero-ctas{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;position:relative}
+.hero-cta{padding:10px 22px;font-family:var(--serif);font-size:.82rem;text-decoration:none;letter-spacing:.04em;transition:all .2s;border:1px solid rgba(184,144,10,.35);color:var(--parch3)}
+.hero-cta:hover{border-color:var(--gold3);color:var(--parch);background:rgba(184,144,10,.1)}
+.hero-cta.primary{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+.hero-cta.primary:hover{background:var(--gold3)}
+
+/* RIVER MAP */
+.river-sec{background:linear-gradient(180deg,#0a0e18 0%,#101420 50%,#141a28 100%);padding:28px 16px 36px;position:relative;border-bottom:1px solid rgba(72,136,208,.15)}
+.river-label{font-family:var(--mono);font-size:.46rem;color:var(--blue3);letter-spacing:.22em;text-align:center;margin-bottom:14px;opacity:.7;position:relative}
+.river-wrap{position:relative;width:100%;max-width:1100px;margin:0 auto;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(72,136,208,.3) transparent}
+.river-wrap::-webkit-scrollbar{height:6px}.river-wrap::-webkit-scrollbar-thumb{background:rgba(72,136,208,.3);border-radius:3px}
+#riverMap{image-rendering:auto;display:block;cursor:pointer}
+.river-hint{font-family:var(--mono);font-size:.44rem;color:rgba(72,136,208,.4);text-align:center;margin-top:8px;letter-spacing:.1em;position:relative}
+
+/* CONTAINER */
+.container{max-width:780px;margin:0 auto;padding:0 24px}
+.sec{padding:48px 0}
+.sec-label{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.22em;margin-bottom:12px;opacity:.65}
+.sec-title{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.sec-intro{font-size:.82rem;color:var(--ink2);line-height:2;margin-bottom:24px;font-weight:300}
+.divider{border:none;border-top:1px solid var(--parch4);margin:0}
+
+/* 5MIN OVERVIEW CARDS */
+.ov-grid{display:grid;grid-template-columns:1fr;gap:3px}
+.ov-card{display:flex;gap:0;border:1px solid var(--parch4);transition:all .15s}
+.ov-card:hover{border-color:var(--gold2);background:var(--parch2)}
+.ov-era{min-width:90px;padding:16px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.ov-era-num{font-family:var(--mono);font-size:.46rem;letter-spacing:.1em;opacity:.7}
+.ov-era-period{font-family:var(--mono);font-size:.52rem;margin-top:2px}
+.ov-body{padding:14px 18px;flex:1;background:var(--parch2)}
+.ov-body h3{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.ov-body p{font-size:.74rem;color:var(--ink3);line-height:1.8}
+.ov-body .ov-jp{font-size:.68rem;color:var(--blue2);margin-top:4px;font-style:italic}
+
+/* ERA SECTIONS */
+.era{margin-bottom:52px}
+.era-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;padding-bottom:10px;border-bottom:1px solid var(--parch4)}
+.era-num{font-family:var(--mono);font-size:.52rem;color:var(--gold2);letter-spacing:.12em;flex-shrink:0}
+.era-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink)}
+.era-period{font-family:var(--mono);font-size:.52rem;color:var(--ink3);letter-spacing:.06em;margin-left:auto}
+.era-intro{font-size:.82rem;color:var(--ink2);line-height:2;margin-bottom:20px;font-weight:300}
+
+/* TIMELINE ITEMS */
+.tl{display:flex;flex-direction:column;gap:2px;margin-bottom:16px}
+.tl-item{display:flex;gap:0;border:1px solid var(--parch4);transition:all .15s}
+.tl-item:hover{border-color:var(--gold2)}
+.tl-yr{min-width:76px;padding:12px 8px;background:var(--ink);color:var(--gold3);font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-align:center}
+.tl-bd{padding:12px 16px;flex:1;background:var(--parch2)}
+.tl-nm{font-family:var(--serif);font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.tl-ds{font-size:.72rem;color:var(--ink3);line-height:1.75}
+.tl-tg{display:inline-block;font-family:var(--mono);font-size:.44rem;padding:2px 6px;border:1px solid;margin-top:5px;letter-spacing:.04em}
+.tl-tg.crisis{color:var(--rust2);border-color:var(--rust)}
+.tl-tg.thinker{color:var(--blue2);border-color:var(--blue)}
+.tl-tg.inst{color:var(--green2);border-color:var(--green)}
+.tl-tg.innov{color:var(--gold2);border-color:var(--gold)}
+.tl-tg.japan{color:#6a4a8a;border-color:#5a3a7a}
+
+/* ERA INSIGHT BOX */
+.era-insight{border-left:3px solid var(--blue2);padding:16px 20px;background:var(--parch2);margin-top:8px}
+.era-insight-label{font-family:var(--mono);font-size:.46rem;color:var(--blue2);letter-spacing:.12em;margin-bottom:6px}
+.era-insight p{font-size:.76rem;color:var(--ink2);line-height:1.85}
+.era-insight strong{color:var(--ink);font-weight:600}
+
+/* THEME SHELVES */
+.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+@media(max-width:600px){.theme-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.theme-grid{grid-template-columns:1fr}}
+.theme-card{padding:22px 16px;background:var(--parch2);border:1px solid var(--parch4);border-top:3px solid var(--gold);transition:all .18s;text-decoration:none;color:inherit}
+.theme-card:hover{background:var(--parch3);transform:translateY(-2px);box-shadow:var(--shadow)}
+.theme-icon{font-size:1.2rem;margin-bottom:8px}
+.theme-name{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.theme-desc{font-size:.7rem;color:var(--ink3);line-height:1.7}
+
+/* TODAY'S QUESTIONS */
+.today-grid{display:flex;flex-direction:column;gap:3px}
+.today-card{padding:20px 22px;background:var(--parch2);border:1px solid var(--parch4);border-left:3px solid var(--rust)}
+.today-card h3{font-family:var(--serif);font-size:.94rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.today-card p{font-size:.76rem;color:var(--ink2);line-height:1.85}
+
+/* THINKERS */
+.th-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px}
+@media(max-width:500px){.th-grid{grid-template-columns:1fr}}
+.th-card{padding:16px;background:var(--parch2);border:1px solid var(--parch4);border-left:3px solid var(--blue2);transition:all .15s}
+.th-card:hover{background:var(--parch3)}
+.th-card.market{border-left-color:var(--green2)}
+.th-card.critic{border-left-color:var(--rust)}
+.th-card.investor{border-left-color:var(--gold2)}
+.th-card.japan-th{border-left-color:#6a4a8a}
+.th-nm{font-family:var(--serif);font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+.th-dt{font-family:var(--mono);font-size:.48rem;color:var(--ink3);letter-spacing:.04em;margin-bottom:5px}
+.th-rl{font-size:.7rem;color:var(--ink2);line-height:1.6}
+
+/* RESOURCES */
+.res-grid{display:flex;flex-direction:column;gap:2px}
+.res-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--parch2);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .15s}
+.res-item:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.res-tag{font-family:var(--mono);font-size:.46rem;color:var(--gold);letter-spacing:.1em;width:60px;flex-shrink:0}
+.res-name{font-family:var(--serif);font-size:.84rem;font-weight:600;color:var(--ink);flex:1}
+.res-note{font-size:.65rem;color:var(--ink3);margin-top:2px}
+
+/* RELATED */
+.related{background:var(--ink2);padding:40px 24px;margin-top:48px}
+.related-inner{max-width:780px;margin:0 auto}
+.related-label{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.14em;margin-bottom:16px;opacity:.7}
+.related-links{display:flex;flex-direction:column;gap:2px}
+.related-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(139,105,20,.18);text-decoration:none;transition:all .18s}
+.related-link:hover{border-color:var(--gold2);background:rgba(255,255,255,.07)}
+.related-tag{font-family:var(--mono);font-size:.48rem;color:var(--gold3);letter-spacing:.1em;width:68px;flex-shrink:0}
+.related-title{font-family:var(--serif);font-size:.86rem;color:var(--parch);font-weight:500;flex:1}
+.related-arrow{color:var(--gold3);font-size:.8rem;flex-shrink:0}
+
+.footer{background:var(--ink);color:var(--parch4);padding:24px;text-align:center;font-size:.65rem;line-height:1.9;border-top:2px solid rgba(72,136,208,.15)}
+.footer-title{font-family:var(--serif);font-size:1rem;color:var(--gold3);margin-bottom:6px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../">書斎の入口</a><span class="nav-sep">/</span>
+  <a href="../">思考を広げる棚</a><span class="nav-sep">/</span>
+  <span class="nav-cur">金融史の書庫</span>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 05 · FINANCIAL HISTORY</div>
+  <h1>金融史の書庫</h1>
+  <div class="hero-sub">お金・信用・国家・市場の長い時間を歩く</div>
+  <p class="hero-lead">
+    メソポタミアの穀物貸付から堂島米市場、東インド会社からリーマン・ショック、そしてAI革命へ。<br>
+    7000年の金融史を「暗記」ではなく「構造」で理解する。<br>
+    歴史を知ることは、次の危機を見抜く力になる。
+  </p>
+  <div class="hero-ctas">
+    <a class="hero-cta primary" href="#overview">5分で全体像</a>
+    <a class="hero-cta" href="#era1">時代順に読む</a>
+    <a class="hero-cta" href="#themes">テーマ別に読む</a>
+  </div>
+</div>
+
+<!-- ═══ RIVER MAP ═══ -->
+<div class="river-sec">
+  <div class="river-label">THE RIVER OF TIME — 時間の川を俯瞰する</div>
+  <div class="river-wrap"><canvas id="riverMap" width="1400" height="320"></canvas></div>
+  <div class="river-hint">&#8592; スクロールして時代を探索 / クリックで詳細へ &#8594;</div>
+</div>
+
+<!-- ═══ 5分で全体像 ═══ -->
+<div class="container">
+<div class="sec" id="overview">
+  <div class="sec-label">IN 5 MINUTES</div>
+  <div class="sec-title">5分で全体像</div>
+  <div class="sec-intro">7つの時代を、1枚ずつ。ここだけ読んでも金融史の骨格がわかる。</div>
+  <div class="ov-grid">
+    <div class="ov-card"><div class="ov-era" style="background:var(--ink);color:var(--gold3)"><div class="ov-era-num">ERA 01</div><div class="ov-era-period">BC3000-500</div></div><div class="ov-body"><h3>お金の起源</h3><p>穀物が利子を生み、金属が通貨になり、信用仲介が職業になった。お金は「モノ」として生まれた。</p><div class="ov-jp">日本: 和同開珎（708年）— 最古の公式鋳造貨幣</div></div></div>
+    <div class="ov-card"><div class="ov-era" style="background:#2d2010;color:var(--gold3)"><div class="ov-era-num">ERA 02</div><div class="ov-era-period">960-1500</div></div><div class="ov-body"><h3>信用の発明</h3><p>紙幣が生まれ、複式簿記が発明された。お金は「記録」に変わった。メディチ銀行が近代金融を開いた。</p><div class="ov-jp">日本: 堂島米市場（1730年）— 世界初の先物取引</div></div></div>
+    <div class="ov-card"><div class="ov-era" style="background:var(--green);color:var(--green3)"><div class="ov-era-num">ERA 03</div><div class="ov-era-period">1553-1720</div></div><div class="ov-body"><h3>株式会社の誕生</h3><p>リスクを分け合う「株式」という革命。東インド会社が生まれ、チューリップ・バブルが弾けた。</p><div class="ov-jp">日本: 両替商・札差 — 江戸の金融インフラ</div></div></div>
+    <div class="ov-card"><div class="ov-era" style="background:var(--blue);color:var(--blue3)"><div class="ov-era-num">ERA 04</div><div class="ov-era-period">1760-1870</div></div><div class="ov-body"><h3>資本主義の確立</h3><p>産業革命が資本を加速。スミスが市場を理論化し、マルクスが資本主義を解剖した。</p><div class="ov-jp">日本: 明治維新（1868年）— 円の誕生・日本銀行設立</div></div></div>
+    <div class="ov-card"><div class="ov-era" style="background:#3a1a1a;color:var(--rust2)"><div class="ov-era-num">ERA 05</div><div class="ov-era-period">1873-1945</div></div><div class="ov-body"><h3>恐慌と戦争の時代</h3><p>世界大恐慌がケインズを生み、ブレトンウッズがドル覇権を確立した。資本主義最大の試練。</p><div class="ov-jp">日本: 金本位制離脱（1931年）・新円切替（1946年）</div></div></div>
+    <div class="ov-card"><div class="ov-era" style="background:#1a1a3a;color:var(--blue3)"><div class="ov-era-num">ERA 06</div><div class="ov-era-period">1952-2000</div></div><div class="ov-body"><h3>現代金融の構築</h3><p>金本位制が終わり、デリバティブが生まれ、バブルが世界中で弾けた。日本の失われた30年。</p><div class="ov-jp">日本: 高度成長・間接金融・日経38,915円・バブル崩壊</div></div></div>
+    <div class="ov-card"><div class="ov-era" style="background:#0a1a2a;color:var(--blue3)"><div class="ov-era-num">ERA 07</div><div class="ov-era-period">2008-現在</div></div><div class="ov-body"><h3>危機と変革 — 新しいお金</h3><p>リーマンがシステムを壊し、ビットコインが中央管理を問い、AIが資本の意味を変え始めた。</p><div class="ov-jp">日本: ゼロ金利・量的緩和・NISA・新しい資本主義</div></div></div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ═══ MAIN TIMELINE ═══ -->
+<div class="sec">
+  <div class="sec-label">CHRONOLOGICAL</div>
+  <div class="sec-title">時代順に読む</div>
+  <div class="sec-intro">各時代の出来事を、「何が起きたか」「なぜ」「何が変わったか」の構造で辿る。</div>
+</div>
+
+<!-- ERA 1 -->
+<div class="era" id="era1">
+  <div class="era-head"><span class="era-num">ERA 01</span><span class="era-title">お金の起源</span><span class="era-period">BC3000 — BC500</span></div>
+  <p class="era-intro">人類が最初に「価値の交換」を記録に残した時代。穀物が利子を生み、金属が通貨になり、信用仲介という仕事が生まれた。</p>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">BC3000</div><div class="tl-bd"><div class="tl-nm">メソポタミアの穀物貸付</div><div class="tl-ds">世界最古の「利子」の記録。大麦を貸し、収穫後に多く返す契約。お金より先に「信用」が生まれた。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">BC1750</div><div class="tl-bd"><div class="tl-nm">ハンムラビ法典</div><div class="tl-ds">利率の上限を法で定めた人類最初の金融規制。穀物貸付33.3%、銀貸付20%。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">BC700</div><div class="tl-bd"><div class="tl-nm">リディア王国 — 世界初の鋳造硬貨</div><div class="tl-ds">エレクトラム（金銀合金）で均一な硬貨を鋳造。「お金」が物から記号へ変わり始めた瞬間。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">BC500</div><div class="tl-bd"><div class="tl-nm">ギリシャの両替商 — 金融仲介の始まり</div><div class="tl-ds">トラペジタイ（両替商）が預金・貸付・送金を仲介。銀行業の原型。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">708</div><div class="tl-bd"><div class="tl-nm">和同開珎 — 日本最古の公式貨幣</div><div class="tl-ds">唐の開元通宝に倣い鋳造。ただし庶民には浸透せず、米や布が実質的な通貨であり続けた。</div><span class="tl-tg japan">JAPAN</span></div></div>
+  </div>
+  <div class="era-insight"><div class="era-insight-label">投資家にとっての意味</div><p><strong>お金より先に信用が生まれた。</strong>これは今日の金融市場でも本質は同じだ。株式も債券も、その根底にあるのは「将来返済される」という信用の構造。最古の金融危機が利率規制から始まったように、規制と市場の緊張は7000年前から続いている。</p></div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ERA 2 -->
+<div class="era" id="era2">
+  <div class="era-head"><span class="era-num">ERA 02</span><span class="era-title">信用の発明</span><span class="era-period">960 — 1730</span></div>
+  <p class="era-intro">紙が金属を超えた時代。中国で紙幣が生まれ、イタリアで複式簿記が発明され、日本では世界初の先物市場が動いていた。</p>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">960</div><div class="tl-bd"><div class="tl-nm">宋の「交子」— 世界初の紙幣</div><div class="tl-ds">四川の商人が鉄銭の代わりに紙の証書を流通。お金の非物質化が始まった。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1397</div><div class="tl-bd"><div class="tl-nm">メディチ銀行設立</div><div class="tl-ds">為替手形・支店網・分散経営。ルネサンスを支えた近代銀行業のモデル。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1494</div><div class="tl-bd"><div class="tl-nm">パチョーリ — 複式簿記の体系化</div><div class="tl-ds">借方と貸方で取引を記録。「会計学の父」。企業の透明性はここから始まった。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1600s</div><div class="tl-bd"><div class="tl-nm">江戸の三貨制度</div><div class="tl-ds">金（江戸）・銀（大阪）・銭（庶民）の三貨が並立。両替商が金融インフラを支えた。</div><span class="tl-tg japan">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1730</div><div class="tl-bd"><div class="tl-nm">堂島米市場 — 世界初の先物取引</div><div class="tl-ds">大阪・堂島で米の帳合米取引（先物）が公認。シカゴ商品取引所より120年早い。</div><span class="tl-tg japan">JAPAN</span></div></div>
+  </div>
+  <div class="era-insight"><div class="era-insight-label">投資家にとっての意味</div><p><strong>日本は金融イノベーションの先駆者だった。</strong>堂島の先物取引は、リスクヘッジ・価格発見機能・標準化された契約という現代デリバティブの本質をすべて備えていた。「金融は欧米の発明」という通念は、歴史的には正確ではない。</p></div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ERA 3 -->
+<div class="era" id="era3">
+  <div class="era-head"><span class="era-num">ERA 03</span><span class="era-title">株式会社の誕生</span><span class="era-period">1553 — 1720</span></div>
+  <p class="era-intro">リスクを分け合う「株式」という革命的発明。東インド会社が生まれ、アムステルダムに世界初の株式市場が立ち、そして人類最初のバブルが弾けた。</p>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">1600</div><div class="tl-bd"><div class="tl-nm">イギリス東インド会社設立</div><div class="tl-ds">特許状による貿易独占。国家と資本が結びついた最初の巨大企業。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1602</div><div class="tl-bd"><div class="tl-nm">オランダ東インド会社（VOC）</div><div class="tl-ds">世界初の公開株式会社。株式を誰でも売買できる仕組みを発明した。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1609</div><div class="tl-bd"><div class="tl-nm">アムステルダム証券取引所</div><div class="tl-ds">世界初の常設株式市場。空売り・先物取引もここから生まれた。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1637</div><div class="tl-bd"><div class="tl-nm">チューリップ・バブル崩壊</div><div class="tl-ds">球根1つが家1軒分に高騰し、突然崩壊。人類最初の投機バブル。「市場は時に狂気に支配される。」</div><span class="tl-tg crisis">CRISIS</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1694</div><div class="tl-bd"><div class="tl-nm">イングランド銀行設立</div><div class="tl-ds">戦費調達のため設立。中央銀行の原型。政府と通貨の関係が決定的に変わった。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1720</div><div class="tl-bd"><div class="tl-nm">南海泡沫事件</div><div class="tl-ds">南海会社株が10倍に暴騰し崩壊。ニュートンも大損した。「天体の動きは計算できるが、人の狂気は計算できない。」</div><span class="tl-tg crisis">CRISIS</span></div></div>
+  </div>
+  <div class="era-insight"><div class="era-insight-label">今に残っているもの</div><p><strong>株式会社という仕組みそのもの。</strong>VOCが発明した「リスクを広く分散し、利益を比例配分する」構造は、今日のトヨタもAppleもまったく同じだ。そしてチューリップ・バブルが示した教訓 — 人間の欲望は制度をすり抜ける — も400年間変わっていない。</p></div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ERA 4 -->
+<div class="era" id="era4">
+  <div class="era-head"><span class="era-num">ERA 04</span><span class="era-title">資本主義の確立</span><span class="era-period">1760 — 1870</span></div>
+  <p class="era-intro">蒸気機関が資本を加速させた時代。スミスが市場を理論化し、マルクスが資本主義を解剖した。日本は鎖国を解き、円を生み出した。</p>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">1760</div><div class="tl-bd"><div class="tl-nm">産業革命の始まり</div><div class="tl-ds">蒸気機関・工場制度。資本と技術が結合し、生産力が爆発的に拡大した。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1776</div><div class="tl-bd"><div class="tl-nm">アダム・スミス『国富論』</div><div class="tl-ds">「見えざる手」— 個人の利益追求が社会全体の富を増やす。市場経済の理論的基盤。</div><span class="tl-tg thinker">THINKER</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1867</div><div class="tl-bd"><div class="tl-nm">マルクス『資本論』第1巻</div><div class="tl-ds">資本蓄積・剰余価値・搾取構造を体系的に解剖。20世紀の世界史を二分した一冊。</div><span class="tl-tg thinker">THINKER</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1868</div><div class="tl-bd"><div class="tl-nm">明治維新 — 近代国家への転換</div><div class="tl-ds">封建制度を廃し、西洋型の経済制度を急速に導入。渋沢栄一が「論語と算盤」で資本主義の倫理を説いた。</div><span class="tl-tg japan">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1871</div><div class="tl-bd"><div class="tl-nm">「円」の誕生 — 新貨条例</div><div class="tl-ds">両・分・朱の複雑な体系から十進法の「円」へ。1ドル=1円の金本位制を採用。</div><span class="tl-tg japan">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1882</div><div class="tl-bd"><div class="tl-nm">日本銀行設立</div><div class="tl-ds">松方正義の主導で設立。不換紙幣の乱発によるインフレを収束させるため、中央銀行が必要だった。</div><span class="tl-tg japan">JAPAN</span></div></div>
+  </div>
+  <div class="era-insight"><div class="era-insight-label">投資家にとっての意味</div><p><strong>スミスとマルクスは対立ではなく、同じ現象の表と裏を見ている。</strong>市場が富を生む（スミス）と同時に格差を生む（マルクス）。どちらか一方だけでは資本主義を理解できない。渋沢栄一の「論語と算盤」は、この対立を日本的に統合しようとした試みだった。</p></div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ERA 5 -->
+<div class="era" id="era5">
+  <div class="era-head"><span class="era-num">ERA 05</span><span class="era-title">恐慌と戦争の時代</span><span class="era-period">1873 — 1945</span></div>
+  <p class="era-intro">資本主義が最大の試練に直面した時代。世界恐慌がケインズを生み、戦争が国際金融秩序を作り変えた。</p>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">1907</div><div class="tl-bd"><div class="tl-nm">JPモルガンの私的救済</div><div class="tl-ds">銀行危機を一人の金融家が救済。中央銀行不在の限界が露呈した。</div><span class="tl-tg crisis">CRISIS</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1913</div><div class="tl-bd"><div class="tl-nm">連邦準備制度（FRB）設立</div><div class="tl-ds">「最後の貸し手」としてのアメリカの中央銀行。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1929</div><div class="tl-bd"><div class="tl-nm">ウォール街大暴落 → 世界大恐慌</div><div class="tl-ds">株価が89%下落。失業率25%。資本主義最大の危機。世界を戦争へ向かわせた。</div><span class="tl-tg crisis">CRISIS</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1931</div><div class="tl-bd"><div class="tl-nm">日本の金本位制離脱</div><div class="tl-ds">高橋是清蔵相が金輸出を再禁止し、積極財政に転換。日本は世界に先駆けてデフレを脱した。</div><span class="tl-tg japan">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1936</div><div class="tl-bd"><div class="tl-nm">ケインズ『一般理論』</div><div class="tl-ds">政府支出による有効需要の創出。「市場は自動的には回復しない」という革命的主張。</div><span class="tl-tg thinker">THINKER</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1944</div><div class="tl-bd"><div class="tl-nm">ブレトンウッズ体制</div><div class="tl-ds">ドルを基軸通貨とする固定相場制。IMF・世界銀行設立。戦後国際金融秩序の誕生。</div><span class="tl-tg inst">INSTITUTION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1946</div><div class="tl-bd"><div class="tl-nm">新円切替 — 金融緊急措置</div><div class="tl-ds">旧紙幣を無効化し、預金封鎖を実施。戦後インフレの抑制と財産税課税。国民の資産が一夜にして凍結された。</div><span class="tl-tg japan">JAPAN</span></div></div>
+  </div>
+  <div class="era-insight"><div class="era-insight-label">家計にとっての意味</div><p><strong>新円切替は「国家が個人の資産を凍結できる」という事実を示した。</strong>歴史的に見れば珍しいことではない。だからこそ資産の分散（通貨・国・資産クラス）は、投資理論ではなく歴史的教訓として重要なのだ。</p></div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ERA 6 -->
+<div class="era" id="era6">
+  <div class="era-head"><span class="era-num">ERA 06</span><span class="era-title">現代金融の構築</span><span class="era-period">1952 — 2000</span></div>
+  <p class="era-intro">金本位制が終わり、デリバティブが生まれ、バブルが世界中で弾けた。日本は高度成長から失われた30年へ。</p>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">1952</div><div class="tl-bd"><div class="tl-nm">マーコウィッツのポートフォリオ理論</div><div class="tl-ds">リスクとリターンの数学的定式化。分散投資が理論的裏付けを得た。</div><span class="tl-tg thinker">THINKER</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1955-73</div><div class="tl-bd"><div class="tl-nm">日本の高度経済成長</div><div class="tl-ds">年率10%成長。間接金融（銀行融資中心）で企業を育て、メインバンク制が日本型資本主義を形成した。</div><span class="tl-tg japan">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1971</div><div class="tl-bd"><div class="tl-nm">ニクソン・ショック — 金本位制の終焉</div><div class="tl-ds">ドルと金の交換停止。お金は完全に「信用」だけで成り立つ時代へ。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1987</div><div class="tl-bd"><div class="tl-nm">ブラック・マンデー</div><div class="tl-ds">ダウが1日で22.6%下落。プログラム取引と市場の最初の衝突。</div><span class="tl-tg crisis">CRISIS</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1989</div><div class="tl-bd"><div class="tl-nm">日本バブル崩壊</div><div class="tl-ds">日経平均38,915円をピークに崩壊。土地神話の終焉。失われた30年の始まり。</div><span class="tl-tg crisis">CRISIS</span><span class="tl-tg japan" style="margin-left:4px">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">1998</div><div class="tl-bd"><div class="tl-nm">LTCM破綻</div><div class="tl-ds">ノーベル賞学者が運用するヘッジファンドの崩壊。理論と現実の乖離。「天才の失敗」。</div><span class="tl-tg crisis">CRISIS</span></div></div>
+    <div class="tl-item"><div class="tl-yr">2000</div><div class="tl-bd"><div class="tl-nm">ITバブル崩壊</div><div class="tl-ds">ナスダックが78%下落。「技術革命」と「投機」は別のものだ。</div><span class="tl-tg crisis">CRISIS</span></div></div>
+  </div>
+  <div class="era-insight"><div class="era-insight-label">投資家にとっての意味</div><p><strong>日本人が現預金志向なのは、バブル崩壊のトラウマが構造化されたからだ。</strong>株で損をした世代が「株は危ない」と次世代に伝え、間接金融文化も相まって投資文化が定着しなかった。歴史を知ることで、この構造を自覚的に超えられる。</p></div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ERA 7 -->
+<div class="era" id="era7">
+  <div class="era-head"><span class="era-num">ERA 07</span><span class="era-title">危機と変革 — 新しいお金</span><span class="era-period">2008 — 現在</span></div>
+  <p class="era-intro">リーマンが金融工学の限界を示し、ビットコインが中央管理を問い、AIが知的労働を自動化し始めた。私たちは今、この時代の中にいる。</p>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">2008</div><div class="tl-bd"><div class="tl-nm">リーマン・ショック</div><div class="tl-ds">サブプライムローン危機から世界金融危機へ。「100年に1度」の信用収縮。信用格付けの信頼が崩壊した。</div><span class="tl-tg crisis">CRISIS</span></div></div>
+    <div class="tl-item"><div class="tl-yr">2009</div><div class="tl-bd"><div class="tl-nm">ビットコイン誕生</div><div class="tl-ds">サトシ・ナカモトによるP2P電子通貨。中央管理者のいないお金の実験。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+    <div class="tl-item"><div class="tl-yr">2013</div><div class="tl-bd"><div class="tl-nm">ピケティ『21世紀の資本』</div><div class="tl-ds">r &gt; g — 資本収益率が経済成長率を上回り続ける限り、格差は拡大する。300年のデータで証明。</div><span class="tl-tg thinker">THINKER</span></div></div>
+    <div class="tl-item"><div class="tl-yr">2013</div><div class="tl-bd"><div class="tl-nm">異次元の金融緩和（黒田バズーカ）</div><div class="tl-ds">日銀が大規模な量的・質的金融緩和を開始。マネタリーベースを2年で2倍にする前例のない実験。</div><span class="tl-tg japan">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">2020</div><div class="tl-bd"><div class="tl-nm">コロナショック → 無制限量的緩和</div><div class="tl-ds">世界の中央銀行が最終兵器を使った。金利ゼロ、無限の流動性供給。財政と金融の境界が消えた。</div><span class="tl-tg crisis">CRISIS</span></div></div>
+    <div class="tl-item"><div class="tl-yr">2024</div><div class="tl-bd"><div class="tl-nm">新NISA制度開始</div><div class="tl-ds">非課税枠の恒久化・拡大。「貯蓄から投資へ」の国家的転換。日本人の資産形成の歴史的転換点になるか。</div><span class="tl-tg japan">JAPAN</span></div></div>
+    <div class="tl-item"><div class="tl-yr">2023〜</div><div class="tl-bd"><div class="tl-nm">AI革命 — 知的労働の自動化</div><div class="tl-ds">ChatGPT以降、知的労働の自動化が加速。産業革命が肉体労働を変えたように、AI革命が知的労働を変える。資本の意味そのものが問い直されている。</div><span class="tl-tg innov">INNOVATION</span></div></div>
+  </div>
+  <div class="era-insight"><div class="era-insight-label">3行でわかる今</div><p><strong>リーマン以降、中央銀行は「何でもやる」時代に入った。</strong>その結果、お金の価値は政策で動く時代になった。だからインフレ・金利・中央銀行の動きを読む力が、現代の投資家に不可欠なのだ。そしてNISAの登場は、日本人が「バブル後のトラウマ」を乗り越える制度的なきっかけになり得る。</p></div>
+</div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ═══ テーマで掘る ═══ -->
+<div class="container">
+<div class="sec" id="themes">
+  <div class="sec-label">THEMATIC SHELVES</div>
+  <div class="sec-title">テーマで掘る</div>
+  <div class="sec-intro">時代を横断して、1つのテーマを深く追いかける。</div>
+  <div class="theme-grid">
+    <a class="theme-card" href="../money/"><div class="theme-icon">&#129689;</div><div class="theme-name">貨幣の歴史</div><div class="theme-desc">穀物→硬貨→紙幣→電子マネー。お金の形は変わり続ける。</div></a>
+    <a class="theme-card" href="../credit/"><div class="theme-icon">&#128220;</div><div class="theme-name">信用の構造</div><div class="theme-desc">なぜ「信用」がお金を動かすのか。メソポタミアから現代まで。</div></a>
+    <a class="theme-card" href="../central-bank/" style="border-top-color:var(--blue2)"><div class="theme-icon">&#127975;</div><div class="theme-name">中央銀行</div><div class="theme-desc">通貨の番人。イングランド銀行から日銀・FRBまで。</div></a>
+    <a class="theme-card" href="../equity/" style="border-top-color:var(--green2)"><div class="theme-icon">&#128200;</div><div class="theme-name">株式と資本市場</div><div class="theme-desc">VOCからNYSE、東証まで。所有・リスク・リターンの分配。</div></a>
+    <a class="theme-card" href="../capitalism/" style="border-top-color:var(--rust)"><div class="theme-icon">&#128736;</div><div class="theme-name">資本主義</div><div class="theme-desc">スミスが描き、マルクスが批判し、ケインズが修正した体制。</div></a>
+    <a class="theme-card" href="../uncertainty/" style="border-top-color:#6a4a8a"><div class="theme-icon">&#127754;</div><div class="theme-name">恐慌とバブル</div><div class="theme-desc">チューリップ・南海・大恐慌・日本バブル・リーマン。なぜ繰り返すのか。</div></a>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ═══ 今につながる論点 ═══ -->
+<div class="sec" id="today">
+  <div class="sec-label">CONNECTED TO TODAY</div>
+  <div class="sec-title">今につながる論点</div>
+  <div class="sec-intro">歴史は「過去の話」ではない。今の市場・政策・あなたの資産配分に直結している。</div>
+  <div class="today-grid">
+    <div class="today-card"><h3>なぜ日本人は現預金志向が強いのか</h3><p>バブル崩壊のトラウマ、間接金融文化、証券不祥事の記憶。これらが複合して「株は危ない」という世代間伝達が起きた。NISAはこの構造を変えうる最初の制度的転換点だ。</p></div>
+    <div class="today-card"><h3>なぜ中央銀行の政策が市場を動かすのか</h3><p>1971年のニクソン・ショック以降、お金は金の裏付けを失い、完全に「信用」で成り立っている。その信用の管理者が中央銀行だから、彼らの一言で市場が動く。</p></div>
+    <div class="today-card"><h3>なぜバブルは繰り返されるのか</h3><p>チューリップ（1637年）から約400年、本質は変わらない。「今回は違う」という確信、群集心理、レバレッジの3つが揃うとバブルが生まれる。歴史を学ぶ意味はここにある。</p></div>
+    <div class="today-card"><h3>なぜインフレが資産配分を変えるのか</h3><p>2020年代のインフレは、40年ぶりの経験だった。実質金利がマイナスの世界では、現預金は目減りし続ける。歴史的に、インフレ期に強かった資産は株式と実物資産だ。</p></div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ═══ 思想家マップ ═══ -->
+<div class="sec">
+  <div class="sec-label">KEY THINKERS</div>
+  <div class="sec-title">金融を形作った思想家たち</div>
+  <div class="sec-intro">彼らの思想は、今もあなたのポートフォリオに影響を与えている。</div>
+  <div class="th-grid">
+    <div class="th-card market"><div class="th-nm">アダム・スミス</div><div class="th-dt">1723 — 1790</div><div class="th-rl">「見えざる手」。自由市場経済の理論的基盤を築いた。</div></div>
+    <div class="th-card critic"><div class="th-nm">カール・マルクス</div><div class="th-dt">1818 — 1883</div><div class="th-rl">資本蓄積と搾取の構造を解剖。資本主義の影を照らした。</div></div>
+    <div class="th-card"><div class="th-nm">ケインズ</div><div class="th-dt">1883 — 1946</div><div class="th-rl">有効需要と政府介入。大恐慌から経済学を救った。</div></div>
+    <div class="th-card"><div class="th-nm">フリードマン</div><div class="th-dt">1912 — 2006</div><div class="th-rl">マネタリズム。「インフレは常に貨幣的現象である。」</div></div>
+    <div class="th-card critic"><div class="th-nm">ピケティ</div><div class="th-dt">1971 —</div><div class="th-rl">r > g。300年のデータで資本と格差の関係を実証した。</div></div>
+    <div class="th-card japan-th"><div class="th-nm">渋沢栄一</div><div class="th-dt">1840 — 1931</div><div class="th-rl">「論語と算盤」。道徳と経済の両立を説いた日本資本主義の父。</div></div>
+    <div class="th-card japan-th"><div class="th-nm">高橋是清</div><div class="th-dt">1854 — 1936</div><div class="th-rl">金本位制離脱と積極財政で日本をデフレから救った。ケインズに先駆けた実践者。</div></div>
+    <div class="th-card investor"><div class="th-nm">ベンジャミン・グレアム</div><div class="th-dt">1894 — 1976</div><div class="th-rl">バリュー投資の父。「安全域」という概念を生んだ。</div></div>
+    <div class="th-card investor"><div class="th-nm">バフェット</div><div class="th-dt">1930 —</div><div class="th-rl">複利と長期の体現者。世界最高の投資家。</div></div>
+    <div class="th-card investor"><div class="th-nm">マンガー</div><div class="th-dt">1924 — 2023</div><div class="th-rl">多角的思考モデル。逆から考え、愚かさを避ける。</div></div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ═══ 記事一覧 ═══ -->
+<div class="sec" id="articles">
+  <div class="sec-label">ARTICLES — 金融史の書庫の記事</div>
+  <div class="sec-title">深く読む</div>
+  <div class="sec-intro">各テーマを1本の記事として掘り下げる。時代順に並んでいる。</div>
+  <div class="res-grid">
+    <a class="res-item" href="what-is-financial-history/"><span class="res-tag">導入</span><div><div class="res-name">金融史とは何か</div><div class="res-note">なぜ金融の歴史を学ぶのか。暗記ではなく構造理解としての金融史。</div></div></a>
+    <a class="res-item" href="edo-sankasei/"><span class="res-tag">江戸</span><div><div class="res-name">江戸の三貨制度</div><div class="res-note">金・銀・銭の三貨が並立した世界でも珍しい通貨システム。</div></div></a>
+    <a class="res-item" href="dojima/"><span class="res-tag">江戸</span><div><div class="res-name">堂島米市場と先物の原型</div><div class="res-note">シカゴより120年早い、世界初の先物取引市場。</div></div></a>
+    <a class="res-item" href="birth-of-yen/"><span class="res-tag">明治</span><div><div class="res-name">円の誕生と明治の通貨制度</div><div class="res-note">両・分・朱から円へ。渋沢栄一と近代金融の幕開け。</div></div></a>
+    <a class="res-item" href="boj/"><span class="res-tag">明治</span><div><div class="res-name">日本銀行はなぜ必要だったのか</div><div class="res-note">紙幣乱発の混乱から中央銀行設立まで。</div></div></a>
+    <a class="res-item" href="gold-standard/"><span class="res-tag">近代</span><div><div class="res-name">金本位制とは何だったのか</div><div class="res-note">金に裏付けられたお金の時代と、その終焉。</div></div></a>
+    <a class="res-item" href="shinyen/"><span class="res-tag">戦後</span><div><div class="res-name">戦後の新円切替と金融緊急措置</div><div class="res-note">預金封鎖・財産税。国家が個人の資産を凍結した記録。</div></div></a>
+    <a class="res-item" href="high-growth/"><span class="res-tag">昭和</span><div><div class="res-name">高度成長と間接金融</div><div class="res-note">年率10%成長を支えたメインバンク制と護送船団方式。</div></div></a>
+    <a class="res-item" href="bubble/"><span class="res-tag">平成</span><div><div class="res-name">バブル経済とその崩壊</div><div class="res-note">日経38,915円から失われた30年へ。</div></div></a>
+    <a class="res-item" href="zero-rate/"><span class="res-tag">現代</span><div><div class="res-name">ゼロ金利と量的緩和の時代</div><div class="res-note">黒田バズーカ・YCC・マイナス金利。金利なき世界の終わり。</div></div></a>
+    <a class="res-item" href="global-crises/"><span class="res-tag">通史</span><div><div class="res-name">世界の恐慌と金融危機の歴史</div><div class="res-note">チューリップからリーマンまで。なぜ危機は繰り返されるのか。</div></div></a>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ═══ 一次資料・学習導線 ═══ -->
+<div class="sec">
+  <div class="sec-label">RESOURCES</div>
+  <div class="sec-title">さらに深く学ぶ</div>
+  <div class="res-grid">
+    <a class="res-item" href="https://www.boj.or.jp/about/outline/history/" target="_blank" rel="noopener"><span class="res-tag">公式</span><div><div class="res-name">日本銀行の歴史</div><div class="res-note">日銀公式サイト。設立経緯から現在までの通史。</div></div></a>
+    <a class="res-item" href="https://www.mof.go.jp/pri/research/special_report/index.htm" target="_blank" rel="noopener"><span class="res-tag">公式</span><div><div class="res-name">財務総合政策研究所</div><div class="res-note">財務省の経済史研究。戦後財政・金融史の一次資料。</div></div></a>
+    <a class="res-item" href="https://www.imes.boj.or.jp/japanese/kouen.html" target="_blank" rel="noopener"><span class="res-tag">公式</span><div><div class="res-name">日銀金融研究所</div><div class="res-note">貨幣博物館を運営。金融制度史の学術研究。</div></div></a>
+    <div class="res-item"><span class="res-tag">訪問</span><div><div class="res-name">貨幣博物館（東京・日本橋）</div><div class="res-note">日銀金融研究所が運営。和同開珎から現代までの実物展示。入場無料。</div></div></div>
+    <div class="res-item"><span class="res-tag">訪問</span><div><div class="res-name">大阪取引所（旧堂島）</div><div class="res-note">堂島米市場の跡地に建つ。先物取引発祥の地。</div></div></div>
+    <div class="res-item"><span class="res-tag">書籍</span><div><div class="res-name">『21世紀の資本』ピケティ</div><div class="res-note">r > g。資本と格差の300年を実証データで読む。</div></div></div>
+    <div class="res-item"><span class="res-tag">書籍</span><div><div class="res-name">『国富論』アダム・スミス</div><div class="res-note">市場経済の原典。「見えざる手」はここから。</div></div></div>
+    <div class="res-item"><span class="res-tag">書籍</span><div><div class="res-name">『論語と算盤』渋沢栄一</div><div class="res-note">道徳と経済の両立。日本資本主義の精神的基盤。</div></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ RELATED ═══ -->
+<div class="related">
+  <div class="related-inner">
+    <div class="related-label">RELATED SHELVES</div>
+    <div class="related-links">
+      <a class="related-link" href="../money/"><span class="related-tag">SHELF 02</span><span class="related-title">お金の歴史とは何か</span><span class="related-arrow">&rarr;</span></a>
+      <a class="related-link" href="../equity/"><span class="related-tag">SHELF 02</span><span class="related-title">株式とは何か</span><span class="related-arrow">&rarr;</span></a>
+      <a class="related-link" href="../capitalism/"><span class="related-tag">SHELF 01</span><span class="related-title">資本主義とは何か</span><span class="related-arrow">&rarr;</span></a>
+      <a class="related-link" href="../central-bank/"><span class="related-tag">SHELF 02</span><span class="related-title">中央銀行とは何か</span><span class="related-arrow">&rarr;</span></a>
+      <a class="related-link" href="../industrial-revolution/"><span class="related-tag">SHELF 03</span><span class="related-title">産業革命</span><span class="related-arrow">&rarr;</span></a>
+      <a class="related-link" href="../../principles/"><span class="related-tag">CORE</span><span class="related-title">私の投資原則</span><span class="related-arrow">&rarr;</span></a>
+      <a class="related-link" href="../../companies/"><span class="related-tag">ANALYSIS</span><span class="related-title">企業分析書架</span><span class="related-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <a href="../../">書斎の入口へ</a> &ensp;&middot;&ensp;
+  <a href="../">思考を広げる棚へ</a>
+  <br><span style="font-size:.52rem;opacity:.4">本ページの内容は歴史的事実に基づく解説であり、投資助言ではありません。</span>
+</footer>
+
+<script>
+/* RIVER OF TIME MAP */
+const canvas=document.getElementById('riverMap'),ctx=canvas.getContext('2d');
+const W=1400,H=320,dpr=window.devicePixelRatio||1;
+canvas.width=W*dpr;canvas.height=H*dpr;
+canvas.style.width=W+'px';canvas.style.height=H+'px';
+ctx.scale(dpr,dpr);
+
+const ERAS=[
+  {id:'era1',label:'起源',sub:'BC3000',x:30,w:170,color:'#5a4a2a',glow:'rgba(139,105,20,.15)',anchor:'#era1'},
+  {id:'era2',label:'信用の発明',sub:'960-1730',x:215,w:170,color:'#4a3a20',glow:'rgba(184,144,10,.12)',anchor:'#era2'},
+  {id:'era3',label:'株式会社の誕生',sub:'1553-1720',x:400,w:180,color:'#3a4a2a',glow:'rgba(90,138,58,.12)',anchor:'#era3'},
+  {id:'era4',label:'資本主義の確立',sub:'1760-1870',x:595,w:175,color:'#2a3a4a',glow:'rgba(72,136,208,.12)',anchor:'#era4'},
+  {id:'era5',label:'恐慌と戦争',sub:'1873-1945',x:785,w:165,color:'#4a2a2a',glow:'rgba(192,80,32,.15)',anchor:'#era5'},
+  {id:'era6',label:'現代金融',sub:'1952-2000',x:965,w:170,color:'#2a2a4a',glow:'rgba(72,100,180,.12)',anchor:'#era6'},
+  {id:'era7',label:'危機と変革',sub:'2008-現在',x:1150,w:200,color:'#1a2a3a',glow:'rgba(72,136,208,.18)',anchor:'#era7'},
+];
+let hoverEra=null;
+
+function draw(){
+  ctx.fillStyle='#080c14';ctx.fillRect(0,0,W,H);
+  // Stars
+  let s=42;for(let i=0;i<80;i++){s=(s*16807)%2147483647;const sx=s%W;s=(s*16807)%2147483647;const sy=s%(H-60);s=(s*16807)%2147483647;ctx.fillStyle=`rgba(200,210,230,${.1+(s%100)/500})`;ctx.fillRect(sx,sy,1,1)}
+  // River
+  const ry=H*.58,rh=22;
+  const g=ctx.createLinearGradient(0,ry-rh,0,ry+rh);
+  g.addColorStop(0,'rgba(40,60,100,.12)');g.addColorStop(.5,'rgba(72,136,208,.18)');g.addColorStop(1,'rgba(40,60,100,.08)');
+  ctx.fillStyle=g;ctx.fillRect(0,ry-rh,W,rh*2);
+  ctx.strokeStyle='rgba(72,136,208,.2)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,ry);ctx.lineTo(W,ry);ctx.stroke();
+  // Fog
+  const fg=ctx.createLinearGradient(0,0,W*.35,0);fg.addColorStop(0,'rgba(8,12,20,.45)');fg.addColorStop(1,'transparent');
+  ctx.fillStyle=fg;ctx.fillRect(0,0,W*.35,H);
+  // Islands
+  ERAS.forEach(e=>{
+    const h=hoverEra===e.id,ix=e.x,iy=50,iw=e.w,ih=H-110;
+    ctx.fillStyle=h?e.glow.replace(/[\d.]+\)$/,'.3)'):e.glow;ctx.fillRect(ix-3,iy-3,iw+6,ih+6);
+    ctx.globalAlpha=h?.55:.3;ctx.fillStyle=e.color;ctx.fillRect(ix,iy,iw,ih);ctx.globalAlpha=1;
+    ctx.strokeStyle=h?'#d4aa22':'rgba(139,105,20,.25)';ctx.lineWidth=h?2:1;ctx.strokeRect(ix,iy,iw,ih);
+    const sg=ctx.createLinearGradient(0,iy+ih-16,0,iy+ih);sg.addColorStop(0,'transparent');sg.addColorStop(1,'rgba(0,0,0,.18)');
+    ctx.fillStyle=sg;ctx.fillRect(ix,iy+ih-16,iw,16);
+    ctx.textAlign='center';
+    ctx.font=`bold 13px 'Noto Serif JP',serif`;ctx.fillStyle=h?'#f5ede0':'#c8b89a';
+    ctx.fillText(e.label,ix+iw/2,iy+ih/2-4);
+    ctx.font=`9px 'DM Mono',monospace`;ctx.fillStyle=h?'#d4aa22':'rgba(184,144,10,.45)';
+    ctx.fillText(e.sub,ix+iw/2,iy+ih/2+14);
+  });
+  ctx.font=`10px 'DM Mono',monospace`;ctx.fillStyle='rgba(72,136,208,.3)';
+  ctx.textAlign='left';ctx.fillText('BC3000',24,H-8);
+  ctx.textAlign='right';ctx.fillText('2026',W-24,H-8);
+  ctx.strokeStyle='rgba(72,136,208,.18)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(76,H-12);ctx.lineTo(W-66,H-12);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(W-66,H-12);ctx.lineTo(W-74,H-16);ctx.moveTo(W-66,H-12);ctx.lineTo(W-74,H-8);ctx.stroke();
+}
+
+function getEra(mx,my){const r=canvas.getBoundingClientRect(),sx=W/r.width,sy=H/r.height,x=(mx-r.left)*sx,y=(my-r.top)*sy;for(const e of ERAS)if(x>=e.x&&x<e.x+e.w&&y>=50&&y<H-60)return e;return null}
+canvas.addEventListener('mousemove',e=>{const er=getEra(e.clientX,e.clientY);hoverEra=er?er.id:null;canvas.style.cursor=er?'pointer':'default';draw()});
+canvas.addEventListener('mouseleave',()=>{hoverEra=null;draw()});
+canvas.addEventListener('click',e=>{const er=getEra(e.clientX,e.clientY);if(er)document.querySelector(er.anchor).scrollIntoView({behavior:'smooth',block:'start'})});
+canvas.addEventListener('touchstart',e=>{const t=e.touches[0],er=getEra(t.clientX,t.clientY);if(er)document.querySelector(er.anchor).scrollIntoView({behavior:'smooth',block:'start'})},{passive:true});
+draw();
+</script>
+</body>
+</html>

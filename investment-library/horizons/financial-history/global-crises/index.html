@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="世界の恐慌と金融危機の歴史｜投資と思考の書斎"/>
+<meta property="og:description" content="チューリップ・バブルから世界大恐慌、リーマン・ショック、コロナショックまで。400年の金融危機史から繰り返されるパターンを読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>世界の恐慌と金融危機の歴史｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:12px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">金融史の書庫</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">世界の恐慌と金融危機の歴史</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">FINANCIAL HISTORY</div>
+  <div class="hero-ornament">CRISIS · PANIC · PATTERN</div>
+  <h1 class="hero-title">世界の恐慌と金融危機の歴史</h1>
+  <p class="hero-sub">A History of Financial Crises</p>
+  <p class="hero-lead">
+    チューリップ・バブルからコロナショックまで、400年の危機史。<br>
+    人類は同じ過ちを繰り返す。そこに、投資家が学ぶべき構造がある。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- チューリップ・バブル -->
+  <div class="article-section">
+    <div class="section-label">1637</div>
+    <h2 class="section-title">チューリップ・バブル（1637年）── 史上初の投機バブル</h2>
+    <div class="section-body">
+      <p>17世紀のオランダ。黄金時代の繁栄の中で、チューリップの球根が投機の対象となった。</p>
+      <p>珍しい品種の球根一つが、熟練工の年収の10倍以上で取引された。先物契約が生まれ、球根を見たこともない人々が売買に参加した。</p>
+      <p>1637年2月、突然買い手がいなくなった。価格は数週間で90%以上暴落した。</p>
+      <p>チューリップ・バブルが示したのは、「実体価値から乖離した投機は必ず崩壊する」という、以後400年繰り返される真理だった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 南海泡沫事件 -->
+  <div class="article-section">
+    <div class="section-label">1720</div>
+    <h2 class="section-title">南海泡沫事件（1720年）── 国家ぐるみの詐欺的バブル</h2>
+    <div class="section-body">
+      <p>イギリスの南海会社は、国家債務の引き受けと引き換えに独占的な貿易権を得た。株価は半年で10倍に急騰した。</p>
+      <p>しかし、南海会社の実際の貿易利益はほとんどなかった。株価は期待と投機だけで膨らんでいた。</p>
+      <ul>
+        <li>アイザック・ニュートンも巻き込まれ、2万ポンド（現在の価値で数億円）を失った</li>
+        <li>「天体の運動は計算できるが、人間の狂気は計算できない」という言葉を残した</li>
+        <li>この事件を受けて、イギリスでは「泡沫会社禁止法」が制定された</li>
+      </ul>
+      <p>南海泡沫事件は、「賢い人間もバブルには巻き込まれる」という教訓を歴史に刻んだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 大不況 -->
+  <div class="article-section">
+    <div class="section-label">1873-1896</div>
+    <h2 class="section-title">大不況（1873-96年）── 最初のグローバル経済危機</h2>
+    <div class="section-body">
+      <p>1873年、ウィーン証券取引所の暴落をきっかけに、世界的な長期不況が始まった。鉄道バブルの崩壊、銀行の連鎖破綻、デフレの長期化。</p>
+      <p>この20年以上に及ぶ不況は、いくつかの重要な変化をもたらした。</p>
+      <ul>
+        <li>金本位制の定着 ── デフレ圧力が金への信頼を強化した</li>
+        <li>保護主義の台頭 ── 各国が関税を引き上げ、自由貿易から後退した</li>
+        <li>企業の巨大化 ── 競争を避けるためにカルテルやトラストが形成された</li>
+      </ul>
+      <p>「大不況」という名称は、後の1929年の「大恐慌」と区別するためのものだが、その長さと深さは歴史上特筆すべきものだった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 世界大恐慌 -->
+  <div class="article-section">
+    <div class="section-label">1929</div>
+    <h2 class="section-title">世界大恐慌（1929年）── 資本主義最大の危機</h2>
+    <div class="section-body">
+      <p>1929年10月24日「暗黒の木曜日」。ニューヨーク証券取引所で株価が暴落し、世界大恐慌が始まった。</p>
+      <p>ダウ工業株平均は、1929年の381ドルから1932年には41ドルまで下落した。約89%の下落である。この水準を回復したのは1954年、25年後のことだった。</p>
+      <ul>
+        <li>アメリカの失業率は25%に達した</li>
+        <li>世界貿易は3分の2に縮小した</li>
+        <li>銀行の連鎖破綻が金融システムを麻痺させた</li>
+        <li>各国が保護主義と通貨切り下げ競争に走った</li>
+      </ul>
+      <p>大恐慌は、FRBの設立間もない時期の政策失敗が危機を深刻化させた典型例でもある。引き締めすぎた金融政策と、救済しなかった銀行破綻が、恐慌を「大」にした。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">大恐慌の教訓は明確だ。金融危機において中央銀行が「最後の貸し手」として<br>機能しなければ、経済全体が崩壊する。この教訓は2008年に活かされた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ブラック・マンデー -->
+  <div class="article-section">
+    <div class="section-label">1987</div>
+    <h2 class="section-title">ブラック・マンデー（1987年）── 一日で22%の暴落</h2>
+    <div class="section-body">
+      <p>1987年10月19日、ダウ工業株平均は一日で22.6%下落した。史上最大の一日下落率である。</p>
+      <ul>
+        <li>ポートフォリオ・インシュアランス（自動売りプログラム）が下落を加速させた</li>
+        <li>コンピュータによる自動売買が「売りが売りを呼ぶ」連鎖を生んだ</li>
+        <li>しかし、FRBが即座に流動性を供給し、実体経済への波及は限定的だった</li>
+      </ul>
+      <p>ブラック・マンデーの教訓は二つある。一つは、プログラム取引が市場の暴落を増幅しうること。もう一つは、中央銀行の迅速な対応が危機を封じ込めうること。後者の教訓は、以後の金融危機対応の基礎となった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- アジア通貨危機 -->
+  <div class="article-section">
+    <div class="section-label">1997</div>
+    <h2 class="section-title">アジア通貨危機（1997年）── 新興国の脆弱性</h2>
+    <div class="section-body">
+      <p>1997年7月、タイバーツの暴落をきっかけに、東南アジア全域に通貨危機が波及した。</p>
+      <ul>
+        <li>タイ、インドネシア、韓国がIMFに救済を要請した</li>
+        <li>固定為替相場制と短期外貨借入の組み合わせが脆弱性の根源だった</li>
+        <li>外国資本が一斉に引き揚げる「キャピタル・フライト」が起きた</li>
+        <li>韓国ではIMFの構造改革要求が「IMF危機」として国民的トラウマとなった</li>
+      </ul>
+      <p>アジア通貨危機は、新興国の経済成長が外国資本への依存に基づく場合、その成長は脆いものであることを示した。「アジアの奇跡」は、一夜にして「アジアの危機」に変わった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- LTCM -->
+  <div class="article-section">
+    <div class="section-label">1998</div>
+    <h2 class="section-title">LTCM破綻（1998年）── 天才たちの失敗</h2>
+    <div class="section-body">
+      <p>ロングターム・キャピタル・マネジメント（LTCM）は、ノーベル経済学賞受賞者を含む「最高の頭脳」が運営するヘッジファンドだった。</p>
+      <p>彼らの戦略は、債券市場の微小な価格差を巨大なレバレッジで利用するものだった。自己資本の25倍以上のポジションを取っていた。</p>
+      <ul>
+        <li>ロシア危機（1998年8月）で市場が想定外の動きをした</li>
+        <li>「ありえない」とされた価格変動が現実に起きた</li>
+        <li>数週間で46億ドルの損失。金融システム全体を脅かした</li>
+        <li>FRBの仲介で14の金融機関が36億ドルを出資して救済した</li>
+      </ul>
+      <p>LTCMの教訓は痛烈だ。モデルは現実を完全には捉えられない。レバレッジは利益も損失も増幅する。そして「ありえない」ことは、いつか必ず起きる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ITバブル崩壊 -->
+  <div class="article-section">
+    <div class="section-label">2000</div>
+    <h2 class="section-title">ITバブル崩壊（2000年）── 「ニュー・エコノミー」の幻想</h2>
+    <div class="section-body">
+      <p>1990年代後半、インターネットの爆発的普及とともに、テクノロジー株への熱狂が膨らんだ。NASDAQ総合指数は1995年から2000年にかけて5倍以上に上昇した。</p>
+      <ul>
+        <li>売上のないドットコム企業が数十億ドルの時価総額をつけた</li>
+        <li>「利益は関係ない、成長が全て」という論理が市場を支配した</li>
+        <li>「.com」を社名につけるだけで株価が上がった</li>
+      </ul>
+      <p>2000年3月、NASDAQは5,048をピークに暴落を始めた。2002年10月には1,114まで下落。約78%の下落である。</p>
+      <p>多くのドットコム企業が倒産した。しかし、この時期に生き残った企業（Amazon、Google等）が、後の世界を支配することになる。バブルは全てを破壊するわけではない。本物の技術革新は、バブルの灰の中から生まれることもある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- リーマン・ショック -->
+  <div class="article-section">
+    <div class="section-label">2008</div>
+    <h2 class="section-title">リーマン・ショック（2008年）── 金融システムの崩壊</h2>
+    <div class="section-body">
+      <p>2008年9月15日、リーマン・ブラザーズが破産した。158年の歴史を持つ投資銀行の破綻は、世界の金融システムを凍りつかせた。</p>
+      <ul>
+        <li>サブプライム住宅ローンの証券化が、リスクを世界中にばら撒いた</li>
+        <li>CDO（債務担保証券）やCDS（クレジット・デフォルト・スワップ）が複雑に絡み合い、誰がどれだけのリスクを抱えているか誰にもわからなくなった</li>
+        <li>銀行間の信頼が崩壊し、インターバンク市場が機能停止した</li>
+        <li>世界の株式時価総額の半分以上が消失した</li>
+      </ul>
+      <p>リーマン・ショック後、各国政府と中央銀行は大規模な救済と金融緩和で対応した。「大きすぎて潰せない（Too Big to Fail）」問題が顕在化し、金融規制の大幅な強化が行われた。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">リーマン・ショックの最大の教訓は、「リスクは分散されるほど見えにくくなる」ということだ。<br>複雑な金融商品が「安全」に見えたとき、最も危険な状態にある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- コロナショック -->
+  <div class="article-section">
+    <div class="section-label">2020</div>
+    <h2 class="section-title">コロナショック（2020年）── パンデミックと市場</h2>
+    <div class="section-body">
+      <p>2020年2月から3月にかけて、新型コロナウイルスのパンデミックにより世界の株式市場が暴落した。S&P 500は約34%下落し、史上最速のベアマーケット入りとなった。</p>
+      <ul>
+        <li>経済活動の物理的な停止という、前例のない危機だった</li>
+        <li>FRBは数日で金利をゼロに引き下げ、無制限のQEを宣言した</li>
+        <li>各国政府が大規模な財政出動を実施した</li>
+        <li>株式市場は驚異的な速さで回復し、2020年内に史上最高値を更新した</li>
+      </ul>
+      <p>コロナショックの特異性は、暴落の原因が金融システムの内部ではなく外部（パンデミック）にあったこと、そして回復が異常に早かったことにある。しかし、この急速な回復の代償として、インフレと金利上昇が後に訪れることになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 共通パターン -->
+  <div class="article-section">
+    <div class="section-label">THE PATTERN</div>
+    <h2 class="section-title">危機に共通する3つのパターン</h2>
+    <div class="section-body">
+      <p>400年の金融危機史を俯瞰すると、驚くほど同じパターンが繰り返されていることに気づく。</p>
+      <ul>
+        <li><strong>過度な楽観</strong> ── 「今回は違う」という信念が広がる。新しい技術、新しい金融商品、新しい市場。根拠のない楽観が合理的判断を曇らせる</li>
+        <li><strong>レバレッジの蓄積</strong> ── 借金で投資する人が増え、信用が膨張する。上昇局面ではレバレッジが利益を増幅するが、下落局面では損失を増幅する</li>
+        <li><strong>群集心理</strong> ── 周りが儲けているのを見て、自分も参加せずにはいられなくなる。そして、パニックが始まると、全員が同時に出口に殺到する</li>
+      </ul>
+      <p>この3つの要素は、チューリップ・バブルでもリーマン・ショックでも、構造的に同じだった。テクノロジーは進化しても、人間の心理は400年前と変わっていない。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">「歴史は繰り返さないが、韻を踏む」── マーク・トウェイン（とされる言葉）。<br>金融危機の歴史は、まさにこの言葉の通りである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜバブルは繰り返されるのか -->
+  <div class="article-section">
+    <div class="section-label">WHY IT REPEATS</div>
+    <h2 class="section-title">なぜバブルは繰り返されるのか</h2>
+    <div class="section-body">
+      <p>バブルが繰り返される根本的な理由は、人間の心理にある。</p>
+      <ul>
+        <li><strong>記憶の風化</strong> ── 前回の危機を経験した世代が退場すると、教訓も薄れる。約20-30年のサイクルで、新しい世代が同じ罠にはまる</li>
+        <li><strong>成功体験の罠</strong> ── バブルの初期段階では、実際に利益が出る。成功体験がリスク認識を鈍らせる</li>
+        <li><strong>「今回は違う」症候群</strong> ── 新しい技術や制度を理由に、過去の教訓を「時代遅れ」と片づける。鉄道、ラジオ、インターネット、AI。対象は変わっても構造は同じ</li>
+        <li><strong>インセンティブの歪み</strong> ── 短期的な利益を追う金融機関の行動は、バブルを膨らませる方向に働く</li>
+      </ul>
+      <p>キンドルバーガーの言葉を借りれば、「バブルには常に新しい世代のカモが必要」なのだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 危機の後に何が起きるか -->
+  <div class="article-section">
+    <div class="section-label">WHAT FOLLOWS</div>
+    <h2 class="section-title">危機の後に何が起きるか ── 規制強化のサイクル</h2>
+    <div class="section-body">
+      <p>金融危機の後には、必ず規制強化が行われる。そして時間が経つと、規制は緩和される。このサイクルも、歴史を通じて繰り返されてきた。</p>
+      <ul>
+        <li>大恐慌後 ── グラス・スティーガル法（銀行と証券の分離）、SEC設立</li>
+        <li>1990年代 ── グラス・スティーガル法の事実上の廃止。規制緩和の時代</li>
+        <li>リーマン・ショック後 ── ドッド・フランク法、バーゼルIII。規制強化</li>
+        <li>2020年代 ── 再び規制緩和の議論が始まっている</li>
+      </ul>
+      <p>危機直後は「二度と繰り返さない」と誓う。しかし、好景気が続くと「規制が成長を阻害している」という声が強くなる。そして規制が緩和され、次の危機の種が蒔かれる。</p>
+      <p>このサイクルを理解することも、投資家にとって重要な知見である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家にとっての意味 -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味 ── 危機は必ず来る。問題は「いつ」ではなく「どう備えるか」</h2>
+    <div class="section-body">
+      <p>400年の金融危機史が教えてくれることは、シンプルだ。</p>
+      <ul>
+        <li><strong>危機は必ず来る</strong> ── 時期は予測できないが、起きること自体は確実だ</li>
+        <li><strong>恐怖の中にこそ機会がある</strong> ── 最高のリターンは、市場が最も悲観的なときに生まれることが多い</li>
+        <li><strong>現金は保険である</strong> ── 危機に備えた流動性は、コストではなく保険である</li>
+        <li><strong>分散は防御である</strong> ── 一つの資産、一つの国、一つの通貨に集中しないこと</li>
+        <li><strong>レバレッジは両刃の剣</strong> ── 危機のとき、レバレッジは「致命傷」になりうる</li>
+        <li><strong>「今回は違う」と思ったら要注意</strong> ── この言葉は、あらゆるバブルで発せられてきた</li>
+      </ul>
+      <p>危機の歴史を学ぶ目的は、悲観主義者になることではない。楽観主義を持ちながら、最悪の事態に備える力を養うことだ。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">長期投資家にとって、危機は敵ではなく、規律の試金石である。<br>パニックに巻き込まれず、冷静に行動できる準備が、最大のアドバンテージとなる。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">金融危機の歴史を理解した上で、関連する構造と思想を深めるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../../uncertainty/">
+        <span class="further-link-tag">UNCERTAINTY</span>
+        <span class="further-link-title">不確実性と向き合う</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../bubble/">
+        <span class="further-link-tag">BUBBLE</span>
+        <span class="further-link-title">バブル経済とその崩壊</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../capitalism/">
+        <span class="further-link-tag">CAPITALISM</span>
+        <span class="further-link-title">資本主義とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>　·
+    <a href="../../">思考を広げる棚</a>　·
+    <a href="../">金融史の書庫</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

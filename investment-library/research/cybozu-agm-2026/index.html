@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サイボウズ株主総会2026 現場レポート——青野社長への2問と「地域」という回答 | 投資ライブラリ</title>
+<meta name="description" content="2026年、サイボウズ株主総会で青野慶久社長に直接2問を投げた。AIエージェント時代のビジネスモデル・Agent of Agentsとしての戦略——返ってきた答えは「チームワーク溢れる地域を作っていく」だった。この言葉をどう読むか。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<style>
+:root{
+  --ink:#1a1610;
+  --parch:#f5f0e8;
+  --parch2:#ede8dc;
+  --gold:#8b6914;
+  --gold2:#b87820;
+  --rust:#7a3419;
+  --green:#2a5c3f;
+  --blue:#1a3a5c;
+  --muted:#5a5248;
+  --agm:#1a2a1a;   /* 総会の緑×墨 */
+  --agm2:#2a4a2a;
+  --agm3:#3a6a3a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--parch);color:var(--ink);font-family:'Noto Serif JP',serif;font-size:17px;line-height:1.9;}
+a{color:var(--agm2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+nav{background:var(--ink);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.nav-brand{color:#e8e0d0;font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.08em;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{color:#b0a898;font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.06em;}
+.nav-links a:hover{color:#e8e0d0;text-decoration:none;}
+
+.hero{background:linear-gradient(160deg,var(--agm) 0%,#0a100a 40%,#141e14 70%,#080e08 100%);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(58,106,58,0.1) 0%,transparent 60%);pointer-events:none;}
+.hero-eyebrow{display:inline-block;background:rgba(58,106,58,0.15);border:1px solid rgba(58,106,58,0.35);color:#90c890;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;padding:5px 14px;border-radius:2px;margin-bottom:20px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,5vw,3.2rem);font-weight:600;color:#f0f5f0;line-height:1.25;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:#90c890;}
+.hero-sub{color:#b0c8b0;font-size:1rem;max-width:640px;margin:0 auto 32px;line-height:1.7;}
+.hero-meta{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.hero-meta span{font-family:'DM Mono',monospace;font-size:.72rem;color:#607860;letter-spacing:.06em;}
+
+.container{max-width:820px;margin:0 auto;padding:0 24px;}
+.section{padding:56px 0;}
+.section-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.16em;color:var(--muted);margin-bottom:8px;}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:600;color:var(--ink);margin-bottom:20px;line-height:1.3;}
+.section h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--ink);margin:28px 0 10px;}
+.section p{margin-bottom:14px;font-size:.97rem;}
+
+/* ── Q&A CARD ── */
+.qa-block{margin:32px 0;}
+.q-card{background:var(--parch2);border-left:4px solid var(--agm3);padding:24px 28px;margin-bottom:0;}
+.q-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.14em;color:var(--agm3);margin-bottom:10px;}
+.q-text{font-size:1rem;color:var(--ink);line-height:1.75;font-weight:600;}
+.q-chars{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:8px;}
+.a-card{background:var(--agm);color:#e8f0e8;padding:24px 28px;margin-top:0;}
+.a-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.14em;color:#90c890;margin-bottom:10px;}
+.a-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:#d0e8d0;line-height:1.7;}
+
+/* ── ANALYSIS ── */
+.analysis-wrap{background:#fff;border:1px solid #d8d0c0;padding:28px 32px;margin:24px 0;}
+.analysis-wrap h4{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.1em;color:var(--agm3);margin-bottom:14px;}
+.analysis-wrap p{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:10px;}
+.analysis-wrap p:last-child{margin-bottom:0;}
+
+/* ── WORD FOCUS ── */
+.word-focus{background:linear-gradient(135deg,rgba(42,74,42,.06),rgba(26,42,26,.03));border:1px solid rgba(42,74,42,.25);border-radius:3px;padding:28px 32px;margin:32px 0;}
+.word-focus .word-big{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--agm3);margin-bottom:8px;line-height:1;}
+.word-focus .word-before{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted);text-decoration:line-through;margin-bottom:16px;}
+.word-focus p{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:10px;}
+.word-focus p:last-child{margin-bottom:0;}
+
+/* ── VERDICT SMALL ── */
+.verdict-sm{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0;}
+.v-positive{background:linear-gradient(135deg,rgba(42,92,63,.08),rgba(26,58,40,.04));border:1px solid rgba(42,92,63,.3);padding:20px;}
+.v-concern{background:linear-gradient(135deg,rgba(122,52,25,.07),rgba(90,30,10,.04));border:1px solid rgba(122,52,25,.3);padding:20px;}
+.v-positive h4{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--green);margin-bottom:10px;}
+.v-concern h4{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--rust);margin-bottom:10px;}
+.v-positive ul,.v-concern ul{list-style:none;font-size:.87rem;color:var(--muted);line-height:1.7;}
+.v-positive li::before{content:'○ ';}
+.v-concern li::before{content:'△ ';}
+
+/* ── NEXT Q ── */
+.next-q{background:var(--ink);color:#e8e0d0;padding:28px 32px;margin:32px 0;border-radius:3px;}
+.next-q-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.14em;color:#90c890;margin-bottom:12px;}
+.next-q p{font-size:1rem;line-height:1.8;color:#d0e8d0;font-weight:600;}
+.next-q .why{font-size:.85rem;color:#9ab89a;margin-top:10px;line-height:1.6;}
+
+/* ── SERIES NAV ── */
+.series-nav{background:var(--parch2);padding:32px 0;border-top:1px solid #d8d0c0;border-bottom:1px solid #d8d0c0;}
+.series-nav-inner{max-width:820px;margin:0 auto;padding:0 24px;}
+.series-nav h3{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:var(--muted);margin-bottom:16px;}
+.series-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;}
+.series-item{background:#fff;border-left:2px solid var(--agm3);padding:10px 14px;font-size:.82rem;}
+.series-item a{color:var(--agm2);font-family:'DM Mono',monospace;font-size:.75rem;}
+.series-item .si-num{color:var(--muted);font-size:.68rem;}
+
+/* ── CURATOR ── */
+.curator{background:linear-gradient(135deg,var(--agm) 0%,#080e08 100%);color:#e8f0e8;padding:44px 40px;margin:0;}
+.curator-inner{max-width:820px;margin:0 auto;}
+.curator-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:#90c890;margin-bottom:14px;}
+.curator h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#90c890;margin-bottom:18px;font-style:italic;}
+.curator p{font-size:.97rem;line-height:1.9;color:#b8d0b8;margin-bottom:12px;}
+.curator strong{color:#e8f0e8;}
+
+.back-link{padding:32px 0;text-align:center;}
+.back-link a{font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.1em;color:var(--muted);border:1px solid #c8c0b0;padding:10px 24px;border-radius:2px;transition:all .2s;}
+.back-link a:hover{background:var(--ink);color:#e8e0d0;border-color:var(--ink);text-decoration:none;}
+.site-footer{background:var(--ink);color:#5a5248;padding:32px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;}
+.site-footer a{color:#7a7068;}
+.divider{border:none;border-top:1px solid #d8d0c0;margin:0;}
+
+@media(max-width:640px){
+  nav{padding:12px 16px;}
+  .hero{padding:48px 16px 40px;}
+  .section{padding:36px 0;}
+  .verdict-sm{grid-template-columns:1fr;}
+  .curator{padding:32px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">INVESTMENT LIBRARY</span>
+  <div class="nav-links">
+    <a href="../../">← Research</a>
+    <a href="../../../">Home</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">ESSAY 13 · CYBOZU SERIES · AGM FIELD REPORT</div>
+  <h1>サイボウズ株主総会2026<br><em>現場レポート</em></h1>
+  <p class="hero-sub">青野慶久社長に直接2問を投げた。AIエージェント時代のビジネスモデル、Agent of Agentsとしての戦略——返ってきた答えは「チームワーク溢れる地域を作っていく」だった。</p>
+  <div class="hero-meta">
+    <span>2026-03-28 公開</span>
+    <span>読了 約8分</span>
+    <span>株主総会 · 一次情報 · 経営者分析</span>
+  </div>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 01</div>
+    <h2>なぜ株主総会に質問したか</h2>
+    <p>
+      Essay 08〜12の5本にわたるサイボウズ完全解剖シリーズを書き終えて、私には一つの問いが残っていた。数字と哲学は分析できる。しかし「経営者がAIの脅威をどこまで腹落ちしているか」は、IRレポートや決算説明会では見えない。
+    </p>
+    <p>
+      株主総会は、経営者が「答えを準備しにくい問い」に向き合う数少ない場だ。250文字の制約の中で、最も核心を突く問いを2本絞り込み、青野慶久社長に直接投げた。
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 2: 第1問 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 02</div>
+    <h2>第1問——チームワーク理念とAIの矛盾</h2>
+
+    <div class="qa-block">
+      <div class="q-card">
+        <div class="q-label">QUESTION 01 · 株主からの質問</div>
+        <div class="q-text">AIエージェントが個人の生産性を飛躍的に高め、チームそのものを不要にしつつある今、チームワーク支援を理念とする御社のビジネスモデルの根幹が問われています。kintoneをAIエージェントとの協働プラットフォームへ転換する具体的な時間軸と投資規模を教えてください。</div>
+        <div class="q-chars">131文字</div>
+      </div>
+      <div class="a-card">
+        <div class="a-label">RESPONSE · 青野慶久社長</div>
+        <div class="a-text">「チームワーク溢れる地域を作っていく」</div>
+      </div>
+    </div>
+
+    <div class="analysis-wrap">
+      <h4>この回答をどう読むか</h4>
+      <p>
+        「社会」から「<strong>地域</strong>」への言葉の変化に注目した。これは単純な言い換えではない。「地域」は「社会」より具体的な戦場だ——地方自治体、地域中小企業、地元コミュニティ。サイボウズがすでに自治体導入実績を持ち、地方SMBに深い顧客基盤を持つことと、この言葉は整合する。
+      </p>
+      <p>
+        ただし、質問の核心——「時間軸と投資規模」——には答えていない。「チームワーク溢れる地域を作る」はビジョンであり、ビジネスモデルの説明ではない。
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 3: 第2問 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 03</div>
+    <h2>第2問——Agent of Agentsとしての戦略</h2>
+
+    <div class="qa-block">
+      <div class="q-card">
+        <div class="q-label">QUESTION 02 · 株主からの質問</div>
+        <div class="q-text">AIが業務プロダクトを自動生成する時代、手ほどき・サポートを価値の核とする戦略は人件費58%のコスト構造をさらに重くするリスクがあります。kintoneを複数のAIエージェントを束ねる「Agent of Agents」として位置づけるインフラ戦略はお持ちですか。その収益モデルの変化もお聞かせください。</div>
+        <div class="q-chars">149文字</div>
+      </div>
+      <div class="a-card">
+        <div class="a-label">RESPONSE · 青野慶久社長</div>
+        <div class="a-text">「チームワーク溢れる地域を作っていく」</div>
+      </div>
+    </div>
+
+    <div class="analysis-wrap">
+      <h4>同じ答えが返ってきた意味</h4>
+      <p>
+        2問とも同じ回答だった。これは「準備された答えに誘導した」とも読めるが、むしろ「青野にとってAI戦略の問いも、地域コミュニティの問いも、同じ一つの答えに収束している」と解釈すべきだろう。
+      </p>
+      <p>
+        「Agent of Agents」という概念への言及はなかった。この言葉を知っているか・戦略に織り込んでいるかは、この回答からは判断できない。ただ、概念への反応がなかったこと自体が、技術的アーキテクチャより哲学・ミッションを優先する経営スタイルを示している。
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 4: 「地域」という言葉の深掘り -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 04</div>
+    <h2>「地域」という一語を深掘りする</h2>
+
+    <div class="word-focus">
+      <div class="word-big">地域</div>
+      <div class="word-before">← 従来：「社会」</div>
+      <p>
+        サイボウズの企業理念は長年「チームワークあふれる<strong>社会</strong>を作る」だった。「地域」への言い換えは、抽象的な社会論から具体的な地理的コミュニティへのフォーカスを示す。
+      </p>
+      <p>
+        日本における「地域」は文脈が豊かだ——地方自治体のDX、過疎地の産業振興、地域商工会、地元企業同士の連携。いずれも、グローバルテック企業が本気で取り組まないセグメントであり、サイボウズが「地元のDXパートナー」として独自のポジションを取れる可能性がある。
+      </p>
+      <p>
+        投資家として考えると、これは**TAM（市場規模）の絞り込み**でもある。「社会全体」を変えようとする壮大なビジョンより、「地域」という具体的な市場での深い関与を選ぶ——それは攻撃的な成長戦略ではないが、競合に削られにくい堀を掘る戦略だ。
+      </p>
+    </div>
+
+    <div class="verdict-sm">
+      <div class="v-positive">
+        <h4>○ ポジティブに読める点</h4>
+        <ul>
+          <li>自治体・地域SMBはすでにサイボウズの強み</li>
+          <li>MicrosoftやSalesforceが真剣に狙わない市場</li>
+          <li>AIリテラシーが低い層ほど「手ほどき」の価値が高い</li>
+          <li>地域DXは日本の構造的・長期的トレンド</li>
+          <li>哲学の一貫性が採用・顧客ロイヤルティを支える</li>
+        </ul>
+      </div>
+      <div class="v-concern">
+        <h4>△ 懸念として残る点</h4>
+        <ul>
+          <li>「地域支援」は人手集約型になりやすい</li>
+          <li>AIインフラ戦略への言及がなかった</li>
+          <li>時間軸・投資規模の具体的な答えは出なかった</li>
+          <li>「Agent of Agents」概念が戦略に入っているか不明</li>
+          <li>グローバル成長シナリオとの整合性が見えない</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 5: 投資判断への影響 -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">SECTION 05</div>
+    <h2>Essay 12の投資判断は変わるか</h2>
+
+    <p>
+      前稿（Essay 12）では「条件付き買い・PSR2倍以下でのポジション・AI統合進捗を監視」という判断を示した。今回の株主総会Q&Aを受けて、この判断はどう変化するか。
+    </p>
+
+    <h3>変わらない部分</h3>
+    <p>
+      「条件付き買い」の判断は維持する。青野の「地域」への言及は、既存顧客基盤の深耕という現実的な戦略を示しており、急激な悪化シナリオを否定するものだ。国内基盤の安定性・解約率1%未満という収益の質は、この回答で改めて裏付けられた。
+    </p>
+
+    <h3>新たに加わった視点</h3>
+    <p>
+      「地域」という言葉が示す戦略の輪郭は、スケールの限界も含意する。「日本の地域SMBと自治体の深耕」を軸にするなら、海外での非線形成長シナリオは後退する。Essay 12のブルシナリオ（+150〜250%）の実現確率は、この回答を受けてやや低下する。
+    </p>
+    <p>
+      一方、ベアシナリオ（▲30〜40%）の確率も下がる。地域への深い根付きは、競合に急激に侵食されるリスクを低減するからだ。
+    </p>
+    <p>
+      総じて、<strong>リターンの分布がやや狭まった</strong>——上値は抑制されるが下値も守られる、より「安定配当型」に近い投資性格が見えてきた。
+    </p>
+
+    <div class="next-q">
+      <div class="next-q-label">NEXT QUESTION · 次に聞くなら</div>
+      <p>「地域でのチームワーク支援は、kintoneのプラットフォームで実現しますか。それとも人員増加で対応しますか。スケール可能なモデルですか。」</p>
+      <div class="why">この一問で「スケールする事業」か「人手に頼る事業」かが分かれる。次回の株主総会・決算説明会Q&Aで確認したい最重要ポイント。</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERIES NAV -->
+<div class="series-nav">
+  <div class="series-nav-inner">
+    <h3>CYBOZU SERIES — 全6論考</h3>
+    <div class="series-list">
+      <div class="series-item"><span class="si-num">Essay 08</span><br><a href="../cybozu-moat/">moat解剖</a></div>
+      <div class="series-item"><span class="si-num">Essay 09</span><br><a href="../cybozu-saas-future/">AIリスク検証</a></div>
+      <div class="series-item"><span class="si-num">Essay 10</span><br><a href="../cybozu-digital-nature/">哲学的対位法</a></div>
+      <div class="series-item"><span class="si-num">Essay 11</span><br><a href="../cybozu-investment/">人件費と理念</a></div>
+      <div class="series-item"><span class="si-num">Essay 12</span><br><a href="../cybozu-verdict/">最終投資判断</a></div>
+      <div class="series-item"><span class="si-num">Essay 13</span><br>総会レポート（本稿）</div>
+    </div>
+  </div>
+</div>
+
+<div class="curator">
+  <div class="curator-inner">
+    <div class="curator-label">CURATOR'S VOICE</div>
+    <h2>"経営者の答えは、問いの鏡だ"</h2>
+    <p>
+      2問とも同じ答えが返ってきたとき、私は失望ではなく興味を覚えた。「チームワーク溢れる地域を作っていく」——この言葉は、AIの技術的問いを哲学的問いに変換する青野の思考スタイルをそのまま示している。
+    </p>
+    <p>
+      彼にとって、AIエージェントの台頭も、Agent of Agentsの概念も、人件費58%の重さも——すべては「どんな社会・地域を作るか」という問いの前では二次的な問題なのかもしれない。
+    </p>
+    <p>
+      <strong>これは強さでもあり、弱さでもある。</strong>ミッションへの一貫性は長期的な企業文化を支える。しかし技術の変化に対する具体的な戦略が見えないとき、市場は「方向性はいいが実行が遅い」という評価を下す。
+    </p>
+    <p>
+      次に青野社長に問うなら「地域をkintoneでスケールさせる方法」だ。哲学は分かった。次は設計図を見せてほしい。
+    </p>
+  </div>
+</div>
+
+<div class="back-link">
+  <a href="../../">← 論考の棚に戻る</a>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 INVESTMENT LIBRARY · <a href="../../../">lifehack-roadmap</a></p>
+  <p style="margin-top:6px;">本コンテンツは情報提供のみを目的とし、投資推奨ではありません。</p>
+</footer>
+
+</body>
+</html>

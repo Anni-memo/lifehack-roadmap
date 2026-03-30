@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="江戸の三貨制度｜投資と思考の書斎"/>
+<meta property="og:description" content="金・銀・銭が並立した世界でも類のない通貨制度。両替商と札差が築いた日本金融の原型。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>江戸の三貨制度｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(60,100,160,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative;}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(60,100,160,.15);position:relative;margin-bottom:14px;}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">金融史の書庫</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">江戸の三貨制度</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 05 &middot; FINANCIAL HISTORY</div>
+  <div class="hero-ornament">The Three-Currency System of Edo Japan</div>
+  <h1 class="hero-title">江戸の三貨制度</h1>
+  <p class="hero-lead">
+    金・銀・銭が並立した世界でも類のない通貨制度。両替商と札差が築いた日本金融の原型。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 三貨制度とは -->
+  <div class="article-section">
+    <div class="section-label">WHAT HAPPENED</div>
+    <h2 class="section-title">三貨制度とは: 金・銀・銭の並立</h2>
+    <div class="section-body">
+      <p>江戸時代の日本には、3つの異なる通貨が同時に流通していた。これを「三貨制度」と呼ぶ。</p>
+      <ul>
+        <li><strong>金貨（小判・一分金）</strong> -- 主に江戸を中心とする東日本で流通。計数貨幣として、枚数で価値を数えた</li>
+        <li><strong>銀貨（丁銀・豆板銀）</strong> -- 主に大阪を中心とする西日本で流通。秤量貨幣として、重さで価値を量った</li>
+        <li><strong>銭貨（寛永通宝など）</strong> -- 全国の庶民の日常取引で使用。少額取引の媒介</li>
+      </ul>
+      <p>一つの国に3つの通貨体系が並立する。これは世界の通貨史でも極めて珍しい形態だった。現代の感覚では非効率に見えるが、当時の日本経済の構造を反映した合理的なシステムでもあった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜ3つ並立したか -->
+  <div class="article-section">
+    <div class="section-label">WHY IT HAPPENED</div>
+    <h2 class="section-title">なぜ3つの通貨が並立したのか</h2>
+    <div class="section-body">
+      <p>三貨並立の背景には、東西の経済構造の違いがある。</p>
+      <p>江戸は武家の都であり、幕府からの俸禄（米）を金に換えて消費する経済だった。取引は定額的で、計数貨幣としての金貨が適していた。</p>
+      <p>一方、大阪は「天下の台所」と呼ばれた商業の中心地である。米・木綿・油などの大量取引では、取引額が毎回異なる。重さで自在に量を調整できる秤量銀貨が、商人の実務に適合していた。</p>
+      <p>銭貨は、金や銀では額面が大きすぎる庶民の日常取引を支えた。食料品や日用品の売買に不可欠な、小額決済の手段である。</p>
+      <p>つまり三貨制度とは、武家経済・商人経済・庶民経済という3つの異なる経済圏が、それぞれに最適な通貨を使い分けていたシステムだった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 両替商の役割 -->
+  <div class="article-section">
+    <div class="section-label">FINANCIAL INFRASTRUCTURE</div>
+    <h2 class="section-title">両替商の役割 -- 金融インフラとしての存在</h2>
+    <div class="section-body">
+      <p>3つの通貨が並立する以上、それらを交換する仕組みが不可欠だった。その役割を担ったのが「両替商」である。</p>
+      <p>両替商は単なる通貨交換業者ではなかった。金・銀・銭の交換レートは日々変動しており、相場を読む専門的な知識が求められた。これは、現代の外国為替市場の原型とも言える。</p>
+      <p>さらに有力な両替商は、預金の受け入れ・貸付・為替手形の発行といった銀行機能も果たしていた。大阪の鴻池・三井・住友といった豪商は、両替商として蓄積した金融技術を基盤に、後の日本の銀行・財閥へと発展していく。</p>
+
+      <div class="callout">
+        <p class="callout-text">三井・住友・鴻池。現代日本を代表する金融グループのルーツは、江戸時代の両替商にある。日本の銀行業は、西洋からの輸入ではなく、独自の金融文化から内発的に発展した。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 札差 -->
+  <div class="article-section">
+    <div class="section-label">SAMURAI FINANCE</div>
+    <h2 class="section-title">札差 -- 武士への金融サービス</h2>
+    <div class="section-body">
+      <p>武士の収入は米（禄米）で支払われた。しかし日常の消費には金銭が必要である。この禄米を換金する役割を担ったのが「札差（ふださし）」と呼ばれる商人たちだった。</p>
+      <p>札差の業務は単なる米の売却代行にとどまらなかった。やがて、将来受け取る予定の禄米を担保にした前貸し（融資）へと発展した。これは、将来のキャッシュフローを担保にした信用取引の一形態である。</p>
+      <p>一部の武士は借金がかさみ、数年先の禄米まで前借りするような状態に陥った。札差にとって武士は「確実な収入源を持つが、常に資金不足の顧客」であり、現代で言えばサラリーマン向けの消費者金融に近い構造だった。</p>
+      <p>これは事実として記録されている。解釈として付け加えれば、金融サービスが支配階級（武士）と商業階級（町人）の経済的な力関係を逆転させていった過程とも読める。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 今に残っているもの -->
+  <div class="article-section">
+    <div class="section-label">LEGACY</div>
+    <h2 class="section-title">今に残っているもの -- 日本の銀行文化の起源</h2>
+    <div class="section-body">
+      <p>三貨制度そのものは明治の通貨改革で終わりを迎えた。しかし、そこで培われた金融文化は現代にまで続いている。</p>
+      <ul>
+        <li>両替商の技術は明治以降の銀行制度の基盤となった</li>
+        <li>大阪の商人文化は、日本の金融・商業の中心としての伝統を形作った</li>
+        <li>為替手形の仕組みは、現代の決済システムの原型である</li>
+        <li>信用に基づく前貸しの慣行は、日本的な融資文化へとつながった</li>
+      </ul>
+      <p>日本の金融が西洋のモデルを単に模倣したものではなく、独自の歴史的基盤を持っていること。これを知ることは、日本の金融市場を理解する上で重要な視点となる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家にとっての意味 -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味</h2>
+    <div class="section-body">
+      <p>三貨制度の歴史は、投資家にいくつかの普遍的な教訓を与える。</p>
+      <ul>
+        <li>通貨制度は固定されたものではない。社会の構造変化に応じて、通貨の形も変わる</li>
+        <li>複数の通貨・資産が並立する環境では、交換レートの変動そのものがリスクであり機会となる</li>
+        <li>金融インフラ（両替商=銀行）は、通貨制度が複雑であるほど重要性を増す</li>
+        <li>信用は支配階級の力をも凌駕する。金融の力学は、政治的な力関係とは独立して動く</li>
+      </ul>
+      <p>現代においても、為替変動・決済インフラ・信用供与の構造を理解することは、投資判断の基盤である。江戸の三貨制度は、その原型を日本の歴史の中に見せてくれる。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">江戸の通貨制度を理解した上で、お金・信用・市場の歴史をさらに深く。</p>
+    <div class="further-links">
+      <a class="further-link" href="../../money/">
+        <span class="further-link-tag">MONEY</span>
+        <span class="further-link-title">お金の歴史とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../credit/">
+        <span class="further-link-tag">CREDIT</span>
+        <span class="further-link-title">信用とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../dojima/">
+        <span class="further-link-tag">DOJIMA</span>
+        <span class="further-link-title">堂島米市場と先物の原型</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>&emsp;&middot;
+    <a href="../../">思考を広げる棚</a>&emsp;&middot;
+    <a href="../">金融史の書庫</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

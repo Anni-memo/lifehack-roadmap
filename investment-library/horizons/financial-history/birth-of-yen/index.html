@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="円の誕生と明治の通貨制度｜投資と思考の書斎"/>
+<meta property="og:description" content="1871年、新貨条例。両・分・朱から円・銭・厘へ。渋沢栄一と松方正義が築いた近代通貨の基盤。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>円の誕生と明治の通貨制度｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(60,100,160,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative;}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(60,100,160,.15);position:relative;margin-bottom:14px;}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">金融史の書庫</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">円の誕生と明治の通貨制度</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">SHELF 05 &middot; FINANCIAL HISTORY</div>
+  <div class="hero-ornament">The Birth of the Yen &mdash; Meiji Currency Reform</div>
+  <h1 class="hero-title">円の誕生と明治の通貨制度</h1>
+  <p class="hero-lead">
+    1871年、新貨条例。両・分・朱から円・銭・厘へ。近代日本の通貨基盤はこうして築かれた。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- 新貨条例 -->
+  <div class="article-section">
+    <div class="section-label">WHAT HAPPENED</div>
+    <h2 class="section-title">新貨条例（1871年）-- 両・分・朱から円・銭・厘へ</h2>
+    <div class="section-body">
+      <p>1871年（明治4年）、明治政府は「新貨条例」を公布し、日本の通貨制度を根本から改革した。</p>
+      <p>江戸時代の複雑な三貨制度 -- 金の両・分・朱、銀の匁、銅の文 -- を廃止し、新たに「円・銭・厘」という十進法に基づく統一的な通貨体系を導入した。</p>
+      <ul>
+        <li>1円 = 100銭 = 1000厘</li>
+        <li>金本位制を採用（1円 = 金1.5グラム）</li>
+        <li>円形の貨幣を標準とした（「円」の名称の由来）</li>
+      </ul>
+      <p>これは単なる通貨の変更ではない。国家の経済基盤を近代化するための、根本的な制度改革だった。複数の通貨が地域ごとに異なるレートで流通していた状態から、全国統一の通貨制度へ。この変革の大きさは、現代のEUにおけるユーロ導入にも匹敵する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜ十進法か -->
+  <div class="article-section">
+    <div class="section-label">WHY IT HAPPENED</div>
+    <h2 class="section-title">なぜ十進法を採用したか -- 西洋近代化の文脈</h2>
+    <div class="section-body">
+      <p>十進法の採用は、明治政府の近代化政策の一環である。</p>
+      <p>江戸時代の貨幣単位は複雑だった。金貨は1両=4分=16朱という四進法、銀貨は重量による計算、銅銭は独自の単位体系。これら3つの異なる計算体系が並存する状態は、国際貿易を行う上で大きな障壁だった。</p>
+      <p>当時の先進国 -- イギリスを除く -- は十進法に基づく通貨制度を採用していた。フランスのフラン、アメリカのドルはいずれも100分の1を補助通貨とする十進法である。</p>
+      <ul>
+        <li>国際貿易における換算の容易さ</li>
+        <li>国内商取引の効率化</li>
+        <li>近代的な会計制度の導入</li>
+        <li>徴税制度の合理化</li>
+      </ul>
+      <p>通貨の十進法化は、度量衡の統一や太陽暦の採用と並ぶ、明治維新の近代化改革の柱だった。計算が容易になることで、商業・金融・行政のすべてが効率化される。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 渋沢栄一と第一国立銀行 -->
+  <div class="article-section">
+    <div class="section-label">SHIBUSAWA & BANKING</div>
+    <h2 class="section-title">渋沢栄一と第一国立銀行</h2>
+    <div class="section-body">
+      <p>新しい通貨制度には、それを流通させる仕組みが必要だった。その中心的な役割を果たしたのが、渋沢栄一（1840-1931）である。</p>
+      <p>渋沢は1873年、第一国立銀行（現・みずほ銀行の前身の一つ）を設立した。「国立銀行」とは国営銀行ではなく、アメリカのNational Bank制度に倣った民間銀行で、政府の認可を得て紙幣を発行する権限を持っていた。</p>
+      <p>渋沢が目指したのは、単なる銀行の設立ではない。近代的な株式会社制度と銀行制度を日本に根づかせることだった。</p>
+      <ul>
+        <li>株式を公募して資本を集める近代的な企業形態</li>
+        <li>預金を集め、融資を行う銀行の基本機能</li>
+        <li>紙幣の発行を通じた信用創造</li>
+      </ul>
+      <p>渋沢はその後、約500の企業の設立に関わり、「日本資本主義の父」と呼ばれるようになる。2024年からは一万円札の肖像にもなっている。</p>
+
+      <div class="callout">
+        <p class="callout-text">渋沢栄一の功績は、個別の企業を作ったことではない。「企業を作る仕組み」そのもの -- 株式会社制度と銀行制度 -- を日本に移植し、定着させたことにある。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 国立銀行条例と紙幣乱発 -->
+  <div class="article-section">
+    <div class="section-label">CRISIS OF CURRENCY</div>
+    <h2 class="section-title">国立銀行条例と紙幣乱発の混乱</h2>
+    <div class="section-body">
+      <p>1872年の国立銀行条例は、当初、紙幣と金貨の兌換（交換）を義務付けていた。しかし、金の準備が不足し、兌換が困難になった。</p>
+      <p>1876年、政府は条例を改正し、兌換義務を撤廃した。不換紙幣（金との交換を保証しない紙幣）の発行を認めたのである。</p>
+      <p>この結果、国立銀行の数は急増した。1879年には153行に達し、各行が競って紙幣を発行した。通貨供給量は急膨張し、激しいインフレーションが発生した。</p>
+      <ul>
+        <li>西南戦争（1877年）の戦費調達のための政府紙幣増発</li>
+        <li>153の国立銀行による紙幣の乱発</li>
+        <li>米価は1877年から1880年にかけて約2倍に高騰</li>
+        <li>通貨の信認が大きく揺らいだ</li>
+      </ul>
+      <p>これは近代日本が経験した最初の本格的な通貨危機だった。通貨発行の自由化が、管理なき信用膨張を招くという教訓は、後の中央銀行設立の直接的な契機となる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 松方デフレと通貨安定 -->
+  <div class="article-section">
+    <div class="section-label">MATSUKATA DEFLATION</div>
+    <h2 class="section-title">松方デフレと通貨安定</h2>
+    <div class="section-body">
+      <p>インフレの収束に乗り出したのが、大蔵卿（後の大蔵大臣）松方正義である。</p>
+      <p>松方は1881年から厳しい緊縮財政を実行した。政府支出を削減し、増税を行い、不換紙幣を市場から回収して償却した。いわゆる「松方デフレ」である。</p>
+      <p>松方の政策は通貨の安定をもたらしたが、同時に深刻な副作用を伴った。</p>
+      <ul>
+        <li>物価の急激な下落（デフレーション）</li>
+        <li>農村部の疲弊 -- 米価下落で多くの農民が土地を失った</li>
+        <li>農民一揆の多発（秩父事件など）</li>
+        <li>地主と小作人の格差拡大</li>
+      </ul>
+      <p>しかし松方は、この痛みを伴う改革と並行して、1882年に日本銀行を設立した。紙幣発行権を日本銀行に集中させ、通貨管理の一元化を実現した。さらに1897年には金本位制への復帰を果たし、円の国際的な信認を確立した。</p>
+
+      <div class="callout">
+        <p class="callout-text">インフレを止めるための緊縮は、常に痛みを伴う。松方デフレは、通貨安定と社会的犠牲のトレードオフという、金融政策の根本的なジレンマを明治日本に刻み込んだ。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 今に残っているもの -->
+  <div class="article-section">
+    <div class="section-label">LEGACY</div>
+    <h2 class="section-title">今に残っているもの -- 円という通貨の基盤</h2>
+    <div class="section-body">
+      <p>明治の通貨改革が築いた制度的基盤は、150年以上経った現在もそのまま機能している。</p>
+      <ul>
+        <li>「円」という通貨単位は、新貨条例から一度も変わっていない</li>
+        <li>日本銀行は松方の構想から生まれ、現在も唯一の中央銀行である</li>
+        <li>渋沢が導入した株式会社制度は、日本経済の基盤である</li>
+        <li>十進法の通貨体系は世界標準として定着している</li>
+      </ul>
+      <p>明治の改革者たちが直面した問題 -- 通貨の統一、信用の管理、インフレとデフレの制御 -- は、形を変えて現在も続いている。日本銀行の金融政策、政府の財政運営、為替レートの変動。これらすべての起源が、明治の通貨改革にある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家にとっての意味 -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味</h2>
+    <div class="section-body">
+      <p>明治の通貨改革の歴史から、投資家は以下の教訓を得られる。</p>
+      <ul>
+        <li><strong>通貨制度は変わりうる</strong> -- 「円」は永遠の存在ではない。通貨制度は政治的決定によって根本から変更される可能性がある</li>
+        <li><strong>紙幣乱発はインフレを招く</strong> -- 管理なき通貨供給の拡大は、必ず通貨の減価をもたらす。この原則は150年前も現在も同じである</li>
+        <li><strong>緊縮はデフレと痛みを伴う</strong> -- インフレの修正には社会的コストが不可避。金融政策の変更は、常に勝者と敗者を生む</li>
+        <li><strong>制度の安定性は資産価値の前提</strong> -- 通貨・法制度・中央銀行が安定していることは、すべての投資の大前提である</li>
+      </ul>
+      <p>現代の日本銀行の金融緩和政策、円安の進行、国債残高の膨張。これらを考えるとき、松方デフレや国立銀行の紙幣乱発の歴史は、単なる過去の出来事ではなく、現在の政策を評価するための参照点となる。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">近代通貨制度の成立から、中央銀行と金本位制の歴史へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../../central-bank/">
+        <span class="further-link-tag">BOJ</span>
+        <span class="further-link-title">中央銀行とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../money/">
+        <span class="further-link-tag">MONEY</span>
+        <span class="further-link-title">お金の歴史とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>&emsp;&middot;
+    <a href="../../">思考を広げる棚</a>&emsp;&middot;
+    <a href="../">金融史の書庫</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

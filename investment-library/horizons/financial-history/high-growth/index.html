@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="高度成長と間接金融｜金融史の書庫｜投資と思考の書斎"/>
+<meta property="og:description" content="年率10%成長の奇跡を支えた銀行中心の金融構造。メインバンク制、護送船団方式。日本人の現預金志向の構造的起源を辿る。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>高度成長と間接金融｜金融史の書庫｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+.hero{
+  background:linear-gradient(160deg,var(--ink) 0%,#0a0e14 45%,#0e1420 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(40,80,140,.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(40,80,140,.15);position:relative;margin-bottom:8px;}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:20px;opacity:.8;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'---';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2);}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:100px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">金融史の書庫</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">高度成長と間接金融</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-shelf">FINANCIAL HISTORY</div>
+  <div class="hero-ornament">1955-1973 : MIRACLE GROWTH : BANK FINANCE</div>
+  <h1 class="hero-title">高度成長と間接金融</h1>
+  <p class="hero-sub">Japan's High Growth Era and Bank-Centric Finance</p>
+  <p class="hero-lead">
+    年率10%成長の奇跡を支えた銀行中心の金融構造。<br>その成功体験が、日本人の「株より預金」という行動を今も規定している。
+  </p>
+</div>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <!-- 何が起きたか -->
+  <div class="article-section">
+    <div class="section-label">WHAT HAPPENED</div>
+    <h2 class="section-title">高度経済成長 --- 1955-73年、年率10%成長</h2>
+    <div class="section-body">
+      <p>1955年から1973年にかけて、日本経済は年平均約10%という驚異的な成長を遂げた。「東洋の奇跡」と呼ばれたこの成長は、焼け野原から世界第2位の経済大国への跳躍だった。</p>
+      <p>この成長を支えたのは、重化学工業化と輸出主導の産業政策だ。鉄鋼、造船、自動車、電機。政府と企業が一体となって、産業の近代化を推し進めた。</p>
+      <p>しかし、この急速な工業化には膨大な資金が必要だった。設備投資、技術導入、工場建設。資金需要は、企業の自己資本だけではとても賄えない規模だった。</p>
+      <p>この資金をどう調達するか。日本が選んだ答えが「間接金融」だった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜ：間接金融とは -->
+  <div class="article-section">
+    <div class="section-label">WHY THIS STRUCTURE</div>
+    <h2 class="section-title">間接金融とは --- 銀行融資中心の資金調達</h2>
+    <div class="section-body">
+      <p>資金調達には大きく二つの方法がある。</p>
+      <ul>
+        <li><strong>直接金融</strong> --- 企業が株式や社債を発行して、投資家から直接資金を集める。アメリカ型</li>
+        <li><strong>間接金融</strong> --- 国民が銀行に預金し、銀行がその預金を企業に貸し出す。日本型</li>
+      </ul>
+      <p>戦後の日本が間接金融を選んだのには、合理的な理由があった。</p>
+      <p>株式市場は未成熟だった。戦後の財閥解体で株式の大量放出が起きたが、一般国民に株式投資の習慣はなく、資本市場は十分に機能していなかった。</p>
+      <p>一方、銀行は全国に支店網を持ち、国民の貯蓄を効率的に集めることができた。国民が銀行に預けたお金を、銀行が成長産業に集中的に貸し出す。この仕組みが、高度成長を支える資金パイプラインとなった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- メインバンク制 -->
+  <div class="article-section">
+    <div class="section-label">MAIN BANK SYSTEM</div>
+    <h2 class="section-title">メインバンク制の仕組みと功罪</h2>
+    <div class="section-body">
+      <p>高度成長期の日本では、企業と銀行が特別な関係を結んだ。これが「メインバンク制」だ。</p>
+      <p>メインバンクとは、企業にとって最大の融資元であり、株式の持ち合い相手であり、経営危機時の救済者でもある銀行のことだ。</p>
+      <ul>
+        <li><strong>安定的な資金供給</strong> --- メインバンクは、短期的な業績変動に左右されず、企業に長期の融資を提供した</li>
+        <li><strong>経営の監視</strong> --- 銀行は大口債権者として企業経営を監視し、問題があれば役員を派遣した</li>
+        <li><strong>危機時の救済</strong> --- 企業が経営危機に陥ったとき、メインバンクが追加融資や経営再建を主導した</li>
+      </ul>
+      <p>この仕組みは高度成長期には非常にうまく機能した。企業は長期的な視野で設備投資ができ、銀行は安定的な利息収入を得た。</p>
+      <p>しかし功罪の「罪」は後に明らかになる。銀行の審査が甘くなり、不採算事業への融資が続き、バブル期の過剰融資につながった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 護送船団方式 -->
+  <div class="article-section">
+    <div class="section-label">CONVOY SYSTEM</div>
+    <h2 class="section-title">護送船団方式</h2>
+    <div class="section-body">
+      <p>高度成長期の金融行政を象徴するのが「護送船団方式」だ。</p>
+      <p>海軍の護送船団が最も遅い船に速度を合わせるように、大蔵省（現・財務省）は最も弱い金融機関が潰れないよう、金融業界全体を管理した。</p>
+      <ul>
+        <li>預金金利は規制され、銀行間の金利競争は存在しなかった</li>
+        <li>新規参入は厳しく制限され、既存の銀行は保護された</li>
+        <li>銀行の破綻は許されず、問題が生じれば合併や救済が行われた</li>
+      </ul>
+      <p>この方式の下で、銀行は「絶対に潰れない」存在として国民に認識された。だからこそ国民は安心して銀行に預金し、銀行はその預金を企業に貸し出すことができた。</p>
+      <p>護送船団方式は金融システムの安定に貢献したが、同時に銀行の経営効率を低下させ、競争力を奪った。1990年代の金融危機で、この構造の脆さが露呈することになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- なぜ直接金融が弱いのか -->
+  <div class="article-section">
+    <div class="section-label">STRUCTURAL WEAKNESS</div>
+    <h2 class="section-title">なぜ日本は直接金融（株式市場）が弱いのか</h2>
+    <div class="section-body">
+      <p>日本の家計金融資産に占める株式・投資信託の比率は約15%。アメリカの約55%と比較すると、圧倒的に低い。この差は偶然ではなく、高度成長期の構造に起源がある。</p>
+      <ul>
+        <li><strong>銀行預金の成功体験</strong> --- 高度成長期、銀行預金の金利は年5-6%だった。リスクを取らずとも資産が増えた時代の記憶が残っている</li>
+        <li><strong>株式市場への不信</strong> --- バブル崩壊後の日経平均の30年にわたる低迷が、「株は損をする」という国民感情を固定化した</li>
+        <li><strong>金融リテラシー教育の不足</strong> --- 間接金融中心の社会では、個人が投資判断を学ぶ必要がなかった</li>
+        <li><strong>企業の株主軽視</strong> --- 株式持ち合いの下で、企業経営者は株主よりも銀行と従業員を重視した</li>
+      </ul>
+      <p>これらの構造が複合的に作用して、「貯蓄から投資へ」というスローガンが20年以上実現しなかった理由を説明する。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 所得倍増計画 -->
+  <div class="article-section">
+    <div class="section-label">INCOME DOUBLING</div>
+    <h2 class="section-title">所得倍増計画と1億総中流</h2>
+    <div class="section-body">
+      <p>1960年、池田勇人首相が「国民所得倍増計画」を発表した。10年間で国民所得を2倍にするという大胆な目標だ。</p>
+      <p>結果的に、この目標は7年で達成された。高度成長の恩恵は社会全体に行き渡り、1970年代には国民の約9割が自分を「中流」と認識するようになった。「1億総中流」の時代だ。</p>
+      <p>この時代、資産形成の王道は単純だった。会社に勤め、給料を銀行に預け、持ち家を買う。終身雇用と年功序列が将来を保証し、銀行預金が着実に増える。株式投資は一部の人の趣味であり、一般国民には縁のないものだった。</p>
+      <p>この「成功モデル」が、日本人の金融行動の基盤として、世代を超えて受け継がれることになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 今に残っているもの -->
+  <div class="article-section">
+    <div class="section-label">LEGACY</div>
+    <h2 class="section-title">今に残っているもの --- 銀行への信頼、株への不信</h2>
+    <div class="section-body">
+      <p>高度成長期に形成された金融構造は、半世紀以上を経た現在も日本の家計行動を規定している。</p>
+      <ul>
+        <li>日本の家計金融資産（約2,100兆円）の約54%が現金・預金。アメリカは約13%</li>
+        <li>ゼロ金利が25年以上続いても、預金から株式への移動は緩やかにしか進んでいない</li>
+        <li>2024年の新NISA制度は、「貯蓄から投資へ」の構造転換を目指す最新の政策手段だ</li>
+        <li>企業統治改革（コーポレートガバナンス・コード）は、株式持ち合いの解消と株主還元の強化を推進している</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-text">高度成長期の「銀行に預ければ安心」という常識は、ゼロ金利・インフレの時代には合理性を失っている。<br>しかし行動は、論理ではなく経験と記憶によって決まる。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 投資家にとっての意味 -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味 --- 日本人の現預金志向の構造的起源</h2>
+    <div class="section-body">
+      <p>日本人が株式投資に消極的である理由は、「知識がないから」でも「お金がないから」でもない。高度成長期に形成された構造が、行動パターンとして固定化しているからだ。</p>
+      <ul>
+        <li>間接金融の成功体験が「銀行＝安全、株式＝危険」という図式を作った</li>
+        <li>バブル崩壊が、その図式を決定的に強化した</li>
+        <li>構造の転換には時間がかかる。新NISAの普及も、一世代以上の時間スパンで見る必要がある</li>
+        <li>逆に言えば、日本の2,100兆円の家計資産が株式市場に少しでも移動すれば、そのインパクトは巨大だ</li>
+      </ul>
+      <p>高度成長期の構造を理解することは、「なぜ日本の株式市場は今変わりつつあるのか」を理解することにつながる。東証の改革、新NISA、企業統治改革。これらは、70年前に始まった間接金融の構造を、直接金融の方向へ転換する歴史的な試みだ。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">高度成長の構造を踏まえて、バブルの形成、日本銀行の役割、株式市場の本質へと理解を広げるために。</p>
+    <div class="further-links">
+      <a class="further-link" href="../bubble/">
+        <span class="further-link-tag">BUBBLE</span>
+        <span class="further-link-title">バブルとその崩壊</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../boj/">
+        <span class="further-link-tag">BOJ</span>
+        <span class="further-link-title">日本銀行はなぜ必要だったのか</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../equity/">
+        <span class="further-link-tag">EQUITY</span>
+        <span class="further-link-title">株式とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>&emsp;&middot;
+    <a href="../../">思考を広げる棚</a>&emsp;&middot;
+    <a href="../">金融史の書庫</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>
