@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYPK32EB6B');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="農業革命｜定住が生んだ所有と余剰｜投資と思考の書斎"/>
+<meta property="og:description" content="BC10000年、人類は狩猟採集から農耕へ転換した。定住・余剰・所有・分業──経済と投資の原点を読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>農業革命｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav a{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}.nav a:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-cur{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);color:var(--parch);padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,170,34,.05) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.85rem,2vw,1rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);position:relative;margin-bottom:14px}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300}
+
+/* ARTICLE */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+
+/* CALLOUT */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* FURTHER READING */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="../../../">書斎の入口</a><span class="nav-sep">/</span>
+  <a href="../../">思考を広げる棚</a><span class="nav-sep">/</span>
+  <a href="../">人類の10大革命</a><span class="nav-sep">/</span>
+  <span class="nav-cur">農業革命</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 01</div>
+  <div class="hero-ornament">AGRICULTURE &middot; SETTLEMENT &middot; SURPLUS</div>
+  <h1 class="hero-title">農業革命</h1>
+  <p class="hero-lead">
+    定住が生んだ所有と余剰。<br>
+    紀元前1万年、人類は「未来に投資する」ことを覚えた。
+  </p>
+</div>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <!-- THE FIRST REVOLUTION -->
+  <div class="article-section">
+    <div class="section-label">THE FIRST REVOLUTION</div>
+    <h2 class="section-title">最初の革命 -- 狩猟採集から農耕へ</h2>
+    <div class="section-body">
+      <p>約1万2000年前、肥沃な三日月地帯 -- 現在のイラク、シリア、トルコにまたがる地域 -- で、人類は野生の小麦や大麦を栽培し始めた。世界史上最大の転換点である。</p>
+      <p>それまでの250万年間、人類は狩猟と採集で暮らしていた。食料は「見つけるもの」であり、獲物を追って移動する生活に、蓄積という概念はなかった。所有するものは、自分の体で運べるものだけだった。</p>
+      <p>農耕は、この根本を変えた。種を蒔き、水をやり、数ヶ月後の収穫を待つ。この行為は、人類が初めて「現在の労力を未来の利益のために投じる」ことを意味した。</p>
+      <ul>
+        <li><strong>破壊</strong> -- 移動生活、平等主義的な集団構造、自然との直接的な関係</li>
+        <li><strong>創造</strong> -- 定住、村落、農地、灌漑、家畜化</li>
+      </ul>
+      <p>定住は、場所に根ざした生活を可能にした。住居が恒久的になり、道具が精巧になり、集団の規模が拡大した。やがて村は町になり、町は都市になった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SURPLUS -->
+  <div class="article-section">
+    <div class="section-label">SURPLUS</div>
+    <h2 class="section-title">余剰の誕生 -- 貯蓄・交換・権力の源泉</h2>
+    <div class="section-body">
+      <p>農業がもたらした最も革命的な変化は「余剰」の誕生である。</p>
+      <p>狩猟採集社会では、食料は手に入れたその日に消費された。保存技術は限られ、移動生活では大量の食料を運ぶことができない。しかし農耕は、消費量を超える食料 -- 余剰 -- を生み出した。</p>
+      <p>穀物は保存ができた。乾燥させた小麦や大麦は、数ヶ月から数年にわたって貯蔵できた。これは人類史上初めての「貯蓄」である。</p>
+      <ul>
+        <li><strong>貯蓄</strong> -- 余剰穀物の貯蔵。将来の不確実性に対する保険であり、資本蓄積の原型</li>
+        <li><strong>交換</strong> -- 余った穀物を他の財と交換する。交易の始まり。やがて市場が生まれる</li>
+        <li><strong>権力</strong> -- 余剰を管理する者が権力を持った。神殿や宮殿が穀物倉庫を管理し、初期の「国家」が形成された</li>
+      </ul>
+      <p>余剰は、富の不平等の起源でもある。多くの穀物を蓄えた者と、そうでない者の間に格差が生まれた。農業革命は、豊かさと不平等を同時に生み出した。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- OWNERSHIP -->
+  <div class="article-section">
+    <div class="section-label">OWNERSHIP</div>
+    <h2 class="section-title">所有の概念 -- 土地が「資本」の原型になった</h2>
+    <div class="section-body">
+      <p>農耕は、土地への執着を生んだ。狩猟採集民にとって土地は「通り過ぎる場所」だったが、農耕民にとって土地は「自分のもの」だった。種を蒔き、灌漑を整え、何年もかけて肥沃にした農地を、他者に奪われることは許容できない。</p>
+      <p>ここに「所有」という概念が誕生する。</p>
+      <p>所有は、人類の経済活動の根幹を成す。土地の所有は、やがて相続を生み、世代を超えた富の蓄積を可能にした。特定の土地が特定の家族のものであるという認識は、法制度の原型であり、現代の不動産権・知的財産権に至る「財産権」のすべての起源である。</p>
+      <ul>
+        <li>土地の私有 -- 資本の原型。生産手段の所有という概念の始まり</li>
+        <li>相続 -- 世代を超えた富の移転。格差の固定化と拡大</li>
+        <li>境界と紛争 -- 所有が明確になるほど、境界をめぐる争いが激化した</li>
+      </ul>
+      <p>投資家が「資本」と呼ぶものの起源は、1万年前の農地にある。土地という最初の資本に労働を投入し、収穫というリターンを得る。この構造は、現代の株式投資と本質的に同じである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- DIVISION OF LABOR -->
+  <div class="article-section">
+    <div class="section-label">DIVISION OF LABOR</div>
+    <h2 class="section-title">分業と階層化 -- 専門職の誕生</h2>
+    <div class="section-body">
+      <p>余剰食料の存在は、全員が食料生産に従事する必要がないことを意味した。農業が効率化されるにつれ、食料生産以外の仕事に専念する人々が現れた。</p>
+      <ul>
+        <li><strong>職人</strong> -- 陶器、織物、金属加工。技術の専門化が生産性を高めた</li>
+        <li><strong>兵士</strong> -- 余剰と土地を守るための専門的な武力。軍事組織の誕生</li>
+        <li><strong>神官</strong> -- 農暦の管理、儀礼の執行。知識の専門家</li>
+        <li><strong>商人</strong> -- 地域間の余剰を交換する仲介者。交易ネットワークの構築</li>
+        <li><strong>書記</strong> -- 穀物の記録、取引の管理。文字の発明は、会計の必要性から生まれた</li>
+      </ul>
+      <p>分業は、社会を階層化した。食料を生産する農民、それを管理する支配層、交易を行う商人。この三層構造は、形を変えながら現代まで続いている。</p>
+      <p>アダム・スミスが『国富論』で「分業こそが生産性の源泉である」と論じたのは1776年のことだが、その原理は1万年前にすでに始まっていた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE SEED OF FINANCE -->
+  <div class="article-section">
+    <div class="section-label">THE SEED OF FINANCE</div>
+    <h2 class="section-title">最初の金融 -- 穀物の貸借と利子の誕生</h2>
+    <div class="section-body">
+      <p>農業革命は、金融の原型も生み出した。</p>
+      <p>メソポタミアの神殿では、紀元前3000年頃から穀物の貸借が記録されている。収穫前に種穀を借り、収穫後に利子をつけて返す。これは人類最古の「融資」であり、「利子」の概念の起源である。</p>
+      <p>穀物の貸借には、農業特有の論理があった。1粒の種は、適切に蒔けば数十粒になる。種穀を貸した者が利子を求めるのは、その「成長する力」に対する正当な対価と考えられた。利子の正当性は、農業の生産性に根ざしていた。</p>
+      <ul>
+        <li><strong>融資</strong> -- 種穀を貸し、収穫後に返済を受ける。信用の原型</li>
+        <li><strong>利子</strong> -- 貸した穀物より多く返す。時間の価値の発見</li>
+        <li><strong>債務不履行</strong> -- 不作のとき返済できない。最初のデフォルトリスク</li>
+        <li><strong>担保</strong> -- 返済不能の場合、土地や労働力で弁済する。担保の概念</li>
+      </ul>
+      <p>紀元前1750年のハンムラビ法典は、穀物貸付の利率上限を33.3%、銀貸付を20%と定めている。これは人類最古の金融規制である。利子の暴走を法で抑える必要が、すでにこの時代に認識されていた。</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p class="callout-text">農業革命は、人類が初めて「未来に投資する」ことを覚えた瞬間だった。種を蒔くという行為は、現在の消費を犠牲にして将来のリターンを期待する、投資の本質そのものである。</p>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">農業革命の次に、知識が世界を変え始めた時代へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../scientific/">
+        <span class="further-link-tag">NEXT</span>
+        <span class="further-link-title">科学革命 -- 知識が資本を動かし始めた時代</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命 -- 総合入口</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../money/">
+        <span class="further-link-tag">MONEY</span>
+        <span class="further-link-title">お金の歴史とは何か</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>&emsp;&middot;
+    <a href="../../">思考を広げる棚</a>&emsp;&middot;
+    <a href="../">人類の10大革命</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

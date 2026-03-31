@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="インターネット革命｜投資と思考の書斎"/>
+<meta property="og:description" content="WWWからドットコム・バブルへ。情報が無料になった1990〜2010年の物語。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>インターネット革命｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(60,100,160,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative;}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(60,100,160,.15);position:relative;margin-bottom:14px;}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">人類の10大革命</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">インターネット革命</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 08</div>
+  <div class="hero-ornament">INTERNET &middot; WWW &middot; DOT-COM</div>
+  <h1 class="hero-title">インターネット革命</h1>
+  <p class="hero-lead">
+    情報が無料になった日。<br>1990〜2010年、世界はネットワークで一つになった。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- THE NETWORK -->
+  <div class="article-section">
+    <div class="section-label">THE NETWORK</div>
+    <h2 class="section-title">ネットワーク -- 軍事通信から情報の民主化へ</h2>
+    <div class="section-body">
+      <p>1969年、アメリカ国防総省の高等研究計画局（ARPA）がARPANETを稼働させた。核攻撃を受けても通信が途絶しない、分散型のネットワーク。最初の接続はUCLAとスタンフォード研究所の2拠点だけだった。</p>
+      <p>このネットワークは1980年代を通じて大学と研究機関に広がり、電子メールとファイル転送のためのインフラとして成長した。しかし、世界を変えたのは1991年、CERNの研究者ティム・バーナーズ＝リーが発明したワールド・ワイド・ウェブ（WWW）だった。</p>
+      <p>バーナーズ＝リーは3つのものを作った。HTML（文書の記述言語）、URL（文書のアドレス体系）、HTTP（文書の転送プロトコル）。そして決定的に重要なことに、彼はこの技術を無償で公開した。特許を取らず、ライセンス料も求めなかった。</p>
+      <ul>
+        <li>1993年、Mosaic -- 最初の一般向けウェブブラウザが公開</li>
+        <li>1994年、全世界のウェブサイト数は約2,700</li>
+        <li>1996年、約25万サイト</li>
+        <li>2000年、約1,700万サイト</li>
+      </ul>
+      <p>情報へのアクセスが民主化された。百科事典、学術論文、ニュース、商品カタログ -- かつて入手に時間とコストがかかっていた情報が、クリック一つで無料で手に入る。情報の非対称性 -- 「知っている者」と「知らない者」の格差 -- が急速に縮小し始めた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE DOT-COM BOOM -->
+  <div class="article-section">
+    <div class="section-label">THE DOT-COM BOOM</div>
+    <h2 class="section-title">ドットコム・ブーム -- 「ニュー・エコノミー」の熱狂</h2>
+    <div class="section-body">
+      <p>1995年8月9日、ネットスケープ・コミュニケーションズがIPOを果たした。公開価格28ドル。初日の終値は58.25ドル。創業からわずか16か月、売上高は微々たるものだったにもかかわらず、時価総額は29億ドルに達した。</p>
+      <p>ネットスケープのIPOは、インターネット・ゴールドラッシュの号砲だった。</p>
+      <p>1994年、ジェフ・ベゾスがシアトルのガレージでAmazon.comを創業した。当初はオンライン書店。1995年7月にサービスを開始し、最初の1か月で全50州と45か国から注文を受けた。同年、ピエール・オミダイアがeBayを立ち上げた。個人間取引という新しい市場を創出した。</p>
+      <p>1998年、スタンフォード大学の大学院生ラリー・ペイジとセルゲイ・ブリンがGoogleを設立した。「世界中の情報を整理し、誰もがアクセスできるようにする」という壮大な使命を掲げて。</p>
+      <ul>
+        <li>1995〜2000年、ベンチャーキャピタルのIT投資は年間10倍のペースで増加</li>
+        <li>「.com」をドメインに含む企業なら、利益がなくても資金が集まった</li>
+        <li>Pets.com、Webvan、Kozmo.com -- 収益モデルなきビジネスが次々と上場した</li>
+        <li>「今回は違う」「旧来のバリュエーションは通用しない」という言説が溢れた</li>
+      </ul>
+      <p>「ニュー・エコノミー」。この言葉が、バブルの合理化に使われた。インターネットが経済の法則を変えた、だから利益がなくても成長さえすれば株価は正当化される、と。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE BUBBLE -->
+  <div class="article-section">
+    <div class="section-label">THE BUBBLE</div>
+    <h2 class="section-title">バブルの崩壊 -- NASDAQ 78%の暴落</h2>
+    <div class="section-body">
+      <p>2000年3月10日、NASDAQは5,048.62の史上最高値をつけた。そこから崩壊が始まった。</p>
+      <p>2002年10月、NASDAQは1,114.11まで下落した。最高値からの下落率は78%。時価総額にして約5兆ドルが消失した。S&P500のIT銘柄指数は89%下落した。</p>
+      <p>直接の引き金はFRBの利上げだった。1999年6月から2000年5月にかけて、政策金利は4.75%から6.5%に引き上げられた。しかし根本的な原因は、利益なき成長への過剰な投機だった。</p>
+      <ul>
+        <li>Pets.com -- IPOから268日で破綻。3億ドルの資本を焼き尽くした</li>
+        <li>Webvan -- オンライン食品宅配。12億ドルを調達し、8億3千万ドルの損失を出して倒産</li>
+        <li>WorldCom -- 110億ドルの粉飾決算が発覚。当時最大の破綻</li>
+        <li>ドットコム企業の約半数が2004年までに消滅した</li>
+      </ul>
+      <p>バブルの崩壊は、テクノロジー投資への信頼を一時的に破壊した。「インターネットは過大評価されていた」という声が広がった。しかし、それは正確ではなかった。過大評価されていたのはインターネットではなく、個々の企業の株価だった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- WHAT SURVIVED -->
+  <div class="article-section">
+    <div class="section-label">WHAT SURVIVED</div>
+    <h2 class="section-title">灰の中から -- 生き残ったものの価値</h2>
+    <div class="section-body">
+      <p>バブルは多くを破壊したが、すべてを破壊したわけではない。決定的に重要な事実がある -- 本物のイノベーションは、バブルの崩壊を生き延びた。</p>
+      <p>Amazonは生き残った。株価は107ドルから7ドルに暴落し、93%の下落を経験したが、ベゾスは「ドットコムと呼ばないでくれ」と言い続け、物流インフラへの投資を止めなかった。2003年、Amazonは初めての通年黒字を達成する。</p>
+      <p>Googleは生き残った。バブル崩壊時にはまだ非上場だったGoogleは、検索の品質を磨き続け、2000年にAdWordsを開始した。クリック課金型の広告モデルは、インターネット経済の収益基盤を確立した。</p>
+      <p>eBayは生き残った。個人間取引というニッチは、バブルに左右されない実需に支えられていた。</p>
+      <ul>
+        <li>バブル期に敷設された光ファイバー網は、バブル後も残った</li>
+        <li>過剰投資されたデータセンターは、次世代のクラウドコンピューティングの基盤になった</li>
+        <li>ブロードバンドの普及は加速を続けた</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-text">「インターネットはまだDay 1だ。」<br>-- ジェフ・ベゾス（1997年の株主への手紙）<br><br>この言葉はバブル期のマーケティングではなかった。ベゾスは2020年代に至るまで、Amazonの年次報告書に「Day 1」の精神を掲げ続けた。</p>
+      </div>
+
+      <p>バブルはインフラを作る。鉄道バブルは線路を残し、ドットコム・バブルは光ファイバーとデータセンターを残した。投機の狂騒が去った後に残るインフラこそが、次の経済成長の土台になる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE PLATFORM ECONOMY -->
+  <div class="article-section">
+    <div class="section-label">THE PLATFORM ECONOMY</div>
+    <h2 class="section-title">プラットフォーム経済 -- データが新しい石油になった</h2>
+    <div class="section-body">
+      <p>バブル崩壊後の2000年代、生き残った企業はプラットフォームへと進化した。</p>
+      <p>Googleは検索エンジンから広告プラットフォームになった。2004年のIPO時の時価総額は約230億ドル。検索クエリというデータが、ターゲティング広告の精度を高め、広告主と消費者を結ぶ巨大な市場を生んだ。2003年のGoogle AdSenseは、ウェブサイト運営者に広告収入の道を開き、コンテンツ経済の基盤を築いた。</p>
+      <p>Amazonはオンライン書店からEC（電子商取引）プラットフォームになった。マーケットプレイス（第三者出品者が販売できる仕組み）の導入により、Amazonは「何でも売る店」から「誰でも売れる場」へと変貌した。</p>
+      <ul>
+        <li>Google -- 検索データを広告収入に変換。粗利益率60%超</li>
+        <li>Amazon -- 購買データで推薦精度を高め、顧客のライフタイムバリューを最大化</li>
+        <li>eBay -- 出品者と購入者の評価システムが信頼のインフラを構築</li>
+        <li>2004年、マーク・ザッカーバーグがFacebook（現Meta）を創業。ソーシャルデータの時代が始まった</li>
+      </ul>
+      <p>「データは新しい石油だ」。この比喩が広まったのは2000年代後半のことだが、その現実は2000年代前半から始まっていた。プラットフォーム企業の競争力の源泉は、技術ではなくデータだった。データが多いほどサービスが良くなり、サービスが良いほどユーザーが集まり、ユーザーが集まるほどデータが増える。この好循環こそが、プラットフォーム経済の本質である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- FOR INVESTORS -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味</h2>
+    <div class="section-body">
+      <p>インターネット革命の歴史は、バブルと本物のイノベーションを見分ける力の重要性を教えてくれる。</p>
+      <ul>
+        <li><strong>バブルはインフラを作る</strong> -- 鉄道バブルが線路を残したように、ドットコム・バブルは光ファイバー網とデータセンターを残した。バブルが崩壊しても、インフラの価値は消えない</li>
+        <li><strong>利益なき成長は持続しない</strong> -- Pets.comは消え、Amazonは残った。違いは明快だった。ベゾスはバブル期にも物流という実体に投資し続けた</li>
+        <li><strong>プラットフォームに投資せよ</strong> -- 個々の商品やサービスではなく、「場」そのものを握った企業が最大の勝者になった。Google、Amazon、eBay。すべてプラットフォーム企業である</li>
+        <li><strong>暴落時こそ好機</strong> -- Amazon株が93%下落した2001年に買った投資家は、2024年時点で数百倍のリターンを得ている。バブル崩壊後の混乱期に、本物を見分けて投資できるかどうかが、長期リターンを決定的に左右する</li>
+      </ul>
+      <p>そして最も本質的な教訓 -- テクノロジーの方向性は常に正しくても、タイミングと個別銘柄の選択は容赦なく問われる。「インターネットは世界を変える」という1999年のテーゼは完全に正しかった。しかし、その信念でドットコム株を買った投資家の大半は、資金を失った。方向性の正しさと、投資のリターンは別の問題である。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">計算の革命から、モバイルとクラウドの革命へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../computer/">
+        <span class="further-link-tag">REVOLUTION 07</span>
+        <span class="further-link-title">コンピュータ革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../smartphone-cloud/">
+        <span class="further-link-tag">REVOLUTION 09</span>
+        <span class="further-link-title">スマートフォン・クラウド革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../../../../">書斎の入口へ戻る</a>　·　<a href="../../../">思考を広げる棚</a>　·　<a href="../">人類の10大革命</a></div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

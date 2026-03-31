@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYPK32EB6B');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="科学革命｜知識が資本を動かし始めた時代｜投資と思考の書斎"/>
+<meta property="og:description" content="コペルニクスからニュートンへ。科学的思考が大航海時代を可能にし、株式会社を生み、産業革命への道を開いた。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>科学革命｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav a{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}.nav a:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-cur{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);color:var(--parch);padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,170,34,.05) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.85rem,2vw,1rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);position:relative;margin-bottom:14px}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300}
+
+/* ARTICLE */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+
+/* CALLOUT */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* FURTHER READING */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="../../../">書斎の入口</a><span class="nav-sep">/</span>
+  <a href="../../">思考を広げる棚</a><span class="nav-sep">/</span>
+  <a href="../">人類の10大革命</a><span class="nav-sep">/</span>
+  <span class="nav-cur">科学革命</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 02</div>
+  <div class="hero-ornament">SCIENCE &middot; REASON &middot; EXPLORATION</div>
+  <h1 class="hero-title">科学革命</h1>
+  <p class="hero-lead">
+    知識が資本を動かし始めた時代。<br>
+    世界の見方が変わったとき、お金の流れ方も変わった。
+  </p>
+</div>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <!-- THE NEW WORLDVIEW -->
+  <div class="article-section">
+    <div class="section-label">THE NEW WORLDVIEW</div>
+    <h2 class="section-title">世界観の転換 -- コペルニクス、ガリレオ、ニュートン</h2>
+    <div class="section-body">
+      <p>1543年、コペルニクスは『天球の回転について』を出版し、地球が太陽の周りを回っていると主張した。この地動説は、1500年以上にわたって西洋世界を支配してきたプトレマイオスの天動説を覆した。</p>
+      <p>ガリレオ・ガリレイは望遠鏡で木星の衛星を観測し、地動説を実証した。彼は教会裁判にかけられたが、「それでも地球は動く」という精神は止められなかった。そしてアイザック・ニュートンが1687年に『プリンキピア』を著し、万有引力の法則で宇宙の運動を数学的に記述した。</p>
+      <p>科学革命の本質は、世界の理解の仕方が変わったことにある。</p>
+      <ul>
+        <li><strong>権威から観察へ</strong> -- アリストテレスや聖書の記述ではなく、実験と観測で真理を検証する</li>
+        <li><strong>定性から定量へ</strong> -- 「なぜ」だけでなく「どれだけ」を問う。数学が自然を記述する言語になった</li>
+        <li><strong>神秘から法則へ</strong> -- 自然現象は神の意思ではなく、普遍的な法則に従うと認識された</li>
+      </ul>
+      <p>この思考様式の転換は、経済と金融にも深く浸透していく。世界を合理的に理解できるという確信が、リスクを計算し、投資を計画し、未来を予測しようとする近代的な経済行動の土壌を築いた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- EXPLORATION AND TRADE -->
+  <div class="article-section">
+    <div class="section-label">EXPLORATION AND TRADE</div>
+    <h2 class="section-title">大航海時代 -- 科学的航海術が世界貿易を開いた</h2>
+    <div class="section-body">
+      <p>科学革命は、書斎の中だけで起きたのではない。その成果は海の上で最も劇的に現れた。</p>
+      <p>天文学の進歩は精密な航海術を可能にした。コンパス、アストロラーベ、六分儀。地図製作法の改良。これらの科学的道具が、ポルトガルとスペインの船乗りたちを未知の大洋へ送り出した。</p>
+      <ul>
+        <li>1498年 -- ヴァスコ・ダ・ガマがインド航路を開拓。香辛料貿易の独占が崩れた</li>
+        <li>1492年 -- コロンブスが「新大陸」に到達。大西洋交易圏が誕生した</li>
+        <li>1522年 -- マゼラン船団が世界一周を達成。地球が球体であることが実証された</li>
+      </ul>
+      <p>大航海時代は、世界経済の構造を根本から変えた。それまでヨーロッパ、アジア、アフリカは断片的にしか接続されていなかったが、海路の発見によって初めて「グローバル経済」が出現した。</p>
+      <p>しかし、この航海には莫大な資金が必要だった。船の建造、乗組員の雇用、数年にわたる航海の費用。そして成功の保証はなかった。嵐、海賊、病気、未知の航路。リスクは極めて高い。</p>
+      <p>このリスクをどう分担するか。その問いへの回答が、資本主義の歴史を決定づけた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE BIRTH OF JOINT-STOCK -->
+  <div class="article-section">
+    <div class="section-label">THE BIRTH OF JOINT-STOCK</div>
+    <h2 class="section-title">株式会社の誕生 -- リスクの分散という革新</h2>
+    <div class="section-body">
+      <p>1602年、オランダでVOC（Vereenigde Oostindische Compagnie、オランダ東インド会社）が設立された。世界初の株式会社である。</p>
+      <p>それ以前にも、航海ごとに出資者を募る仕組みは存在した。しかしVOCの革新は、航海単位ではなく「会社」という恒久的な組織に出資する仕組みを作ったことにある。</p>
+      <ul>
+        <li><strong>株式の発行</strong> -- 市民が少額から出資でき、リスクを分散できた。一隻の船が沈んでも、会社全体は存続する</li>
+        <li><strong>有限責任</strong> -- 出資者は出資額以上の損失を負わない。これが広範な投資参加を可能にした</li>
+        <li><strong>株式の譲渡</strong> -- アムステルダム証券取引所で株式が売買された。流動性の誕生</li>
+        <li><strong>経営と所有の分離</strong> -- 出資者（株主）と経営者が分離された。専門経営の始まり</li>
+      </ul>
+      <p>VOCの株式は市民の間で熱狂的に取引された。アムステルダムの商人、職人、召使いまでがVOCの株を買った。これは人類史上初の「大衆投資」であり、株式市場の起源である。</p>
+      <p>VOCは200年間存続し、最盛期にはアジア貿易を独占した。しかし18世紀末には腐敗と非効率で衰退し、1799年に解散した。巨大企業にも寿命があるという教訓を、最初の株式会社が身をもって示した。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- MEASURING THE WORLD -->
+  <div class="article-section">
+    <div class="section-label">MEASURING THE WORLD</div>
+    <h2 class="section-title">定量的思考の誕生 -- 複式簿記、統計学、確率論</h2>
+    <div class="section-body">
+      <p>科学革命がもたらした「測定する精神」は、金融と会計の世界にも革命を起こした。</p>
+      <p>1494年、イタリアの数学者ルカ・パチョーリが複式簿記を体系化した。借方と貸方で取引を記録するこの方法は、企業の財務状態を正確に把握することを可能にした。ゲーテは複式簿記を「人間精神の最も美しい発明の一つ」と呼んだ。</p>
+      <p>17世紀には、確率論が誕生した。ブレーズ・パスカルとピエール・ド・フェルマーが1654年に交わした書簡は、確率の数学的理論の出発点となった。きっかけは賭博の問題だったが、その成果は保険、年金、投資判断へと応用されていく。</p>
+      <ul>
+        <li><strong>複式簿記</strong>（1494年）-- 企業の透明性の基盤。投資判断に不可欠な財務情報の体系化</li>
+        <li><strong>確率論</strong>（1654年）-- リスクの定量化。保険、年金、デリバティブの数学的基礎</li>
+        <li><strong>統計学</strong>（17世紀）-- ジョン・グラントの死亡統計表（1662年）。生命保険の理論的根拠</li>
+        <li><strong>人口統計</strong> -- ウィリアム・ペティの「政治算術」。国力を数値で把握する試み</li>
+      </ul>
+      <p>定量的思考は、投資の意思決定を根本から変えた。「感覚」や「経験」ではなく、「数字」と「確率」でリスクを評価する。現代のポートフォリオ理論、リスク管理、アルゴリズム取引はすべて、この17世紀の知的革命の上に立っている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SCIENCE AND CAPITAL -->
+  <div class="article-section">
+    <div class="section-label">SCIENCE AND CAPITAL</div>
+    <h2 class="section-title">科学と資本 -- 知識が富を生む構造の始まり</h2>
+    <div class="section-body">
+      <p>科学革命は、それ自体では直接的に産業を生み出さなかった。しかし、科学革命が築いた知的基盤 -- 合理的思考、実験的方法、定量的分析 -- がなければ、18世紀後半の産業革命は起こりえなかった。</p>
+      <p>科学革命が産業革命に残した遺産は明確である。</p>
+      <ul>
+        <li><strong>技術的楽観主義</strong> -- 自然を理解し、制御できるという確信。これが蒸気機関や紡績機の発明を促した</li>
+        <li><strong>資本の組織化</strong> -- 株式会社という仕組みが、大規模な産業投資を可能にした</li>
+        <li><strong>リスクの管理</strong> -- 確率論と保険の発展が、冒険的な事業への投資を合理化した</li>
+        <li><strong>知識の共有</strong> -- 科学アカデミー、学術誌、百科全書。知識が個人の秘密から公共財へ変わった</li>
+      </ul>
+      <p>科学革命は「知識が富を生む」という構造の始まりだった。この構造は、産業革命を経て、コンピュータ革命、インターネット革命、AI革命へと加速度的に強化されていく。知識経済という言葉は21世紀に生まれたが、その根は16世紀にある。</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <p class="callout-text">アイザック・ニュートンは万有引力を発見した天才だったが、1720年の南海泡沫事件で約2万ポンド（現在の価値で数億円）を失った。彼はこう嘆いたとされる。「天体の動きは計算できるが、群衆の狂気は計算できない。」<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;font-style:italic;">── 科学的合理性をもってしても、バブルの渦中では冷静でいることは難しい。市場は物理法則ではなく、人間の心理で動く。</span></p>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">科学革命の前後を辿る。農業革命から産業革命へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../agricultural/">
+        <span class="further-link-tag">PREV</span>
+        <span class="further-link-title">農業革命 -- 定住が生んだ所有と余剰</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../industrial/">
+        <span class="further-link-tag">NEXT</span>
+        <span class="further-link-title">産業革命 -- 蒸気が筋肉を超えた</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命 -- 総合入口</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>&emsp;&middot;
+    <a href="../../">思考を広げる棚</a>&emsp;&middot;
+    <a href="../">人類の10大革命</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

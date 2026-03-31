@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="投資家への教訓 ── リスク・逆張り・独立思考｜投資と思考の書斎"/>
+<meta property="og:description" content="2008年の金融危機から投資家は何を学ぶべきか。リスクの本質、レバレッジの危険、逆張りの重さ、そして独立思考の価値を読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>投資家への教訓 ── リスク・逆張り・独立思考｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:72px 24px 60px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:10px;opacity:.65;position:relative}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:20px;opacity:.7;position:relative}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5.5vw,3rem);font-weight:700;line-height:1.15;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:14px}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:26px;opacity:.8}
+.hero-lead{font-family:var(--jp);font-size:.82rem;color:var(--parch4);font-weight:300;line-height:2.2;position:relative;max-width:580px;margin:0 auto}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body ul{list-style:none;margin:1em 0}
+.section-body ul li{padding-left:1.4em;position:relative;margin-bottom:.6em}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold2)}
+
+/* ── CALLOUT ── */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+.callout-source{font-family:var(--mono);font-size:.6rem;color:var(--ink3);margin-top:8px;letter-spacing:.06em}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">リーマン・ショック</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">投資家への教訓</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">LEHMAN CRISIS · CHAPTER 06</div>
+  <div class="hero-ornament">RISK · CONTRARIAN · INDEPENDENCE</div>
+  <h1 class="hero-title">投資家への教訓<br>── リスク・逆張り・独立思考</h1>
+  <p class="hero-sub">Lessons for Investors — Risk, Contrarianism, and Independent Thinking</p>
+  <p class="hero-lead">
+    2008年の危機から、投資家は何を学ぶべきか。<br>
+    リスクの本質、レバレッジの罠、逆張りの孤独。<br>
+    そして、群衆から離れて考える勇気。<br>
+    あの危機が遺した7つの教訓を読み解く。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- SECTION 01: RISK IS NOT VOLATILITY -->
+  <div class="article-section">
+    <div class="section-label">01 — RISK IS NOT VOLATILITY</div>
+    <h2 class="section-title">リスクとは「永久に失うこと」である</h2>
+    <div class="section-body">
+      <p>ウォール街はリスクを数値化することに執着してきた。標準偏差、ベータ値、VaR（Value at Risk）── 精緻な数学モデルが「リスク」を計測可能なものに変え、管理可能であるという幻想を与えた。リーマン・ブラザーズのリスク管理部門は、自社のVaRモデルが「99%の確率で1日の最大損失は○○ドル以内」と算出していた。しかし2008年、その「1%」が現実になったとき、モデルは何の役にも立たなかった。</p>
+
+      <p>ウォーレン・バフェットはリスクをまったく別の方法で定義する。「リスクとは、自分が何をやっているか分かっていないことだ」。そして「永久的な資本の喪失」こそが真のリスクであると説く。株価の日々の変動──ボラティリティ──はリスクではない。それは単なる価格の揺らぎにすぎない。本当のリスクとは、投資した資金が二度と戻ってこないことである。</p>
+
+      <p>1998年のLTCM（ロング・ターム・キャピタル・マネジメント）破綻は、その予兆だった。ノーベル経済学賞受賞者を擁するヘッジファンドが、数学モデルへの過信とレバレッジで壊滅した。教訓は明らかだったはずだ。しかし10年後、ウォール街はまったく同じ過ちを、はるかに大きなスケールで繰り返した。モデルが捉えられないリスク── テールリスク、相関の崩壊、流動性の蒸発。それらは数式の外側に、常に存在している。</p>
+
+      <p>マイケル・バーリはサブプライム市場を分析するとき、VaRモデルを使わなかった。彼がやったのは、何千件もの個別の住宅ローン契約書を一件一件読むことだった。収入を偽った申込書、返済能力を超えた借入額、金利リセット後に支払い不能になる構造。リスクはスプレッドシートの中ではなく、書類の中にあった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 02: LEVERAGE KILLS -->
+  <div class="article-section">
+    <div class="section-label">02 — LEVERAGE KILLS</div>
+    <h2 class="section-title">レバレッジは静かな殺し屋</h2>
+    <div class="section-body">
+      <p>レバレッジ── 借入を使って投資規模を拡大すること── は、金融における最も強力な武器であり、最も危険な毒でもある。リーマン・ブラザーズの破綻時、同社のレバレッジ比率は30倍を超えていた。自己資本1ドルに対して30ドル以上の資産を保有していたということだ。これは資産価値がわずか3.3%下落しただけで、自己資本がすべて消失する水準である。</p>
+
+      <p>好調なとき、レバレッジは魔法のように見える。10%のリターンが30倍のレバレッジで300%になる。ボーナスは膨らみ、株価は上がり、誰もが天才に見える。しかし市場が反転したとき、同じメカニズムが逆方向に作動する。損失は自己資本を瞬時に食い尽くし、追加証拠金の要求（マージン・コール）が連鎖し、強制売却が価格をさらに押し下げる。レバレッジの本質は、上昇局面での利益の増幅ではない。下降局面での破滅の加速である。</p>
+
+      <p>チャーリー・マンガーは言った。「賢い人間が破産する方法は3つしかない── 酒、女、そしてレバレッジだ」。これは冗談のように聞こえるが、金融史の真実を凝縮している。ベアー・スターンズ、リーマン・ブラザーズ、AIG── 2008年の危機で倒れた巨人たちは、いずれも過剰なレバレッジによって命を落とした。彼らの経営者は愚かだったのではない。レバレッジが与える「自信」に酔っていたのだ。</p>
+
+      <p>個人投資家にとっての教訓は明快だ。信用取引やFXのレバレッジは、理論的には利益を増幅するが、実践的には退場を早める。バフェットはバークシャー・ハサウェイの運営において、意図的にレバレッジを低く保ってきた。「十分に裕福になるのに、レバレッジは必要ない。しかし破産するには、レバレッジは十分すぎるほど効果的だ」。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 03: THE CONTRARIAN'S BURDEN -->
+  <div class="article-section">
+    <div class="section-label">03 — THE CONTRARIAN'S BURDEN</div>
+    <h2 class="section-title">逆張りという孤独な重荷</h2>
+    <div class="section-body">
+      <p>マイケル・バーリは2005年、住宅市場の崩壊に賭け始めた。CDSを購入し、サブプライムMBSの空売りポジションを構築した。彼の分析は正しかった。しかし、正しいことと報われることは、まったく別の問題だった。</p>
+
+      <p>2005年から2007年にかけて、住宅価格はなお上昇を続けた。バーリのファンド「サイオン・キャピタル」はCDSのプレミアム支払いで損失を計上し、投資家たちは激怒した。解約請求が殺到し、訴訟をちらつかせる投資家もいた。映画『マネー・ショート』で描かれた彼のオフィスの場面── ヘビーメタルを大音量で流しながら、一人でドラムを叩く姿── はフィクションではない。あれは、正しいことを信じ続ける者の、ぎりぎりの精神状態だった。</p>
+
+      <p>逆張りの本質は、単に「多数派と反対のことをする」ことではない。それは、自分の分析を信じ、群衆の圧力に耐え、時間が自分を証明するまで待ち続けることだ。その間、あなたは「愚か者」と呼ばれる。「市場を理解していない」と嘲笑される。友人を失い、顧客を失い、自分自身への信頼さえ揺らぐ瞬間が訪れる。ジョン・メイナード・ケインズが言ったように、「市場は、あなたが支払い能力を失うまで、不合理でいられる」のだ。</p>
+
+      <p>バーリは最終的に4億8,900万ドルの利益を投資家にもたらした。しかし彼はファンドを閉鎖し、公の場からほぼ姿を消した。勝利は彼を有名にしたが、幸福にはしなかった。逆張りとは、正しさの対価として孤独を支払うことなのだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 04: COMPLEXITY HIDES RISK -->
+  <div class="article-section">
+    <div class="section-label">04 — COMPLEXITY HIDES RISK</div>
+    <h2 class="section-title">複雑さはリスクを隠す</h2>
+    <div class="section-body">
+      <p>CDO（債務担保証券）の構造を完全に理解していた人間は、ウォール街でさえほんの一握りだった。何千件もの住宅ローンをプールし、リスク別にトランシェに分け、格付け機関がAAA格を付与し、さらにそのCDOを組み合わせたCDO-squared（CDOのCDO）を作る。映画『マネー・ショート』は、この複雑さを説明するために風呂に浸かるマーゴット・ロビーやブラックジャックを打つセレーナ・ゴメスを登場させた。それほどまでに、この仕組みは意図的に理解しにくく作られていた。</p>
+
+      <p>複雑さは偶然の産物ではなかった。複雑であることが利益を生んだのだ。商品が複雑であればあるほど、手数料は高くなり、投資家は中身を検証できなくなり、格付け機関はモデルに依存するしかなくなった。ゴールドマン・サックスは自らが組成したCDO「アバカス」を顧客に販売する一方で、その同じCDOの空売りポジションを取っていた。複雑さは、利益相反を覆い隠すための煙幕でもあった。</p>
+
+      <p>バフェットの投資原則に「サークル・オブ・コンピテンス（能力の輪）」がある。自分が本当に理解できる領域にのみ投資せよ、という教えだ。「理解できないものには投資するな」── この一見当たり前の原則が、2008年の危機では組織的に無視された。銀行のCEOですら、自社のバランスシートに何が載っているのか正確に把握していなかった。</p>
+
+      <p>複雑さは知性の証ではない。しばしば、それは無知の隠れ蓑である。投資家が「この商品は複雑すぎて理解できない」と感じたとき、正しい反応は「もっと勉強しよう」ではない。「投資しない」である。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 05: INCENTIVES MATTER -->
+  <div class="article-section">
+    <div class="section-label">05 — INCENTIVES MATTER</div>
+    <h2 class="section-title">インセンティブが行動を決める</h2>
+    <div class="section-body">
+      <p>チャーリー・マンガーは繰り返し言っている。「ある行動の理由を知りたければ、インセンティブを見よ」。2008年の金融危機は、歪んだインセンティブ構造が生んだ人災だった。住宅ローンブローカーは、ローンを組成すれば手数料を得た。ローンが返済されるかどうかは彼らの関心事ではなかった。組成した瞬間に、リスクは投資銀行へと「転売」されたからだ。</p>
+
+      <p>投資銀行は住宅ローンを束ねてCDOに加工し、手数料を得た。CDOが将来デフォルトするかどうかは、彼らにとって二次的な問題だった。商品が売れた時点で利益は確定している。格付け機関── ムーディーズ、S&P、フィッチ── は、格付けを依頼する投資銀行から報酬を受け取っていた。厳しい格付けを出せば顧客を失う。甘い格付けを出せば、ビジネスが続く。「審査員が選手から給料をもらっている」── これが2008年以前の格付けビジネスの構造だった。</p>
+
+      <p>映画『マネー・ショート』で、S&Pの担当者がこう漏らす場面がある。「我々が厳格にすれば、銀行はムーディーズに行くだけです」。この台詞は、インセンティブの歪みを一文で言い表している。誰も悪意を持っていたわけではない。全員が、自分のインセンティブに従って合理的に行動していた。その合理的な行動の集積が、システム全体を崩壊させた。</p>
+
+      <p>投資家にとっての教訓は、投資先の「何を言っているか」ではなく「何で利益を得ているか」を見ることだ。ファンドマネージャーが自分の資金を運用しているファンドに投資しているか（スキン・イン・ザ・ゲーム）。アナリストの推奨が自社の投資銀行部門の利害と一致していないか。経営者のボーナス構造が短期の株価に連動していないか。インセンティブの方向を読めば、行動は予測できる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 06: MARGIN OF SAFETY -->
+  <div class="article-section">
+    <div class="section-label">06 — MARGIN OF SAFETY</div>
+    <h2 class="section-title">安全余裕という防波堤</h2>
+    <div class="section-body">
+      <p>ベンジャミン・グレアムは『賢明なる投資家』の中で、投資の最も重要な概念として「安全余裕（Margin of Safety）」を挙げた。企業の本質的価値より十分に安い価格で買うこと。その差額が、判断ミスや予期せぬ事態に対するバッファとなる。1949年に書かれたこの原則は、2008年の危機においても、最も有効な防衛線であり続けた。</p>
+
+      <p>危機の前、安全余裕という概念は時代遅れと見なされていた。住宅価格は「決して下がらない」とされ、CDOのAAA格トランシェは「リスクフリーに近い」と信じられていた。レバレッジを効かせた投資は「効率的」と称賛され、現金を多く保有するファンドマネージャーは「臆病者」と呼ばれた。しかし2008年9月以降、現金を持っていた者だけが、暴落した資産を拾い上げることができた。</p>
+
+      <p>バフェットはリーマン・ショックのさなか、ゴールドマン・サックスに50億ドルを投資した。優先株と極めて有利な条件のワラントという、厚い安全余裕を確保した取引だった。彼は2008年10月のニューヨーク・タイムズに寄稿し、「アメリカ株を買っている」と宣言した。この行動が可能だったのは、バークシャー・ハサウェイが常に巨額の現金を保有していたからだ。安全余裕とは、良い銘柄を安く買うことだけではない。危機が訪れたときに行動できる余力を持つことでもある。</p>
+
+      <p>バフェットの問いかけは、あらゆる投資家にとっての試金石だ。「保有株が明日50%下落しても、あなたは平気でいられるか？」。もし答えがノーなら、ポジションが大きすぎるか、確信が足りないか、あるいはその両方だ。安全余裕は、数字の問題であると同時に、心の余裕の問題でもある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 07: INDEPENDENT THINKING -->
+  <div class="article-section">
+    <div class="section-label">07 — INDEPENDENT THINKING</div>
+    <h2 class="section-title">群衆から離れて考える</h2>
+    <div class="section-body">
+      <p>2006年、アメリカの住宅価格はなお上昇を続けていた。格付け機関はCDOにAAA格を与え続け、FRBは金融システムの健全性に自信を示し、メディアは「住宅は最良の投資」と報じていた。ほぼすべての専門家が同じ方向を向いていた。その中で、マイケル・バーリ、スティーブ・アイスマン、グレッグ・リップマンといったごく少数の人間だけが、反対側に立った。</p>
+
+      <p>独立思考とは、天邪鬼であることではない。「みんなが正しいと言っているから、自分も正しいと思う」という思考を拒否することだ。それは自分自身のリサーチに基づき、自分自身の頭で判断を下す能力── そして、その判断が群衆と異なるとき、それを実行に移す勇気のことである。バフェットは株主への手紙の中で繰り返し書いている。「独立思考は、投資家にとって最も重要な資質だ」。</p>
+
+      <p>しかし、独立思考は「正しい」ことを保証しない。歴史上、群衆に逆らって間違っていた人間は無数にいる。独立思考の価値は「常に正しい判断ができる」ことではなく、「自分の判断に対する責任を引き受ける」ことにある。群衆に従って失敗した場合、人は「みんなも同じだった」と言い訳できる。独立して判断して失敗した場合、その責任は完全に自分にある。その重さを引き受ける覚悟が、独立思考の本質である。</p>
+
+      <p>2008年の危機が教えてくれた最後の教訓は、おそらくこれだ── 市場全体が「大丈夫だ」と言っているとき、それが最も危険な瞬間かもしれない。コンセンサスは安心を与えるが、安心は思考を停止させる。投資家にとって最も価値ある習慣は、「みんなが何を信じているか」ではなく、「みんなが何を見落としているか」を問い続けることである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- CALLOUT -->
+  <div class="article-section">
+    <div class="callout">
+      <p class="callout-text">
+        「他人が貪欲なときに恐れよ。<br>
+        他人が恐れているときに貪欲であれ。」
+      </p>
+      <div class="callout-source">── ウォーレン・バフェット（バークシャー・ハサウェイ 2004年株主への手紙）</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">教訓をさらに深め、思考を広げるために</p>
+    <div class="further-links">
+      <a class="further-link" href="../aftermath/">
+        <span class="further-link-tag">CHAPTER 05</span>
+        <span class="further-link-title">その後の世界</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../big-short/">
+        <span class="further-link-tag">CHAPTER 03</span>
+        <span class="further-link-title">マネー・ショートの世界</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../../financial-history/global-crises/">
+        <span class="further-link-tag">HISTORY</span>
+        <span class="further-link-title">世界の恐慌と金融危機の歴史</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../../">書斎の入口へ戻る</a>　·
+    <a href="../../../">思考を広げる棚</a>　·
+    <a href="../">リーマン・ショック</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYPK32EB6B');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="スマホ・クラウド革命｜人類の10大革命｜投資と思考の書斎"/>
+<meta property="og:description" content="2007年のiPhone発表からクラウド、アプリ経済、GAFA支配まで。ポケットの中の世界が経済を変えた構造を読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>スマホ・クラウド革命｜人類の10大革命｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav a{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}.nav a:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-cur{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);color:var(--parch);padding:64px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 10%,rgba(212,170,34,.06) 0%,transparent 60%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative}
+.hero-ornament{font-family:var(--mono);font-size:.48rem;color:var(--parch4);letter-spacing:.22em;margin-bottom:18px;opacity:.5;position:relative}
+.hero h1{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;margin-bottom:8px;line-height:1.2}
+.hero-sub{font-family:var(--serif);font-size:clamp(.85rem,2vw,1rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300}
+
+/* ARTICLE */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+
+/* CALLOUT */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* FURTHER READING */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../../../">書斎の入口</a><span class="nav-sep">/</span>
+  <a href="../../../">思考を広げる棚</a><span class="nav-sep">/</span>
+  <a href="../">人類の10大革命</a><span class="nav-sep">/</span>
+  <span class="nav-cur">スマホ・クラウド革命</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 09</div>
+  <div class="hero-ornament">SMARTPHONE &middot; CLOUD &middot; APP ECONOMY</div>
+  <h1>スマホ・クラウド革命</h1>
+  <p class="hero-sub">ポケットの中の世界、見えないインフラ</p>
+  <p class="hero-lead">
+    2007年、一台の電話が世界を変えた。<br>
+    クラウドが企業の形を変え、アプリが市場の構造を変えた。<br>
+    見えないインフラの上に、新しい経済が立ち上がった時代。
+  </p>
+</div>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <!-- 01 THE IPHONE MOMENT -->
+  <div class="article-section">
+    <div class="section-label">THE IPHONE MOMENT</div>
+    <h2 class="section-title">2007年1月9日 ── 電話を再発明した日</h2>
+    <div class="section-body">
+      <p>サンフランシスコのマスコーン・センター。スティーブ・ジョブズはステージに立ち、静かに宣言した。「今日、Appleは電話を再発明する。」</p>
+      <p>iPhoneは、携帯電話、iPod、インターネット通信端末の3つを一台に統合した。タッチスクリーン、加速度センサー、GPS。それまでの携帯電話とは根本的に異なる「ポケットに入るコンピュータ」だった。</p>
+      <p>当時の携帯電話市場を支配していたノキアとブラックベリーは、iPhoneを脅威とは見なさなかった。ノキアのCEOは「物理キーボードのない電話は普及しない」と断じた。2007年時点でノキアの世界市場シェアは約40%。わずか5年後の2012年、同社のスマートフォン事業は赤字に転落し、2014年にマイクロソフトに売却された。</p>
+      <p>ブラックベリーも同じ運命をたどった。2009年には時価総額830億ドルを誇った同社は、2013年には47億ドルにまで縮小した。変化を読めなかった企業が、どれほど急速に市場から退場するか。この革命は、その教科書となった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 02 THE APP ECONOMY -->
+  <div class="article-section">
+    <div class="section-label">THE APP ECONOMY</div>
+    <h2 class="section-title">アプリが生んだ新しい経済圏</h2>
+    <div class="section-body">
+      <p>2008年7月、App Storeが開設された。当初わずか500本だったアプリは、2024年時点で180万本を超えている。この「アプリ経済」は、経済の構造を根底から変えた。</p>
+      <p>それまで、ソフトウェアを世界に届けるには、販売網、流通、マーケティングの巨大な装置が必要だった。App Storeは、個人開発者がガレージから世界市場にアクセスできる道を開いた。</p>
+      <ul>
+        <li>Uber（2009年設立） ── タクシー業界を破壊し、「ギグエコノミー」を生んだ</li>
+        <li>Instagram（2010年設立） ── 従業員13人でFacebookに10億ドルで買収された</li>
+        <li>WhatsApp（2009年設立） ── 55人の従業員で、190億ドルの買収価格がついた</li>
+      </ul>
+      <p>2011年8月、マーク・アンドリーセンがウォール・ストリート・ジャーナルに寄稿した。「ソフトウェアが世界を食っている。」この言葉は、時代の本質を正確に捉えていた。書店はAmazonに、音楽はSpotifyに、映画はNetflixに。あらゆる産業がソフトウェアに飲み込まれていった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 03 CLOUD COMPUTING -->
+  <div class="article-section">
+    <div class="section-label">CLOUD COMPUTING</div>
+    <h2 class="section-title">見えないインフラ ── クラウドが変えた企業の形</h2>
+    <div class="section-body">
+      <p>2006年、AmazonがAWS（Amazon Web Services）を正式に開始した。当時、これがどれほどの変革を引き起こすか、ほとんどの人は理解していなかった。</p>
+      <p>それまで、企業がITシステムを構築するには、サーバーを購入し、データセンターを借り、専門のエンジニアを雇う必要があった。初期投資は数千万円から数億円。これがCapEx（資本的支出）モデルだった。</p>
+      <p>クラウドは、これをOpEx（運営費用）モデルに変えた。必要なときに、必要なだけ、コンピューティングリソースを借りる。使った分だけ払う。サーバーを買う必要はない。</p>
+      <ul>
+        <li>AWS ── 2023年の売上高は約908億ドル。Amazonの営業利益の大半を稼ぐ</li>
+        <li>Microsoft Azure ── エンタープライズ市場で急速にシェアを拡大</li>
+        <li>Google Cloud Platform ── AI・機械学習基盤として存在感を増す</li>
+      </ul>
+      <p>クラウドがもたらした最大の変化は、スタートアップの参入障壁を劇的に下げたことだ。かつて数億円かかったインフラが、月額数万円で手に入る。Airbnb、Slack、Dropbox。クラウドなしには生まれなかった企業が、世界を変えた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 04 THE ATTENTION ECONOMY -->
+  <div class="article-section">
+    <div class="section-label">THE ATTENTION ECONOMY</div>
+    <h2 class="section-title">注意力が通貨になった時代</h2>
+    <div class="section-body">
+      <p>2004年、ハーバード大学の寮の一室で、マーク・ザッカーバーグがFacebook（現Meta）を立ち上げた。2006年にはTwitter（現X）が、2005年にはYouTubeが誕生した。</p>
+      <p>これらのプラットフォームは、人類史上最も効率的な「注意力の収穫装置」となった。ユーザーは無料でサービスを使い、プラットフォームはユーザーの注意力を広告主に売る。商品は「ユーザー自身」だった。</p>
+      <p>広告モデルは急速に進化した。テレビCMの「不特定多数への一斉送信」から、個人の行動データに基づく「精密なターゲティング」へ。Facebookは、ユーザーの年齢、性別、居住地、興味、交友関係、行動パターンまで把握し、広告主に提供した。</p>
+      <p>2018年、ケンブリッジ・アナリティカ事件が発覚した。8,700万人のFacebookユーザーデータが政治キャンペーンに不正利用されていた。データ収集と個人情報の境界線がどこにあるのか、社会はようやく問い始めた。</p>
+      <p>しかし、注意力経済の構造自体は変わっていない。2024年時点で、Meta、Alphabet（Google）、Amazonの3社だけで、世界のデジタル広告市場の約60%を占めている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 05 GAFA/FAANG -->
+  <div class="article-section">
+    <div class="section-label">GAFA / FAANG</div>
+    <h2 class="section-title">ビッグテックの支配 ── 時価総額10兆ドルの意味</h2>
+    <div class="section-body">
+      <p>Apple、Google（Alphabet）、Amazon、Facebook（Meta）、Microsoft。この5社は2020年代に入り、合計時価総額が10兆ドルを超えた。アメリカのGDPの約40%に相当する。</p>
+      <p>これほどの富の集中は、19世紀末のロックフェラーやカーネギーの時代以来のことだ。しかし、かつての石油王や鉄鋼王と異なるのは、ビッグテックの「支配」が目に見えにくいことだ。</p>
+      <ul>
+        <li>Apple ── 2018年に企業として初めて時価総額1兆ドルを突破。2024年には3兆ドルを超えた</li>
+        <li>Google ── 世界の検索市場の92%を支配。デジタル広告の最大のプレイヤー</li>
+        <li>Amazon ── Eコマースとクラウドの二本柱。物流網は国家インフラに匹敵する</li>
+        <li>Meta ── 世界の月間アクティブユーザー30億人超。コミュニケーションの基盤を握る</li>
+        <li>Microsoft ── クラウド、OS、業務ソフト。企業のデジタルインフラそのもの</li>
+      </ul>
+      <p>この集中に対し、反トラスト（独占禁止）の議論が世界中で加速している。EUはデジタル市場法（DMA）を施行し、米司法省はGoogleを独占で提訴した。巨大テック企業の分割論も浮上している。「プラットフォームは公共財か、私企業か」。21世紀の資本主義が突きつけられている問いだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 06 FOR INVESTORS -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味 ── プラットフォーム経済の功罪</h2>
+    <div class="section-body">
+      <p>スマホ・クラウド革命は、投資家に巨大なリターンをもたらした。2007年のiPhone発売日にApple株を買った投資家は、2024年までに約60倍のリターンを得ている。Amazonは2006年のAWS開始以降、株価が100倍以上になった。</p>
+      <p>しかし、この革命は同時に、投資の世界に新しいリスクも生み出した。</p>
+      <ul>
+        <li><strong>ネットワーク効果の強さ</strong> ── プラットフォーム企業は「勝者総取り」の構造を持つ。利用者が増えるほど価値が高まり、競合の参入が困難になる。一度支配的地位を確立すると、それを崩すのは極めて難しい</li>
+        <li><strong>集中投資の功罪</strong> ── S&P 500の時価総額に占めるトップ10社の割合は、2024年に約35%に達した。指数に投資しているつもりでも、実質的にはビッグテックへの集中投資になっている</li>
+        <li><strong>規制リスクとの共存</strong> ── 反トラスト訴訟、データ保護規制、AI規制。ビッグテック企業は常に規制リスクと隣り合わせだ</li>
+        <li><strong>バリュエーションの正当化</strong> ── PER 30倍、40倍の株価は「成長」で正当化されてきたが、成長が鈍化したとき何が起きるか。Metaは2022年に時価総額の3分の2を失い、その後回復した。この振幅に耐えられるかが問われる</li>
+      </ul>
+      <p>「ソフトウェアが世界を食う」時代の投資戦略は、シンプルに見えて難しい。勝者を見つけることより、勝者が転落するタイミングを見極めることのほうが、はるかに困難だからだ。ノキアもブラックベリーも、かつては「無敵」に見えた。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">「ソフトウェアが世界を食っている。あらゆる主要産業で、企業はますますソフトウェア企業のように振る舞い始めている。」<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;font-style:italic;">── マーク・アンドリーセン「Why Software Is Eating The World」（2011年、ウォール・ストリート・ジャーナル）</span></p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">スマホ・クラウド革命の前後を読む。</p>
+    <div class="further-links">
+      <a class="further-link" href="../internet/">
+        <span class="further-link-tag">INTERNET</span>
+        <span class="further-link-title">インターネット革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../ai/">
+        <span class="further-link-tag">AI</span>
+        <span class="further-link-title">AI革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../../../../">書斎の入口へ戻る</a>　·　<a href="../../../">思考を広げる棚</a>　·　<a href="../">人類の10大革命</a></div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

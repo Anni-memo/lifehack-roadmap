@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="自動車・航空革命｜投資と思考の書斎"/>
+<meta property="og:description" content="フォードのT型から商業航空へ。移動の自由が経済地図を書き換えた1900〜1960年の物語。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>自動車・航空革命｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(60,100,160,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative;}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(60,100,160,.15);position:relative;margin-bottom:14px;}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">人類の10大革命</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">自動車・航空革命</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 06</div>
+  <div class="hero-ornament">AUTOMOBILE &middot; AVIATION &middot; MOBILITY</div>
+  <h1 class="hero-title">自動車・航空革命</h1>
+  <p class="hero-lead">
+    移動の自由が経済地図を書き換えた。<br>1900〜1960年、人類は馬を捨て、空を手に入れた。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- THE AUTOMOBILE -->
+  <div class="article-section">
+    <div class="section-label">THE AUTOMOBILE</div>
+    <h2 class="section-title">T型フォード -- 移動が特権でなくなった日</h2>
+    <div class="section-body">
+      <p>1908年、ヘンリー・フォードがT型フォードの生産を開始した。価格は当初850ドル。それが1925年には260ドルにまで下がった。労働者の年収の約3分の1で自動車が買える時代が到来した。</p>
+      <p>フォードが発明したのは自動車ではない。流れ作業（アセンブリーライン）という生産方式である。1913年に導入されたこの方式は、1台の組立時間を12時間から93分に短縮した。大量生産が価格を劇的に下げ、自動車を大衆のものに変えた。</p>
+      <p>馬車産業は消滅した。蹄鉄職人、馬具商、馬車製造業者、飼料商 -- 馬を中心とした経済圏がまるごと姿を消した。都市から馬糞が消え、道路は舗装され、都市の風景が根本から変わった。</p>
+      <ul>
+        <li>1900年、アメリカの登録自動車は約8,000台</li>
+        <li>1920年、900万台を突破</li>
+        <li>1929年、2,300万台 -- 5人に1台の時代</li>
+      </ul>
+      <p>自動車の普及は単なる移動手段の変化ではなかった。人々が住む場所、働く場所、買い物する場所のすべてを変えた。郊外という概念は、自動車なしには生まれなかった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE HIGHWAY -->
+  <div class="article-section">
+    <div class="section-label">THE HIGHWAY</div>
+    <h2 class="section-title">高速道路 -- アイゼンハワーが引いた国の動脈</h2>
+    <div class="section-body">
+      <p>1956年、アイゼンハワー大統領は連邦補助高速道路法に署名した。総延長約66,000キロメートルの州間高速道路網（インターステート・ハイウェイ・システム）の建設が始まった。総事業費は当初の見積もりで250億ドル。アメリカ史上最大の公共事業だった。</p>
+      <p>アイゼンハワーの動機は軍事だった。第二次世界大戦中、ドイツのアウトバーンを目にした彼は、軍事輸送と国土防衛のために高速道路網が不可欠だと確信した。しかし、この軍事インフラは経済インフラへと変貌した。</p>
+      <ul>
+        <li>都市間の移動時間が劇的に短縮された</li>
+        <li>トラック輸送が鉄道貨物を上回り、物流の中心になった</li>
+        <li>高速道路のインターチェンジ周辺にショッピングモールが出現した</li>
+        <li>マクドナルド（1955年フランチャイズ化）、ホリデイ・イン（1952年創業）など、ロードサイドビジネスが誕生した</li>
+      </ul>
+      <p>高速道路は、アメリカの経済地理を書き換えた。人口と産業は都市中心部から郊外へ、そして州をまたいで移動した。「車社会」とは、高速道路というインフラの上に成立した経済構造そのものである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- TAKING FLIGHT -->
+  <div class="article-section">
+    <div class="section-label">TAKING FLIGHT</div>
+    <h2 class="section-title">空へ -- ライト兄弟から商業航空へ</h2>
+    <div class="section-body">
+      <p>1903年12月17日、ノースカロライナ州キティホーク。ライト兄弟の「フライヤー号」は12秒間、36メートルを飛んだ。この日から人類と空の関係が変わった。</p>
+      <p>航空技術は第一次世界大戦で急速に進歩した。戦後、余剰となった軍用機と操縦士が郵便輸送に転用され、1920年代には航空郵便が定着した。チャールズ・リンドバーグの大西洋単独横断飛行（1927年）は、航空への大衆の関心を爆発的に高めた。</p>
+      <p>商業航空の本格的な幕開けは、パンアメリカン航空（パンナム）が牽引した。1935年には太平洋横断路線を開設し、1939年には大西洋路線を就航させた。フアン・トリップ社長の戦略は明快だった -- 国際路線を独占し、アメリカの空の覇権を握る。</p>
+      <ul>
+        <li>1930年代、アメリカの航空旅客数は年間約600万人</li>
+        <li>飛行機は富裕層と企業幹部の移動手段だった</li>
+        <li>大西洋横断は船で5日かかったものが、飛行機で20時間に</li>
+      </ul>
+      <p>航空は世界を狭くした。しかし、この時代の航空はまだ一部の特権だった。大衆化は、ジェットエンジンの登場を待たなければならない。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- WWII AND TECHNOLOGY -->
+  <div class="article-section">
+    <div class="section-label">WWII AND TECHNOLOGY</div>
+    <h2 class="section-title">戦争が加速した技術 -- 軍事から民生へ</h2>
+    <div class="section-body">
+      <p>第二次世界大戦は、航空技術に革命的な飛躍をもたらした。戦闘機の速度は5年間で時速500キロから900キロへと倍近くに上昇した。そして戦争末期、ドイツのMe 262とイギリスのグロスター・ミーティアが実戦に投入され、ジェットエンジンの時代が始まった。</p>
+      <p>戦時中にアメリカが生産した航空機は約30万機。この大量生産の過程で培われた技術 -- アルミニウム加工、精密計器、レーダー、通信技術 -- は、戦後の民間航空産業の基盤となった。</p>
+      <ul>
+        <li>1952年、デ・ハビランド・コメット -- 世界初のジェット旅客機が就航</li>
+        <li>1958年、ボーイング707 -- ジェット旅客機の商業的成功の始まり</li>
+        <li>大西洋横断が20時間から7時間に短縮された</li>
+        <li>航空運賃が下がり、中間層にも空の旅が開かれた</li>
+      </ul>
+      <p>軍事技術の民生転用 -- このパターンは20世紀を通じて繰り返される。インターネットもGPSも、元は軍事プロジェクトだった。戦争は破壊であると同時に、技術革新の加速装置でもあった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE AUTO INDUSTRY -->
+  <div class="article-section">
+    <div class="section-label">THE AUTO INDUSTRY</div>
+    <h2 class="section-title">ビッグ3 -- アメリカ経済の心臓部</h2>
+    <div class="section-body">
+      <p>1950年代、GM（ゼネラル・モーターズ）、フォード、クライスラーの「ビッグ3」は、アメリカ経済の中核をなしていた。1955年、GMの売上高は126億ドル。当時の世界最大の企業であり、従業員数は約62万人に達した。</p>
+      <p>ビッグ3のビジネスモデルは垂直統合だった。鉄鋼の調達から部品製造、組立、販売まで、サプライチェーンのほぼ全体を自社内に抱えた。GMの社長アルフレッド・スローンは、事業部制という組織構造を発明し、巨大企業の経営手法を確立した。</p>
+      <ul>
+        <li>自動車産業は鉄鋼、ガラス、ゴム、石油の最大の需要家だった</li>
+        <li>全米の製造業雇用の約6分の1が自動車関連だった</li>
+        <li>UAW（全米自動車労組）は1950年代にGMとの交渉で年金・医療保険を獲得し、アメリカの福利厚生モデルを形作った</li>
+        <li>「GMにとって良いことは、アメリカにとって良いことだ」-- チャーリー・ウィルソン（GM社長、後の国防長官）</li>
+      </ul>
+      <p>自動車産業はアメリカの中間層を創出した。高い賃金、安定した雇用、充実した福利厚生。しかし、この支配は永遠ではなかった。1970年代以降、日本車の台頭が始まる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- FOR INVESTORS -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味</h2>
+    <div class="section-body">
+      <p>自動車・航空革命の歴史は、破壊的イノベーションの本質を教えてくれる。</p>
+      <ul>
+        <li><strong>既存産業は消滅する</strong> -- 馬車産業は自動車に、プロペラ機はジェット機に置き換えられた。いかに巨大な産業であっても、技術革新の前では永遠ではない</li>
+        <li><strong>インフラが産業を創る</strong> -- 高速道路がなければショッピングモールもファーストフードも生まれなかった。次のインフラが何かを見抜くことが、投資の鍵になる</li>
+        <li><strong>大量生産が市場を作る</strong> -- フォードは既存の需要に応えたのではない。価格を下げることで、存在しなかった需要を創り出した</li>
+        <li><strong>馬車→自動車→EVの置き換えサイクル</strong> -- 同じパターンが今まさに繰り返されている。テスラが挑んでいるのは、フォードが100年前にやったことと本質的に同じである</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout-text">「もし人々に何が欲しいか聞いたら、もっと速い馬が欲しいと答えただろう。」<br>-- ヘンリー・フォード（伝承）</p>
+      </div>
+
+      <p>破壊的イノベーションへの投資で最も重要なのは、タイミングである。早すぎれば資本を焼き尽くし、遅すぎれば成長の果実を得られない。馬車から自動車への転換には約30年かかった。内燃機関からEVへの転換にも、同程度の時間がかかるかもしれない。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">エネルギー革命から、次なる計算革命へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../electricity-oil/">
+        <span class="further-link-tag">REVOLUTION 05</span>
+        <span class="further-link-title">電気・石油革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../computer/">
+        <span class="further-link-tag">REVOLUTION 07</span>
+        <span class="further-link-title">コンピュータ革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../../../../">書斎の入口へ戻る</a>　·　<a href="../../../">思考を広げる棚</a>　·　<a href="../">人類の10大革命</a></div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

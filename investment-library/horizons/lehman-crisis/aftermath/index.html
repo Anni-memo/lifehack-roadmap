@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="その後の世界 ── 救済・改革・そして新たな問い｜投資と思考の書斎"/>
+<meta property="og:description" content="金融システムの崩壊を食い止めた後、世界はどう変わったのか。TARP、量的緩和、ドッド・フランク法。救済の代償と新たな問いを読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>その後の世界 ── 救済・改革・そして新たな問い｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:72px 24px 60px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:10px;opacity:.65;position:relative}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:20px;opacity:.7;position:relative}
+.hero-title{font-family:var(--serif);font-size:clamp(1.8rem,5.5vw,3rem);font-weight:700;line-height:1.15;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:14px}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:26px;opacity:.8}
+.hero-lead{font-family:var(--jp);font-size:.82rem;color:var(--parch4);font-weight:300;line-height:2.2;position:relative;max-width:580px;margin:0 auto}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body ul{list-style:none;margin:1em 0}
+.section-body ul li{padding-left:1.4em;position:relative;margin-bottom:.6em}
+.section-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold2)}
+
+/* ── CALLOUT ── */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+.callout-source{font-family:var(--mono);font-size:.6rem;color:var(--ink3);margin-top:8px;letter-spacing:.06em}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">リーマン・ショック</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">その後の世界</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">LEHMAN CRISIS · CHAPTER 05</div>
+  <div class="hero-ornament">TARP · QE · DODD-FRANK</div>
+  <h1 class="hero-title">その後の世界<br>── 救済・改革・そして新たな問い</h1>
+  <p class="hero-sub">The Aftermath — Bailouts, Reform, and New Questions</p>
+  <p class="hero-lead">
+    金融システムの崩壊を食い止めた後、世界はどう変わったのか。<br>
+    7,000億ドルの救済プログラム、前例のない量的緩和、<br>
+    そして「大きすぎて潰せない」という問いへの答え。<br>
+    危機の後に訪れた世界は、誰も想像しなかった姿をしていた。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- SECTION 01: TARP AND BAILOUTS -->
+  <div class="article-section">
+    <div class="section-label">01 — TARP AND BAILOUTS</div>
+    <h2 class="section-title">7,000億ドルの賭け</h2>
+    <div class="section-body">
+      <p>2008年10月3日、ジョージ・W・ブッシュ大統領は「不良資産救済プログラム（Troubled Asset Relief Program: TARP）」に署名した。上限7,000億ドル。アメリカ史上最大規模の金融救済策だった。財務長官ヘンリー・ポールソンは議会で「これをやらなければ、金融システムは崩壊する」と証言した。元ゴールドマン・サックスCEOの彼が、かつての競合を含む金融機関を税金で救うことになった。皮肉というには、あまりにも重い話だった。</p>
+
+      <p>TARPの資金は当初、銀行が抱える不良資産（主にサブプライム関連のCDOやMBS）を政府が買い取るために設計された。しかし実際の運用は異なった。ポールソンとFRB議長ベン・バーナンキは方針を転換し、銀行への直接的な資本注入を選んだ。JPモルガン・チェース、バンク・オブ・アメリカ、シティグループ、ゴールドマン・サックス── 「健全な銀行」も含めて一律に資本を注入することで、どの銀行が本当に危険なのかを市場に悟らせない戦略だった。</p>
+
+      <p>救済は金融機関だけにとどまらなかった。ゼネラル・モーターズ（GM）とクライスラーは2009年に連邦破産法の適用を申請し、政府から合計約800億ドルの支援を受けた。「アメリカの製造業の象徴」を潰すわけにはいかない── それは経済的判断であると同時に、政治的判断でもあった。</p>
+
+      <p>映画『マネー・ショート』のラストシーンで、マーク・バウム（スティーブ・カレル）は静かに怒りを滲ませる。彼の怒りの本質は、利益を享受した者たちが責任を問われないまま救済されたことにあった。「ウォール街を救い、メインストリートを見捨てた」── この批判は、後にオキュパイ運動として噴出することになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 02: QUANTITATIVE EASING -->
+  <div class="article-section">
+    <div class="section-label">02 — QUANTITATIVE EASING</div>
+    <h2 class="section-title">印刷機が回り始めた日</h2>
+    <div class="section-body">
+      <p>2008年12月16日、FRB（連邦準備制度理事会）はフェデラルファンド金利を0〜0.25%に引き下げた。事実上のゼロ金利政策である。しかし、それだけでは足りなかった。金融システムの凍結は従来の金利操作では解凍できないほど深刻だった。バーナンキは「非伝統的金融政策」に踏み出す決断を下した。</p>
+
+      <p>量的緩和（Quantitative Easing: QE）── FRBが市場から大量の国債やMBS（住宅ローン担保証券）を買い入れ、金融システムに直接資金を注入する政策である。QE1（2008年11月〜2010年3月）で1.75兆ドル、QE2（2010年11月〜2011年6月）で6,000億ドル、QE3（2012年9月〜2014年10月）で月額850億ドルのペースで買い入れを続けた。FRBのバランスシートは危機前の9,000億ドルから4.5兆ドルへと5倍に膨張した。</p>
+
+      <p>バーナンキは大恐慌の研究者だった。プリンストン大学教授時代に彼が出した結論は明快だった──1930年代の悲劇は、FRBが通貨供給を絞ったことで深刻化した。同じ過ちは繰り返さない。彼はかつて「デフレに対しては、ヘリコプターからお金をばらまけばいい」と冗談まじりに語ったことがあり、「ヘリコプター・ベン」というあだ名がついていた。2008年、そのあだ名は冗談ではなくなった。</p>
+
+      <p>量的緩和は金融市場を安定させ、株価の回復を促した。しかし、その恩恵は均等ではなかった。資産価格の上昇は株式や不動産を持つ者を豊かにし、持たざる者との格差を広げた。「金融政策は万能ではない」── バーナンキ自身がそう認めていた。それでも彼には、他に選択肢がなかった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 03: DODD-FRANK ACT -->
+  <div class="article-section">
+    <div class="section-label">03 — DODD-FRANK ACT</div>
+    <h2 class="section-title">「大きすぎて潰せない」を終わらせる試み</h2>
+    <div class="section-body">
+      <p>2010年7月21日、バラク・オバマ大統領は「ドッド＝フランク・ウォールストリート改革・消費者保護法」に署名した。全848ページ、400以上の条項を含む包括的な金融規制改革法である。クリス・ドッド上院議員とバーニー・フランク下院議員の名を冠したこの法律は、大恐慌後のグラス・スティーガル法（1933年）以来、最も大規模な金融規制の見直しだった。</p>
+
+      <p>中核をなすのは「ボルカー・ルール」である。元FRB議長ポール・ボルカーの名を冠したこの規則は、預金を預かる銀行が自己勘定で投機的な取引を行うことを制限した。リーマン・ショック前、大手銀行は預金者の資金を使って高リスクなCDOやCDSに大量投資していた。ボルカーの信念は明快だった──「銀行はカジノであってはならない」。</p>
+
+      <p>ドッド＝フランク法はまた、「システム上重要な金融機関（SIFI）」を指定し、年次のストレステストを義務づけた。最悪のシナリオ──失業率13%、株価45%下落、住宅価格30%下落──に耐えられるだけの資本を銀行に求めた。さらに、消費者金融保護局（CFPB）を新設し、略奪的な住宅ローンやクレジットカードの慣行から消費者を守る仕組みを作った。</p>
+
+      <p>しかし、「大きすぎて潰せない」問題は本当に解決されたのか。危機後、銀行の統合はさらに進んだ。JPモルガンはベアー・スターンズとワシントン・ミューチュアルを吸収し、バンク・オブ・アメリカはメリルリンチを買収した。上位5行の総資産は危機前より大きくなった。規制は強化されたが、巨大銀行はさらに巨大になった。これが改革の、予期せぬ副作用だった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 04: THE HUMAN COST -->
+  <div class="article-section">
+    <div class="section-label">04 — THE HUMAN COST</div>
+    <h2 class="section-title">数字の向こう側にいた人々</h2>
+    <div class="section-body">
+      <p>金融危機の物語は、ウォール街のトレーディングフロアや連邦議会の会議室で語られがちだ。しかし、最も深い傷を負ったのは、CDOという言葉すら知らなかった人々だった。アメリカ全土で870万人が職を失い、失業率は2009年10月に10.0%に達した。600万世帯以上が住宅の差し押さえに直面し、アメリカの世帯純資産は2007年のピークから約11兆ドル──およそ40%──が消失した。</p>
+
+      <p>ネバダ州ラスベガス、フロリダ州マイアミ、アリゾナ州フェニックス──住宅バブルの恩恵を最も受けた都市が、最も深い傷を負った。住宅価格が半値以下に暴落し、ローン残高が住宅の価値を上回る「アンダーウォーター」状態に陥った世帯は全米で1,100万世帯を超えた。毎朝、玄関の前に差し押さえ通知が置かれる。隣家が空き家になる。通りの向こうの家にも「FORECLOSURE」の看板が立つ。コミュニティが、静かに壊れていった。</p>
+
+      <p>映画『マネー・ショート』の終盤、マイケル・バーリ（クリスチャン・ベール）が勝利を確信したとき、画面にはこう表示される──「870万人が失業し、600万人が家を失った。起訴されたのはたった一人」。CDOを空売りして巨額の利益を得た「勝者」たちでさえ、誰一人として祝杯を挙げることができなかった。勝利の味は苦かった。</p>
+
+      <p>2011年9月17日、ニューヨークのズコッティ公園に数百人が集まった。「オキュパイ・ウォールストリート」── 「We are the 99%（我々は99%だ）」をスローガンに、富の偏在と金融業界の免責に対する怒りが全米、そして世界へ広がった。運動そのものは具体的な政策変更にはつながらなかったが、「格差」という言葉をアメリカの政治議論の中心に据えたことは、危機が残した最も深い遺産のひとつだった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 05: GLOBAL RIPPLES -->
+  <div class="article-section">
+    <div class="section-label">05 — GLOBAL RIPPLES</div>
+    <h2 class="section-title">大西洋を越えた波紋</h2>
+    <div class="section-body">
+      <p>リーマン・ショックはアメリカの危機だったが、その衝撃波は瞬時に世界を駆け巡った。ヨーロッパの銀行はアメリカのサブプライム関連証券に深く手を出していた。ドイツのIKB産業銀行は2007年の時点ですでに経営危機に陥り、アイルランドの銀行は不動産バブルの崩壊で壊滅的な打撃を受けた。イギリスでは2008年にロイヤル・バンク・オブ・スコットランド（RBS）が事実上国有化された。</p>
+
+      <p>しかし、真の激震は2010年に訪れた。ギリシャ政府が財政赤字を大幅に過少申告していたことが発覚し、国債利回りが急騰した。これを皮切りに、アイルランド、ポルトガル、スペイン、イタリアへと信用不安が連鎖し、「欧州ソブリン債務危機」が始まった。ユーロ圏そのものの存続が問われた。ECB（欧州中央銀行）総裁マリオ・ドラギは2012年7月、「ECBはユーロを守るためにあらゆることをする。そして、信じてほしい── それで十分だ」と宣言した。この一言が、ユーロ崩壊を食い止めたとも言われている。</p>
+
+      <p>新興国もまた、嵐から逃れることはできなかった。先進国の需要が急減し、輸出依存型の新興国経済は大きな打撃を受けた。しかし、中国は異例の対応を見せた。2008年11月、4兆元（約5,860億ドル）規模の景気刺激策を発表。インフラ建設、鉄道網の拡張、住宅建設── 国家主導の大規模投資で世界経済の牽引役を引き受けた。結果として中国のGDPは2009年も9.4%成長を記録した。ただし、その刺激策は後に不動産バブルと過剰債務という新たなリスクの種を蒔くことになる。</p>
+
+      <p>日本にとっても危機は他人事ではなかった。円は「安全通貨」として急騰し、2011年には1ドル75円台を記録。輸出企業は苦境に立たされ、日経平均はバブル後最安値を更新した。1990年代の「失われた10年」を経験した日本は、金融危機の痛みを知っていた。しかし、その経験は世界にはほとんど共有されていなかった。バーナンキが大恐慌を研究したように、世界がもっと早く日本の教訓に学んでいたなら── それは歴史の「もしも」の中でも、最も痛切なもののひとつである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 06: THE NEW NORMAL -->
+  <div class="article-section">
+    <div class="section-label">06 — THE NEW NORMAL</div>
+    <h2 class="section-title">ニュー・ノーマルの時代</h2>
+    <div class="section-body">
+      <p>危機が去った後、世界は「元」には戻らなかった。PIMCOのモハメド・エラリアンが命名した「ニュー・ノーマル（新常態）」── 低金利、低成長、低インフレが同時に進行する時代が始まった。かつて中立金利は4〜5%と考えられていたが、危機後はゼロ近傍に張りついたまま動かなかった。ローレンス・サマーズ元財務長官は2013年、「セキュラー・スタグネーション（長期停滞）」という概念を復活させ、先進国経済が構造的な需要不足に陥っている可能性を指摘した。</p>
+
+      <p>中央銀行は「最後の貸し手」から「唯一の行動者」へと変貌した。各国政府が財政緊縮に走る中、金融政策だけが経済を支えるアンカーとなった。マイナス金利、イールドカーブ・コントロール、フォワード・ガイダンス── 中央銀行は次々と新たなツールを発明し、市場への介入を深めた。しかし、その代償として金融市場は中央銀行の一挙手一投足に過敏に反応するようになり、市場価格の「歪み」が常態化した。</p>
+
+      <p>投資の世界も根本的に変わった。ゼロ金利環境は「安全資産」の利回りを消失させ、投資家は利回りを求めてよりリスクの高い資産へと押し出された。「TINA（There Is No Alternative）── 他に選択肢がない」が合言葉になった。プライベートエクイティ、ベンチャーキャピタル、不動産、暗号資産── 資金はかつて考えられなかった領域にまで流れ込んだ。</p>
+
+      <p>2020年のパンデミック、2022年のインフレ急騰、そして急速な利上げ── これらは2008年の危機とその後の超緩和政策が生んだ「長い影」の延長線上にある。リーマン・ショックは単なる過去の出来事ではない。私たちが今も生きている経済環境の、出発点なのである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- CALLOUT -->
+  <div class="article-section">
+    <div class="callout">
+      <p class="callout-text">
+        「我々は、大恐慌の研究から学んだことを実践した。<br>
+        あのとき中央銀行と政府が犯した過ちを、繰り返さないために。<br>
+        完璧ではなかったが、最悪の事態は防いだと信じている。」
+      </p>
+      <div class="callout-source">── ベン・バーナンキ（FRB議長 2006-2014、2022年ノーベル経済学賞受賞）</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">救済と改革の先にある問いを、さらに深く</p>
+    <div class="further-links">
+      <a class="further-link" href="../collapse/">
+        <span class="further-link-tag">CHAPTER 04</span>
+        <span class="further-link-title">崩壊の72時間</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../lessons/">
+        <span class="further-link-tag">CHAPTER 06</span>
+        <span class="further-link-title">投資家への教訓</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">リーマン・ショック ── 目次</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../../">書斎の入口へ戻る</a>　·
+    <a href="../../../">思考を広げる棚</a>　·
+    <a href="../">リーマン・ショック</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="なぜ起きたのか ── サブプライムローンとCDOの錬金術｜投資と思考の書斎"/>
+<meta property="og:description" content="サブプライムローン、MBS、CDO。住宅ローンの民主化が生んだ史上最大の金融危機の構造を、映画『マネー・ショート』の視点を交えて読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>なぜ起きたのか ── サブプライムローンとCDOの錬金術｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:72px 24px 60px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:10px;opacity:.65;position:relative}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:20px;opacity:.7;position:relative}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.6rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:14px}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:26px;opacity:.8}
+.hero-lead{font-family:var(--jp);font-size:.82rem;color:var(--parch4);font-weight:300;line-height:2.2;position:relative;max-width:580px;margin:0 auto}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body strong{color:var(--ink);font-weight:600}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+
+/* ── CALLOUT ── */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+.callout-source{font-family:var(--mono);font-size:.6rem;color:var(--ink3);margin-top:8px;letter-spacing:.06em}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">リーマン・ショック</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">なぜ起きたのか</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">LEHMAN CRISIS · CHAPTER 01</div>
+  <div class="hero-ornament">SUBPRIME · CDO · MBS</div>
+  <h1 class="hero-title">なぜ起きたのか<br>── サブプライムローンとCDOの錬金術</h1>
+  <p class="hero-sub">The Alchemy of Subprime Loans and Collateralized Debt Obligations</p>
+  <p class="hero-lead">
+    住宅ローンは「アメリカン・ドリーム」の象徴だった。<br>
+    しかし、その夢は金融工学という名の錬金術によって、<br>
+    史上最大の金融爆弾へと変貌していった。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- ═══ SECTION 1: THE AMERICAN DREAM ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE AMERICAN DREAM</div>
+    <h2 class="section-title">住宅ローンの民主化とその歪み</h2>
+    <div class="section-body">
+      <p>「自分の家を持つこと」── それはアメリカという国が建国以来掲げてきた最も根源的な約束のひとつだった。広い庭のある家、白いフェンス、ガレージに停まる車。アメリカン・ドリームの象徴は、常に「持ち家」だった。</p>
+
+      <p>第二次世界大戦後、アメリカ政府はこの夢を制度として支えた。1944年の復員兵援護法（GI Bill）は、帰還兵に低金利の住宅ローンを提供した。1938年に設立されたファニーメイ（連邦住宅抵当公庫）は、銀行が発行した住宅ローンを買い取ることで、銀行に新たな貸出余力を与えた。1970年にはフレディマック（連邦住宅金融抵当公庫）も設立され、住宅ローン市場はさらに拡大した。</p>
+
+      <p>アメリカの持ち家率は1940年の43.6%から2004年には69.2%まで上昇した。住宅は「安全な資産」であり、「価格は常に上がるもの」という信仰が国民に深く根付いた。</p>
+
+      <p>しかし、2000年代に入ると、この「住宅ローンの民主化」は危険な方向に歪み始めた。ITバブル崩壊後の景気刺激のためにFRB（連邦準備制度理事会）のアラン・グリーンスパン議長はフェデラルファンド金利を2003年6月に1.00%まで引き下げた。史上最低水準の金利が、住宅市場に巨額の資金を流し込んだ。</p>
+
+      <p>問題の核心はここにあった。金利が低く、住宅価格が上がり続ける限り、「返済能力が怪しい人」にもローンを貸すことが合理的に見えた。なぜなら、万が一返済が滞っても、値上がりした住宅を差し押さえて売ればよいからだ。銀行にとっても借り手にとっても、住宅価格の上昇は「保険」だった。しかし、保険というものは、それが最も必要なときに機能しなくなることがある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 2: SUBPRIME ═══ -->
+  <div class="article-section">
+    <div class="section-label">SUBPRIME</div>
+    <h2 class="section-title">サブプライムローンとは何だったのか</h2>
+    <div class="section-body">
+      <p>住宅ローンには階層がある。信用力の高い借り手に対するローンを「プライム（prime）」、それより信用力が劣る借り手に対するローンを「サブプライム（subprime）」と呼ぶ。英語の「sub」は「下の」を意味する。つまり、サブプライムローンとは「一流未満の借り手への住宅ローン」のことだ。</p>
+
+      <p>サブプライムローン自体は1990年代から存在していた。しかし、2000年代に入ると、その性質が根本的に変わった。かつてはリスクを承知の上で慎重に貸し出されていたものが、「誰にでも、いくらでも」貸す仕組みに変貌したのだ。</p>
+
+      <p>その背景には、いくつかの構造的要因があった。</p>
+
+      <p>第一に、<strong>低金利環境</strong>。グリーンスパンが主導した超低金利政策により、機関投資家は「利回り」を求めて高リスク商品に群がった。サブプライムローンは金利が高い分、投資家にとって魅力的だった。</p>
+
+      <p>第二に、<strong>証券化の普及</strong>。後述するが、住宅ローンを束ねて証券にする「証券化」の仕組みにより、銀行はローンを貸した直後に売却できるようになった。つまり、ローンが焦げ付いても銀行は痛まない。リスクは他者に転嫁された。</p>
+
+      <p>第三に、<strong>規制の緩和</strong>。1999年にグラム=リーチ=ブライリー法が成立し、銀行業務と証券業務の分離を定めたグラス=スティーガル法（1933年）が事実上廃止された。銀行はより自由にリスクを取れるようになった。</p>
+
+      <p>こうした環境下で、サブプライムローンの発行額は爆発的に増加した。2001年に1,600億ドルだった発行額は、2005年には6,250億ドルに達した。わずか4年で約4倍。住宅ローン市場全体に占めるサブプライムの割合は、2001年の7.6%から2006年には23.5%に跳ね上がった。</p>
+
+      <p>貸し手たちは「NINJAローン」と呼ばれる商品まで作り出した。NINJA ── No Income, No Job, No Assets。収入なし、職なし、資産なし。それでもローンが通った。映画『マネー・ショート』では、ストリッパーが5件の住宅と1件のコンドミニアムを所有している場面が描かれる。フィクションのように見えるが、これは実話に基づいている。</p>
+
+      <p>なぜ、このような明らかに返済不能な人々にローンが貸し出されたのか。答えは単純だ。<strong>貸し手は、ローンを「保有」するつもりがなかったからだ</strong>。貸して、すぐに売る。それが2000年代の住宅ローンビジネスだった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 3: SECURITIZATION ═══ -->
+  <div class="article-section">
+    <div class="section-label">SECURITIZATION</div>
+    <h2 class="section-title">証券化の魔法 ── 住宅ローンをMBSにパッケージ</h2>
+    <div class="section-body">
+      <p>住宅ローンの証券化（securitization）は、1970年代にジニーメイ（政府抵当金庫）が始めた。仕組みは概念的にはシンプルだ。数千件の住宅ローンをプール（束）にまとめ、そのプールから生まれるキャッシュフロー（毎月の返済金）を裏付けとする証券を発行する。これが<strong>MBS（Mortgage-Backed Securities、住宅ローン担保証券）</strong>だ。</p>
+
+      <p>MBSの発想自体は健全なものだった。個々の住宅ローンには焦げ付きリスクがあるが、数千件を束ねれば、リスクは分散される。少数のデフォルトが全体に与える影響は小さくなる。これは保険と同じ原理だ。</p>
+
+      <p>投資家にとっても、MBSは魅力的だった。個々のローンの信用調査をする必要がなく、格付け機関がAAAの評価を与えた証券を買えばよかった。利回りは国債より高く、リスクは低い。少なくとも、そう見えた。</p>
+
+      <p>問題は、この「分散」が幻想だった場合に何が起こるか、ということだった。</p>
+
+      <p>2000年代の住宅ローンプールに組み込まれたローンは、1980年代や1990年代のものとは根本的に質が異なっていた。NINJAローン、変動金利型ローン（最初の2年間は低金利、その後急上昇する「ティーザーレート」）、頭金ゼロのローン── これらが大量に混入していた。</p>
+
+      <p>しかし、証券化の「魔法」はここで終わらなかった。ウォール街は、MBSをさらに加工する方法を見つけた。それがCDOである。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 4: CDO ═══ -->
+  <div class="article-section">
+    <div class="section-label">CDO</div>
+    <h2 class="section-title">CDOの錬金術 ── ゴミをAAAに変える仕組み</h2>
+    <div class="section-body">
+      <p><strong>CDO（Collateralized Debt Obligation、債務担保証券）</strong>は、金融工学の究極の産物だった。そして、リーマン・ショックの最も直接的な原因でもあった。</p>
+
+      <p>CDOの仕組みを理解するには、「トランシェ（tranche）」という概念を知る必要がある。トランシェはフランス語で「切れ端」を意味する。CDOは、MBSやその他の債券をプールし、そのプールから生まれるキャッシュフローを優先順位の異なる「層（トランシェ）」に切り分ける。</p>
+
+      <p>最上層の「シニア・トランシェ」は、最も優先的に返済を受ける。プール全体の損失が20%に達するまでは、シニア・トランシェの投資家は1ドルも損をしない。この安全性ゆえに、格付け機関はシニア・トランシェにAAA（最高格付け）を与えた。</p>
+
+      <p>中間層の「メザニン・トランシェ」は、シニアの次に返済を受ける。格付けはA〜BBB。最下層の「エクイティ・トランシェ」は最初に損失を被る。格付けはBB以下か、格付けなし。その代わり、損失がなければ最も高い利回りを得られる。</p>
+
+      <p>ここまでなら、CDOは合理的な金融商品に見える。しかし、錬金術はここからだ。</p>
+
+      <p>メザニン・トランシェやエクイティ・トランシェは、リスクが高いため買い手がつきにくかった。ウォール街の銀行家たちは、これらの売れ残りトランシェを集めて<strong>新たなCDOを組成する</strong>という離れ業を編み出した。これが<strong>CDO-squared（CDOの二乗）</strong>、さらにはCDO-cubed（CDOの三乗）と呼ばれるものだ。</p>
+
+      <p>BBBの債券を100本集めて新しいCDOを作り、その最上層にAAAの格付けを得る。映画『マネー・ショート』では、シェフのアンソニー・ボーデインがこの仕組みを料理に例えて説明する場面がある。「3日経った売れ残りの魚を刻んでシチューに入れれば、新鮮な料理として出せる。CDOはそれと同じだ」と。</p>
+
+      <p>この例えは正確だ。個々の素材の質が悪くても、「分散」と「構造化」という魔法をかければ、見た目は高品質の商品に変わる。格付け機関のお墨付きまでついている。しかし、素材が一斉に腐れば、構造は何の防波堤にもならない。</p>
+
+      <p>2006年時点で、CDO市場の規模は約5,000億ドルに達していた。その多くが、サブプライムローンのMBSを原料としていた。ウォール街は文字通り、砂上の楼閣を築いていたのだ。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">
+        「嘘を重ねて、さらに嘘を重ねれば、やがてそれは "格付けAAA" と呼ばれる。」
+      </p>
+      <div class="callout-source">── CDOの構造を評した、ある債券トレーダーの言葉</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 5: THE MACHINE ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE MACHINE</div>
+    <h2 class="section-title">「originate-to-distribute」モデル ── 貸して売る銀行</h2>
+    <div class="section-body">
+      <p>サブプライムローンの爆発的増加を可能にしたのは、銀行のビジネスモデルの根本的な変化だった。かつての銀行は「originate-to-hold（組成して保有する）」モデルで運営されていた。自分が貸したローンは自分のバランスシートに載せ、返済されるまで保有する。だからこそ、誰に貸すかを慎重に審査した。</p>
+
+      <p>2000年代に主流となったのは<strong>「originate-to-distribute（組成して配布する）」</strong>モデルだ。銀行はローンを貸した直後に、それをウォール街の投資銀行に売却する。投資銀行はそれをMBSやCDOにパッケージして世界中の投資家に販売する。</p>
+
+      <p>このモデルは「フードチェーン」と呼ばれた。チェーンの各段階にプレイヤーがいる。</p>
+
+      <ul>
+        <li>住宅ローン・ブローカー ── 借り手を見つけ、ローンを仲介する。ローン1件ごとに手数料を得る</li>
+        <li>住宅ローン会社（Countrywide等）── ローンを組成し、投資銀行に売却する</li>
+        <li>投資銀行（リーマン、ベアー・スターンズ等）── ローンをMBS/CDOに組成し、投資家に販売する</li>
+        <li>格付け機関（ムーディーズ、S&P）── CDOに格付けを付与し、手数料を得る</li>
+        <li>機関投資家（年金基金、保険会社等）── AAA格付けのCDOを購入し、利回りを得る</li>
+      </ul>
+
+      <p>このフードチェーンの全員が、ローンの「量」を増やすインセンティブを持っていた。ブローカーはローン1件あたりの手数料で稼ぎ、銀行は証券化の手数料で稼ぎ、格付け機関は格付けの手数料で稼いだ。ローンの「質」を気にする人間は、チェーンの中にいなかった。</p>
+
+      <p>映画『マネー・ショート』で、マーク・バウム（スティーブ・アイスマンをモデルにしたキャラクター）がフロリダの住宅開発地を訪れる場面がある。空き家だらけの新築住宅地、ワニが泳ぐプール、そして「家を5軒持っている」と自慢するストリッパー。バウムは、自分が見ているものが信じられない。しかし、数字は嘘をつかなかった。</p>
+
+      <p>2006年のピーク時、カントリーワイド・ファイナンシャル1社だけで、年間約2,000億ドルの住宅ローンを組成していた。同社のCEOアンジェロ・モジロは、2006年だけで4,800万ドルの報酬を受け取った。彼は後に証券詐欺で訴追され、6,750万ドルの罰金を支払うことになる。</p>
+
+      <p>しかし、モジロは例外ではなかった。彼はシステムの産物だった。「originate-to-distribute」モデルは、ローンの質と量のバランスを根本的に破壊した。貸し手はリスクを負わず、利益だけを享受する構造。それは、いつか必ず崩壊する仕組みだった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 6: THE SEED ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE SEED</div>
+    <h2 class="section-title">マネー・ショートの視点 ── マイケル・バーリが見抜いた矛盾</h2>
+    <div class="section-body">
+      <p>2005年。カリフォルニア州サンノゼ。ヘッジファンド、サイオン・キャピタルを運営するマイケル・バーリは、自分のオフィスでサブプライムローンの個別データを読み続けていた。何百ページもの住宅ローン契約書。何千行ものスプレッドシート。バーリは元神経科の研修医で、生来の片目の義眼とアスペルガー症候群の傾向を持つ人物だった。彼は人と話すのが苦手だったが、数字を読むのは誰よりも得意だった。</p>
+
+      <p>バーリが見つけたのは、驚くべきパターンだった。2003年以降に組成されたサブプライムローンの多くが、最初の2年間だけ低い「ティーザーレート」で設定されていた。2年後に金利がリセットされると、月々の返済額は倍近くに跳ね上がる。2005年に組成されたローンなら、2007年にリセットが来る。</p>
+
+      <p>バーリは計算した。金利リセット後の返済額を、借り手の所得と比較した。結論は明白だった ── <strong>借り手の多くは、リセット後の返済を続けることが物理的に不可能だった</strong>。住宅価格が上がり続ける限り、借り換えで逃げることはできる。しかし、住宅価格が止まれば、あるいは下がれば、大量のデフォルトが発生する。</p>
+
+      <p>そして、バーリは住宅価格が止まると確信した。理由は単純だ。賃貸市場の家賃と住宅価格の乖離がすでに歴史的な水準に達していた。ファンダメンタルズから乖離した価格は、いつか必ず修正される。</p>
+
+      <p>バーリは行動に出た。彼はゴールドマン・サックスに連絡し、サブプライムMBSに対する<strong>CDS（クレジット・デフォルト・スワップ）</strong>の購入を申し出た。CDSとは、特定の債券がデフォルトした場合に保険金を受け取れる一種の保険契約だ。サブプライムMBSのCDSを買うということは、「サブプライムローンが崩壊する方に賭ける」ことを意味した。</p>
+
+      <p>ゴールドマンの担当者は困惑した。住宅市場が崩壊する？ そんな馬鹿な。しかし、バーリが保険料を払ってくれるなら、喜んで契約を結ぶ。ゴールドマンにとっては「ただで金をもらえる」ように見えた。</p>
+
+      <p>バーリは2005年から2006年にかけて、サイオン・キャピタルの資産の大部分を使ってCDSを購入した。ポジションは13億ドル。投資家たちは激怒した。「住宅市場が崩壊する」と主張する彼を「狂人」と呼ぶ者もいた。ファンドの解約請求が殺到した。</p>
+
+      <p>しかし、バーリは正しかった。2007年、彼のCDSポジションは莫大な利益を生み始めた。最終的に、サイオン・キャピタルは約4億8,900万ドルの利益を上げた。バーリ自身は約1億ドルを手にした。</p>
+
+      <p>映画では、クリスチャン・ベールがバーリを演じた。メタルミュージックを爆音で聴きながらデータを分析し、裸足でオフィスを歩き回る姿。それは「異端者」の肖像だった。しかし、金融市場において、異端者こそが真実を見る者であることがある。バーリが読んだのは、誰でもアクセスできる公開データだった。問題は、<strong>それを読もうとする人間がほとんどいなかったこと</strong>だ。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">
+        「人々は、自分のボーナスに影響する真実を理解しようとしない。」
+      </p>
+      <div class="callout-source">── マイケル・バーリの言葉を元にした意訳（原典：アプトン・シンクレアの格言の変奏）</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">サブプライムの構造を理解した上で、次に問うべき問い</p>
+    <div class="further-links">
+      <a class="further-link" href="../blindness/">
+        <span class="further-link-tag">CHAPTER 02</span>
+        <span class="further-link-title">なぜ誰も気づかなかったのか</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../big-short/">
+        <span class="further-link-tag">CHAPTER 03</span>
+        <span class="further-link-title">マネー・ショートの世界</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">リーマン・ショック ── 総合入口</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>　·
+    <a href="../../">思考を広げる棚</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

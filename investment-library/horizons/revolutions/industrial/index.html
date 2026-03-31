@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="産業革命 ── 機械が資本を生む時代の幕開け｜投資と思考の書斎"/>
+<meta property="og:description" content="1760年から1840年。蒸気機関と工場制が手工業を破壊し、資本蓄積の加速という新たな経済原理を生み出した。産業革命の構造を投資の視座から読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>産業革命 ── 機械が資本を生む時代の幕開け｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:72px 24px 60px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:10px;opacity:.65;position:relative}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:20px;opacity:.7;position:relative}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.6rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:14px}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:26px;opacity:.8}
+.hero-lead{font-family:var(--jp);font-size:.82rem;color:var(--parch4);font-weight:300;line-height:2.2;position:relative;max-width:580px;margin:0 auto}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body strong{color:var(--ink);font-weight:600}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+
+/* ── CALLOUT ── */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+.callout-source{font-family:var(--mono);font-size:.6rem;color:var(--ink3);margin-top:8px;letter-spacing:.06em}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">人類の10大革命</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">産業革命</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 03</div>
+  <div class="hero-ornament">STEAM &middot; FACTORY &middot; CAPITAL</div>
+  <h1 class="hero-title">産業革命<br>── 機械が資本を生む時代の幕開け</h1>
+  <p class="hero-sub">The Industrial Revolution: When Machines Began to Create Capital</p>
+  <p class="hero-lead">
+    1760年、イギリスの片隅で回り始めた蒸気機関は、<br>
+    人類の経済構造そのものを書き換えた。<br>
+    手仕事の時代は終わり、資本が資本を生む時代が始まった。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- ═══ SECTION 1: THE MACHINE AGE ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE MACHINE AGE</div>
+    <h2 class="section-title">蒸気と鉄 ── 動力革命の始まり</h2>
+    <div class="section-body">
+      <p>1769年、スコットランドの技術者ジェームズ・ワットがニューコメン蒸気機関を改良し、分離凝縮器を備えた新型蒸気機関の特許を取得した。この改良は単なる技術的進歩ではなかった。人類が初めて、筋力でも水力でも風力でもない「制御可能な動力源」を手に入れた瞬間だった。</p>
+
+      <p>ほぼ同時期、繊維産業で連鎖的な発明が起きていた。1764年にジェームズ・ハーグリーヴズが<strong>ジェニー紡績機</strong>を発明し、1本の糸しか紡げなかった作業が一度に8本、やがて80本へと拡大した。1769年にはリチャード・アークライトが水力紡績機を開発し、1779年にはサミュエル・クロンプトンがミュール紡績機を完成させた。</p>
+
+      <p>これらの機械はひとつの真実を証明した。<strong>機械は人間より速く、正確で、疲れない</strong>。千年にわたって糸を紡いできた熟練の手は、わずか数十年で機械に置き換えられた。</p>
+
+      <p>1785年、ワットの蒸気機関が初めて紡績工場に導入された。水車のように川のそばに工場を建てる必要はなくなった。石炭さえあれば、どこにでも工場を建てられる。この自由が、工業都市という新しい人類の居住形態を生み出すことになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 2: THE FACTORY SYSTEM ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE FACTORY SYSTEM</div>
+    <h2 class="section-title">工場制の誕生 ── 分業が効率を生む</h2>
+    <div class="section-body">
+      <p>リチャード・アークライトは発明家であると同時に、世界初の「工場経営者」でもあった。1771年、彼はダービーシャー州クロムフォードに水力紡績工場を設立した。数百人の労働者が一つ屋根の下で、決められた時間に、決められた工程を行う。これが<strong>工場制（Factory System）</strong>の原型だった。</p>
+
+      <p>それまでの生産形態は「問屋制家内工業」だった。商人が原料を各家庭に配り、家庭で紡いだ糸や織った布を回収して販売する。労働者は自分のペースで働き、農作業の合間に糸を紡いだ。工場制はこの自由を奪う代わりに、圧倒的な生産効率を実現した。</p>
+
+      <p>マンチェスターは工場制の象徴となった。1780年代にはわずか数軒だった綿工場が、1830年には99工場にまで増加した。マンチェスターの人口は1771年の約2万2,000人から1831年には約18万人に膨れ上がった。「コットノポリス（綿の都）」と呼ばれたこの都市は、世界初の工業都市であり、近代資本主義の実験場だった。</p>
+
+      <p>工場制がもたらした最大の変化は、<strong>時間の概念</strong>だった。農村では太陽と季節が時間を支配していた。工場では時計が支配者になった。始業の汽笛、昼休みの鐘、終業の合図。人間の生活リズムが、機械の稼働時間に合わせて再編されたのだ。歴史家E・P・トンプソンはこれを「時間規律の内面化」と呼んだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 3: CAPITAL ACCUMULATION ═══ -->
+  <div class="article-section">
+    <div class="section-label">CAPITAL ACCUMULATION</div>
+    <h2 class="section-title">資本蓄積の加速 ── 利益が利益を生む仕組み</h2>
+    <div class="section-body">
+      <p>産業革命以前、経済成長はほぼゼロだった。経済史家アンガス・マディソンの推計によれば、西暦1年から1700年までの1人あたりGDP成長率は年わずか0.02%程度。1,000年かけても生活水準はほとんど変わらなかった。</p>
+
+      <p>産業革命がこの停滞を打ち破った。イギリスの1人あたりGDPは1760年から1840年の間に約2倍に成長した。年率にすれば約0.9%。現代の感覚では低い数字に見えるが、それ以前の1,700年間の成長をわずか80年で達成したことになる。</p>
+
+      <p>この加速を可能にしたのが、<strong>投資→利益→再投資</strong>というサイクルだった。工場に資本を投じ、機械を導入し、大量の製品を低コストで生産する。利益を得たら、それを新しい機械や新しい工場に再投資する。このサイクルが回り始めると、富は加速度的に蓄積される。</p>
+
+      <p>アークライトはこのサイクルの体現者だった。床屋の見習いから出発した彼は、クロムフォードの1工場から始めて、死去する1792年には推定50万ポンド（現在の価値で約6,000万ポンド以上）の資産を築いていた。ナイトの称号も受けた。機械と工場制が、身分制度すら揺るがし始めていた。</p>
+
+      <p>資本蓄積の加速は、金融制度の発達も促した。1694年に設立されたイングランド銀行は、産業革命期に近代的な中央銀行の機能を整え始めた。地方銀行も急増し、1750年にはイングランドとウェールズに12行だった銀行が、1800年には370行を超えた。産業資本家と金融資本が結びつく構造が、ここで生まれた。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 4: THE DARK SIDE ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE DARK SIDE</div>
+    <h2 class="section-title">光の裏側 ── 搾取と貧困の連鎖</h2>
+    <div class="section-body">
+      <p>産業革命の果実は、均等に分配されなかった。工場主が巨富を築く一方で、労働者たちは過酷な条件の下に置かれた。</p>
+
+      <p>1833年の工場法制定以前、<strong>児童労働</strong>は日常だった。5歳の子供が炭鉱で石炭を運び、7歳の少女が紡績工場で12時間以上働いた。1832年のサドラー委員会の証言記録には、マンチェスターの綿工場で週6日、1日14時間働く8歳の少年の証言が残されている。機械に巻き込まれて指を失う事故は珍しくなかった。</p>
+
+      <p>成人労働者の状況も過酷だった。マンチェスターの労働者階級の平均寿命は、1840年代にわずか<strong>17歳</strong>だったと報告されている（フリードリヒ・エンゲルスの調査による）。これは乳幼児死亡率の高さを反映した数字だが、それ自体が劣悪な生活環境の証拠だった。</p>
+
+      <p>カール・マルクスとエンゲルスがこの現実を目撃したのは、まさにマンチェスターだった。エンゲルスは1845年に『イギリスにおける労働者階級の状態』を出版し、工場労働者の惨状を克明に記録した。マルクスは1867年の『資本論』で、資本蓄積の構造的矛盾を理論化した。産業革命は、資本主義を生むと同時に、その最も鋭い批判者をも生み出したのだ。</p>
+
+      <p>1811年から1816年にかけて、<strong>ラッダイト運動</strong>がイングランド中部を席巻した。機械によって職を奪われた手織り職人たちが、工場に押し入り機械を破壊した。伝説上の指導者ネッド・ラッドの名を冠したこの運動は、政府によって武力で鎮圧された。1813年のヨーク裁判では17人が処刑された。しかし、技術の潮流を止めることはできなかった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 5: CREATIVE DESTRUCTION ═══ -->
+  <div class="article-section">
+    <div class="section-label">CREATIVE DESTRUCTION</div>
+    <h2 class="section-title">破壊と創造 ── 何が滅び、何が生まれたか</h2>
+    <div class="section-body">
+      <p>経済学者ヨーゼフ・シュンペーターが20世紀に名付けた「創造的破壊」は、産業革命においてすでに鮮烈な形で現れていた。</p>
+
+      <p><strong>破壊されたもの</strong>は明確だった。</p>
+      <ul>
+        <li>手織り職人の生活基盤 ── イギリスの手織り職人数は1820年の約24万人から1850年には約4万人に激減した</li>
+        <li>問屋制家内工業 ── 家庭を単位とした生産体制が工場に置き換えられた</li>
+        <li>農村共同体の紐帯 ── 囲い込み運動（エンクロージャー）と都市への人口流入が農村を空洞化させた</li>
+        <li>ギルドと徒弟制度 ── 熟練の技が機械に代替され、職人の社会的地位は崩壊した</li>
+      </ul>
+
+      <p><strong>創造されたもの</strong>もまた、巨大だった。</p>
+      <ul>
+        <li>工場制と近代的企業 ── 組織的な大規模生産の仕組み</li>
+        <li>産業資本家という新階級 ── 土地ではなく資本と機械が富の源泉となった</li>
+        <li>都市労働者階級 ── やがて労働組合、選挙権拡大、福祉国家の原動力となる</li>
+        <li>近代的金融システム ── 銀行、株式会社、投資の仕組みが整備された</li>
+      </ul>
+
+      <p>破壊と創造の間には、深い痛みの時間があった。手織り職人が消滅し、工場労働者が権利を獲得するまでに数十年の苦しみがあった。しかし、長期的に見れば、産業革命は人類の生活水準を桁違いに引き上げた。この「短期の苦痛と長期の繁栄」のパターンは、その後のすべての技術革命に繰り返されることになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 6: FOR INVESTORS ═══ -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家への示唆 ── 転換期の勝者と敗者</h2>
+    <div class="section-body">
+      <p>産業革命は、投資家に根源的な教訓を残した。テクノロジーの転換期には、明確なパターンが存在する。</p>
+
+      <p><strong>第一の教訓：「作る側」ではなく「使う側」が勝つ。</strong>ジェームズ・ワットは偉大な発明家だったが、莫大な富を築いたのは蒸気機関を「使って」工場を運営したアークライトやロバート・ピールのような産業資本家だった。技術の発明者と、技術の経済的価値を最大化する者は、しばしば異なる。</p>
+
+      <p><strong>第二の教訓：既存の勝者は新しい時代に適応できない。</strong>手織り職人は高度な技術を持っていたが、それが逆に足枷になった。熟練であるがゆえに機械を拒絶し、ラッダイト運動に走った。しかし、機械の流れは止められなかった。投資においても、「既存の成功」に固執することは、しばしば最大のリスクになる。</p>
+
+      <p><strong>第三の教訓：インフラを握る者が最終的な勝者になる。</strong>個々の工場の栄枯盛衰はあったが、蒸気機関という動力基盤、運河や道路というインフラ、そして資金を供給する銀行システムは、産業革命を通じて価値を蓄積し続けた。技術転換期においては、個別の製品やサービスよりも、それを支える基盤に投資する方が安全であることが多い。</p>
+
+      <p><strong>第四の教訓：社会的な反動は必ず来る。しかし、技術は止まらない。</strong>ラッダイト運動は鎮圧され、工場法が制定され、労働組合が生まれた。技術革新は社会的摩擦を生むが、最終的には制度が追いつく。投資家は、短期的な社会的反発に怯えすぎず、長期的な技術トレンドを見極める必要がある。</p>
+
+      <p>産業革命から260年。AIが人間の知的労働を代替し始めた現在、これらの教訓はかつてなく切実なものとなっている。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">
+        「ピン工場の10人の職人が分業すれば、1人あたり1日4,800本のピンを作れる。しかし、各自がすべての工程を一人で行えば、1日に1本も作れないだろう。」
+      </p>
+      <div class="callout-source">── アダム・スミス『国富論』（1776年）第1篇第1章「分業について」</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">産業革命の前後に位置する二つの転換点と、シリーズ総合入口</p>
+    <div class="further-links">
+      <a class="further-link" href="../scientific/">
+        <span class="further-link-tag">REVOLUTION 02</span>
+        <span class="further-link-title">科学革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../railway-telegraph/">
+        <span class="further-link-tag">REVOLUTION 04</span>
+        <span class="further-link-title">鉄道・電信革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命 ── 総合入口</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../../../../">書斎の入口へ戻る</a>　·　<a href="../../../">思考を広げる棚</a>　·　<a href="../">人類の10大革命</a></div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

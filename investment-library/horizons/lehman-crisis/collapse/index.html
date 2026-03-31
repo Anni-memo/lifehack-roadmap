@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="崩壊の連鎖 ── ベアスターンズからAIGまで｜投資と思考の書斎"/>
+<meta property="og:description" content="2008年3月のベアスターンズ救済から9月のリーマン破綻、AIG救済まで。金融システムが凍りついた6ヶ月間を時系列で辿る。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>崩壊の連鎖 ── ベアスターンズからAIGまで｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:12px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">リーマン・ショック</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">崩壊の連鎖</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">LEHMAN CRISIS · CHAPTER 04</div>
+  <div class="hero-ornament">BEAR STEARNS · LEHMAN · AIG · CONTAGION</div>
+  <h1 class="hero-title">崩壊の連鎖<br>── ベアスターンズからAIGまで</h1>
+  <p class="hero-sub">The Chain Reaction — From Bear Stearns to AIG</p>
+  <p class="hero-lead">
+    一つのドミノが倒れたとき、<br>
+    世界の金融システムは凍りついた。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- SECTION 01: BEAR STEARNS -->
+  <div class="article-section">
+    <div class="section-label">2008年3月</div>
+    <h2 class="section-title">ベアスターンズ ── 最初のドミノ</h2>
+    <div class="section-body">
+      <p>崩壊の序曲は、2007年6月に奏でられていた。ベアスターンズ傘下の二つのヘッジファンド ── High-Grade Structured Credit StrategiesとHigh-Grade Structured Credit Strategies Enhanced Leverage ── が、サブプライムMBSへの投資で壊滅的な損失を被り、清算に追い込まれた。ファンドの投資家たちは約16億ドルを失った。しかし当時、これはまだ「局所的な問題」と見なされていた。</p>
+      <p>2008年3月、状況は一変した。ベアスターンズの資金調達能力に対する不安が市場に広がり、取引相手が次々と手を引いた。投資銀行は商業銀行と異なり預金を持たない。日々の資金繰りを短期の借入に依存している。信用が失われれば、一夜にして資金が枯渇する。3月13日木曜日、ベアスターンズの流動性は事実上ゼロになった。</p>
+      <p>週末の緊急交渉を経て、3月16日、JPモルガン・チェースがFRBの支援を受けてベアスターンズを買収することが発表された。買収価格は1株あたり2ドル。わずか1年前に170ドルで取引されていた株式だ。この価格は株主の激しい反発を招き、後に10ドルに修正された。FRBはJPモルガンに対して290億ドルの特別融資を行い、ベアスターンズの不良資産を引き受けた。中央銀行が投資銀行の救済に動くのは、大恐慌以来初めてのことだった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 02: FANNIE & FREDDIE -->
+  <div class="article-section">
+    <div class="section-label">2008年9月7日</div>
+    <h2 class="section-title">ファニーメイとフレディマック ── 5兆ドルの国有化</h2>
+    <div class="section-body">
+      <p>連邦住宅抵当公庫（ファニーメイ）と連邦住宅金融抵当公庫（フレディマック）は、アメリカの住宅金融システムの根幹をなす政府系企業だった。両社は住宅ローンを買い取り、証券化して投資家に販売する。アメリカの住宅ローンの約半分、金額にして約5兆ドルを保証していた。</p>
+      <p>住宅価格の下落とサブプライムローンのデフォルト急増により、両社の財務は急速に悪化した。2008年夏、株価は前年の5分の1以下に暴落。外国政府や中央銀行がファニーメイ・フレディマック債を大量に保有していたため、両社の破綻は国際的な信用危機に直結する恐れがあった。中国だけで約3,400億ドル相当を保有していた。</p>
+      <p>9月7日、ヘンリー・ポールソン財務長官は両社の政府管理下への移行を発表した。事実上の国有化である。政府は最大2,000億ドルの資本注入を約束した（後に1,874億ドルまで膨らんだ）。既存株主の持分はほぼ消滅した。自由市場を標榜するアメリカ政府による、前例のない介入だった。しかし、これはまだ序章に過ぎなかった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 03: THE WEEKEND -->
+  <div class="article-section">
+    <div class="section-label">2008年9月12-14日</div>
+    <h2 class="section-title">運命の週末 ── リーマン救済交渉の舞台裏</h2>
+    <div class="section-body">
+      <p>ファニーメイ・フレディマックの国有化からわずか5日後の9月12日金曜日。ニューヨーク連銀の重厚な会議室に、ウォール街の主要金融機関のCEOたちが集められた。ポールソン財務長官とティモシー・ガイトナーNY連銀総裁が、彼らに告げた。「リーマン・ブラザーズが破綻の瀬戸際にある。今度は政府の金は使わない。民間で解決しろ」。</p>
+      <p>ベアスターンズの救済が「モラルハザード」── 救済を前提にした無謀な行動 ── を助長するという批判を受け、政府は二度目の救済に消極的だった。交渉の焦点は二つの候補に絞られた。バンク・オブ・アメリカとバークレイズ。バンク・オブ・アメリカは交渉の途中でメリルリンチの買収に方針を転換した。残るバークレイズとの交渉は日曜日の午後まで続いたが、英国の金融監督当局（FSA）がバークレイズの株主承認なしの買収を認めず、交渉は決裂した。</p>
+      <p>48時間にわたる交渉が失敗に終わったとき、リーマン・ブラザーズの運命は決まった。ポールソンの回顧録によれば、彼は日曜日の夜、「明日、世界はどうなるのか」という恐怖と向き合っていたという。FRBのベン・バーナンキ議長は後に議会証言で語っている。「リーマンを救済する法的権限がなかった」と。しかし、この判断の是非は今日まで論争が続いている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 04: LEHMAN BROTHERS -->
+  <div class="article-section">
+    <div class="section-label">2008年9月15日</div>
+    <h2 class="section-title">リーマン・ブラザーズ ── 158年の終焉</h2>
+    <div class="section-body">
+      <p>2008年9月15日月曜日午前1時45分、リーマン・ブラザーズは連邦破産法第11章の適用を申請した。負債総額6,130億ドル。アメリカ史上最大の企業破産だった。1850年にアラバマ州でドイツ系移民の兄弟が始めた綿花取引商から、158年かけて築き上げられた投資銀行が、一夜にして消滅した。</p>
+      <p>月曜日の朝、リーマンの社員約2万5,000人はオフィスに向かい、段ボール箱に私物を詰めて出てきた。その光景は世界中のテレビカメラに映し出され、金融危機の象徴的映像となった。しかし、真の衝撃はリーマン社内ではなく、グローバルな金融ネットワークの中で起きていた。</p>
+      <p>リーマンは世界中の金融機関と無数のデリバティブ取引を結んでいた。その取引相手（カウンターパーティ）は、突然リーマンとの契約が履行されない事態に直面した。誰が、いくらのエクスポージャーを抱えているのか。その全容は誰にも分からなかった。不確実性が不信を生み、不信がさらなる不確実性を生む。この連鎖反応こそが、リーマン破綻を「単なる一企業の倒産」から「世界金融危機」へと変えた原因だった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 05: AIG -->
+  <div class="article-section">
+    <div class="section-label">2008年9月16日</div>
+    <h2 class="section-title">AIG ── 「大きすぎて潰せない」の真実</h2>
+    <div class="section-body">
+      <p>リーマンが破産申請した翌日、世界最大の保険会社AIG（アメリカン・インターナショナル・グループ）が流動性危機に陥った。AIGの問題はリーマンとは性質が異なった。AIGの金融商品部門（AIGFP）は、CDSの売り手としてMBSやCDOの信用リスクを引き受けていた。その想定元本は約4,400億ドルにのぼった。住宅市場が崩壊し、格付けが引き下げられるたびに、AIGは追加担保の差し入れを求められた。</p>
+      <p>AIGが破綻すれば、CDSの買い手であるゴールドマン・サックス、ドイツ銀行、ソシエテ・ジェネラルをはじめとする世界中の金融機関が、保険の支払いを受けられなくなる。リーマンの破綻がもたらした衝撃を目の当たりにした政府は、二度目の「不介入」を選ぶ余裕がなかった。9月16日、FRBは850億ドルの緊急融資を決定した（後に最大1,820億ドルまで拡大）。政府はAIGの株式の79.9%を取得し、事実上の国有化が行われた。</p>
+      <p>「なぜリーマンは潰して、AIGは救ったのか」。この問いは今日まで議論され続けている。公式の説明は、AIGには担保となる資産があったがリーマンにはなかったというものだ。しかし実態は、AIGの破綻がもたらすシステミック・リスクがリーマンの比ではなかったことが大きい。AIGのCDSを通じて、世界中の金融機関が相互に結びついていた。AIGを潰せば、連鎖的な破綻が止められなくなる。後に明らかになったことだが、AIGの救済資金の多くは、CDSの取引相手であるゴールドマン・サックスなどの大手銀行に流れた。「AIGの救済は、ウォール街の救済だった」という批判は、この事実に基づいている。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 06: THE FREEZE -->
+  <div class="article-section">
+    <div class="section-label">2008年9月-10月</div>
+    <h2 class="section-title">凍結 ── 世界の金融市場が止まった日</h2>
+    <div class="section-body">
+      <p>リーマン破綻後の数日間で、世界の金融市場は文字通り「凍結」した。銀行間の短期貸借金利であるLIBOR（ロンドン銀行間取引金利）は急騰した。通常、LIBORとFRBの政策金利の差（TED spread）は0.5%程度だが、10月には4.6%にまで跳ね上がった。銀行が他の銀行を信用しなくなったのだ。相手がどれだけのサブプライム関連資産を抱えているか分からない。その不確実性が、金融システムの血液である「信用」を凍らせた。</p>
+      <p>9月16日、リザーブ・プライマリー・ファンド（MMF）が「元本割れ」を起こした。リーマン・ブラザーズのCP（コマーシャル・ペーパー）を保有していたこのファンドの純資産価値は、1口1ドルを下回り0.97ドルに落ちた。MMFの元本割れは極めて異例の事態であり、「最も安全な投資」と信じられていた商品が損失を出したことで、パニックが拡大した。MMF全体から数千億ドルの資金が流出し、企業が日常的な運転資金の調達に使うCP市場が機能停止に追い込まれた。</p>
+      <p>大企業でさえ、翌週の給与を払えるかどうか分からないという異常事態が発生した。GEのような優良企業でさえCP市場での調達が困難になった。金融危機はウォール街を超えて、実体経済の心臓部を直撃し始めた。世界中の株式市場は暴落を続け、2008年10月だけでダウ平均は約14%下落した。日経平均もわずか2週間で約30%を失った。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 07: TARP -->
+  <div class="article-section">
+    <div class="section-label">2008年10月</div>
+    <h2 class="section-title">TARP ── 7,000億ドルの救済劇</h2>
+    <div class="section-body">
+      <p>金融システムの崩壊を食い止めるため、ポールソン財務長官とバーナンキFRB議長は、議会に対して前例のない規模の救済プログラムを求めた。TARP（不良資産救済プログラム）── 7,000億ドルの公的資金を投じて金融機関の不良資産を買い取る計画だった。ポールソンは議会指導者に対し、「もし我々が行動しなければ、月曜日には金融システムが存在しなくなるかもしれない」と警告した。</p>
+      <p>しかし、2008年9月29日、下院はTARP法案を否決した。228対205。共和党の保守派は「ウォール街の自業自得を国民の税金で救済するのか」と反発し、民主党のリベラル派は「経営者の責任を問わない救済は受け入れられない」と主張した。否決のニュースが伝わると、ダウ平均は一日で777ポイント（約7%）下落した。当時の史上最大の下げ幅だった。市場の暴落が議員たちに「不行動のコスト」を突きつけた。</p>
+      <p>10月3日、修正されたTARP法案が上院で74対25、下院で263対171で可決された。しかし実際の運用は、当初の構想とは大きく異なるものとなった。不良資産の買い取りではなく、金融機関への直接的な資本注入が中心となった。10月13日、ポールソンは大手9行のCEOをワシントンに呼び、各行に公的資金の受け入れを「要請」── 事実上の強制 ── した。健全な銀行も含めて一律に受け入れさせることで、特定の銀行が「弱い」と見なされるスティグマを避ける狙いだった。総額2,500億ドルの資本注入が最初の一手となった。</p>
+      <p>TARPは後に、金融システムの安定化に一定の効果があったと評価されている。最終的な納税者のコストは当初の想定を大きく下回り、多くの銀行が利子を付けて返済した。しかし、「ウォール街は救われ、メインストリートは見捨てられた」という国民の怒りは、その後の政治・社会を深く変えることになる。</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <div class="callout-text">
+      "If we don't act, the financial system of this country and the world will melt down in a matter of days."<br>
+      「行動しなければ、この国と世界の金融システムは数日で溶けてなくなる。」<br>
+      ── ヘンリー・ポールソン財務長官、議会指導者への警告（2008年9月）
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">リーマン・ショックの全体像を辿る</p>
+    <div class="further-links">
+      <a class="further-link" href="../big-short/">
+        <span class="further-link-tag">CHAPTER 03</span>
+        <span class="further-link-title">マネー・ショートの世界 ── 見えていた者たち</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../aftermath/">
+        <span class="further-link-tag">CHAPTER 05</span>
+        <span class="further-link-title">その後の世界 ── 大不況と規制改革</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../lessons/">
+        <span class="further-link-tag">CHAPTER 06</span>
+        <span class="further-link-title">危機の教訓 ── 投資家は何を学ぶべきか</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../../">書斎の入口へ戻る</a>　·
+    <a href="../../../">思考を広げる棚</a>　·
+    <a href="../">リーマン・ショック</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<!-- ── SCROLL TO TOP ── -->
+<div class="scroll-top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+addEventListener('scroll',()=>{
+  document.querySelector('.scroll-top').classList.toggle('visible',scrollY>400);
+});
+</script>
+
+</body>
+</html>

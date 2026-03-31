@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="なぜ誰も気づかなかったのか ── 格付け・規制・群衆心理｜投資と思考の書斎"/>
+<meta property="og:description" content="格付け機関の利益相反、規制当局の怠慢、ウォール街の群衆心理。リーマン・ショック前夜、なぜ誰も警鐘を鳴らさなかったのか。映画『マネー・ショート』が暴いた構造的な盲目を読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>なぜ誰も気づかなかったのか ── 格付け・規制・群衆心理｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:72px 24px 60px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:10px;opacity:.65;position:relative}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:20px;opacity:.7;position:relative}
+.hero-title{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.6rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:14px}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:26px;opacity:.8}
+.hero-lead{font-family:var(--jp);font-size:.82rem;color:var(--parch4);font-weight:300;line-height:2.2;position:relative;max-width:580px;margin:0 auto}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body strong{color:var(--ink);font-weight:600}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+
+/* ── CALLOUT ── */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+.callout-source{font-family:var(--mono);font-size:.6rem;color:var(--ink3);margin-top:8px;letter-spacing:.06em}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">リーマン・ショック</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">なぜ誰も気づかなかったのか</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">LEHMAN CRISIS · CHAPTER 02</div>
+  <div class="hero-ornament">RATING · REGULATION · HERD</div>
+  <h1 class="hero-title">なぜ誰も気づかなかったのか<br>── 格付け・規制・群衆心理</h1>
+  <p class="hero-sub">Rating Agencies, Regulatory Capture, and the Psychology of Crowds</p>
+  <p class="hero-lead">
+    サブプライムローンの危険性は、データを見れば明らかだった。<br>
+    それなのに、なぜ規制当局は動かなかったのか。<br>
+    なぜ格付け機関はAAAを付け続けたのか。<br>
+    なぜ市場は警告を無視したのか。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- ═══ SECTION 1: THE RATINGS ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE RATINGS</div>
+    <h2 class="section-title">格付け機関の利益相反 ── ムーディーズとS&Pの罪</h2>
+    <div class="section-body">
+      <p>金融市場において、格付け機関は「門番（gatekeeper）」の役割を担っている。彼らが発行する格付けは、投資家がリスクを判断するための基準であり、多くの機関投資家は「AAA格付け」を保有条件とする内部規定を持っている。ムーディーズ、S&P（スタンダード&プアーズ）、フィッチ── この3社が世界の格付け市場のほぼすべてを支配していた。</p>
+
+      <p>問題は、この門番が「門を通す側」から金をもらっていたことだった。</p>
+
+      <p>格付け機関のビジネスモデルは、歴史的に変遷してきた。かつては投資家が格付け情報の対価を支払う「投資家払い（investor-pays）」モデルだった。しかし、1970年代以降、証券を発行する側が格付け手数料を支払う「発行者払い（issuer-pays）」モデルに転換した。この転換が、利益相反の種を蒔いた。</p>
+
+      <p>CDOの格付けは、格付け機関にとって極めて収益性の高いビジネスだった。通常の社債格付けの2〜3倍の手数料を取れた。2000年代前半、ムーディーズの収益の約44%が、住宅ローン関連の構造化商品（MBS、CDO）の格付けから生まれていた。ムーディーズの株価は2000年から2007年にかけて約3倍に上昇した。</p>
+
+      <p>もし厳しい格付けをつけたらどうなるか。発行者は別の格付け機関に行くだけだ。「格付けショッピング」と呼ばれるこの慣行により、格付け機関は甘い評価をつける競争を強いられた。映画『マネー・ショート』では、S&Pの職員が「厳しい格付けをしたら、発行者はムーディーズに行ってしまう」と告白する場面がある。彼女はサングラスをかけており、「見えていない」ことの象徴として描かれている。</p>
+
+      <p>格付けモデル自体にも致命的な欠陥があった。格付け機関がCDOのリスクを評価する際に使用したモデルは、住宅価格が全国的に下落するシナリオを想定していなかった。なぜなら、1930年代の大恐慌以来、全米規模での住宅価格の下落は起きていなかったからだ。モデルは過去のデータに基づいて構築されており、「前例のない事態」を想定する設計にはなっていなかった。</p>
+
+      <p>さらに深刻だったのは、格付け機関のアナリストの質の問題だった。優秀な金融人材はウォール街の投資銀行に流れ、格付け機関には相対的に経験の浅いアナリストが残った。彼らは、投資銀行が持ち込む複雑な構造化商品の仕組みを完全には理解していなかった。ある元ムーディーズのアナリストは、後に「牛の群れが通り抜ける金の門に、私たちは誰でも通れる回転ドアを付けてしまった」と証言した。</p>
+
+      <p>2006年から2007年にかけて、格付け機関がAAAを付与したCDOのうち、最終的に90%以上がデフォルトまたは大幅に格下げされた。AAAとは「デフォルトの確率が極めて低い」ことを意味する。歴史上、AAA格付けの企業債がデフォルトしたケースはほとんどなかった。格付け機関は、その信頼性をカネで売り渡していたのだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 2: REGULATORY CAPTURE ═══ -->
+  <div class="article-section">
+    <div class="section-label">REGULATORY CAPTURE</div>
+    <h2 class="section-title">規制当局の盲目 ── SECとFRB</h2>
+    <div class="section-body">
+      <p>金融危機を防ぐために存在するはずの規制当局は、なぜ機能しなかったのか。答えは複合的だが、その根底には「規制の捕獲（regulatory capture）」と呼ばれる現象があった。</p>
+
+      <p><strong>SEC（証券取引委員会）</strong>は、アメリカの証券市場を監督する最高機関である。しかし、2000年代のSECは、ウォール街の革新的な金融商品に対して実質的に無力だった。2004年、SECは投資銀行のレバレッジ上限規制を緩和する決定を下した。これにより、リーマン・ブラザーズやベアー・スターンズといった投資銀行は、自己資本の30倍以上のレバレッジをかけることが可能になった。レバレッジ30倍とは、資産価値がわずか3.3%下落しただけで自己資本が吹き飛ぶことを意味する。</p>
+
+      <p>SECの機能不全を象徴する出来事がある。ボストンの独立系金融調査員ハリー・マルコポロスは、2000年から2008年にかけて、バーナード・マドフの投資ファンドがポンジ・スキーム（詐欺）であることをSECに5回にわたって通報した。しかし、SECは何の行動も起こさなかった。マドフの詐欺は650億ドル規模に膨らみ、2008年12月にようやく発覚した。サブプライム問題とは直接関係ないが、SECがいかに「見ようとしなかったか」を示す象徴的な事例だ。</p>
+
+      <p><strong>FRB（連邦準備制度理事会）</strong>の責任も重大だった。アラン・グリーンスパン議長（1987年〜2006年）は、金融市場の自己規制能力を信奉する人物だった。彼は「市場参加者は、自らの利益を守るために最も適切な判断を下す」と信じており、デリバティブ市場の規制には一貫して反対した。</p>
+
+      <p>1998年、商品先物取引委員会（CFTC）の委員長ブルックスリー・ボーンが、デリバティブ市場の規制を提案した。グリーンスパン、ロバート・ルービン財務長官、ラリー・サマーズ財務副長官の3人は、この提案を潰した。ボーンは辞任に追い込まれた。もしボーンの提案が通っていたら、CDSやCDOの野放し状態は生まれなかったかもしれない。歴史の中で最も重要な「もしも」のひとつだ。</p>
+
+      <p>2005年、FRBのエコノミストたちは住宅市場の過熱を示すデータを報告していた。しかし、グリーンスパンの後任として2006年2月に就任したベン・バーナンキ議長は、2007年3月の議会証言で「サブプライムローン問題の影響は限定的であると考える」と述べた。この発言は、後に歴史的な誤判断として記録されることになる。</p>
+
+      <p>規制当局の盲目は、偶然ではなかった。ウォール街と規制当局の間には「回転ドア（revolving door）」と呼ばれる人事の循環があった。SEC委員長を務めた人物がウォール街の法律事務所のパートナーになり、ゴールドマン・サックスのCEOだった人物が財務長官になる。規制する側とされる側の境界は曖昧だった。</p>
+
+      <p>リーマン・ショック当時の財務長官ヘンリー・ポールソンは、前職がゴールドマン・サックスのCEOだった。彼がリーマンを救済せずゴールドマンを救済したという事実は、「回転ドア」の問題を象徴的に示している（ただし、ポールソンの判断には法的・政治的な制約もあった点は公平に記すべきだ）。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 3: GROUPTHINK ═══ -->
+  <div class="article-section">
+    <div class="section-label">GROUPTHINK</div>
+    <h2 class="section-title">群衆心理とインセンティブ構造</h2>
+    <div class="section-body">
+      <p>格付け機関と規制当局の失敗は、個人の能力の問題ではなかった。それは<strong>インセンティブ構造の問題</strong>だった。経済学者チャールズ・プリンスが2007年7月に放った言葉は、この構造を完璧に要約している。当時シティグループのCEOだったプリンスは、フィナンシャル・タイムズのインタビューでこう語った。</p>
+
+      <div class="callout">
+        <p class="callout-text">
+          「音楽が鳴っている限り、立ち上がって踊り続けなければならない。<br>
+          そして、まだ音楽は鳴っている。」
+        </p>
+        <div class="callout-source">── チャールズ・プリンス、シティグループCEO（2007年7月）</div>
+      </div>
+
+      <p>この言葉は、ウォール街全体を支配していた心理を正確に映し出している。サブプライムローンのリスクを認識している人間はいた。しかし、リスクを認識することと、リスクに基づいて行動することは、まったく別のことだ。</p>
+
+      <p>ウォール街のボーナス構造は、短期的な利益を最大化するインセンティブを生んでいた。CDOのトレーダーは、取引が利益を生んだ年に巨額のボーナスを受け取る。3年後にその取引が損失を生んでも、ボーナスの返還は求められない。「利益は私的、損失は社会的」── これがウォール街の暗黙のルールだった。</p>
+
+      <p>2006年のウォール街の報酬総額は約360億ドルだった。ゴールドマン・サックスのCEOロイド・ブランクファインの報酬は5,400万ドル。リーマン・ブラザーズのCEOリチャード・ファルドは2000年から2007年の間に約4億8,400万ドルを受け取った。これらの報酬は、CDOやMBSの取引から生まれた「利益」に基づいていた。</p>
+
+      <p>心理学では、この現象を「確証バイアス（confirmation bias）」と「集団思考（groupthink）」で説明する。人間は、自分の信念を支持する情報を選択的に受け入れ、矛盾する情報を無視する傾向がある。そして、集団の中にいると、この傾向はさらに強化される。</p>
+
+      <p>ウォール街の場合、確証バイアスは報酬によって強化されていた。「住宅価格は上がり続ける」という信念は、巨額のボーナスによって毎年「確認」された。この信念に疑問を呈することは、自分の報酬を否定することと同義だった。アプトン・シンクレアの言葉を借りれば、「給料がそれを理解しないことに依存している人間に、何かを理解させることは難しい」のだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 4: THE FEW WHO SAW ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE FEW WHO SAW</div>
+    <h2 class="section-title">少数の「見えていた者」たち</h2>
+    <div class="section-body">
+      <p>圧倒的多数が「見なかった」中で、ごく少数の人間が真実を見ていた。映画『マネー・ショート』は、彼らの物語を描いている。</p>
+
+      <p><strong>マイケル・バーリ</strong>（クリスチャン・ベール）── 前章で述べた通り、サイオン・キャピタルの運用者。片目の義眼を持つ元神経科医で、サブプライムMBSの個別ローンデータを何百時間もかけて分析した。2005年からCDSの購入を開始し、最終的に約4億8,900万ドルの利益を上げた。彼が特異だったのは、群衆の意見にまったく左右されなかったことだ。データだけを信じた。</p>
+
+      <p><strong>スティーブ・アイスマン</strong>（映画ではマーク・バウムとして描写、スティーブ・カレル）── モルガン・スタンレー傘下のファンド「フロントポイント・パートナーズ」の運用者。アイスマンは単なるトレーダーではなかった。彼は住宅ローン業界に対する道義的な怒りを持っていた。サブプライムローンが低所得者層を食い物にしているという確信が、彼の投資判断を支えた。</p>
+
+      <p>映画で最も印象的なのは、アイスマン（バウム）がラスベガスの証券化カンファレンスに出席する場面だ。数千人の金融関係者が住宅ローン証券化の「成功」を祝う中、アイスマンは一人だけ異なる結論に達する。「この人たちは、自分たちが何をしているか分かっていない。」</p>
+
+      <p><strong>グレッグ・リップマン</strong>（映画ではジャレッド・ベネットとして描写、ライアン・ゴズリング）── ドイツ銀行のCDOトレーダー。リップマンは独自の分析で、サブプライムCDOが崩壊すると確信し、自行のポジションとは逆方向の取引を推進した。彼は「倫理」からではなく「利益」のために動いたが、結果的に危機の構造を最も明確に理解していた人物のひとりだった。</p>
+
+      <p><strong>ジェイミー・マイ</strong>と<strong>チャーリー・レドリー</strong>（映画ではジェイミーとチャーリーとして描写）── コーンウォール・キャピタルという、ガレージで始めた小さなファンドの若い運用者たち。運用資産はわずか3,000万ドルだったが、CDSを使ってサブプライム市場の崩壊に賭けた。彼らの強みは「無知の力」だった。大手金融機関のしがらみも、業界の常識もない。だからこそ、データが示す結論を素直に受け入れることができた。</p>
+
+      <p>これらの「見えていた者」たちに共通する特徴がある。<strong>彼らは全員、主流から外れた存在だった</strong>。元医者、業界の異端児、小さなガレージファンド。ウォール街の中心にいる人間ではなく、周縁にいる人間だけが真実を見た。これは偶然ではない。中心にいれば、中心の論理に取り込まれる。周縁にいるからこそ、構造を客観的に見ることができる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 5: WILLFUL BLINDNESS ═══ -->
+  <div class="article-section">
+    <div class="section-label">WILLFUL BLINDNESS</div>
+    <h2 class="section-title">「見たくない」心理 ── 都合の悪い真実を無視する構造</h2>
+    <div class="section-body">
+      <p>マーガレット・ヘファーナンの著書『見て見ぬふり（Willful Blindness）』は、人間が都合の悪い情報をいかに組織的に無視するかを分析している。リーマン・ショック前の金融業界は、この「意図的な盲目」の教科書的な事例だった。</p>
+
+      <p>「見たくない」心理は、個人レベルでは合理的だった。住宅市場の危険性を社内で指摘した者がどうなったかを見れば、その理由がわかる。</p>
+
+      <p>2006年、リーマン・ブラザーズの主任リスク管理者マデリン・アントンチッチは、サブプライム関連のリスクエクスポージャーに警鐘を鳴らした。彼女は職務を変更された。UBSの内部監査部門がサブプライム関連の損失リスクを報告したとき、経営陣はそれを「過度に悲観的」として却下した。ベアー・スターンズの若手アナリストがサブプライムMBSの品質劣化を指摘したとき、上司は「お前の仕事はリスクを指摘することではなく、取引を成立させることだ」と言い放った。</p>
+
+      <p>組織において、警鐘を鳴らすことのコストは、沈黙することのコストよりもはるかに高い。「カサンドラの呪い」── トロイ戦争の予言者カサンドラは、真実を語っても誰にも信じてもらえなかった。金融市場におけるリスク管理者も同じ運命にあった。</p>
+
+      <p>さらに深刻だったのは、「複雑さ」が盲目を助長したことだ。CDO-squaredやシンセティックCDO（実際の住宅ローンではなく、CDSを原料として組成されたCDO）は、その仕組みがあまりにも複雑で、リスクを正確に評価できる人間がほとんどいなかった。複雑さは、無知を隠すための最良の道具だった。</p>
+
+      <p>ウォーレン・バフェットは2002年の時点で、デリバティブを「大量破壊兵器（weapons of mass destruction）」と呼んでいた。ニューヨーク大学の経済学者ヌリエル・ルービニは「ドクター・ドゥーム（破滅博士）」とあだ名をつけられながら、住宅バブルの崩壊を繰り返し警告していた。元IMFのチーフエコノミスト、ラグラム・ラジャンは2005年のジャクソンホール会議で金融システムのリスクを指摘し、ラリー・サマーズから「ラッダイト（技術恐怖症者）」と嘲笑された。</p>
+
+      <p>真実を語った者たちは、聞き入れられるどころか、嘲笑され、排除された。これが、リーマン・ショック前夜の金融界の実態だった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ═══ SECTION 6: THE LESSON ═══ -->
+  <div class="article-section">
+    <div class="section-label">THE LESSON</div>
+    <h2 class="section-title">なぜ「専門家」が間違えるのか</h2>
+    <div class="section-body">
+      <p>リーマン・ショックが投げかける最も根源的な問いは、「なぜ専門家が間違えるのか」ということだ。格付けのプロ、リスク管理のプロ、金融規制のプロ── 彼らはすべて間違えた。なぜか。</p>
+
+      <p>第一に、<strong>専門家は自分の専門分野の「前提」を疑わない</strong>。住宅金融の専門家は「住宅価格は全国的には下落しない」という前提の上にすべてのモデルを構築していた。この前提自体が間違っている可能性を検証する人間はいなかった。前提を疑うことは、自分の存在意義を疑うことと同義だった。</p>
+
+      <p>第二に、<strong>専門家はインセンティブに従う</strong>。格付け機関のアナリストにとって、AAAを出し続けることが最も合理的な行動だった。厳しい格付けをすれば顧客を失い、キャリアを失う。甘い格付けをすれば、ボーナスが増え、昇進する。インセンティブが行動を決定する。</p>
+
+      <p>第三に、<strong>専門家は「複雑さ」の中に隠れる</strong>。CDOやCDSの数学的モデルを理解している人間はごく少数だった。しかし、「理解していない」ことを認めることは、専門家としてのプライドが許さなかった。分からないことを分からないと言える人間は、どの組織でも少数派だ。</p>
+
+      <p>第四に、<strong>専門家も人間である</strong>。確証バイアス、群衆心理、損失回避、正常性バイアス── 行動経済学が明らかにしてきた認知バイアスは、専門家にも等しく作用する。むしろ、専門家は「自分は合理的である」と信じているぶん、バイアスの影響を受けやすいとも言える。</p>
+
+      <p>映画『マネー・ショート』のラスト、ライアン・ゴズリング演じるジャレッド・ベネットはカメラに向かってこう語りかける。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">
+        「それで結局どうなったかって？<br>
+        銀行は救済され、誰ひとり刑務所には行かなかった。<br>
+        そしてみんな、またまったく同じことをやり始めた。」
+      </p>
+      <div class="callout-source">── 映画『マネー・ショート 華麗なる大逆転』（2015）エンディングより意訳</div>
+    </div>
+
+    <div class="section-body" style="margin-top:28px">
+      <p>この問いかけは、2008年から15年以上を経た今も有効だ。ドッド=フランク法による規制強化は行われたが、金融システムの構造的なインセンティブ問題は根本的には解決されていない。格付け機関は依然として「発行者払い」モデルで運営され、ウォール街の報酬構造は短期的利益を優先し、規制当局と金融業界の「回転ドア」は回り続けている。</p>
+
+      <p>リーマン・ショックの最大の教訓は、おそらくこうだ ── <strong>「全員が同じ方向を見ているとき、本当の危険はその反対側にある」</strong>。そして、その危険を指摘する者は、常に嘲笑される。次の危機においても、警鐘を鳴らす者は「狂人」と呼ばれるだろう。問題は、私たちがそれを聞く耳を持てるかどうかだ。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">盲目の構造を理解した上で、次に読むべき章</p>
+    <div class="further-links">
+      <a class="further-link" href="../origins/">
+        <span class="further-link-tag">CHAPTER 01</span>
+        <span class="further-link-title">なぜ起きたのか ── サブプライムの構造</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../big-short/">
+        <span class="further-link-tag">CHAPTER 03</span>
+        <span class="further-link-title">マネー・ショートの世界</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../collapse/">
+        <span class="further-link-tag">CHAPTER 04</span>
+        <span class="further-link-title">崩壊の72時間</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">リーマン・ショック ── 総合入口</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../">書斎の入口へ戻る</a>　·
+    <a href="../../">思考を広げる棚</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

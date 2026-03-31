@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="マネー・ショートの世界 ── 見えていた者たち｜投資と思考の書斎"/>
+<meta property="og:description" content="住宅市場の崩壊に賭けた少数の投資家たち。マイケル・バーリ、スティーブ・アイズマン、グレッグ・リップマン。彼らはなぜ見えたのか。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>マネー・ショートの世界 ── 見えていた者たち｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050505 0%,#0a0808 30%,#181210 60%,#2a1e18 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,105,20,.06) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.58rem;color:var(--gold3);letter-spacing:.28em;margin-bottom:12px;opacity:.65;position:relative;}
+.hero-ornament{font-family:var(--mono);font-size:.7rem;color:var(--gold3);letter-spacing:.35em;margin-bottom:18px;opacity:.7;position:relative;}
+.hero-sub{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(139,105,20,.15);position:relative;margin-bottom:12px;}
+.hero-lead{font-family:var(--serif);font-size:clamp(.9rem,2.2vw,1.05rem);color:var(--parch3);font-weight:300;line-height:2;position:relative;max-width:580px;margin:0 auto;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">リーマン・ショック</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">マネー・ショートの世界</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">LEHMAN CRISIS · CHAPTER 03</div>
+  <div class="hero-ornament">MICHAEL BURRY · CDS · CONTRARIAN</div>
+  <h1 class="hero-title">マネー・ショートの世界<br>── 見えていた者たち</h1>
+  <p class="hero-sub">The Big Short — Those Who Saw It Coming</p>
+  <p class="hero-lead">
+    世界中が住宅市場の永遠の上昇を信じていたとき、<br>
+    ほんの一握りの人間だけが、崩壊の予兆を読み取っていた。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- SECTION 01: MICHAEL BURRY -->
+  <div class="article-section">
+    <div class="section-label">SECTION 01</div>
+    <h2 class="section-title">マイケル・バーリ ── データの中に真実を見た男</h2>
+    <div class="section-body">
+      <p>マイケル・バーリは、ウォール街の典型的な人物像からおよそかけ離れた存在だった。幼少期に左目を摘出し義眼を入れ、自閉症スペクトラムと診断された。医学部を卒業した神経科の研修医でありながら、夜間にバリュー投資のブログを書き、その洞察力がプロの投資家たちの注目を集めた。2000年にScion Capitalを設立。その運用成績は、最初の数年で市場を大幅に上回った。</p>
+      <p>2004年頃、バーリは住宅ローン担保証券（MBS）の目論見書を読み始めた。他の誰もが読もうとしない、数百ページにおよぶ退屈な書類の山だった。彼はそこに記載された個別のローンデータを一件一件精査した。変動金利ローンの比率、借り手の信用スコアの分布、LTV（担保掛目）の異常な高さ。データは明確に、サブプライムローンのデフォルト率が近い将来急上昇することを示していた。</p>
+      <p>バーリが目をつけたのはCDS（クレジット・デフォルト・スワップ）だった。MBSが債務不履行に陥った場合に保険金が支払われるデリバティブ商品である。当時、住宅市場の崩壊など誰も想像しなかったから、CDSの保険料は極めて安かった。2005年、彼はゴールドマン・サックスに連絡し、サブプライムMBSに対するCDSの組成を依頼した。ゴールドマンの担当者は、この奇妙な依頼に困惑しながらも応じた。彼らにとっては、タダ同然で保険料を受け取れる「おいしい取引」に見えたのだ。</p>
+      <p>しかし、バーリの投資家たちは激怒した。ファンドの資金が「住宅市場の暴落」という荒唐無稽な賭けに注ぎ込まれている。解約要求が殺到した。バーリは投資家のゲート条項（解約制限）を発動し、彼らの資金を引き出させなかった。この決断は法的紛争を招き、バーリを精神的に追い詰めた。しかし彼は、自分のデータ分析が正しいという確信を曲げなかった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 02: STEVE EISMAN -->
+  <div class="article-section">
+    <div class="section-label">SECTION 02</div>
+    <h2 class="section-title">スティーブ・アイズマン ── ウォール街の内側から見た腐敗</h2>
+    <div class="section-body">
+      <p>スティーブ・アイズマンは、映画『マネー・ショート』ではマーク・バウムとして描かれた人物だ。ウォール街のベテランであり、かつて格付け機関で働いた経験を持つ。彼は金融業界の内側にいながら、その構造的な欺瞞を嫌悪していた。声が大きく、遠慮なく物を言い、会議中に相手の顔を見て「それはデタラメだ」と言える数少ない人間だった。</p>
+      <p>2006年、アイズマンはフロリダに足を運んだ。住宅ブームの最前線で何が起きているのかを、自分の目で確かめるためだ。そこで彼は住宅ローンのブローカーたちと話した。ブローカーは笑いながら語った。「収入を確認しない。職業欄は自己申告。犬の名前で申請しても通るかもしれない」。アイズマンはその瞬間、サブプライムローンの実態を完全に理解した。書類上の数字は虚構であり、格付け機関が「AAA」の烙印を押した証券の中身は、返済不能な借金の山だった。</p>
+      <p>アイズマンはFrontPoint Partnersのファンドマネージャーとして、住宅市場のショートポジションを積み上げた。彼が特に怒りを向けたのは格付け機関だった。ムーディーズもS&Pも、手数料を支払う銀行の言いなりになり、ゴミのようなローンの束に最高格付けを与え続けていた。格付け機関のアナリストたちは、自分たちが評価する商品の構造すら理解していなかった。アイズマンにとって、これは単なる投資機会ではなく、金融システムの道義的破綻の証拠だった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 03: GREG LIPPMANN -->
+  <div class="article-section">
+    <div class="section-label">SECTION 03</div>
+    <h2 class="section-title">グレッグ・リップマン ── 「みんなが間違っている」</h2>
+    <div class="section-body">
+      <p>グレッグ・リップマンは、ドイツ銀行のMBSトレーダーだった。映画ではジャレッド・ベネットとして登場する。彼はバーリのような孤高の分析者ではなく、ウォール街の中心で生きる、野心的で声の大きいセールスマンだった。しかし彼もまた、サブプライム市場の異常に気づいた一人だった。</p>
+      <p>リップマンがユニークだったのは、自分の雇い主であるドイツ銀行がサブプライムMBSを大量に保有していたにもかかわらず、機関投資家を訪ね歩き「住宅市場は崩壊する。CDSを買え」と売り込んだことだ。彼はプレゼンテーション資料を作成し、サブプライムローンのデフォルト率のデータを並べ、「このまま行けば破滅だ」と説いて回った。多くの投資家は彼を門前払いにした。「住宅価格は下がらない」という信仰は、それほど根深かった。</p>
+      <p>リップマンの動機は純粋な知的確信だけではなかった。CDSの取引が増えれば、彼はトレーダーとして巨額の手数料を得られた。しかし、その利己的な動機が彼の分析の正確さを損なうことはなかった。彼は正しかった。そして、彼の売り込みに応じた少数の投資家たちもまた、巨額の利益を手にすることになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 04: CORNWALL CAPITAL -->
+  <div class="article-section">
+    <div class="section-label">SECTION 04</div>
+    <h2 class="section-title">コーンウォール・キャピタル ── ガレージから始まった賭け</h2>
+    <div class="section-body">
+      <p>ジェイミー・マイとチャーリー・レドリーは、バークレーの自宅ガレージで投資ファンドを始めた二人の若者だった。運用資産はわずか11万ドル。ウォール街の巨人たちからすれば、取るに足りない存在だった。しかし、彼らには独自の投資哲学があった。市場が誤って値付けした「尾部リスク」── 起こる確率は低いが、起きたときのインパクトが巨大なイベント ── を見つけ出し、安い掛け金で大きなリターンを狙う。</p>
+      <p>リップマンのプレゼンテーションを目にした彼らは、サブプライム市場のCDSこそ、自分たちが探し求めていた「割安な宝くじ」だと確信した。しかし問題があった。彼らのファンドは小さすぎて、CDSの取引に必要なISDA（国際スワップデリバティブ協会）のマスター契約を結ぶ資格がなかった。大手銀行は彼らを相手にしなかった。</p>
+      <p>彼らはベン・ホケットという元ドイツ銀行のトレーダーに助けを求めた。ホケットの人脈を通じて、ようやくCDS取引の門が開かれた。コーンウォール・キャピタルは少額のプレミアムでCDSを購入し、住宅市場の崩壊に賭けた。結果的に、11万ドルから始まったファンドは、この賭けで8,000万ドル以上のリターンを得ることになる。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 05: THE WAIT -->
+  <div class="article-section">
+    <div class="section-label">SECTION 05</div>
+    <h2 class="section-title">待つ苦しみ ── 正しくても、市場は動かない</h2>
+    <div class="section-body">
+      <p>2006年後半から2007年にかけて、サブプライムローンのデフォルト率は確かに上昇し始めた。バーリの分析は正しかった。しかし、奇妙なことが起きた。CDSの価格がほとんど動かなかったのだ。住宅ローンの延滞率が上がっているのに、MBSの格付けは「AAA」のまま据え置かれ、CDSのスプレッドは大きく広がらなかった。</p>
+      <p>格付け機関は格下げを遅らせていた。格下げをすれば、銀行が保有する巨額のMBSポートフォリオに損失が発生し、連鎖的な売りが始まる。その影響を恐れて、格付け機関は現実を直視することを拒んだ。同時に、投資銀行は自社のポジションを隠し、市場に「問題ない」というシグナルを送り続けた。ABX指数（サブプライムMBSの指標）は下落し始めていたが、個別のCDSはまだ十分に反応していなかった。</p>
+      <p>バーリは投資家からの解約圧力に耐え続けた。アイズマンのチームも、自分たちの判断に疑念を抱き始めた。コーンウォール・キャピタルの二人は、毎月支払うCDSのプレミアムが資金を蝕んでいくのを見守った。正しい側にいても、市場がそれを認めるまでの時間は、精神をすり減らすほど長い。ケインズの言葉が彼らの頭をよぎったに違いない。「市場は、あなたが支払い能力を維持できる期間よりも長く、不合理であり続けることができる」。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SECTION 06: THE VINDICATION -->
+  <div class="article-section">
+    <div class="section-label">SECTION 06</div>
+    <h2 class="section-title">勝利の苦さ ── 正しかったことの代償</h2>
+    <div class="section-body">
+      <p>2007年後半、ついに堰が切れた。格付け機関がサブプライムMBSの大規模な格下げに踏み切り、CDSのスプレッドは急拡大した。バーリのファンドは2007年だけで489%のリターンを記録した。アイズマンのポジションも巨額の利益を生んだ。コーンウォール・キャピタルの賭けは、投じた金額の数百倍になって返ってきた。</p>
+      <p>しかし、その「勝利」は苦いものだった。彼らが利益を上げたということは、その反対側で誰かが損失を被ったということだ。そしてその「誰か」は、匿名の金融機関だけではなかった。サブプライムローンで家を買った何百万人もの一般市民が、家を失った。退職金をMBSに投資していた年金基金が、価値を失った。リーマン・ブラザーズの社員2万5,000人が職を失った。世界経済全体が、2008年のリーマン・ショックとその後の大不況に沈んだ。</p>
+      <p>マイケル・バーリは後に語っている。「私はFRBに手紙を書いた。SECにも警告した。しかし、誰も聞いてくれなかった」。彼は正しかった。そして、誰よりも早く真実を見抜いたにもかかわらず、誰の行動も変えることができなかった。映画『マネー・ショート』の最後に表示されるテロップは、この物語の本質を突いている。「銀行家たちは誰も起訴されなかった」。</p>
+      <p>バーリはScion Capitalを閉鎖し、個人投資家として活動するようになった。アイズマンはウォール街に留まり、今度は大手銀行のショートポジションで利益を上げた。彼らの物語は、一つの問いを突きつける。見えていた者がいたのに、なぜ世界は崩壊を防げなかったのか。その答えは、金融システムのインセンティブ構造そのものにある。</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <div class="callout-text">
+      "I saw the crisis coming. I tried to warn people. Nobody listened."<br>
+      「私は危機が来るのを見ていた。警告しようとした。誰も聞かなかった。」<br>
+      ── マイケル・バーリ
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">リーマン・ショックの全体像を辿る</p>
+    <div class="further-links">
+      <a class="further-link" href="../origins/">
+        <span class="further-link-tag">CHAPTER 01</span>
+        <span class="further-link-title">危機の起源 ── サブプライムの構造</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../blindness/">
+        <span class="further-link-tag">CHAPTER 02</span>
+        <span class="further-link-title">見えなかった者たち</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+      <a class="further-link" href="../collapse/">
+        <span class="further-link-tag">CHAPTER 04</span>
+        <span class="further-link-title">崩壊の連鎖 ── ベアスターンズからAIGまで</span>
+        <span class="further-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div>
+    <a href="../../../../">書斎の入口へ戻る</a>　·
+    <a href="../../../">思考を広げる棚</a>　·
+    <a href="../">リーマン・ショック</a>
+  </div>
+  <div style="margin-top:8px">投資は自己責任です。このサイトの内容は情報提供を目的とし、投資助言ではありません。</div>
+</footer>
+
+<!-- ── SCROLL TO TOP ── -->
+<div class="scroll-top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+addEventListener('scroll',()=>{
+  document.querySelector('.scroll-top').classList.toggle('visible',scrollY>400);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYPK32EB6B');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="AI革命｜人類の10大革命｜投資と思考の書斎"/>
+<meta property="og:description" content="GPT-3からChatGPTへ。知性の自動化が経済と資本の定義を変える。人類最後の革命になるかもしれない転換点を読み解く。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>AI革命｜人類の10大革命｜投資と思考の書斎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* NAV */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap}
+.nav a{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s}.nav a:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-cur{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);color:var(--parch);padding:64px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 10%,rgba(212,170,34,.06) 0%,transparent 60%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative}
+.hero-ornament{font-family:var(--mono);font-size:.48rem;color:var(--parch4);letter-spacing:.22em;margin-bottom:18px;opacity:.5;position:relative}
+.hero h1{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:var(--parch);position:relative;margin-bottom:8px;line-height:1.2}
+.hero-sub{font-family:var(--serif);font-size:clamp(.85rem,2vw,1rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300}
+
+/* ARTICLE */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px}
+.article-section{margin-bottom:52px}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300}
+.section-body p{margin-bottom:1.4em}
+.section-body p:last-child{margin-bottom:0}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+
+/* CALLOUT */
+.callout{border-left:3px solid var(--gold2);padding:18px 22px;margin:32px 0;background:var(--parch2)}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px}
+
+/* FURTHER READING */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px}
+.further-inner{max-width:700px;margin:0 auto}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300}
+.further-links{display:flex;flex-direction:column;gap:2px}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3)}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25)}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../../../">書斎の入口</a><span class="nav-sep">/</span>
+  <a href="../../../">思考を広げる棚</a><span class="nav-sep">/</span>
+  <a href="../">人類の10大革命</a><span class="nav-sep">/</span>
+  <span class="nav-cur">AI革命</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 10</div>
+  <div class="hero-ornament">AI &middot; LLM &middot; INTELLIGENCE</div>
+  <h1>AI革命</h1>
+  <p class="hero-sub">知性の自動化と資本の再定義</p>
+  <p class="hero-lead">
+    機械が言葉を操り、コードを書き、画像を生成する。<br>
+    2020年代に始まったこの革命は、過去9つの革命とは<br>
+    本質的に異なる何かを孕んでいる。
+  </p>
+</div>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <!-- 01 THE BREAKTHROUGH -->
+  <div class="article-section">
+    <div class="section-label">THE BREAKTHROUGH</div>
+    <h2 class="section-title">AIが「使えるもの」になった瞬間</h2>
+    <div class="section-body">
+      <p>AIの歴史は1950年代に遡る。アラン・チューリングの「機械は考えることができるか」という問いから始まり、何度もの「AIの冬」を経験してきた。期待が膨らみ、失望し、資金が途絶え、また期待が膨らむ。その繰り返しだった。</p>
+      <p>転機は2017年、Googleの研究チームが「Attention Is All You Need」という論文を発表したことだった。Transformer（トランスフォーマー）アーキテクチャの登場。この技術が、言語モデルの性能を劇的に向上させた。</p>
+      <p>2020年6月、OpenAIがGPT-3を発表した。1,750億個のパラメータを持つ巨大言語モデル。人間が書いたかのような文章を生成し、質問に答え、翻訳し、要約した。研究者たちは驚いた。しかし、一般の人々にはまだ届いていなかった。</p>
+      <p>2022年11月30日、ChatGPTが公開された。わずか5日間でユーザー数100万人を突破した。Instagramが同じ数に達するのに2.5か月、Netflixは3.5年かかった。人類史上最速で普及したアプリケーションだった。</p>
+      <p>AIは長い間「研究室の中のもの」だった。ChatGPTは、それを「誰もが使えるもの」に変えた。この転換の意味は、まだ完全には理解されていない。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 02 THE AI LANDSCAPE -->
+  <div class="article-section">
+    <div class="section-label">THE AI LANDSCAPE</div>
+    <h2 class="section-title">競争の地図 ── 知性を巡る覇権争い</h2>
+    <div class="section-body">
+      <p>ChatGPTの衝撃以降、AIの開発競争は「宇宙開発競争」になぞらえられるほど激化した。</p>
+      <ul>
+        <li><strong>OpenAI</strong> ── GPT-4（2023年3月）で多くのベンチマークを更新。マイクロソフトから130億ドル以上の出資を受け、企業価値は1,500億ドルを超えた</li>
+        <li><strong>Anthropic</strong> ── Google元社員が設立。Claudeシリーズを開発。「AI安全性」を重視する姿勢で、Amazonから最大80億ドルの投資を獲得</li>
+        <li><strong>Google DeepMind</strong> ── AlphaGoで囲碁を制したDeepMindとGoogle Brainが統合。Geminiシリーズを展開。検索エンジンとの統合が強み</li>
+        <li><strong>Meta</strong> ── Llamaシリーズをオープンソースで公開。「AIの民主化」を標榜し、独自の戦略を取る</li>
+        <li><strong>xAI</strong> ── イーロン・マスクが設立。Grokを開発。X（旧Twitter）のデータを活用</li>
+      </ul>
+      <p>そして、この競争の「つるはし」を売っているのがNVIDIAだ。AI学習に不可欠なGPU（画像処理装置）の市場を事実上独占している。2023年初頭に約3,000億ドルだったNVIDIAの時価総額は、2024年6月に一時3兆ドルを超え、世界最大の企業となった。わずか18か月で10倍。ゴールドラッシュで最も確実に儲けたのは、金を掘る人ではなく、つるはしを売った人だった。歴史は繰り返す。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 03 THE ECONOMIC IMPACT -->
+  <div class="article-section">
+    <div class="section-label">THE ECONOMIC IMPACT</div>
+    <h2 class="section-title">知的労働の自動化 ── ホワイトカラーの変容</h2>
+    <div class="section-body">
+      <p>過去の革命は、主に肉体労働を代替した。蒸気機関は筋肉を、電力はさらに多くの筋肉を代替した。AI革命が根本的に異なるのは、知的労働を代替し始めたことだ。</p>
+      <p>コーディング、文章作成、法律文書のレビュー、医療画像の診断、財務分析、翻訳。かつて高度な教育と訓練を必要とした作業が、AIによって自動化されつつある。</p>
+      <ul>
+        <li>GitHub Copilotは、プログラマーのコードの約40%を自動生成している</li>
+        <li>法律事務所では、AIが契約書のレビューを人間の数百倍の速度で行う</li>
+        <li>放射線科医の画像診断において、AIは一部の領域で人間と同等以上の精度を示す</li>
+        <li>翻訳の品質は、多くの言語ペアで人間の翻訳者に匹敵するレベルに達した</li>
+      </ul>
+      <p>マッキンゼー・グローバル・インスティテュートは2023年の報告書で、生成AIが2030年までに世界のGDPを最大14%（約16兆ドル）押し上げる可能性があると予測した。同時に、現在の業務の約60〜70%が自動化の対象になりうるとも分析している。</p>
+      <p>これは「仕事が消える」という単純な話ではない。産業革命が手織り工を失業させたとき、それ以上の雇用が工場で生まれた。しかし、その移行には痛みが伴った。AI革命でも同じことが起きるだろう。問題は、移行の速度だ。過去の革命は数十年かけて進んだ。AI革命は、数年で進む可能性がある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 04 THE INFRASTRUCTURE -->
+  <div class="article-section">
+    <div class="section-label">THE INFRASTRUCTURE</div>
+    <h2 class="section-title">GPU、データセンター、電力 ── 知性のインフラ</h2>
+    <div class="section-body">
+      <p>AIモデルの学習には、膨大な計算資源が必要だ。GPT-4の学習には数万個のGPUが数か月間稼働し、その電力コストだけで数千万ドルに達したと推定されている。</p>
+      <p>この「計算需要の爆発」が、新しいインフラ投資の波を生んでいる。</p>
+      <ul>
+        <li><strong>GPU</strong> ── NVIDIAのH100/H200チップは1基あたり約3万ドル。需要が供給を大幅に上回り、納期は数か月待ち</li>
+        <li><strong>データセンター</strong> ── Microsoft、Google、Amazon、Metaの4社だけで、2024年のデータセンター投資額は合計2,000億ドルを超えた</li>
+        <li><strong>電力</strong> ── 大規模データセンターの電力消費は小都市に匹敵する。原子力発電所の再稼働や、核融合技術への投資が加速している</li>
+      </ul>
+      <p>19世紀の鉄道ブームとの類似性が指摘されている。鉄道は過剰投資とバブルを経験したが、そのインフラは後の経済成長の基盤となった。AIインフラへの投資も、同じ道をたどるのかもしれない。過剰投資の先に、本当の経済価値が生まれる。問題は、その間に何が起きるかだ。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 05 THE RISKS -->
+  <div class="article-section">
+    <div class="section-label">THE RISKS</div>
+    <h2 class="section-title">AIのリスク ── 制御できないものを制御する</h2>
+    <div class="section-body">
+      <p>AI革命には、過去の革命にはなかったリスクが内在している。</p>
+      <ul>
+        <li><strong>偏見とハルシネーション</strong> ── AIは学習データの偏りを反映する。また、事実に基づかない情報を自信満々に生成する「ハルシネーション（幻覚）」の問題がある</li>
+        <li><strong>雇用への影響</strong> ── 知的労働の自動化は、中間所得層に最も大きな影響を与える可能性がある。社会の分断が深まるリスク</li>
+        <li><strong>ディープフェイクと情報操作</strong> ── AIが生成する偽の画像、音声、動画は、民主主義の基盤を揺るがしうる</li>
+        <li><strong>プライバシー</strong> ── AIの学習に使われるデータの権利。著作権の問題。個人情報の保護</li>
+        <li><strong>存在論的リスク</strong> ── AIが人間の制御を超える可能性。OpenAIの元幹部やジェフリー・ヒントン（「AIのゴッドファーザー」）が警鐘を鳴らしている</li>
+      </ul>
+      <p>規制の動きも加速している。EUは2024年にAI法（AI Act）を成立させた。世界初の包括的なAI規制法だ。リスクに応じた4段階の規制を設け、高リスクAIには厳格な透明性と説明責任を求める。</p>
+      <p>しかし、規制は常にイノベーションの後を追う。技術の進歩が速すぎて、法律が追いつかない。これは、過去の革命でも繰り返されてきたパターンだ。産業革命期の児童労働規制も、インターネット時代のプライバシー保護法も、問題が深刻化してからようやく制定された。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 06 THE INVESTMENT THESIS -->
+  <div class="article-section">
+    <div class="section-label">THE INVESTMENT THESIS</div>
+    <h2 class="section-title">AI革命の投資地図 ── 勝者は誰か</h2>
+    <div class="section-body">
+      <p>AI革命の投資機会は、3つの層に分けて考えることができる。</p>
+      <p><strong>第1層：ハードウェア（つるはし売り）</strong></p>
+      <ul>
+        <li>NVIDIA ── GPU市場の事実上の独占者。AI学習用チップの市場シェアは約80%</li>
+        <li>TSMC ── NVIDIAのチップを製造する唯一のファウンドリ。地政学的リスクを抱える</li>
+        <li>ASML ── 最先端半導体製造装置の独占企業。「つるはしのつるはし」</li>
+      </ul>
+      <p><strong>第2層：インフラ（クラウド・プラットフォーム）</strong></p>
+      <ul>
+        <li>Microsoft（Azure + OpenAI） ── 企業向けAIインフラの最有力候補</li>
+        <li>Amazon（AWS） ── Anthropicへの投資でAI基盤を強化</li>
+        <li>Google（GCP + DeepMind） ── 自社モデルとクラウドの垂直統合</li>
+      </ul>
+      <p><strong>第3層：アプリケーション（AIを使う企業）</strong></p>
+      <ul>
+        <li>AIを活用して業務効率を改善する企業</li>
+        <li>AIネイティブなスタートアップ</li>
+        <li>特定ドメインに特化したAIソリューション企業</li>
+      </ul>
+      <p>歴史は教えている。革命の初期には、インフラ層が最も確実な投資先になる。ゴールドラッシュのつるはし、鉄道ブームの鉄鋼、インターネット革命のシスコ。しかし、長期的には、インフラの上に築かれるアプリケーション層から、最大の価値が生まれる。Amazonはインターネットのインフラではなく、その上のアプリケーションだった。</p>
+      <p>問題は、アプリケーション層の勝者を事前に見極めることが、ほぼ不可能だということだ。2000年のドットコムバブル時に、GoogleやAmazonが勝者になると確信できた投資家はほとんどいなかった。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- 07 THE UNKNOWN -->
+  <div class="article-section">
+    <div class="section-label">THE UNKNOWN</div>
+    <h2 class="section-title">未知の領域 ── これが最後の革命になるか</h2>
+    <div class="section-body">
+      <p>この10章のシリーズを通じて、農業革命からスマホ・クラウド革命まで、人類は9つの革命を経験してきた。それぞれが破壊と創造を引き起こし、経済の構造を一変させた。</p>
+      <p>しかし、過去9つの革命には共通点があった。いずれも「道具」の革命だったということだ。蒸気機関は人間の筋肉を拡張する道具、コンピュータは計算を拡張する道具、インターネットは通信を拡張する道具だった。道具は人間が使うものであり、道具自体が意思を持つことはなかった。</p>
+      <p>AI革命は、この前提を揺るがしている。AIは「思考する道具」に近づきつつある。与えられた目標に対して計画を立て、実行し、結果を評価し、戦略を修正する。これは「道具」の領域を超え始めている。</p>
+      <p>AGI（汎用人工知能）── あらゆる知的タスクにおいて人間と同等以上の能力を持つAI。その実現時期について、専門家の意見は大きく分かれている。5年以内という者もいれば、50年以上かかるという者もいる。しかし、方向性自体に疑問を呈する専門家は少なくなった。</p>
+      <p>1965年、数学者のI.J.グッドは「ウルトラインテリジェントマシン」の概念を提示した。人間より賢い機械が、さらに賢い機械を設計する。その機械がさらに賢い機械を設計する。この連鎖が始まれば、「知能爆発」が起きる。それは人類が経験する最後の発明になるかもしれない、と。</p>
+      <p>投資家として、この不確実性にどう向き合うか。過去の革命から学んだ教訓が、ここでも有効だろう。</p>
+      <ul>
+        <li>革命の初期には、過大な期待と過小な評価が同時に存在する</li>
+        <li>短期的にはバブルが起き、長期的には想像以上の変化が起きる</li>
+        <li>勝者は事前には予測できないが、「つるはし売り」は比較的安全な賭けになる</li>
+        <li>最も危険なのは、変化を無視することだ</li>
+      </ul>
+      <p>農業革命から1万2千年。人類は、自らが創り出した知性と向き合う時代に入った。この革命がどこに向かうのか、まだ誰にもわからない。しかし、歴史は一つのことを教えている。革命は、準備した者に味方する。</p>
+    </div>
+
+    <div class="callout">
+      <p class="callout-text">「ウルトラインテリジェントマシンを、いかなる人間の知的活動をも凌駕しうる機械と定義しよう。そのような機械の設計も知的活動のひとつである以上、ウルトラインテリジェントマシンはさらに優れた機械を設計できる。これは間違いなく『知能爆発』をもたらし、人間の知性ははるか後方に取り残されるだろう。したがって、最初のウルトラインテリジェントマシンこそ、人類が必要とする最後の発明である。」<br><span style="font-size:.78rem;color:var(--ink3);font-weight:300;font-style:italic;">── I.J.グッド「Speculations Concerning the First Ultraintelligent Machine」（1965年）</span></p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FURTHER READING -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">AI革命の文脈を、前の革命から振り返る。</p>
+    <div class="further-links">
+      <a class="further-link" href="../smartphone-cloud/">
+        <span class="further-link-tag">SMARTPHONE</span>
+        <span class="further-link-title">スマホ・クラウド革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../computer/">
+        <span class="further-link-tag">COMPUTER</span>
+        <span class="further-link-title">コンピュータ革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../../../../">書斎の入口へ戻る</a>　·　<a href="../../../">思考を広げる棚</a>　·　<a href="../">人類の10大革命</a></div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYPK32EB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYPK32EB6B');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta property="og:title" content="コンピュータ革命｜投資と思考の書斎"/>
+<meta property="og:description" content="ENIACからパーソナルコンピュータへ。計算が世界を支配し始めた1940〜1980年の物語。"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>コンピュータ革命｜投資と思考の書斎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#1a1208;--ink2:#2d2010;--ink3:#4a3520;
+  --parch:#f5ede0;--parch2:#efe4d0;--parch3:#e8d8be;--parch4:#dfc9a8;
+  --gold:#8b6914;--gold2:#b8900a;--gold3:#d4aa22;--gold4:#f0cc55;
+  --serif:'Cormorant Garamond','Noto Serif JP',serif;
+  --jp:'Noto Serif JP','Cormorant Garamond',serif;
+  --mono:'DM Mono',monospace;
+  --shadow:0 4px 24px rgba(26,18,8,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth}
+body{font-family:var(--jp);background:var(--parch);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+
+/* ── NAV ── */
+.nav{background:var(--ink);padding:12px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(184,144,10,.25);flex-wrap:wrap;}
+.nav-back{font-family:var(--mono);font-size:.62rem;color:var(--gold3);text-decoration:none;letter-spacing:.08em;transition:color .2s;}
+.nav-back:hover{color:var(--gold4)}
+.nav-sep{color:rgba(139,105,20,.4);font-size:.7rem}
+.nav-current{font-family:var(--mono);font-size:.62rem;color:var(--parch4);letter-spacing:.06em}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(160deg,#050508 0%,#0a0e18 30%,#101828 60%,#1a2a4a 100%);
+  color:var(--parch);padding:60px 24px 52px;text-align:center;
+  position:relative;overflow:hidden;border-bottom:3px solid var(--gold);
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(60,100,160,.07) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent);}
+.hero-shelf{font-family:var(--mono);font-size:.5rem;color:var(--gold3);letter-spacing:.3em;margin-bottom:12px;opacity:.6;position:relative;}
+.hero-ornament{font-family:var(--serif);font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--parch3);font-style:italic;position:relative;margin-bottom:22px;opacity:.8;}
+.hero-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--parch);text-shadow:0 2px 24px rgba(60,100,160,.15);position:relative;margin-bottom:14px;}
+.hero-lead{font-size:.82rem;color:var(--parch4);line-height:2.1;position:relative;max-width:560px;margin:0 auto;font-weight:300;}
+
+/* ── ARTICLE ── */
+.article{max-width:700px;margin:0 auto;padding:56px 24px 12px;}
+
+.article-section{margin-bottom:52px;}
+.section-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.2em;margin-bottom:14px;opacity:.75;}
+.section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.35;}
+.section-body{font-size:.9rem;color:var(--ink2);line-height:2.1;font-weight:300;}
+.section-body p{margin-bottom:1.4em;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul{list-style:none;padding-left:0;margin:1.2em 0;}
+.section-body ul li{padding:.3em 0 .3em 1.2em;position:relative;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+.section-body ul li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+
+/* ── CALLOUT ── */
+.callout{
+  border-left:3px solid var(--gold2);
+  padding:18px 22px;margin:32px 0;
+  background:var(--parch2);
+}
+.callout-text{font-family:var(--serif);font-size:1.0rem;color:var(--ink);line-height:1.85;font-weight:500;}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--parch4);margin:0 0 52px;}
+
+/* ── FURTHER READING ── */
+.further{background:var(--parch2);border-top:1px solid var(--parch4);padding:44px 24px;}
+.further-inner{max-width:700px;margin:0 auto;}
+.further-label{font-family:var(--mono);font-size:.52rem;color:var(--gold);letter-spacing:.16em;margin-bottom:8px;opacity:.8;}
+.further-reason{font-size:.78rem;color:var(--ink3);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.further-links{display:flex;flex-direction:column;gap:2px;}
+.further-link{display:flex;align-items:center;gap:12px;padding:15px 16px;background:var(--parch);border:1px solid var(--parch4);border-left:2px solid rgba(139,105,20,.3);text-decoration:none;color:inherit;transition:all .18s;}
+.further-link:hover{border-left-color:var(--gold2);background:var(--parch3);}
+.further-link-tag{font-family:var(--mono);font-size:.5rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;width:80px;}
+.further-link-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--ink);flex:1;}
+.further-link-arrow{color:var(--gold3);font-size:.85rem;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:var(--parch4);padding:28px 24px;text-align:center;font-size:.68rem;line-height:1.9;border-top:2px solid rgba(139,105,20,.25);}
+.footer-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold3);margin-bottom:8px;letter-spacing:.06em}
+.footer a{color:var(--gold3);text-decoration:none}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:100;width:40px;height:40px;background:var(--ink);border:1px solid rgba(139,105,20,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--gold3);box-shadow:var(--shadow);transition:all .2s;opacity:0;pointer-events:none;}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{background:var(--gold2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-back" href="../../../../">書斎の入口</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../../../">思考を広げる棚</a>
+  <span class="nav-sep">/</span>
+  <a class="nav-back" href="../">人類の10大革命</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">コンピュータ革命</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-shelf">TEN REVOLUTIONS &middot; 07</div>
+  <div class="hero-ornament">COMPUTING &middot; SILICON &middot; DIGITAL</div>
+  <h1 class="hero-title">コンピュータ革命</h1>
+  <p class="hero-lead">
+    計算が世界を支配し始めた。<br>1940〜1980年、真空管からシリコンチップへ。
+  </p>
+</div>
+
+<!-- ── ARTICLE ── -->
+<main class="article">
+
+  <!-- THE FIRST MACHINES -->
+  <div class="article-section">
+    <div class="section-label">THE FIRST MACHINES</div>
+    <h2 class="section-title">最初の計算機 -- 軍事計算から汎用計算へ</h2>
+    <div class="section-body">
+      <p>1946年2月、ペンシルベニア大学でENIAC（Electronic Numerical Integrator and Computer）が公開された。重量27トン、真空管17,468本、消費電力150キロワット。部屋一つを丸ごと占有する巨大な機械だった。</p>
+      <p>ENIACの目的は砲弾の弾道計算だった。人間の計算手（多くは女性数学者たち）が20時間かけて行う計算を、30秒で完了した。しかし、真に革命的だったのは速度ではない。プログラムを変更することで、異なる種類の計算を実行できるという汎用性だった。</p>
+      <p>その理論的基盤を築いたのが、アラン・チューリングである。1936年に発表した「チューリングマシン」の概念は、計算可能なすべての問題を解ける万能機械の存在を数学的に証明した。第二次世界大戦中、チューリングはドイツ軍のエニグマ暗号の解読に貢献し、コンピュータの実用的価値を実証した。</p>
+      <ul>
+        <li>ENIAC -- 1946年、最初の汎用電子計算機</li>
+        <li>UNIVAC I -- 1951年、最初の商用コンピュータ。国勢調査に使用</li>
+        <li>初期のコンピュータは1台数百万ドル。政府と大企業だけのものだった</li>
+      </ul>
+      <p>コンピュータは軍事技術として生まれ、科学計算に使われ、やがてビジネスの道具になった。この軍事→科学→商業という技術移転のパターンは、コンピュータ革命を通じて繰り返される。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE TRANSISTOR -->
+  <div class="article-section">
+    <div class="section-label">THE TRANSISTOR</div>
+    <h2 class="section-title">トランジスタ -- 小さな結晶が世界を変えた</h2>
+    <div class="section-body">
+      <p>1947年12月、ベル研究所のウィリアム・ショックレー、ジョン・バーディーン、ウォルター・ブラッテンがトランジスタを発明した。真空管の機能を、小さな半導体の結晶で実現したのである。</p>
+      <p>真空管は大きく、熱を発し、頻繁に故障した。ENIACでは1日に数本の真空管が焼き切れ、その交換が最大の保守作業だった。トランジスタは小さく、低消費電力で、はるかに信頼性が高かった。</p>
+      <p>1958年、テキサス・インスツルメンツのジャック・キルビーが集積回路（IC）を発明した。複数のトランジスタを1枚の半導体基板上に集積する技術である。同時期に、フェアチャイルド・セミコンダクターのロバート・ノイスも独立に同様の技術を開発した。</p>
+      <p>そして1965年、フェアチャイルドの共同創業者ゴードン・ムーアが、後に「ムーアの法則」と呼ばれる予測を発表した。</p>
+
+      <div class="callout">
+        <p class="callout-text">「集積回路上のトランジスタ数は、約2年ごとに倍増する。」<br>-- ゴードン・ムーア（1965年）<br><br>この予測は50年以上にわたって持続した。人類史上、これほど長期間にわたって指数関数的成長を続けた技術は他にない。</p>
+      </div>
+
+      <ul>
+        <li>1971年、インテル4004 -- 最初の商用マイクロプロセッサ。トランジスタ数2,300個</li>
+        <li>1978年、インテル8086 -- 2万9千個</li>
+        <li>2024年、最先端チップ -- 数百億個以上</li>
+      </ul>
+      <p>ムーアの法則は物理法則ではない。半導体産業全体が共有した「ロードマップ」であり、自己成就的な予言だった。各社がこの法則に従って開発計画を立て、投資を行い、その結果として法則が維持された。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- IBM AND THE MAINFRAME -->
+  <div class="article-section">
+    <div class="section-label">IBM AND THE MAINFRAME</div>
+    <h2 class="section-title">IBMの支配 -- メインフレームの時代</h2>
+    <div class="section-body">
+      <p>1960年代から1970年代、コンピュータ産業はIBMの独壇場だった。「IBMと7人の小人」と呼ばれたほど、その市場支配力は圧倒的だった。メインフレーム市場におけるIBMのシェアは70%を超えていた。</p>
+      <p>1964年に発表されたSystem/360は、コンピュータ史上最大の賭けだった。開発費50億ドル -- 当時のIBMの年間売上高を超える投資。しかしこの賭けは成功した。System/360は「ファミリー」の概念を導入し、異なるモデル間でソフトウェアの互換性を実現した。</p>
+      <ul>
+        <li>企業は一度IBMを選ぶと、ソフトウェア資産のために乗り換えが困難になった</li>
+        <li>「IBMを買って首になった者はいない」-- 購買担当者の格言</li>
+        <li>銀行、保険、航空予約、政府機関 -- あらゆる大規模データ処理がIBMに依存した</li>
+        <li>1969年、IBMは反トラスト法訴訟を起こされた。裁判は13年続いた</li>
+      </ul>
+      <p>IBMの支配は、企業のIT化を加速させた。コンピュータは「計算する機械」から「データを処理するシステム」へと変わり、企業経営のインフラになった。給与計算、在庫管理、会計処理 -- かつて人間が行っていた定型業務が、次々とコンピュータに移管された。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- THE PERSONAL COMPUTER -->
+  <div class="article-section">
+    <div class="section-label">THE PERSONAL COMPUTER</div>
+    <h2 class="section-title">パーソナルコンピュータ -- 計算の民主化</h2>
+    <div class="section-body">
+      <p>1976年4月1日、スティーブ・ジョブズとスティーブ・ウォズニアックがApple Computerを設立した。翌1977年に発売されたApple IIは、個人が自宅で使えるコンピュータの可能性を世界に示した。価格1,298ドル。カラー表示が可能で、表計算ソフトVisiCalcが動いた。</p>
+      <p>1981年8月12日、IBMがIBM PCを発売した。巨人の参入は、パーソナルコンピュータを「おもちゃ」から「ビジネスツール」に格上げした。そしてIBMが犯した戦略的判断 -- オープンアーキテクチャの採用 -- が、産業構造を根本から変えた。</p>
+      <p>IBMはOSをマイクロソフトから、CPUをインテルから調達した。ハードウェアは規格化され、互換機メーカーが続々と参入した。コンパック、デル、ヒューレット・パッカード。IBMは自ら覇権の土台を崩した。</p>
+      <ul>
+        <li>1980年、全世界のPC出荷台数は約72万台</li>
+        <li>1985年、約650万台</li>
+        <li>1990年、約2,400万台</li>
+        <li>価格の低下とともに、コンピュータは企業の全デスクに、やがて家庭にも浸透した</li>
+      </ul>
+      <p>パーソナルコンピュータ革命の本質は、計算能力の民主化だった。かつて数百万ドルのメインフレームでしかできなかったことが、数千ドルの機械で可能になった。権力は中央のIT部門から、個々のユーザーの手元に移った。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- SOFTWARE -->
+  <div class="article-section">
+    <div class="section-label">SOFTWARE</div>
+    <h2 class="section-title">ソフトウェア -- 見えない資産が利益の源泉に</h2>
+    <div class="section-body">
+      <p>ビル・ゲイツの天才は、ソフトウェアの経済的本質を誰よりも早く理解したことにある。ハードウェアは製造コストがかかる。しかしソフトウェアは、一度書けば無限にコピーできる。限界費用はほぼゼロである。</p>
+      <p>1980年、IBMからPC用OSの開発を依頼されたゲイツは、シアトル・コンピュータ・プロダクツからQDOSを5万ドルで買い取り、改良してMS-DOSとしてIBMに提供した。決定的だったのは、ゲイツがライセンス契約を勝ち取ったことだ。IBMにOSを売り切りにせず、1台ごとにライセンス料を受け取る仕組みを確立した。</p>
+      <ul>
+        <li>MS-DOSはIBM互換機すべてに搭載され、事実上の標準になった</li>
+        <li>1985年、Windows 1.0。1990年、Windows 3.0で爆発的に普及</li>
+        <li>マイクロソフトの粗利益率は80%を超えた -- ソフトウェアの経済学そのものだった</li>
+        <li>1990年代半ば、マイクロソフトは世界最大の時価総額企業に</li>
+      </ul>
+      <p>ソフトウェアが利益の源泉になるという発見は、産業の重心を根本から移動させた。価値はハードウェアからソフトウェアへ、物理的な製品から知的財産へと移った。この変化は、21世紀のプラットフォーム経済の原型でもある。</p>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- FOR INVESTORS -->
+  <div class="article-section">
+    <div class="section-label">FOR INVESTORS</div>
+    <h2 class="section-title">投資家にとっての意味</h2>
+    <div class="section-body">
+      <p>コンピュータ革命は、テクノロジー投資の本質を教えてくれる。</p>
+      <ul>
+        <li><strong>プラットフォームを制する者が勝つ</strong> -- IBMはハードウェアを制したが、OSという「プラットフォーム」を握ったマイクロソフトが最終的な勝者になった</li>
+        <li><strong>ネットワーク効果が参入障壁を作る</strong> -- Windows用ソフトウェアが増えるほどWindowsの価値が高まり、Windowsのシェアが高まるほどソフトウェア開発者が集まる。この正の循環が、勝者総取り市場を生んだ</li>
+        <li><strong>限界費用ゼロの経済学</strong> -- ソフトウェアのコピーにコストがかからないという特性は、従来の製造業とは根本的に異なる利益構造を生む。粗利益率80%以上のビジネスモデルが可能になった</li>
+        <li><strong>指数関数的成長への投資</strong> -- ムーアの法則が示すように、テクノロジーは線形ではなく指数関数的に進歩する。10年後の計算能力を過小評価する者は、投資機会を見逃す</li>
+      </ul>
+      <p>そして最も重要な教訓 -- 支配的な企業は永遠ではない。IBMはメインフレームで覇権を握り、PCで自らの覇権を崩し、マイクロソフトに主導権を渡した。マイクロソフトもまた、インターネットの登場で危機に直面する。技術のパラダイムが変わるとき、前世代の勝者は次世代の敗者になりうる。</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FURTHER READING ── -->
+<div class="further">
+  <div class="further-inner">
+    <div class="further-label">FURTHER READING</div>
+    <p class="further-reason">移動の革命から、ネットワークの革命へ。</p>
+    <div class="further-links">
+      <a class="further-link" href="../auto-aviation/">
+        <span class="further-link-tag">REVOLUTION 06</span>
+        <span class="further-link-title">自動車・航空革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../internet/">
+        <span class="further-link-tag">REVOLUTION 08</span>
+        <span class="further-link-title">インターネット革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+      <a class="further-link" href="../">
+        <span class="further-link-tag">INDEX</span>
+        <span class="further-link-title">人類の10大革命</span>
+        <span class="further-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-title">投資と思考の書斎</div>
+  <div><a href="../../../../">書斎の入口へ戻る</a>　·　<a href="../../../">思考を広げる棚</a>　·　<a href="../">人類の10大革命</a></div>
+  <div style="margin-top:8px">投資は自己責任です。</div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300);
+});
+</script>
+</body>
+</html>
