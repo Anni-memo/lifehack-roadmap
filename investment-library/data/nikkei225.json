@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-19 14:31:01 JST",
-  "data_date": "2026-03-27",
+  "updated_at": "2026-06-22 16:10:10 JST",
+  "data_date": "2026-03-31",
   "count": 223,
   "errors": [],
   "stocks": [
@@ -1994,8 +1994,8 @@
     },
     {
       "code": "7205",
-      "name": "日野自動車",
-      "sector": "自動車・輸送機",
+      "name": "",
+      "sector": "",
       "close": null,
       "per": null,
       "pbr": null,
