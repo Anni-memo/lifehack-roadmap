@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-23 13:58:38 JST",
-  "data_date": "2026-03-31",
+  "updated_at": "2026-06-24 13:41:24 JST",
+  "data_date": "2026-04-01",
   "count": 223,
   "errors": [],
   "stocks": [
@@ -1084,7 +1084,7 @@
     },
     {
       "code": "5333",
-      "name": "日本碍子",
+      "name": "ＮＧＫ",
       "sector": "建設・資材",
       "close": null,
       "per": null,
@@ -2638,7 +2638,7 @@
     },
     {
       "code": "8750",
-      "name": "第一生命ホールディングス",
+      "name": "第一ライフグループ",
       "sector": "金融（除く銀行）",
       "close": null,
       "per": null,
