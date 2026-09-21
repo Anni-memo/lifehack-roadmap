@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-18 15:05:02 JST",
-  "data_date": "2026-06-26",
+  "updated_at": "2026-09-21 17:08:44 JST",
+  "data_date": "2026-06-30",
   "count": 223,
   "errors": [],
   "stocks": [
@@ -2391,7 +2391,7 @@
       "close": null,
       "per": null,
       "pbr": null,
-      "roe": null,
+      "roe": "",
       "net_sales": null,
       "operating_profit": null,
       "net_income": null,
@@ -2657,7 +2657,7 @@
       "close": null,
       "per": null,
       "pbr": null,
-      "roe": "0.071",
+      "roe": null,
       "net_sales": null,
       "operating_profit": null,
       "net_income": null,
